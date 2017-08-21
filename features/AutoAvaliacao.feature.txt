@@ -15,17 +15,3 @@ And ainda não enviei o questionário de autoavaliação
 And todos os campos foram devidamente preenchidos
 When eu tento enviar a autoavaliação
 Then será enviado ao professor um relatório com todos os conceitos da disciplina “ESS” autoavaliados
-
-Scenario: Autoavaliação sem erro
-Given eu estou na página de “autoavaliação”
-When eu preencher o formulário com os conceitos:  “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” 
-And tentar enviar a autoavaliação
-Then aparecerá uma mensagem de erro
-And voltarei a página de “autoavaliação” com os campos vazios
-
-Scenario: Nova Autoavaliação com erro
-Given estou cadastrado na disciplina “ESS”
-And ainda não enviei o questionário de autoavaliação
-And todos os campos não foram devidamente preenchidos
-When eu tento enviar a autoavaliação
-Then um relatório com todos os conceitos da disciplina “ESS” autoavaliados não será enviado ao professor 
