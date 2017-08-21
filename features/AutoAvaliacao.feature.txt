@@ -1,6 +1,10 @@
-Feature: Autoavaliação
+Feature: Autoavaliação (estudante)
 As a estudante de uma disciplina
 I want to auto-avaliar cada meta e visualizar o conceito dado pelo professor  so that eu posso enviar a auto-avaliação de todas as metas para meu professor
+
+Feature: Autoavaliação (professor)
+As a professor de uma disciplina
+I want to visualizar a quantidade, a porcentagem e o nome dos alunos que têm uma avaliação discrepante
 
 Scenario: Autoavaliação sem erro
 Given eu estou na página “Autoavaliação”
@@ -29,3 +33,14 @@ And ainda não enviei o questionário de autoavaliação
 And todos os campos não foram devidamente preenchidos
 When eu tento enviar a autoavaliação
 Then um relatório com todos os conceitos da disciplina “ESS” autoavaliados não será enviado ao professor 
+
+Scenario: Alunos discrepantes sem aluno na lista
+Given estou logado como “professor”
+And o estudante “João” tem conceitos “MA” em “F1”, “MPA” em “F2”, “MPA” em “F3”, “MANA” em F4, “MA” em “F5”
+And  o estudante “João” se autoavaliou com“MA” em “F1”, “MA” em “F2”, “MPA” em “F3”, “MANA” em F4, “MA” em “F5”
+And a estudante “Maria” tem conceitos “MA” em “F1”, “MPA” em “F2”, “MPA” em “F3”, “MA” em F4, “MA” em “F5”
+And a estudante “Maria”  se autoavaliou “MPA” em “F1”, “MANA” em “F2”, “MANA” em “F3”, “MPA” em F4, “MANA” em “F5”
+And o estudante “Paulo” tem conceitos “MANA” em “F1”, “MPA” em “F2”, “MPA” em “F3”, “MANA” em F4, “MPA” em “F5”
+And o estudante “Paulo”  se autoavaliou com “MANA” em “F1”, “MPA” em “F2”, “MPA” em “F3”, “MANA” em F4, “MPA” em “F5”
+When eu for para a página de “Alunos discrepantes”
+Then eu verei a quantidade de alunos com conceitos como “0”, a porcentagem como “0%” e a lista estará vazia
