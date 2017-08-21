@@ -18,3 +18,20 @@ Given: The student is authenticated as X with password PASSWD
 When: The student X filled in all of his self assessments
 And: Requested saving the assessments onto the database
 Then: The student X self evaluation is correctly stored on the system database
+
+
+Scenario: Self-evaluation of students (Unsuccessfully)
+
+Given: I’m at the self-evaluation section of the Dashboard logged as X with the password PASSWD
+When: I put my evaluations B, C, D, etc… on the rows and columns of their respectives goals
+And: I try to save the self-evaluation
+Then: I receive an error message
+
+
+Controller Scenario: Self-evaluation of students (Unsuccessfully)
+
+Given: The student is authenticated as X with password PASSWD
+When: The student X filled in all but one or more of his self assessments
+And: Requested saving the assessments onto the database
+Then: The student X self evaluation is not stored on the system database
+And: An error message is displayed
