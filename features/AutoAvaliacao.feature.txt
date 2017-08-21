@@ -29,4 +29,8 @@ Given: The student "Joao Silva" is enrolled on the "software engineering" course
 When: "Joao Silva" evaluates as empty the first discipline goal
 Then: The system doesn't record the "Joao Silva" evaluates
 
--
+
+Scenario: There is no student in self-evaluation
+Given: The teacher is in "student self-evaluation" menu
+When: The teacher access "discrepant student self-evaluation"
+Then: The teacher can see a error message with the information "there is no student in discrepant self-evaluation situation"
