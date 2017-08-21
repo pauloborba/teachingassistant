@@ -24,3 +24,8 @@ Scenario: student self-evaluation incomplete submit
 	When "Sergio" submit to the system his concepts of all the goals but the "Entender conceitos de requisitos" one
 	Then The system will send an error message back
 
+Scenario: no discrepant students in class
+	Given that I am at the "Class Sheet" screen
+	And there are no students with discrepant self-evaluations
+	When I press the “Discrepant Statistics” button
+	Then I can see a blank list, the number “0” and 0%, indicating the discrepant students
