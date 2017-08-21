@@ -1,0 +1,3 @@
+Feature: student's self-evaluation
+	As a student of ESS class
+	I want to grade myself in each goals evaluated while I can see the grade my professor gave me so that I can have my final grade in the subject
