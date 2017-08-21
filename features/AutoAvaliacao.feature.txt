@@ -2,14 +2,14 @@ Feature: Autoavaliação
 As a estudante de uma disciplina
 I want to auto-avaliar cada meta e visualizar o conceito dado pelo professor  so that eu posso enviar a auto-avaliação de todas as metas para meu professor
 
-Scenario: Autoavaliação sem erro
+Scenario: Nova Autoavaliação sem erro (web)
 Given eu estou na página “Autoavaliação”
 When eu preencher o formulário os conceitos:  “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
 And tentar enviar a autoavaliação
 Then aparecerá uma mensagem de confirmação
 And serei redirecionado para a página “Autoavaliação já respondida”
 
-Scenario: Nova Autoavaliação 
+Scenario: Nova Autoavaliação sem erro (server)
 Given estou cadastrado na disciplina “ESS”
 And ainda não enviei o questionário de autoavaliação
 And os campos “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” foram respondidos
@@ -17,14 +17,14 @@ When eu tento enviar a autoavaliação
 Then será enviado ao professor um relatório
 And no relatório os campos “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” estarão preenchidos
 
-Scenario: Autoavaliação comm erro 
+Scenario: Autoavaliação com erro, pois falta um campo (web)
 Given eu estou na página de “autoavaliação”
 When eu preencher o formulário com os conceitos:  “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” 
 And tentar enviar a autoavaliação
 Then aparecerá uma mensagem de erro
 And voltarei a página de “autoavaliação” com os campos vazios
 
-Scenario: Nova Autoavaliação com erro 
+Scenario: Autoavaliação com erro, pois falta um campo (server)
 Given estou cadastrado na disciplina “ESS”
 And ainda não enviei o questionário de autoavaliação
 And os campos “Entender conceitos de requisitos” e “Entender conceitos de gerência de configuração” foram respondidos
