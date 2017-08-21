@@ -1,0 +1,31 @@
+Feature: Autoavaliação
+As a estudante de uma disciplina
+I want to auto-avaliar cada meta e visualizar o conceito dado pelo professor  so that eu posso enviar a auto-avaliação de todas as metas para meu professor
+
+Scenario: Autoavaliação sem erro
+Given eu estou na página “Autoavaliação”
+When eu preencher o formulário os conceitos:  “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
+And tentar enviar a autoavaliação
+Then aparecerá uma mensagem de confirmação
+And serei redirecionado para a página “Autoavaliação já respondida”
+
+Scenario: Nova Autoavaliação
+Given estou cadastrado na disciplina “ESS”
+And ainda não enviei o questionário de autoavaliação
+And todos os campos foram devidamente preenchidos
+When eu tento enviar a autoavaliação
+Then será enviado ao professor um relatório com todos os conceitos da disciplina “ESS” autoavaliados
+
+Scenario: Autoavaliação sem erro
+Given eu estou na página de “autoavaliação”
+When eu preencher o formulário com os conceitos:  “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” 
+And tentar enviar a autoavaliação
+Then aparecerá uma mensagem de erro
+And voltarei a página de “autoavaliação” com os campos vazios
+
+Scenario: Nova Autoavaliação com erro
+Given estou cadastrado na disciplina “ESS”
+And ainda não enviei o questionário de autoavaliação
+And todos os campos não foram devidamente preenchidos
+When eu tento enviar a autoavaliação
+Then um relatório com todos os conceitos da disciplina “ESS” autoavaliados não será enviado ao professor 
