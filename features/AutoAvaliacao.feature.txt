@@ -15,3 +15,16 @@ Scenario: The system record the student self-evaluation
 Given: The student "Joao Silva" is enrolled on the "software engineering" course
 When: "Joao Silva" tries to evaluate himself
 Then: The system record the "Joao Silva" evaluates
+
+GUI:
+Scenario: New student evaluation fail
+Given: The student is in the "Discipline goal" menu
+When: The student let some box of evaluation empty
+And: Try to record the information
+Then: The student can see a error message in the screen
+
+Controller:
+Scenario: The system fail to record the student self-evaluation
+Given: The student "Joao Silva" is enrolled on the "software engineering" course
+When: "Joao Silva" evaluates as empty the first discipline goal
+Then: The system doesn't record the "Joao Silva" evaluates
