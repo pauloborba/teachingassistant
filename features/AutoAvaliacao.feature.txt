@@ -5,30 +5,3 @@ So that eu tenha resultados que eu considere justos para mim
 
 
 
-scenario aluno faz auto avaliação
-Given a aluna "carolina" possui as metas "Entender conceitos de requisitos", "Especificar requisitos com qualidade" 
-e "Entender conceitos de gerência de configuração" 
-When "carolina" atribui os conceitos "ma" para a meta "Entender conceitos de requisitos", "mpa" para a meta "Especificar requisitos com qualidade" 
-e "ma" para a meta "Entender conceitos de gerência de configuração"
-Then a auto-avaliação de "carolina" é "ma" para a meta "Entender conceitos de requisitos", "mpa" para a meta "Especificar requisitos com qualidade" 
-e "ma" para a meta "Entender conceitos de gerência de configuração" 
-And a media é “ma”
-
-scenario aluno faz auto-avaliação (falha)
-Given a aluna "carolina" possui as metas "ECR", "ERQ" e "ECGC"
-When "carolina" atribui os conceitos "ma" para "ECR" e "ma" para "ERQ"
-Then o sistema não armazena os conceitos "ma" para "ECR" e "ma" para "ERQ" da aluna "carolina"
-
-Scenario aluno faz auto avaliação gui
-Given a aluna "carolina" possui as metas "ECR", "ERQ" e "ECGC"
-And esta na "pagina de avaliação"
-When eu atribuo os conceitos "ma" para "ECR" e "ma" para "ERQ" e "mpa" para "ECGC"
-Then eu posso ver os conceitos "ma" para "ECR" e "ma" para "ERQ" e "mpa" para "ECGC" na coluna de "auto-avaliação" de "carolina"
-And eu posso ver a media “ma”  na coluna de "auto-avaliação" de "carolina"
-
-
-Scenario aluno faz auto avaliação gui falha
-Given a aluna "carolina" possui as metas "ECR", "ERQ" e "ECGC"
-And esta na "pagina de avaliação"
-When eu atribuo os conceitos "ma" para "ECR" e "ma" para "ERQ"
-Then eu posso ver uma mensagem de erro "a meta "ECGC" ainda não foi avaliada"
