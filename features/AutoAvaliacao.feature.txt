@@ -1,0 +1,4 @@
+Feature: Student self-evaluation
+As a: Student enrolled in the discipline
+I want to: evaluate myself in the goal of engineering software discipline
+So that: I can be evaluated in the end of the discipline and understand the growth of my knowledge
