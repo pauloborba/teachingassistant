@@ -36,11 +36,26 @@ Then um relatório com todos os conceitos da disciplina “ESS” autoavaliados 
 
 Scenario: Alunos discrepantes sem aluno na lista
 Given estou logado como “professor”
-And o estudante “João” tem conceitos “MA” em “F1”, “MPA” em “F2”, “MPA” em “F3”, “MANA” em F4, “MA” em “F5”
-And  o estudante “João” se autoavaliou com“MA” em “F1”, “MA” em “F2”, “MPA” em “F3”, “MANA” em F4, “MA” em “F5”
-And a estudante “Maria” tem conceitos “MA” em “F1”, “MPA” em “F2”, “MPA” em “F3”, “MA” em F4, “MA” em “F5”
-And a estudante “Maria”  se autoavaliou “MPA” em “F1”, “MANA” em “F2”, “MANA” em “F3”, “MPA” em F4, “MANA” em “F5”
-And o estudante “Paulo” tem conceitos “MANA” em “F1”, “MPA” em “F2”, “MPA” em “F3”, “MANA” em F4, “MPA” em “F5”
-And o estudante “Paulo”  se autoavaliou com “MANA” em “F1”, “MPA” em “F2”, “MPA” em “F3”, “MANA” em F4, “MPA” em “F5”
+And o estudante “João” tem conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
+And  o estudante “João” se autoavaliou com“MA” em “Entender conceitos de requisitos”, “MA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
+And a estudante “Maria” tem conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
+And a estudante “Maria”  se autoavaliou “MPA” em “Entender conceitos de requisitos”, “MANA” em “Especificar requisitos com qualidade”, “MANA” em “Entender conceitos de gerência de configuração”, “MPA” em Entender modelos de documentação, “MANA” em “Elicitar requisitos”
+And o estudante “Paulo” tem conceitos “MANA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MPA” em “Elicitar requisitos”
+And o estudante “Paulo”  se autoavaliou com “MANA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MPA” em “Elicitar requisitos”
 When eu for para a página de “Alunos discrepantes”
-Then eu verei a quantidade de alunos com conceitos como “0”, a porcentagem como “0%” e a lista estará vazia
+Then eu verei o campo de quantidade de alunos com avaliação discrepante com “0”
+And o campo de porcentagem com “0%” 
+And a lista de alunos discrepantes estará vazia
+
+Scenario: Alunos discrepantes com um aluno na lista
+Given estou logado como “professor”
+And o estudante “João” tem conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
+And  o estudante “João” se autoavaliou com“MA” em “Entender conceitos de requisitos”, “MA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
+And a estudante “Maria” tem conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
+And a estudante “Maria”  se autoavaliou “MPA” em “Entender conceitos de requisitos”, “MANA” em “Especificar requisitos com qualidade”, “MANA” em “Entender conceitos de gerência de configuração”, “MPA” em Entender modelos de documentação, “MANA” em “Elicitar requisitos”
+And o estudante “Paulo” tem conceitos “MANA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MPA” em “Elicitar requisitos”
+And o estudante “Paulo”  se autoavaliou com “MANA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MPA” em “Elicitar requisitos”
+When eu for para a página de “Alunos discrepantes”
+Then eu verei o campo de quantidade de alunos com avaliação discrepante com “1”
+And o campo de porcentagem com “33%” 
+And a lista de alunos discrepantes terá o nome "João"
