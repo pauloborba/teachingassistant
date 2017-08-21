@@ -12,3 +12,15 @@ Scenario: student self-evaluation complete submit
 	Given the student "Sergio" didn't submitted his self-evaluation 
 	When "Sergio" submit to the system his concepts on all the goals
 	Then The system will send a success message back
+
+Scenario: student self-evaluation fail
+	Given that I am at the "Self-evaluation" screen
+	When I fulfil some(not all) of the goals with concepts
+	And confirm my evaluation
+	Then I can see an error message
+
+Scenario: student self-evaluation incomplete submit
+	Given the student "Sergio" didn't submitted his self-evaluation 
+	When "Sergio" submit to the system his concepts of all the goals but the "Entender conceitos de requisitos" one
+	Then The system will send an error message back
+
