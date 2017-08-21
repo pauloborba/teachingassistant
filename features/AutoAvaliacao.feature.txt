@@ -1,3 +1,14 @@
 Feature: student's self-evaluation
 	As a student of ESS class
 	I want to grade myself in each goals evaluated while I can see the grade my professor gave me so that I can have my final grade in the subject
+
+Scenario: student self-evaluation success
+	Given that I am at the "Self-evaluation" screen
+	When I fullfil all the goals with concepts
+	And confirm my evaluation
+	Then I can see a confirmation message
+
+Scenario: student self-evaluation complete submit
+	Given the student "Sergio" didn't submitted his self-evaluation 
+	When "Sergio" submit to the system his concepts on all the goals
+	Then The system will send a success message back
