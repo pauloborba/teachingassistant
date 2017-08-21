@@ -25,7 +25,7 @@ Scenario: Self-evaluation of students (Unsuccessfully)
 Given: I’m at the self-evaluation section of the Dashboard logged as X with the password PASSWD
 When: I put my evaluations B, C, D, etc… on the rows and columns of their respectives goals
 And: I try to save the self-evaluation
-Then: I receive an error message
+Then: I receive an error message displaying that all concepts must be evaluated
 
 
 Controller Scenario: Self-evaluation of students (Unsuccessfully)
