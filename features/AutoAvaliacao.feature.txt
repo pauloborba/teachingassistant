@@ -2,3 +2,19 @@ Feature: Auto-avaliação
 As a Estudante
 I want to Informar ao professor o que acho que mereço em cada meta 
 So that O professor pode ver minha auto-avaliação e caso necessário corrigir novamente meu exercício
+
+	Controlador
+Scenario: Preenchimento bem sucedido da auto-avaliação
+Given Eu estou na página  “Auto-avaliação” 
+When  Eu preencho as notas com “MPA”, “MA” e “MA” 
+Then As notas de auto-avaliação são propriamente salvas e enviadas para o professor
+	
+	GUI
+Scenario: Preenchimento bem sucedido da auto-avaliação
+Given Eu estou na página  “Auto-avaliação” 
+And Minha auto-avaliação não está preenchida
+When Eu preencho a meta “Entender conceitos de requisitos” com “MPA”
+And Eu preencho a meta “Especificar requisitos com qualidade” com “MA” 
+And Eu preencho a meta “Entender conceitos de gerência de configuração” com “MA” e confirmo
+Then Eu verei uma mensagem de confirmação
+And Serei redirecionado para a página “notas”
