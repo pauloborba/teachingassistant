@@ -1,0 +1,4 @@
+Feature: Auto-avaliação
+As a Estudante
+I want to Informar ao professor o que acho que mereço em cada meta 
+So that O professor pode ver minha auto-avaliação e caso necessário corrigir novamente meu exercício
