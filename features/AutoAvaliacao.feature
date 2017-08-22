@@ -24,3 +24,4 @@ Scenario: auto-avaliação mal sucedida Controlador
     When For criada uma auto-avaliação para o aluno "Luiz"
     And Alguma a meta não for avaliada
     Then A avaliação para o aluno "Luiz" é não é salva
+    And Mudança solicitada pelos stakeholders
