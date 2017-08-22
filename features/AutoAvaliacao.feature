@@ -24,3 +24,8 @@ Scenario: auto-avaliação mal sucedida Controlador
     When For criada uma auto-avaliação para o aluno "Luiz"
     And Alguma a meta não for avaliada
     Then A avaliação para o aluno "Luiz" é não é salva
+
+Scenario: Nenhum aluno com discrepância
+    Given Eu estou na página de discrepância
+    When Todos os alunos tiverem em suas auto-avaliações, todos os conceitos superiores ou todos os conceitos iguais ou só um único conceito inferior
+    Then Aparece que não existem alunos com discrepância
