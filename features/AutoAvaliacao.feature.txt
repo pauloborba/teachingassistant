@@ -18,3 +18,19 @@ And Eu preencho a meta “Especificar requisitos com qualidade” com “MA”
 And Eu preencho a meta “Entender conceitos de gerência de configuração” com “MA” e confirmo
 Then Eu verei uma mensagem de confirmação
 And Serei redirecionado para a página “notas”
+
+
+
+	Controlador
+Scenario: Preenchimento mal sucedido da auto-avaliação
+Given Eu estou na página  “Auto-avaliação” 
+When  Eu preencho as notas com “MPA” e “MA”  
+Then As notas não são salvas, nem enviadas para o professor 
+	
+	GUI
+Scenario: Preenchimento mal sucedido da auto-avaliação
+Given Eu estou na página  “Auto-avaliação” 
+And Minha auto-avaliação não está preenchida
+When Eu preencho a meta “Entender conceitos de requisitos” com “MPA”
+And Eu preencho a meta “Especificar requisitos com qualidade” com “MA” e confirmo
+Then Eu verei uma mensagem de erro
