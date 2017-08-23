@@ -9,6 +9,7 @@ Then “Maria” recebe uma mensagem confirmando o envio
 Given a aluna “Maria” está na página de “Notas” e avaliou seus conceitos como “MA” na meta “Entender conceitos de requisitos” e “MPA” na meta “Entender conceitos de gerência de configuração” da disciplina “Engenharia de Software e Sistemas”
 When “Maria” envia os conceitos escolhidos
 Then o sistema não grava os conceitos enviados
+And o sistema encerra
 
 Given a aluna “Maria” está na página de “Notas” e avaliou seus conceitos como “MA” na meta “Entender conceitos de requisitos” e “MPA” na meta “Entender conceitos de gerência de configuração” da disciplina “Engenharia de Software e Sistemas”
 When “Maria” envia os conceitos escolhidos
