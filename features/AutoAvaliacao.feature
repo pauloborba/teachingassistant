@@ -28,3 +28,4 @@ Given o aluno “Luis Santos” está com a avaliação feita pelo professor nas
 And os conceitos dados pelo professor são “MA”, “MPA”, “MANA”, “MPA”, “MPA” e “MPA”
 When o aluno submete a auto-avaliação com os conceitos “MA”, “MPA”, “MPA” e “MA”
 Then a auto-avaliação não é armazenada no sistema
+And encerra
