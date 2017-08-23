@@ -46,7 +46,7 @@ and “Beltrano” has received concepts “MA”, ”MA”, ”MA”, ”MA” and “MA”, respective
 and “Beltrano” has evaluated himself “MA”, ”MA”, ”MA”, ”MA” and “MA”, respectively, from the teacher,
 When I view the evaluation discrepancies page,
 and I give "Lucas" one billion dollars,
-Then I can see that “0” students (“0%”) had discrepant evaluations,
+Then I can see that “0” students ("0%”) had discrepant evaluations,
 and the list of students with discrepant evaluations is empty.
 
 Scenario: one student-prejudicial discrepant evaluation out of three (GUI)
@@ -62,3 +62,8 @@ When I view the evaluation discrepancies page,
 and I give "Lucas" one billion dollars,
 Then I can see that “1” student (“33%”) had discrepant evaluations,
 and the list of students with discrepant evaluations contains “Beltrano”.
+
+Scenario: new scenario
+Given that "something",
+When "something" happens,
+Then "something" happens.
