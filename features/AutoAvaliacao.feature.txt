@@ -34,3 +34,16 @@ And Minha auto-avaliação não está preenchida
 When Eu preencho a meta “Entender conceitos de requisitos” com “MPA”
 And Eu preencho a meta “Especificar requisitos com qualidade” com “MA” e confirmo
 Then Eu verei uma mensagem de erro
+
+Scenario: Acesso a página de auto-avaliação sem alunos com discrepância 
+Given O professor deu para o aluno “Victor” as notas “MA”, “MA”, “MA”, “MA” e “MPA” 
+And O aluno “Victor” preencheu sua auto-avaliação com os conceitos “MA”, “MA”, “MA”, “MA” e “MA” 
+And O professor deu para o aluno “Mário” as notas “MA”, “MA”, “MA”, “MA” e “MA” 
+And O aluno “Mário” preencheu sua auto-avaliação com os conceitos “MA”, “MA”, “MA”, “MA” e “MA” 
+And O professor deu para o aluno “Pedro” as notas “MA”, “MA”, “MA”, “MA” e “MA” 
+And O aluno “Pedro” preencheu sua auto-avaliação com os conceitos “MPA”, “MPA”, “MPA”, “MPA” e “MPA” 
+When Eu seleciono a opção “Auto-avaliação”
+Then Eu serei direcionado para a página “Auto-avaliação” 
+And Verei a lista de alunos com discrepância vazia
+And A quantidade de alunos com discrepância é 0
+And A porcentagem de alunos com discrepância é 0%
