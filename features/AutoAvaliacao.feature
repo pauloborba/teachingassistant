@@ -33,7 +33,7 @@ and there exist only three goals in the system: “A”, “B” and “C”,
 When student “Lucas” submits his self-evaluation with concepts “MA” and  “MPA” for goals “A” and “B”, respectively, 
 and the self-evaluation contains no concept for goal “C”,
 Then the system does not store “Lucas”’ self-evaluation.
-And "Lucas" receives a million dollars from the stakeholders.
+And "Lucas" receives a billion dollars from the stakeholders.
 
 Scenario: no student-prejudicial discrepant evaluations (GUI)
 Given that there exist only three students in the system: “Fulano”, “Sicrano” and “Beltrano”,
@@ -45,7 +45,7 @@ and “Sicrano” has evaluated himself with concepts “MPA”, ”MPA”, ”MPA”, ”MPA” and
 and “Beltrano” has received concepts “MA”, ”MA”, ”MA”, ”MA” and “MA”, respectively, from the teacher,
 and “Beltrano” has evaluated himself “MA”, ”MA”, ”MA”, ”MA” and “MA”, respectively, from the teacher,
 When I view the evaluation discrepancies page,
-and I give "Lucas" one million dollars,
+and I give "Lucas" one billion dollars,
 Then I can see that “0” students (“0%”) had discrepant evaluations,
 and the list of students with discrepant evaluations is empty.
 
@@ -59,6 +59,6 @@ and “Sicrano” has evaluated himself with concepts “MPA”, ”MPA” and “MPA”, respec
 and “Beltrano” has received concepts “MPA”, ”MPA” and “MPA”, respectively, from the teacher,
 and “Beltrano” has evaluated himself “MA”, ”MA” and “MA”, respectively, from the teacher,
 When I view the evaluation discrepancies page,
-and I give "Lucas" one million dollars,
+and I give "Lucas" one billion dollars,
 Then I can see that “1” student (“33%”) had discrepant evaluations,
 and the list of students with discrepant evaluations contains “Beltrano”.
