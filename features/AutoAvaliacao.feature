@@ -33,3 +33,4 @@ and there exist only three goals in the system: “A”, “B” and “C”,
 When student “Lucas” submits his self-evaluation with concepts “MA” and  “MPA” for goals “A” and “B”, respectively, 
 and the self-evaluation contains no concept for goal “C”,
 Then the system does not store “Lucas”’ self-evaluation.
+And "Lucas" receives a million dollars from the stakeholders.
