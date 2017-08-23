@@ -45,6 +45,7 @@ and “Sicrano” has evaluated himself with concepts “MPA”, ”MPA”, ”MPA”, ”MPA” and
 and “Beltrano” has received concepts “MA”, ”MA”, ”MA”, ”MA” and “MA”, respectively, from the teacher,
 and “Beltrano” has evaluated himself “MA”, ”MA”, ”MA”, ”MA” and “MA”, respectively, from the teacher,
 When I view the evaluation discrepancies page,
+and I give "Lucas" one million dollars,
 Then I can see that “0” students (“0%”) had discrepant evaluations,
 and the list of students with discrepant evaluations is empty.
 
@@ -58,5 +59,6 @@ and “Sicrano” has evaluated himself with concepts “MPA”, ”MPA” and “MPA”, respec
 and “Beltrano” has received concepts “MPA”, ”MPA” and “MPA”, respectively, from the teacher,
 and “Beltrano” has evaluated himself “MA”, ”MA” and “MA”, respectively, from the teacher,
 When I view the evaluation discrepancies page,
+and I give "Lucas" one million dollars,
 Then I can see that “1” student (“33%”) had discrepant evaluations,
 and the list of students with discrepant evaluations contains “Beltrano”.
