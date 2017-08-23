@@ -34,3 +34,4 @@ And Minha auto-avaliação não está preenchida
 When Eu preencho a meta “Entender conceitos de requisitos” com “MPA”
 And Eu preencho a meta “Especificar requisitos com qualidade” com “MA” e confirmo
 Then Eu verei uma mensagem de erro
+And passo adcional
