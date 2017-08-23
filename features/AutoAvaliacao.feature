@@ -29,3 +29,14 @@ And os conceitos dados pelo professor são “MA”, “MPA”, “MANA”, “M
 When o aluno submete a auto-avaliação com os conceitos “MA”, “MPA”, “MPA” e “MA”
 Then a auto-avaliação não é armazenada no sistema
 And encerra
+
+Scenario: Analíse de discrepância nas avaliações
+Given o professor está na página com resultados de avaliação
+And a avaliação do aluno “Luis” feita pelo professor é “MPA”, “MPA”, “MANA”, “MPA”, “MPA”
+And a auto-avaliação do aluno “Luis” é “MPA”, “MPA”, “MPA”, “MPA”, “MPA”
+And a avaliação do aluno “Adilson” feita pelo professor é “MA”, “MA”, “MA”, “MA”, “MA”
+And a auto-avaliação do aluno “Adilson” é “MPA”, “MPA”, “MPA”, “MPA”, “MPA”
+And a avaliação do aluno “João” feita pelo professor é “MPA”, “MA”, “MPA”, “MA”, “MPA”
+And a auto-avaliação do aluno “João” é “MPA”, “MA”, “MPA”, “MA”, “MPA”
+When o professor solicita analisar discrepâncias nas avaliações dos alunos
+Then o professor pode ver uma mensagem dizendo que não há discrepâncias prejudiciais aos alunos nas avaliações
