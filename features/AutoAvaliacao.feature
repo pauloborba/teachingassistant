@@ -2,10 +2,6 @@ Feature: Autoavaliação (estudante)
 As a estudante de uma disciplina
 I want to auto-avaliar cada meta e visualizar o conceito dado pelo professor  so that eu posso enviar a auto-avaliação de todas as metas para meu professor
 
-Feature: Autoavaliação (professor)
-As a professor de uma disciplina
-I want to visualizar a quantidade, a porcentagem e o nome dos alunos que têm uma avaliação discrepante
-
 Scenario: Nova Autoavaliação sem erro (web)
 Given eu estou na página “Autoavaliação”
 When eu preencher o formulário os conceitos:  “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
