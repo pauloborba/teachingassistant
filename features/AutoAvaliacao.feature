@@ -42,7 +42,7 @@ And o estudante “Paulo” tem conceitos “MANA” em “Entender conceitos de
 And o estudante “Paulo”  se autoavaliou com “MANA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MPA” em “Elicitar requisitos”
 When eu for para a página de “Alunos discrepantes”
 Then eu verei o campo de quantidade de alunos com avaliação discrepante com “0”
-And o campo de porcentagem com “0%” 
+And o campo de porcentagem com “0.00%” 
 And a lista de alunos discrepantes estará vazia
 
 Scenario: Página "Alunos discrepantes" com apenas um aluno na lista (web)
@@ -55,6 +55,6 @@ And o estudante “Paulo” tem conceitos “MANA” em “Entender conceitos de
 And o estudante “Paulo”  se autoavaliou com “MANA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MPA” em “Elicitar requisitos”
 When eu for para a página de “Alunos discrepantes”
 Then eu verei o campo de quantidade de alunos com avaliação discrepante com “1”
-And o campo de porcentagem com “33.3%” 
+And o campo de porcentagem com “33.33%” 
 And a lista de alunos discrepantes terá o nome "João"
 And ao lado de cada nome de aluno terá um botão para ir a página "Comparação de Conceitos- João" 
