@@ -1,4 +1,4 @@
-Feature: Autoavaliação (estudante)
+Feature: Autoavaliação 
 As a estudante de uma disciplina
 I want to auto-avaliar cada meta e visualizar o conceito dado pelo professor  so that eu posso enviar a auto-avaliação de todas as metas para meu professor
 
