@@ -26,4 +26,4 @@ Controlador:
 Cenário: ausência de conceitos no recebimento de metas
 Given o sistema não “recebeu todas as metas disponíveis”
 When  “os dados forem salvos no sistema”
-Then os dados não “são salvos no sistema” (há descarte dos dados)
+Then os dados não “são salvos no sistema” (há descarte dos dados) mudança vaudsauhasuhda
