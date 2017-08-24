@@ -17,14 +17,14 @@ When eu tento enviar a autoavaliação
 Then será enviado ao professor um relatório
 And no relatório os campos “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” estarão preenchidos
 
-Scenario: Autoavaliação com erro, pois falta um campo (web)
+Scenario: Autoavaliação com erro, pois falta o campo “Especificar requisitos com qualidade” (web)
 Given eu estou na página de “autoavaliação”
 When eu preencher o formulário com os conceitos:  “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” 
 And tentar enviar a autoavaliação
 Then aparecerá uma mensagem de erro
 And voltarei a página de “autoavaliação” com os campos vazios
 
-Scenario: Autoavaliação com erro, pois falta um campo (server)
+Scenario: Autoavaliação com erro, pois falta o campo “Especificar requisitos com qualidade” (server)
 Given estou cadastrado na disciplina “ESS”
 And ainda não enviei o questionário de autoavaliação
 And os campos “Entender conceitos de requisitos” e “Entender conceitos de gerência de configuração” foram respondidos
