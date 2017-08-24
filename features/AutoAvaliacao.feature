@@ -57,4 +57,4 @@ When eu for para a página de “Alunos discrepantes”
 Then eu verei o campo de quantidade de alunos com avaliação discrepante com “1”
 And o campo de porcentagem com “33.3%” 
 And a lista de alunos discrepantes terá o nome "João"
-And ao lado de cada nome de aluno terá um botão para ir a página "Comparação de Conceitos"
+And ao lado de cada nome de aluno terá um botão para ir a página "Comparação de Conceitos- João" 
