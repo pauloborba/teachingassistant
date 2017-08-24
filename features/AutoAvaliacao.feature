@@ -41,5 +41,4 @@ And o nome, cpf, log-in e metas discrepantes são respectivamente:”Ana”, “106.676
 When “A página de resultado da auto-avaliação é atualizada”
 Then a quantidade e percentual de alunos mostrados são iguais a, respectivamente, “1” e “33%”
 And os dados do aluno (nome, cpf, log-in e metas discrepantes) são mostrados na lista mudança para a tarefa de gerencia de configuração
-
 pequeno ajuste para a questao 15
