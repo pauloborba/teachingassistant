@@ -1,6 +1,6 @@
 Feature: Autoavaliação 
 As a estudante de uma disciplina
-I want to auto-avaliar cada meta e visualizar o conceito dado pelo professor  so that eu posso enviar a auto-avaliação de todas as metas para meu professor
+I want to auto-avaliar cada meta e visualizar o conceito dado pelo professor so that o professor poderá ver em uma lista se a minha autoavaliação é discrepante com a dele.
 
 Scenario: Nova Autoavaliação sem erro (web)
 Given eu estou na página “Autoavaliação”
@@ -32,7 +32,7 @@ And o campo  “Especificar requisitos com qualidade” não foi respondido
 When eu tento enviar a autoavaliação
 Then um relatório com todos os conceitos da disciplina “ESS” autoavaliados não será enviado ao professor 
 
-Scenario: Alunos discrepantes sem aluno na lista
+Scenario: "Alunos discrepantes" sem alunos na lista (web)
 Given estou logado como “professor”
 And o estudante “João” tem conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
 And  o estudante “João” se autoavaliou com“MA” em “Entender conceitos de requisitos”, “MA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
@@ -45,7 +45,7 @@ Then eu verei o campo de quantidade de alunos com avaliação discrepante com �
 And o campo de porcentagem com “0%” 
 And a lista de alunos discrepantes estará vazia
 
-Scenario: Alunos discrepantes com um aluno na lista
+Scenario: Página "Alunos discrepantes" com apenas um aluno na lista (web)
 Given estou logado como “professor”
 And o estudante “João” tem conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MANA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
 And  o estudante “João” se autoavaliou com“MA” em “Entender conceitos de requisitos”, “MA” em “Especificar requisitos com qualidade”, “MPA” em “Entender conceitos de gerência de configuração”, “MA” em Entender modelos de documentação, “MA” em “Elicitar requisitos”
