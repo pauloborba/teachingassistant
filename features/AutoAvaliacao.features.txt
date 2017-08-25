@@ -1,0 +1,3 @@
+Feature: auto-avaliação
+	As a aluna da disciplina “Engenharia de Software e Sistemas”
+	I want to fazer a auto-avaliação dos meus conceitos nas metas da disciplina so that o professor pudesse identificar se “Maria” estava se sentindo preparada em determinada meta.
