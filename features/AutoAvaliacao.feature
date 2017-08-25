@@ -33,4 +33,4 @@ Then uma tela dizendo que não há discrepância nas notas é mostrada
 Scenario: discrepância informada ao professor
 Given o professor “x” está na tela de lista de notas
 When o aluno “y” apresenta discrepância na sua auto-avaliação
-Then uma tela dizendo que existe um aluno “y” com discrepância de notas é mostrada
+Then uma tela é mostrada dizendo que existe um aluno “y” com discrepância de notas 
