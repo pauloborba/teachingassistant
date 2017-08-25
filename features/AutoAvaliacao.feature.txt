@@ -68,6 +68,6 @@ And sou direcionado para a tela com a planilha "alunos discrepantes"
 
 Then eu verei a planilha "Alunos discrepantes" 
 And o aluno "Roberto" está na planilha
-And a "quantidade de alunos discrepantes" será "1"
-And o "percentual de alunos discrepantes" será "33%"
+And a "quantidade de alunos discrepantes" exibido será "1"
+And o "percentual de alunos discrepantes" exibido será "33%"
 
