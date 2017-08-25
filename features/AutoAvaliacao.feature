@@ -22,3 +22,9 @@ Given eu estou na tela de realizar a auto-avaliação
 When eu preencho as notas de auto-avaliação
 And não preencho todas as notas
 Then uma tela de erro é mostrada.
+
+Scenario: verificação se existe discrepância na lista de notas
+Given o professor “x” está na tela de estatísticas de notas dos alunos
+When todos os alunos cadastraram as auto-avaliações
+And apenas o aluno “y” teve discrepância em uma meta 
+Then uma tela dizendo que não há discrepância nas notas é mostrada
