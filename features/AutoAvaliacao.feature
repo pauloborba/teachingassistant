@@ -23,3 +23,14 @@ When eu preencho as notas de auto-avaliação
 And não preencho todas as notas
 Then uma tela de erro é mostrada.
 And solicitado pelos stakeholders
+
+Scenario: verificação se existe discrepância na lista de notas
+Given o professor “x” está na tela de estatísticas de notas dos alunos
+When todos os alunos cadastraram as auto-avaliações
+And apenas o aluno “y” teve discrepância em uma meta 
+Then uma tela dizendo que não há discrepância nas notas é mostrada
+
+Scenario: discrepância informada ao professor
+Given o professor “x” está na tela de lista de notas
+When o aluno “y” apresenta discrepância na sua auto-avaliação
+Then uma tela dizendo que existe um aluno “y” com discrepância de notas é mostrada
