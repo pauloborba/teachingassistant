@@ -36,13 +36,13 @@ Scenario: Preenchimento incompleto da auto-avaliação
              	And vejo a planilha “Lista” vazia. 
 Scenario: Auto-avaliação discrepante em 1 de 3 alunos
              	Given estou na página "Opções de funcionalidades”
-             	And o aluno "Pedro Silva" tirou "MPA", "MPA", "MANA", "MPA" e "MPA" nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
-             	And o aluno “Pedro Silva” se auto-avaliou com “MA”, ”MA”, ”MA”, ”MA” e ”MA” nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
-				And a aluna "Ana Lima" tirou "MA", "MA", "MA", "MA" e "MA" nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
-             	And a aluna "Ana Lima" se auto-avaliou com “MPA”, ”MPA”, ”MPA”, ”MPA” e ”MPA” nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
-				And o aluno " Thiago Vieira" tirou "MA", "MA", "MA", "MA" e "MA" nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
-             	And o aluno “Thiago Vieira" se auto-avaliou com “MA”, ”MA”, ”MA”, ”MA” e ”MA” nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
-             	When vou para a página “Estatísticas Auto-avaliação” da turma “ESS”
+             	And o aluno "Pedro " tirou "MPA", "MPA", "MANA", "MPA" e "MPA" nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
+             	And o aluno “Pedro ” se auto-avaliou com “MA”, ”MA”, ”MA”, ”MA” e ”MA” nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
+				And a aluna "Ana" tirou "MA", "MA", "MA", "MA" e "MA" nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
+             	And a aluna "Ana" se auto-avaliou com “MPA”, ”MPA”, ”MPA”, ”MPA” e ”MPA” nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
+				And o aluno " Thiago" tirou "MA", "MA", "MA", "MA" e "MA" nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
+             	And o aluno “Thiago" se auto-avaliou com “MA”, ”MA”, ”MA”, ”MA” e ”MA” nas metas "Testes", "Conceitos", "Gerência", "Implementação”, "Refatoração”, respectivamente
+             	When vou para a página “Estatísticas Auto-avaliação”
              	Then vejo “1” em “Quantidade de alunos com auto-avaliações discrepantes”
              	And vejo “33”% em “Percentual”
              	And vejo o nome do aluno “Pedro Silva” na planilha “Lista”.
