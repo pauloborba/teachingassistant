@@ -1,3 +1,11 @@
 Feature: auto-avaliação
 	As a aluna da disciplina “Engenharia de Software e Sistemas”
 	I want to fazer a auto-avaliação dos meus conceitos nas metas da disciplina so that o professor pudesse identificar se “Maria” estava se sentindo preparada em determinada meta.
+
+Given a aluna “Maria” está na página de “Notas” e avaliou seus conceitos como “MA” na meta “Entender conceitos de requisitos”, “MA” na meta “Especificar requisitos com qualidade” e “MPA” na meta “Entender conceitos de gerência de configuração” da disciplina “Engenharia de Software e Sistemas”
+When “Maria” envia os conceitos escolhidos
+Then o sistema grava os conceitos enviados
+
+Given a aluna “Maria” está na página de “Notas” e avaliou seus conceitos como “MA” na meta “Entender conceitos de requisitos”, “MA” na meta “Especificar requisitos com qualidade” e “MPA” na meta “Entender conceitos de gerência de configuração” da disciplina “Engenharia de Software e Sistemas”
+When “Maria” envia os conceitos escolhidos
+Then “Maria” recebe uma mensagem confirmando o envio 
