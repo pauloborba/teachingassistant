@@ -22,3 +22,4 @@ Given eu estou na tela de realizar a auto-avaliação
 When eu preencho as notas de auto-avaliação
 And não preencho todas as notas
 Then uma tela de erro é mostrada.
+And solicitado pelos stakeholders
