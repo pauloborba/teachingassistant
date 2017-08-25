@@ -20,4 +20,5 @@ Scenario: Usuário faz preenchimento incompleto da auto-avaliação
 Scenario: Preenchimento incompleto da auto-avaliação
 		Given as metas cadastradas são "Conceitos Requisitos", "Especificar Requisitos", "Conceitos Gerência" e "Testes"
 		When submeto ao sistema a "Planilha de Metas/Conceitos" com a coluna "Auto-avaliação" preenchida com os conceitos "MA", "MA" e "MPA" para as metas "Conceitos Requisitos", "Especificar Requisitos" e "Conceitos Gerência", respectivamente
-		Then o sistema não atualiza os dados de "Planilha de Metas/Conceitos".
+		Then o sistema não atualiza os dados de "Planilha de Metas/Conceitos"
+		And o sistema avisa que não salvou os dados.
