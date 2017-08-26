@@ -11,3 +11,13 @@ Feature Auto-avaliação do aluno.
 		Given Estou na página de "Auto-avaliação"
 		When O sistema recebe os conceitos preenchidos pelo usuário na coluna de "Auto-avaliação"
 		Then O sistema armazena no seu banco de dados e atualiza a tabela daquele determinado aluno.
+
+	Scenario preenchimento mal sucedido da auto-avaliação (GUI)
+		Given Estou na página de "Auto-avaliação"
+		When Preencho todos, menos um, conceitos na coluna de "Auto-avaliação" e confirmo
+		Then Uma mensagem de erro com "Você não preenchou todos os campos da Auto-avaliação" aparece.
+
+	Scenario preenchimento mal sucedido da auto-avaliação (Controlador)
+		Given Estou na página de "Auto-avaliação"
+		When O sistema recebe os conceitos preenchidos na coluna de "Auto-avaliação", e nota que faltou um.
+		Then O sistema não armazena conceito algum.
