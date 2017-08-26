@@ -1,3 +1,21 @@
 As a aluno
 I want to atribuir conceito autoavaliativo para cada uma das metas avaliadas e visualizar os conceitos atribuídos pelo professor para essas mesmas metas
 so that eu possa comparar o conceito que eu achava que iria tirar com o conceito que eu realmente tirei nas metas
+
+Cenário de GUI
+Scenario: preenchimento bem sucedido da autoavaliação web
+Given eu estou logado como “Aluno”
+And eu estou na página “Conceitos e metas”
+And a única meta cadastrada é “Entender conceitos de requisitos”
+When eu seleciono a opção “Autoavaliação” 
+And eu tento submeter o conceito “MPA”  
+Then eu vejo uma mensagem de confirmação
+And eu vejo a tabela da página “Conceitos e metas” atualizada com o conceito “MPA” na linha “Entender conceitos de requisitos” e na coluna “Autoavaliação”
+
+Cenário de controlador
+Scenario: preenchimento bem sucedido da autoavaliação
+Given eu estou logado como “Aluno”
+And a única meta cadastrada é “Entender conceitos de requisitos”
+And eu não possuo conceito de autoavaliação para a meta “Entender conceitos de requisitos”
+When eu tento submeter o conceito “MPA” para a meta “Entender conceitos de requisitos”
+Then o conceito “MPA” para a meta “Entender conceitos de requisitos” será armazenado pelo sistema
