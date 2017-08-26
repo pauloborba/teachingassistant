@@ -47,3 +47,16 @@ Then Eu serei direcionado para a página “Auto-avaliação”
 And Verei a lista de alunos com discrepância vazia
 And A quantidade de alunos com discrepância é 0
 And A porcentagem de alunos com discrepância é 0%
+
+Scenario: Acesso a página de auto-avaliação sem alunos com discrepância 
+Given O professor deu para o aluno “Victor” as notas “MA”, “MA”, “MA”, “MA” e “MA” 
+And O aluno “Victor” preencheu sua auto-avaliação com os conceitos “MA”, “MA”, “MA”, “MA” e “MA” 
+And O professor deu para o aluno “Mário” as notas “MA”, “MA”, “MA”, “MA” e “MA” 
+And O aluno “Mário” preencheu sua auto-avaliação com os conceitos “MA”, “MA”, “MA”, “MA” e “MA” 
+And O professor deu para o aluno “Pedro” as notas “MPA”, “MPA”, “MPA”, “MPA” e “MPA” 
+And O aluno “Pedro” preencheu sua auto-avaliação com os conceitos “MA”, “MA”, “MA”, “MA” e “MA” 
+When Eu seleciono a opção “Auto-avaliação”
+Then Eu serei direcionado para a página “Auto-avaliação” 
+And Verei na lista o nome do aluno “Pedro”
+And A quantidade de alunos com discrepância é 1
+And A porcentagem de alunos com discrepância é 33,3%
