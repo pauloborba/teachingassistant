@@ -1,0 +1,4 @@
+Feature: Auto-avaliação
+As a aluno
+I want to atribuir os conceitos que acredito merecer em cada meta
+so that o professor pode ver minha auto-avaliação e caso haja muitas divergências pode verificar novamente os conceitos
