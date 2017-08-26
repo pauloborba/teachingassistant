@@ -21,3 +21,8 @@ Feature Auto-avaliação do aluno.
 		Given Estou na página de "Auto-avaliação"
 		When O sistema recebe os conceitos preenchidos na coluna de "Auto-avaliação", e nota que faltou um.
 		Then O sistema não armazena conceito algum.
+
+	Scenario Não houve nenhuma discrepância.
+		Given Todos os alunos submeteram todas as auto-avaliações e não houve nenhuma discrepância.
+		When Eu requisito visualização da tabela de notas
+		Then Eu vejo a tabela, com todos os dados preenchidos e calculados.
