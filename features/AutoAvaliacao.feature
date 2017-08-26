@@ -36,3 +36,13 @@ Cenário: auto-avaliação inválida de conceitos
 	And eu informo de forma parcial os conceitos que acredito merecer "MA", "MA"
 	And eu seleciono a opção "Salvar auto-avaliação"
 	Then aparecerá uma mensagem de erro  "Só é possível auto-avaliar todos os conceitos de uma vez"
+	
+Cenário: nenhuma discrepância
+    Given que eu estou logado como o professor "Paulo"
+	And eu estou na página “discrepâncias”
+    And o aluno "Pedro" tem conceitos "MANA", "MANA", "MANA", "MANA", "MANA" auto-avaliados como "MA", "MANA", "MANA", "MANA", "MANA"
+	And o aluno "Fulano" tem conceitos "MANA", "MANA", "MANA", "MANA", "MANA" auto-avaliados como "MANA", "MANA", "MANA", "MANA", "MANA"
+	And o aluno "Sicrano" tem conceitos "MANA", "MANA", "MANA", "MANA", "MANA" auto-avaliados como "MANA", "MANA", "MANA", "MANA", "MANA"
+    Then eu vejo a lista de alunos discrepantes vazia
+	And eu vejo o total de alunos discrepantes como 0
+	And eu vejo a porcentagem de alunos discrepantes como 0%
