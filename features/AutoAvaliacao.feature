@@ -43,6 +43,6 @@ Cenário: nenhuma discrepância
     And o aluno "Pedro" tem conceitos "MANA", "MANA", "MANA", "MANA", "MANA" auto-avaliados como "MA", "MANA", "MANA", "MANA", "MANA"
 	And o aluno "Fulano" tem conceitos "MANA", "MANA", "MANA", "MANA", "MANA" auto-avaliados como "MANA", "MANA", "MANA", "MANA", "MANA"
 	And o aluno "Sicrano" tem conceitos "MANA", "MANA", "MANA", "MANA", "MANA" auto-avaliados como "MANA", "MANA", "MANA", "MANA", "MANA"
-    Then eu vejo a lista de alunos discrepantes vazia
-	And eu vejo o total de alunos discrepantes como 0
-	And eu vejo a porcentagem de alunos discrepantes como 0%
+    Then eu vejo a "lista de alunos discrepantes" vazia
+	And eu vejo 0 em "total de alunos discrepantes"
+	And eu vejo 0% em "porcentagem de alunos discrepantes"
