@@ -31,6 +31,7 @@ When eu atribuo os conceitos "ma" para "ECR" e "ma" para "ERQ"
 Then eu posso ver uma mensagem de erro "a meta "ECGC" ainda não foi avaliada"
 And eu posso ver outra mensagem em seguida "Tente novamente"
 
+
 Scenario aluno com auto-avaliação não discrepante (gui)
 
 Given a aluna "carolina" teve conceito "ma" e auto-avaliação "mpa" na meta "x"; e "mpa", "mpa" na meta "y"; "ma", "ma" na meta "z"
@@ -40,6 +41,7 @@ And eu estou na página "início"
 When eu vou para a página "alunos"
 Then eu posso ver na coluna "discrepancia" na linha "quantidade" que "zero" alunos tiveram discrepancia e na linha "percentual" que "0%" dos alunos tiveram 
 discrepância
+
 
 Scenario aluno com auto-avaliação  discrepante (gui)
 
@@ -51,3 +53,4 @@ When eu vou para a página "alunos"
 Then eu posso ver na linha "carolina" e coluna "discrepancia" a palavra "sim" pois houve discrepância nas avaliações
 And na linha "quantidade" que "UM" alunos tiveram discrepância 
 And na linha "percentual" que "33%" dos alunos tiveram discrepância nas avaliações
+
