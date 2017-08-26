@@ -46,15 +46,15 @@ And o professor  “Paulo Borba” avaliou  “Maria Luiza” como  “MPA” em
     When o professor  “Paulo Borba” abrir a página de “Discrepâncias”
     Then  “Paulo Borba” verá as estatísticas da turma e uma mensagem indicando que não há discrepâncias
 
-Scenario: discrepância entre a avaliação do professor Paulo Borba e da aluna Larícia Maria
+Scenario: discrepância entre a avaliação do professor Paulo Borba e da aluna Larícia Mota
     Given que as metas avaliadas são “Entender motivação e conceitos de requisitos”, “Entender motivação e conceitos de testes”, “usar com eficácia um sistema de controle de versão distribuído”, “Definir com qualidade e seguir tarefas, epics e iterações” e “Implementar com qualidade features e cenários”
-And a aluna “Larícia Maria” se auto avaliou como  “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de testes”, “MA” em“usar com eficácia um sistema de controle de versão distribuído”, “MA”em  “Definir com qualidade e seguir tarefas, epics e iterações” e “MPA” em“Implementar com qualidade features e cenários”
+And a aluna “Larícia Mota se auto avaliou como  “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de testes”, “MA” em“usar com eficácia um sistema de controle de versão distribuído”, “MA”em  “Definir com qualidade e seguir tarefas, epics e iterações” e “MPA” em“Implementar com qualidade features e cenários”
 And o professor  “Paulo Borba” avaliou  “Larícia Mota” como  “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de testes”, “MPA” em“usar com eficácia um sistema de controle de versão distribuído”, “MPA”em  “Definir com qualidade e seguir tarefas, epics e iterações” e “MANA” em“Implementar com qualidade features e cenários”
     And a aluna  “Pamella Bezerra” se auto avaliou como “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de testes”, “MPA” em“usar com eficácia um sistema de controle de versão distribuído”, “MANA”em  “Definir com qualidade e seguir tarefas, epics e iterações” e “MA” em“Implementar com qualidade features e cenários”
 And o professor  “Paulo Borba” avaliou  “Pamella Bezerra” como “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de testes”, “MPA” em“usar com eficácia um sistema de controle de versão distribuído”, “MANA”em  “Definir com qualidade e seguir tarefas, epics e iterações” e “MA” em“Implementar com qualidade features e cenários”
     And a aluna  “Maria Luiza” se auto avaliou como  “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de testes”, “MA” em“usar com eficácia um sistema de controle de versão distribuído”, “MA”em  “Definir com qualidade e seguir tarefas, epics e iterações” e “MPA” em“Implementar com qualidade features e cenários”
 And o professor  “Paulo Borba” avaliou  “Maria Luiza” como  “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de testes”, “MA” em“usar com eficácia um sistema de controle de versão distribuído”, “MA”em  “Definir com qualidade e seguir tarefas, epics e iterações” e “MPA” em“Implementar com qualidade features e cenários”
     When o professor  “Paulo Borba” abrir a página de “Discrepâncias”
-    Then  “Paulo Borba” verá a planilha de “auto avaliação” de “Larícia Maria” com as metas discrepantes destacadas 
+    Then  “Paulo Borba” verá a planilha de “auto avaliação” de “Larícia Mota" com as metas discrepantes destacadas 
     And as estatísticas de discrepância da turma
 
