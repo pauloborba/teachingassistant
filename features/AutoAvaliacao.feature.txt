@@ -2,3 +2,19 @@ Feature: Auto-avaliação
 As a aluno
 I want to atribuir os conceitos que acredito merecer em cada meta
 so that o professor pode ver minha auto-avaliação e caso haja muitas divergências pode verificar novamente os conceitos
+
+Scenario: Submetendo o formulário de auto-avaliação preenchido
+Given eu estou logado como “Victor Aguiar”
+And eu estou na página “Auto-avaliação”
+When eu preencho o formulário de auto-avaliação com os conceitos “MA, MA, MPA”
+And eu tento submeter o formulário de auto-avaliação
+Then eu posso ver uma mensagem de confirmação
+And os conceitos atribuídos pelo professor aparecem do lado direito dos conceitos atribuídos por mim
+
+Scenario: Submetendo formulário de auto-avaliação
+Given eu estou logado como “Josué Gomes”
+And eu estou na página “Auto-avaliação”
+When eu preencho o formulário de auto-avaliação com os conceitos “MPA, MA, MA”
+And eu tento submeter o formulário de auto-avaliação
+Then os conceitos atribuídos por mim são armazenados no sistema 
+And uma cópia da minha auto-avaliação é enviada para o professor
