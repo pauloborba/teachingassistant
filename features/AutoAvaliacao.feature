@@ -57,3 +57,4 @@ Cenário: discrepância 1/3
     Then eu vejo a "lista de alunos discrepantes" composta apenas de  "Pedro"
 	And eu vejo 1 em "total de alunos discrepantes"
 	And eu vejo 33% em "porcentagem de alunos discrepantes"
+	And eu vejo "DISCREPÂNCIA DETECTADA!!!!!" em vermelho no topo da página.
