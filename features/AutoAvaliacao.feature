@@ -5,13 +5,13 @@ Feature: auto-avaliação
 	
 GUI:
 Cenário: auto-avaliação de conceitos
-	Given que eu esteja logado como o aluno "Pedro"
-	And eu esteja na página “Conceitos obtidos”
+	Given que eu estou logado como o aluno "Pedro"
+	And eu estou na página “Conceitos obtidos”
 	And eu vejo todos os conceitos obtidos nas metas "MANA", "MANA", "MANA"
-	When eu selecionar a opção “Auto-avaliar”
-	And preencher minha auto-avaliação completamente com "MA", "MA", "MA"
-	Then eu poderei salvar minha auto-avaliação
-	And verei uma mensagem de confirmação "Auto-avaliação preenchida com sucesso".
+	When eu seleciono a opção “Auto-avaliar”
+	And preencho minha auto-avaliação completamente com "MA", "MA", "MA"
+	And seleciono a opção "Salvar auto-avaliação"
+	Then vejo uma mensagem de confirmação "Auto-avaliação preenchida com sucesso".
 
 Controlador:
 Cenário: auto-avaliação de conceitos
@@ -29,9 +29,10 @@ Cenário: auto-avaliação inválida de conceitos
 	
 GUI:
 Cenário: auto-avaliação inválida de conceitos
-	Given que eu esteja logado como o aluno "Pedro"
-	And eu esteja na página “Conceitos obtidos”
+	Given que eu estou logado como o aluno "Pedro"
+	And eu estou na página “Conceitos obtidos”
 	And eu vejo todos os conceitos obtidos nas metas "MANA", "MANA", "MANA"
-	And que eu informe de forma parcial os conceitos que acredito merecer "MA", "MA"
-	When eu selecionar a opção "Auto-avaliar"
+	When eu seleciono a opção "Auto-avaliar"
+	And eu informo de forma parcial os conceitos que acredito merecer "MA", "MA"
+	And eu seleciono a opção "Salvar auto-avaliação"
 	Then aparecerá uma mensagem de erro  "Só é possível auto-avaliar todos os conceitos de uma vez"
