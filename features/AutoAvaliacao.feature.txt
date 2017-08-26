@@ -19,3 +19,23 @@ And a única meta cadastrada é “Entender conceitos de requisitos”
 And eu não possuo conceito de autoavaliação para a meta “Entender conceitos de requisitos”
 When eu tento submeter o conceito “MPA” para a meta “Entender conceitos de requisitos”
 Then o conceito “MPA” para a meta “Entender conceitos de requisitos” será armazenado pelo sistema
+
+Cenário de GUI
+Scenario: preenchimento mal sucedido da autoavaliação web
+Given eu estou logado como “Aluno”
+And eu estou na página “Conceitos e metas”
+And apenas as metas “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” estão cadastradas
+When eu seleciono a opção “Autoavaliação” 
+And eu tento submeter o conceito “MPA” para a meta “Entender conceitos de requisitos”
+And eu tento submeter o conceito “” para a meta “Especificar requisitos com qualidade”
+Then eu vejo uma mensagem de erro
+And eu vejo a linha “Especificar requisitos com qualidade estão cadastradas” da tabela grifada de vermelho
+
+Cenário de controlador
+Scenario: preenchimento mal sucedido da autoavaliação
+Given eu estou logado como “Aluno”
+And apenas as metas “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” estão cadastradas
+And eu não possuo conceito de autoavaliação para as metas “Entender conceitos de requisitos” e “Especificar requisitos com qualidade”
+When eu tento submeter o conceito “MPA” para a meta “Entender conceitos de requisitos”
+And eu tento submeter o conceito “” para a meta “Especificar requisitos com qualidade”
+Then os conceitos para as metas “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” não serão armazenados pelo sistema
