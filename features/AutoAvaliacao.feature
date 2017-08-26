@@ -36,3 +36,4 @@ Cenário: auto-avaliação inválida de conceitos
 	And eu informo de forma parcial os conceitos que acredito merecer "MA", "MA"
 	And eu seleciono a opção "Salvar auto-avaliação"
 	Then aparecerá uma mensagem de erro  "Só é possível auto-avaliar todos os conceitos de uma vez"
+	And um som de erro deverá soar.
