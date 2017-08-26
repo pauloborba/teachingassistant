@@ -20,3 +20,18 @@ Cenário: auto-avaliação de conceitos
     When o aluno "Pedro" informa todos os conceitos que acredita que merece "MA", "MA", "MA"
     Then "MA", "MA", "MA" são salvos como a auto-avaliação
 	And o professor "Paulo" recebe uma notificação "Pedro concluiu a auto-avaliação".
+	
+Controlador:
+Cenário: auto-avaliação inválida de conceitos
+	Given que o sistema possua 3 metas com os conceitos "MANA", "MANA", "MANA" a serem auto-avaliadas
+	When o aluno informar de forma parcial os conceitos que acha que merece "MA", "MA"
+	Then o sistema não deve salvar os conceitos informados pelo aluno porque todos os conceitos precisam ser informados.
+	
+GUI:
+Cenário: auto-avaliação inválida de conceitos
+	Given que eu esteja logado como o aluno "Pedro"
+	And eu esteja na página “Conceitos obtidos”
+	And eu vejo todos os conceitos obtidos nas metas "MANA", "MANA", "MANA"
+	And que eu informe de forma parcial os conceitos que acredito merecer "MA", "MA"
+	When eu selecionar a opção "Auto-avaliar"
+	Then aparecerá uma mensagem de erro  "Só é possível auto-avaliar todos os conceitos de uma vez"
