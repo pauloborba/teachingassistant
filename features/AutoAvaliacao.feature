@@ -23,7 +23,7 @@ Feature Auto-avaliação do aluno.
 		When O sistema recebe os conceitos preenchidos na coluna de "Auto-avaliação", e nota que faltou um.
 		Then O sistema não armazena conceito algum.
 		AND "Passo 7e"
-
+	
 	Scenario Não houve nenhuma discrepância.
 		Given Todos os alunos submeteram todas as auto-avaliações e não houve nenhuma discrepância.
 		When Eu requisito visualização da tabela de notas
