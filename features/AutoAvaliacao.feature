@@ -55,5 +55,6 @@ And o professor  “Paulo Borba” avaliou  “Pamella Bezerra” como “MPA”
     And a aluna  “Maria Luiza” se auto avaliou como  “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de testes”, “MA” em“usar com eficácia um sistema de controle de versão distribuído”, “MA”em  “Definir com qualidade e seguir tarefas, epics e iterações” e “MPA” em“Implementar com qualidade features e cenários”
 And o professor  “Paulo Borba” avaliou  “Maria Luiza” como  “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de testes”, “MA” em“usar com eficácia um sistema de controle de versão distribuído”, “MA”em  “Definir com qualidade e seguir tarefas, epics e iterações” e “MPA” em“Implementar com qualidade features e cenários”
     When o professor  “Paulo Borba” abrir a página de “Discrepâncias”
-    Then  “Paulo Borba” verá a planilha de “auto avaliação” de “Larícia Maria” com as metas discrepantes destacadas e as estatísticas de discrepância da turma
+    Then  “Paulo Borba” verá a planilha de “auto avaliação” de “Larícia Maria” com as metas discrepantes destacadas 
+    And as estatísticas de discrepância da turma
 
