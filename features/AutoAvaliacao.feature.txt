@@ -29,3 +29,13 @@ Given a aluna "carolina" possui as metas "ECR", "ERQ" e "ECGC"
 And esta na "pagina de avaliação"
 When eu atribuo os conceitos "ma" para "ECR" e "ma" para "ERQ"
 Then eu posso ver uma mensagem de erro "a meta "ECGC" ainda não foi avaliada"
+
+Scenario aluno com auto-avaliação não discrepante (gui)
+
+Given a aluna "carolina" teve conceito "ma" e auto-avaliação "mpa" na meta "x"; e "mpa", "mpa" na meta "y"; "ma", "ma" na meta "z"
+And o aluno "carlos" teve conceito "ma" e auto-avaliação "mpa" na meta "x"; e "mpa", "mana" na meta "y"; "ma", "mpa" na meta "z"
+And a aluna "luiza" teve conceito "ma" e auto-avaliação "ma" na meta "x"; e "mpa", "mpa" na meta "y"; "ma", "ma" na meta "z"
+And eu estou na página "início"
+When eu vou para a página "alunos"
+Then eu posso ver na coluna "discrepancia" na linha "quantidade" que "zero" alunos tiveram discrepancia e na linha "percentual" que "0%" dos alunos tiveram 
+discrepância
