@@ -33,3 +33,4 @@ Scenario: Auto avaliação não preenchida completamente
     Then o sistema não salvará a planilha de “auto avaliação”
 And o sistema retornará uma mensagem de erro
 And nova solicitação do stakeholder
+And terceira solicitação do stakeholder
