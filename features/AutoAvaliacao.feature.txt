@@ -1,0 +1,3 @@
+As a aluno
+I want to atribuir conceito autoavaliativo para cada uma das metas avaliadas e visualizar os conceitos atribuídos pelo professor para essas mesmas metas
+so that eu possa comparar o conceito que eu achava que iria tirar com o conceito que eu realmente tirei nas metas
