@@ -18,3 +18,19 @@ When eu preencho o formulário de auto-avaliação com os conceitos “MPA, MA, MA”
 And eu tento submeter o formulário de auto-avaliação
 Then os conceitos atribuídos por mim são armazenados no sistema 
 And uma cópia da minha auto-avaliação é enviada para o professor
+
+Scenario: Submetendo o formulário de auto-avaliação com apenas uma meta avaliada
+Given eu estou logado como “Victor Aguiar”
+And eu estou na página “Auto-avaliação”
+When eu preencho o formulário de auto-avaliação com o conceito “MA” na meta “Entender conceitos de requisitos”
+And eu tento submeter o formulário de auto-avaliação
+Then eu posso ver uma mensagem de erro, informando a obrigatoriedade da avaliação de todas as metas
+
+Scenario: Submetendo formulário de auto-avaliação com apenas duas metas avaliadas
+Given eu estou logado como “Josué Gomes”
+And eu estou na página “Auto-avaliação”
+When eu preencho o formulário de auto-avaliação com o conceito “MA” na meta “Entender conceitos de requisitos”
+And eu preencho com o conceito “MPA” na meta “Especificar requisitos com qualidade”
+And eu tento submeter o formulário de auto-avaliação
+Then os conceitos atribuídos por mim não são armazenados no sistema
+And não é enviado uma cópia do formulário de auto-avaliação para o professor
