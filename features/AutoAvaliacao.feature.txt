@@ -19,3 +19,13 @@ When eu atribuo os conceitos "ma" para "ECR" e "ma" para "ERQ" e "mpa" para "ECG
 Then eu posso ver os conceitos "ma" para "ECR" e "ma" para "ERQ" e "mpa" para "ECGC" na coluna de "auto-avaliação" de "carolina"
 And eu posso ver a media “ma”  na coluna de "auto-avaliação" de "carolina"
 
+scenario aluno faz auto-avaliação (falha)
+Given a aluna "carolina" possui as metas "ECR", "ERQ" e "ECGC"
+When "carolina" atribui os conceitos "ma" para "ECR" e "ma" para "ERQ"
+Then o sistema não armazena os conceitos "ma" para "ECR" e "ma" para "ERQ" da aluna "carolina"
+
+Scenario aluno faz auto avaliação gui falha
+Given a aluna "carolina" possui as metas "ECR", "ERQ" e "ECGC"
+And esta na "pagina de avaliação"
+When eu atribuo os conceitos "ma" para "ECR" e "ma" para "ERQ"
+Then eu posso ver uma mensagem de erro "a meta "ECGC" ainda não foi avaliada"
