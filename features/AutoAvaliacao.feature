@@ -46,3 +46,13 @@ Cenário: nenhuma discrepância
     Then eu vejo a "lista de alunos discrepantes" vazia
 	And eu vejo 0 em "total de alunos discrepantes"
 	And eu vejo 0% em "porcentagem de alunos discrepantes"
+	
+Cenário: discrepância 1/3
+    Given que eu estou logado como o professor "Paulo"
+	And eu estou na página “discrepâncias”
+	And o aluno "Pedro" tem conceitos "MANA", "MANA", "MANA", "MANA", "MANA" auto-avaliados como "MA", "MANA", "MA", "MANA", "MA"
+	And o aluno "Fulano" tem conceitos "MANA", "MANA", "MANA", "MANA", "MANA" auto-avaliados como "MANA", "MANA", "MANA", "MANA", "MANA"
+	And o aluno "Sicrano" tem conceitos "MANA", "MANA", "MANA", "MANA", "MANA" auto-avaliados como "MANA", "MANA", "MANA", "MANA", "MANA"
+    Then eu vejo a "lista de alunos discrepantes" composta apenas de  "Pedro"
+	And eu vejo 1 em "total de alunos discrepantes"
+	And eu vejo 33% em "porcentagem de alunos discrepantes"
