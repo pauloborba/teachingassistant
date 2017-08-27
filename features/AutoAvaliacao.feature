@@ -45,4 +45,4 @@ And o conceito "MA" submetido pelo professor para a "meta 2" de "diogo"
 And o conceito "MA" submetido pelo professor para a "meta 3" de "diogo"
 When "Diogo" solicita a submissão
 Then o sistema mostra uma mensagem de erro de submissão
-
+And
