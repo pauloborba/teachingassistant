@@ -45,4 +45,13 @@ And o conceito "MA" submetido pelo professor para a "meta 2" de "diogo"
 And o conceito "MA" submetido pelo professor para a "meta 3" de "diogo"
 When "Diogo" solicita a submissão
 Then o sistema mostra uma mensagem de erro de submissão
+Scenario: Gerar estatísticas sem discrepâncias nas avaliações
+Given Estou logado no sistema de gerenciamento de metas como professor "Fábio"
+And Estou na página de "Estatísticas de avaliações"
+And eu vejo na "lista total de alunos" que o aluno "João" tem "1" na "quantidade de conceitos discrepantes"
+And eu vejo que o aluno "Pedro" tem "0" na "quantidade de conceitos discrepantes"
+And eu vejo que o aluno "Marcos" tem "0" na "quantidade de conceitos discrepantes"
+When eu seleciono a opção "gerar estatísticas de avaliações discrepantes"
+Then eu vejo uma mensagem de não existência de avaliações discrepantes
+
 
