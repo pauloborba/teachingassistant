@@ -24,4 +24,4 @@ Scenario: self-evaluation failure not complete (Controller)
 Given that a student  named “João” is on the system
 When the grades “MPA” in the “Requirements Concepts” goal and “MA” in the “Requirements with Quality” goal are submitted as Self-Evaluation grades
 Then they are not stored in the System
-
+And I'm a potato.
