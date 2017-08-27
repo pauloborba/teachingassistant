@@ -56,3 +56,17 @@ When eu seleciono a opção “Autoavaliações discrepantes”
 Then eu vejo que a quantidade é “0”
 Then eu vejo que o percentual é “0%”
 Then eu vejo que a lista dos alunos está preenchida com “” (vazia)
+
+Scenario: há discrepância entre avaliação do professor e autoavaliação do aluno
+Given eu estou logado como “Professor”
+And eu estou na página “Conceitos e metas”
+And eu vejo que o aluno “João” foi avaliado com os conceitos "MPA, MPA, MPA, MA, MA"
+And eu vejo que o aluno “João” se autoavaliou com os conceitos "MA, MA, MA, MA, MA"
+And eu vejo que o aluno “Airton” foi avaliado com os conceitos "MPA, MA, MA, MPA, MA"
+And eu vejo que o aluno “Airton” se autoavaliou com os conceitos "MANA, MPA, MANA, MANA, MPA"
+And eu vejo que a aluna “Maria Júlia” foi avaliada com os conceitos "MPA, MA, MANA, MA, MA"
+And eu vejo que a aluna “Maria Júlia” se autoavaliou com os conceitos "MPA, MA, MANA, MA, MA"
+When eu seleciono a opção “Autoavaliações discrepantes”
+Then eu vejo que a quantidade é “1”
+Then eu vejo que o percentual é “33.33%”
+Then eu vejo que a lista dos alunos está preenchida com o nome do aluno “João”
