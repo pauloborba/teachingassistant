@@ -35,3 +35,31 @@ And eu tento submeter o formulário de auto-avaliação
 Then os conceitos atribuídos por mim não são armazenados no sistema
 And não é enviado uma cópia do formulário de auto-avaliação para o professor
 And os conceitos já inseridos são apagados pelo sistema
+
+Scenario: Acesso à página de avaliações discrepantes com nenhum aluno com discrepância
+Given eu estou logado como “Sérgio Silva”
+And eu estou na página “Início”
+And o aluno “Alecsandro Silva” obteve os conceitos “MA,MPA,MPA,MA,MPA”
+And o aluno “Alecsandro Silva” se avaliou com os conceitos “MA,MPA,MA,MA,MANA”
+And a aluna “Eulália Aires” obteve os conceitos “MA,MA,MPA,MA,MA”
+And a aluna “Eulália Aires” se avaliou com os conceitos “MPA,MPA,MANA,MPA,MPA”
+And a aluna “Pamella Bezerra” obteve os conceitos “MPA,MA,MA,MPA,MPA”
+And a aluna “Pamella Bezerra” se avaliou com os conceitos “MPA,MA,MA,MPA,MPA”
+When eu vou para a página “Avaliações discrepantes”
+Then eu vejo “0” na quantidade de alunos com discrepância
+And eu vejo “0”% na porcentagem de alunos com discrepância
+And eu vejo a lista de alunos com discrepância vazia
+
+Scenario: Acesso à página de avaliações discrepantes com 1 aluno com discrepância
+Given eu estou logado como “Sérgio Silva”
+And eu estou na página “Início”
+And o aluno “Alecsandro Silva” obteve os conceitos “MPA,MPA,MANA,MPA,MPA”
+And o aluno “Alecsandro Silva” se avaliou com os conceitos “MA,MPA,MA,MA,MPA”
+And a aluna “Eulália Aires” obteve os conceitos “MPA,MA,MPA,MA,MA”
+And a aluna “Eulália Aires” se avaliou com os conceitos “MPA,MPA,MPA,MPA,MA”
+And a aluna “Pamella Bezerra” obteve os conceitos “MPA,MA,MA,MPA,MPA”
+And a aluna “Pamella Bezerra” se avaliou com os conceitos “MPA,MA,MA,MPA,MPA”
+When eu vou para a página “Avaliações discrepantes”
+Then eu vejo “1” na quantidade de alunos com discrepância
+And eu vejo “33,33”% na porcentagem de alunos com discrepância
+And eu vejo o aluno “Alecsandro Silva” na lista de alunos com discrepância
