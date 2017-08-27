@@ -28,3 +28,15 @@ Feature: Auto-avaliação
 		When Eu envio uma auto-avaliação
 		And a auto-avaliação tem uma ou mais metas com conceitos não atribuídos
 		Then eu recebo uma mensagem informando que a auto-avaliação foi preenchida incorretamente.
+
+	Scenario: nenhum aluno discrepante
+		Given a auto-avaliação de “Fulano de Tal” é “MA/MA/MA/MA/MA”
+		And a auto-avaliação de “Beltrana” é “MPA/MPA/MPA/MPA/MPA”
+		And a auto-avaliação de “Juninho” é “MA/MA/MA/MA/MA”
+		And a avaliação de “Fulano de Tal” é “MA/MA/MA/MA/MANA”
+		And a avaliação de “Beltrana” é “MA/MA/MA/MA/MA”
+		And a avaliação de “Juninho” é “MA/MA/MA/MA/MA”
+		When eu vou para a página “auto-avaliações discrepantes”
+		Then eu vejo a porcentagem “0%” de auto-avaliações discrepantes
+		And eu vejo o número “0” de auto-avaliações discrepantes
+		And não há alunos na lista de alunos com auto-avaliações discrepantes.
