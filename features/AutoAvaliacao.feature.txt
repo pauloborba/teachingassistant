@@ -27,3 +27,4 @@ Scenario: Conceitos incompletos
 		And Preencheu apenas “MA, MA” respectivamente para as metas “Meta 1, Meta 3”
 		When Ele solicitar o armazenamento de seus conceitos no sistema
 		Then O sistema não armazena os conceitos
+		And "José" possui a auto-avaliação pendente" no sistema
