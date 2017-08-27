@@ -28,3 +28,19 @@ Scenario: Conceitos incompletos
 		When Ele solicitar o armazenamento de seus conceitos no sistema
 		Then O sistema não armazena os conceitos
 		And "José" possui a auto-avaliação pendente" no sistema
+
+Scenario: Nenhuma discrepância
+		Given Que o professor “João” está na página de “relatório da turma”
+		And Todos os alunos já submeteram suas auto-avaliações
+		And Não houve discrepância
+		When Ele solicitar o relatório sobre as metas
+		Then “João” ver a “lista de alunos com auto-avaliações discrepantes” vazia
+
+Scenario: Discrepância aconteceu
+		Given Que o professor “João” está na página de “relatório da turma”
+		And Todos os alunos já submeteram suas auto-avaliações
+		And O aluno “Pedro” teve discrepância
+		When Ele solicitar o relatório sobre as metas
+		Then “João” ver a “lista de alunos com auto-avaliações discrepantes” com “Pedro” e suas respectivas metas auto-avaliados
+		And A “quantidade de alunos com auto-avaliações discrepantes” com o valor “1”
+		And O “percentual de alunos com auto-avaliações discrepantes” com o valor “33,3%”
