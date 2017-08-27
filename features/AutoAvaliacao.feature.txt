@@ -41,6 +41,7 @@ Scenario: Discrepância aconteceu
 		And Todos os alunos já submeteram suas auto-avaliações
 		And O aluno “Pedro” teve discrepância
 		When Ele solicitar o relatório sobre as metas
-		Then “João” ver a “lista de alunos com auto-avaliações discrepantes” com “Pedro” e suas respectivas metas auto-avaliados
+		Then “João” ver a “lista de alunos com auto-avaliações discrepantes” com “Pedro” e suas respectivas metas auto-avaliadas
 		And A “quantidade de alunos com auto-avaliações discrepantes” com o valor “1”
 		And O “percentual de alunos com auto-avaliações discrepantes” com o valor “33,3%”
+		And O histórico de discrepâncias de semestres anteriores
