@@ -55,8 +55,8 @@ And eu vejo que a aluna “Maria Júlia” foi avaliada com os conceitos "MPA, M
 And eu vejo que a aluna “Maria Júlia” se autoavaliou com os conceitos "MPA, MA, MANA, MA, MA"
 When eu seleciono a opção “Autoavaliações discrepantes”
 Then eu vejo que a quantidade é “0”
-Then eu vejo que o percentual é “0%”
-Then eu vejo que a lista dos alunos está preenchida com “” (vazia)
+And eu vejo que o percentual é “0%”
+And eu vejo que a lista dos alunos está preenchida com “” (vazia)
 
 Scenario: há discrepância entre avaliação do professor e autoavaliação do aluno
 Given eu estou logado como “Professor”
