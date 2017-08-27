@@ -55,8 +55,8 @@ Feature: Auto-avaliação
 		And o aluno “Fulano de Tal” está na lista de alunos com auto-avaliações discrepantes.
 		And eu recebo uma notificação.
 
-	Scenario: Mais um teste.
-
-	Scenario: Teste.
-
-	Scenario: Outro Teste.
+	Scenario: visualização de percentual de discrepância
+		Given algo
+		And faltou isso
+		When lalalá
+		Then tcharam.
