@@ -12,3 +12,16 @@ Scenario: Submit complete self assessment (Controller)
     Given The student "Lucas" has completed his self assessment for the goals "Entender conceitos de requisitos", "Especificar requisitos com qualidade", and "Entender conceitos de gerência de configuração" with the concepts "MA", "MPA", and "MANA" respectively
     When "Lucas" submits his self assessment
 Then The self assessment is properly stored by the system 
+
+Scenario: Submit incomplete self assessment (GUI)
+    Given The student "Lucas" is at the "Autoavaliação" page
+And "Lucas" has completed his self assessment for the goals "Entender conceitos de requisitos" and "Especificar requisitos com qualidade" with the concepts "MA" and "MPA" respectively
+    And The goal "Entender conceitos de gerência de configuração" has not been self assessed by "Lucas" yet
+    When "Lucas" presses the button "Enviar"
+    Then "Lucas" sees an error message
+
+Scenario: Submit incomplete self assessment (Controller)
+    Given The student "Lucas" completed his self assessment for the goals "Entender conceitos de requisitos" and "Especificar requisitos com qualidade" with the concepts "MA" and "MPA" respectively
+    And The goal "Entender conceitos de gerência de configuração" has not been self assessed by "Lucas" yet
+    When "Lucas" submits his self assessment
+Then The self assessment isn't stored by the system
