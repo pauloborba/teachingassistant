@@ -56,4 +56,6 @@ Feature: Auto-avaliação
 		And eu recebo uma notificação.
 
 	Scenario: Mais um teste.
+
+	Scenario: Teste.
 	
