@@ -53,5 +53,16 @@ And eu vejo que o aluno "Pedro" tem "0" na "quantidade de conceitos discrepantes
 And eu vejo que o aluno "Marcos" tem "0" na "quantidade de conceitos discrepantes"
 When eu seleciono a opção "gerar estatísticas de avaliações discrepantes"
 Then eu vejo uma mensagem de não existência de avaliações discrepantes
+Scenario: Gerar estatísticas com discrepâncias nas avaliações
+Given Estou logado no sistema de gerenciamento de metas como professor "Fábio"
+And Estou na página de "Estatísticas de avaliações"
+And eu vejo na "lista total de alunos" que o aluno "João" tem "5" na "quantidade de conceitos discrepantes"
+And eu vejo que o aluno "Marcos" tem "0" na "quantidade de conceitos discrepantes"
+And eu vejo que o aluno "Michael" tem "0" na "quantidade de conceitos discrepantes"
+When Eu seleciono a opção de "gerar estatística de avaliações discrepantes"
+Then Eu vejo uma lista com no nome de "João"
+And vejo "1" como quantidade de avaliações discrepantes totais
+And vejo "33,33%" como porcentagem de avaliações discrepantes totais
+
 
 
