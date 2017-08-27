@@ -25,3 +25,9 @@ Given that a student  named “João” is on the system
 When the grades “MPA” in the “Requirements Concepts” goal and “MA” in the “Requirements with Quality” goal are submitted as Self-Evaluation grades
 Then they are not stored in the System
 
+Scenario: no discrepancy
+Given that the students “João”, “Marcelo” and “Arthur” have no discrepancy in his grades.
+When I access the “Self-Evaluation Statistics Page”
+Then I can see a quantity panel containing “0”
+And I can see a percentage panel containing “0%”
+
