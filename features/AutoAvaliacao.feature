@@ -19,10 +19,11 @@ Scenario: Simple self-evaluation failure GUI
     And He input “MPA, MA ” to the goal “Noções de Levantamento de Requisitos” 
     When  He asks the system to submit his answer
     Then He can see a failure message
+    And He can see a message asking to fill the evaluation again
 
     Scenario: Simple self-evaluation failure Controller
     Given The student “João Victor” is on the self-evaluation page
     When  He evaluates the goal “Noções de Levantamento de Requisitos”  “MPA, MA” 
     Then The system does not store the evaluation 
-
+    And The system stores the exception code and date
 
