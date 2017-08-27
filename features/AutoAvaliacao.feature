@@ -54,3 +54,6 @@ Feature: Auto-avaliação
 		And eu vejo o número “1” de auto-avaliações discrepantes
 		And o aluno “Fulano de Tal” está na lista de alunos com auto-avaliações discrepantes.
 		And eu recebo uma notificação.
+
+	Scenario: Mais um teste.
+	
