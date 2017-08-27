@@ -70,3 +70,8 @@ Scenario Houve discrepância em 1 dos 3 alunos.
 	AND "mudança hipotética 8".
 
 commit 1 do branch master, exec 14.
+
+Scenario: visualização de porcentagem de discrepância.
+	Given testes
+	When teste
+	Then teste
