@@ -53,3 +53,4 @@ Feature: Auto-avaliação
 		Then eu vejo a porcentagem “33%” de auto-avaliações discrepantes
 		And eu vejo o número “1” de auto-avaliações discrepantes
 		And o aluno “Fulano de Tal” está na lista de alunos com auto-avaliações discrepantes.
+		And eu recebo uma notificação.
