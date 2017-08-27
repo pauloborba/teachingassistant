@@ -1,0 +1,5 @@
+Feature: processo de auto-avaliação
+		As a aluno da turma
+		I want to preencher a auto-avaliação das metas analisadas e 
+			ver os conceitos atribuídos a elas pelo professor
+		so that Eu possa analisar as diferenças entre minha avaliação e a do professor
