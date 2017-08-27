@@ -60,8 +60,9 @@ And Estou na página de "Estatísticas de avaliações"
 And eu vejo na "lista total de alunos" que o aluno "João" tem "5" na "quantidade de conceitos discrepantes"
 And eu vejo que o aluno "Marcos" tem "0" na "quantidade de conceitos discrepantes"
 And eu vejo que o aluno "Michael" tem "0" na "quantidade de conceitos discrepantes"
+And eu vejo algo
 When Eu seleciono a opção de "gerar estatística de avaliações discrepantes"
 Then Eu vejo uma lista com no nome de "João"
 And vejo "1" como quantidade de avaliações discrepantes totais
 And vejo "33,33%" como porcentagem de avaliações discrepantes totais
-
+And eu vejo algo
