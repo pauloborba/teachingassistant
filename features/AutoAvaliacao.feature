@@ -14,3 +14,15 @@ Scenario: Simple self-evaluation success Controller
     When  He evaluates the goal “Noções de Levantamento de Requisitos”  “MPA, MA, MPA” 
     Then The system stores the evaluation 
 
+Scenario: Simple self-evaluation failure GUI
+    Given The student “João Victor” is on the self-evaluation page
+    And He input “MPA, MA ” to the goal “Noções de Levantamento de Requisitos” 
+    When  He asks the system to submit his answer
+    Then He can see a failure message
+
+    Scenario: Simple self-evaluation failure Controller
+    Given The student “João Victor” is on the self-evaluation page
+    When  He evaluates the goal “Noções de Levantamento de Requisitos”  “MPA, MA” 
+    Then The system does not store the evaluation 
+
+
