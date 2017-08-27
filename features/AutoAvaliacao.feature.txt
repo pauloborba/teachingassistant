@@ -3,3 +3,15 @@ Feature: processo de auto-avaliação
 		I want to preencher a auto-avaliação das metas analisadas e 
 			ver os conceitos atribuídos a elas pelo professor
 		so that Eu possa analisar as diferenças entre minha avaliação e a do professor
+
+Scenario: Preenchimento dos conceitos na auto-avaliação
+		Given Que o aluno “José” está na página de “auto-avaliação”
+		And “José” preencheu “MA, MPA, MPA” respectivamente para as metas “Meta 1, Meta 2, Meta 3”
+		When Ele submeter esses conceitos ao sistema
+		Then “José” ver uma mensagem de confirmação
+
+Scenario: Armazenar conceitos da auto-avaliação
+		Given Que o aluno “José” realizou a auto-avaliação por completo
+		And Ele preencheu “MA, MPA, MPA” respectivamente para as metas “Meta 1, Meta 2, Meta 3”
+		When “José” solicitar o armazenamento desses conceitos como auto-avaliação
+		Then Os conceitos são armazenados no sistema com sucesso
