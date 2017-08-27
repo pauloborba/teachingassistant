@@ -25,3 +25,4 @@ Cenário: Auto-avaliação mal sucedida
 Dado que o aluno “João Victor” obteve os conceitos “MPA, MPA, MPA, MANA” 
 Quando ele preenche apenas os conceitos “MPA, MA” nas metas “A” e “B”.
 Então o aluno não tem acesso aos conceitos atribuídos pelo professor.
+E a avaliação não é concluída.
