@@ -39,3 +39,4 @@ And eu não possuo conceito de autoavaliação para as metas “Entender conceit
 When eu tento submeter o conceito “MPA” para a meta “Entender conceitos de requisitos”
 And eu tento submeter o conceito “” para a meta “Especificar requisitos com qualidade”
 Then os conceitos para as metas “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” não serão armazenados pelo sistema
+And passo adicional
