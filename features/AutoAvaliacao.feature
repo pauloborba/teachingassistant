@@ -25,4 +25,18 @@ Scenario: Submit incomplete self assessment (Controller)
     And The goal "Entender conceitos de gerência de configuração" has not been self assessed by "Lucas" yet
     When "Lucas" submits his self assessment
 Then The self assessment isn't stored by the system
-Then extra step added
+
+Scenario: No discrepancy found
+    Given The students "Lucas", "Pedro", and "Edjan" have submitted their self assessments
+    And The student "Lucas" has 20% discrepancy
+    And The students "Pedro" and "Edjan" have 0% discrepancy each
+    When Professor "Paulo" requests the "Discrepâncias" page
+    Then Professor "Paulo" sees an error message
+
+Scenario: Discrepancy found
+    Given The students "Lucas", "Pedro", and "Edjan" have submitted their self assessments
+    And The student "Lucas" has discrepancy >= 25%
+    And The students "Pedro" and "Edjan" have discrepancy < 25%
+    When Professor "Paulo" requests the "Discrepâncias" page
+    Then Professor "Paulo" sees a "Discrepâncias" page with the fields "Quantidade", "Porcentagem" holding the values "1", "33.3%"
+    And The list "Alunos" has just the name "Lucas" in it.
