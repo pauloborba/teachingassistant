@@ -27,3 +27,24 @@ Scenario: Simple self-evaluation failure GUI
     Then The system does not store the evaluation 
     And The system stores the exception code and date
 
+Scenario: No-discrepancy visualization GUI
+    Given I am on the students visualization screen
+    And The student “Joao” has “1” of “5” discrepant evaluations
+    And The student “Paulo” has “0” of “5” discrepant evaluations
+    And The student “Jose” has “0” of “5” discrepant evaluations
+    When  I ask for the discrepant students screen
+    Then I can see the number of discrepant students “0”
+    And I can see the percentage of discrepant students “0%”
+    And I can see “empty” in the list of discrepant students
+
+Scenario: 1 student discrepancy visualization GUI
+    Given I am on the students visualization screen
+    And The student “Joao” has “3” of “5” discrepant evaluations
+    And The student “Paulo” has “0” of “5” discrepant evaluations
+    And The student “Jose” has “0” of “5” discrepant evaluations
+    When  I ask for the discrepant students screen
+    Then I can see the number of discrepant students “1”
+    And I can see the percentage of discrepant students “33,3%”
+    And I can see “Joao” in the list of discrepant students
+
+
