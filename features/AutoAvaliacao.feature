@@ -93,4 +93,4 @@ Scenario Houve discrepância em 1 dos 3 alunos.
 	Then Eu vejo a tabela, com todos os dados preenchidos e calculados, e um sinal chamando minha atenção à porcentagem de discrepância do aluno em questão.
 
 
-	AND "mudança hipotética 8"
+	AND "mudança hipotética 8".
