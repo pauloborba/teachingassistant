@@ -59,7 +59,7 @@ And a aluna “Eulália Aires” obteve os conceitos “MPA,MA,MPA,MA,MA”
 And a aluna “Eulália Aires” se avaliou com os conceitos “MPA,MPA,MPA,MPA,MA”
 And a aluna “Pamella Bezerra” obteve os conceitos “MPA,MA,MA,MPA,MPA”
 And a aluna “Pamella Bezerra” se avaliou com os conceitos “MPA,MA,MA,MPA,MPA”
-When eu vou para a página “Avaliações discrepantes”
+When eu vou para a página “Discrepâncias”
 Then eu vejo “1” na quantidade de alunos com discrepância
 And eu vejo “33,33”% na porcentagem de alunos com discrepância
 And eu vejo o aluno “Alecsandro Silva” na lista de alunos com discrepância
