@@ -58,4 +58,5 @@ Feature: Auto-avaliação
 	Scenario: Mais um teste.
 
 	Scenario: Teste.
-	
+
+	Scenario: Outro Teste.
