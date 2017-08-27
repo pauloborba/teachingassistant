@@ -33,3 +33,11 @@ Scenario: No discrepancy found
     When Professor "Paulo" requests the "Discrepâncias" page
     Then Professor "Paulo" sees an error message
 
+Scenario: Discrepancy found
+    Given The students "Lucas", "Pedro", and "Edjan" have submitted their self assessments
+    And The student "Lucas" has discrepancy >= 25%
+    And The students "Pedro" and "Edjan" have discrepancy < 25%
+    When Professor "Paulo" requests the "Discrepâncias" page
+    Then Professor "Paulo" sees a "Discrepâncias" page with the fields "Quantidade", "Porcentagem" holding the values "1", "33.3%"
+    And The list "Alunos" has just the name "Lucas" in it.
+
