@@ -28,3 +28,5 @@ Feature: Auto-avaliação
 		When Eu envio uma auto-avaliação
 		And a auto-avaliação tem uma ou mais metas com conceitos não atribuídos
 		Then eu recebo uma mensagem informando que a auto-avaliação foi preenchida incorretamente.
+		Then alguma coisa.
+		
