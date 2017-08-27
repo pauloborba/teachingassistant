@@ -40,3 +40,15 @@ Feature: Auto-avaliação
 		Then eu vejo a porcentagem “0%” de auto-avaliações discrepantes
 		And eu vejo o número “0” de auto-avaliações discrepantes
 		And não há alunos na lista de alunos com auto-avaliações discrepantes.
+
+	Scenario: um aluno discrepante
+		Given a auto-avaliação de “Fulano de Tal” é “MA/MA/MA/MA/MA”
+		And a auto-avaliação de “Beltrana” é “MPA/MPA/MPA/MPA/MPA”
+		And a auto-avaliação de “Juninho” é “MA/MA/MA/MA/MA”
+		And a avaliação de “Fulano de Tal” é “MPA/MA/MPA/MA/MANA”
+		And a avaliação de “Beltrana” é “MA/MA/MA/MA/MA”
+		And a avaliação de “Juninho” é “MA/MA/MA/MA/MA”
+		When eu vou para a página “auto-avaliações discrepantes”
+		Then eu vejo a porcentagem “33%” de auto-avaliações discrepantes
+		And eu vejo o número “1” de auto-avaliações discrepantes
+		And o aluno “Fulano de Tal” está na lista de alunos com auto-avaliações discrepantes.
