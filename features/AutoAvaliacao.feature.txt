@@ -15,3 +15,15 @@ Scenario: Armazenar conceitos da auto-avaliação
 		And Ele preencheu “MA, MPA, MPA” respectivamente para as metas “Meta 1, Meta 2, Meta 3”
 		When “José” solicitar o armazenamento desses conceitos como auto-avaliação
 		Then Os conceitos são armazenados no sistema com sucesso
+
+Scenario: Preenchimento incompleto dos conceitos na auto-avaliação
+		Given Que o aluno “José” está na página de auto-avaliação
+		And Preencheu apenas “MA, MPA” respectivamente para as metas “Meta 1, Meta 3”
+		When Ele submeter esses conceitos ao sistema
+		Then “José” ver uma mensagem de erro
+
+Scenario: Conceitos incompletos
+		Given Que “José” não realizou a auto-avaliação por completo
+		And Preencheu apenas “MA, MA” respectivamente para as metas “Meta 1, Meta 3”
+		When Ele solicitar o armazenamento de seus conceitos no sistema
+		Then O sistema não armazena os conceitos
