@@ -27,3 +27,10 @@ Scenario: Conceitos incompletos
 		And Preencheu apenas “MA, MA” respectivamente para as metas “Meta 1, Meta 3”
 		When Ele solicitar o armazenamento de seus conceitos no sistema
 		Then O sistema não armazena os conceitos
+
+Scenario: Nenhuma discrepância
+		Given Que o professor “João” está na página de “relatório da turma”
+		And Todos os alunos já submeteram suas auto-avaliações
+		And Não houve discrepância
+		When Ele solicitar o relatório sobre as metas
+		Then “João” ver a “lista de alunos com auto-avaliações discrepantes” vazia
