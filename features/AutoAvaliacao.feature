@@ -46,5 +46,6 @@ Scenario: 1 student discrepancy visualization GUI
     Then I can see the number of discrepant students “1”
     And I can see the percentage of discrepant students “33,3%”
     And I can see “Joao” in the list of discrepant students
+    And I can see "Joao" discrepant evaluations
 
 
