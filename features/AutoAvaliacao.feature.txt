@@ -34,3 +34,4 @@ And eu preencho com o conceito “MPA” na meta “Especificar requisitos com qualida
 And eu tento submeter o formulário de auto-avaliação
 Then os conceitos atribuídos por mim não são armazenados no sistema
 And não é enviado uma cópia do formulário de auto-avaliação para o professor
+And os conceitos já inseridos são apagados pelo sistema
