@@ -30,6 +30,7 @@ Scenario: No discrepancy found
     Given The students "Lucas", "Pedro", and "Edjan" have submitted their self assessments
     And The student "Lucas" has 20% discrepancy
     And The students "Pedro" and "Edjan" have 0% discrepancy each
+TESTESTES TEST REBASE`
     When Professor "Paulo" requests the "Discrepâncias" page
     Then Professor "Paulo" sees an error message
 
