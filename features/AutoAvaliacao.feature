@@ -45,3 +45,6 @@ Scenario: Discrepancy found
     And Fix fix fix fix fix fix
 
 test line question 14
+
+novo cenário de visualização de percentual de discrepância
+asdasdas
