@@ -45,4 +45,5 @@ AND há discrepância com o aluno “Edjan”
 AND o professor “Paulo” está logado no sistema como “professor”
 WHEN o professor “Paulo” acessa a página de “Estatísticas”
 THEN o sistema faz os cálculos de acordo com os critérios especificados 
-AND o sistema atualiza todos os dados do gráfico e da lista de alunos, possibilitando ao professor “Paulo” visualizar e detalhar que o aluno “Edjan” possui discrepâncias
+AND o sistema atualiza todos os dados do gráfico e da lista de alunos, possibilitando ao professor “Paulo” visualizar 
+AND o sitema permite detalhar que o aluno “Edjan” possui discrepâncias
