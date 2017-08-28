@@ -27,6 +27,7 @@ Quando ele preenche apenas os conceitos “MPA, MA” nas metas “A” e “B�
 Então o aluno não tem acesso aos conceitos atribuídos pelo professor.
 E a avaliação não é concluída.
 
+
 Cenário: Auto-avaliações sem discrepância
 Dado que os alunos “João Victor”, “Homero Barros” e “Paulo Henrique” obtiveram discrepância de 20%, 0% e 0%.
 Quando o professor acessa a página de avaliação de discrepância.
