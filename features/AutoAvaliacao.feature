@@ -35,4 +35,4 @@ Scenario: Alunos com discrepância
     Given Eu estou na página de discrepância
     When 1 entre 3 alunos tiver com discrepância em sua auto-avaliação
     Then Aparece na tela que só tem 1 único aluno com auto-avaliação discrepante, que 33% da turma teve discrepância e mostra uma lista com esse aluno na lista
-
+    And alteração feita para corrigir erros
