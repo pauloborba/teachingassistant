@@ -38,4 +38,3 @@ And the students “Marcelo” and “Arthur” have no discrepancy in his grade
 When I access the “Self-Evaluation Statistics Page”
 Then I can see a quantity panel containing “1”
 And I can see a percentage panel containing “33%”
-And I can see a list containing “João’s” name and grades.
