@@ -31,3 +31,11 @@ When I access the “Self-Evaluation Statistics Page”
 Then I can see a quantity panel containing “0”
 And I can see a percentage panel containing “0%”
 
+Scenario: discrepancy
+Given that the student “João” have a discrepancy in 2 of his 5 grades
+And the students “Marcelo” and “Arthur” have no discrepancy in his grades.
+When I access the “Self-Evaluation Statistics Page”
+Then I can see a quantity panel containing “1”
+And I can see a percentage panel containing “33%”
+And I can see a list containing “João’s” name and grades.
+
