@@ -27,3 +27,14 @@ AND “Edjan” não preencheu a autoavaliação para a meta “Especificar requisitos co
 WHEN o aluno “Edjan” clica no botão “auto-avaliar” 
 THEN o sistema uma mensagem de erro informando que falta avaliar a meta “Especificar requisitos com qualidade”
 AND o sistema não valida a autoavaliação de “Edjan”
+
+SCENARIO: Nenhuma discrepância encontrada - GUI
+GIVEN o professor “Paulo” avaliou todos os seus alunos (“Edjan”, “Pedro” e “Lucas”)
+AND todos os alunos (“Edjan”, “Pedro” e “Lucas”) se auto avaliaram
+AND o aluno “Edjan” tem conceito inferior em 1 de 5 metas
+AND o aluno “Pedro” só tem conceitos superiores
+AND o aluno “Lucas” só tem conceitos iguais
+AND o professor “Paulo” está logado no sistema como “professor”
+WHEN o professor “Paulo” acessa a página de “Estatísticas”
+THEN o sistema faz os cálculos de acordo com os critérios especificados 
+AND o sistema atualiza todos os dados do gráfico e da lista de alunos
