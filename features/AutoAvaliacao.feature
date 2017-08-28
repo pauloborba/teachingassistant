@@ -38,3 +38,11 @@ AND o professor “Paulo” está logado no sistema como “professor”
 WHEN o professor “Paulo” acessa a página de “Estatísticas”
 THEN o sistema faz os cálculos de acordo com os critérios especificados 
 AND o sistema atualiza todos os dados do gráfico e da lista de alunos
+SCENARIO: Uma discrepância encontrada - GUI
+GIVEN o professor “Paulo” avaliou todos os seus alunos (“Edjan”, “Pedro” e “Lucas”)
+AND todos os alunos (“Edjan”, “Pedro” e “Lucas”) se auto avaliaram
+AND há discrepância com o aluno “Edjan”
+AND o professor “Paulo” está logado no sistema como “professor”
+WHEN o professor “Paulo” acessa a página de “Estatísticas”
+THEN o sistema faz os cálculos de acordo com os critérios especificados 
+AND o sistema atualiza todos os dados do gráfico e da lista de alunos, possibilitando ao professor “Paulo” visualizar e detalhar que o aluno “Edjan” possui discrepâncias
