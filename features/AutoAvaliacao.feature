@@ -33,8 +33,7 @@ then: mudança
 
 		Cenário: Professor Discrepância de auto-avaliação dos alunos e vê discrepância de 1 aluno.
 		Given: Aluno “João”,”Brito”,”Castor” se auto-avaliaram na meta “metas” .
-		And: na avaliação de “João” avaliação ⅗  do seus conceitos na meta “metas “ foi superior ao do professor.
-And: na avaliação de “Brito” avaliação não teve do seus conceitos na
+		 seus conceitos na
 meta “metas “ superiores ao do professor.
 		And: na avaliação de “Castor” avaliação ⅕  do seus conceitos na meta “metas “ foi superior ao do professor.
 		When: o professor “George” for na aba de “Discrepância de auto-avaliação dos alunos”.
