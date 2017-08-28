@@ -12,3 +12,4 @@ And: “MPA” in ´metas 2´
 And: “MANA” in ´metas 3´
 When: Mateus sends his grades
 Then: A message will show up in the container a success message.
+then: mudança
