@@ -9,6 +9,11 @@ GIVEN o aluno “Edjan” está na página de autoavaliação
 WHEN o aluno “Edjan” preenche os conceitos para todas as metas 
 THEN o sistema armazena a avaliação que o aluno “Edjan” deu a si mesmo
 
+SCENARIO: novo cenário de visualização de percentual de discrepância
+GIVEN o aluno “Edjan” está na página de autoavaliação
+WHEN o aluno “Edjan” preenche os conceitos para todas as metas 
+THEN o sistema faz alguma coisa
+
 SCENARIO: Confirmação autoavaliação bem sucedida
 GIVEN o aluno “Edjan” está na página de autoavaliação
 AND “Edjan” preencheu todos os conceitos para todas as metas
