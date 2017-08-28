@@ -28,6 +28,11 @@ Então o aluno não tem acesso aos conceitos atribuídos pelo professor.
 E a avaliação não é concluída.
 
 
+Feature: Análise de Discrepância
+Como professor
+Eu quero ter acesso à quantidade, percentual e lista de alunos com auto-avaliações discrepantes. 
+Para que eu possa analisar minha avaliação com mais cuidado.
+
 Cenário: Auto-avaliações sem discrepância
 Dado que os alunos “João Victor”, “Homero Barros” e “Paulo Henrique” obtiveram discrepância de 20%, 0% e 0%.
 Quando o professor acessa a página de avaliação de discrepância.
