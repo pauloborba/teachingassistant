@@ -30,6 +30,7 @@ Scenario: discrepant students in class
 	And there are one(“Sergio”) out of three students with discrepant self-evaluations
 	When I press the “Discrepant Statistics” button
 	Then I can see a list with “Sergio” on it, the number “1” and 33,3%, indicating the discrepant students
+	And fixing error
 
 Scenario: no discrepant students in class
 	Given that I am at the "Class Sheet" screen
