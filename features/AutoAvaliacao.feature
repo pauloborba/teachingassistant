@@ -25,3 +25,18 @@ Then: A message will show up in the container a success message.
 		Then: Ele verá a lista de alunos com discrepância vazia.
 		And: O gráfico de discrepância vazio.
 		And: Quantidade de alunos de discrepância igual a zero.
+
+
+		com discrepancia
+
+		Cenário: Professor Discrepância de auto-avaliação dos alunos e vê discrepância de 1 aluno.
+		Given: Aluno “João”,”Brito”,”Castor” se auto-avaliaram na meta “metas” .
+		And: na avaliação de “João” avaliação ⅗  do seus conceitos na meta “metas “ foi superior ao do professor.
+And: na avaliação de “Brito” avaliação não teve do seus conceitos na
+meta “metas “ superiores ao do professor.
+		And: na avaliação de “Castor” avaliação ⅕  do seus conceitos na meta “metas “ foi superior ao do professor.
+		When: o professor “George” for na aba de “Discrepância de auto-avaliação dos alunos”.
+		Then: Ele verá a lista de alunos com o aluno “João” listado.
+		And: O gráfico de discrepância está em 33% de discrepância.
+		And: Quantidade de alunos discrepância igual a um.
+
