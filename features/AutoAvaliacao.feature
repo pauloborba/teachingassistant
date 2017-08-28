@@ -27,3 +27,4 @@ AND “Edjan” não preencheu a autoavaliação para a meta “Especificar requisitos co
 WHEN o aluno “Edjan” clica no botão “auto-avaliar” 
 THEN o sistema uma mensagem de erro informando que falta avaliar a meta “Especificar requisitos com qualidade”
 AND o sistema não valida a autoavaliação de “Edjan”
+AND o sistema exibe alguma coisa
