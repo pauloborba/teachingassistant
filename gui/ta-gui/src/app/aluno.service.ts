@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Injectable }    from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
@@ -40,5 +41,13 @@ export class AlunoService {
   private tratarErro(erro: any): Promise<any>{
     console.error('Acesso mal sucedido ao serviço de alunos',erro);
     return Promise.reject(erro.message || erro);
+=======
+import { Aluno } from './aluno';
+
+export class AlunoService {
+  alunos: Aluno[] = [];
+  gravar(aluno: Aluno): Aluno {
+     this.alunos.push(aluno);
+>>>>>>> 20bb097... botao e funcionalidade do formulario para cadastro de alunos
   }
 }
