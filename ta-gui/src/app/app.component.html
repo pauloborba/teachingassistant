@@ -1,14 +1,22 @@
-<html>
-
 <h1>
   Teaching Assistant
 </h1>
 
-<nav>
-    <a name="alunos" routerLink="/alunos">Alunos</a> 
-    <a routerLink="/metas">Metas</a>
-</nav>
+<h2>
+  Alunos
+</h2>
 
-<router-outlet></router-outlet>
-
-</html>
+<table>
+<tr>
+   <td><label>Nome </label></td>
+   <td><input [(ngModel)]="aluno.nome" ></td>
+</tr>
+<tr>
+   <td><label>CPF </label></td>
+   <td><input [(ngModel)]="aluno.cpf" ></td>
+</tr>
+<tr>
+   <td><label>e-mail </label></td>
+   <td><input [(ngModel)]="aluno.email" ></td>
+</tr>
+</table>
