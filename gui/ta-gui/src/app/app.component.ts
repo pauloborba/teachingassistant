@@ -29,4 +29,12 @@ export class AppComponent {
       this.cpfduplicado = false;
    }
 
+   gravar(a: Aluno): void {
+     if (!this.alunoService.gravar(a)) {
+       this.alunos.push(a);
+       this.aluno = {nome: "", cpf: "", email: ""};
+     } else {
+       this.aluno.cpf = "";
+     }
+  }
 }
