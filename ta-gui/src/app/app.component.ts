@@ -13,9 +13,11 @@ export class AppComponent {
 
    aluno: Aluno = {nome: "", cpf: "", email: "", github: ""};
    alunoService = new AlunoService();
+   alunos: Aluno[] = [];
 
    gravar(a: Aluno): void {
      this.alunoService.gravar(a);
+     this.alunos.push(a);
      this.aluno = {nome: "", cpf: "", email: "", github: ""};
   }
 }
