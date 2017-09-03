@@ -25,3 +25,12 @@
    <td><input [(ngModel)]="aluno.gitLogin" ></td>
 </tr>
 </table>
+
+<ul>
+<li *ngFor="let a of alunos">
+    <span>{{a.nome}}</span>,
+    <span>{{a.cpf}}</span>,
+    <span>{{a.email}}</span>
+    <span>{{a.gitLogin}}</span>
+</li>
+</ul>
