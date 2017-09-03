@@ -20,8 +20,17 @@
    <td><label>e-mail </label></td>
    <td><input [(ngModel)]="aluno.email" ></td>
 </tr>
+
 <tr>
    <td><label>Github </label></td>
    <td><input [(ngModel)]="aluno.github" ></td>
 </tr>
 </table>
+
+<ul>
+<li *ngFor="let a of alunos">
+    <span>{{a.nome}}</span>,
+    <span>{{a.cpf}}</span>,
+    <span>{{a.email}}</span>
+</li>
+</ul>
