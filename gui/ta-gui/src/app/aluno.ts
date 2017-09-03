@@ -2,6 +2,7 @@ export class Aluno {
   nome: string;
   cpf: string;
   email: string;
+<<<<<<< HEAD
   metas: Map<string,string>;
 
   constructor() {
@@ -35,4 +36,6 @@ export class Aluno {
       this.metas[key] = from[key];
     }
   }
+=======
+>>>>>>> 20bb097... botao e funcionalidade do formulario para cadastro de alunos
 }
