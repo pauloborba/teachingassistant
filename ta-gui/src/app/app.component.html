@@ -1,4 +1,4 @@
-<html (mousemove)="onMove()"></html>
+<html (mousemove)="onMove()">
 <h1>
   Teaching Assistant
 </h1>
@@ -11,13 +11,13 @@
 <tr>
    <td><label>Nome </label></td>
    <td><input [(ngModel)]="aluno.nome" ></td>
-   <td><button (click)="gravar(aluno)">Adicionar</button></td>
+   <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
 </tr>
 <tr>
    <td><label>CPF </label></td>
    <td><input [(ngModel)]="aluno.cpf" ></td>
    <td *ngIf="cpfduplicado">
-      Já existe um aluno com esse CPF
+     Já existe um aluno com esse CPF
    </td>
 </tr>
 <tr>
@@ -25,16 +25,28 @@
    <td><input [(ngModel)]="aluno.email" ></td>
 </tr>
 <tr>
-   <td><label>login Github </label></td>
+   <td><label>login GitHub </label></td>
    <td><input [(ngModel)]="aluno.github" ></td>
 </tr>
 </table>
 
-<ul class="alunos">
-<li *ngFor="let a of alunos">
-    <span>{{a.nome}}</span>,
-    <span>{{a.cpf}}</span>,
-    <span>{{a.email}}</span>,
-    <span>{{a.github}}</span>
-</li>
-</ul>
+<table class="alunos">
+<tr *ngIf="alunos.length > 0">
+   <th>Nome</th>
+   <th>CPF</th>
+   <th>e-mail</th>
+   <th>Login GitHub</th>
+   <th>Requisitos</th>
+   <th>Gerência de Configuração</th>
+</tr>
+<tr *ngFor="let a of alunos">
+   <td>{{a.nome}}</td>
+   <td>{{a.cpf}}</td>
+   <td>{{a.email}}</td>
+   <td>{{a.github}}</td>
+   <td><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
+   <td><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+</tr>
+</table>
+
+</html>
