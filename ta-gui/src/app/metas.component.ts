@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 
-import { Aluno } from '../../../common/aluno';
+import { Aluno } from './aluno';
 import { AlunoService } from './aluno.service';
 
   @Component({
@@ -15,19 +15,11 @@ import { AlunoService } from './aluno.service';
     alunos: Aluno[];
 
     atualizarAluno(aluno: Aluno): void {
-      this.alunoService.atualizar(aluno).subscribe(
-         (a) => { if (a == null) alert("Unexpected fatal error trying to update student information! Please contact the systems administratos."); },
-         (msg) => { alert(msg.message); }
-      );
+       this.alunoService.atualizar(aluno);
     }
 
     ngOnInit(): void {
-      this.alunoService.getAlunos()
-      .subscribe(
-         (as) =>  { this.alunos = as; },
-         (msg) => { alert(msg.message); }
-      );
+      this.alunos = this.alunoService.getAlunos();
     }
-
 
   }
