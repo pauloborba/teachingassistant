@@ -1,10 +1,10 @@
-import { TaGuiPage } from './app.po';
+import { AppPage } from './app.po';
 
 describe('ta-gui App', () => {
-  let page: TaGuiPage;
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new TaGuiPage();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {
