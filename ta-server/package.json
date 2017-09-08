@@ -1,0 +1,20 @@
+{
+  "name": "ta-server",
+  "version": "0.0.2",
+  "description": "Servidor do teaching assistant",
+  "main": "ta-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "start": "npm run tsc && node compiledCode/ta-server.js"
+  },
+  "author": "Paulo Borba",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "@types/express": "^4.0.37"
+  },
+  "devDependencies": {
+    "typescript": "~3.5.3"
+  }
+}
