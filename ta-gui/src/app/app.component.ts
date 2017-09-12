@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 
-import { Aluno } from '../../../common/aluno';
-import { AlunoService } from './aluno.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+<<<<<<< HEAD
   [x: string]: any;
    constructor(private alunoService: AlunoService) {}
 
@@ -29,5 +27,7 @@ export class AppComponent {
    onMove(): void {
       this.cpfduplicado = false;
    }
+=======
+>>>>>>> 55c891b... servidor integrado ao cliente
 
 }

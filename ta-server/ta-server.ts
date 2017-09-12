@@ -6,32 +6,39 @@ import {CadastroDeAlunos} from './cadastrodealunos';
 
 var taserver = express();
 
-var alunos: CadastroDeAlunos = new CadastroDeAlunos();
+var cadastro: CadastroDeAlunos = new CadastroDeAlunos();
+
+var allowCrossDomain = function(req: any, res: any, next: any) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+}
+taserver.use(allowCrossDomain);
 
 taserver.use(bodyParser.json());
 
-taserver.get('/alunos', function (req, res) {
-  var aluno: string = JSON.stringify(alunos.getAlunos());
-  res.send(aluno);
+taserver.get('/alunos', function (req: express.Request, res: express.Response) {
+  res.send(JSON.stringify(cadastro.getAlunos()));
 })
 
 taserver.post('/aluno', function (req: express.Request, res: express.Response) {
-  var aluno: Aluno = <Aluno> req.body; //verificar se √© mesmo Aluno!
-  aluno = alunos.criar(aluno);
+  var aluno: Aluno = <Aluno> req.body; //verificar se È mesmo Aluno!
+  aluno = cadastro.cadastrar(aluno);
   if (aluno) {
     res.send({"success": "O aluno foi cadastrado com sucesso"});
   } else {
-    res.send({"failure": "O aluno n√£o pode ser cadastrado"});
+    res.send({"failure": "O aluno n„o pode ser cadastrado"});
   }
 })
 
 taserver.put('/aluno', function (req: express.Request, res: express.Response) {
   var aluno: Aluno = <Aluno> req.body;
-  aluno = alunos.atualizar(aluno);
+  aluno = cadastro.atualizar(aluno);
   if (aluno) {
     res.send({"success": "O aluno foi atualizado com sucesso"});
   } else {
-    res.send({"failure": "O aluno n√£o pode ser atualizado"});
+    res.send({"failure": "O aluno n„o pode ser atualizado"});
   }
 })
 
