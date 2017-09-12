@@ -15,7 +15,8 @@ export class MetasComponent implements OnInit {
    alunos: Aluno[];
 
    atualizarAluno(aluno: Aluno): void {
-      this.alunoService.atualizar(aluno);
+      this.alunoService.atualizar(aluno)
+         .catch(erro => alert(erro));
    }
 
    ngOnInit(): void {
