@@ -3,7 +3,7 @@ import { Aluno } from '../common/aluno';
 export class CadastroDeAlunos {
    alunos: Aluno[] = [];
 
-    criar(aluno: Aluno): Aluno {
+    cadastrar(aluno: Aluno): Aluno {
      var result = null;
      if (this.cpfNaoCadastrado(aluno.cpf)) {
        result = new Aluno();
