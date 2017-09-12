@@ -1,1 +1,13 @@
-
+ nav a {
+    padding: 3px 6px;
+    text-decoration: none;
+    display: inline-block;
+    background-color: #3399ff;
+    color: #ffffff;
+    border-radius: 4px;
+    margin: 4px;
+  }
+  nav a:hover {
+    color: #e6e6e6;
+    background-color: #1a8cff;
+  }
