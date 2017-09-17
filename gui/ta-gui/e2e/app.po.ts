@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class TaGuiPage {
+export class AngularTemplatePage {
   navigateTo() {
     return browser.get('/');
   }
