@@ -1,0 +1,26 @@
+<html (mousemove)="onMove()">
+
+<table>
+<tr>
+   <td><label>Nome </label></td>
+   <td><input [(ngModel)]="aluno.nome" ></td>
+   <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
+</tr>
+<tr>
+   <td><label>CPF </label></td>
+   <td><input [(ngModel)]="aluno.cpf" ></td>
+   <td *ngIf="cpfduplicado">
+     Já existe um aluno com esse CPF
+   </td>
+</tr>
+<tr>
+   <td><label>e-mail </label></td>
+   <td><input [(ngModel)]="aluno.email" ></td>
+</tr>
+<tr>
+   <td><label>github </label></td>
+   <td><input [(ngModel)]="aluno.github" ></td>
+</tr>
+</table>
+
+</html>
