@@ -1,37 +1,14 @@
-<html (mousemove)="onMove()">
+<html>
+
 <h1>
   Teaching Assistant
 </h1>
 
-<h2>
-  Alunos
-</h2>
+<nav>
+    <a routerLink="/alunos">Alunos</a>
+    <a routerLink="/metas">Metas</a>
+</nav>
 
-<table>
-<tr>
-   <td><label>Nome </label></td>
-   <td><input [(ngModel)]="aluno.nome" ></td>
-   <td><button (click)="gravar(aluno)">Adicionar</button></td>
-</tr>
-<tr>
-   <td><label>CPF </label></td>
-   <td><input [(ngModel)]="aluno.cpf" ></td>
-   <td *ngIf="cpfduplicado">
-     Já existe um aluno com esse CPF
-   </td>
-</tr>
-<tr>
-   <td><label>e-mail </label></td>
-   <td><input [(ngModel)]="aluno.email" ></td>
-</tr>
-</table>
+<router-outlet></router-outlet>
 
-
-<ul class="alunos">
-<li *ngFor="let a of alunos">
-    <span>{{a.nome}}</span>,
-    <span>{{a.cpf}}</span>,
-    <span>{{a.email}}</span>
-</li>
-</ul>
 </html>
