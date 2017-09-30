@@ -9,7 +9,6 @@ let sameCPF = ((elem, cpf) => elem.element(by.name('cpflist')).getText().then(te
 let sameName = ((elem, name) => elem.element(by.name('nomelist')).getText().then(text => text === name));
 
 defineSupportCode(function ({ Given, When, Then }) {
-
     Given(/^I am at the students page$/, async () => {
         await browser.get("http://localhost:4200/");
         await expect(browser.getTitle()).to.eventually.equal('TaGui');
@@ -20,7 +19,7 @@ defineSupportCode(function ({ Given, When, Then }) {
         var allcpfs : ElementArrayFinder = element.all(by.name('cpflist'));
         var samecpfs = allcpfs.filter(elem =>
                                       elem.getText().then(text => text === cpf));
-        await samecpfs;                              
+        await samecpfs;
         await samecpfs.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(0));
     });
 
@@ -36,5 +35,4 @@ defineSupportCode(function ({ Given, When, Then }) {
         await samenamecpf;
         await samenamecpf.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
     });
-
 })
