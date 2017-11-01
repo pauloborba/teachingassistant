@@ -3,19 +3,19 @@
 <table>
 <tr>
    <td><label>Nome </label></td>
-   <td><input [(ngModel)]="aluno.nome" ></td>
+   <td><input [(ngModel)]="aluno.nome" name="namebox"></td>
    <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
 </tr>
 <tr>
    <td><label>CPF </label></td>
-   <td><input [(ngModel)]="aluno.cpf" ></td>
+   <td><input [(ngModel)]="aluno.cpf" name="cpfbox"></td>
    <td *ngIf="cpfduplicado">
      Já existe um aluno com esse CPF
    </td>
 </tr>
 <tr>
    <td><label>e-mail </label></td>
-   <td><input [(ngModel)]="aluno.email" ></td>
+   <td><input [(ngModel)]="aluno.email"></td>
 </tr>
 </table>
 
@@ -25,9 +25,9 @@
    <th>CPF</th>
    <th>e-mail</th>
 </tr>
-<tr *ngFor="let a of alunos">
-   <td>{{a.nome}}</td>
-   <td>{{a.cpf}}</td>
+<tr *ngFor="let a of alunos" name="alunolist">
+   <td name="nomelist">{{a.nome}}</td>
+   <td name="cpflist">{{a.cpf}}</td>
    <td>{{a.email}}</td>
 </tr>
 </table>

@@ -15,7 +15,6 @@ var allowCrossDomain = function (req, res, next) {
 app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.get('/alunos', function (req, res) {
-    console.log('GET /alunos: ' + req);
     res.send(JSON.stringify(cadastro.getAlunos()));
 });
 app.post('/aluno', function (req, res) {
@@ -38,7 +37,12 @@ app.put('/aluno', function (req, res) {
         res.send({ "failure": "O aluno não pode ser atualizado" });
     }
 });
-app.listen(3000, function () {
+var server = app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
+exports.server = server;
+function closeServer() {
+    server.close();
+}
+exports.closeServer = closeServer;
 //# sourceMappingURL=ta-server.js.map
