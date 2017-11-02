@@ -1,0 +1,22 @@
+{
+  "name": "ta-server",
+  "version": "0.0.1",
+  "description": "Servidor do teaching assistant",
+  "main": "ta-server.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Paulo Borba",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "body-parser": "^1.18.2",
+    "@types/body-parser": "^1.16.5",
+    "@types/express": "^4.0.37"
+  },
+  "devDependencies": {
+    "@types/request-promise": "^4.1.38",
+    "jasmine": "^2.8.0",
+    "request-promise": "^4.2.2"
+  }
+}
