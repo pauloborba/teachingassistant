@@ -13,10 +13,18 @@ export class AvaliacaoComponent implements OnInit {
    constructor(private alunoService: AlunoService) {}
 
    alunos: Aluno[];
-   cpfexiste: boolean = true;
+   cpfexiste = true;
 
-    localizarAluno(nome: string, cpf: string): boolean {
-        return !this.alunos.find(a => a.cpf === cpf && a.nome === nome);
+   localizarAluno(aluno) {
+    if (this.cpfexistente(aluno)) {
+        this.cpfexiste = true;
+    } else {
+        this.cpfexiste = false;
+    }
+   }
+
+    cpfexistente(aluno: Aluno): boolean {
+        return !this.alunos.find(a => a.cpf === aluno.cpf && a.nome === aluno.nome);
     }
 
    ngOnInit(): void {

@@ -1,5 +1,19 @@
 <table>
-    <tr *ngIf="alunos.cpfexiste">
+    <tr>
+       <td><label>Nome </label></td>
+       <td><input [(ngModel)]="aluno.nome" name="nameinput"></td>
+    </tr>
+    <tr>
+       <td><label>CPF </label></td>
+       <td><input [(ngModel)]="aluno.cpf" name="cpfinput"></td>
+    </tr>
+    <tr>
+        <td><button (click)="localizarAluno(aluno)">Entrar</button></td>        
+    </tr>
+    </table>
+    
+<table *ngIf="alunos.cpfexiste == true">
+    <tr>
         <th>Nome</th>
         <th>CPF</th>
         <th>e-mail</th>
@@ -8,10 +22,10 @@
         <th>Conceitos Gerência</th>
         <th>Testes</th>
     </tr>
-    <tr *ngFor="let a of alunos" name="avaliacaolist">
-        <td>{{a.nome}}</td>
-        <td>{{a.cpf}}</td>
-        <td>{{a.email}}</td>
+    <tr name="avaliacaolist">
+        <td>{{aluno.nome}}</td>
+        <td>{{aluno.cpf}}</td>
+        <td>{{aluno.email}}</td>
         <td class="meta"><input [(ngModel)]="a.metas['conceitosReq']" (change)="atualizarAluno(a)"></td>
         <td class="meta"><input [(ngModel)]="a.metas['especificarReq']" (change)="atualizarAluno(a)"></td>
         <td class="meta"><input [(ngModel)]="a.metas['conceitosGer']" (change)="atualizarAluno(a)"></td>
