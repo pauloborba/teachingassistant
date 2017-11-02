@@ -15,6 +15,11 @@ export class AvaliacaoComponent implements OnInit {
    alunos: Aluno[];
    cpfexiste: boolean;
 
+   atualizarAluno(aluno: Aluno): void {
+      this.alunoService.atualizar(aluno)
+         .catch(erro => alert(erro));
+   }
+
    localizarAluno(aluno) {
     if (this.cpfNaoexistente(aluno)) {
         this.cpfexiste = false;
