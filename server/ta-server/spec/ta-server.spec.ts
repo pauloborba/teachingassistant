@@ -37,4 +37,21 @@ describe("O servidor", () => {
      });
   })
 
+  it("inicialmente retorna uma lista de auto-avaliacao vazia", () => {
+    return request.get(base_url + "autoAvaliacao").then(body => expect(body).toBe("[]")).catch(e => expect(e).toEqual(null));
+  })
+
+  it("não aceita novo cadastro de auto-avaliacao depois de confirmação de cadastro", () => {
+    return request.post(base_url + "autoAvaliacao", {"json":{"meta": "Conceitos Requisitos", "conceito" : "MA"}}).then(body => {
+         expect(body).toEqual({success: "A autoavaliacao foi cadastrada com sucesso"});
+         return request.post(base_url + "autoAvaliacao", {"json":{"meta": "Conceitos Requisitos", "conceito" : "MPA"}}).then(body => {
+             expect(body).toEqual({failure: "A autoavaliacao não pode ser cadastrada"});
+             return request.get(base_url + "autoAvaliacao").then(body => {
+                 expect(body).toContain('{"meta": "Conceitos Requisitos", "conceito" : "MA"}');
+                 expect(body).not.toContain('{"meta": "Conceitos Requisitos", "conceito" : "MPA"}');
+             });
+         });
+     });
+  })
+
 })
