@@ -1,4 +1,4 @@
-import { Injectable }    from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -13,32 +13,32 @@ export class AlunoService {
   constructor(private http: Http) { }
 
   criar(aluno: Aluno): Promise<Aluno> {
-    return this.http.post(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})
+    return this.http.post(this.taURL + '/aluno', JSON.stringify(aluno), {headers: this.headers})
            .toPromise()
            .then(res => {
-              if (res.json().success) {return aluno;} else {return null;}
+              if (res.json().success) {return aluno; } else {return null; }
            })
            .catch(this.tratarErro);
   }
 
   atualizar(aluno: Aluno): Promise<Aluno> {
-    return this.http.put(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})
+    return this.http.put(this.taURL + '/aluno', JSON.stringify(aluno), {headers: this.headers})
          .toPromise()
          .then(res => {
-            if (res.json().success) {return aluno;} else {return null;}
+            if (res.json().success) {return aluno; } else {return null; }
          })
          .catch(this.tratarErro);
   }
 
   getAlunos(): Promise<Aluno[]> {
-    return this.http.get(this.taURL + "/alunos")
+    return this.http.get(this.taURL + '/alunos')
              .toPromise()
              .then(res => res.json() as Aluno[])
              .catch(this.tratarErro);
   }
 
-  private tratarErro(erro: any): Promise<any>{
-    console.error('Acesso mal sucedido ao serviço de alunos',erro);
+  private tratarErro(erro: any): Promise<any> {
+    console.error('Acesso mal sucedido ao serviço de alunos', erro);
     return Promise.reject(erro.message || erro);
   }
 }
