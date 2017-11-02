@@ -16,7 +16,9 @@
   },
   "devDependencies": {
     "@types/request-promise": "^4.1.38",
+    "@types/jasmine": "^2.6.2",
     "jasmine": "^2.8.0",
+    "request": "^2.34",
     "request-promise": "^4.2.2"
   }
 }

@@ -8,7 +8,7 @@
     "experimentalDecorators": true,
     "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
-    "outDir": "typeScript",
+    //"outDir": "typeScript",
     "suppressImplicitAnyIndexErrors": true
   },
   "compileOnSave": true,
