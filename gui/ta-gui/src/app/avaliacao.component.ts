@@ -13,17 +13,17 @@ export class AvaliacaoComponent implements OnInit {
    constructor(private alunoService: AlunoService) {}
 
    alunos: Aluno[];
-   cpfexiste = true;
+   cpfexiste: boolean;
 
    localizarAluno(aluno) {
-    if (this.cpfexistente(aluno)) {
-        this.cpfexiste = true;
-    } else {
+    if (this.cpfNaoexistente(aluno)) {
         this.cpfexiste = false;
+    } else {
+        this.cpfexiste = true;
     }
    }
 
-    cpfexistente(aluno: Aluno): boolean {
+    cpfNaoexistente(aluno: Aluno): boolean {
         return !this.alunos.find(a => a.cpf === aluno.cpf && a.nome === aluno.nome);
     }
 
