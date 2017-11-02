@@ -35,4 +35,5 @@ export class Aluno {
       this.metas[key] = from[key];
     }
   }
+
 }
