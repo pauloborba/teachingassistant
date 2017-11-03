@@ -13,18 +13,23 @@ export class AvaliacaoComponent implements OnInit {
    constructor(private alunoService: AlunoService) {}
 
    alunos: Aluno[];
+   aluno: Aluno;
    cpfexiste: boolean;
 
    atualizarAluno(aluno: Aluno): void {
       this.alunoService.atualizar(aluno)
          .catch(erro => alert(erro));
+         console.log('atualizou aluno');
    }
 
    localizarAluno(aluno) {
-    if (this.cpfNaoexistente(aluno)) {
+    this.aluno = aluno;
+    if (this.cpfNaoexistente(this.aluno)) {
         this.cpfexiste = false;
+        console.log('nao encontrou aluno');
     } else {
         this.cpfexiste = true;
+        console.log('encontrou aluno');
     }
    }
 
@@ -36,6 +41,7 @@ export class AvaliacaoComponent implements OnInit {
       this.alunoService.getAlunos()
          .then(alunos => this.alunos = alunos)
          .catch(erro => alert(erro));
+         console.log(this.alunos);
    }
 
 

@@ -20,6 +20,7 @@ export class Aluno {
   clone(): Aluno {
     var aluno: Aluno = new Aluno();
     aluno.metas = new Map<string,string>();
+    aluno.avaliacao = new Map<string,string>();
     aluno.copyFrom(this);
     return aluno;
   }
