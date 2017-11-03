@@ -5,7 +5,7 @@
    <th>Gerência de Configuração</th>
 </tr>
 <tr>
-   <td><input [(ngModel)]="aluno.cpf" name="cpfbox"></td>
+   <td><input id="cpfbox"></td>
    <td name="Requisitos">
       <form>
          <input type="radio" name="req" value="MA">MA
@@ -21,5 +21,5 @@
       </form>
    </td>
 </tr>
-<button (click)="atualiazarAluno()">Enviar Autoavaliação</button>
+<button id="enviar" name='enviarAutoavaliacao' (click)="formarAluno()">Enviar Autoavaliação</button>
 </table>

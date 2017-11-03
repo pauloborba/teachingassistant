@@ -4,6 +4,7 @@ export class Aluno {
   email: string;
   metas: Map<string,string>;
   autoavaliacao: Map<string,string>;
+  jaRespondeu: boolean;
 
   constructor() {
     this.clean();
@@ -15,6 +16,7 @@ export class Aluno {
     this.email = "";
     this.metas = new Map<string,string>();
     this.autoavaliacao = new Map<string,string>();
+    this.jaRespondeu=false;
   }
 
   clone(): Aluno {
@@ -34,8 +36,10 @@ export class Aluno {
 
   copyMetasFrom(from: Map<string,string>): void {
     this.metas = new Map<string,string>();
+    this.autoavaliacao= new Map<string,string>();
     for (let key in from) {
       this.metas[key] = from[key];
+      this.autoavaliacao[key] = from[key];
     }
   }
 }

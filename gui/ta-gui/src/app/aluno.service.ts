@@ -25,7 +25,8 @@ export class AlunoService {
     return this.http.put(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})
          .toPromise()
          .then(res => {
-            if (res.json().success) {return aluno;} else {return null;}
+            if (res.json().success) {return aluno;} else {alert("oops");
+            return null;}
          })
          .catch(this.tratarErro);
   }
