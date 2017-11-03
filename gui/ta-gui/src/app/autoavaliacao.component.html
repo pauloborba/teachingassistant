@@ -1,0 +1,25 @@
+<table>
+<tr>
+   <th>CPF</th>
+   <th>Requisitos</th>
+   <th>Gerência de Configuração</th>
+</tr>
+<tr>
+   <td><input [(ngModel)]="aluno.cpf" name="cpfbox"></td>
+   <td name="Requisitos">
+      <form>
+         <input type="radio" name="req" value="MA">MA
+         <input type="radio" name="req" value="MPA">MPA
+         <input type="radio" name="req" value="MANA">MANA
+      </form>
+   </td>
+   <td name="Gerência de Configuração">
+      <form>
+         <input type="radio" name="con" value="MA">MA
+         <input type="radio" name="con" value="MPA">MPA
+         <input type="radio" name="con" value="MANA">MANA
+      </form>
+   </td>
+</tr>
+<button (click)="atualiazarAluno()">Enviar Autoavaliação</button>
+</table>

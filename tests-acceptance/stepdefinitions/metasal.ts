@@ -12,8 +12,12 @@ defineSupportCode(function ({ Given, When, Then }) {
         await $("a[name='autoavaliacao']").click();
     });
 
+    Given(/^eu estou logado com cpf [^\"]* /,async (cpf) => {
+        await $("input[name='cpfbox']").sendKeys(<string> name);
+    });
+
     When(/^eu preencher o campo [^\"]* com [^\"]*"$/, async(conceito, meta) => {
-           await $("tr[name='conceito']").$("input[name=meta]").click();
+           await $("td[name=conceito]").$("input[value=meta]").click();
     });
 
     When(/^eu tentar enviar uma autoavaliação$/, async()=>{

@@ -3,14 +3,18 @@
    <th>Nome</th>
    <th>CPF</th>
    <th>e-mail</th>
-   <th>Requisitos</th>
-   <th>Gerência de Configuração</th>
+   <th>Requisitos - Meta </th>
+   <th>Requisitos - Autoavaliação</th>
+   <th>Gerência de Configuração - Meta</th>
+   <th>Gerência de Configuração - Autoavaliacao</th>
 </tr>
 <tr *ngFor="let a of alunos">
    <td>{{a.nome}}</td>
    <td>{{a.cpf}}</td>
    <td>{{a.email}}</td>
    <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
+   <td>{{a.autoavaliacao['requisitos']}}</td>
    <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+   <td>{{a.autoavaliacao['gerDeConfiguracao']}}</td>
 </tr>
 </table>
