@@ -5,14 +5,14 @@
     </tr>
     <tr>
        <td><label>CPF </label></td>
-       <td><input [(ngModel)]="aluno.cpf" ></td>
+       <td><input [(ngModel)]="aluno.cpf"></td>
     </tr>
     <tr>
         <td><button (click)="localizarAluno(aluno)">Entrar</button></td>        
     </tr>
 </table>
 
-<table *ngIf="cpfexiste">
+<table >
     <tr>
         <th>Nome</th>
         <th>CPF</th>

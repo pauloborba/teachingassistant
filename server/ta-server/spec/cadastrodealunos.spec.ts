@@ -66,7 +66,7 @@ describe("O cadastro de alunos", () => {
     var map = new Map();
     map.set(aluno.getMetas()[0], "MA");
     map.set(aluno.getMetas()[1], "MPA");
-    cadastro.copyAutoAvaliacoesFrom(map);
+    cadastro.copyAvalFrom(map);
 
     aluno = cadastro.getAlunos()[0];
     expect(aluno.getAutoavaliacoes()[0]).toBe("MA");
