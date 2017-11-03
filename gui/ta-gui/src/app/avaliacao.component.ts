@@ -12,8 +12,8 @@ import { AlunoService } from './aluno.service';
 export class AvaliacaoComponent implements OnInit {
    constructor(private alunoService: AlunoService) {}
 
+   aluno: Aluno = new Aluno();
    alunos: Aluno[];
-   aluno: Aluno;
    cpfexiste: boolean = false;
 
    atualizarAluno(aluno: Aluno): void {
