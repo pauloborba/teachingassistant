@@ -20,7 +20,7 @@ export let config: Config = {
     onPrepare: () => {
 
         browser.ignoreSynchronization = true;
-        browser.manage().window().maximize();
+        //browser.manage().window().maximize();
 
     },
     cucumberOpts: {
