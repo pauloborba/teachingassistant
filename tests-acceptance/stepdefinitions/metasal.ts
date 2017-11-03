@@ -6,13 +6,13 @@ let expect = chai.expect;
 let sleep = (ms => new Promise(resolve => setTimeout(resolve, ms)));
 
 defineSupportCode(function ({ Given, When, Then }) {
-    Given(/^eu estou na página "Autoavaliação"/,async () => {
+    Given(/^eu estou na página "Autoavaliação"$/,async () => {
         await browser.get("http://localhost:4200/");
         await expect(browser.getTitle()).to.eventually.equal('TaGui');
         await $("a[name='autoavaliacao']").click();
     });
 
-    Given(/^eu estou logado com cpf [^\"]* /,async (cpf) => {
+    When(/^eu estiver logado com cpf [^\"]* $/,async (cpf) => {
         await $("input[name='cpfbox']").sendKeys(<string> name);
     });
 
@@ -35,7 +35,9 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
 
 Then(/^aparecerá uma mensagem de erro$/, async()=>{
-        await expect($("p[name='errormessage']").getText()).to.eventually.equal("Falta campos.");
+        browser.ignoreSynchronization = true
+        browser.get('URL');
+        browser.switchTo().alert().accept();
     });
 
 })

@@ -14,13 +14,16 @@ let chai = require('chai').use(require('chai-as-promised'));
 let expect = chai.expect;
 let sleep = (ms => new Promise(resolve => setTimeout(resolve, ms)));
 cucumber_1.defineSupportCode(function ({ Given, When, Then }) {
-    Given(/^eu estou na página "Autoavaliação"/, () => __awaiter(this, void 0, void 0, function* () {
+    Given(/^eu estou na página "Autoavaliação"$/, () => __awaiter(this, void 0, void 0, function* () {
         yield protractor_1.browser.get("http://localhost:4200/");
         yield expect(protractor_1.browser.getTitle()).to.eventually.equal('TaGui');
         yield protractor_1.$("a[name='autoavaliacao']").click();
     }));
+    When(/^eu estiver logado com cpf [^\"]* $/, (cpf) => __awaiter(this, void 0, void 0, function* () {
+        yield protractor_1.$("input[name='cpfbox']").sendKeys(name);
+    }));
     When(/^eu preencher o campo [^\"]* com [^\"]*"$/, (conceito, meta) => __awaiter(this, void 0, void 0, function* () {
-        yield protractor_1.$("tr[name='conceito']").$("input[name=meta]").click();
+        yield protractor_1.$("td[name=conceito]").$("input[value=meta]").click();
     }));
     When(/^eu tentar enviar uma autoavaliação$/, () => __awaiter(this, void 0, void 0, function* () {
         yield protractor_1.$("input[name='enviarAutoavaliacao']").click();
@@ -33,6 +36,8 @@ cucumber_1.defineSupportCode(function ({ Given, When, Then }) {
         protractor_1.browser.switchTo().alert().accept();
     }));
     Then(/^aparecerá uma mensagem de erro$/, () => __awaiter(this, void 0, void 0, function* () {
-        yield expect(protractor_1.$("p[name='errormessage']").getText()).to.eventually.equal("Falta campos.");
+        protractor_1.browser.ignoreSynchronization = true;
+        protractor_1.browser.get('URL');
+        protractor_1.browser.switchTo().alert().accept();
     }));
 });

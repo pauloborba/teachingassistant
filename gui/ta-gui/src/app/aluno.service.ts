@@ -22,7 +22,6 @@ export class AlunoService {
   }
 
   atualizar(aluno: Aluno): Promise<Aluno> {
-    alert(JSON.stringify(aluno));
     return this.http.put(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})
          .toPromise()
          .then(res => {

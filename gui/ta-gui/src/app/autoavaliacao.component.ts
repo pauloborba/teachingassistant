@@ -20,33 +20,49 @@ export class AutoavaliacaoComponent implements OnInit {
          .then(alunos => this.alunos = alunos)
          .catch(erro => alert(erro));
 
-      //alert((<HTMLInputElement>document.getElementById('cpfbox')).value);
-      this.aluno = this.alunos.find(a => a.cpf == (<HTMLInputElement>document.getElementById('cpfbox')).value);
-      //alert("Aluno: "+this.aluno.nome+" "+this.aluno.cpf);
 
+      this.aluno = this.alunos.find(a => a.cpf == (<HTMLInputElement>document.getElementById('cpfbox')).value);
+
+      if(!this.aluno){
+        alert("Aluno com cpf não cadastrado");
+      }
+
+      else if(this.aluno.jaRespondeu){
+        alert("Aluno já respondeu autoavaliação");
+      }
+
+      else{
       var radios = document.getElementsByName('req');
+      var campovazio=true;
 
       for (var i = 0, length = radios.length; i < length; i++){
         if ((<HTMLInputElement>radios[i]).checked){
-          alert("Meta"+this.aluno.autoavaliacao['requisitos']);
           this.aluno.autoavaliacao['requisitos']=(<HTMLInputElement>radios[i]).value;
-          alert("Meta"+this.aluno.autoavaliacao['requisitos']);
+          campovazio=false;
+          break;
         }
       }
 
       radios = document.getElementsByName('con');
 
+      campovazio=true;
       for (var i = 0, length = radios.length; i < length; i++){
         if ((<HTMLInputElement>radios[i]).checked){
-          alert("Meta"+this.aluno.autoavaliacao['gerDeConfiguracao']);
           this.aluno.autoavaliacao['gerDeConfiguracao']=(<HTMLInputElement>radios[i]).value;
-          alert("Meta"+this.aluno.autoavaliacao['gerDeConfiguracao']);
+          campovazio=false;
+          break;
         }
       }
 
-      this.aluno.jaRespondeu=true;
+      if(!campovazio){
+        this.aluno.jaRespondeu=true;
 
-      this.atualizarAluno(this.aluno);
+        this.atualizarAluno(this.aluno);
+      }
+      else{
+        alert("Falta preencher campo(s)")
+      }
+      }
    }
 
    atualizarAluno(aluno: Aluno): void {
