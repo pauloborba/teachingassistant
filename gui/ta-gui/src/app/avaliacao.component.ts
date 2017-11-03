@@ -14,7 +14,7 @@ export class AvaliacaoComponent implements OnInit {
 
    alunos: Aluno[];
    aluno: Aluno;
-   cpfexiste: boolean;
+   cpfexiste: boolean = false;
 
    atualizarAluno(aluno: Aluno): void {
       this.alunoService.atualizar(aluno)
@@ -22,20 +22,30 @@ export class AvaliacaoComponent implements OnInit {
          console.log('atualizou aluno');
    }
 
-   localizarAluno(aluno) {
+   localizarAluno(aluno: Aluno) {
     this.aluno = aluno;
-    if (this.cpfNaoexistente(this.aluno)) {
-        this.cpfexiste = false;
-        console.log('nao encontrou aluno');
-    } else {
-        this.cpfexiste = true;
-        console.log('encontrou aluno');
+    console.log(this.aluno);
+    for (let a of this.alunos) {
+        if (a.nome === this.aluno.nome && a.cpf === this.aluno.cpf) {
+            return this.cpfexiste = true;
+        }
     }
    }
 
-    cpfNaoexistente(aluno: Aluno): boolean {
-        return !this.alunos.find(a => a.cpf === aluno.cpf && a.nome === aluno.nome);
-    }
+//    localizarAluno(aluno: Aluno) {
+//     this.aluno = aluno;
+//     if (this.cpfNaoexistente(aluno)) {
+//         this.cpfexiste = false;
+//         console.log('nao encontrou aluno');
+//     } else {
+//         this.cpfexiste = true;
+//         console.log('encontrou aluno');
+//     }
+//    }
+
+    // cpfNaoexistente(aluno: Aluno): boolean {
+    //     return !this.alunos.find(a => a.cpf === aluno.cpf && a.nome === aluno.nome);
+    // }
 
    ngOnInit(): void {
       this.alunoService.getAlunos()

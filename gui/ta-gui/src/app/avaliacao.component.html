@@ -1,16 +1,17 @@
 <table>
     <tr>
        <td><label>Nome </label></td>
-       <td><input [(ngModel)]="aluno.nome" name="nameinput"></td>
+       <td><input [(ngModel)]="aluno.nome"></td>
     </tr>
     <tr>
        <td><label>CPF </label></td>
-       <td><input [(ngModel)]="aluno.cpf" name="cpfinput"></td>
+       <td><input [(ngModel)]="aluno.cpf" ></td>
     </tr>
     <tr>
         <td><button (click)="localizarAluno(aluno)">Entrar</button></td>        
     </tr>
-    </table>
+</table>
+
 <table *ngIf="cpfexiste">
     <tr>
         <th>Nome</th>
