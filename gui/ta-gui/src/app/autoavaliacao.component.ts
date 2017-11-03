@@ -50,9 +50,6 @@ export class AutoavaliacaoComponent implements OnInit {
    }
 
    atualizarAluno(aluno: Aluno): void {
-      alert(aluno.nome);
-      alert(aluno.cpf);
-      alert(aluno.autoavaliacao['requisitos']);
       this.alunoService.atualizar(aluno)
          .catch(erro => alert(erro));
 

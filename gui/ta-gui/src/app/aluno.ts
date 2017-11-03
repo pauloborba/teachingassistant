@@ -32,13 +32,20 @@ export class Aluno {
     this.cpf = from.cpf;
     this.email = from.email;
     this.copyMetasFrom(from.metas);
+    this.copyAutoavaliacaoFrom(from.autoavaliacao);
+    this.jaRespondeu=from.jaRespondeu;
   }
 
   copyMetasFrom(from: Map<string,string>): void {
     this.metas = new Map<string,string>();
-    this.autoavaliacao= new Map<string,string>();
     for (let key in from) {
       this.metas[key] = from[key];
+    }
+  }
+
+  copyAutoavaliacaoFrom(from: Map<string,string>): void {
+    this.autoavaliacao = new Map<string,string>();
+    for (let key in from) {
       this.autoavaliacao[key] = from[key];
     }
   }
