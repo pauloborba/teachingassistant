@@ -15,11 +15,14 @@ export class AvaliacaoComponent implements OnInit {
    aluno: Aluno = new Aluno();
    alunos: Aluno[];
    cpfexiste: boolean = false;
+   completa: boolean = false;
 
-   atualizarAluno(aluno: Aluno): void {
-      this.alunoService.atualizar(aluno)
-         .catch(erro => alert(erro));
-         console.log('atualizou aluno');
+   enviarAval(aluno: Aluno) {
+       this.nullNorEmpty(aluno);
+       if (this.completa) {
+        this.alunoService.atualizar(aluno)
+        .catch(erro => alert(erro));
+       }
    }
 
    localizarAluno(nome: string, cpf: string) {
@@ -31,26 +34,21 @@ export class AvaliacaoComponent implements OnInit {
     }
    }
 
-//    localizarAluno(aluno: Aluno) {
-//     this.aluno = aluno;
-//     if (this.cpfNaoexistente(aluno)) {
-//         this.cpfexiste = false;
-//         console.log('nao encontrou aluno');
-//     } else {
-//         this.cpfexiste = true;
-//         console.log('encontrou aluno');
-//     }
-//    }
-
-    // cpfNaoexistente(aluno: Aluno): boolean {
-    //     return !this.alunos.find(a => a.cpf === aluno.cpf && a.nome === aluno.nome);
-    // }
+   nullNorEmpty(aluno: Aluno): boolean {
+       if (Object.keys(aluno.avaliacao).length === Object.keys(aluno.metas).length) {
+            for (let key in aluno.metas) {
+                if (aluno.avaliacao[key] === '' || aluno.avaliacao[key] == null) {
+                    return this.completa = false;
+                }
+            }
+            return this.completa = true;
+       }
+   }
 
    ngOnInit(): void {
       this.alunoService.getAlunos()
          .then(alunos => this.alunos = alunos)
          .catch(erro => alert(erro));
-         console.log(this.alunos);
    }
 
 

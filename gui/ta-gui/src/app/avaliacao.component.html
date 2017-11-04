@@ -14,22 +14,32 @@
 
 <table *ngIf="cpfexiste">
     <tr>
-        <th>Nome</th>
-        <th>CPF</th>
-        <th>e-mail</th>
-        <th>Conceitos Requisitos</th>
-        <th>Especificar Requisitos</th>
-        <th>Conceitos Gerência</th>
-        <th>Testes</th>
+        <td><label class="label">Aluno de CPF {{aluno.cpf}}</label></td>
+        <th>Professor</th>
+        <th>Auto-Avaliação</th>
     </tr>
     <tr>
-        <td>{{aluno.nome}}</td>
-        <td>{{aluno.cpf}}</td>
-        <td>{{aluno.email}}</td>
-        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['conceitosReq']" (change)="atualizarAluno(aluno)"></td>
-        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['especificarReq']" (change)="atualizarAluno(aluno)"></td>
-        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['conceitosGer']" (change)="atualizarAluno(aluno)"></td>
-        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['testes']" (change)="atualizarAluno(aluno)"></td>
-        
+        <th>Conceitos Requisitos</th>    
+        <td>{{aluno.metas['conceitosReq']}}</td>        
+        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['conceitosReq']"></td>        
     </tr>
+    <tr>
+         <th>Especificar Requisitos</th>
+         <td>{{aluno.metas['especificarReq']}}</td>                
+         <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['especificarReq']"></td>  
+    </tr>
+    <tr>
+        <th>Conceitos Gerência</th>
+        <td>{{aluno.metas['conceitosGer']}}</td>                
+        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['conceitosGer']"></td>            
+    </tr>
+    <tr>
+        <th>Testes</th>
+        <td>{{aluno.metas['testes']}}</td>        
+        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['testes']"></td> 
+    </tr>
+    
+        <button (click)="enviarAval(aluno)">Entrar</button>
+        <td *ngIf="!completa">Campo obrigatório em branco</td>    
+    
 </table>

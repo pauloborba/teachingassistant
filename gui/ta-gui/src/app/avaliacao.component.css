@@ -6,6 +6,7 @@ th {
   td, th {
     padding: 15px;
     border-bottom: 1px solid #ddd;
+    text-align: center;    
   }
   
   tr:hover {
@@ -22,3 +23,6 @@ th {
     width: 40px;
   }
   
+  .label {
+    color: #3399ff;
+  }
