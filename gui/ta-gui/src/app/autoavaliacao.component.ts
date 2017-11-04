@@ -41,6 +41,7 @@ export class AutoAvaliacaoComponent implements OnInit {
           existe = true;
         }
       }
+      this.autoav_enviada = false;
       return !existe;
   }
   autoavIncompleta(a: Aluno, alunos: Aluno[]): boolean {
