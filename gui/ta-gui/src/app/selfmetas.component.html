@@ -1,0 +1,17 @@
+<table>
+<tr>
+   <th>Nome</th>
+   <th>CPF</th>
+   <th>e-mail</th>
+   <th>Requisitos</th>
+   <th>Gerência de Configuração</th>
+</tr>
+<tr *ngFor="let a of alunos" name="alunosmetalist">
+   <td name="nomemetalist">{{a.nome}}</td>
+   <td name="cpfmetalist">{{a.cpf}}</td>
+   <td>{{a.email}}</td>
+   <td class="meta"><input [(ngModel)]="a.selfmetas['requisitos']" name="requisitos"></td>
+   <td class="meta"><input [(ngModel)]="a.selfmetas['gerDeConfiguracao']" name="gerconfig"></td>
+   <td><button name="but" (click)="autoAvaliarAluno(a)">OK</button></td>
+</tr>
+</table>

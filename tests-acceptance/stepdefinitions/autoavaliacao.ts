@@ -19,10 +19,10 @@ let emptyField = ((elem, field) => elem.element(by.name(field)).getAttribute('ng
 }));
 
 defineSupportCode(function ({ Given, When, Then }) {
-    Given(/^I am at the metas page$/, async () => {
+    Given(/^I am at the selfmetas page$/, async () => {
         await browser.get("http://localhost:4200/");
         await expect(browser.getTitle()).to.eventually.equal('TaGui');
-        await $("a[name='metas']").click();
+        await $("a[name='selfmetas']").click();
     });
 
     Given(/^I can see the student "([^\"]*)" with CPF "(\d*)" in the students list without concepts$/, async (name, cpf) => {
@@ -35,8 +35,7 @@ defineSupportCode(function ({ Given, When, Then }) {
 	await samenamecpf.first().element(by.name('requisitos')).sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE);
 	await samenamecpf.first().element(by.name('gerconfig')).sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE);
 
-	// ativar o onchange
-	await samenamecpf.first().element(by.name('cpfmetalist')).click();
+//	await samenamecpf.first().element(by.name('but')).click();
 	
 	await expect(emptyField(samenamecpf.first(), 'requisitos')).to.eventually.equal(true);
 	await expect(emptyField(samenamecpf.first(), 'gerconfig')).to.eventually.equal(true);
@@ -51,15 +50,29 @@ defineSupportCode(function ({ Given, When, Then }) {
 	if (field === "Requisitos") fd = 'requisitos';
 	else fd = 'gerconfig';
         await samenamecpf.first().element(by.name(fd)).sendKeys(<string> meta);
-	// ativar onchange
-	await samenamecpf.first().element(by.name('cpfmetalist')).click();
+
     });
 
+    When(/^I confirm "([^\"]*)" with CPF "(\d*)" self evaluations$/, async(name, cpf) => {
+	var allalunos : ElementArrayFinder = element.all(by.name('alunosmetalist'));
+        await allalunos;
+        var samenamecpf = allalunos.filter(elem => sameCPF(elem,cpf) && sameName(elem,name));
+        await samenamecpf;
+	await samenamecpf.first().element(by.name('but')).click();
+    });
+    
     When(/^I reload the page$/, async () => {
 	await browser.refresh();
 	await expect(browser.getTitle()).to.eventually.equal('TaGui');
     });
 
+    Then(/^I can see an alert with error message "(.*)"$/, async (msg) => {
+	var alert = browser.switchTo().alert()
+	await alert;
+	await expect(alert.getText()).to.eventually.equal(msg);
+	await alert.dismiss();
+    });
+    
     Then(/^I can see the student "([^\"]*)" with CPF "(\d*)" with meta "(\w*)" in "(.*)"\.?$/, async (name, cpf, meta, field) => {
         var allalunos : ElementArrayFinder = element.all(by.name('alunosmetalist'));
         await allalunos;
@@ -70,15 +83,5 @@ defineSupportCode(function ({ Given, When, Then }) {
         await samenamecpf;
         await samenamecpf.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
 	await expect(sameMeta(samenamecpf.first(), fd, meta)).to.eventually.equal(true);
-    });
-
-    Then(/^I can see the student "([^\"]*)" with CPF "(\d*)" still without metas.$/, async (name, cpf) => {
-	var allalunos : ElementArrayFinder = element.all(by.name('alunosmetalist'));
-	await allalunos;
-	var samenamecpf = allalunos.filter(elem => sameCPF(elem,cpf) && sameName(elem,name));
-	await samenamecpf;
-        await samenamecpf.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
-	await expect(emptyField(samenamecpf.first(), 'requisitos')).to.eventually.equal(true);
-	await expect(emptyField(samenamecpf.first(), 'gerconfig')).to.eventually.equal(true);
     });
 })
