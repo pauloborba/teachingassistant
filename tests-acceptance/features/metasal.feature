@@ -3,17 +3,16 @@ Feature: As a professor
 		 So that I can manage their learning goals
 		 
 Scenario: Autoavaliação com erro, pois falta o campo “Entender conceitos de gerência de configuração” (web)
-Given eu estou na página “Autoavaliação”
-And eu estiver logado com cpf "683"
-When eu preencher o campo “Requisitos” com "MA"
+Given eu estou na página autoavaliação
+When eu estiver logado com cpf "683"
+And eu preencher o campo "req" com "MA"
 And eu tentar enviar a autoavaliação
 Then aparecerá uma mensagem de erro
 
 Scenario: Nova Autoavaliação sem erro (web)
-Given eu estou na página “Autoavaliação”
-And eu estiver logado com cpf "683"
-When eu preencher o campo “Requisitos” com "MA"
-And eu preencher o campo “Gerência de Configuração" com "MA"
+Given eu estou na página autoavaliação
+When eu estiver logado com cpf "683"
+And eu preencher o campo "req" com "MA"
+And eu preencher o campo "ger" com "MA"
 And eu tentar enviar a autoavaliação
-Then serei redirecionado para a página inicial
-And aparecerá uma mensagem de confirmação
+Then aparecerá uma mensagem de confirmação

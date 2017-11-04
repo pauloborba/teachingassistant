@@ -58,6 +58,8 @@ export class AutoavaliacaoComponent implements OnInit {
         this.aluno.jaRespondeu=true;
 
         this.atualizarAluno(this.aluno);
+	
+	alert("Autoavaliação enviada");
       }
       else{
         alert("Falta preencher campo(s)")

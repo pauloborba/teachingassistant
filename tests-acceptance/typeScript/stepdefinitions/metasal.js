@@ -14,22 +14,19 @@ let chai = require('chai').use(require('chai-as-promised'));
 let expect = chai.expect;
 let sleep = (ms => new Promise(resolve => setTimeout(resolve, ms)));
 cucumber_1.defineSupportCode(function ({ Given, When, Then }) {
-    Given(/^eu estou na página "Autoavaliação"$/, () => __awaiter(this, void 0, void 0, function* () {
+    Given(/^eu estou na página autoavaliação$/, () => __awaiter(this, void 0, void 0, function* () {
         yield protractor_1.browser.get("http://localhost:4200/");
         yield expect(protractor_1.browser.getTitle()).to.eventually.equal('TaGui');
         yield protractor_1.$("a[name='autoavaliacao']").click();
     }));
-    When(/^eu estiver logado com cpf [^\"]* $/, (cpf) => __awaiter(this, void 0, void 0, function* () {
-        yield protractor_1.$("input[name='cpfbox']").sendKeys(name);
+    When(/^eu estiver logado com cpf "(\d*)"$/, (cpf) => __awaiter(this, void 0, void 0, function* () {
+        yield protractor_1.$("input[id='cpfbox']").sendKeys(cpf);
     }));
-    When(/^eu preencher o campo [^\"]* com [^\"]*"$/, (conceito, meta) => __awaiter(this, void 0, void 0, function* () {
-        yield protractor_1.$("td[name=conceito]").$("input[value=meta]").click();
+    When(/^eu preencher o campo "([^\"]*)" com "([^\"]*)"$/, (conceito, meta) => __awaiter(this, void 0, void 0, function* () {
+        yield protractor_1.element(protractor_1.by.name(conceito)).element(protractor_1.by.id(meta)).click();
     }));
-    When(/^eu tentar enviar uma autoavaliação$/, () => __awaiter(this, void 0, void 0, function* () {
-        yield protractor_1.$("input[name='enviarAutoavaliacao']").click();
-    }));
-    Then(/^serei redirecionado para a página inicial$/, () => __awaiter(this, void 0, void 0, function* () {
-        yield expect(protractor_1.browser.getTitle()).to.eventually.equal('TaGui');
+    When(/^eu tentar enviar a autoavaliação$/, () => __awaiter(this, void 0, void 0, function* () {
+        yield protractor_1.element(protractor_1.by.name('enviarAutoavaliacao')).click();
     }));
     Then(/^aparecerá uma mensagem de confirmação$/, () => __awaiter(this, void 0, void 0, function* () {
         protractor_1.browser.ignoreSynchronization = true;
