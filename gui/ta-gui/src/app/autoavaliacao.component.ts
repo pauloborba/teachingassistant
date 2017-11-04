@@ -48,29 +48,33 @@ export class AutoAvaliacaoComponent implements OnInit {
     var incompleta = false;
       if(a.autoav['mot_requisitos'] == null) {
         meta = document.getElementById("req");
-        meta.style.backgroundColor = "#db0202";
-        incompleta = true;
+        incompleta = this.metaEmBranco(meta);
       }else{ 
         meta = document.getElementById("req");
-        meta.style.backgroundColor = "white";
+        this.metaPreenchida(meta);
       }
       if(a.autoav['mot_testes'] == null){
         meta = document.getElementById("test");
-        meta.style.backgroundColor = "#db0202";
-        incompleta = true;
+        incompleta = this.metaEmBranco(meta);
       }else{ 
         meta = document.getElementById("test");
-        meta.style.backgroundColor = "white";
+        this.metaPreenchida(meta);
       }
       if(a.autoav['uso_controleversao'] == null){
         meta = document.getElementById("cont");
-        meta.style.backgroundColor = "#db0202";
-        incompleta = true;
+        incompleta = this.metaEmBranco(meta);
       }else{ 
         meta = document.getElementById("cont");
-        meta.style.backgroundColor = "white";
+        this.metaPreenchida(meta);
       }
     return incompleta;
+  }
+  metaEmBranco(embranco): boolean{
+    embranco.style.backgroundColor = "#db0202";
+    return true;
+  }
+  metaPreenchida(preenchida){
+    preenchida.style.backgroundColor = "white";
   }
 
   atualizarAluno(aluno: Aluno): void {
