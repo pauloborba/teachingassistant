@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <h1> LISTA DE ALUNOS DISCREPANTES </h1>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>e-mail</th>
+      <th>Requisitos</th>
+      <th>Gerência de Configuração</th>
+    </tr>
+    <tr *ngFor="let a of alunos" name="disclist">
+      <td name="nomelist">{{a.nome}}</td>
+      <td name="cpflist">{{a.cpf}}</td>
+      <td name="emaillist">{{a.email}}</td>
+      <td name="requisitos" align="center">
+	<table>
+	  <tr>
+	    <th>prof</th>
+	    <th>self</th>
+	  </tr>
+	  <tr>
+	    <td align="center" name="req">{{a.metas['requisitos']}}</td>
+	    <td align="center" name="selfreq">{{a.selfmetas['requisitos']}}</td>
+	  </tr>
+	</table>
+      </td>
+      <td name="gerconfig" align="center">
+	<table>
+	  <tr>
+	    <th>prof</th>
+	    <th>self</th>
+	  </tr>
+	  <tr>
+	    <td align="center" name="ger">{{a.metas['gerDeConfiguracao']}}</td>
+	    <td align="center" name="selfger">{{a.selfmetas['gerDeConfiguracao']}}</td>
+	  </tr>
+	</table>
+      </td>
+      <td *ngIf="discrepante[a.cpf]" align="right" name="exclamations">!!!!</td>
+    </tr>
+  </table>
+  <div [innerHtml]="total" name="discrepantetotal"></div>
+  <div [innerHtml]="pctg" name="pctgtotal"></div>
+  <div *ngIf="discdetect" name="mensagem" class="discdetect">DISCREPÂNCIA DETECTADA!!!!!</div>
+</html>
+
