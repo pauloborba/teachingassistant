@@ -18,7 +18,7 @@ export class AvaliacaoComponent implements OnInit {
    completa: boolean = false;
 
    enviarAval(aluno: Aluno) {
-       this.nullNorEmpty(aluno);
+       this.verificaCompletude(aluno);
        if (this.completa) {
         this.alunoService.atualizar(aluno)
         .catch(erro => alert(erro));
@@ -34,16 +34,29 @@ export class AvaliacaoComponent implements OnInit {
     }
    }
 
-   nullNorEmpty(aluno: Aluno): boolean {
-       if (Object.keys(aluno.avaliacao).length === Object.keys(aluno.metas).length) {
-            for (let key in aluno.metas) {
-                if (aluno.avaliacao[key] === '' || aluno.avaliacao[key] == null) {
-                    return this.completa = false;
-                }
-            }
-            return this.completa = true;
-       }
+   verificaCompletude(aluno: Aluno): void {
+    for (let key in aluno.metas.keys) {
+        if (aluno.avaliacao.has(key)) {
+            console.log(key);
+            this.nullNorEmpty(aluno, key);
+        }
+    }
+    //    if (Object.keys(aluno.avaliacao).length === Object.keys(aluno.metas).length) {
+    //         for (const key in aluno.metas) {
+    //             this.nullNorEmpty(aluno, key);
+    //         }
+    //         return this.completa = true;
+    //    }
    }
+
+   nullNorEmpty(aluno: Aluno, key: string): boolean {
+    if (aluno.avaliacao[key] === '' || aluno.avaliacao[key] == null) {
+        document.getElementById(key).style.backgroundColor = 'red';
+        return this.completa = false;
+    }
+    return this.completa = true;
+   }
+
 
    ngOnInit(): void {
       this.alunoService.getAlunos()

@@ -21,22 +21,22 @@
     <tr>
         <th>Conceitos Requisitos</th>    
         <td>{{aluno.metas['conceitosReq']}}</td>        
-        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['conceitosReq']"></td>        
+        <td class="avaliacao"  id = "conceitosReq"><input [(ngModel)]="aluno.avaliacao['conceitosReq']"></td>        
     </tr>
     <tr>
          <th>Especificar Requisitos</th>
          <td>{{aluno.metas['especificarReq']}}</td>                
-         <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['especificarReq']"></td>  
+         <td class="avaliacao"  id = "especificarReq"><input [(ngModel)]="aluno.avaliacao['especificarReq']"></td>  
     </tr>
     <tr>
         <th>Conceitos Gerência</th>
         <td>{{aluno.metas['conceitosGer']}}</td>                
-        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['conceitosGer']"></td>            
+        <td class="avaliacao" id = "conceitosGer"><input [(ngModel)]="aluno.avaliacao['conceitosGer']"></td>            
     </tr>
     <tr>
         <th>Testes</th>
         <td>{{aluno.metas['testes']}}</td>        
-        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['testes']"></td> 
+        <td class="avaliacao" id = "testes"><input [(ngModel)]="aluno.avaliacao['testes']"></td> 
     </tr>
     
         <button (click)="enviarAval(aluno)">Entrar</button>
