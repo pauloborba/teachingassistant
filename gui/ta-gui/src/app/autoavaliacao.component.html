@@ -1,0 +1,39 @@
+<table>
+<tr>
+    <td><label>Nome</label></td>
+    <td><input [(ngModel)]="aluno.nome" name="namebox"></td>
+    <td>CPF</td>
+    <td><input [(ngModel)]="aluno.cpf" name="cpfbox"></td>
+    <td *ngIf="aluno_naocadastrado">
+        Aluno não cadastrado 
+    </td>
+</tr>
+    <tr></tr>
+    <tr>
+        <th><label>Conceitos</label></th>
+        <th>Entender motivação e conceitos de requisitos</th>
+        <th>Entender motivação e conceitos de testes</th>
+        <th>usar com eficácia um sistema de controle de versão distribuído</th>
+    </tr>
+   <tr>
+        <th><label>Metas</label></th>
+        <!--<td class="meta_autoav" id = "req"><input [(ngModel)]="requisitos"></td>
+        <td class="meta_autoav" id = "test"><input [(ngModel)]="testes"></td>
+        <td class="meta_autoav" id = "cont"><input [(ngModel)]="controle"></td>-->
+        <td class="meta_autoav" id = "req"><input [(ngModel)] ="aluno.autoav['mot_requisitos']"></td>
+        <td class="meta_autoav" id = "test"><input [(ngModel)]="aluno.autoav['mot_testes']"></td>
+        <td class="meta_autoav" id = "cont"><input [(ngModel)]="aluno.autoav['uso_controleversao']"></td>
+    <tr>
+        <td></td>
+        <td></td>
+        <td *ngIf="autoav_incompleta">
+                Auto Avaliação incompleta 
+        </td>
+        <td *ngIf="autoav_enviada">
+            Auto Avaliação enviada com sucesso 
+    </td>
+        <td class="botao" align = "right"><button (click)="enviarAutoAvaliacao(aluno)">Enviar</button></td>
+    </tr>
+    </table>
+
+    
