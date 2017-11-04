@@ -15,7 +15,7 @@ export class AvaliacaoComponent implements OnInit {
    aluno: Aluno = new Aluno();
    alunos: Aluno[];
    cpfexiste: boolean = false;
-   completa: boolean = false;
+   completa: boolean = true;
 
    enviarAval(aluno: Aluno) {
        this.verificaCompletude(aluno);
@@ -35,12 +35,15 @@ export class AvaliacaoComponent implements OnInit {
    }
 
    verificaCompletude(aluno: Aluno): void {
-    for (let key in aluno.metas.keys) {
-        if (aluno.avaliacao.has(key)) {
-            console.log(key);
-            this.nullNorEmpty(aluno, key);
+    for (let key in aluno.metas) {
+        if (aluno.avaliacao[key]) {
+            document.getElementById(key).style.backgroundColor = 'white';
+        } else {
+            document.getElementById(key).style.backgroundColor = 'red';
+            this.completa = false;
         }
     }
+
     //    if (Object.keys(aluno.avaliacao).length === Object.keys(aluno.metas).length) {
     //         for (const key in aluno.metas) {
     //             this.nullNorEmpty(aluno, key);
@@ -49,13 +52,12 @@ export class AvaliacaoComponent implements OnInit {
     //    }
    }
 
-   nullNorEmpty(aluno: Aluno, key: string): boolean {
-    if (aluno.avaliacao[key] === '' || aluno.avaliacao[key] == null) {
-        document.getElementById(key).style.backgroundColor = 'red';
-        return this.completa = false;
-    }
-    return this.completa = true;
-   }
+//    nullNorEmpty(aluno: Aluno, key: string): boolean {
+//     if (aluno.avaliacao[key] === '' || aluno.avaliacao[key] == null) {
+//         document.getElementById(key).style.backgroundColor = 'red';
+//         return this.completa = false;
+//     }
+//    }
 
 
    ngOnInit(): void {
