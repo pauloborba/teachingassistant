@@ -22,11 +22,10 @@ export class AvaliacaoComponent implements OnInit {
          console.log('atualizou aluno');
    }
 
-   localizarAluno(aluno: Aluno) {
-    this.aluno = aluno;
-    console.log(this.aluno);
+   localizarAluno(nome: string, cpf: string) {
     for (let a of this.alunos) {
-        if (a.nome === this.aluno.nome && a.cpf === this.aluno.cpf) {
+        if (a.nome === nome && a.cpf === cpf) {
+            this.aluno = a;
             return this.cpfexiste = true;
         }
     }

@@ -1,18 +1,18 @@
 <table>
     <tr>
        <td><label>Nome </label></td>
-       <td><input [(ngModel)]="aluno.nome"></td>
+       <td><input [(ngModel)]="nome"></td>
     </tr>
     <tr>
        <td><label>CPF </label></td>
-       <td><input [(ngModel)]="aluno.cpf"></td>
+       <td><input [(ngModel)]="cpf"></td>
     </tr>
     <tr>
-        <td><button (click)="localizarAluno(aluno)">Entrar</button></td>        
+        <td><button (click)="localizarAluno(nome, cpf)">Entrar</button></td>        
     </tr>
 </table>
 
-<table >
+<table *ngIf="cpfexiste">
     <tr>
         <th>Nome</th>
         <th>CPF</th>
@@ -26,10 +26,10 @@
         <td>{{aluno.nome}}</td>
         <td>{{aluno.cpf}}</td>
         <td>{{aluno.email}}</td>
-        <td class="avaliacao"><input [(ngModel)]="a.avaliacao['conceitosReq']" (change)="atualizarAluno(a)"></td>
-        <td class="avaliacao"><input [(ngModel)]="a.avaliacao['especificarReq']" (change)="atualizarAluno(a)"></td>
-        <td class="avaliacao"><input [(ngModel)]="a.avaliacao['conceitosGer']" (change)="atualizarAluno(a)"></td>
-        <td class="avaliacao"><input [(ngModel)]="a.avaliacao['testes']" (change)="atualizarAluno(a)"></td>
+        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['conceitosReq']" (change)="atualizarAluno(aluno)"></td>
+        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['especificarReq']" (change)="atualizarAluno(aluno)"></td>
+        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['conceitosGer']" (change)="atualizarAluno(aluno)"></td>
+        <td class="avaliacao"><input [(ngModel)]="aluno.avaliacao['testes']" (change)="atualizarAluno(aluno)"></td>
         
     </tr>
 </table>
