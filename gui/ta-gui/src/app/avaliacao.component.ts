@@ -18,7 +18,7 @@ export class AvaliacaoComponent implements OnInit {
    completa: boolean = true;
 
    enviarAval(aluno: Aluno) {
-       this.completa = true;    
+       this.completa = true;
        this.verificaCompletude(aluno);
        if (this.completa) {
         this.alunoService.atualizar(aluno)
@@ -36,43 +36,19 @@ export class AvaliacaoComponent implements OnInit {
    }
 
    verificaCompletude(aluno: Aluno): void {
-    this.completa = true;
-    const cn = document.getElementById('tabela').children[0].children;
-    console.log(cn);
-    for (let i = 1; i < cn.length - 1; i += 1) {
-        console.log(cn[i].id.substring(2));
-        if (aluno.avaliacao[cn[i].id.substring(2)]) {
-            document.getElementById(cn[i].id.substring(2)).style.backgroundColor = 'white';
-        } else {
-            document.getElementById(cn[i].id.substring(2)).style.backgroundColor = 'red';
-            this.completa = false;
+        this.completa = true;
+        const cn = document.getElementById('tabela').children[0].children;
+        console.log(cn);
+        for (let i = 1; i < cn.length - 1; i += 1) {
+            console.log(cn[i].id.substring(2));
+            if (aluno.avaliacao[cn[i].id.substring(2)]) {
+                document.getElementById(cn[i].id.substring(2)).style.backgroundColor = 'white';
+            } else {
+                document.getElementById(cn[i].id.substring(2)).style.backgroundColor = 'red';
+                this.completa = false;
+            }
         }
     }
-
-    // for (let key in aluno.metas) {
-    //     if (aluno.avaliacao[key]) {
-    //         document.getElementById(key).style.backgroundColor = 'white';
-    //     } else {
-    //         document.getElementById(key).style.backgroundColor = 'red';
-    //         this.completa = false;
-    //     }
-    // }
-
-    //    if (Object.keys(aluno.avaliacao).length === Object.keys(aluno.metas).length) {
-    //         for (const key in aluno.metas) {
-    //             this.nullNorEmpty(aluno, key);
-    //         }
-    //         return this.completa = true;
-    //    }
-   }
-
-//    nullNorEmpty(aluno: Aluno, key: string): boolean {
-//     if (aluno.avaliacao[key] === '' || aluno.avaliacao[key] == null) {
-//         document.getElementById(key).style.backgroundColor = 'red';
-//         return this.completa = false;
-//     }
-//    }
-
 
    ngOnInit(): void {
       this.alunoService.getAlunos()
