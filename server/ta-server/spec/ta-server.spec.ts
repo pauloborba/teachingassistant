@@ -38,15 +38,15 @@ describe("O servidor", () => {
     })
 
     it("não aceita metas pela metade", () => {
-	return request.post(base_url + "metas", {"json":{"nome": "Mariana", "cpf": "965", "metas":{"meta1": "MANA", "meta2": ""}}}).then(body => {
+	return request.put(base_url + "selfmetas", {"json":{"nome": "Mariana", "cpf": "965", "selfmetas":{"requisitos": "MANA", "gerDeConfiguracao": ""}}}).then(body => {
 	    
-	    expect(body).toEqual({failure: "As metas não foram cadastradas com sucesso"})}).catch(e => expect(e).toEqual(null))
+	    expect(body).toEqual({failure: "O aluno não pode ser auto avaliado"})}).catch(e => expect(e).toEqual(null))
 		});
 
     it("aceita metas completas", () => {
-	return request.post(base_url + "metas", {"json":{"nome": "Mariana", "cpf": "965", "metas":{"meta1": "MANA", "meta2": "MANA"}}}).then(body => {
+	return request.put(base_url + "selfmetas", {"json":{"nome": "Mariana", "cpf": "965", "selfmetas":{"requisitos": "MANA", "gerDeConfiguracao": "MANA"}}}).then(body => {
 	    
-	    expect(body).toEqual({success: "As metas foram cadastradas com sucesso"})}).catch(e => expect(e).toEqual(null))
+	    expect(body).toEqual({success: "O aluno foi auto avaliado com sucesso"})}).catch(e => expect(e).toEqual(null))
 		});
     
 })
