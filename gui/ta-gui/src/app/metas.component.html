@@ -1,0 +1,44 @@
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>CPF</th>
+    <th>e-mail</th>
+    <th>Requisitos (Aluno)</th>
+    <th>Gerência de Configuração (Aluno)</th>
+
+    <th id="prof">Requisitos (Professor)</th>
+    <th id="prof">Gerência de Configuração (Professor)</th>
+  </tr>
+  <tr *ngFor="let a of alunos">
+    <td>{{a.nome}}</td>
+    <td>{{a.cpf}}</td>
+    <td>{{a.email}}</td>
+    <td class="meta">
+      <input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)">
+    </td>
+    <td class="meta">
+      <input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)">
+    </td>
+
+
+    <td class="meta">
+      <input [(ngModel)]="a.metasp['requisitos']" (change)="atualizarAluno(a)">
+    </td>
+    <td class="meta">
+      <input [(ngModel)]="a.metasp['gerDeConfiguracao']" (change)="atualizarAluno(a)">
+    </td>
+
+
+
+  </tr>
+
+  <tr>
+    <td>
+      <button (click)="atualizarAluno(a)">Adicionar Meta</button>
+    </td>
+    <td *ngIf="campovazio">
+      Campo Vazio. É necessário preencher todos os campos da auto avaliação.
+    </td>
+  </tr>
+
+</table>

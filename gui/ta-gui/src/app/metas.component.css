@@ -1,0 +1,44 @@
+th {
+  background-color: #00008B;
+  color: #ffffff;
+}
+
+th#prof {
+  background-color:  #0000b3;
+  color: #ffffff;
+}
+
+td, th {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #cce6ff;
+}
+
+.meta {
+  text-align: center;
+  width: 20px;
+}
+
+.meta input {
+  border: none;
+  width: 40px;
+}
+
+
+button {
+  font-family: Arial;
+  background-color: #e6e6ff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: pink;
+}
+
+
