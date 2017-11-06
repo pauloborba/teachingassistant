@@ -1,4 +1,4 @@
-Feature: student's self-evaluation
+﻿Feature: student's self-evaluation
 	As a student of ESS class
 	I want to grade myself in each goals evaluated while I can see the grade my professor gave me so that I can have my final grade in the subject
 
@@ -37,7 +37,4 @@ Scenario: no discrepant students in class
 	And there are no students with discrepant self-evaluations
 	When I press the “Discrepant Statistics” button
 	Then I can see a blank list, the number “0” and 0%, indicating the discrepant students
-
-adding modifications....
-more modifications...
 

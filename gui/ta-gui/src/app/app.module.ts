@@ -12,14 +12,19 @@ import { AlunoService } from './aluno.service';
 @NgModule({
   declarations: [
     AppComponent,
+    AutoavaliacaoComponent,
     MetasComponent,
     AlunosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule, 
+    HttpModule,
     RouterModule.forRoot([
+      {
+        path: 'autoavaliacao',
+        component: AutoavaliacaoComponent
+      },
       {
         path: 'metas',
         component: MetasComponent
