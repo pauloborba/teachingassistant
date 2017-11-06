@@ -2,36 +2,48 @@ export class Aluno {
   nome: string;
   cpf: string;
   email: string;
-  gitLogin: string;
   metas: Map<string,string>;
+  autoavaliacao: Map<string,string>;
 
   constructor() {
     this.clean();
   }
- 
+
   clean(): void {
     this.nome = "";
     this.cpf = "";
     this.email = "";
-    this.gitLogin = "";
     this.metas = new Map<string,string>();
+    this.autoavaliacao = new Map<string,string>();
   }
- 
+
   clone(): Aluno {
     var aluno: Aluno = new Aluno();
-    aluno.nome = this.nome;
-    aluno.cpf = this.cpf;
-    aluno.email = this.email;
-    aluno.gitLogin = this.gitLogin;
-    aluno.metas = this.cloneMetas();
+    aluno.metas = new Map<string,string>();
+    aluno.autoavaliacao = new Map<string,string>();
+    aluno.copyFrom(this);
     return aluno;
- }
+  }
 
-  cloneMetas(): Map<string,string> {
-    var metas: Map<string,string> = new Map<string,string>();
-    for (let key in this.metas) {
-      metas[key] = this.metas[key];
+  copyFrom(from: Aluno): void {
+    this.nome = from.nome;
+    this.cpf = from.cpf;
+    this.email = from.email;
+    this.copyMetasFrom(from.metas);
+    this.copyAutoavaliacaoFrom(from.autoavaliacao);
+  }
+
+  copyMetasFrom(from: Map<string,string>): void {
+    this.metas = new Map<string,string>();
+    for (let key in from) {
+      this.metas[key] = from[key];
     }
-    return metas;
+  }
+
+  copyAutoavaliacaoFrom(from: Map<string,string>): void {
+    this.autoavaliacao = new Map<string,string>();
+    for (let key in from) {
+      this.autoavaliacao[key] = from[key];
+    }
   }
 }

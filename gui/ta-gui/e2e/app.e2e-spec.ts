@@ -1,10 +1,10 @@
-import { AngularTemplatePage } from './app.po';
+import { TaGuiPage } from './app.po';
 
-describe('angular-template App', () => {
-  let page: AngularTemplatePage;
+describe('ta-gui App', () => {
+  let page: TaGuiPage;
 
   beforeEach(() => {
-    page = new AngularTemplatePage();
+    page = new TaGuiPage();
   });
 
   it('should display welcome message', () => {

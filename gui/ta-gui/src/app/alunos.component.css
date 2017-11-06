@@ -1,30 +1,30 @@
 .alunos {
-  margin: 0em 0em 2em;
+  margin: 0 0 2em 0;
   list-style-type: none;
-  padding: 0em;
+  padding: 0;
   width: 15em;
- }
-  
- .alunos li {
+}
+ 
+.alunos li {
   cursor: pointer;
   position: relative;
-  left: 0em;
+  left: 0;
   background-color: cyan;
   margin: .5em;
-  padding: .3em 0em;
+  padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
- }
- 
- button {
+}
+
+button {
   font-family: Arial;
-  background-color: green;
+  background-color: #green;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
- }
-
- button:hover {
-   background-color: #cfd8dc;
- }
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
