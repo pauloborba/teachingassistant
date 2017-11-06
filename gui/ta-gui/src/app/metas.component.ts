@@ -14,34 +14,43 @@ export class MetasComponent implements OnInit {
 
    alunos: Aluno[];
    discrepantes: Aluno[] = [];
+   porcentagem=0;
 
    atualizarAluno(aluno: Aluno): void {
       this.alunoService.atualizar(aluno)
          .catch(erro => alert(erro));
+      this.discrepantes=[];
       for(var i in this.alunos){
+      if(this.alunos[i].autoavaliacao){
         if(this.discrepante(this.alunos[i])){
           this.discrepantes.push(this.alunos[i]);
         }
       }
+      }
+      this.porcentagem=(this.discrepantes.length/this.alunos.length)*100;
    }
 
    ngOnInit(): void {
       this.alunoService.getAlunos()
-         .then(alunos => this.alunos = alunos)
+         .then(alunos => {this.alunos = alunos;
+         for(var i in this.alunos){
+            if(this.discrepante(this.alunos[i])){
+             this.discrepantes.push(this.alunos[i]);
+            }
+          }
+          this.porcentagem=(this.discrepantes.length/this.alunos.length)*100;
+      })
          .catch(erro => alert(erro));
-      for(var i in this.alunos){
-        if(this.discrepante(this.alunos[i])){
-          this.discrepantes.push(this.alunos[i]);
-        }
-      }
+      
    }
 
 
    discrepante(aluno: Aluno){
-    if(aluno.autoavaliacao.size==2){
-      return (aluno.autoavaliacao['requisitos'].length<aluno.metas['requisitos'].length||aluno.autoavaliacao['gerDeConfiguracao'].length<aluno.metas['gerDeConfiguracao'].length);
-    }else if(aluno.autoavaliacao.size==0){
+   if(!aluno.autoavaliacao){
       return false;
+    }
+    else{
+      return (aluno.autoavaliacao['requisitos'].length<aluno.metas['requisitos'].length||aluno.autoavaliacao['gerDeConfiguracao'].length<aluno.metas['gerDeConfiguracao'].length);
     }
   }
 
