@@ -2,6 +2,7 @@ import { Aluno } from '../../gui/ta-gui/src/app/aluno';
 
 export class CadastroDeAlunos {
   alunos: Aluno[] = [];
+  
 
   criar(aluno: Aluno): Aluno {
     var result = null;
@@ -17,6 +18,8 @@ export class CadastroDeAlunos {
      return !this.alunos.find(a => a.cpf == cpf);
   }
 
+  
+
   atualizar(aluno: Aluno): Aluno {
     var result: Aluno = this.alunos.find(a => a.cpf == aluno.cpf);
     if (result) result.copyFrom(aluno);
@@ -26,4 +29,6 @@ export class CadastroDeAlunos {
   getAlunos(): Aluno[] {
     return this.alunos;
   }
+  
+  
 }

@@ -59,10 +59,10 @@ export class AutoavaliacaoComponent implements OnInit {
 
         this.atualizarAluno(this.aluno);
 	
-	alert("Autoavaliação enviada");
+	     alert("Autoavaliação enviada");
       }
       else{
-        alert("Falta preencher campo(s)")
+        alert("Falta preencher campo(s)");
       }
       }
    }

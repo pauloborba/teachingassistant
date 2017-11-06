@@ -18,3 +18,32 @@
    <td>{{a.autoavaliacao['gerDeConfiguracao']}}</td>
 </tr>
 </table>
+<div *ngIf="discrepantes.length > 0">
+<h3>Alunos discrepantes</h3>
+<table>
+   <tr>
+      <th>Quantidade</th>
+      <th>Porcentagem</th>
+   </tr>
+   <tr>
+      <td id="quant">{{discrepantes.length}}</td>
+      <td id="porc">{{discrepantes.alunos.length}}</td>
+   </tr>
+</table>
+<table>
+   <tr>
+      <th>Nome</th>
+      <th>Requisitos - Meta </th>
+      <th>Requisitos - Autoavaliação</th>
+      <th>Gerência de Configuração - Meta</th>
+      <th>Gerência de Configuração - Autoavaliacao</th>
+   </tr>
+   <tr *ngFor="let a of discrepantes">
+      <td>{{a.nome}}</td>
+      <td>{{a.metas['requisitos']}}</td>
+      <td>{{a.autoavaliacao['requisitos']}}</td>
+      <td>{{a.metas['gerDeConfiguracao']}}</td>
+      <td>{{a.autoavaliacao['gerDeConfiguracao']}}</td>
+   </tr>
+</table>
+</div>
