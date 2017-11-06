@@ -15,11 +15,14 @@ export class MetasComponent implements OnInit {
    alunos: Aluno[];
 
    atualizarAluno(aluno: Aluno): void {
-      this.alunoService.atualizar(aluno);
+      this.alunoService.atualizar(aluno)
+         .catch(erro => alert(erro));
    }
 
    ngOnInit(): void {
-     this.alunos = this.alunoService.getAlunos();
-  }
+      this.alunoService.getAlunos()
+         .then(alunos => this.alunos = alunos)
+         .catch(erro => alert(erro));
+   }
 
 }
