@@ -1,5 +1,5 @@
 export class Avaliacao{
-	data: new Date();
+	data: Date;
 	descricao: string;
 	conceito: string;
 }
