@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MetasComponent } from './metas.component';
+import { ConceitosComponent} from './conceitos.component';
 import { AlunosComponent } from './alunos.component';
 import { AlunoService } from './aluno.service';
 
@@ -13,7 +14,8 @@ import { AlunoService } from './aluno.service';
   declarations: [
     AppComponent,
     MetasComponent,
-    AlunosComponent
+    AlunosComponent,
+    ConceitosComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,10 @@ import { AlunoService } from './aluno.service';
       {
         path: 'alunos',
         component: AlunosComponent
+      },
+      {
+        path: 'conceitos',
+        component: ConceitosComponent
       }
     ])
   ],
