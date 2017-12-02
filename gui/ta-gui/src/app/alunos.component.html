@@ -3,7 +3,7 @@
 <table>
 <tr>
    <td><label>Nome </label></td>
-   <td><input [(ngModel)]="aluno.nome" name="namebox"></td>
+   <td><input [(ngModel)]="aluno.nome" name="namebox" (keyup.enter)="criarAluno(aluno)"></td>
    <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
 </tr>
 <tr>
@@ -15,7 +15,7 @@
 </tr>
 <tr>
    <td><label>e-mail </label></td>
-   <td><input [(ngModel)]="aluno.email"></td>
+   <td><input [(ngModel)]="aluno.email" name="email"></td>
 </tr>
 </table>
 

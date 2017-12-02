@@ -2,6 +2,7 @@ import express = require('express');
 import bodyParser = require("body-parser");
 
 import {Aluno} from '../../gui/ta-gui/src/app/aluno';
+import {Avaliacao } from '../../gui/ta-gui/src/app/avaliacao';
 import {CadastroDeAlunos} from './cadastrodealunos';
 
 var app = express();
@@ -22,6 +23,10 @@ app.get('/alunos', function (req, res) {
   res.send(JSON.stringify(cadastro.getAlunos()));
 })
 
+app.get('/avaliacoes', function (req, res){
+  res.send(JSON.stringify(cadastro.getAvaliacoes()));
+})
+
 app.post('/aluno', function (req: express.Request, res: express.Response) {
   var aluno: Aluno = <Aluno> req.body; //verificar se é mesmo Aluno!
   aluno = cadastro.criar(aluno);
@@ -40,6 +45,28 @@ app.put('/aluno', function (req: express.Request, res: express.Response) {
   } else {
     res.send({"failure": "O aluno não pode ser atualizado"});
   }
+})
+
+app.post('/avaliacao', function (req: express.Request, res: express.Response) {
+  var avaliacao: Avaliacao = <Avaliacao> req.body; //verificar se é mesmo Aluno!
+  avaliacao = cadastro.criarAval(avaliacao); 
+  if (avaliacao) {
+    res.send({"success": "Avaliação cadastrada com sucesso"});
+  } else {
+    res.send({"failure": "Avaliação não pode ser cadastrada"});
+  }
+  
+})
+
+app.put('/aluno', function (req: express.Request, res: express.Response) {
+  var avaliacao: Avaliacao = <Avaliacao> req.body;
+  avaliacao = cadastro.atualizarAval(avaliacao);  
+  if (avaliacao) {
+    res.send({"success": "Avaliação foi atualizada com sucesso"});
+  } else {
+    res.send({"failure": "Avaliação não pode ser atualizada"});
+  }
+  
 })
 
 var server = app.listen(3000, function () {

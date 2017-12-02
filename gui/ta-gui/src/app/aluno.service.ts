@@ -3,6 +3,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Aluno } from './aluno';
+import { Avaliacao } from './avaliacao';
 
 @Injectable()
 export class AlunoService {
@@ -40,5 +41,30 @@ export class AlunoService {
   private tratarErro(erro: any): Promise<any>{
     console.error('Acesso mal sucedido ao serviço de alunos',erro);
     return Promise.reject(erro.message || erro);
+  }
+
+  criarAvaliacao(avaliacao: Avaliacao): Promise<Avaliacao> {
+    return this.http.post(this.taURL + "/avaliacao",JSON.stringify(avaliacao), {headers: this.headers})
+           .toPromise()
+           .then(res => {
+              if (res.json().success) {return avaliacao;} else {return null;}
+           })
+           .catch(this.tratarErro);
+  }
+
+  atualizarAvaliacao(avaliacao: Avaliacao): Promise<Avaliacao> {
+    return this.http.put(this.taURL + "/avaliacao",JSON.stringify(avaliacao), {headers: this.headers})
+         .toPromise()
+         .then(res => {
+            if (res.json().success) {return avaliacao;} else {return null;}
+         })
+         .catch(this.tratarErro);
+  }
+
+  getAvaliacoes(): Promise<Avaliacao[]>{
+    return this.http.get(this.taURL + "/avaliacoes")
+              .toPromise()
+              .then(res => res.json() as Avaliacao[])
+              .catch(this.tratarErro);
   }
 }

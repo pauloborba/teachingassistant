@@ -25,10 +25,15 @@ defineSupportCode(function ({ Given, When, Then }) {
 	
 	Given (/^eu consigo ver os campos data, avaliacao e meta todos em branco$/, async() =>{
 		
-		var data = element(by.model('avaliacao.data'));
+		var data = element(by.name('data'));
 		await data;
 		await expect(data.getAttribute('value')).to.eventually.equal('');
-		   	
+		var descricao = element(by.name('descricao'));
+		await descricao;
+		await expect(descricao.getAttribute('value')).to.eventually.equal('');
+		var meta = element(by.name('meta'));
+		await meta;
+		await expect(meta.getAttribute('value')).to.eventually.equal('');	   	
     	
     	
 		
@@ -46,9 +51,9 @@ defineSupportCode(function ({ Given, When, Then }) {
 	
 	 When(/^eu tento preencher os campos data com "([^\"]*)" , avaliação com "([^\"]*)" e meta com "([^\"]*)"$/, async (data, aval, meta) => {
         
-        await element(by.model('avaliacao.data')).sendKeys(<string> data);
-        await element(by.model('avaliacao.aval')).sendKeys(<string> aval);
-        await element(by.model('avaliacao.meta')).sendKeys(<string> meta);
+        await element(by.name('data')).sendKeys(<string> data);
+        await element(by.name('descricao')).sendKeys(<string> aval);
+        await element(by.name('data')).sendKeys(<string> meta);
         
     });
 	
