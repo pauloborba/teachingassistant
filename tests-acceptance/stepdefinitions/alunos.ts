@@ -27,7 +27,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     When(/^I try to register the student "([^\"]*)" with CPF "(\d*)"$/, async (name, cpf) => {
         await $("input[name='namebox']").sendKeys(<string> name);
         await $("input[name='cpfbox']").sendKeys(<string> cpf);
-        await element(by.buttonText('Adicionar')).click();
+        await element(by.buttonText('Cadastrar')).click();
     });
 
     Then(/^I can see "([^\"]*)" with CPF "(\d*)" in the students list$/, async (name, cpf) => {
