@@ -13,7 +13,7 @@ export class MetasComponent implements OnInit {
    constructor(private alunoService: AlunoService) {}
 
    alunos: Aluno[];
-   userClick: boolean = false;
+   
 
    atualizarAluno(aluno: Aluno): void {
       this.alunoService.atualizar(aluno)

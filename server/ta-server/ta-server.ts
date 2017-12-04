@@ -23,9 +23,11 @@ app.get('/alunos', function (req, res) {
   res.send(JSON.stringify(cadastro.getAlunos()));
 })
 
+
 app.get('/avaliacoes', function (req, res){
   res.send(JSON.stringify(cadastro.getAvaliacoes()));
 })
+
 
 app.post('/aluno', function (req: express.Request, res: express.Response) {
   var aluno: Aluno = <Aluno> req.body; //verificar se é mesmo Aluno!
@@ -47,6 +49,7 @@ app.put('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
+
 app.post('/avaliacao', function (req: express.Request, res: express.Response) {
   var avaliacao: Avaliacao = <Avaliacao> req.body; //verificar se é mesmo Aluno!
   avaliacao = cadastro.criarAval(avaliacao); 
@@ -58,7 +61,8 @@ app.post('/avaliacao', function (req: express.Request, res: express.Response) {
   
 })
 
-app.put('/aluno', function (req: express.Request, res: express.Response) {
+
+app.put('/avaliacao', function (req: express.Request, res: express.Response) {
   var avaliacao: Avaliacao = <Avaliacao> req.body;
   avaliacao = cadastro.atualizarAval(avaliacao);  
   if (avaliacao) {

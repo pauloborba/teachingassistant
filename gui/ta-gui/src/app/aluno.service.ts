@@ -13,6 +13,7 @@ export class AlunoService {
 
   constructor(private http: Http) { }
 
+
   criar(aluno: Aluno): Promise<Aluno> {
     return this.http.post(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})
            .toPromise()
@@ -21,7 +22,7 @@ export class AlunoService {
            })
            .catch(this.tratarErro);
   }
-
+  
   atualizar(aluno: Aluno): Promise<Aluno> {
     return this.http.put(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})
          .toPromise()
@@ -43,6 +44,7 @@ export class AlunoService {
     return Promise.reject(erro.message || erro);
   }
 
+
   criarAvaliacao(avaliacao: Avaliacao): Promise<Avaliacao> {
     return this.http.post(this.taURL + "/avaliacao",JSON.stringify(avaliacao), {headers: this.headers})
            .toPromise()
@@ -51,6 +53,7 @@ export class AlunoService {
            })
            .catch(this.tratarErro);
   }
+
 
   atualizarAvaliacao(avaliacao: Avaliacao): Promise<Avaliacao> {
     return this.http.put(this.taURL + "/avaliacao",JSON.stringify(avaliacao), {headers: this.headers})
