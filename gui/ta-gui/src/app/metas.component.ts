@@ -13,12 +13,14 @@ export class MetasComponent implements OnInit {
    constructor(private alunoService: AlunoService) {}
 
    alunos: Aluno[];
+   userClick: boolean = false;
 
    atualizarAluno(aluno: Aluno): void {
       this.alunoService.atualizar(aluno)
          .catch(erro => alert(erro));
    }
 
+   
    ngOnInit(): void {
       this.alunoService.getAlunos()
          .then(alunos => this.alunos = alunos)
