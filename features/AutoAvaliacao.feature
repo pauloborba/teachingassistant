@@ -8,3 +8,8 @@ Given O sistema não tem as notas dos conceitos do aluno “x”
 When Tento cadastrar “Entender conceitos de requisitos”,”Especificar conceitos de requisitos com qualidade”, “Entender conceitos de gerência de configuração” com os valores “MA”, “MPA”, “MA” nas metas do aluno “x”
 Then O sistema salva a submissão.
 
+Scenario: Realizar auto avaliação sem um dos conceito
+Given O sistema não possui as notas dos conceitos do aluno “x”
+When O aluno tenta cadastrar nas metas “Entender conceitos de requisitos”,”Especificar conceitos de requisitos com qualidade” com os valores “MA”, “MPA”
+Then O sistema rejeita a nova submissão.
+
