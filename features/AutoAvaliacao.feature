@@ -5,4 +5,7 @@ Scenario Auto-avaliação bem sucedida
 	And Salvo os dados
 	Then A auto-avaliação é salva
 
+
 Missing then
+
+
