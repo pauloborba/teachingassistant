@@ -34,3 +34,4 @@ When o aluno “João” atribui conceito “MA” para a meta “Entender conceitos de req
 And o aluno “João” não atribui conceito a meta “Entender conceitos de gerência de configuração”
 And o aluno “João” tenta finalizar a auto-avaliação
 Then o sistema não armazena as atribuições do aluno “João”
+And "passo adicional"
