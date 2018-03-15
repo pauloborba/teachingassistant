@@ -1,0 +1,4 @@
+Feature: auto-avaliação
+As a aluno
+I want to atribuir conceitos às metas avaliadas numa disciplina em que estou matriculado
+so that eu posso fazer uma auto-avaliação do meu desempenho em cada meta
