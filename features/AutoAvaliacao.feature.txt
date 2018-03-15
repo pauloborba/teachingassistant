@@ -17,3 +17,20 @@ Given as metas cadastradas no sistema são “Entender conceitos de requisitos”, “E
 When o aluno “João” atribui conceito “MA” para a meta “Entender conceitos de requisitos” , “MPA” para a meta “Especificar requisitos com qualidade” e “MANA” para a meta “Entender conceitos de gerência de configuração”
 And o aluno “João” tenta submeter sua auto-avaliação
 Then o sistema armazena as atribuições do aluno “João”
+
+GUI
+Scenario: auto-avaliação
+Given o aluno “João” está na “Página de metas”
+And as metas exibidas na página são “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
+When o aluno “João” atribui conceito “MA” para a meta “Entender conceitos de requisitos” e “MPA” para a meta “Especificar requisitos com qualidade”
+And o aluno “João” não atribui conceito a meta “Entender conceitos de gerência de configuração”
+And o aluno “João” tenta submeter sua auto-avaliação
+Then o aluno “João” vê uma mensagem de erro
+
+Controlador
+Scenario: auto-avaliação
+Given as metas cadastradas no sistema são “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
+When o aluno “João” atribui conceito “MA” para a meta “Entender conceitos de requisitos” e “MPA” para a meta “Especificar requisitos com qualidade” 
+And o aluno “João” não atribui conceito a meta “Entender conceitos de gerência de configuração”
+And o aluno “João” tenta finalizar a auto-avaliação
+Then o sistema não armazena as atribuições do aluno “João”
