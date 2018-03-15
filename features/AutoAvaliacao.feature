@@ -4,3 +4,5 @@ Scenario Auto-avaliação bem sucedida
 	When Eu preencho minha auto-avaliação
 	And Salvo os dados
 	Then A auto-avaliação é salva
+
+Missing then
