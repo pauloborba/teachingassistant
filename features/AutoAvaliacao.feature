@@ -10,3 +10,4 @@ And o aluno “X” está cadastrado no sistema.
 	And o conceito “MPA” a meta de “Prática” 
 And o conceito “MA” a meta “Conceitual”.
 	Then: Então o sistema vai armazenar o conceito “MA” a meta “Aprendizado”, o conceito “MPA” a metade “Prática” e o conceito “MA” a meta “Conceitual”.
+
