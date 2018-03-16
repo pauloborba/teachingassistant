@@ -28,4 +28,4 @@ AND está cadastrado o aluno “xpto1” com os conceitos de “auto-avaliacao�
 AND está cadastrado o aluno “xpto2” com os conceitos de “auto-avaliacao” e “nota professor” respectivamente “MPA” / “MPA”; “MA” / “MA” ; “MA”/ “MA” nos conceitos de “Entender conceitos de requisitos” ; “Especificar conceitos de requisitos” ; “Entender conceitos de gerencia de configuração”
 AND está cadastrado o aluno “xpto3” com os conceitos de “auto-avaliacao” e “nota professor” respectivamente “MPA” / “MA”; “MANA” / “MPA” ; “MPA”/ “MA” nos conceitos de “Entender conceitos de requisitos” ; “Especificar conceitos de requisitos” ; “Entender conceitos de gerencia de configuração”
 When: Visualizo o resumo de notas discrepantes
-Then: A lista de alunos com notas discrepantes contem o aluno “xpto1”.
+Then: A lista de alunos com notas discrepantes contem o aluno "xpto1".
