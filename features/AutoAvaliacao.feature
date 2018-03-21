@@ -13,3 +13,15 @@ Given Eu estou na página de auto-avaliação
 When Eu preencho os campos “Entender conceitos de requisitos” com “MA”, “Especificar requisitos com qualidade” com “MANA” e “Entender conceitos de gerência de configuração com “MPA”.
 Then Eu vejo uma mensagem de confirmação
 And Os conceitos atribuídos aparecem na minha lista de metas
+
+Scenario: preenchimento mal-sucedido devido à ausência de conceitos
+Given O aluno “Victor” não fez sua auto-avaliação
+When O aluno “Victor” preenche “Entender conceitos de requisitos” com “MA” e “Especificar requisitos com qualidade” com “MANA”
+And O aluno “Victor” não preenche “Entender conceitos de gerência de configuração”
+Then O sistema não registra os conceitos atribuídos
+
+Scenario: preenchimento mal-sucedido devido à ausência de conceitos
+Given Eu estou na página de auto-avaliação
+When Eu preencho os campos “Entender conceitos de requisitos” com “MA”, “Especificar requisitos com qualidade” com “MANA”
+And Eu não preencho o campo “Entender conceitos de gerência de configuração”
+Then Eu vejo uma mensagem de erro
