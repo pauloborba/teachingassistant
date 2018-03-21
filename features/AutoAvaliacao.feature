@@ -34,3 +34,11 @@ And O aluno “Ferraz” possui conceitos iguais aos meus
 When Eu filtro a lista por auto-avaliações discrepantes
 Then Eu vejo que a quantidade de alunos e o percentual de alunos com auto-avaliação discrepante é 0 e 0%, respectivamente
 And Eu vejo que a lista está vazia
+
+Scenario: discrepância
+Given Eu estou na lista de auto-avaliação dos alunos
+And O aluno “Coutinho” possui uma auto-avaliação discrepante 
+And A lista possui “3” entradas
+When Eu filtro a lista por auto-avaliações discrepantes
+Then Eu vejo que a quantidade de alunos e o percentual de alunos com auto-avaliação discrepante é “1” e “33%”, respectivamente
+And Eu vejo o aluno “Coutinho” na lista
