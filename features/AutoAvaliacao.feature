@@ -19,3 +19,21 @@ And eu seleciono a opção “Salvar”
 Then eu posso ver uma mensagem de confirmação
 And eu vejo a listagem das metas contendo os conceitos “MA” para as metas “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” e “MPA” para a meta “Entender conceitos de gerência de configuração” 
 And eu vejo os conceitos atribuídos pelo professor para cada meta
+
+Scenario: adicionar auto-avaliação (mal sucedido)
+Given o sistema tem registradas as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
+And não tem registrada a auto-avaliação do aluno “Jéssica Oliveira”
+When o aluno “Jéssica Oliveira” atribui como auto-avaliação o conceito “MPA” para a meta “Entender conceitos de requisitos”,  “MA” para a meta “Especificar requisitos com qualidade”
+And não atribui um conceito para a meta “Entender conceitos de gerência de configuração”
+Then o sistema não registra a auto-avaliação do aluno “Jéssica Oliveira”
+
+Scenario: adicionar auto-avaliação (mal sucedido - GUI)
+Given eu estou logado no sistema como “aluno” e o login “JessicaOliveira”
+And estou na página “Auto-avaliação”
+And eu posso ver listadas as metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
+And eu posso ver os conceitos atribuídos pelo professor a cada uma das metas existentes
+When eu seleciono os conceitos “MA” para a meta “Entender conceitos de requisitos” e “MA” para a meta “Especificar requisitos com qualidade”
+And não seleciono um conceito para a meta “Entender conceitos de gerência de configuração”
+And eu seleciono a opção “Salvar”
+Then eu posso ver uma mensagem de erro
+And eu vejo a listagem das metas apenas com os conceitos atribuídos pelo professor a cada uma delas
