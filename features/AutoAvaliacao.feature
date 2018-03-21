@@ -25,3 +25,4 @@ Given Eu estou na página de auto-avaliação
 When Eu preencho os campos “Entender conceitos de requisitos” com “MA”, “Especificar requisitos com qualidade” com “MANA”
 And Eu não preencho o campo “Entender conceitos de gerência de configuração”
 Then Eu vejo uma mensagem de erro
+And Sou redirecionado para a página "Página Inicial"
