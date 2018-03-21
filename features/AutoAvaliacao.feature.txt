@@ -1,37 +1,45 @@
-Feature: auto-avaliação
+Feature: auto-avaliaÃ§Ã£o
 As a aluno
-I want to atribuir conceitos às metas avaliadas numa disciplina em que estou matriculado
-so that eu posso fazer uma auto-avaliação do meu desempenho em cada meta
+I want to atribuir conceitos Ã s metas avaliadas numa disciplina em que estou matriculado
+so that eu posso fazer uma auto-avaliaÃ§Ã£o do meu desempenho em cada meta
 
 GUI
-Scenario: auto-avaliação
-Given o aluno “João” está na “Página de metas”
-And as metas exibidas na página são “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
-When o aluno “João” atribui conceito “MA” para a meta “Entender conceitos de requisitos”,  “MPA” para a meta “Especificar requisitos com qualidade” e “MANA” para a meta “Entender conceitos de gerência de configuração”
-And o aluno “João” tenta submeter sua auto-avaliação
-Then o aluno “João” vê uma mensagem de confirmação no envio de sua auto-avaliação
+Scenario: auto-avaliaÃ§Ã£o
+Given o aluno "JoÃ£o" estÃ¡ na "PÃ¡gina de metas"
+And as metas exibidas na pÃ¡gina sÃ£o "Entender conceitos de requisitos", "Especificar requisitos com qualidade" e "Entender conceitos de gerÃªncia de configuraÃ§Ã£o"
+When o aluno "JoÃ£o" atribui conceito "MA" para a meta "Entender conceitos de requisitos",  "MPA" para a meta "Especificar requisitos com qualidade" e "MANA" para a meta "Entender conceitos de gerÃªncia de configuraÃ§Ã£o"
+And o aluno "JoÃ£o" tenta submeter sua auto-avaliaÃ§Ã£o
+Then o aluno "JoÃ£o" vÃª uma mensagem de confirmaÃ§Ã£o no envio de sua auto-avaliaÃ§Ã£o
 
 Controlador
-Scenario: auto-avaliação
-Given as metas cadastradas no sistema são “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
-When o aluno “João” atribui conceito “MA” para a meta “Entender conceitos de requisitos” , “MPA” para a meta “Especificar requisitos com qualidade” e “MANA” para a meta “Entender conceitos de gerência de configuração”
-And o aluno “João” tenta submeter sua auto-avaliação
-Then o sistema armazena as atribuições do aluno “João”
+Scenario: auto-avaliaÃ§Ã£o
+Given as metas cadastradas no sistema sÃ£o "Entender conceitos de requisitos", "Especificar requisitos com qualidade" e "Entender conceitos de gerÃªncia de configuraÃ§Ã£o"
+When o aluno "JoÃ£o" atribui conceito "MA" para a meta "Entender conceitos de requisitos" , "MPA" para a meta "Especificar requisitos com qualidade" e "MANA" para a meta "Entender conceitos de gerÃªncia de configuraÃ§Ã£o"
+And o aluno "JoÃ£o" tenta submeter sua auto-avaliaÃ§Ã£o
+Then o sistema armazena as atribuiÃ§Ãµes do aluno "JoÃ£o"
 
 GUI
-Scenario: auto-avaliação
-Given o aluno “João” está na “Página de metas”
-And as metas exibidas na página são “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
-When o aluno “João” atribui conceito “MA” para a meta “Entender conceitos de requisitos” e “MPA” para a meta “Especificar requisitos com qualidade”
-And o aluno “João” não atribui conceito a meta “Entender conceitos de gerência de configuração”
-And o aluno “João” tenta submeter sua auto-avaliação
-Then o aluno “João” vê uma mensagem de erro
+Scenario: auto-avaliaÃ§Ã£o
+Given o aluno "JoÃ£o" estÃ¡ na "PÃ¡gina de metas"
+And as metas exibidas na pÃ¡gina sÃ£o "Entender conceitos de requisitos", "Especificar requisitos com qualidade" e "Entender conceitos de gerÃªncia de configuraÃ§Ã£o"
+When o aluno "JoÃ£o" atribui conceito "MA" para a meta "Entender conceitos de requisitos" e "MPA" para a meta "Especificar requisitos com qualidade"
+And o aluno "JoÃ£o" nÃ£o atribui conceito a meta "Entender conceitos de gerÃªncia de configuraÃ§Ã£o"
+And o aluno "JoÃ£o" tenta submeter sua auto-avaliaÃ§Ã£o
+Then o aluno "JoÃ£o" vÃª uma mensagem de erro
 
 Controlador
-Scenario: auto-avaliação
-Given as metas cadastradas no sistema são “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
-When o aluno “João” atribui conceito “MA” para a meta “Entender conceitos de requisitos” e “MPA” para a meta “Especificar requisitos com qualidade” 
-And o aluno “João” não atribui conceito a meta “Entender conceitos de gerência de configuração”
-And o aluno “João” tenta finalizar a auto-avaliação
-Then o sistema não armazena as atribuições do aluno “João”
-And "passo adicional"
+Scenario: auto-avaliaÃ§Ã£o
+Given as metas cadastradas no sistema sÃ£o "Entender conceitos de requisitos", "Especificar requisitos com qualidade" e "Entender conceitos de gerÃªncia de configuraÃ§Ã£o"
+When o aluno "JoÃ£o" atribui conceito "MA" para a meta "Entender conceitos de requisitos" e "MPA" para a meta "Especificar requisitos com qualidade" 
+And o aluno "JoÃ£o" nÃ£o atribui conceito a meta "Entender conceitos de gerÃªncia de configuraÃ§Ã£o"
+And o aluno "JoÃ£o" tenta finalizar a auto-avaliaÃ§Ã£o
+Then o sistema nÃ£o armazena as atribuiÃ§Ãµes do aluno "JoÃ£o"
+
+Scenario: avaliaÃ§Ãµes discrepantes
+Given eu sou um professor e estou na pÃ¡gina de â€œAvaliaÃ§Ã£o de alunosâ€
+And os alunos exibidos sÃ£o â€œJoÃ£oâ€, â€œLucasâ€ e â€œMatheusâ€
+And as metas avaliadas sÃ£o â€œEntender Conceitos de Requisitosâ€, â€œEspecificar Requisitos com Qualidadeâ€, â€œEntender Conceitos de GerÃªncia de ConfiguraÃ§Ã£oâ€, â€œEntender Conceitos de Gerenciamento de Projetosâ€ e â€œEntender Conceitos de RefatoraÃ§Ã£oâ€
+And â€œJoÃ£oâ€ possui conceitos â€œMANAâ€, â€œMAâ€, â€œMAâ€, â€œMAâ€ e â€œMPAâ€; â€œLucasâ€ possui conceitos â€œMANAâ€, â€œMAâ€, â€œMAâ€, â€œMAâ€ e â€œMPAâ€; â€œMatheusâ€ possui conceitos â€œMANAâ€, â€œMAâ€, â€œMAâ€, â€œMAâ€ e â€œMPAâ€, todos respectivamente em relaÃ§Ã£o Ã s metas avaliadas, em suas auto-avaliaÃ§Ãµes
+When eu atribuo os conceitos â€œMANAâ€, â€œMAâ€, â€œMAâ€, â€œMAâ€ e â€œMPAâ€ para â€œJoÃ£oâ€; â€œMANAâ€, â€œMAâ€, â€œMAâ€, â€œMAâ€ e â€œMPAâ€ para â€œLucasâ€; â€œMANAâ€, â€œMAâ€, â€œMAâ€, â€œMAâ€ e â€œMPAâ€ para â€œMatheusâ€, todos respectivamente em relaÃ§Ã£o Ã s metas avaliadas
+Then a lista de alunos com auto-avaliaÃ§Ãµes discrepantes das avaliaÃ§Ãµes feitas pelo professor Ã© vazia
+
