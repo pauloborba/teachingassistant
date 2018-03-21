@@ -25,3 +25,12 @@ Given Eu estou na página de auto-avaliação
 When Eu preencho os campos “Entender conceitos de requisitos” com “MA”, “Especificar requisitos com qualidade” com “MANA”
 And Eu não preencho o campo “Entender conceitos de gerência de configuração”
 Then Eu vejo uma mensagem de erro
+
+Scenario: nenhuma discrepância
+Given Eu estou na lista de auto-avaliações dos alunos
+And O aluno “João” possui “1” conceito de “5” superior aos meus
+And O aluno “Victor” possui nenhum conceito superior aos meus
+And O aluno “Ferraz” possui conceitos iguais aos meus
+When Eu filtro a lista por auto-avaliações discrepantes
+Then Eu vejo que a quantidade de alunos e o percentual de alunos com auto-avaliação discrepante é 0 e 0%, respectivamente
+And Eu vejo que a lista está vazia
