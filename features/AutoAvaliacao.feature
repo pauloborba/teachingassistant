@@ -15,3 +15,17 @@ Feature: auto-avaliação dos alunos
         And as metas são “a”, “b”, “c”, “d”, “e”
         When aluno envia a avaliação com “MA” para a meta “a”, “MPA” para a meta “b”, “MPA” para a meta “c”, “MA” para a meta “d”, “MA” para a meta “e”
         Then auto-avaliação do aluno “x" é salva no sistema
+
+    Scenario: auto-avaliação incompleta web
+        Given Eu estou na “tela de auto-avaliação”
+        And Eu vejo as metas “a”, “b”, “c”, “d”, “e”
+        When Eu avalio “MA” para a meta “a”
+        And Eu envio a auto-avaliação
+        Then: Eu vejo uma mensagem de erro
+
+    Scenario: auto-avaliação incompleta
+        Given o sistema não possui a autoavaliação do aluno “y”
+        And as metas são “a”, “b”, “c”, “d”, “e”
+        When aluno envia avaliação “MPA” para meta “a”
+        Then avaliação não é salva no sistema
+
