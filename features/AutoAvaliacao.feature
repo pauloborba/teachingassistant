@@ -29,3 +29,16 @@ Feature: auto-avaliação dos alunos
         When aluno envia avaliação “MPA” para meta “a”
         Then avaliação não é salva no sistema
 
+    Scenario: professor autoavaliação web
+        Given eu estou logado como “professor”
+        When eu abro a “lista de notas”
+        Then eu vejo que o aluno “Alberto” avaliou-se com os conceitos “MA”, “MPA”, “MPA”, “MANA” e “MANA” e eu avaliei-o com os conceitos “MPA”, “MPA”, “MPA”, “MANA” e “MANA”.
+        And eu vejo que o aluno “Bernardo” avaliou-se com os conceitos “MPA”, “MPA”, “MPA”, “MPA” e “MPA” e eu avaliei-o com os conceitos “MA”, “MA”, “MA”, “MA” e “MA”
+        And eu vejo que a aluna “Cláudia” avaliou-se com os conceitos “MA”, “MA”, “MA”, “MA” e “MA”, e eu avaliei-a com os conceitos “MA”, “MA”, “MA”, “MA” e “MA”
+
+
+
+
+
+
+
