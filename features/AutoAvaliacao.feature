@@ -45,3 +45,10 @@ And eu posso ver uma lista contendo os nomes dos alunos “José Silva”, “An
 When eu seleciono a opção “Listar discrepâncias” 
 Then eu posso ver uma mensagem indicando que não há alunos com auto-avaliações discrepantes
 And eu vejo a mesma listagem dos nomes dos alunos citados
+
+Scenario: verificar auto-avaliação discrepante (há discrepância)
+Given eu estou logado no sistema como “professor” e o login “PauloBorba”
+And estou na página “Alunos”
+And eu posso ver uma lista contendo os nomes dos alunos “José Silva”, “Ana Carla” e “Daphne Lima”
+When eu seleciono a opção “Listar discrepâncias”
+Then eu posso ver uma lista contendo o nome “José Silva”, a quantidade “3” e a porcentagem “60%”, indicando que o aluno em questão possui auto-avaliação discrepante em 3 de 5 metas avaliadas
