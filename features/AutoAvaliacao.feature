@@ -36,4 +36,5 @@ When eu seleciono os conceitos “MA” para a meta “Entender conceitos de req
 And não seleciono um conceito para a meta “Entender conceitos de gerência de configuração”
 And eu seleciono a opção “Salvar”
 Then eu posso ver uma mensagem de erro
-And eu vejo a listagem das metas apenas com os conceitos atribuídos pelo professor a cada uma delas
+And eu vejo a listagem das metas com os conceitos atribuídos pelo professor a cada uma delas
+And eu vejo a listagem das metas com os conceitos de auto-avaliação do aluno vazios #passo adicionado para o exercício do roteiro
