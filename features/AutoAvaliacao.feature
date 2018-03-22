@@ -37,3 +37,11 @@ And não seleciono um conceito para a meta “Entender conceitos de gerência de
 And eu seleciono a opção “Salvar”
 Then eu posso ver uma mensagem de erro
 And eu vejo a listagem das metas apenas com os conceitos atribuídos pelo professor a cada uma delas
+
+Scenario: verificar auto-avaliação discrepante (nenhuma discrepância)
+Given eu estou logado no sistema como “professor” e o login “PauloBorba”
+And estou na página “Alunos”
+And eu posso ver uma lista contendo os nomes dos alunos “José Silva”, “Ana Carla” e “Daphne Lima”
+When eu seleciono a opção “Listar discrepâncias” 
+Then eu posso ver uma mensagem indicando que não há alunos com auto-avaliações discrepantes
+And eu vejo a mesma listagem dos nomes dos alunos citados
