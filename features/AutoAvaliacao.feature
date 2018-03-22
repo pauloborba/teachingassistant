@@ -31,3 +31,10 @@ Scenario: Discrepância em 1 de alunos
 	And Eu vejo o resultado a auto-avaliação do aluno “z”
 	And Eu vejo uma mensagem de erro
 	Then Eu vejo uma mensagem de erro com as informações do aluno “z”.
+	
+Scenario: O aluno só tem conceitos iguais
+	Given: Eu estou na página “Resultados da auto-avaliação”
+	When: Eu vejo a auto-avaliação do aluno “x”
+	And Eu vejo uma mensagem de que não há discrepâncias
+	Then: Eu vejo uma mensagem de sucesso
+	
