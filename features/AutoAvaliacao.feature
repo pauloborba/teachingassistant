@@ -11,6 +11,8 @@ Modificar, excluir e inserir notas
 		Scenario: O aluno “A” preencheu as metas “X”, “Y” e “Z”.
 		Given: O aluno “A” está na página de “auto-avaliação”
 		When: O aluno “A” preenche as metas “X”, “Y” e “Z” com os conceitos “MA”, “MPA” e “MANA”, respectivamente.
+
 		And: O aluno “A” envia suas respostas.
+
 		Then: O aluno “A” vê uma mensagem confirmando o envio bem sucedido.
 
