@@ -53,4 +53,5 @@ Given eu estou logado no sistema como “professor” e o login “PauloBorba”
 And estou na página “Alunos”
 And eu posso ver uma lista contendo os nomes dos alunos “José Silva”, “Ana Carla” e “Daphne Lima”
 When eu seleciono a opção “Listar discrepâncias”
-Then eu posso ver uma lista contendo o nome “José Silva”, a quantidade “3” e a porcentagem “60%”, indicando que o aluno em questão possui auto-avaliação discrepante em 3 de 5 metas avaliadas
+Then eu posso ver uma lista contendo uma linha com o nome “José Silva”, quantidade “3” e porcentagem “60%”, indicando que o aluno em questão possui auto-avaliação discrepante em 3 de 5 metas avaliadas
+And outra linha contendo o nome “Ana Carla”, quantidade “2” e porcentagem “40%”, indicando que o aluno em questão possui auto-avaliação discrepante em 2 de 5 metas avaliadas
