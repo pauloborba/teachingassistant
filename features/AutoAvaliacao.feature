@@ -39,5 +39,5 @@ Scenario: O aluno só tem conceitos iguais
 	Then: Eu vejo uma mensagem de sucesso
 	
 	fixDiscrepancia1
-	
+	ab
 	
