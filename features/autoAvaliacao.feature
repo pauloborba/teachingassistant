@@ -20,3 +20,11 @@ Scenario Ver avaliações discrepantes sem nenhuma discrepância GUI
 		When eu vou para a pagina de auto avaliações discrepantes
 		Then eu consigo ver a lista de alunos com auto avaliações discrepantes
 
+Scenario Ver avaliações discrepantes com discrepância em 1 de 3 alunos GUI
+		Given estou na página inicial 
+		And consigo ver “(PROFESSOR)” na tela
+		When eu vou para a pagina de auto avaliações discrepantes
+		Then 	eu consigo ver a lista de alunos com auto avaliações discrepantes
+		And consigo ver que a “quantidade de alunos” tem valor “1(33% do total de alunos)” 
+
+
