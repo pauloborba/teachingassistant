@@ -20,3 +20,14 @@ Scenario: O aluno tenta realizar a auto-avaliação pela segunda vez.
 And o conceito “MA” a meta de “Prática”
 And  o conceito “MA” a meta de “Conceitual”.
 Then: O sistema não armazena a nova avaliação.
+
+
+Scenario: Discrepância em 1 de alunos
+	Given: Eu estou na página “Resultados da auto-avaliação”
+	When: Eu vejo o resultado da auto-avaliação do aluno “x”
+	And Vejo uma mensagem de sucesso
+	And Eu vejo o resultado da auto-avaliação do aluno “y”
+	And Eu vejo uma mensagem de sucesso
+	And Eu vejo o resultado a auto-avaliação do aluno “z”
+	And Eu vejo uma mensagem de erro
+	Then Eu vejo uma mensagem de erro com as informações do aluno “z”.
