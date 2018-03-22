@@ -2,7 +2,6 @@ Feature auto avaliação
 		Como Estudante
 		Gostaria de fazer a auto avaliação
 		Para ter minhas notas no sistema
-a
 
 Scenario Preencher avaliacao do aluno “Mario” GUI
 		Given estou na página de metas de “Mario”
