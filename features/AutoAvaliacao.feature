@@ -37,4 +37,21 @@ And não seleciono um conceito para a meta “Entender conceitos de gerência de
 And eu seleciono a opção “Salvar”
 Then eu posso ver uma mensagem de erro
 And eu vejo a listagem das metas com os conceitos atribuídos pelo professor a cada uma delas
-And eu vejo a listagem das metas com os conceitos de auto-avaliação do aluno vazios #passo adicionado para o exercício do roteiro
+And vejo a listagem das metas com as auto-avaliações do aluno vazias #passo adicionado para o exercício do roteiro
+And eu vejo a listagem das metas apenas com os conceitos atribuídos pelo professor a cada uma delas
+
+Scenario: verificar auto-avaliação discrepante (nenhuma discrepância)
+Given eu estou logado no sistema como “professor” e o login “PauloBorba”
+And estou na página “Alunos”
+And eu posso ver uma lista contendo os nomes dos alunos “José Silva”, “Ana Carla” e “Daphne Lima”
+When eu seleciono a opção “Listar discrepâncias” 
+Then eu posso ver uma mensagem indicando que não há alunos com auto-avaliações discrepantes
+And eu vejo a mesma listagem dos nomes dos alunos citados
+
+Scenario: verificar auto-avaliação discrepante (há discrepância)
+Given eu estou logado no sistema como “professor” e o login “PauloBorba”
+And estou na página “Alunos”
+And eu posso ver uma lista contendo os nomes dos alunos “José Silva”, “Ana Carla” e “Daphne Lima”
+When eu seleciono a opção “Listar discrepâncias”
+Then eu posso ver uma lista contendo o nome “José Silva”, a quantidade “3” e a porcentagem “60%”, indicando que o aluno em questão possui auto-avaliação discrepante em 3 de 5 metas avaliadas
+>>>>>>> discrepantes
