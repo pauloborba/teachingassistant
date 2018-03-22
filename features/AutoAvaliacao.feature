@@ -38,3 +38,6 @@ Scenario: O aluno só tem conceitos iguais
 	And Eu vejo uma mensagem de que não há discrepâncias
 	Then: Eu vejo uma mensagem de sucesso
 	
+	fixDiscrepancia1
+	
+	
