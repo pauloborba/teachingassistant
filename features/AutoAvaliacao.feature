@@ -38,3 +38,4 @@ Feature: Auto-avaliação de alunos
     And student “Gabriel” provides value “MA” for their self-evaluation number 2
     And student “Gabriel” chooses to submit their self-evaluations
     Then the system does not store student “Gabriel”’s self-evaluations
+    And the system increments student "Gabriel"'s error count
