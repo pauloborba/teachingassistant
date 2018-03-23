@@ -63,11 +63,11 @@ Feature: Auto-avaliação de alunos
 
   Scenario: One discrepant evaluation (GUI)
     Given I am at the “Student / Evaluations List” page
-    And I see that student "Adilson” has evaluated themselves “MA” against my “MPA” in concept “A”
-    And I see that student "Adilson” has evaluated themselves “MA” against my “MPA” in concept “B”
-    And I see that student "Adilson” has evaluated themselves “MANA” against my “MPA” in concept “C”
-    And I see that student "Adilson” has evaluated themselves “MPA” against my “MA” in concept “D”
-    And I see that student "Adilson” has evaluated themselves “MA” against my “MA” in concept “E”
+    And I see that student "Aline” has evaluated themselves “MA” against my “MPA” in concept “A”
+    And I see that student "Aline” has evaluated themselves “MA” against my “MPA” in concept “B”
+    And I see that student "Aline” has evaluated themselves “MANA” against my “MPA” in concept “C”
+    And I see that student "Aline” has evaluated themselves “MPA” against my “MA” in concept “D”
+    And I see that student "Aline” has evaluated themselves “MA” against my “MA” in concept “E”
     And I see that student "Armando” has evaluated themselves “MPA” against my “MA” in concept “A”
     And I see that student "Armando” has evaluated themselves “MPA” against my “MA” in concept “B”
     And I see that student "Armando” has evaluated themselves “MANA” against my “MA” in concept “C”
@@ -81,4 +81,4 @@ Feature: Auto-avaliação de alunos
     When I choose to see the discrepant evaluations students list
     Then I see a list with “1” students
     And I see “33”% of students have discrepant evaluations
-    And I see student “Adilson” in the discrepant evaluation list
+    And I see student “Aline” in the discrepant evaluation list
