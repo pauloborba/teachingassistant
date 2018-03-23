@@ -24,3 +24,17 @@ Feature: Auto-avaliação de alunos
     Then the system will store the value “MA” for student “Gabriel”’s self-evaluation number 1
     And the system will store the value “MA” for student “Gabriel”’s self-evaluation number 2
     And the system will store the value “MPA” for student “Gabriel”’s self-evaluation number 3
+
+  Scenario: Failure in self-evaluation due to lack of data provided (GUI)
+    Given I am at the “Self-Evaluation” page
+    When I fill field “A” with “MPA”
+    And I fill field “B” with “MA”
+    And I submit the form
+    Then I see a failure message
+
+  Scenario: Failure in self-evaluation due to lack of data provided (Service)
+    Given the system does not have any self-evaluations stored for student “Gabriel”
+    When student “Gabriel” provides value “MA” for their self-evaluation number 1
+    And student “Gabriel” provides value “MA” for their self-evaluation number 2
+    And student “Gabriel” chooses to submit their self-evaluations
+    Then the system does not store student “Gabriel”’s self-evaluations
