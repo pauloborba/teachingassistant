@@ -49,6 +49,6 @@ And os alunos exibidos são "João", "Lucas" e "Matheus"
 And as metas avaliadas são "Entender Conceitos de Requisitos", "Especificar Requisitos com Qualidade", "Entender Conceitos de Gerência de Configuração", "Entender Conceitos de Gerenciamento de Projetos" e "Entender Conceitos de Refatoração"
 And "João" possui conceitos "MANA", "MA", "MA", "MA" e "MPA"; "Lucas" possui conceitos "MANA", "MA", "MA", "MA" e "MPA"; "Matheus" possui conceitos "MANA", "MA", "MA", "MA" e "MPA", todos respectivamente em relação às metas avaliadas, em suas auto-avaliações
 When eu atribuo os conceitos "MANA", "MA", "MA", "MA" e "MPA" para "João"; "MANA", "MA", "MA", "MA" e "MPA" para "Lucas"; "MANA", "MANA", "MPA", "MPA" e "MPA" para "Matheus", todos respectivamente em relação às metas avaliadas
-Then a quantidade de alunos com auto-avaliações discrepantes das avaliações feitas pelo professor é "1"
-And o percentual de alunos com auto-avaliações discrepantes das avaliações feitas pelo professor é "33%"
-And a lista de alunos com auto-avaliações discrepantes das avaliações feitas pelo professor contém o aluno "Matheus"
+Then a "quantidade de alunos" com auto-avaliações discrepantes das avaliações feitas pelo professor é "1"
+And o "percentual de alunos" com auto-avaliações discrepantes das avaliações feitas pelo professor é "33%"
+And a "lista de alunos" com auto-avaliações discrepantes das avaliações feitas pelo professor contém o aluno "Matheus"
