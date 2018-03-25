@@ -37,7 +37,7 @@ Then Eu vejo que a quantidade de alunos e o percentual de alunos com auto-avalia
 And Eu vejo que a lista está vazia
 
 Scenario: discrepância
-Given Eu estou na lista de auto-avaliação dos estudantes
+Given Eu estou na lista de auto-avaliação dos alunos
 And O aluno “Coutinho” possui uma auto-avaliação discrepante 
 And A lista possui “3” entradas
 When Eu filtro a lista por auto-avaliações discrepantes
