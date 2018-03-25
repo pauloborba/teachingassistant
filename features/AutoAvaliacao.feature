@@ -15,3 +15,15 @@ Scenario:	Adicionar conceitos às metas
 			Given o sistema não está com a auto-avaliação do “Aluno” “Cicrano da Silva” atribuido
 			When	eu tento atribuir a auto-avaliação de “Cicrano da Silva”
 			Then o sistema armazena a auto-avaliação de “Cicrano da Silva”
+
+
+Scenario:	Adicionar os conceitos às metas de avaliação faltando uma meta
+			Given eu estou na página “Atribuição de conceitos”
+			When eu preencho “MA” para  a meta “conceitos de requisitos”
+			And eu preencho “MPA” para a meta “Conc. ger. de conf.”
+			Then eu vejo na tela a mensagem de erro “há metas que não foram auto-avaliadas” 
+
+Scenario:	Adicionar conceitos às metas 
+			Given o sistema não está com a auto-avaliação do “Aluno” “Cicrano da Silva” atribuido
+			When	eu tento atribuir a auto-avaliação de “Cicrano da Silva” 
+			Then a auto-avaliação de “Cicrano da Silva” não é armazenada no sistema
