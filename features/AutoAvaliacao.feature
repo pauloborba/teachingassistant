@@ -43,3 +43,8 @@ And A lista possui “3” entradas
 When Eu filtro a lista por auto-avaliações discrepantes
 Then Eu vejo que a quantidade de alunos e o percentual de alunos com auto-avaliação discrepante é “1” e “33%”, respectivamente
 And Eu vejo o aluno “Coutinho” na lista
+
+Scenario: visualização do percentual de discrepância
+Given Eu estou na lista de alunos e suas auto-avaliações
+When Eu filtro a lista por auto-avaliações discrepantes
+Then O percentual de auto-avaliações discrepantes se torna visível para mim
