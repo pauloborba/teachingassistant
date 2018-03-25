@@ -14,10 +14,9 @@ Scenario Preenchimento de Auto-avaliação mal sucedido
 	Then Sou redirecionado para página principal
 	
 Scenario Não há Discrepancia de auto-avaliaçao
-	Given Eu estou logado no sistema como professor
-	And Eu estou na página de listar avaliações dos alunos
-	When Não há discrepancia nas avaliações dos alunos
-	And eu clico no botão submeter
+	Given Eu estou logado no sistema como professor e na página de listar avaliações
+	And Não há discrepancias
+	When Eu clico no botão submeter
 	Then As avaliações dos alunos são salvas com successo
 	
 Scenario Discrepancia de auto availiação
