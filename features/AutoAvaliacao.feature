@@ -12,5 +12,12 @@ Scenario Preenchimento de Auto-avaliação mal sucedido
 	And Deixo apenas uma avaliação faltando
 	And Salvos os dados
 	Then A Auto-avaliação não é salva
+	
+Scenario Discrepancia de auto-avaliaçao
+	Given Eu estou logado no sistema como professor
+	And Eu estou na página de listar avaliações dos alunos
+	When Não há discrepancia nas avaliações dos alunos
+	And eu clico no botão submeter
+	Then As avaliações dos alunos são salvas com successo
 
 
