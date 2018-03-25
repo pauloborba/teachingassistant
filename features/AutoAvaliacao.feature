@@ -30,7 +30,7 @@ Scenario:	Adicionar conceitos às metas
 			And o sistema notifica que a auto-avaliação não foi armazenada
 
 
-Scenario:	ver as auto-avaliações de “1” “Aluno” com nenhuma discrepância
+Scenario:	ver as auto-avaliações tendo nenhuma discrepância
 			Given eu estou na página “lista de alunos”
 			And o aluno "Adalberto Araújo", para a meta "Conceitos de requisitos", tem conceito "MPA" e "MPA" atribuidos por ele e o professor respectivamente
 			And o aluno "Adalberto Araújo", para a meta "Requisitos com qualidade", tem conceito "MA" e "MA" atribuidos por ele e o professor respectivamente
