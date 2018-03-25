@@ -27,3 +27,5 @@ Scenario:	Adicionar conceitos às metas
 			Given o sistema não está com a auto-avaliação do “Aluno” “Cicrano da Silva” atribuido
 			When	eu tento atribuir a auto-avaliação de “Cicrano da Silva” 
 			Then a auto-avaliação de “Cicrano da Silva” não é armazenada no sistema
+			And o sistema notifica que a auto-avaliação não foi armazenada
+
