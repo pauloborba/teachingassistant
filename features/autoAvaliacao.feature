@@ -28,5 +28,5 @@ Scenario Ver avaliações discrepantes com discrepância em 1 de 3 alunos GUI
 		When eu vou para a pagina de auto avaliações discrepantes
 		Then 	eu consigo ver a lista de alunos com auto avaliações discrepantes
 		And consigo ver que a “quantidade de alunos” tem valor “1(33% do total de alunos)” 
-
+		And fixDiscrepancia
 
