@@ -27,3 +27,11 @@ Scenario:	Adicionar conceitos às metas
 			Given o sistema não está com a auto-avaliação do “Aluno” “Cicrano da Silva” atribuido
 			When	eu tento atribuir a auto-avaliação de “Cicrano da Silva” 
 			Then a auto-avaliação de “Cicrano da Silva” não é armazenada no sistema
+
+Scenario:	ver as auto-avaliações de “1” “Aluno” com nenhuma discrepância
+			Given eu estou na página “lista de alunos”
+			And o aluno “Adalberto Araújo” tem “1” conceito inferior 
+			And o aluno “Cicrano da Silva” tem “todos” conceitos superiores
+			And a aluna “Fulana Soares” tem “todos” conceitos iguais
+			When eu tento ver as auto-avaliações da aluna “Fulana Soares”
+			Then eu vejo as “notas” dados por mim e a aluna “Fulana Soares” iguais
