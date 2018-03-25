@@ -16,3 +16,14 @@ Scenario: Preencher as metas com conceitos como auto-avaliação
 	Then: Na linha “fulano”, eu vejo “MA, MA, MA, MA, MA” nas colunas “Entender conceitos de requisitos”,
 	“Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de testes”,
 	“Entender conceitos de refatoração” respectivamente.
+	
+Scenario: Preencher metas com conceitos
+	Given: No sistema, o aluno “Fulano” ainda não possui notas preenchidas para a meta “Entender conceitos de requisitos”.
+	When: Eu preencho a nota “MPA” de “Fulano” para o conceito “Entender conceitos de requisitos”. 
+	Then: O sistema não faz o preenchimento das metas.
+
+Scenario: Preencher metas com conceitos
+	Given: Eu estou na página “preenchimento de conceitos”
+	And: O “aluno fulano” não tem metas com conceitos.
+	When: Eu preencho a nota “MA” de “Entender conceitos de requisitos”.
+	Then: Vejo na tela uma mensagem informando que faltou/faltaram nota(s) ser(em) preenchida(s). 
