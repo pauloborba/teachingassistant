@@ -23,3 +23,4 @@ Scenario: Auto-avaliação do sistema de gerenciamento de metas com discrepância
 	Given: Dado o sistema de auto-avaliação que possui as metas “x”, “y” e “z”, ainda não preenchidas
 	When: When: O aluno “a” envia a sua auto-avaliação com MA na meta “x”, MA na meta “y” e MA na meta “z”
 	Then: Os conceitos são atribuídos ás metas com discrepância
+	And A auto-avaliação é caracterizada como "com discrepância" pelo sistema
