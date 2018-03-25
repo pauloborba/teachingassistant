@@ -42,4 +42,3 @@ Feature: auto-avaliação dos alunos
         Then eu vejo que o aluno “Danilo” avaliou-se com os conceitos “MPA”, “MPA”, “MPA”, “MPA” e “MPA” e eu avaliei-o com os conceitos “MPA”, “MPA”, “MPA”, “MANA” e “MANA”, então está discrepante.
         And eu vejo que o aluno “Érico” avaliou-se com os conceitos “MPA”, “MPA”, “MPA”, “MANA” e “MPA” e eu avaliei-o com os conceitos “MA”, “MA”, “MA”, “MPA” e “MA”
         And eu vejo que a aluna “Fábia” avaliou-se com os conceitos “MPA”, “MA”, “MA”, “MA” e “MPA”, e eu avaliei-a com os conceitos “MPA”, “MA”, “MA”, “MA” e “MPA”
-
