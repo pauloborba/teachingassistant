@@ -28,4 +28,5 @@ Feature: auto-avaliação dos alunos
         And as metas são “a”, “b”, “c”, “d”, “e”
         When aluno envia avaliação “MPA” para meta “a”
         Then avaliação não é salva no sistema
+        And alguma coisa que os stakeholders querem
 
