@@ -30,7 +30,7 @@ Scenario Discrepancia de auto availiação
 
 #Comment from master
 
-Scenario Visualização percentual de auto-Avaliação
+Scenario Visualização percentual de Auto-Avaliação
 	Given Eu estou logado como alunos
 	And Estou na página de minhas auto-avaliações
 	When Eu Seleciono na disciplina "ESS"
