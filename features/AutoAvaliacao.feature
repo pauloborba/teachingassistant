@@ -27,3 +27,4 @@ Scenario: Preencher metas com conceitos
 	And: O “aluno fulano” não tem metas com conceitos.
 	When: Eu preencho a nota “MA” de “Entender conceitos de requisitos”.
 	Then: Vejo na tela uma mensagem informando que faltou/faltaram nota(s) ser(em) preenchida(s). 
+	And: Passo adicional
