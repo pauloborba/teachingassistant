@@ -30,4 +30,12 @@ Mal Sucedidos
 		When: Eu preencho a nota “MA” de “Entender conceitos de requisitos”.
 		Then: Vejo na tela uma mensagem informando que faltou/faltaram nota(s) ser(em) preenchida(s). 
 		And: Passo adicional
+		
+Sem Discrepância		
+	Scenario: Ver página de auto-avaliações discrepantes
+		Given: O aluno “Fulano” tem um conceito inferior na meta “entender conceitos de requisitos”
+		And: O aluno “Beltrano” possui apenas conceitos superiores.
+		And: O aluno “Sicrano” possui apenas conceitos iguais.
+		When: eu vou para “página de visualização de auto-avaliações discrepantes”
+		Then: Eu vejo na coluna “Aluno” não vejo nenhum nome, na coluna “Total de Alunos” vejo “0” e por fim, na coluna “Porcentagem” há “0%”.
 
