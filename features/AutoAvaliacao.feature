@@ -12,5 +12,6 @@ Scenario Preenchimento de Auto-avaliação mal sucedido
 	And Deixo apenas uma avaliação faltando
 	And Salvos os dados
 	Then A Auto-avaliação não é salva
+	Then Sou redirecionado para página principal
 
 
