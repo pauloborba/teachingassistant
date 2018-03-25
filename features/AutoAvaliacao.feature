@@ -6,6 +6,5 @@ Scenario Auto-avaliação bem sucedida
 	Then A auto-avaliação é salva
 
 
-Missing then
 
 
