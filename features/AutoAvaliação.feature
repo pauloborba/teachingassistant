@@ -13,4 +13,4 @@ Then o sistema armazena a auto-avaliação de metas do aluno “x”
 Given o sistema possui os conceitos “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”,
 “Entender conceitos de gerência de configuração”
 When o aluno “x” preenche os conceitos “Entender conceitos de requisitos” com “MA” e “Entender conceitos de gerência de configurações” com “MA”
-Then o sistema não armazena as auto-avaliações do aluno “x”
+Then o sistema não armazena as auto-avaliações do aluno “x” e lança uma exceção
