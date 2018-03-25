@@ -29,4 +29,3 @@ Feature: auto-avaliação dos alunos
         When aluno envia avaliação “MPA” para meta “a”
         Then avaliação não é salva no sistema
         And alguma coisa que os stakeholders querem
-
