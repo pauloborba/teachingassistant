@@ -32,11 +32,23 @@ Scenario:	Adicionar conceitos às metas
 
 Scenario:	ver as auto-avaliações de “1” “Aluno” com nenhuma discrepância
 			Given eu estou na página “lista de alunos”
-			And o aluno “Adalberto Araújo” tem “1” conceito inferior 
-			And o aluno “Cicrano da Silva” tem “todos” conceitos superiores
-			And a aluna “Fulana Soares” tem “todos” conceitos iguais
+			And o aluno "Adalberto Araújo", para a meta "Conceitos de requisitos", tem conceito "MPA" e "MPA" atribuidos por ele e o professor respectivamente
+			And o aluno "Adalberto Araújo", para a meta "Requisitos com qualidade", tem conceito "MA" e "MA" atribuidos por ele e o professor respectivamente
+			And o aluno "Adalberto Araújo", para a meta "Conceitos de gerência de configuração", tem conceito "MA" e "MPA" atribuidos por ele e o professor respectivamente
+			And o aluno "Adalberto Araújo", para a meta "Conceito de testes", tem conceito "MA" e "MA" atribuidos por ele e o professor respectivamente
+			And o aluno "Adalberto Araújo", para a meta "Conceitos de refatoração", tem conceito "MPA" e "MPA" atribuidos por ele e o professor respectivamente
+			And o aluno "Cicrano da Silva", para a meta "Conceitos de requisitos", tem conceito "MPA" e "MA" atribuidos por ele e o professor respectivamente
+			And o aluno "Cicrano da Silva", para a meta "Requisitos com qualidade", tem conceito "MPA" e "MA" atribuidos por ele e o professor respectivamente
+			And o aluno "Cicrano da Silva", para a meta "Conceitos de gerência de configuração", tem conceito "MANA" e "MPA" atribuidos por ele e o professor respectivamente
+			And o aluno "Cicrano da Silva", para a meta "Conceito de testes", tem conceito "MANA" e "MPA" atribuidos por ele e o professor respectivamente
+			And o aluno "Cicrano da Silva", para a meta "Conceitos de refatoração", tem conceito "MANA" e "MPA" atribuidos por ele e o professor respectivamente
+			And a aluna "Fulana Soares", para a meta "Conceitos de requisitos", tem conceito "MPA" e "MPA" atribuidos por ela e o professor respectivamente
+			And a aluna "Fulana Soares", para a meta "Requisitos com qualidade", tem conceito "MA" e "MA" atribuidos por ela e o professor respectivamente
+			And a aluna "Fulana Soares", para a meta "Conceitos de gerência de configuração", tem conceito "MPA" e "MPA" atribuidos por ela e o professor respectivamente
+			And a aluna "Fulana Soares", para a meta "Conceito de testes", tem conceito "MA" e "MA" atribuidos por ela e o professor respectivamente
+			And a aluna "Fulana Soares", para a meta "Conceitos de refatoração", tem conceito "MPA" e "MPA" atribuidos por ela e o professor respectivamente
 			When eu tento ver as auto-avaliações da aluna “Fulana Soares”
-			Then eu vejo as “notas” dados por mim e a aluna “Fulana Soares” iguais
+			Then eu vejo as “notas” dadas pelo professor e a aluna “Fulana Soares” iguais
 
 Scenario:	ver as auto-avaliações de “1” “Aluno” com discrepância
 			Given eu estou na página “lista de alunos”
