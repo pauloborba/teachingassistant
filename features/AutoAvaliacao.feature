@@ -2,3 +2,16 @@ Feature: auto-avaliação
 		Como um aluno com o nome “Cicrano da Silva”
 		Eu quero adicionar as notas da auto-avaliação das minhas metas e visualizar os conceitos atribuídos pelos professores
 		De modo que eu possa registrar a minha auto-avaliação no sistema
+
+
+Scenario:	Adicionar os conceitos às metas de avaliação
+			Given eu estou na página “Atribuição de conceitos”
+			When eu preencho “MA” para  a meta “conceitos de requisitos”
+			And eu preencho “MPA” para a meta “Requisitos com qualidade”
+			And eu preencho “MPA” para a meta “Conc. ger. de conf.”
+			Then eu vejo na tela uma mensagem de confirmação
+
+Scenario:	Adicionar conceitos às metas
+			Given o sistema não está com a auto-avaliação do “Aluno” “Cicrano da Silva” atribuido
+			When	eu tento atribuir a auto-avaliação de “Cicrano da Silva”
+			Then o sistema armazena a auto-avaliação de “Cicrano da Silva”
