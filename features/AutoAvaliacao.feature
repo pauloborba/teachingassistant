@@ -35,3 +35,12 @@ Scenario:	ver as auto-avaliações de “1” “Aluno” com nenhuma discrepância
 			And a aluna “Fulana Soares” tem “todos” conceitos iguais
 			When eu tento ver as auto-avaliações da aluna “Fulana Soares”
 			Then eu vejo as “notas” dados por mim e a aluna “Fulana Soares” iguais
+
+Scenario:	ver as auto-avaliações de “1” “Aluno” com discrepância
+			Given eu estou na página “lista de alunos”
+			And o aluno “Adalberto Araújo” tem “1” conceito inferior 
+			And o aluno “Cicrano da Silva” tem “2” conceitos superiores
+			And a aluna “Fulana Soares” tem “todos” conceitos iguais
+			When eu tento ver as auto-avaliações do aluno “Cicrano da Silva”
+			Then eu vejo as “notas” do aluno “Cicrano da Silva”
+			And vejo que o aluno é discrepância
