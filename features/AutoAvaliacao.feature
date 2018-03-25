@@ -25,7 +25,15 @@ Scenario Discrepancia de auto availiação
 	When Existe uma discrepancia nas avaliações dos alunos
 	And Eu clico no botão submeter
 	Then As avaliações não são salvas com sucesso.
+	
+#Comentario de discrepancias
 
 #Comment from master
+
+Scenario Visualização percentual de auto-Avaliação
+	Given Eu estou logado como alunos
+	And Estou na página de minhas auto-avaliações
+	When Eu Seleciono na disciplina "ESS"
+	Then Eu vejo o meu percentual de auto-avaliação para "ESS"
 
 
