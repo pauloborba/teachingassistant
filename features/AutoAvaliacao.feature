@@ -50,7 +50,7 @@ Scenario:	ver as auto-avaliações tendo nenhuma discrepância
 			When eu tento ver as auto-avaliações da aluna “Fulana Soares”
 			Then eu vejo as “notas” dadas pelo professor e a aluna “Fulana Soares” iguais
 
-Scenario:	ver as auto-avaliações de “1” “Aluno” com discrepância
+Scenario:	ver as auto-avaliações tendo "1" discrepância
 			Given eu estou na página “lista de alunos”
 			And o aluno "Adalberto Araújo", para a meta "Conceitos de requisitos", tem conceito "MPA" e "MPA" atribuidos por ele e o professor respectivamente
 			And o aluno "Adalberto Araújo", para a meta "Requisitos com qualidade", tem conceito "MA" e "MPA" atribuidos por ele e o professor respectivamente
