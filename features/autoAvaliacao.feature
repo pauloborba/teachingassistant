@@ -30,3 +30,4 @@ Scenario Ver avaliações discrepantes com discrepância em 1 de 3 alunos GUI
 		And consigo ver que a “quantidade de alunos” tem valor “1(33% do total de alunos)” 
 
 
+
