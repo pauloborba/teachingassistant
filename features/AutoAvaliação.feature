@@ -19,7 +19,7 @@ Then o sistema não armazena as auto-avaliações do aluno “x” e lança uma 
 Scenario: Sem discrepancias de auto avaliações
 	Given eu estou na página de auto avaliações
 	When eu peço a lista de auto avaliações discrepantes
-	Then aparece uma lista vazia
+	Then aparece uma lista vazia and uma mensagem indicando que nao existem discrepancias
 
 Scenario: Uma discrepancia de auto avaliações
 Given Eu estou na pagina de auto avaliações
