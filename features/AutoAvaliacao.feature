@@ -48,7 +48,8 @@ Scenario: correct average
   When I request the diagnosis of discrepancy of the student “Luiz Oliveira”
   Then I see the report of the student “Luiz Oliveira” with no discrepancy
 
-Scenario: correct average
+Scenario: correct average with discrepancy
+(MODELO CORRETO, POIS ERREI NO ÚLTIMO COMMIT)
   Given I’m at the “evaluation” page with the teacher login “TEACHER_1”
   And the student “Luiz Oliveira” ’s teacher report of “Requirements”, “Configurations”, “Projects”,
   “Refactoring” and “Tests” goals are “MPA”, “MA”, “MA”, “MANA” and “MANA”
