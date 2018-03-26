@@ -12,3 +12,10 @@ Given Aluno “X” está na página de Auto-Avaliação
 When Aluno “X” deixa de responder uma das perguntas “A, B, C”
 Then Uma mensagem de erro aparece
 And aparece um passo adicional (???)
+
+Scenario: Nenhuma Auto Avaliação Discrepante
+Given Estou logado como “Professor”
+When Eu abro a página de Análise de Auto Avaliação
+Then Aparece um gráfico com apenas conceitos normais
+And Aparece a lista dos alunos com conceitos normais
+
