@@ -1,4 +1,4 @@
-Feature: Auto-avaliação
+﻿Feature: Auto-avaliação
 	As a: aluno do sistema
 	I want to: avaliar o meu desempenho
 	So that: eu posso comparar a minha avaliação com a do professor
@@ -41,4 +41,6 @@ Scenario: Alunos discrepantes
 	And: O aluno “Eliezer” preencheu sua autoavaliação com “MA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
 	And: O aluno “Eliezer” foi avaliado com “MA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
 	When: Eu entro na pagina “avaliações dos alunos”
-	Then: Eu posso ver “1” no campo “número de alunos com avaliações discrepantes”, “33,33%” no campo “percentual de alunos com avaliações discrepantes” e o nome “José” no campo “lista de alunos com avaliações discrepantes” 
+	Then: Eu posso ver “1” no campo “número de alunos com avaliações discrepantes”, “33,33%” no campo “percentual de alunos com avaliações discrepantes” e o nome “José” no campo “lista de alunos com avaliações discrepantes”
+	And: É enviado um e-mail para o aluno "José" explicando que sua auto-avaliação foi discrepante
+	And: É realizado um agendamento de uma reunião do aluno "josé" com o professor
