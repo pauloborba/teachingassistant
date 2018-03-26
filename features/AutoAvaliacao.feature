@@ -11,4 +11,4 @@ Scenario: Auto-Avaliação Parcial
 Given Aluno “X” está na página de Auto-Avaliação
 When Aluno “X” deixa de responder uma das perguntas “A, B, C”
 Then Uma mensagem de erro aparece
-And aparece um passo adicional (?)
+And aparece um passo adicional (???)
