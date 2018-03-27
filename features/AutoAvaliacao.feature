@@ -41,6 +41,7 @@ Scenario: new evaluation web error
   “Understand configuration management concepts” are still in pendency
 
 Scenario: correct average
+(CENÁRIO CORRETO)
   Given I’m at the “evaluation” page with the teacher login “TEACHER_1”
   And the student “Luiz Oliveira” ’s teacher report of “Requirements”, “Configurations”, “Projects”,
   “Refactoring” and “Tests” goals are “MPA”, “MA”, “MA”, “MA” and “MANA”
@@ -50,6 +51,7 @@ Scenario: correct average
   Then I see the report of the student “Luiz Oliveira” with no discrepancy
 
 Scenario: correct average with discrepancy
+(CENÁRIO CORRETO)
 (MODELO CORRETO, POIS ERREI NO ÚLTIMO COMMIT)
   Given I’m at the “evaluation” page with the teacher login “TEACHER_1”
   And the student “Luiz Oliveira” ’s teacher report of “Requirements”, “Configurations”, “Projects”,
