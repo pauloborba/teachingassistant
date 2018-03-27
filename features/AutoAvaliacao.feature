@@ -36,6 +36,7 @@ Scenario: new evaluation web error
   When I try to self evaluate the student “Luiz Oliveira” in goals “Understand requirements concepts” with grade “MA”
   And goal “Understand configuration management concepts” with grade “MPA”
   Then I see a confirmation message error
+  (MODIFICAÇÂO DO STAKEHOLDER)
   And a list of the goals “Understand requirements concepts”, “Specify quality requirements” and
   “Understand configuration management concepts” are still in pendency
 
