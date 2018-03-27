@@ -35,3 +35,4 @@ Feature: Auto-avaliação do estudante
         And: Aluno Z só tem conceitos iguais.
         When: Eu vou para a visualização do balanceamento.
         Then: Eu vejo que existem 2 alunos equilibrados e um discrepante na lista com o nome X.
+        And: Uma mensagem aparece mostrando os contatos do aluno discrepante.
