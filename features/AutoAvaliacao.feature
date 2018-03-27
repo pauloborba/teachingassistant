@@ -19,7 +19,7 @@ Given o aluno Ted está na página de auto-avaliação
 And existem as metas A, B e C
 When Ted salva o conceito MA para a meta A, e não informa nenhum conceito para as metas B e C
 Then é mostrada uma mensagem de erro
-And não é nenhum conceito na auto-avaliação
+And não é mostrado nenhum conceito na auto-avaliação
 
 Cenário de GUI: não há auto-avaliações discrepantes
 Given A aluna Robin Scherbatsky tem os conceitos MPA, MA, MA, MA e MANA nas metas A, B , C, D e E, respectivamente, na avaliação do professor e os conceitos MPA, MA, MA, MA e MPA nas metas A, B, C, D e E respectivamente, da auto-avaliação
