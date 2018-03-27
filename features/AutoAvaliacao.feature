@@ -19,9 +19,7 @@ Given o aluno Ted está na página de auto-avaliação
 And existem as metas A, B e C
 When Ted salva o conceito MA para a meta A, e não informa nenhum conceito para as metas B e C
 Then é mostrada uma mensagem de erro
-<<<<<<< HEAD
 And não é nenhum conceito na auto-avaliação
-=======
 
 Cenário de GUI: não há auto-avaliações discrepantes
 Given A aluna Robin Scherbatsky tem os conceitos MPA, MA, MA, MA e MANA nas metas A, B , C, D e E, respectivamente, na avaliação do professor e os conceitos MPA, MA, MA, MA e MPA nas metas A, B, C, D e E respectivamente, da auto-avaliação
@@ -38,4 +36,3 @@ And O aluno Marshall Eriksen tem os conceitos MPA, MA, MANA, MPA e MA nas metas 
 And A aluna Lily Aldrin tem os conceitos MPA, MA, MPA, MANA e MANA nas metas A, B , C, D e E, respectivamente, na avaliação do professor e os conceitos MPA, MA, MPA, MPA e MPA nas metas A, B, C, D e E respectivamente, da auto-avaliação
 When vou na página “Auto-avaliações discrepantes”
 Then é exibido 1 na quantidade de alunos, 33% no percentual de alunos e na lista de alunos há o nome de Lily Aldrin
->>>>>>> discrepantes
