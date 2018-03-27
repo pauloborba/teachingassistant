@@ -13,7 +13,8 @@ Feature: Auto-avaliação do estudante
 
     Cenário: Conceitos não atribuídos
         Given: Eu estou na aba de preenchimento.
-        When: Eu preencho os conceitos 1 e 2.
+        When: Eu preencho o conceito de gerencia de configuração.
+        And: Eu preencho o conceito de gerenção de projeto.
         Then: Uma mensagem de erro é mostrada solicitando o preenchimento dos conceitos restantes.
         And: Um atalho é mostrado para que o aluno possa preencher o conceito mais rapidamente.
 
