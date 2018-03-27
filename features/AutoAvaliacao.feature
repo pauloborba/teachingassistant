@@ -38,4 +38,5 @@ Sem Discrepância
 		And: O aluno “Sicrano” possui apenas conceitos iguais.
 		When: eu vou para “página de visualização de auto-avaliações discrepantes”
 		Then: Eu vejo na coluna “Aluno” não vejo nenhum nome, na coluna “Total de Alunos” vejo “0” e por fim, na coluna “Porcentagem” há “0%”.
-
+		
+		commit 1
