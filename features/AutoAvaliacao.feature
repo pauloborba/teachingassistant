@@ -64,3 +64,22 @@ And: O professor atribuiu ao aluno “C” “MA” no campo
 “Entender conceitos de requisitos”, “MA” no campo “Especificar requisitos no campo com qualidade”, “MPA” em “Entender conceitos de gerência de Configuração” 
 When: O professor busca pela lista de alunos com auto-avaliações discrepantes
 Then: O professor vê nenhum aluno na lista de alunos com auto-avaliações discrepantes
+
+Cenário de GUI: Há discrepância em 1 de 3 alunos na auto-avaliação
+Given: O professor está na página de “Resultado” da auto-avaliação de seus 3 alunos
+And: O aluno “A” atribuiu “MPA” no campo
+“Entender conceitos de requisitos”, “MPA” no campo 
+“Especificar  requisitos com qualidade”, “MA” no campo “Entender conceitos de gerência de Configuração”
+And: O professor atribuiu ao aluno “A” “MANA” no campo
+“Entender conceitos de requisitos”, “MANA” no campo “Especificar requisitos com qualidade”, “MANA” no campo “Entender conceitos de gerência de Configuração” 
+And: O aluno “B” atribuiu “MA” no campo
+“Entender conceitos de requisitos”, “MA” no campo “Especificar requisitos com qualidade”, “MA” no campo “Entender conceitos de gerência de Configuração”
+And: O professor atribuiu ao aluno “B” “MPA” no campo
+“Entender conceitos de requisitos”, “MA” no campo “Especificar requisitos com qualidade”, “MPA” no campo “Entender conceitos de gerência de Configuração” 
+And: O aluno “C” atribuiu “MA” no campo
+“Entender conceitos de requisitos”, “MPA” no campo “Especificar requisitos com qualidade”, “MA” no campo “Entender conceitos de gerência de Configuração”
+And: O professor atribuiu ao aluno “C” “MA” no campo
+“Entender conceitos de requisitos”, “MA” no campo “Especificar requisitos com qualidade”, “MPA” no campo “Entender conceitos de gerência de Configuração” 
+When: O professor busca pela lista de alunos com auto-avaliações
+discrepantes
+Then: O professor vê apenas o aluno “A” na lista de alunos com auto-avaliações discrepantes
