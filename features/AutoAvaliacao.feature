@@ -10,3 +10,13 @@ Feature: Auto-avaliação do estudante
         Given: “Sujeito” não tem avaliação registrada.
         When: “Sujeito” preenche todos os conceitos.
         Then: Os conceitos são registrados.
+
+    Cenário: Conceitos não atribuídos
+        Given: Eu estou na aba de preenchimento.
+        When: Eu preencho os conceitos 1 e 2.
+        Then: Uma mensagem de erro é mostrada solicitando o preenchimento dos conceitos restantes.
+
+    Cenário: Falha no preenchimento
+        Given: “Sujeito” não tem avaliação registrada.
+        When: “Sujeito” preenche os conceitos 2 e 3.
+        Then: Os conceitos não são registrados.
