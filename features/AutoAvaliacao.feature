@@ -56,3 +56,4 @@ Atribuir conceitos as metas da unidade
 		And: O professor “P” preencheu as metas do aluno “B” com os conceitos “MA”, “MA”, “MA”, “MPA”, “MA”, respectivamente.
 		And: O professor “P” preencheu as metas do aluno “C” com os conceitos “MA”, “MPA”, “MPA”, “MPA”, “MA”, respectivamente.
 		Then: O professor visualiza que na página dos resultados que uma discrepância foi alertada.
+		And: O professor verifica o alerta.
