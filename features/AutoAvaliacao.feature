@@ -28,3 +28,10 @@ When vou na página “Auto-avaliações discrepantes”
 Then é exibido 0 na quantidade de alunos
 And 0% no percentual de alunos 
 And nenhum aluno é exibido na lista de alunos
+
+Cenário de GUI: discrepância de auto-avaliação
+Given O aluno Ted Mosby tem os conceitos MA, MA, MA, MPA e MA nas metas A, B , C, D e E, respectivamente, na avaliação do professor e os conceitos MA, MA, MA, MPA e MA nas metas A, B, C, D e E respectivamente, da auto-avaliação
+And O aluno Marshall Eriksen tem os conceitos MPA, MA, MANA, MPA e MA nas metas A, B , C, D e E, respectivamente, na avaliação do professor e os conceitos MPA, MA, MPA, MPA e MA nas metas A, B, C, D e E respectivamente, da auto-avaliação
+And A aluna Lily Aldrin tem os conceitos MPA, MA, MPA, MANA e MANA nas metas A, B , C, D e E, respectivamente, na avaliação do professor e os conceitos MPA, MA, MPA, MPA e MPA nas metas A, B, C, D e E respectivamente, da auto-avaliação
+When vou na página “Auto-avaliações discrepantes”
+Then é exibido 1 na quantidade de alunos, 33% no percentual de alunos e na lista de alunos há o nome de Lily Aldrin
