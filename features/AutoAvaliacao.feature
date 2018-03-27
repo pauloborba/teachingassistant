@@ -24,8 +24,8 @@ Feature: Auto-avaliação do estudante
         Then: Os conceitos não são registrados.
         
     Cenário: Nenhuma discrepância 
-        Given: Aluno X tem conceito inferior na meta 2
-        And: Aluno Y só tem conceitos superiores
+        Given: Aluno X tem conceito inferior na meta 2.
+        And: Aluno Y só tem conceitos superiores.
         And: Aluno Z só tem conceitos iguais.
         When: Eu vou para a visualização do balanceamento.
         Then: Eu vejo que existem 3 alunos equilibrados e nenhum discrepante.
