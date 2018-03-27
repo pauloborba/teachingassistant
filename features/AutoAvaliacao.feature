@@ -37,3 +37,8 @@ Feature: Auto-avaliação do estudante
         When: Eu vou para a visualização do balanceamento.
         Then: Eu vejo que existem 2 alunos equilibrados e um discrepante na lista com o nome X.
         And: Uma mensagem aparece mostrando os contatos do aluno discrepante.
+
+    Cenário: Visualização de percentual de discrepância
+        Given: placeholder
+        When: placeholder
+        Then: placeholder
