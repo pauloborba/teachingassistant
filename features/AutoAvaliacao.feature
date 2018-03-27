@@ -32,6 +32,7 @@ Scenario: Sem alunos com discrepância
 	And: O aluno “Eliezer” foi avaliado com “MA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
 	When: Eu entro na pagina “avaliações dos alunos”
 	Then: Eu posso ver “0” no campo “número de alunos com avaliações discrepantes”, “0%” no campo “percentual de alunos com avaliações discrepantes” e a mensagem “não há alunos com avaliações discrepantes” no campo “lista de alunos com avaliações discrepantes” 
+	And: eu sou redirecionado para a pagina "avaliacoes de todos os alunos" onde posso ver em cima uma mensagem "nao ha discrepancias"
 Scenario: Alunos discrepantes
 	Given: Eu estou logado como professor, com login “xyz” e senha “1234”
 	And: O aluno “José” preencheu sua autoavaliação com “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
