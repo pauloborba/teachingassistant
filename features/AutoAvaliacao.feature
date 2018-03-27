@@ -32,13 +32,26 @@ Scenario: Error in Self Evaluation Web
 	
 Scenario: No Discrepancies Web
 	Given I am at the “Auto-avaliação” page
-	And I see the names of the students “Huguinho”, “Zezinho” and “Luisinho” in the student list.
+	And I see the names of the students “Huguinho”, “Zezinho” and “Luisinho” on the student list
 	And “Huguinho” received “MPA”, “MA”, “MPA”, “MANA” and “MA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
 	And “Huguinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades “MPA”, “MPA”, “MANA”, “MA” and “MPA”
 	And “Zezinho” received “MA”, “MA”, “MA”, “MPA” e “MA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
 	And “Zezinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades “MPA”, “MPA”, “MANA”, “MPA” and “MPA”
-	And  “Luisinho” received “MPA”, “MA”, “MANA”, “MPA” e “MANA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
+	And “Luisinho” received “MPA”, “MA”, “MANA”, “MPA” e “MANA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
 	And “Luisinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades  “MPA”, “MA”, “MANA”, “MPA” and “MANA”
 	When I request the discrepancies on the self-evaluation system
 	Then I see a confirmation message on the screen
-	And I do not see any names in the list of discrepancies 
+	And I do not see any names on the list of discrepancies 
+
+Scenario: Discrepancies Web
+	Given I am at the “Auto-avaliação” page
+	And I see the names of the students “Huguinho”, “Zezinho” and “Luisinho” on the student list
+	And “Huguinho” received MANA, “MPA”, “MPA”, “MANA” and “MA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
+	And “Huguinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades “MA”, “MA”, “MPA”, “MPA” and “MPA”
+	And “Zezinho” received “MA”, “MA”, “MA”, “MPA” e “MA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
+	And “Zezinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades “MPA”, “MPA”, “MANA”, “MPA” and “MPA”
+	And “Luisinho” received “MPA”, “MA”, “MANA”, “MPA” e “MANA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
+	And “Luisinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades  “MPA”, “MA”, “MANA”, “MPA” and “MANA”
+	When I request the discrepancies on the self-evaluation system
+	Then I see a discrepancy message on the screen
+	And I see the name of the student "Huguinho" on the list
