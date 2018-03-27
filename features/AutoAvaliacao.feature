@@ -43,3 +43,6 @@ Feature: auto-avaliação dos alunos
         Then eu vejo que o aluno “Danilo” avaliou-se com os conceitos “MPA” para a meta "a", “MPA” para a meta "b", “MPA” para a meta "c", “MPA” para a meta "d" e “MPA” para a meta "e" e eu avaliei-o com os conceitos “MPA” para a meta "a", “MPA” para a meta "b", “MPA” para a meta "c", “MANA” para a meta "d" e “MANA” para a meta "e", então está discrepante.
         And eu vejo que o aluno “Érico” avaliou-se com os conceitos “MPA” para a meta "a", “MPA” para a meta "b", “MPA” para a meta "c", “MANA” para a meta "d" e “MPA” para a meta "e" e eu avaliei-o com os conceitos  “MA” para a meta "a", “MA” para a meta "b", “MA” para a meta "c", “MPA” para a meta "d" e “MA” para a meta "e", não está discrepante
         And eu vejo que a aluna “Fábia” avaliou-se com os conceitos “MPA” para a meta "a", “MA” para a meta "b", “MA” para a meta "c", “MA” para a meta "d" e “MPA” para a meta "e", e eu avaliei-a com os conceitos  “MPA” para a meta "a", “MA” para a meta "b", “MA” para a meta "c", “MA” para a meta "d" e “MPA” para a meta "e", não está discrepante
+
+    Scenario: visualização percentual discrepância
+        Given eu estou logado como "professor"
