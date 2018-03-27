@@ -1,0 +1,2 @@
+Feature: Auto-avaliação do estudante
+        Como um aluno, eu desejo poder me auto-avaliar em comparação com os conceitos atribuídos pelo professor para que eu possa saber no que eu teria que melhorar.
