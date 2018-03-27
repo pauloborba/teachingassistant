@@ -19,3 +19,4 @@ Given o aluno Ted está na página de auto-avaliação
 And existem as metas A, B e C
 When Ted salva o conceito MA para a meta A, e não informa nenhum conceito para as metas B e C
 Then é mostrada uma mensagem de erro
+And não é nenhum conceito na auto-avaliação
