@@ -63,3 +63,4 @@ Scenario: correct average with discrepancy
   Then I see a alert in the screen about the discrepancy
   And I see the report of the student “Luiz Oliveira” with the discrepancies in his grades
   (COMMIT 1)
+  (COMMIT 2)
