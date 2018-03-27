@@ -26,3 +26,4 @@ When I fill the goals “x”, “y” with concepts “MA”, “MA”
 And “z” is left unfilled
 And I click the “confirmation button”
 Then I can see an “error message”
+And dummy-statement message
