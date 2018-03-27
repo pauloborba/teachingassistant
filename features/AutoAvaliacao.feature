@@ -2,6 +2,7 @@ Feature: grade attribution
   As a student of the ESS course
   I want to assign myself a grade in the system
   so that I can make a more complete evaluation about my studies in the course
+  (COMMIT MASTER)
 
 Scenario: new evaluation
   Given the system doesn't have the self evaluation given by the student “Luiz Oliveira” with login “lhsgo” of the goals
