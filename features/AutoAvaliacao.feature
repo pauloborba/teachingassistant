@@ -62,3 +62,4 @@ Scenario: correct average with discrepancy
   When I request the diagnosis of discrepancy of the student “Luiz Oliveira”
   Then I see a alert in the screen about the discrepancy
   And I see the report of the student “Luiz Oliveira” with the discrepancies in his grades
+  (COMMIT 1)
