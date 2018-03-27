@@ -39,3 +39,23 @@ Scenario: new evaluation web error
   (MODIFICAÇÂO DO STAKEHOLDER)
   And a list of the goals “Understand requirements concepts”, “Specify quality requirements” and
   “Understand configuration management concepts” are still in pendency
+
+Scenario: correct average
+  Given I’m at the “evaluation” page with the teacher login “TEACHER_1”
+  And the student “Luiz Oliveira” ’s teacher report of “Requirements”, “Configurations”, “Projects”,
+  “Refactoring” and “Tests” goals are “MPA”, “MA”, “MA”, “MA” and “MANA”
+  And the student “Luiz Oliveira” ’s self report of “Requirements”, “Configurations”, “Projects”,
+  “Refactoring” and “Tests” goals are “MPA”, “MPA”, “MA”, “MA”, and “MPA”
+  When I request the diagnosis of discrepancy of the student “Luiz Oliveira”
+  Then I see the report of the student “Luiz Oliveira” with no discrepancy
+
+Scenario: correct average with discrepancy
+(MODELO CORRETO, POIS ERREI NO ÚLTIMO COMMIT)
+  Given I’m at the “evaluation” page with the teacher login “TEACHER_1”
+  And the student “Luiz Oliveira” ’s teacher report of “Requirements”, “Configurations”, “Projects”,
+  “Refactoring” and “Tests” goals are “MPA”, “MA”, “MA”, “MANA” and “MANA”
+  And the student “Luiz Oliveira” ’s self report of “Requirements”, “Configurations”, “Projects”,
+  “Refactoring” and “Tests” goals are “MA”, “MPA”, “MA”, “MPA”, and “MA”
+  When I request the diagnosis of discrepancy of the student “Luiz Oliveira”
+  Then I see a alert in the screen about the discrepancy
+  And I see the report of the student “Luiz Oliveira” with the discrepancies in his grades
