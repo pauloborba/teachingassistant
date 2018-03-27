@@ -40,3 +40,5 @@ Sem Discrepância
 		Then: Eu vejo na coluna “Aluno” não vejo nenhum nome, na coluna “Total de Alunos” vejo “0” e por fim, na coluna “Porcentagem” há “0%”.
 		
 		commit 1
+
+		commit 2
