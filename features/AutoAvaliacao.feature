@@ -15,6 +15,7 @@ Feature: Auto-avaliação do estudante
         Given: Eu estou na aba de preenchimento.
         When: Eu preencho os conceitos 1 e 2.
         Then: Uma mensagem de erro é mostrada solicitando o preenchimento dos conceitos restantes.
+        And: Um atalho é mostrado para que o aluno possa preencher o conceito mais rapidamente.
 
     Cenário: Falha no preenchimento
         Given: “Sujeito” não tem avaliação registrada.
