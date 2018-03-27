@@ -30,3 +30,15 @@ Scenario: Error in Self Evaluation Web
 	Then I see an error message 
 	And I do not see the self evaluation from the student “Joaozinho"
 	
+Scenario: No Discrepancies Web
+	Given I am at the “Auto-avaliação” page
+	And I see the names of the students “Huguinho”, “Zezinho” and “Luisinho” in the student list.
+	And “Huguinho” received “MPA”, “MA”, “MPA”, “MANA” and “MA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
+	And “Huguinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades “MPA”, “MPA”, “MANA”, “MA” and “MPA”
+	And “Zezinho” received “MA”, “MA”, “MA”, “MPA” e “MA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
+	And “Zezinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades “MPA”, “MPA”, “MANA”, “MPA” and “MPA”
+	And  “Luisinho” received “MPA”, “MA”, “MANA”, “MPA” e “MANA” on the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” on the teacher evaluation
+	And “Luisinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades  “MPA”, “MA”, “MANA”, “MPA” and “MANA”
+	When I request the discrepancies on the self-evaluation system
+	Then I see a confirmation message on the screen
+	And I do not see any names in the list of discrepancies 
