@@ -21,6 +21,7 @@ And Aparece a lista dos alunos com conceitos normais
 
 Scenario: Auto Avaliação Discrepante (⅓)
 Given Estou logado como “Professor”
-When Eu abro a página de Análise de Auto Avaliação
-Then Aparece um gráfico indicando que um aluno contém discrepância e dois com conceitos normais
-And Aparece duas listas, uma com o aluno com discrepância e outra com os alunos com conceitos normais!!!!
+When Eu abro a página de Análise de Auto Avaliação.
+Then Aparece um gráfico indicando que um aluno contém discrepância e dois com conceitos normais.
+And Aparece uma lista com o aluno com discrepância.
+And Aparece uma lista com os alunos com conceitos normais.
