@@ -38,7 +38,7 @@ And eu seleciono a opção “Salvar”
 Then eu posso ver uma mensagem de erro
 And eu vejo a listagem das metas apenas com os conceitos atribuídos pelo professor a cada uma delas
 
-Scenario: verificar auto-avaliação discrepante (nenhuma discrepância)
+Scenario: verificar auto-avaliação discrepante (sem discrepância)
 Given eu estou logado no sistema como “professor” e o login “PauloBorba”
 And estou na página “Alunos”
 And eu posso ver uma lista contendo os nomes dos alunos “José Silva”, “Ana Carla” e “Daphne Lima”
