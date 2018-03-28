@@ -51,4 +51,4 @@ dummy-commit 1 master
 
 dummy-commit 1
 
-dummy-commit 1
+dummy-commit 2
