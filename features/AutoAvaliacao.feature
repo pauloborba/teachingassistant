@@ -12,8 +12,11 @@ Given: O aluno “x” está na página de “auto-avaliação”
 And: o sistema tem as metas “Entender conceitos de Requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de Gerência de Configuração”
 When: O aluno tenta submeter sua avaliação com “MPA” em “Entender conceitos de Requisitos”, “MA” em “Especificar requisitos com qualidade” e “MA” em “Entender conceitos de Gerência de Configuração”
 Then: O aluno “x” pode ver no campo correspondente a sua auto-avaliação “MPA” na célula correspondente a “Entender conceitos de Requisitos”, “MA” na célula correspondente a “Especificar requisitos com qualidade” e “MA” na célula correspondente a “Entender conceitos de Gerência de Configuração”
+
 Cenário de Servico:
+
 Scenario: Autoavaliação bem-sucedida no sistema
+
 Given: O aluno “x” ainda não submeteu sua auto-avaliação
 When: O aluno “x” submete sua avaliação com  “MPA” em “Entender conceitos de Requisitos”, “MA” em “Especificar requisitos com qualidade” e “MA” em “Entender conceitos de Gerência de Configuração”
 Then: a auto-avaliação do aluno “x” é gravada no sistema
@@ -27,13 +30,17 @@ And: o sistema tem as metas “Entender conceitos de Requisitos”, “Especificar req
 When: O aluno tenta submeter sua avaliação com “MPA” em “Entender conceitos de Requisitos”, “MA” em “Especificar requisitos com qualidade” e “” em “Entender conceitos de Gerência de Configuração”
 Then: O aluno recebe uma mensagem de que a auto-avaliação não foi realizada
 And: O aluno permanece na mesma página
+
 Cenário de Serviço:
+
 Scenario: Auto-avaliação já realizada não é repetida
+
 Given: O aluno “x” já submeteu sua auto-avaliação
 When: O aluno “x” submete sua avaliação com  “MPA” em “Entender conceitos de Requisitos”, “MA” em “Especificar requisitos com qualidade” e “MA” em “Entender conceitos de Gerência de Configuração”
 Then: a auto-avaliação do aluno “x” não é gravada no sistema
 
 Scenario: Sem alunos com discrepância
+
 Given: Eu estou logado como professor, com login “xyz” e senha “1234”
 And: O aluno “José” preencheu sua autoavaliação com “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
 And: O aluno “José” foi avaliado com “MANA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
