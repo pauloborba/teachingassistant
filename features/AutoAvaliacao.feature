@@ -46,7 +46,7 @@ When eu seleciono a opção “Listar discrepâncias”
 Then eu posso ver uma mensagem indicando que não há alunos com auto-avaliações discrepantes
 And eu vejo a mesma listagem dos nomes dos alunos citados
 
-Scenario: verificar auto-avaliação discrepante (há discrepância)
+Scenario: verificar auto-avaliação discrepante (com discrepância)
 Given eu estou logado no sistema como “professor” e o login “PauloBorba”
 And estou na página “Alunos”
 And eu posso ver uma lista contendo os nomes dos alunos “José Silva”, “Ana Carla” e “Daphne Lima”
