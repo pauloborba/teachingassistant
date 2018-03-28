@@ -29,6 +29,7 @@ Scenario: Error in Self Evaluation Web
 	When I submit the self evaluation as the student “Joaozinho” for the goals “Entender conceitos de requisitos” and “Especificar requisitos com qualidade” with “MPA” and “”
 	Then I see an error message 
 	And I do not see the self evaluation from the student “Joaozinho"
+	And I go back to the "auto-avaliação" page
 	
 Scenario: No Discrepancies Web
 	Given I am at the “Auto-avaliação” page
