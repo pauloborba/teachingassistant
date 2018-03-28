@@ -51,4 +51,15 @@ And: O aluno “Eliezer” foi avaliado com “MA” em “Entender motivação e conceitos 
 When: Eu entro na pagina “avaliações dos alunos”
 Then: Eu posso ver “0” no campo “número de alunos com avaliações discrepantes”, “0%” no campo “percentual de alunos com avaliações discrepantes” e a mensagem “não há alunos com avaliações discrepantes” no campo “lista de alunos com avaliações discrepantes” 
 
+Scenario: Alunos discrepantes
+
+Given: Eu estou logado como professor, com login “xyz” e senha “1234”
+And: O aluno “José” preencheu sua autoavaliação com “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
+And: O aluno “José” foi avaliado com “MANA” em “Entender motivação e conceitos de requisitos”, “MANA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
+And: O aluno “Efraim” preencheu sua autoavaliação com “MPA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MPA” em “Entender motivação e conceitos de testes” e “MPA” em “Entender motivação e conceitos de implementação”
+And: O aluno “Efraim” foi avaliado com “MA” em “Entender motivação e conceitos de requisitos”, “MA” em “Entender motivação e conceitos de gerência de configuração”, “MA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
+And: O aluno “Eliezer” preencheu sua autoavaliação com “MA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
+And: O aluno “Eliezer” foi avaliado com “MA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
+When: Eu entro na pagina “avaliações dos alunos”
+Then: Eu posso ver “1” no campo “número de alunos com avaliações discrepantes”, “33,33%” no campo “percentual de alunos com avaliações discrepantes” e o nome “José” no campo “lista de alunos com avaliações discrepantes” 
 
