@@ -27,3 +27,21 @@ And “z” is left unfilled
 And I click the “confirmation button”
 Then I can see an “error message”
 And dummy-statement message
+
+Scenario: Manage students no discrepancy web
+Given that I’m logged as a “teacher”
+And there are “0” students with discrepant self-evaluations
+When I click the “manage students menu”
+Then I’m taken to the “manage students page”
+And the page shows that there are “0” students with self-evaluation discrepancy
+And the percentage of students with self-evaluation discrepancy is “0%”
+And I can see an empty students list
+
+Scenario: Manage students with discrepancy web
+Given that I’m logged as a “teacher”
+And the student “VM” out of “3” students have a discrepant self-evaluation
+When I click the “manage students menu”
+Then I’m taken to the “manage students page”
+And the page shows that there are “1” student with self-evaluation discrepancy
+And the percentage of students with self-evaluation discrepancy is “33.33%”
+And I can see a list with “VM”’s information in it
