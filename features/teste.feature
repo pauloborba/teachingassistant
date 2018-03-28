@@ -1,0 +1,1 @@
+#arquivo criado para a questão 14.a do roteiro de gerência de configuração
