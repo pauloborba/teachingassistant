@@ -27,4 +27,5 @@ Scenario: Auto-avaliação já realizada não é repetida
 Given: O aluno “x” já submeteu sua auto-avaliação
 When: O aluno “x” submete sua avaliação com  “MPA” em “Entender conceitos de Requisitos”, “MA” em “Especificar requisitos com qualidade” e “MA” em “Entender conceitos de Gerência de Configuração”
 Then: a auto-avaliação do aluno “x” não é gravada no sistema
+And: o aluno não pode tentar submeter a auto-avaliação por 5 minutos
 
