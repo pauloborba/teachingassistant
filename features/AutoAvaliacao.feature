@@ -82,4 +82,5 @@ And: O professor atribuiu ao aluno “C” “MA” no campo "X"
 “Entender conceitos de requisitos”, “MA” no campo “Especificar requisitos com qualidade”, “MPA” no campo “Entender conceitos de gerência de Configuração” 
 When: O professor busca pela lista de alunos com auto-avaliaçõesA
 discrepant
-Then: O professor vê apenas o aluno “A” na lista de alunos com auto-avaliações discrepantes 
+Then: O professor vê apenas o aluno “A” na lista de alunos com auto-avaliações discrepantes
+b 
