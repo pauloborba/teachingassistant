@@ -62,5 +62,5 @@ And: O aluno “Efraim” foi avaliado com “MA” em “Entender motivação e conceitos d
 And: O aluno “Eliezer” preencheu sua autoavaliação com “MA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
 And: O aluno “Eliezer” foi avaliado com “MA” em “Entender motivação e conceitos de requisitos”, “MPA” em “Entender motivação e conceitos de gerência de configuração”, “MPA” em “Entender motivação e conceitos de gerência de projetos”, “MA” em “Entender motivação e conceitos de testes” e “MA” em “Entender motivação e conceitos de implementação”
 When: Eu entro na pagina “avaliações dos alunos”
-Then: Eu posso ver “1” no campo “número de alunos com avaliações discrepantes”, “33,33%” no campo “percentual de alunos com avaliações discrepantes” e o nome “José” no campo “lista de alunos com avaliações discrepantes” 
+Then: Eu posso ver “1” no campo “número de alunos com avaliações discrepantes”, “33,33%” no campo “percentual de alunos com avaliações discrepantes” e o nome “José” no campo “lista de alunos com avaliações discrepantes” ESCRITO EM VERMELHO. 
 
