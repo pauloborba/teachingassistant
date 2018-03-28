@@ -48,3 +48,7 @@ And I can see a list with “VM”’s information in it
 And I dummy-statement fixing Manage students with discrepancy scenario
 
 dummy-commit 1 master
+
+dummy-commit 1
+
+dummy-commit 1
