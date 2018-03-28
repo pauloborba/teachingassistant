@@ -68,9 +68,9 @@ Then: O professor vê nenhum aluno na lista de alunos com auto-avaliações discrep
 Cenário de GUI: Há discrepância em 1 de 3 alunos na auto-avaliação
 Given: O professor está na página de “Resultado” da auto-avaliação de seus 3 alunos
 And: O aluno “A” atribuiu “MPA” no campo
-“Entender conceitos de requisitos”, “MPA” no campo 
+“Entender conceitos de requisitos”, “MPA” no campo""
 “Especificar  requisitos com qualidade”, “MA” no campo “Entender conceitos de gerência de Configuração”
-And: O professor atribuiu ao aluno “A” “MANA” no campo
+And: O professor atribuiu ao aluno “A” “MANA” no campO
 “Entender conceitos de requisitos”, “MANA” no campo “Especificar requisitos com qualidade”, “MANA” no campo “Entender conceitos de gerência de Configuração” 
 And: O aluno “B” atribuiu “MA” no campo
 “Entender conceitos de requisitos”, “MA” no campo “Especificar requisitos com qualidade”, “MA” no campo “Entender conceitos de gerência de Configuração”
