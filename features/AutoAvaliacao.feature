@@ -56,4 +56,3 @@ Scenario: Discrepancies Web
 	When I request the discrepancies on the self-evaluation system
 	Then I see a discrepancy message on the screen
 	And I see the name of the student "Huguinho" on the list
-
