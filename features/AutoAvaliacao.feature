@@ -45,3 +45,4 @@ Then I’m taken to the “manage students page”
 And the page shows that there are “1” student with self-evaluation discrepancy
 And the percentage of students with self-evaluation discrepancy is “33.33%”
 And I can see a list with “VM”’s information in it
+And I dummy-statement fixing Manage students with discrepancy scenario
