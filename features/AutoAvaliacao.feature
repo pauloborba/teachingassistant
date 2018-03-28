@@ -55,6 +55,5 @@ Scenario: Discrepancies Web
 	And “Luisinho” in his self evaluation gave the goals “Requisitos”, “Configuração”, “Projetos”, “Refatoração” and “Testes” for the grades  “MPA”, “MA”, “MANA”, “MPA” and “MANA”
 	When I request the discrepancies on the self-evaluation system
 	Then I see a discrepancy message on the screen
-	And I am taken to the "Discrepancias" page
 	And I see the name of the student "Huguinho" on the list
 
