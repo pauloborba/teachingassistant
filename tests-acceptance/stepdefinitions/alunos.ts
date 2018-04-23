@@ -8,6 +8,8 @@ let sleep = (ms => new Promise(resolve => setTimeout(resolve, ms)));
 let sameCPF = ((elem, cpf) => elem.element(by.name('cpflist')).getText().then(text => text === cpf));
 let sameName = ((elem, name) => elem.element(by.name('nomelist')).getText().then(text => text === name));
 
+let pAND = ((p,q) => p.then(a => q.then(b => a && b)))
+
 defineSupportCode(function ({ Given, When, Then }) {
     Given(/^I am at the students page$/, async () => {
         await browser.get("http://localhost:4200/");
@@ -31,8 +33,6 @@ defineSupportCode(function ({ Given, When, Then }) {
 
     Then(/^I can see "(.*?)" with CPF "(.*?)" in the students list$/, async (name, cpf) => {
         var allalunos : ElementArrayFinder = element.all(by.name('alunolist'));
-        var samenamecpf = allalunos.filter(elem => sameCPF(elem,cpf) && sameName(elem,name));
-        await samenamecpf;
-        await samenamecpf.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+        allalunos.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
     });
 })
