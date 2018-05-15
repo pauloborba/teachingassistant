@@ -5,6 +5,8 @@
    <th>e-mail</th>
    <th>Requisitos</th>
    <th>Gerência de Configuração</th>
+   <th>Auto Avaliação de Requisitos</th>
+   <th>Auto Avaliação de Gerencia de Configurações</th>
 </tr>
 <tr *ngFor="let a of alunos">
    <td>{{a.nome}}</td>
@@ -12,5 +14,7 @@
    <td>{{a.email}}</td>
    <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
    <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.autoAvaliacao['requisitos']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.autoAvaliacao['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
 </tr>
 </table>
