@@ -6,8 +6,10 @@ let expect = chai.expect;
 let sleep = (ms => new Promise(resolve => {setTimeout(resolve, ms)}));
 
 defineSupportCode(function ({ Given, When, Then }) {
-	Given(/^O aluno está na página de "([^"]*)"$/, async(pagina) =>{
-		await browser.get("http://localhost:4200/"+pagina);
+	Given(/^O aluno está na página de "([^"]*)" logado com nome "([^"]*)" e senha "([^"]*)"$/, async(pagina, nome_user, senha) =>{
+		await browser.get("http://localhost:4200/"+pagina+"_login");
+		await $("input[name='user']").sendKeys(<string> nome_user);
+		await $("input[name='passwd']").sendKeys(<string> senha);
 	});
 	Given(/^o aluno pode ver a lista de metas com os campos "([^"]*)", "([^"]*)" e "([^"]*)"$/, async(meta1, meta2, meta3) =>{
 		var cur_meta : ElementArrayFinder = element.all(by.name(meta1+'_student_evaluation'));
