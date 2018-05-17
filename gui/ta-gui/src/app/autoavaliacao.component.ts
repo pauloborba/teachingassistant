@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 
-import { Aluno } from './aluno';
-import { AlunoService } from './aluno.service';
+import { AutoAvaliacao } from './autoavaliacao';
+import { AutoAvaliacaoService } from './autoavaliacao.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'autoavaliacao',
   templateUrl: './autoavaliacao.component.html',
   styleUrls: ['./autoavaliacao.component.css']
 })
