@@ -7,8 +7,11 @@ let sleep = (ms => new Promise(resolve => setTimeout(resolve, ms)));
 
 let sameCPF = ((elem, cpf) => elem.element(by.name('cpflist')).getText().then(text => text === cpf));
 let sameName = ((elem, name) => elem.element(by.name('nomelist')).getText().then(text => text === name));
+
 let sameMeta = ((elem, meta) => elem.element(by.name('metalist')).getText().then(text => text === meta));
 let sameDiscrepancia = ((elem, meta) => elem.element(by.name('discrepancias')).getText().then(text => text === meta));
+
+
 defineSupportCode(function ({ Given, When, Then }) {
     Given(/^I am at the students page$/, async () => {
         await browser.get("http://localhost:4200/");
