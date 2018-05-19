@@ -1,0 +1,14 @@
+<table>
+    <tr>
+       <th>Nome</th>
+       <th>CPF</th>
+       <th>Requisitos</th>
+       <th>Gerência de Configuração</th>
+    </tr>
+    <tr *ngFor="let a of alunos">
+       <td>{{a.nome}}</td>
+       <td>{{a.cpf}}</td>
+       <td class="meta"><input [(ngModel)]="a.metasAutoAvaliacao['requisitos']" (change)="atualizarAluno(a)"></td>
+       <td class="meta"><input [(ngModel)]="a.metasAutoAvaliacao['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+    </tr>
+    </table>

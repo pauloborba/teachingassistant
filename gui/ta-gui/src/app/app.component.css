@@ -10,3 +10,16 @@ nav a:hover {
   color: #e6e6e6;
   background-color: #1a8cff;
 }
+
+#autoavaliacao {
+  background-color: #aa0000;
+  padding: 4px 10px;
+  text-decoration: none;
+  display: inline-block;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+#autoavaliacao:hover {
+  background-color: #990000;
+}
