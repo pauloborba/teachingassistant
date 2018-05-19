@@ -1,15 +1,18 @@
-<h2>logado como:</h2>
-<h3 name="alunologged">Mario</h3>
 <table>
-	<tr>
-		<th>Entender conceitos de requisitos</th>
-		<th>Especificar requisitos com qualidade</th>
-		<th>Entender conceitos de gerência de configuração</th>
-	</tr>
-	<tr>
-		<td><input type="text" name="Entender conceitos de requisitos"></td>
-		<td><input type="text" name="Especificar requisitos com qualidade"></td>
-		<td><input type="text" name="Entender conceitos de gerência de configuração"></td>
-	</tr>
-	<button (click)="salvarAutoAvaliacao(autoavaliacao)">Salvar</button>
+<tr>
+   <th>Nome</th>
+   <th>Entender conceitos de requisitos</th>
+   <th>Especificar requisitos com qualidade</th>
+   <th>Entender conceitos de gerência de configuração</th>
+   <th></th>
+</tr>
+<tr *ngFor="let a of alunos" name="alunolist2">
+   <td name="nomelist">{{a.nome}}</td>
+   <td class="meta"><input name="Entender conceitos de requisitos" [(ngModel)]="a.metas['requisitos']"></td>
+   <td class="meta"><input name="Especificar requisitos com qualidade" [(ngModel)]="a.metas['reqQualidade']"></td>
+   <td class="meta"><input name="Entender conceitos de gerencia de configuracao" [(ngModel)]="a.metas['gerDeConfiguracao']"></td>
+   <button (click)="atualizarAluno(a)">Salvar</button>
+</tr>
 </table>
+
+<h1> </h1>

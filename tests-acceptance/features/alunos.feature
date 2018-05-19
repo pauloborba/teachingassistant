@@ -8,9 +8,9 @@ Given I cannot see a student with CPF "683" in the students list
 When I try to register the student "Paulo" with CPF "683"
 Then I can see "Paulo" with CPF "683" in the students list
 
-Scenario: Preencher avaliacao do aluno “Mario” GUI
+Scenario: Preencher avaliacao do aluno "Paulo" GUI
 Given estou na página de autoavaliacao
-And consigo ver o nome “Mario” na lista de nomes
+And consigo ver o nome "Paulo" na lista de nomes
 And a meta “Entender conceitos de requisitos” esta com valor “” 
 And a meta “Especificar requisitos com qualidade” esta com valor “” 
 And a meta “Entender conceitos de gerência de configuração” esta com valor “” 

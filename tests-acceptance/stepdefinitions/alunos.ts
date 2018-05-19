@@ -45,21 +45,20 @@ defineSupportCode(function ({ Given, When, Then }) {
 
 defineSupportCode(function ({ Given, When, Then }) {
     Given(/^estou na página de autoavaliacao$/, async () => {
-        await browser.get("http://localhost:4200/metas");
+        await browser.get("http://localhost:4200/autoavaliacao");
         await expect(browser.getTitle()).to.eventually.equal('TaGui');
-        await $("a[name='alunos']").click();
     })
 
     Given(/^consigo ver o nome "([^\"]*)" na lista de nomes$/, async (name) => {
-        var allalunos : ElementArrayFinder = element.all(by.name('alunologged'));
+        var allalunos : ElementArrayFinder = element.all(by.name('alunolist2'));
         await allalunos;
-        var aluno = allalunos.filter(elem => sameName(elem,name));
-        await aluno;
-        await aluno.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+        var samename = allalunos.filter(elem => sameName(elem,name));
+        await samename;
+        await samename.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
     });
     
     Given(/^a meta “([^\"]*)” esta com valor “([^\"]*)”$/, async (goal, value) => {
-        var allmetas : ElementArrayFinder = element.all(by.name('goal'));
+        var allmetas : ElementArrayFinder = element.all(by.name('"'+goal+'"'));
         await allmetas;
         var metas = allmetas.filter(elem =>
                                       elem.getText().then(text => text === value));

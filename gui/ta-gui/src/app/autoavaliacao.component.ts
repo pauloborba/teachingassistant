@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 
-import { AutoAvaliacao } from './autoavaliacao';
-import { AutoAvaliacaoService } from './autoavaliacao.service';
+import { Aluno } from './aluno';
+import { AlunoService } from './aluno.service';
 
 @Component({
   selector: 'autoavaliacao',
@@ -12,30 +12,16 @@ import { AutoAvaliacaoService } from './autoavaliacao.service';
 export class AutoAvaliacaoComponent implements OnInit {
    constructor(private alunoService: AlunoService) {}
 
-   aluno: Aluno = new Aluno();
    alunos: Aluno[];
-   cpfduplicado: boolean = false;
 
-   criarAluno(a: Aluno): void {
-     this.alunoService.criar(a)
-        .then(ab => {
-           if (ab) {
-              this.alunos.push(ab);
-              this.aluno = new Aluno();
-           } else {
-              this.cpfduplicado = true;
-           }
-        })
-        .catch(erro => alert(erro));
-   }
-
-   onMove(): void {
-      this.cpfduplicado = false;
+   atualizarAluno(aluno: Aluno): void {
+      this.alunoService.atualizar(aluno)
+         .catch(erro => alert(erro));
    }
 
    ngOnInit(): void {
-     this.alunoService.getAlunos()
-         .then(as => this.alunos = as)
+      this.alunoService.getAlunos()
+         .then(alunos => this.alunos = alunos)
          .catch(erro => alert(erro));
    }
 
