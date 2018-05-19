@@ -22,6 +22,7 @@ describe("O cadastro de alunos", () => {
     expect(aluno.cpf).toBe("683");
     expect(aluno.email).toBe("");
     expect(aluno.metas.size).toBe(0);
+    expect(aluno.metasAutoAvaliacao.size).toBe(0);
   })
 
   it("não aceita alunos com CPF duplicado", () => {
