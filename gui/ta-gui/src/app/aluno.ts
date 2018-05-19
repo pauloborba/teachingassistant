@@ -29,14 +29,21 @@ export class Aluno {
     this.nome = from.nome;
     this.cpf = from.cpf;
     this.email = from.email;
-    this.copyMetasFrom(this.metas, from.metas);
-    this.copyMetasFrom(this.metasAutoAvaliacao, from.metasAutoAvaliacao);
+    this.copyMetasFrom(from.metas);
+    this.copyMetasAutoAvaliacaoFrom(from.metasAutoAvaliacao);
   }
 
-  copyMetasFrom(metas: Map<string, string>, from: Map<string,string>): void {
-    metas = new Map<string,string>();
+  copyMetasFrom(from: Map<string,string>): void {
+    this.metas = new Map<string,string>();
     for (let key in from) {
-      metas[key] = from[key];
+      this.metas[key] = from[key];
+    }
+  }
+
+  copyMetasAutoAvaliacaoFrom(from: Map<string,string>): void {
+    this.metasAutoAvaliacao = new Map<string,string>();
+    for (let key in from) {
+      this.metasAutoAvaliacao[key] = from[key];
     }
   }
 }

@@ -15,7 +15,7 @@ export class AutoAvaliacaoComponent implements OnInit {
    alunos: Aluno[];
 
    atualizarAluno(aluno: Aluno): void {
-       console.log(this.alunos);
+      console.log(this.alunos);
       this.alunoService.atualizar(aluno)
          .catch(erro => alert(erro));
    }
