@@ -1,16 +1,21 @@
+<input type="checkbox" (change)="verDiscrepancias()" id="discrepanciabox">Ver discrepâncias
 <table>
 <tr>
    <th>Nome</th>
    <th>CPF</th>
    <th>e-mail</th>
    <th>Requisitos</th>
+   <th class="metaAutoAvaliacao">Requisitos (Auto-avaliação)</th>
    <th>Gerência de Configuração</th>
+   <th class="metaAutoAvaliacao">Gerência de Configuração (Auto-avaliação)</th>
 </tr>
-<tr *ngFor="let a of alunos">
+<tr *ngFor="let a of alunos" class="listaMetas">
    <td>{{a.nome}}</td>
    <td>{{a.cpf}}</td>
    <td>{{a.email}}</td>
    <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
+   <td class="metaAutoAvaliacao"><input [(ngModel)]="a.metasAutoAvaliacao['requisitos']" disabled></td>
    <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+   <td class="metaAutoAvaliacao"><input [(ngModel)]="a.metasAutoAvaliacao['gerDeConfiguracao']" disabled></td>
 </tr>
 </table>
