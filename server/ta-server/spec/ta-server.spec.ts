@@ -37,4 +37,10 @@ describe("O servidor", () => {
      });
   })
 
+  it("não cadastra auto-avaliações parciais", () => {
+    return request.put(base_url + "aluno", {"json":{"nome": "Mari", "cpf" : "965", "email" : "", "metasAutoAvaliacao":{"requisitos": "MA"}}}).then(body => {
+      expect(body).toEqual({failure: "O aluno não pode ser atualizado"});
+    })
+  })
+
 })
