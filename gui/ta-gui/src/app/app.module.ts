@@ -9,13 +9,15 @@ import { MetasComponent } from './metas.component';
 import { AlunosComponent } from './alunos.component';
 import { AlunoService } from './aluno.service';
 import { AutoAvaliacaoComponent } from './autoavaliacao.component';
+import { DiscrepanciaComponent } from './discrepancia.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MetasComponent,
     AlunosComponent,
-    AutoAvaliacaoComponent
+    AutoAvaliacaoComponent,
+    DiscrepanciaComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,10 @@ import { AutoAvaliacaoComponent } from './autoavaliacao.component';
       {
         path: 'autoavaliacao',
         component:  AutoAvaliacaoComponent
+      }
+      {
+        path: 'discrepancia',
+        component:  DiscrepanciaComponent
       }
     ])
   ],
