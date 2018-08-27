@@ -28,3 +28,4 @@ Scenario: Auto evaluation with missing grades
    AND the student is logged in as “Matheus Borba”
    WHEN the student submit “MANA”, “” and “MA” as his grades, respectively
    THEN the system will not store “MANA”, “” and “MA” as his grades
+    AND additional step requested by the stakeholders
