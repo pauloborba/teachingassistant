@@ -1,3 +1,9 @@
+R1: Conversar com o professor.
+	R2: Pedir reteste.
+	R3: Solicitar revisão das provas, questionários, formulários…
+		R4: Solicitar arredondamento.
+		R5: Avaliar método de cálculo.
+
 Feature autoavaliação
     Cenário nova auto-avaliação
         Dado que está preenchida “MA” na “primeira unidade” da autoavaliação do aluno “Gustavo César”
