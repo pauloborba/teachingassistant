@@ -2,3 +2,19 @@ Feature: auto-avaliação
 As a estudante
 I want to atribuir conceitos para todas minhas metas
 So that possa me auto-avaliar como ache que mereço
+
+GUI: 
+Cenário: preencher auto-avaliação
+GIVEN logado como “estudante” de login “luan brito” e senha “123”
+AND página de “auto-avaliação” aberta para disciplina “ESS - 2017.2”
+WHEN atribuir “MA” “MA” “MA” às metas “elicitação de requisitos” “configurações de projeto” “testes” respectivamente
+AND submeter conceitos	
+THEN receber mensagem de sucesso
+
+SERVIÇO:
+Cenário: preencher auto-avaliação
+GIVEN logado como “estudante” de login “luan brito” e senha “123”
+AND “professor” de login “paulo” registrou a avaliação do aluno “luan brito” para disciplina “ESS - 2017.2”
+AND não há registro de auto-avaliação de “luan brito” para disciplina “ESS - 2017.2”
+WHEN atribuir “MANA” “MANA” “MANA”  às metas “elicitação de requisitos” “configurações de projeto” “testes” respectivamente
+THEN registrar auto-avaliação de “luan brito” como “MANA” “MANA” “MANA” no banco de dados AQUI EU ALTEREI
