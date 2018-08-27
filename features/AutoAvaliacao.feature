@@ -29,3 +29,4 @@ E estou na página “meu perfil” da cadeira “Algoritmos”
  	E preenchi “MPA” na “segunda unidade” da autoavaliação
 	Quando solicito cadastro das notas da autoavaliação
 	Então posso ver uma mensagem de erro “notas não cadastradas, pois uma das notas não foi preenchida”.
+    then "resultados esperados"
