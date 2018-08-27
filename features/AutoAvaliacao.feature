@@ -30,3 +30,22 @@ When Eu cadastro as notas MPA e MPA respectivamente para as duas primeiras metas
 Then Um erro é gerado.
 And As notas não são salvas no sistema.
 And O código de erro é registrado em um arquivo.
+
+Scenario: Nenhuma discrepância
+Given Eu estou logado como professor
+And Eu estou na tela de “Avaliações discrepantes”.
+And Em auto-avaliação, um aluno tem conceito superior ao do professor em 1 de 5 metas
+And Em auto-avaliação, um aluno só tem conceitos inferiores ao do professor
+And Em auto-avaliação, um aluno só tem conceitos iguais aos do professor
+When Eu olho a lista de alunos com avaliação discrepante.
+Then Eu vejo a lista vazia.
+
+Scenario: Uma discrepância
+Given Eu estou logado como professor
+And Eu estou na tela de “Avaliações discrepantes”.
+And Em auto-avaliação, o aluno “Gabriel” tem conceito superior ao do professor em 4 de 5 metas
+And Em auto-avaliação, um aluno só tem conceitos inferiores ao do professor
+And Em auto-avaliação, um aluno só tem conceitos iguais aos do professor
+When Eu olho a lista de alunos com avaliação discrepante.
+Then Eu vejo na lista apenas o nome “Gabriel”.
+>>>>>>> discrepantes
