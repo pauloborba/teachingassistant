@@ -41,4 +41,4 @@ Scenario: Student Grade List with no conflict
    THEN I can see an list with the student “Jorge Silva”
    AND I can see his grades “MPA / MANA, MA / MPA, MA / MPA, MPA / MPA, MANA / MANA” 
    AND I can see information about how many are on the list, “1 (25%)”
-
+    AND alteração do bug de Discrepantes, a pedidos dos stakeholders
