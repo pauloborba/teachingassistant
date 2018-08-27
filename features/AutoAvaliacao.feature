@@ -29,3 +29,16 @@ Scenario: Auto evaluation with missing grades
    WHEN the student submit “MANA”, “” and “MA” as his grades, respectively
    THEN the system will not store “MANA”, “” and “MA” as his grades
     AND additional step requested by the stakeholders
+
+Scenario: Student Grade List with no conflict 
+   GIVEN I am at the “Lista de Alunos” page
+   AND There are three students, 
+“Jorge Silva”, “Matheus Fonseca” and “Pedro Fernandes”, with grades, respectively, set as “MPA / MANA, MA / MPA, MA / MPA, MPA / MPA, MANA / MANA”,
+“MPA / MA, MPA / MA, MPA / MA, MPA / MA, MPA / MA” and
+“MA / MA, MA / MA, MA / MA, MA / MA, MA / MA”   
+   AND I am logged in as “Professor Thiago Jorge”
+   WHEN I access the “Lista de Alunos Discrepantes” page
+   THEN I can see an list with the student “Jorge Silva”
+   AND I can see his grades “MPA / MANA, MA / MPA, MA / MPA, MPA / MPA, MANA / MANA” 
+   AND I can see information about how many are on the list, “1 (25%)”
+
