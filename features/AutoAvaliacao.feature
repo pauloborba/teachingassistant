@@ -71,4 +71,4 @@ E o aluno “Daniel Melo” cadastrou “MA” nas 5º autoavaliação
 E o aluno “Daniel Melo” tem como cadastrado “MPA” nas 5º avaliação do professor
 	Quando pesquiso por “alunos discrepantes”
 	Então vejo o nome do aluno “Daniel Melo”
-	E recebo uma mensagem pesquisa bem sucedida
+	E recebo uma mensagem pesquisa bem sucedida.
