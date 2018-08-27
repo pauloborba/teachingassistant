@@ -29,3 +29,4 @@ Given Eu estou logado como estudante.
 When Eu cadastro as notas MPA e MPA respectivamente para as duas primeiras metas na linha de Auto-Avaliação sem cadastrar uma terceira nota.
 Then Um erro é gerado.
 And As notas não são salvas no sistema.
+And O código de erro é registrado em um arquivo.
