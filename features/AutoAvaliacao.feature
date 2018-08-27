@@ -14,3 +14,18 @@ Scenario: Auto-Avaliação bem-sucedida
 Given Eu estou logado como estudante.
 When Eu cadastro as notas MPA, MPA e MA respectivamente para as três metas em minha auto-avaliação.
 Then As notas MPA, MPA e MA ficam salvas no sistema respectivamente para as três metas de minha auto-avaliação.
+
+Scenario: Auto-Avaliação mal-sucedida GUI
+Given Eu estou logado como estudante
+And Eu estou na tela de “cadastro auto-avaliação”.
+When Eu seleciono as notas MPA e MPA respectivamente para as duas primeiras metas na linha de Auto-Avaliação.
+And Eu deixo o campo para a terceira nota não-preenchido.
+And Eu clico no botão Finalizar.
+Then Eu posso ver a mensagem de erro.
+And Eu posso ver que o campo da terceira meta está vazio por meio de uma mensagem de erro.
+
+Scenario: Auto-Avaliação mal-sucedida 
+Given Eu estou logado como estudante.
+When Eu cadastro as notas MPA e MPA respectivamente para as duas primeiras metas na linha de Auto-Avaliação sem cadastrar uma terceira nota.
+Then Um erro é gerado.
+And As notas não são salvas no sistema.
