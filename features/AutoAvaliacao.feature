@@ -37,4 +37,4 @@ Feature: Auto-avaliação
 			E está no período de realizar a auto-avaliação “Agosto”
 			Quando eu sigo realizar auto-avaliação
  			E eu não preencho todos os campos
-			Então uma mensagem de erro é mostrada
+			Então uma mensagem de erro é mostradaaa
