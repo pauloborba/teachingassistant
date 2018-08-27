@@ -23,3 +23,4 @@ Scenario: Don’t Store invalid grades
 Given: I put numbers on my grade instead of “MA”, “MANA” or “MPA”
 When: I submit
 Then: The system don’t store the grades
+Then: The grade's do not show up in the search result
