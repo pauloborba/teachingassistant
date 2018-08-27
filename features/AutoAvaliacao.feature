@@ -29,3 +29,12 @@ Given Eu estou logado como estudante.
 When Eu cadastro as notas MPA e MPA respectivamente para as duas primeiras metas na linha de Auto-Avaliação sem cadastrar uma terceira nota.
 Then Um erro é gerado.
 And As notas não são salvas no sistema.
+
+Scenario: Nenhuma discrepância
+Given Eu estou logado como professor
+And Eu estou na tela de “Avaliações discrepantes”.
+And Em auto-avaliação, um aluno tem conceito superior ao do professor em 1 de 5 metas
+And Em auto-avaliação, um aluno só tem conceitos inferiores ao do professor
+And Em auto-avaliação, um aluno só tem conceitos iguais aos do professor
+When Eu olho a lista de alunos com avaliação discrepante.
+Then Eu vejo a lista vazia.
