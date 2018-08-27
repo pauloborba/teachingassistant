@@ -30,3 +30,11 @@ And avaliou a meta "Gerencia"
 When o aluno avaliar a meta "Requisitos" com "MMA"
 And avaliar a meta "Gerencia" com "MPA"
 Than as avaliações do aluno permanacerão inalteradas
+
+Scenario sem discrepância
+Given estou na página de "Auto Avaliação"
+And visualizo a meta "Requisitos" com a avaliação "MPA"
+And visualizo a meta "Gerencia" com a avaliação "MANA"
+When avalio a meta "Requisitos" com "MA"
+And avalio a meta "Gerencia" com "MPA"
+Then vejo uma mensagem de que não há discrepancias
