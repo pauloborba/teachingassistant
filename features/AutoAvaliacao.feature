@@ -16,3 +16,10 @@ And avaliou a meta "Gerencia"
 When o aluno avaliar a meta "Requisitos
 And avaliar a meta "Gerencia"
 Than essas avaliações serão guardadas no sistema
+
+Scenario preenchimento mal sucedido - GUI
+Given estou na página de "Auto Avaliação"
+When avalio a meta "Requisitos" com "MMA"
+And avalio a meta "Gerencia" com "MA"
+And envio as metas avaliadas
+Than vejo uma mensagem de auto avaliação mal sucedida
