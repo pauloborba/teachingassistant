@@ -15,3 +15,16 @@ Scenario: Auto evaluation
    AND the student is logged in as “Matheus Borba”
    WHEN the student submit “MANA”, “MPA” and “MA” as his grades, respectively
    THEN the system will have stored “MANA”, “MPA” and “MA” as the auto evaluation grades of “matheus borba”
+
+Scenario: Auto evaluation with missing grades
+   GIVEN I am at the “Notas Metas” page
+   AND I am logged in as “Matheus Borba”
+   WHEN I grade myself with “”, “MPA” and “”, respectively 
+   AND confirm my choices
+   THEN I can an error message, explaining all grades should be submitted at once 
+
+Scenario: Auto evaluation with missing grades
+   GIVEN the auto evaluation grades were still not informed to the system   
+   AND the student is logged in as “Matheus Borba”
+   WHEN the student submit “MANA”, “” and “MA” as his grades, respectively
+   THEN the system will not store “MANA”, “” and “MA” as his grades
