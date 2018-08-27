@@ -28,3 +28,15 @@ Scenario: Auto evaluation with missing grades
    AND the student is logged in as “Matheus Borba”
    WHEN the student submit “MANA”, “” and “MA” as his grades, respectively
    THEN the system will not store “MANA”, “” and “MA” as his grades
+
+
+Scenario: Student Grade List with no conflict 
+   GIVEN I am at the “Lista de Alunos” page
+   AND There are three students, 
+“Jorge Silva”, “Matheus Fonseca” and “Pedro Fernandes”, with grades, respectively, set as “MPA / MANA, MA / MA, MPA / MPA, MPA / MPA, MANA / MANA”,
+“MPA / MA, MPA / MA, MPA / MA, MPA / MA, MPA / MA” and
+“MA / MA, MA / MA, MA / MA, MA / MA, MA / MA”   
+   AND I am logged in as “Professor Thiago Jorge”
+   WHEN I try to access the “Lista de Alunos Discrepantes” page
+   THEN I can see an warning explaining there are no conflicting students
+
