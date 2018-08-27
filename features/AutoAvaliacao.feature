@@ -50,3 +50,24 @@ E o aluno “Daniel Melo” tem como cadastrado “MPA” nas 5º avaliação do
 	Quando pesquiso por “alunos discrepantes”
 	Então não vejo nenhum aluno
 	E recebo uma mensagem de que não há alunos discrepantes
+
+Cenário há discrepância
+Dado que estou na página “Notas Alunos” da cadeira “Cálculo I”
+E “Cálculo I” têm “3” alunos
+	E o aluno “José Fernando” cadastrou “MPA” nas “5” autoavaliações
+	E o aluno “José Fernando” tem como cadastrado “MPA” nas “5” avaliações do professor
+	E o aluno “Pedro Augusto” cadastrou “MPA” nas “5” autoavaliações
+	E o aluno “Pedro Augusto” tem como cadastrado “MA” nas “5” avaliações do professor
+	E o aluno “Daniel Melo” cadastrou “MPA” nas 1º autoavaliação
+E o aluno “Daniel Melo” tem como cadastrado “MPA” nas 1º avaliação do professor
+	E o aluno “Daniel Melo” cadastrou “MA” nas 2º autoavaliação
+E o aluno “Daniel Melo” tem como cadastrado “MPA” nas 2º avaliação do professor
+	E o aluno “Daniel Melo” cadastrou “MPA” nas 3º autoavaliação
+E o aluno “Daniel Melo” tem como cadastrado “MANA” nas 3º avaliação do professor
+E o aluno “Daniel Melo” cadastrou “MA” nas 4º autoavaliação
+E o aluno “Daniel Melo” tem como cadastrado “MANA” nas 4º avaliação do professor
+E o aluno “Daniel Melo” cadastrou “MA” nas 5º autoavaliação
+E o aluno “Daniel Melo” tem como cadastrado “MPA” nas 5º avaliação do professor
+	Quando pesquiso por “alunos discrepantes”
+	Então vejo o nome do aluno “Daniel Melo”
+	E recebo uma mensagem pesquisa bem sucedida
