@@ -24,3 +24,14 @@ Scenario: Preenchimento incompleto de Auto Avaliação (Serviço)
 Given O sistema apresenta as avaliações dados pelo professor para as metas  do aluno “Saulo Guilhermino”, mas não apresenta as auto-avaliações do aluno “Saulo Guilhermino”
 When O aluno tenta enviar para o servidor as avaliações um formulário com um campo não preenchido
 Then O sistema não armazena as avaliações enviadas incorretamente
+
+Scenario: Visualização de Discrepâncias sem alunos discrepantes
+Given Eu estou logado como “Professor”
+And tenho uma turma de apenas 3 alunos
+And A aluna “Mariana Cecília” tem conceitos “MA, MPA, MPA, MANA, MA” e se auto-avaliou com “MA, MA, MANA, MANA, MPA” 
+And O aluno “João César” tem conceitos “MPA, MPA, MPA, MPA e se auto-avaliou com “MANA, MANA, MANA, MANA”
+And O aluno “José Marcos” tem conceitos “MPA, MPA, MA, MANA” e se avaliou com “MPA, MPA, MA, MANA”
+When Eu abro a tela de “Discrepâncias”
+Then É exibida uma tela apenas com a quantidade de alunos como “0” 
+And a porcentagem é exibida como “0%”
+
