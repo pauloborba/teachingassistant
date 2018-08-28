@@ -29,6 +29,7 @@ AND “professor” de login “paulo” registrou a avaliação do aluno “luan brito”
 WHEN atribuir “MA” “MA” “” às metas “elicitação de requisitos” “configurações de projeto” “testes” respectivamente
 AND submeter conceitos	
 THEN receber mensagem de erro
+AND modificações requisitadas
 
 SERVIÇO:
 Cenário: preencher auto-avaliação
@@ -37,3 +38,4 @@ AND não há registro de auto-avaliação de “luan brito” para disciplina “ESS - 201
 WHEN submeter os conceitos “MANA” “” “MANA”  às metas “elicitação de requisitos” “configurações de projeto” “testes” respectivamente
 THEN retornar mensagem de erro
 AND não atualizar a auto-avaliação do aluno para nenhuma meta
+AND modificações requisitadas
