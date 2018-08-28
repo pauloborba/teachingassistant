@@ -38,3 +38,4 @@ And O sistema tem apenas as metas “Entender conceitos de requisitos” e “Es
 When Eu cadastro a auto-avaliação do aluno “gap” com “MA” em “Entender conceitos de requisitos”
 And Eu não cadastro a auto-avaliação do aluno “gap” em “Especificar requisitos com qualidade”
 Then O sistema não registra a auto-avaliação do aluno “gap” em “Engenharia de Software”
+And O sistema registra que o aluno "gap" tentou mas não concluiu a auto-avaliação em "Engenharia de Software"
