@@ -47,3 +47,4 @@ And visualizo a meta "Gerencia" com a avaliação "MANA"
 When avalio a meta "Requisitos" com "MA"
 And avalio a meta "Gerencia" com "MPA"
 Then vejo uma mensagem de que há discrepancias
+And as avaliações são deletadas
