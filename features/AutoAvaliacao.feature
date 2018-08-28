@@ -38,3 +38,18 @@ And O sistema tem apenas as metas “Entender conceitos de requisitos” e “Es
 When Eu cadastro a auto-avaliação do aluno “gap” com “MA” em “Entender conceitos de requisitos”
 And Eu não cadastro a auto-avaliação do aluno “gap” em “Especificar requisitos com qualidade”
 Then O sistema não registra a auto-avaliação do aluno “gap” em “Engenharia de Software”
+
+Scenario: Página de estatisticas de auto-avaliações sem discrepancia
+Given Eu loguei como “Professor” com o login “gap” e a senha “1234”
+And Eu vejo 5 metas na minha disciplina “Engenharia de Software”
+And Eu vejo apenas os alunos “Zézinho”, “Huguinho” e “Luizinho” na lista de alunos de “Engenharia de Software”
+And Eu vejo que avaliei “Zézinho” com “MA, MA, MA, MA, MPA” em “Engenharia de Software”
+And Eu vejo que “Zézinho” se auto-avaliou com “MPA, MANA, MPA, MPA, MANA” em “Engenharia de Software”
+And Eu vejo que avaliei “Huguinho” com “MPA, MANA, MPA, MPA, MANA” em “Engenharia de Software”
+And Eu vejo que “Huguinho” se auto-avaliou com  “MPA, MANA, MPA, MPA, MANA” em “Engenharia de Software”
+And Eu vejo que avaliei “Luizinho” com “MANA, MPA, MPA, MA, MA” em “Engenharia de Software”
+And Eu vejo que “Luizinho” se auto-avaliou com  “MPA, MPA, MPA, MA, MA” em “Engenharia de Software”
+When Eu acesso a página de “Estatísticas das auto-avaliações” da disciplina “Engenharia de Software”
+Then Eu vejo “0” alunos na quantidade de alunos com auto-avaliações discrepantes
+And Eu vejo “0”% na porcentagem de alunos com auto-avaliações discrepantes
+And Eu não vejo nenhum aluno na lista de alunos com auto-avaliações discrepantes
