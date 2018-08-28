@@ -42,6 +42,6 @@ And “João” self-evaluated with “MPA, MPA, MPA, MPA, MPA”
 And I evaluated “João” with “MA, MA, MA, MA, MA”
 And “Paulo” self-evaluated with “MA, MA, MA, MA, MA”
 And I evaluated “Paulo” with “MANA, MANA, MA, MA ,MA”
-When I select “show discrepancy report” option
+When I select “show discrepancies” option
 Then a list of discrepancy shows “1” student(s)
 And “Total de alunos” shows “1” and “Porcentagem da turma” shows “33%”
