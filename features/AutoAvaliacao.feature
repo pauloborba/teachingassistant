@@ -47,4 +47,4 @@ Cenário:Saber a quantidade, o percentual, e a lista de alunos com auto-avaliaç
 Given o professor está na página inicial de gerenciamento de notas
 When ele clica na opção de saber a quantidade,percentual e lista de alunos com discrepância nas autoavaliações
 Then ele recebe uma mensagem contendo a quantidade e porcentagem de alunos com auto-avaliações
-And uma opção de visualizar as listas de alunos com discrepância.
+And uma opção de visualizar as listas de alunos com discrepância.(atualizacao)
