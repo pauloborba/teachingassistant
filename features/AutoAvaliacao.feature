@@ -1,26 +1,27 @@
-Feature: [Auto Avaliação]
+ï»¿Feature: [Auto Avaliaï¿½ï¿½o]
 As a [Aluno]
-I want to [Atribuir conceitos que eu acho justos às minhas metas e, ao mesmo tempo, observar os conceitos que o professor me atribuiu]
-so that [Eu posso relacionar as avaliações]
+I want to [Atribuir conceitos que eu acho justos ï¿½s minhas metas e, ao mesmo tempo, observar os conceitos que o professor me atribuiu]
+so that [Eu posso relacionar as avaliaï¿½ï¿½es]
 
-Scenario: Preenchimento correto de Auto Avaliação (GUI)
-Given Eu estou na tela de “auto avaliação” logado como “Aluno”
-And os conceitos dados pelo professor para as metas já aparecem na tela
-When Eu tenho enviar um formulário preenchido com todas as avaliações
-Then É exibida uma mensagem de sucesso
+Scenario: Preenchimento correto de Auto Avaliaï¿½ï¿½o (GUI)
+Given Eu estou na tela de ï¿½auto avaliaï¿½ï¿½oï¿½ logado como ï¿½Alunoï¿½
+And os conceitos dados pelo professor para as metas jï¿½ aparecem na tela
+When Eu tenho enviar um formulï¿½rio preenchido com todas as avaliaï¿½ï¿½es
+Then ï¿½ exibida uma mensagem de sucesso
 
-Scenario: Preenchimento correto de Auto Avaliação (Serviço)
-Given O sistema apresenta as avaliações do professor para as metas “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração, Etc.” do aluno “Saulo Guilhermino”, mas não apresenta as auto avaliações do aluno “Saulo Guilhermino”
-When O aluno “Saulo Guilhermino” preenche os campos de avaliação das metas “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração, Etc.” com as avaliações “MANA, MPA, MA, MA”  e envia o formulário para o servidor
-Then O sistema armazena as avaliações nos campos necessários.
+Scenario: Preenchimento correto de Auto Avaliaï¿½ï¿½o (Serviï¿½o)
+Given O sistema apresenta as avaliaï¿½ï¿½es do professor para as metas ï¿½Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerï¿½ncia de configuraï¿½ï¿½o, Etc.ï¿½ do aluno ï¿½Saulo Guilherminoï¿½, mas nï¿½o apresenta as auto avaliaï¿½ï¿½es do aluno ï¿½Saulo Guilherminoï¿½
+When O aluno ï¿½Saulo Guilherminoï¿½ preenche os campos de avaliaï¿½ï¿½o das metas ï¿½Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerï¿½ncia de configuraï¿½ï¿½o, Etc.ï¿½ com as avaliaï¿½ï¿½es ï¿½MANA, MPA, MA, MAï¿½  e envia o formulï¿½rio para o servidor
+Then O sistema armazena as avaliaï¿½ï¿½es nos campos necessï¿½rios.
 
-Scenario: Preenchimento incompleto de Auto Avaliação (GUI)
-Given Eu estou na tela de “Auto avaliação” logado como “Saulo Guilhermino”
-And as avaliações do professor para as metas já aparecem na tela
-When Eu tento enviar um formulário com um campo não preenchido
-Then É exibida uma mensagem de erro
+Scenario: Preenchimento incompleto de Auto Avaliaï¿½ï¿½o (GUI)
+Given Eu estou na tela de ï¿½Auto avaliaï¿½ï¿½oï¿½ logado como ï¿½Saulo Guilherminoï¿½
+And as avaliaï¿½ï¿½es do professor para as metas jï¿½ aparecem na tela
+When Eu tento enviar um formulï¿½rio com um campo nï¿½o preenchido
+Then ï¿½ exibida uma mensagem de erro
 
-Scenario: Preenchimento incompleto de Auto Avaliação (Serviço)
-Given O sistema apresenta as avaliações dados pelo professor para as metas  do aluno “Saulo Guilhermino”, mas não apresenta as auto-avaliações do aluno “Saulo Guilhermino”
-When O aluno tenta enviar para o servidor as avaliações um formulário com um campo não preenchido
-Then O sistema não armazena as avaliações enviadas incorretamente
+Scenario: Preenchimento incompleto de Auto Avaliaï¿½ï¿½o (Serviï¿½o)
+Given O sistema apresenta as avaliaï¿½ï¿½es dados pelo professor para as metas  do aluno ï¿½Saulo Guilherminoï¿½, mas nï¿½o apresenta as auto-avaliaï¿½ï¿½es do aluno ï¿½Saulo Guilherminoï¿½
+When O aluno tenta enviar para o servidor as avaliaï¿½ï¿½es um formulï¿½rio com um campo nï¿½o preenchido
+Then O sistema nï¿½o armazena as avaliaï¿½ï¿½es enviadas incorretamente
+And Nï¿½o ocorre qualquer alteraï¿½ï¿½o nas avaliaï¿½ï¿½es jÃ¡ registradas
