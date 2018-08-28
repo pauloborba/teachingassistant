@@ -27,3 +27,8 @@ Scenario: metas sem nenhuma discrepâncias
     Given que o “Professor” está na página de notas da turma “2018.2”
     When o “Professor” solicita a comparação de notas
     Then a coluna de “discrepância” contêm somente “NÃO”
+
+Scenario: metas com existência de discrepâncias
+    Given que o “Professor” está na página de notas da turma “2018.2”
+    When o “Professor” solicita a comparação de notas
+    Then a coluna de “discrepância” contêm 1 ou mais “SIM”
