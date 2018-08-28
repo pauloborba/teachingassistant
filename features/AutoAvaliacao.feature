@@ -35,3 +35,9 @@ Scenario:Um aluno deseja fazer uma autoavaliação
 Given o estudante “Douglas Felipe” está na página de SMT 
 When eu peço para “Douglas Felipe, que ele realize sua auto avaliação,atribuindo metas paras os conceitos(1,2,3 e 4) numa mesma página
 Then “Douglas Felipe” confirmar que preencheu todas as metas e clica no botão confirmar e recebe uma mensagem “Preencha o conceito para a meta 5 para poder realizar o procedimento” e volta para a mesma página.
+
+
+Cenário:Saber a quantidade, o percentual, e a lista de alunos com auto-avaliações discrepantes
+Given o professor está na página inicial de gerenciamento de notas
+When ele clica na opção de saber a quantidade,percentual e lista de alunos com discrepância nas autoavaliações
+Then ele recebe uma mensagem de que não há nenhum aluno com discrepância.
