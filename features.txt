@@ -1,3 +1,4 @@
+
 Feature: auto-avaliação
 As a estudante
 I want to atribuir conceitos para todas minhas metas
@@ -18,3 +19,21 @@ AND “professor” de login “paulo” registrou a avaliação do aluno “luan brito” par
 AND não há registro de auto-avaliação de “luan brito” para disciplina “ESS - 2017.2”
 WHEN atribuir “MANA” “MANA” “MANA”  às metas “elicitação de requisitos” “configurações de projeto” “testes” respectivamente
 THEN registrar auto-avaliação de “luan brito” como “MANA” “MANA” “MANA” no banco de dados AQUI EU ALTEREI
+
+
+GUI: 
+Cenário: preencher auto-avaliação
+GIVEN logado como “estudante” de login “luan brito” e senha “123”
+AND página de “auto-avaliação” aberta para disciplina “ESS - 2017.2”
+AND “professor” de login “paulo” registrou a avaliação do aluno “luan brito”
+WHEN atribuir “MA” “MA” “” às metas “elicitação de requisitos” “configurações de projeto” “testes” respectivamente
+AND submeter conceitos	
+THEN receber mensagem de erro
+
+SERVIÇO:
+Cenário: preencher auto-avaliação
+GIVEN logado como “estudante” de login “luan brito” e senha “123”
+AND não há registro de auto-avaliação de “luan brito” para disciplina “ESS - 2017.2”
+WHEN submeter os conceitos “MANA” “” “MANA”  às metas “elicitação de requisitos” “configurações de projeto” “testes” respectivamente
+THEN retornar mensagem de erro
+AND não atualizar a auto-avaliação do aluno para nenhuma meta
