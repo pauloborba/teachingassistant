@@ -22,3 +22,19 @@ And Eu cadastro a auto-avaliação do aluno “gap” com “MPA” em “Especi
 Then O sistema guarda que o aluno “gap” cadastrou a auto-avaliação
 And O sistema guarda o conceito “MA” na auto-avaliação de “Entender conceitos de requisitos” do aluno “gap”
 And O sistema guarda o conceito “MPA” na auto-avaliação de “Especificar requisitos com qualidade” do aluno “gap”
+
+Scenario: nova auto-avaliação parcial gui
+Given Eu loguei como “Aluno” com o login “gap” e a senha “1234”
+And Eu vejo que não preenchi minha auto-avaliação da disciplina “Engenharia de Software”
+And Eu vejo apenas as metas “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” na disciplina “Engenharia de Software”
+When Eu seleciono “Preencher auto-avaliação” de “Engenharia de Software”
+And Eu preencho minha auto-avaliação de “Entender conceitos de requisitos” com “MA”
+And Eu não preencho minha auto-avaliação de “Especificar requisitos com qualidade”
+Then Uma mensagem de erro é exibida
+
+Scenario: nova auto-avaliação parcial serviço
+Given O sistema não têm a auto-avaliação do aluno com login “gap” na disciplina “Engenharia de Software”
+And O sistema tem apenas as metas “Entender conceitos de requisitos” e “Especificar requisitos com qualidade” na disciplina “Engenharia de Software” 
+When Eu cadastro a auto-avaliação do aluno “gap” com “MA” em “Entender conceitos de requisitos”
+And Eu não cadastro a auto-avaliação do aluno “gap” em “Especificar requisitos com qualidade”
+Then O sistema não registra a auto-avaliação do aluno “gap” em “Engenharia de Software”
