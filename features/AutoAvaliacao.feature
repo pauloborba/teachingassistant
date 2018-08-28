@@ -56,7 +56,7 @@ And Eu vejo “0”% na porcentagem de alunos com auto-avaliações discrepantes
 And Eu não vejo nenhum aluno na lista de alunos com auto-avaliações discrepantes
 
 Scenario: Página de estatisticas de auto-avaliações com discrepancia
-Given Eu loguei como “Professor” com o login “gap” e a senha “1234”
+Given Eu loguei como “Professor” com o login “gap” e a senha "4321"
 And Eu vejo 5 metas na minha disciplina “Engenharia de Software”
 And Eu vejo apenas os alunos “Zézinho”, “Huguinho” e “Luizinho” na lista de alunos de “Engenharia de Software”
 And Eu vejo que avaliei “Zézinho” com “MA, MA, MA, MA, MPA” em “Engenharia de Software”
@@ -69,3 +69,4 @@ When Eu acesso a página de “Estatísticas das auto-avaliações” da discipl
 Then Eu vejo “1” alunos na quantidade de alunos com auto-avaliações discrepantes
 And Eu vejo “33”% na porcentagem de alunos com auto-avaliações discrepantes
 And Eu vejo apenas “Luizinho” na lista de alunos com auto-avaliações discrepantes
+	
