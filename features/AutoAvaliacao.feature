@@ -21,4 +21,13 @@ And “Pedro”  auto-avaliou os conceitos:  “MA, MPA, MA, MPA, MA” e eu ava
 And “Maria” se auto-avaliou os conceitos: “MPA, MPA, MPA, MPA, MANA” e eu avaliei os conceitos: “MA, MA, MA, MA, MPA”
 And “João” se auto-avaliou os conceitos  “MPA, MPA, MPA, MA, MA” e eu avaliei os conceitos “MPA, MPA, MPA, MA, MA”
 When eu seleciono a opção “Visualizar auto-avaliações discrepantes”
-Then  é exibida a página de “auto-avaliações” que exibe as seguintes  informações: existem 0 auto-avaliações discrepantes, sendo elas 0% do total de avaliações e a lista de alunos com auto-avaliações discrepantes está vazia.
+Then  é exibida a página de “auto-avaliações” que exibe as seguintes informações: existem 0 auto-avaliações discrepantes, 
+sendo elas 0% do total de avaliações e a lista de alunos com auto-avaliações discrepantes está vazia.
+
+Scenario: Um aluno tem discrepância
+Given eu só tenho apenas 3 alunos cadastrados: ”Pedro”, “Maria” e “João”
+And “Pedro”  auto-avaliou os conceitos:  “MA, MPA, MA, MPA, MA” e eu avaliei os conceitos: “MPA, MPA, MPA, MPA, MPA”
+And “Maria” se auto-avaliou os conceitos: “MPA, MPA, MPA, MPA, MANA” e eu avaliei os conceitos: “MA, MA, MA, MA, MPA”
+And “João” se auto-avaliou os conceitos  “MPA, MPA, MPA, MA, MA” e eu avaliei os conceitos “MPA, MPA, MPA, MA, MA”
+When eu seleciono a opção “Visualizar auto-avaliações discrepantes”
+Then é exibida a página de “auto-avaliações” que exibe as seguintes informações: existem 1 auto-avaliação discrepante, sendo ela 33.33% do total de avaliações e a lista de alunos com auto-avaliações discrepantes tem apenas o nome de “Pedro”. 
