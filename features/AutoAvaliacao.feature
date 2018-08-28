@@ -23,7 +23,7 @@ Feature: Auto-avaliação
 			Então o sistema arquiva auto-avaliação “Agosto” de forma correta
 
 	GUI
-	
+
 		Cenário: Preenchimento mal sucedido da auto-avaliação
 			Dado que eu estou na tela de auto-avaliação
 			E está no período de realizar a auto-avaliação “Abril”
@@ -37,4 +37,20 @@ Feature: Auto-avaliação
 			E está no período de realizar a auto-avaliação “Agosto”
 			Quando eu sigo realizar auto-avaliação
  			E eu não preencho todos os campos
-			Então uma mensagem de erro é mostradaaa
+			Então uma mensagem de erro é mostrada
+
+	Cenário: Nenhuma discrepância
+	
+		Dado que eu estou na tela de avaliações discrepantes
+		E está no período de checar as avaliações discrepantes “Abril”
+		Quando eu sigo ver avaliações discrepantes
+ 		E não há discrepâncias
+		Então uma lista vazia é mostrada
+
+	Cenário: há discrepância
+	
+		Dado que eu estou na tela de avaliações discrepantes
+		E está no período de checar as avaliações discrepantes “Abril”
+		Quando eu sigo ver avaliações discrepantes
+ 		E há discrepâncias
+		Então uma lista com os nomes dos alunos com avaliações discrepantes é mostrada
