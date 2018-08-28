@@ -19,3 +19,19 @@ Scenario:Um aluno deseja fazer uma autoavaliação
 Given o estudante “Douglas Felipe” está na página de Gerenciamento de notas
 When eu peço para “Douglas Felipe, que ele realize sua auto avaliação,atribuindo metas para cada conceito numa mesma página
 Then “Douglas Felipe” confirmar que preencheu todas as metas e clica no botão confirmar e recebe uma mensagem “Autoavaliação feita com sucesso”
+
+
+Scenario:Autoavaliação do aluno
+Given o aluno está na página de autoavaliação
+When ele atribui conceito a meta 1
+And ele atribui conceito a meta 2
+And ele atribui conceito a meta 3
+And ele atribui conceito a meta 4
+And ele clica em confirmar
+Then ele recebe uma mensagem de que uma das metas não foi preenchida e o procedimento não pode ser realizado
+
+
+Scenario:Um aluno deseja fazer uma autoavaliação
+Given o estudante “Douglas Felipe” está na página de SMT 
+When eu peço para “Douglas Felipe, que ele realize sua auto avaliação,atribuindo metas paras os conceitos(1,2,3 e 4) numa mesma página
+Then “Douglas Felipe” confirmar que preencheu todas as metas e clica no botão confirmar e recebe uma mensagem “Preencha o conceito para a meta 5 para poder realizar o procedimento” e volta para a mesma página.
