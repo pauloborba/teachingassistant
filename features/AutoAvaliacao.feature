@@ -39,8 +39,8 @@ And a porcentagem � exibida como �0%�
 Scenario: Visualização de Discrepâncias de um aluno numa turma de três alunos
 Given Eu estou logado como “Professor”
 And tenho uma turma de apenas 3 alunos
-And A aluna “Mariana Cecília” tem conceitos “MA, MPA, MPA, MANA, MA” e se auto-avaliou com “MA, MA, MA, MPA, MA” 
-And O aluno “João César” tem conceitos “MPA, MPA, MPA, MPA e se auto-avaliou com “MANA, MANA, MANA, MANA”
-And O aluno “José Marcos” tem conceitos “MPA, MPA, MA, MANA” e se avaliou com “MPA, MPA, MA, MANA”
+And O aluna “João Pedro” tem conceitos “MA, MPA, MPA, MANA, MA” e se auto-avaliou com “MA, MA, MA, MPA, MA” 
+And O aluno “José Marcos” tem conceitos “MPA, MPA, MPA, MPA e se auto-avaliou com “MANA, MANA, MANA, MANA”
+And O aluno “Igor Daniel” tem conceitos “MPA, MPA, MA, MANA” e se avaliou com “MPA, MPA, MA, MANA”
 When Eu abro a tela de “Discrepâncias”
 Then É exibida uma tela com a quantidade de alunos como “1”. a porcentagem como “33,3%”, e o nome do aluno que apresentou discrepância em suas avaliações
