@@ -53,4 +53,4 @@ Feature: Auto-avaliação
 		E está no período de checar as avaliações discrepantes “Abril”
 		Quando eu sigo ver avaliações discrepantes
  		E há discrepâncias
-		Então uma lista com os nomes dos alunos com avaliações discrepantes é mostrada
+		Então uma lista com os nomes dos alunos com avaliações discrepantes é mostradaaa
