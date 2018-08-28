@@ -25,3 +25,22 @@ Given O sistema apresenta as avalia��es dados pelo professor para as metas  
 When O aluno tenta enviar para o servidor as avalia��es um formul�rio com um campo n�o preenchido
 Then O sistema n�o armazena as avalia��es enviadas incorretamente
 And N�o ocorre qualquer altera��o nas avalia��es já registradas
+
+Scenario: Visualiza��o de Discrep�ncias sem alunos discrepantes
+Given Eu estou logado como �Professor�
+And tenho uma turma de apenas 3 alunos
+And A aluna �Mariana Cec�lia� tem conceitos �MA, MPA, MPA, MANA, MA� e se auto-avaliou com �MA, MA, MANA, MANA, MPA� 
+And O aluno �Jo�o C�sar� tem conceitos �MPA, MPA, MPA, MPA e se auto-avaliou com �MANA, MANA, MANA, MANA�
+And O aluno �Jos� Marcos� tem conceitos �MPA, MPA, MA, MANA� e se avaliou com �MPA, MPA, MA, MANA�
+When Eu abro a tela de �Discrep�ncias�
+Then � exibida uma tela apenas com a quantidade de alunos como �0� 
+And a porcentagem � exibida como �0%�
+
+Scenario: Visualização de Discrepâncias de um aluno numa turma de três alunos
+Given Eu estou logado como “Professor”
+And tenho uma turma de apenas 3 alunos
+And A aluna “Mariana Cecília” tem conceitos “MA, MPA, MPA, MANA, MA” e se auto-avaliou com “MA, MA, MA, MPA, MA” 
+And O aluno “João César” tem conceitos “MPA, MPA, MPA, MPA e se auto-avaliou com “MANA, MANA, MANA, MANA”
+And O aluno “José Marcos” tem conceitos “MPA, MPA, MA, MANA” e se avaliou com “MPA, MPA, MA, MANA”
+When Eu abro a tela de “Discrepâncias”
+Then É exibida uma tela com a quantidade de alunos como “1”. a porcentagem como “33,3%”, e o nome do aluno que apresentou discrepância em suas avaliações
