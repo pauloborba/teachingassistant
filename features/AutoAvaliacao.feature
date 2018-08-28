@@ -46,3 +46,11 @@ Feature: Auto-avaliação
 		Quando eu sigo ver avaliações discrepantes
  		E não há discrepâncias
 		Então uma lista vazia é mostrada
+
+	Cenário: há discrepância
+	
+		Dado que eu estou na tela de avaliações discrepantes
+		E está no período de checar as avaliações discrepantes “Abril”
+		Quando eu sigo ver avaliações discrepantes
+ 		E há discrepâncias
+		Então uma lista com os nomes dos alunos com avaliações discrepantes é mostrada
