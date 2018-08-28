@@ -37,3 +37,9 @@ AND não há registro de auto-avaliação de “luan brito” para disciplina “ESS - 201
 WHEN submeter os conceitos “MANA” “” “MANA”  às metas “elicitação de requisitos” “configurações de projeto” “testes” respectivamente
 THEN retornar mensagem de erro
 AND não atualizar a auto-avaliação do aluno para nenhuma meta
+
+Cenário: analisar auto-avaliação sem discrepância
+GIVEN logado como “professor” de login “luan” e senha “1234”
+WHEN abrir página de “análise de auto-avaliações” para disciplina “algoritmos - 2017.2”
+THEN visualizar a porcentagem de “0%” alunos com discrepância
+AND visualizar a quantidade de “0” alunos com discrepância
