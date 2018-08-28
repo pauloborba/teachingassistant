@@ -20,3 +20,15 @@ Then I can see a error message
 Given the system does not have “Lucas Barros”’s self-evaluation
 When I create a new self-evaluation for “Lucas Barros” with a value of “MA” for each concept except the last one, that I left blank
 Then the self-evaluation is not stored by the system
+
+Given I am logged in as “teacher”
+And I have only three students: “Lucas”, “João”, “Paulo”
+And “Lucas” self-evaluated with “MA, MA, MA, MA, MA”
+And I evaluated “Lucas” with “MPA, MA, MA, MA, MA”
+And “João” self-evaluated with “MPA, MPA, MPA, MPA, MPA” 
+And I evaluated “João” with “MA, MA, MA, MA, MA”
+And “Paulo” self-evaluated with “MA, MA, MA, MA, MA”
+And I evaluated “Paulo” with “MA, MA, MA, MA ,MA”
+When I select “Show discrepancy report” option
+Then a list of discrepancy shows “0” student(s)
+And “Total de alunos” and “Porcentagem da turma” show “0”
