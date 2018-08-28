@@ -20,3 +20,4 @@ Then I can see a error message
 Given the system does not have “Lucas Barros”’s self-evaluation
 When I create a new self-evaluation for “Lucas Barros” with a value of “MA” for each concept except the last one, that I left blank
 Then the self-evaluation is not stored by the system
+And a error message response is sent
