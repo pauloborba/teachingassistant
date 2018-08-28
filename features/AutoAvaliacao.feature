@@ -1,37 +1,45 @@
-Feature: [Auto Avaliação]
+ï»¿Feature: [Auto Avaliaï¿½ï¿½o]
 As a [Aluno]
-I want to [Atribuir conceitos que eu acho justos às minhas metas e, ao mesmo tempo, observar os conceitos que o professor me atribuiu]
-so that [Eu posso relacionar as avaliações]
+I want to [Atribuir conceitos que eu acho justos ï¿½s minhas metas e, ao mesmo tempo, observar os conceitos que o professor me atribuiu]
+so that [Eu posso relacionar as avaliaï¿½ï¿½es]
 
-Scenario: Preenchimento correto de Auto Avaliação (GUI)
-Given Eu estou na tela de “auto avaliação” logado como “Aluno”
-And os conceitos dados pelo professor para as metas já aparecem na tela
-When Eu tenho enviar um formulário preenchido com todas as avaliações
-Then É exibida uma mensagem de sucesso
+Scenario: Preenchimento correto de Auto Avaliaï¿½ï¿½o (GUI)
+Given Eu estou na tela de ï¿½auto avaliaï¿½ï¿½oï¿½ logado como ï¿½Alunoï¿½
+And os conceitos dados pelo professor para as metas jï¿½ aparecem na tela
+When Eu tenho enviar um formulï¿½rio preenchido com todas as avaliaï¿½ï¿½es
+Then ï¿½ exibida uma mensagem de sucesso
 
-Scenario: Preenchimento correto de Auto Avaliação (Serviço)
-Given O sistema apresenta as avaliações do professor para as metas “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração, Etc.” do aluno “Saulo Guilhermino”, mas não apresenta as auto avaliações do aluno “Saulo Guilhermino”
-When O aluno “Saulo Guilhermino” preenche os campos de avaliação das metas “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração, Etc.” com as avaliações “MANA, MPA, MA, MA”  e envia o formulário para o servidor
-Then O sistema armazena as avaliações nos campos necessários.
+Scenario: Preenchimento correto de Auto Avaliaï¿½ï¿½o (Serviï¿½o)
+Given O sistema apresenta as avaliaï¿½ï¿½es do professor para as metas ï¿½Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerï¿½ncia de configuraï¿½ï¿½o, Etc.ï¿½ do aluno ï¿½Saulo Guilherminoï¿½, mas nï¿½o apresenta as auto avaliaï¿½ï¿½es do aluno ï¿½Saulo Guilherminoï¿½
+When O aluno ï¿½Saulo Guilherminoï¿½ preenche os campos de avaliaï¿½ï¿½o das metas ï¿½Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerï¿½ncia de configuraï¿½ï¿½o, Etc.ï¿½ com as avaliaï¿½ï¿½es ï¿½MANA, MPA, MA, MAï¿½  e envia o formulï¿½rio para o servidor
+Then O sistema armazena as avaliaï¿½ï¿½es nos campos necessï¿½rios.
 
-Scenario: Preenchimento incompleto de Auto Avaliação (GUI)
-Given Eu estou na tela de “Auto avaliação” logado como “Saulo Guilhermino”
-And as avaliações do professor para as metas já aparecem na tela
-When Eu tento enviar um formulário com um campo não preenchido
-Then É exibida uma mensagem de erro
+Scenario: Preenchimento incompleto de Auto Avaliaï¿½ï¿½o (GUI)
+Given Eu estou na tela de ï¿½Auto avaliaï¿½ï¿½oï¿½ logado como ï¿½Saulo Guilherminoï¿½
+And as avaliaï¿½ï¿½es do professor para as metas jï¿½ aparecem na tela
+When Eu tento enviar um formulï¿½rio com um campo nï¿½o preenchido
+Then ï¿½ exibida uma mensagem de erro
 
-Scenario: Preenchimento incompleto de Auto Avaliação (Serviço)
-Given O sistema apresenta as avaliações dados pelo professor para as metas  do aluno “Saulo Guilhermino”, mas não apresenta as auto-avaliações do aluno “Saulo Guilhermino”
-When O aluno tenta enviar para o servidor as avaliações um formulário com um campo não preenchido
-Then O sistema não armazena as avaliações enviadas incorretamente
+Scenario: Preenchimento incompleto de Auto Avaliaï¿½ï¿½o (Serviï¿½o)
+Given O sistema apresenta as avaliaï¿½ï¿½es dados pelo professor para as metas  do aluno ï¿½Saulo Guilherminoï¿½, mas nï¿½o apresenta as auto-avaliaï¿½ï¿½es do aluno ï¿½Saulo Guilherminoï¿½
+When O aluno tenta enviar para o servidor as avaliaï¿½ï¿½es um formulï¿½rio com um campo nï¿½o preenchido
+Then O sistema nï¿½o armazena as avaliaï¿½ï¿½es enviadas incorretamente
 
-Scenario: Visualização de Discrepâncias sem alunos discrepantes
-Given Eu estou logado como “Professor”
+Scenario: Visualizaï¿½ï¿½o de Discrepï¿½ncias sem alunos discrepantes
+Given Eu estou logado como ï¿½Professorï¿½
 And tenho uma turma de apenas 3 alunos
-And A aluna “Mariana Cecília” tem conceitos “MA, MPA, MPA, MANA, MA” e se auto-avaliou com “MA, MA, MANA, MANA, MPA” 
-And O aluno “João César” tem conceitos “MPA, MPA, MPA, MPA e se auto-avaliou com “MANA, MANA, MANA, MANA”
-And O aluno “José Marcos” tem conceitos “MPA, MPA, MA, MANA” e se avaliou com “MPA, MPA, MA, MANA”
-When Eu abro a tela de “Discrepâncias”
-Then É exibida uma tela apenas com a quantidade de alunos como “0” 
-And a porcentagem é exibida como “0%”
+And A aluna ï¿½Mariana Cecï¿½liaï¿½ tem conceitos ï¿½MA, MPA, MPA, MANA, MAï¿½ e se auto-avaliou com ï¿½MA, MA, MANA, MANA, MPAï¿½ 
+And O aluno ï¿½Joï¿½o Cï¿½sarï¿½ tem conceitos ï¿½MPA, MPA, MPA, MPA e se auto-avaliou com ï¿½MANA, MANA, MANA, MANAï¿½
+And O aluno ï¿½Josï¿½ Marcosï¿½ tem conceitos ï¿½MPA, MPA, MA, MANAï¿½ e se avaliou com ï¿½MPA, MPA, MA, MANAï¿½
+When Eu abro a tela de ï¿½Discrepï¿½nciasï¿½
+Then ï¿½ exibida uma tela apenas com a quantidade de alunos como ï¿½0ï¿½ 
+And a porcentagem ï¿½ exibida como ï¿½0%ï¿½
 
+Scenario: VisualizaÃ§Ã£o de DiscrepÃ¢ncias de um aluno numa turma de trÃªs alunos
+Given Eu estou logado como â€œProfessorâ€
+And tenho uma turma de apenas 3 alunos
+And A aluna â€œMariana CecÃ­liaâ€ tem conceitos â€œMA, MPA, MPA, MANA, MAâ€ e se auto-avaliou com â€œMA, MA, MA, MPA, MAâ€ 
+And O aluno â€œJoÃ£o CÃ©sarâ€ tem conceitos â€œMPA, MPA, MPA, MPA e se auto-avaliou com â€œMANA, MANA, MANA, MANAâ€
+And O aluno â€œJosÃ© Marcosâ€ tem conceitos â€œMPA, MPA, MA, MANAâ€ e se avaliou com â€œMPA, MPA, MA, MANAâ€
+When Eu abro a tela de â€œDiscrepÃ¢nciasâ€
+Then Ã‰ exibida uma tela com a quantidade de alunos como â€œ1â€. a porcentagem como â€œ33,3%â€, e o nome do aluno que apresentou discrepÃ¢ncia em suas avaliaÃ§Ãµes
