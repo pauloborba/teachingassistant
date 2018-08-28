@@ -38,3 +38,11 @@ And visualizo a meta "Gerencia" com a avaliação "MANA"
 When avalio a meta "Requisitos" com "MA"
 And avalio a meta "Gerencia" com "MPA"
 Then vejo uma mensagem de que não há discrepancias
+
+Scenario com discrepancia
+Given estou na página de "Auto Avaliação"
+And visualizo a meta "Requisitos" com a avaliação "MANA"
+And visualizo a meta "Gerencia" com a avaliação "MANA"
+When avalio a meta "Requisitos" com "MA"
+And avalio a meta "Gerencia" com "MPA"
+Then vejo uma mensagem de que há discrepancias
