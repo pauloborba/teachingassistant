@@ -49,7 +49,7 @@ AND visualizar a quantidade de “0” alunos com discrepância
 Cenário: analisar auto-avaliação com 1 discrepância
 GIVEN logado como “professor” de login “luan” e senha “1234”
 WHEN abrir página de “análise de auto-avaliações” para disciplina “algoritmos - 2017.2”
-THEN visualizar a porcentagem de “33,3%” alunos com discrepância
+THEN visualizar a porcentagem de “33,3%” alunos com discrepância CORREÇÃO DE erros solicitada
 AND visualizar a quantidade de “1” alunos com discrepância
 AND visualizar o comparativo entre a avaliação e a auto-avaliação dele em todas as metas
 
