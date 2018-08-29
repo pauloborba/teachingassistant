@@ -16,3 +16,21 @@ When o sistema demonstra que a avaliação do professor foi “MANA,MANA,MANA”
 And o sistema é completamente preenchido com “MA,MPA,MPA” nos requisitos respectivos
 And o sistema é confirmado com preenchimento completo
 Then o sistema demonstra que dados de auto avaliação “MA,MPA,MPA” nos requisitos respectivos  foram salvos .
+
+GUI Cenário :auto avaliação  mal sucedida
+Given o aluno “joão” está na tabela de preenchimento da auto avaliação
+When  O aluno observa a avaliação do professor que são “MANA,MANA,MANA” em “Entender conceitos de requisitos, Especificar requisitos com qualidade, entender conceitos de gerência de configuração “ respectivamente
+And o aluno preenche “MA,MPA” nos dois primeiros requisitos respectivos
+And  o alunos não preenche o último requisito respectivamente
+And o aluno confirma os dados preenchidos na tabela que está incompleta
+Then  aparece uma mensagem relatando  que os dados  de auto avaliação em “entender conceitos de gerência de configuração“  estão faltando
+And o sistema não salva dado algum.
+////////////////////////////////
+R: Serviço cenários : auto-avaliação mal sucedida
+Given  a auto avaliação do aluno são “MA,MPA,MPA” em “Entender conceitos de requisitos, Especificar requisitos com qualidade, entender conceitos de gerência de configuração” respectivamente.
+When o sistema demonstra que  as notas dadas pelo professor são “MANA,MANA,MANA” nos requisitos de forma respectiva.
+And o sistema  foi preenchido com as notas “MA,MPA” nos dois primeiros requisitos respectivos
+And o sistema não foi preenchido no último requisito .
+And  o sistema é confirmado com preenchimento incompleto
+Then o sistema demonstra que faltam dados de auto avaliação em “entender conceitos de gerência de configuração“
+And o sistema não salva dado algum.
