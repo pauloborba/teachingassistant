@@ -36,7 +36,7 @@ When Eu abro a tela de �Discrep�ncias�
 Then � exibida uma tela apenas com a quantidade de alunos como �0� 
 And a porcentagem � exibida como �0%�
 
-Scenario: Visualização de Discrepâncias de um aluno numa turma de três alunos
+Scenario: Visualização de Discrepâncias de um aluno numa turma de três alunos.
 Given Eu estou logado como “Professor”
 And tenho uma turma de apenas 3 alunos
 And O aluna “João Pedro” tem conceitos “MA, MPA, MPA, MANA, MA” e se auto-avaliou com “MA, MA, MA, MPA, MA” 
