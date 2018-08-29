@@ -41,11 +41,10 @@ When Eu olho a lista de alunos com avaliação discrepante.
 Then Eu vejo a lista vazia.
 
 Scenario: Uma discrepância
-Given Eu estou logado como professor
+Given Eu estou logado como professor avaliador
 And Eu estou na tela de “Avaliações discrepantes”.
 And Em auto-avaliação, o aluno “Gabriel” tem conceito superior ao do professor em 4 de 5 metas
 And Em auto-avaliação, um aluno só tem conceitos inferiores ao do professor
 And Em auto-avaliação, um aluno só tem conceitos iguais aos do professor
 When Eu olho a lista de alunos com avaliação discrepante.
 Then Eu vejo na lista apenas o nome “Gabriel”.
->>>>>>> discrepantes
