@@ -30,3 +30,8 @@ Cenario:preenchimento de auto avaliacao sem discrepancia
 GIVEN eu estou logado como “Prof. Paulo” e inseri as avaliações dos alunos
 WHEN os alunos inserirem suas auto avaliações em todos os conceitos
 THEN eu recebo uma lista de todos os alunos mostrando  que nenhum contém mais de 25% das auto avaliações superiores às minhas. 
+
+Cenario:preenchimento de auto avaliacao com discrepancia
+GIVEN eu estou logado como “Prof. Paulo” e inseri as avaliações dos alunos
+WHEN os alunos inserirem suas auto avaliações em todos os conceitos
+THEN eu recebo uma lista de todos os alunos que contém mais de 25% das auto avaliações superiores às minhas. 
