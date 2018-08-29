@@ -24,7 +24,7 @@ Scenario: Preenchimento incompleto de Auto Avalia��o (Servi�o)
 Given O sistema apresenta as avalia��es dados pelo professor para as metas  do aluno �Saulo Guilhermino�, mas n�o apresenta as auto-avalia��es do aluno �Saulo Guilhermino�
 When O aluno tenta enviar para o servidor as avalia��es um formul�rio com um campo n�o preenchido
 Then O sistema n�o armazena as avalia��es enviadas incorretamente
-And N�o ocorre qualquer altera��o nas avalia��es já registradas
+And N�o ocorre qualquer altera��o nas avalia��es já registradas.
 
 Scenario: Visualiza��o de Discrep�ncias sem alunos discrepantes
 Given Eu estou logado como �Professor�
