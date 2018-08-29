@@ -10,7 +10,7 @@ When ele atribui conceito a meta 1
 And ele atribui conceito a meta 2
 And ele atribui conceito a meta 3
 And ele atribui conceito a meta 4
-And ele atribui conceito a meta 5.0
+And ele atribui conceito a meta 5
 And ele clica em confirmar
 Then ele recebe uma mensagem de confirmação de que a autoavaliação foi feita
 
