@@ -31,7 +31,7 @@ Then Um erro é gerado.
 And As notas não são salvas no sistema.
 And O código de erro é registrado em um arquivo.
 
-Scenario: Nenhuma discrepância
+Scenario: Nenhuma discrepância Encontrada
 Given Eu estou logado como professor
 And Eu estou na tela de “Avaliações discrepantes”.
 And Em auto-avaliação, um aluno tem conceito superior ao do professor em 1 de 5 metas
