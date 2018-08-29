@@ -43,4 +43,4 @@ And O aluna “João Pedro” tem conceitos “MA, MPA, MPA, MANA, MA” e se au
 And O aluno “José Marcos” tem conceitos “MPA, MPA, MPA, MPA e se auto-avaliou com “MANA, MANA, MANA, MANA”
 And O aluno “Igor Daniel” tem conceitos “MPA, MPA, MA, MANA” e se avaliou com “MPA, MPA, MA, MANA”
 When Eu abro a tela de “Discrepâncias”
-Then É exibida uma tela com a quantidade de alunos como “1”. a porcentagem como “33,3%”, e o nome do aluno que apresentou discrepância em suas avaliações
+Then É exibida uma tela com a quantidade de alunos como “1”, a porcentagem como “33,3%”, e o nome do aluno que apresentou discrepância em suas avaliações
