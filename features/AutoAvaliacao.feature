@@ -28,3 +28,4 @@ Scenario: Add my own grades but at least one
 		Given the student “Claudio Carvalho” has no grades stored
 		When the grades are submitted and there are at least one grade missing
 		Then the grades are not stored
+		And a warning message is logged
