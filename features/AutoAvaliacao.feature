@@ -34,3 +34,13 @@ And o sistema não foi preenchido no último requisito .
 And  o sistema é confirmado com preenchimento incompleto
 Then o sistema demonstra que faltam dados de auto avaliação em “entender conceitos de gerência de configuração“
 And o sistema não salva dado algum.
+
+R: Given os alunos “rafael da costa”,”carlos ferraz”e “fábio silva” estão na página de auto avaliação
+When os alunos observam que as notas avaliadas pelo professor aos três foram igualmente  “MPA,MPA,MPA,MPA,MPA”    
+And “rafael da costa” se avalia “MA,MPA,MPA,MPA,MPA” 
+And ”carlos ferraz” se avalia com a mesma avaliação que o professor 
+And  “fábio silva” se avalia “MANA,MANA,MANA,MANA,MANA” 
+And os três alunos finalizam e confirmam o preenchimento completo da tabela de auto avaliação 
+And o professor procura os nomes “rafael da costa”,”carlos ferraz”e “fábio silva” 
+Na lista de alunos com discrepância.
+Then os nomes “rafael da costa”,”carlos ferraz”e “fábio silva”  não aparecem na lista 
