@@ -15,4 +15,22 @@ Scenario: Filling self evaluation grades success web
   Then I'm able to self evaluate
   And turn in the self evaluation
 
+<<<<<<< HEAD
 ## teste
+=======
+Scenario: Grades page with no discrepant student
+  Given I am at the discrepant grades page
+  And There's 2 students in the class with all the grades filled (regular and self evaluation)
+  And student "José" has 20% different higher grades in the self evaluation compared to regular evaluation
+  And student "Murilo" have equal grades
+  When I look for the metrics of this class
+  Then I can see that 0/0% students have discrepant grades
+
+Scenario: Grades page with a single discrepant student
+  Given I am at the discrepant grades page
+  And There's 3 students with all the grades filled (regular and self evaluation)
+  And student "José" has a 40% discrepancy(higher grades) between the regular and self evaluation grades
+  When I look for the metrics of this class
+  Then I can see that 1/33,33% students have discrepant grades 
+  And I can see the name "José" in the list of students with discrepant grades
+>>>>>>> discrepantes
