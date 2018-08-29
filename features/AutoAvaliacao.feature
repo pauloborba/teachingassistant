@@ -3,7 +3,6 @@ Feature: Self-evaluation
     I want to rate myself in all my learning goals and compare with the professor’s evaluation
     So that I can see what to study more
 
-dfghsdfhsgd
 Scenario: Self-Evaluate with concepts
     Given I am logged as a student named “Lucas Cardoso” 
     And I have been evaluated in the learning goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” and “Entender conceitos de gerência de configuração”
@@ -18,5 +17,15 @@ Scenario: Self-Evaluate with concepts GUI
     Then the concepts are stored to each specific learning goal in the system
     And I see a confirmation message
 
+Scenario: Self-Evaluate with concepts negative feedback
+    Given I am logged as a student named “Lucas Cardoso” 
+    And I have been evaluated in the learning goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” and “Entender conceitos de gerência de configuração”
+    When I evaluate myself with only the concept “MPA” and "MANA" respectively
+    Then the concept “MPA”, "MA" are not stored in the system
 
-asfjlnsaf,kdajs
+Scenario: Self-Evaluate with concepts GUI negative feedback
+    Given I am logged as a student named “Lucas Cardoso” 
+    And I am at the “Auto-avaliação” page 
+    When I fill the “conceito” field for learning goal “Entender conceito de requisitos”, “Especificar requisitos com qualidade” and “Entender conceitos de gerência de configuração” with concepts "MPA" and "MA" respectively
+    And I save
+    Then an error message is displayed
