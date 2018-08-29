@@ -26,3 +26,7 @@ AND possui as avaliações “MA”,”MA” e”MPA” nas metas “Entender conceitos de requi
 WHEN “Jorge” atribui notas “MPA” e “Mana”para “Entender conceitos de requisitos” e  “Especificar requisitos com qualidade”
 THEN a avaliação não é computada e é exibida uma mensagem de erro.
 
+Cenario:preenchimento de auto avaliacao sem discrepancia
+GIVEN eu estou logado como “Prof. Paulo” e inseri as avaliações dos alunos
+WHEN os alunos inserirem suas auto avaliações em todos os conceitos
+THEN eu recebo uma lista de todos os alunos mostrando  que nenhum contém mais de 25% das auto avaliações superiores às minhas. 
