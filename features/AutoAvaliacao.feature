@@ -14,3 +14,11 @@ Scenario: Filling self evaluation grades success web
   When I select the option to fill the self evaluation
   Then I'm able to self evaluate
   And turn in the self evaluation
+
+Scenario: Grades page with no discrepant student
+  Given I am at the discrepant grades page
+  And There's 2 students in the class with all the grades filled (regular and self evaluation)
+  And student "José" has 20% different higher grades in the self evaluation compared to regular evaluation
+  And student "Murilo" have equal grades
+  When I look for the metrics of this class
+  Then I can see that 0/0% students have discrepant grades
