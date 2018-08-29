@@ -28,3 +28,8 @@ Scenario: Add my own grades but at least one
 		Given the student “Claudio Carvalho” has no grades stored
 		When the grades are submitted and there are at least one grade missing
 		Then the grades are not stored
+
+Scenario: Visualizing students grades with no discrepancy 
+	Given the student “Claudio Carvalho” has “MA” for the goal “Entender conceitos de requisitos” 
+	And the professor graded him for the goal “Entender conceitos de requisitos”  with “MA”
+	Then the concepts and goals are loaded on screen
