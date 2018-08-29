@@ -1,6 +1,6 @@
 Feature: Auto-Avaliação
 As a estudante
-I want to visualizar as notas que o professor me atribuiu em cada conceito e cadastrar uma auto-avaliação sobre cada uma so that o professor possa ver caso minha avaliação sobre mim mesmo seja discrepante da dele.
+I want to visualizar as notas que o professor me atribuiu para cada conceito e cadastrar uma auto-avaliação sobre cada uma so that o professor possa ver caso minha avaliação sobre mim mesmo seja discrepante da dele.
 
 Scenario: Auto-Avaliação bem-sucedida GUI
 Given Eu estou logado como estudante
