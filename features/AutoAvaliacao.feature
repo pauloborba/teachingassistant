@@ -24,5 +24,6 @@ Cenario : uma das auto avaliações não foi fornecida
 GIVEN o estudante “Jorge” está cadastrado
 AND possui as avaliações “MA”,”MA” e”MPA” nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração” fornecidas pelo professor
 WHEN “Jorge” atribui notas “MPA” e “Mana”para “Entender conceitos de requisitos” e  “Especificar requisitos com qualidade”
-THEN a avaliação não é computada e é exibida uma mensagem de erro.
+THEN a avaliação não é computada e é exibida uma mensagem de erro
+AND o Jorge pode reiniciar sua avaliação
 
