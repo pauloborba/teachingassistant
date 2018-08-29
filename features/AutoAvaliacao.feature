@@ -33,3 +33,10 @@ Scenario: Visualizing students grades with no discrepancy
 	Given the student “Claudio Carvalho” has “MA” for the goal “Entender conceitos de requisitos” 
 	And the professor graded him for the goal “Entender conceitos de requisitos”  with “MA”
 	Then the concepts and goals are loaded on screen
+
+Scenario: Visualizing students grades with only 1 discrepancy
+	Given the student “Claudio Carvalho” has “MA” for the goal “Entender conceitos de requisitos”
+	And the teacher graded the student “Claudio Carvalho ”with “MPA” or “MANA” for the goal “Entender conceitos de requisitos”
+	And all other goals are equal or less than the teacher’s evaluations
+	Then the concepts and goals are loaded on the screen
+
