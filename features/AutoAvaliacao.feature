@@ -34,3 +34,4 @@ And o sistema não foi preenchido no último requisito .
 And  o sistema é confirmado com preenchimento incompleto
 Then o sistema demonstra que faltam dados de auto avaliação em “entender conceitos de gerência de configuração“
 And o sistema não salva dado algum.
+And o sistema volta a pagina de auto avaliação
