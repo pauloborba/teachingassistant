@@ -15,3 +15,16 @@ Scenario: Add my own grades
 	Given that the student “Claudio Carvalho” has no grades stored
 	When the grades of the student “Claudio Carvalho” are submitted
 	Then the grades are stored
+
+Scenario: Add my own grades but at least one
+		Given that I am logged in with the login “cco2” and the password “1234”
+		And I am on the self evaluation page
+		When I fill all the fields with the goals “MA, MPA or MANA” but at least one
+		And I submit the grades
+		Then a warning is loaded on screen indicating the missing fields
+
+
+Scenario: Add my own grades but at least one
+		Given the student “Claudio Carvalho” has no grades stored
+		When the grades are submitted and there are at least one grade missing
+		Then the grades are not stored
