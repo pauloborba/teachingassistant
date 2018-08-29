@@ -44,3 +44,12 @@ And O aluno “José Marcos” tem conceitos “MPA, MPA, MPA, MPA e se auto-ava
 And O aluno “Igor Daniel” tem conceitos “MPA, MPA, MA, MANA” e se avaliou com “MPA, MPA, MA, MANA”
 When Eu abro a tela de “Discrepâncias”
 Then É exibida uma tela com a quantidade de alunos como “1”, a porcentagem como “33,3%”, e o nome do aluno que apresentou discrepância em suas avaliações
+
+Scenario: Visualização de Discrepâncias de dois alunos numa turma de três alunos
+Given Eu estou logado como “Professor”
+And Eu tenho uma turma de apenas 3 alunos
+And A aluna “Mariana Cecília” tem conceitos “MA, MPA, MPA, MANA, MA” e se auto-avaliou com “MA, MA, MA, MPA, MA” 
+And O aluno “João César” tem conceitos “MPA, MPA, MPA, MPA e se auto-avaliou com “MA, MA, MA, MA”
+And O aluno “José Marcos” tem conceitos “MPA, MPA, MA, MANA” e se avaliou com “MPA, MPA, MA, MANA”
+When Eu abro a tela de “Discrepâncias”
+Then É exibida uma tela com a quantidade de alunos como “2”. a porcentagem como “66,6%”, e os nomes dos alunos que apresentaram discrepâncias em suas avaliações
