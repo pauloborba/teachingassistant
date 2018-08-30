@@ -12,6 +12,6 @@ Scenario: Checagem de auto-avaliação dos alunos
 
 Scenario: Checagem de auto-avaliação de aluno com discrepância
     Given I am at the “Student list page”
-    When I click on “Cicrano” another window is shown
-    And I click on self grades
-    Then I can see that the percentage is higher than 25%
+    When I click on "Cicrano" and see further informations for that student
+    And I click on "grades"
+    Then I can see that the self grade percentage is higher than 25%
