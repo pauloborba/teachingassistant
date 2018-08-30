@@ -40,7 +40,7 @@ Scenario: revision page without discrepancies
     And I see “0” in the “Solved” counter
     And I see “0” in the “Total” counter
     And I see “0%” in the “Percentage” counter
-    And The list of students with discrepancies is empty
+    And The list of students with discrepancies is "empty"
 
 Scenario: revision page with one discrepancy
     Given I am a “Teacher” 
