@@ -39,7 +39,6 @@ WHEN submeter os conceitos “MANA” “” “MANA”  às metas “elicitação de requisitos”
 THEN retornar mensagem de erro
 AND não atualizar a auto-avaliação do aluno para nenhuma meta
 AND modificações requisitadas
-questão 13 master
 
 Cenário: analisar auto-avaliação sem discrepância
 GIVEN logado como “professor” de login “luan” e senha “1234”
@@ -54,5 +53,7 @@ THEN visualizar a porcentagem de “33,3%” alunos com discrepância CORREÇÃO DE err
 AND visualizar a quantidade de “1” alunos com discrepância
 AND visualizar o comparativo entre a avaliação e a auto-avaliação dele em todas as metas
 commit fixDiscrepancias questao 13
+
+Novo cenário de visualização de percentual de discrepância.
 
 
