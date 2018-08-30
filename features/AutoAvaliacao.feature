@@ -23,3 +23,4 @@ Scenario: new partial self evaluation from student
     Given at least one grade field for self evaluation is blank
     When I try to submit the self evaluation
     Then the grades are not assigned
+    And all the other grades on the system were not modified
