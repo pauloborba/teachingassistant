@@ -9,3 +9,9 @@ Scenario: Checagem de auto-avaliação dos alunos
     And when I click on self grades
     Then I can see that he graded himself with the same grades I did.
     And Test for exercise
+
+Scenario: Checagem de auto-avaliação de aluno com discrepância
+    Given I am at the “Student list page”
+    When I click on “Cicrano” another window is shown
+    And I click on self grades
+    Then I can see that the percentage is higher than 25%
