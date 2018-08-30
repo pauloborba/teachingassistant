@@ -39,6 +39,7 @@ WHEN submeter os conceitos “MANA” “” “MANA”  às metas “elicitação de requisitos”
 THEN retornar mensagem de erro
 AND não atualizar a auto-avaliação do aluno para nenhuma meta
 AND modificações requisitadas
+questão 13 master
 
 Cenário: analisar auto-avaliação sem discrepância
 GIVEN logado como “professor” de login “luan” e senha “1234”
