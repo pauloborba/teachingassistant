@@ -52,5 +52,6 @@ WHEN abrir página de “análise de auto-avaliações” para disciplina “algoritmos - 
 THEN visualizar a porcentagem de “33,3%” alunos com discrepância CORREÇÃO DE erros solicitada
 AND visualizar a quantidade de “1” alunos com discrepância
 AND visualizar o comparativo entre a avaliação e a auto-avaliação dele em todas as metas
+commit fixDiscrepancias questao 13
 
 
