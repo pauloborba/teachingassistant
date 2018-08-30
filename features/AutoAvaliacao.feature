@@ -58,3 +58,9 @@ Scenario: revision page with one discrepancy
     And I see “1” in the “Total” counter
     And I see “33%” in the “Percentage” counter
     And The list of students with discrepancies has one student named “Jeremias” with the 2 discrepant grades in a different color
+
+
+
+
+
+    # Commit 1 master ex14
