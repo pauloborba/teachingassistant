@@ -54,6 +54,6 @@ AND visualizar a quantidade de “1” alunos com discrepância
 AND visualizar o comparativo entre a avaliação e a auto-avaliação dele em todas as metas
 commit fixDiscrepancias questao 13
 
-Novo cenário de visualização de percentual de discrepância.
+Novo cenário de visualização de percentual de discrepância. AJUSTE em seguida
 
 
