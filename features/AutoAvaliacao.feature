@@ -7,7 +7,7 @@ So that I have a better feedback and have a voice in my grading
 Scenario : Correctness feedback
 Given : I put “MA”, “MPA” or “MANA” on each grade
 When : I Submit
-Then: I see a message that shows me the process completed 
+Then: A message shows me the process completed 
 
 Scenario :  Correct Store the Grades
 Given :  I put “MA”, “MPA” or “MANA” on each grade
