@@ -60,7 +60,6 @@ Scenario: revision page with one discrepancy
     And The list of students with discrepancies has one student named “Jeremias” with the 2 discrepant grades in a different color
 
 
-
-
-
     # Commit 1 master ex14
+    # Commit 1 on discrepantes
+    # Commit 1 discrepantes ex14
