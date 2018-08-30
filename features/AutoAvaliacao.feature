@@ -62,4 +62,4 @@ Scenario: revision page with one discrepancy
 
     # Commit 1 master ex14
     # Commit 1 on discrepantes
-    # Commit 1 discrepantes ex14
+    # Commit 2 on discrepantes
