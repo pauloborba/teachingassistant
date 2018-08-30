@@ -24,3 +24,37 @@ Scenario: new partial self evaluation from student
     When I try to submit the self evaluation
     Then the grades are not assigned
     And all the other grades on the system were not modified
+
+Scenario: revision page without discrepancies
+    Given I am a “Teacher” 
+    And There are five goals on my class
+    And I have only three students named “Júlia”, “Jorge”, “Jeremias” 
+    And “Júlia” self-evaluated herself with the grades “MA”,”MA”,”MA”,”MA”,”MA” 
+    And my evaluation for her was “MANA”, “MA”, “MA”, “MA”, “MA”
+    And “Jorge” self-evaluated himself with the grades “MPA”, “MPA”, “MPA”, “MPA”, “MPA” 
+    And my evaluation for him was “MA”, “MA”, “MA”, “MA”, “MA”
+    And “Jeremias” self-evaluated himself with the grades “MA”, “MA”, “MA”, “MA”, “MA” 
+    And my evaluation for him was “MA”, “MA”, “MA”, “MA”, “MA”
+    When I access the “Grades Revision Page”
+    Then I see “0” in the “Pending” counter
+    And I see “0” in the “Solved” counter
+    And I see “0” in the “Total” counter
+    And I see “0%” in the “Percentage” counter
+    And The list of students with discrepancies is empty
+
+Scenario: revision page with one discrepancy
+    Given I am a “Teacher” 
+    And There are five goals on my class
+    And I have only three students named “Júlia”, “Jorge”, “Jeremias” 
+    And “Júlia” self-evaluated herself with the grades “MA”,”MA”,”MA”,”MA”,”MA” 
+    And my evaluation for her was “MANA”, “MA”, “MA”, “MA”, “MA”
+    And “Jorge” self-evaluated himself with the grades “MPA”, “MPA”, “MPA”, “MPA”, “MPA” 
+    And my evaluation for him was “MA”, “MA”, “MA”, “MA”, “MA”
+    And “Jeremias” self-evaluated himself with the grades “MA”, “MA”, “MA”, “MA”, “MA” 
+    And my evaluation for him was “MANA”, “MANA”, “MA”, “MA”, “MA”
+    When I access the “Grades Revision Page”
+    Then I see “1” in the “Pending” counter
+    And I see “0” in the “Solved” counter
+    And I see “1” in the “Total” counter
+    And I see “33%” in the “Percentage” counter
+    And The list of students with discrepancies has one student named “Jeremias” with the 2 discrepant grades in a different color
