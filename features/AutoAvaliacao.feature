@@ -47,7 +47,7 @@ And Em auto-avaliação, o aluno "Jorge" tem conceito superior ao do professor e
 And Em auto-avaliação, um aluno só tem conceitos inferiores ao do professor
 And Em auto-avaliação, um aluno só tem conceitos iguais aos do professor
 When Eu olho a lista de alunos com avaliação discrepante.
-Then Eu vejo na lista apenas o nome “Gabriel”.
+Then Eu vejo na lista apenas o nome “Jorge”.
 
 Scenario: Visualização de Percentual de Discrepância
 Given Eu estou logado como professor
@@ -56,5 +56,5 @@ And Em auto-avaliação, o aluno "Jorge" tem conceito superior ao do professor e
 And Em auto-avaliação, um aluno só tem conceitos inferiores ao do professor
 And Em auto-avaliação, um aluno só tem conceitos iguais aos do professor
 When Eu olho a lista de alunos com avaliação discrepante.
-Then Eu vejo na lista apenas o nome “Gabriel”.
+Then Eu vejo na lista apenas o nome “Jorge”.
 And Eu vejo o percentual de discrepâncias ao seu lado.
