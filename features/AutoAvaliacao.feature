@@ -31,6 +31,7 @@ When Eu seleciono “Preencher auto-avaliação” de “Engenharia de Software�
 And Eu preencho minha auto-avaliação de “Entender conceitos de requisitos” com “MA”
 And Eu não preencho minha auto-avaliação de “Especificar requisitos com qualidade”
 Then Uma mensagem de erro é exibida
+And Eu vejo que nao preenchi minha auto-avaliação da disciplina "Engenharia de Software"
 
 Scenario: nova auto-avaliação parcial serviço
 Given O sistema não têm a auto-avaliação do aluno com login “gap” na disciplina “Engenharia de Software”
