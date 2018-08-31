@@ -21,3 +21,11 @@ When eu vou na aba auto-avaliações discrepantes
 Then eu vejo “0” na quantidade de alunos
 And eu vejo “0”% na porcentagem de alunos
 And eu vejo nenhum aluno na lista
+
+Cenário: auto-avaliações com discrepância
+
+Given eu estou na página principal como professor
+When eu vou na aba auto-avaliações discrepantes
+Then eu vejo “1” na quantidade de alunos
+And eu vejo “33,3”% na porcentagem de alunos
+And eu vejo o aluno ”Carlos” na lista
