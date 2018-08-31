@@ -1,6 +1,7 @@
 Feature:auto-avaliação
 Como um aluno
 Eu gostaria de enviar minha auto-avaliação para compartilhar a avaliação que acho que mereço.
+Como professor
 Eu gostaria de ver a quantidade, porcentagem e a lista de alunos com auto-avaliações discrepantes para ter ideia da expectatica dos meus alunos.
 
 Cenário: preenchimento de auto-avaliação bem sucedida
