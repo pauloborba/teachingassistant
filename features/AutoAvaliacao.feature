@@ -15,7 +15,6 @@ Given a auto-avaliação do aluno “Pedro” ainda não estar no sistema
 When o aluno “Pedro” envia sua auto-avaliação com as metas  ”Entender conceito de requisitos”,”Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” respectivamente com “MA”, “MA”,”MPA”
 Then a auto-avaliação de “Pedro” está no sistema
 
-<<<<<<< HEAD
 Cenário: preenchimento de auto-avaliação mal sucedida
 
 Given estou na pagina de auto-avaliação do aluno “Pedro” 
@@ -26,7 +25,7 @@ Then eu vejo uma mensagem de erro na tela.
 Given a auto-avaliação do aluno “Pedro” ainda não estar no sistema
 When o aluno “Pedro” envia sua auto-avaliação com as metas  ”Entender conceito de requisitos”,”Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” respectivamente com “”, “MA”,”MPA”
 Then a auto-avaliação de “Pedro” não está no sistema
-=======
+
 Cenário: auto-avaliações sem nenhuma discrepância
 
 Given eu estou na página principal como professor
@@ -42,4 +41,3 @@ When eu vou na aba auto-avaliações discrepantes
 Then eu vejo “1” na quantidade de alunos
 And eu vejo “33,3”% na porcentagem de alunos
 And eu vejo o aluno ”Carlos” na lista
->>>>>>> discrepantes
