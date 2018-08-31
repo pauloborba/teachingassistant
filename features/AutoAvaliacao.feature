@@ -41,6 +41,11 @@ And Eu não cadastro a auto-avaliação do aluno “gap” em “Especificar req
 Then O sistema não registra a auto-avaliação do aluno “gap” em “Engenharia de Software”
 And O sistema registra que o aluno "gap" tentou mas não concluiu a auto-avaliação em "Engenharia de Software"
 
+Scenario: nova auto-avaliação já preenchida serviço
+Given O sistema tem a auto avaliação do aluno com login "gap" na disciplina "Engenharia de Software"
+When Eu tento cadastrar a auto-avaliação do aluno "gap" em "Engenharia de Software"
+Then O sistema não registra duas vezes a auto-avaliação do aluno "gap" em "Engenharia de Software"
+
 Scenario: Página de estatisticas de auto-avaliações sem discrepancia
 Given Eu loguei como “Professor” com o login "pauloborba" e a senha "4321"
 And Eu vejo 5 metas na minha disciplina “Engenharia de Software”
@@ -70,4 +75,3 @@ When Eu acesso a página de “Estatísticas das auto-avaliações” da discipl
 Then Eu vejo “1” alunos na quantidade de alunos com auto-avaliações discrepantes
 And Eu vejo “33”% na porcentagem de alunos com auto-avaliações discrepantes
 And Eu vejo apenas “Luizinho” na lista de alunos com auto-avaliações discrepantes
-	
