@@ -45,3 +45,15 @@ And I evaluated “Paulo” with “MA, MA, MA, MA ,MA”
 When I select “Show discrepancy report” option
 Then a list of discrepancy shows “0” student(s)
 And “Total de alunos” and “Porcentagem da turma” show “0”
+
+Given I am logged in as “teacher”
+And I have only three students: “Amanda”, “Maria”, “Ana”
+And “Amanda” self-evaluated with “MA, MA, MA, MA, MA”
+And I evaluated “Amanda” with “MANA, MANA, MANA, MA, MA”
+And “Maria” self-evaluated with “MPA, MPA, MPA, MPA, MPA” 
+And I evaluated “Maria” with “MA, MA, MA, MA, MA”
+And “Ana” self-evaluated with “MA, MA, MA, MA, MA”
+And I evaluated “Ana” with “MANA, MANA, MANA, MA, MA”
+When I select “Show discrepancy report” option
+Then a list of discrepancy shows “2” student(s)
+And “Total de alunos” and “Porcentagem da turma” show “66%”
