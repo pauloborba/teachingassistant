@@ -23,9 +23,9 @@ Then the self-evaluation is not stored by the system
 And a error message response is sent
 
 Given I am logged in as “teacher”
-And I have only three students: “Lucas”, “João”, “Paulo”
-And “Lucas” self-evaluated with “MA, MA, MA, MA, MA”
-And I evaluated “Lucas” with “MA, MA, MA, MA, MA”
+And I have only three students: “Jorge”, “João”, “Paulo”
+And “Jorge” self-evaluated with “MA, MA, MA, MA, MA”
+And I evaluated “Jorge” with “MA, MA, MA, MA, MA”
 And “João” self-evaluated with “MPA, MPA, MPA, MPA, MPA” 
 And I evaluated “João” with “MA, MA, MA, MA, MA”
 And “Paulo” self-evaluated with “MA, MA, MA, MA, MA”
@@ -35,9 +35,9 @@ Then a list of discrepancy shows “1” student(s)
 And “Total de alunos” shows “1” and “Porcentagem da turma” shows “33%”
 
 Given I am logged in as “teacher”
-And I have only three students: “Lucas”, “João”, “Paulo”
-And “Lucas” self-evaluated with “MA, MA, MA, MA, MA”
-And I evaluated “Lucas” with “MPA, MA, MA, MA, MA”
+And I have only three students: “Jorge”, “João”, “Paulo”
+And “Jorge” self-evaluated with “MA, MA, MA, MA, MA”
+And I evaluated “Jorge” with “MPA, MA, MA, MA, MA”
 And “João” self-evaluated with “MPA, MPA, MPA, MPA, MPA” 
 And I evaluated “João” with “MA, MA, MA, MA, MA”
 And “Paulo” self-evaluated with “MA, MA, MA, MA, MA”
