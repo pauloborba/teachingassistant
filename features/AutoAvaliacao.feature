@@ -28,3 +28,16 @@ Feature: Self-evaluation
         And I fill “MPA” to field “Especificar requisito com qualidade”
         And I select the “submit” option
         Then I can see a message indicating one or more goals are missing
+
+    Scenario: No students have discrepant grades
+        Given that I’m at the page "Grades"
+        And I see the field "Entender conceitosd de requisitos" of self-evaluation of student “Guilherme” is filled with "MPA"
+        And I see the field "Entender conceitosd de requisitos" of my evaluation for student “Guilherme” if filled “MPA”
+        And I see the field "Entender conceitosd de requisitos" of self-evaluation of student “Samuel” is filled with “MA”
+        And I see the field "Entender conceitosd de requisitos" of my evaluation for student “Samuel” is filled with “MA”
+        And I see the field "Entender conceitosd de requisitos" of self-evaluation of student “Junior” is filled with “MA”
+        And I see the field "Entender conceitosd de requisitos" of my evaluation for student “Junior” if filled with “MA”
+        When I select the “students with discrepant grades” option
+        Then I see an empty list of names
+        And at line “Total” I see “0”
+        And at line “Percentage” I see “0%”
