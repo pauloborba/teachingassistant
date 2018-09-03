@@ -43,13 +43,15 @@ Feature: Self-evaluation
         And at line “Total” I see “0”
         And at line “Percentage” I see “0%”
 
-    Scenario: 1 of 2 students have discrepant grades
+    Scenario: 1 of 3 students have discrepant grades
         Given that I’m at the page "Grades"
         And I see the field "Entender conceitos de requisitos" of self-evaluation of student "Ricardo" is filled with "MA"
-        And I see the field "Entender conceitos de requisitos" of my evaluation for student “Ricardo” if filled “MPA”
+        And I see the field "Entender conceitos de requisitos" of my evaluation for student “Ricardo” is filled “MPA”
         And I see the field "Entender conceitos de requisitos" of self-evaluation of student “Samuel” is filled with “MA”
         And I see the field "Entender conceitos de requisitos" of my evaluation for student “Samuel” is filled with “MA”
+        And I see the field "Entender conceitos de requisitos" of self-evaluation of student “Junior” is filled with “MA”
+        And I see the field "Entender conceitos de requisitos" of my evaluation for student “Junior” is filled with “MA”
         When I select the “students with discrepant grades” option
         Then I see the name "Ricardo" at the list of students with discrepant grades
         And at line “Total” I see “1”
-        And at line “Percentage” I see “50%”
+        And at line “Percentage” I see “33%”
