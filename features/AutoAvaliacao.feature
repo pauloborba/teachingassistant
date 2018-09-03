@@ -24,7 +24,7 @@ Feature: Self-evaluation
     Scenario: Add self-evaluation with missing goal (GUI)
         Given that I’m at the page "Self-evaluation"
         When I select the “add self-evaluation” option
-        And I leave field “Entender conceitos de requisitos” blank
+        And I fill "" to field “Entender conceitos de requisitos”
         And I fill “MPA” to field “Especificar requisito com qualidade”
         And I select the “submit” option
         Then I can see a message indicating one or more goals are missing
