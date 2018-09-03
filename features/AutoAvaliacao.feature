@@ -34,24 +34,26 @@ Feature: Self-evaluation
         Given that I’m at the page "Grades"
         And I see the field "Entender conceitos de requisitos" of self-evaluation of student “Guilherme” is filled with "MPA"
         And I see the field "Entender conceitos de requisitos" of my evaluation for student “Guilherme” is filled “MPA”
-        And I see the field "Entender conceitos de requisitos" of self-evaluation of student “Samuel” is filled with “MA”
-        And I see the field "Entender conceitos de requisitos" of my evaluation for student “Samuel” is filled with “MA”
-        And I see the field "Entender conceitos de requisitos" of self-evaluation of student “Junior” is filled with “MA”
-        And I see the field "Entender conceitos de requisitos" of my evaluation for student “Junior” if filled with “MA”
         When I select the “students with discrepant grades” option
-        Then I see an empty list of names
+        Then I see "" at the list of students with discrepant grades
         And at line “Total” I see “0”
         And at line “Percentage” I see “0%”
 
     Scenario: 1 of 3 students have discrepant grades
         Given that I’m at the page "Grades"
         And I see the field "Entender conceitos de requisitos" of self-evaluation of student "Ricardo" is filled with "MA"
-        And I see the field "Entender conceitos de requisitos" of my evaluation for student “Ricardo” is filled “MPA”
+        And I see the field "Entender conceitos de requisitos" of my evaluation for student “Ricardo” if filled “MPA”
         And I see the field "Entender conceitos de requisitos" of self-evaluation of student “Samuel” is filled with “MA”
         And I see the field "Entender conceitos de requisitos" of my evaluation for student “Samuel” is filled with “MA”
-        And I see the field "Entender conceitos de requisitos" of self-evaluation of student “Junior” is filled with “MA”
-        And I see the field "Entender conceitos de requisitos" of my evaluation for student “Junior” is filled with “MA”
         When I select the “students with discrepant grades” option
         Then I see the name "Ricardo" at the list of students with discrepant grades
         And at line “Total” I see “1”
         And at line “Percentage” I see “33%”
+
+    Scenario: Show discrepancy rate
+        Given I'm at the page "Grades"
+        And I see the field "Entender conceitos de requisitos" of self-evaluation of student “Guilherme” is filled with "MPA"
+        And I see the field "Entender conceitos de requisitos" of my evaluation for student “Guilherme” is filled “MPA”
+        When I select the "students with discrepant grades" option
+        And I select the "show percentage" option
+        Then I can see "0%" at the line "Percentage"
