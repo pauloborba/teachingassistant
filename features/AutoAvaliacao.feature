@@ -29,3 +29,4 @@ Scenario: Self-Evaluate with concepts GUI negative feedback
     When I fill the “conceito” field for learning goal “Entender conceito de requisitos”, “Especificar requisitos com qualidade” and “Entender conceitos de gerência de configuração” with concepts "MPA" and "MA" respectively
     And I save
     Then an error message is displayed
+    And I go to "Home" page
