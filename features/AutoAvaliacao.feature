@@ -38,3 +38,12 @@ Scenario: No Discrepancy detected page GUI
     And  “Lucas” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MPA”, “MPA”, “MPA”, “MPA” and “MPA”
     When I go to the “Alunos com avaliação discrepante” page
     Then I see no student and the “quantidade” field with “0” and “porcentagem” field with “0%”
+
+    Scenario: Discrepancy detected page GUI
+	Given I am logged as professor “Paulo Borba”
+	And There are 3 students registered, named “Anderson”, “Alberto” and “Lucas”
+	And  “Anderson” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MA”, “MA”, “MA”, “MA” and “MA”
+    And  “Alberto” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MPA”, “MPA”, “MPA”, “MPA” and “MPA”
+    And  “Lucas” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MPA”, “MPA”, “MPA”, “MPA” and “MPA”
+    When I go to the “Alunos com avaliação discrepante” page
+    Then I see a list of students containing only “Anderson” and the “quantidade” field with “1” and “porcentagem” field with “33%”
