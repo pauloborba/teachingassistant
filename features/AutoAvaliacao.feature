@@ -29,3 +29,12 @@ Scenario: Self-Evaluate with concepts GUI negative feedback
     When I fill the “conceito” field for learning goal “Entender conceito de requisitos”, “Especificar requisitos com qualidade” and “Entender conceitos de gerência de configuração” with concepts "MPA" and "MA" respectively
     And I save
     Then an error message is displayed
+
+Scenario: No Discrepancy detected page GUI
+	Given I am logged as professor “Paulo Borba”
+	And There are 3 students registered, named “Anderson”, “Alberto” and “Lucas”
+	And  “Anderson” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MA”, “MPA”, “MPA”, “MPA” and “MPA”
+    And  “Alberto” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MANA”, “MANA”, “MANA”, “MANA” and “MANA”
+    And  “Lucas” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MPA”, “MPA”, “MPA”, “MPA” and “MPA”
+    When I go to the “Alunos com avaliação discrepante” page
+    Then I see no student and the “quantidade” field with “0” and “porcentagem” field with “0%”
