@@ -44,3 +44,8 @@ When eu clico em “Listar discrepâncias”
 Then o aluno “Jorge” irá listar “2 de 5 avaliações discrepantes(40%)” ao lado de seu nome.
 And o aluno “Mateus” irá listar “Ok” ao lado de seu nome.
 And o aluno “Nero” irá listar “Ok” ao lado de seu nome.
+
+Cenario:preenchimento de auto avaliacao com discrepancia
+GIVEN eu estou logado como “Prof. Paulo” e inseri as avaliações dos alunos
+WHEN os alunos inserirem suas auto avaliações em todos os conceitos
+THEN eu recebo uma lista contendo todos os alunos mostrando  os alunos que contém mais de 25% das auto avaliações superiores às minhas.
