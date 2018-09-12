@@ -60,3 +60,4 @@ Then os nomes “carlos ferraz”e “fábio silva”  não aparecem na lista ma
 And o professor é levado de volta a tabela de auto avaliação
 "terceiro commit,realizado em master"
 "primeiro commit,realizado em discrepantes"
+"segundo commit,realizado em discrepantes"
