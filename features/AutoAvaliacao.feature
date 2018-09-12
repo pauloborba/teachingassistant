@@ -59,3 +59,4 @@ Na lista de alunos com discrepância.
 Then os nomes “carlos ferraz”e “fábio silva”  não aparecem na lista mas “rafael da costa” aparece
 And o professor é levado de volta a tabela de auto avaliação
 "terceiro commit,realizado em master"
+"primeiro commit,realizado em discrepantes"
