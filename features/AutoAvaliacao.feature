@@ -79,5 +79,10 @@ Alteracao para 1commit da questao 14
 Alteracao para 2commit da questao 14
 =======
 	E recebo uma mensagem pesquisa bem sucedida
+<<<<<<< HEAD
 comment 1 da questao 14 do discrepantes
 >>>>>>> questao 14 commit1 disrepantes
+=======
+commit 1 da questao 14 do discrepantes
+commit 2 da questao 14 do discrepantes
+>>>>>>> questao 14 commit2 disrepantes
