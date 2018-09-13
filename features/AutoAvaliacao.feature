@@ -71,8 +71,13 @@ E o aluno “Daniel Melo” cadastrou “MA” nas 5º autoavaliação
 E o aluno “Daniel Melo” tem como cadastrado “MPA” nas 5º avaliação do professor
 	Quando pesquiso por “alunos discrepantes”
 	Então vejo o nome do aluno “Daniel Melo”
+<<<<<<< HEAD
 	E recebo uma mensagem pesquisa bem sucedida.
 	E recebo uma mensagem pesquisa bem sucedida...
 
 Alteracao para 1commit da questao 14
 Alteracao para 2commit da questao 14
+=======
+	E recebo uma mensagem pesquisa bem sucedida
+comment 1 da questao 14 do discrepantes
+>>>>>>> questao 14 commit1 disrepantes
