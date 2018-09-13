@@ -61,3 +61,5 @@ And o professor é levado de volta a tabela de auto avaliação
 "terceiro commit,realizado em master"
 "primeiro commit,realizado em discrepantes"
 "segundo commit,realizado em discrepantes"
+"novo cenário de visualização de percentual de discrepância"
+"pequeno ajuste no novo cenário de visualização de percentual de discrepância"
