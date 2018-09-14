@@ -48,3 +48,8 @@ Scenario: Visualizing students grades with no harmful discrepancy
 Acrescentando coisas aqui rapidinho
 
 
+
+
+
+
+Agora vou mexer aqui pra tentar nao dar conflito de merge
