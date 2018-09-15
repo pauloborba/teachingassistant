@@ -30,3 +30,17 @@ Scenario: Unsuccessful note padding
   And I select the "Save" option
   Then I see a message showing that the "Especificar requisitos com qualidade" and "Entender conceitos de gerência de configuração" goals were not completed
   And another message showing that the concepts were not saved.
+
+Scenario: No self-rated discrepant
+  Given I am logged in as "Professor"
+  And the goals “Prática”, “Teoria”, “Escrita”, “Programação” and "Linguagens" are registered in the system
+  And the page "Lista de avaliações discrepantes" shows an empty list
+  And the student "João" evaluated with the concepts "MA", "MA", "MPA", "MA" and "MPA"
+  And the student "José" evaluated with the concepts "MANA", "MANA", "MPA", "MPA" and "MANA"
+  And the student "Maria" was evaluated with the concepts "MA", "MPA", "MPA", "MA" and "MA"
+  And I am in the menu "Conceitos dos Alunos"
+  When I evaluate "João" with the concepts "MPA", "MA", "MPA", "MA" and "MPA"
+  And I evaluated "José" with the concepts "MA", "MPA", "MA", "MA" and "MPA"
+  And I evaluated "Maria" with the concepts "MA", "MPA", "MPA", "MA" and "MA"
+  And access through the menu to the page "Lista de avaliações discrepantes"
+  Then I see that no name is listed.
