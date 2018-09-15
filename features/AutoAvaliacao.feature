@@ -2,6 +2,7 @@ Feature: Self-evaluation
     As a Student
     I want to rate myself in all my learning goals and compare with the professor’s evaluation
     So that I can see what to study more
+    questão 14 c
 
 Scenario: Self-Evaluate with concepts
     Given I am logged as a student named “Lucas Cardoso” 
