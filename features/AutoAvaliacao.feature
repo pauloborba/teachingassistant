@@ -24,3 +24,9 @@ So that eu e o professor possamos ver o que cada um pensa que foi o conceito mer
 		And a meta  “Entender conceitos de requisitos” com “MPA”
 		Then: O Sistema não armazena a submissão.
 
+-GUI:
+		Scenario: Preenchimento mal sucedido da Auto-Avaliação
+		Given: O aluno “Thiago” está na página “Auto-Avaliação”, a meta “Entender conceitos de requisitos” está com o conceito “MA”
+		And a meta “Especificar requisitos com qualidade” com “MPA”		
+		When: O aluno “Thiago” envia sua auto-avaliação
+		Then: O aluno “Thiago” vê uma mensagem de erro.
