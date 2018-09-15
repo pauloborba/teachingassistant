@@ -60,3 +60,15 @@ Scenario: Discrepancy detected page GUI
     Then I see a list of students containing only “Anderson” and the “quantidade” field with “1” and “porcentagem” field with “33%”
     questao 14 a
     questao 14 b
+
+Scenario: New Discrepancy detected page GUI as requested in question 15
+	Given I am logged as professor “Paulo Borba”
+	And There are 3 students registered, named “Anderson”, “Alberto” and “Lucas”
+	And  “Anderson” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MA”, “MA”, “MA”, “MA” and “MA”
+    And  “Alberto” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MPA”, “MPA”, “MPA”, “MPA” and “MPA”
+    And  “Lucas” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MPA”, “MPA”, “MPA”, “MPA” and “MPA”
+    When I go to the “Alunos com avaliação discrepante” page
+    Then I see a list of students containing only “Anderson” and the “quantidade” field with “1” and “porcentagem” field with “33%”
+    questao 14 a
+    questao 14 b
+    ajuste da questão 15
