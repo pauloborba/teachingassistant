@@ -44,3 +44,17 @@ Scenario: No self-rated discrepant
   And I evaluated "Maria" with the concepts "MA", "MPA", "MPA", "MA" and "MA"
   And access through the menu to the page "Lista de avaliações discrepantes"
   Then I see that no name is listed.
+
+Scenario: With discrepant self-ratings
+  Given I am logged in as "Professor"
+  And the goals “Prática”, “Teoria”, “Escrita”, “Programação” and "Linguagens" are registered in the system
+  And the page "Lista de avaliações discrepantes" shows an empty list
+  And the student "João" evaluated with the concepts "MA", "MA", "MPA", "MA" and "MPA"
+  And the student "José" evaluated with the concepts "MANA", "MANA", "MPA", "MPA" and "MANA"
+  And the student "Maria" was evaluated with the concepts "MA", "MPA", "MPA", "MA" and "MA"
+  And I am in the menu "Conceitos dos Alunos"
+  When I evaluate "João" with the concepts "MPA", "MA", "MANA", "MA" and "MPA"
+  And I evaluated "José" with the concepts "MA", "MPA", "MA", "MA" and "MPA"
+  And I evaluated "Maria" with the concepts "MA", "MPA", "MPA", "MA" and "MA"
+  And access through the menu to the page "Lista de avaliações discrepantes"
+  Then I see that the student's name "João" is present in the list.
