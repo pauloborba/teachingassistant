@@ -15,3 +15,12 @@ So that eu e o professor possamos ver o que cada um pensa que foi o conceito mer
 		And: O aluno “Thiago” envia suas respostas.
 		Then: O aluno “Thiago” vê uma mensagem confirmando o envio bem sucedido
 		And fecha o navegardor.
+
+-Controlador:
+		Scenario: Preenchimento mal sucedido da Auto-Avaliação
+		Given: O Sistema aceita somente conceitos “MA”, “MPA” ou “MANA”.
+		And: O Sistema possui as metas  “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”.
+		When: O aluno “Thiago” submete sua auto-avaliação com a meta  “Entender conceitos de requisitos” com conceito “MA”
+		And a meta  “Entender conceitos de requisitos” com “MPA”
+		Then: O Sistema não armazena a submissão.
+
