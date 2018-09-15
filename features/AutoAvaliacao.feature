@@ -41,8 +41,7 @@ Scenario: No Discrepancy detected page GUI
     When I go to the “Alunos com avaliação discrepante” page
     Then I see no student and the “quantidade” field with “0” and “porcentagem” field with “0%”
 
-<<<<<<< HEAD
-    Scenario: Discrepancy detected page GUI mudança da questão 8
+Scenario: Discrepancy detected page GUI mudança da questão 8
 	Given I am logged as professor “Paulo Borba” mudança da questão 8
 	And There are 3 students registered, named “Anderson”, “Alberto” and “Lucas” mudança da questão 8
 	And  “Anderson” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MA”, “MA”, “MA”, “MA” and “MA” mudança da questão 8
@@ -50,8 +49,8 @@ Scenario: No Discrepancy detected page GUI
     And  “Lucas” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MPA”, “MPA”, “MPA”, “MPA” and “MPA” mudança da questão 8
     When I go to the “Alunos com avaliação discrepante” page mudança da questão 8
     Then I see a list of students containing only “Anderson” and the “quantidade” field with “1” and “porcentagem” field with “33%” mudança da questão 8
-=======
-    Scenario: Discrepancy detected page GUI
+
+Scenario: Discrepancy detected page GUI
 	Given I am logged as professor “Paulo Borba”
 	And There are 3 students registered, named “Anderson”, “Alberto” and “Lucas”
 	And  “Anderson” has been evaluated with “MPA”, “MPA”, “MPA”, “MPA” and “MPA” and self evaluate himself “MA”, “MA”, “MA”, “MA” and “MA”
@@ -60,4 +59,4 @@ Scenario: No Discrepancy detected page GUI
     When I go to the “Alunos com avaliação discrepante” page
     Then I see a list of students containing only “Anderson” and the “quantidade” field with “1” and “porcentagem” field with “33%”
     questao 14 a
->>>>>>> first commit in branch discrepantes because of the 14th exercise
+    questao 14 b
