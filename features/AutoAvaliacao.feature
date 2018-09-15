@@ -36,6 +36,6 @@ Scenario: metas com existência de discrepâncias
     And a coluna de “discrepância” contêm 1 ou mais “SIM”
 
 Scenario: visualização de percentual de discrepância
-    Given que o “Professor” está na página de notas da turma “2018.2”
+    Given que o usuário “Professor” está na página de notas da turma “2018.2”
     When o “Professor” solicita o percentual de discrepância
     Then o numero do percentual é mostrado na tela
