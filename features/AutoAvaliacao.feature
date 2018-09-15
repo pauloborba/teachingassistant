@@ -80,7 +80,7 @@ Alteracao para 2commit da questao 14
 
 Cenário de visualização de percentual de discrepância
 	Dado que o aluno "Jose Ferreira" tem como cadastrado "MANA" na avaliação 1 do professor "Armando Pedro".
-		E que o aluno "Jose Ferreira" tem como cadastrado "MANA" na avaliação 2 do professor "Armando Pedro".
+		E que o aluno "Jose Ferreira" tem como cadastrado "MPA" na avaliação 2 do professor "Armando Pedro".
 		E que o aluno "Jose Ferreira" tem como cadastrado "MANA" na avaliação 3 do professor "Armando Pedro".
 		E que o aluno "Jose Ferreira" tem como cadastrado "MA" na autoavaliação 1.
 		E que o aluno "Jose Ferreira" tem como cadastrado "MA" na autoavaliação 2.
