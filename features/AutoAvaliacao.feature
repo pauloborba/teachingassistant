@@ -30,3 +30,16 @@ So that eu e o professor possamos ver o que cada um pensa que foi o conceito mer
 		And a meta “Especificar requisitos com qualidade” com “MPA”		
 		When: O aluno “Thiago” envia sua auto-avaliação
 		Then: O aluno “Thiago” vê uma mensagem de erro.
+
+-Sem discrepancia
+	-GUI:
+			Scenario: O professor “Paulo” não visualiza nenhuma discrepância.
+			Given: O professor "Paulo" está na planilha com os resultados das auto-avaliações dos alunos "André", "Bernardo", "Caio".
+			And: As metas avaliadas foram “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de SaaS ”, “Entender conceitos de gerência de projeto”.
+			And: Aluno "André" preencheu as metas com os conceitos “MA”, “MA”, “MPA”, “MPA”, “MA”, respectivamente.
+			And: Aluno "Bernardo" preencheu as metas com os conceitos “MPA”, “MPA”, “MPA”, “MPA”, “MANA”, respectivamente.
+			And: Aluno "Caio" preencheu as metas com os conceitos “MA”, “MPA”, “MPA”, “MPA”, “MA”, respectivamente.
+			When: O professor "Paulo" preencheu as metas do aluno "André" com os conceitos “MPA”, “MA”, “MPA”, “MPA”, “MA”, respectivamente.
+			And: O professor "Paulo" preencheu as metas do aluno "Bernardo" com os conceitos “MA”, “MA”, “MA”, “MPA”, “MA”, respectivamente.
+			And: O professor "Paulo" preencheu as metas do aluno "Caio" com os conceitos “MA”, “MPA”, “MPA”, “MPA”, “MA”, respectivamente.
+			Then: O professor visualiza que na página dos resultados que nenhuma discrepância é alertada.
