@@ -29,4 +29,5 @@ Scenario: Unsuccessful note padding
   When I assign the concepts "MANA", "" and "" the goals
   And I select the "Save" option
   Then I see a message showing that the "Especificar requisitos com qualidade" and "Entender conceitos de gerência de configuração" goals were not completed
-  And another message showing that the concepts were not saved.
+  And another message showing that the concepts were not saved in the system
+  And a warning that all fields must be filled.
