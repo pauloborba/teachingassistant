@@ -1,10 +1,6 @@
-Resposta: GUI: avaliação mal sucedida
-GIVEN que estou na página de autoavaliação do SGM
-WHEN eu preencher
-AND concluir a minha autoavaliação, porém, um ou mais dos termos obrigatórios para o preenchimento faltando
-THWN será me repassado um feedback informando que o preenchimento não está completo, e indicações na célula que faltou ser preenchida.
-Cenário de Serviços: avaliação mal sucedida
-GIVEN o SGM não possui nenhuma autoavaliação do aluno até o momento
-WHEN eu concluir a minha autoavaliação, porém, um ou mais dos termos obrigatórios para o preenchimento faltando
-THEN serão descartadas as informações, somente armazenando quando todas forem preenchidas completamente.
+Resposta: Cenário autoavaliação realizada com conceito superior ao do professor
+GIVEN que estou no sistema de autoavaliação como professor
+WHEN eu preencher minhas metas com 4 MPA’s, como avaliação do professor e um MANA
+AND eu concluir minha autoavaliação
+THEN será me repassado um feedback informando que o preenchimento foi realizado com sucesso.
 
