@@ -71,18 +71,19 @@ E o aluno “Daniel Melo” cadastrou “MA” nas 5º autoavaliação
 E o aluno “Daniel Melo” tem como cadastrado “MPA” nas 5º avaliação do professor
 	Quando pesquiso por “alunos discrepantes”
 	Então vejo o nome do aluno “Daniel Melo”
-<<<<<<< HEAD
+commit 1 da questao 14 do discrepantes
+commit 2 da questao 14 do discrepantes
 	E recebo uma mensagem pesquisa bem sucedida.
-	E recebo uma mensagem pesquisa bem sucedida...
 
 Alteracao para 1commit da questao 14
 Alteracao para 2commit da questao 14
-=======
-	E recebo uma mensagem pesquisa bem sucedida
-<<<<<<< HEAD
-comment 1 da questao 14 do discrepantes
->>>>>>> questao 14 commit1 disrepantes
-=======
-commit 1 da questao 14 do discrepantes
-commit 2 da questao 14 do discrepantes
->>>>>>> questao 14 commit2 disrepantes
+
+Cenário de visualização de percentual de discrepância
+	Dado que o aluno "Jose Ferreira" tem como cadastrado "MANA" na avaliação 1 do professor "Armando Pedro".
+		E que o aluno "Jose Ferreira" tem como cadastrado "MANA" na avaliação 2 do professor "Armando Pedro".
+		E que o aluno "Jose Ferreira" tem como cadastrado "MANA" na avaliação 3 do professor "Armando Pedro".
+		E que o aluno "Jose Ferreira" tem como cadastrado "MA" na autoavaliação 1.
+		E que o aluno "Jose Ferreira" tem como cadastrado "MA" na autoavaliação 2.
+		E que o aluno "Jose Ferreira" tem como cadastrado "MPA" na autoavaliação 3.
+	Quando o professor "Armando Pedro" pesquisa seus alunos com discrepância
+	Então o professor "Armando Pedro" pode ver o nome de "Jose Ferreira" como discrepante.
