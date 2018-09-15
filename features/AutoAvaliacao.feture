@@ -1,6 +1,10 @@
-Resposta: Cenário: Autoavaliação do aluno
-GUIVEN que estou na página de autoavaliação do SGM
-WHEN eu preencher o sistema
-AND concluir a minha autoavaliação
-THEN será me repassado um feedback informando que o preenchimento foi bem realizado com sucesso.
+Resposta: GUI: avaliação mal sucedida
+GIVEN que estou na página de autoavaliação do SGM
+WHEN eu preencher
+AND concluir a minha autoavaliação, porém, um ou mais dos termos obrigatórios para o preenchimento faltando
+THWN será me repassado um feedback informando que o preenchimento não está completo, e indicações na célula que faltou ser preenchida.
+Cenário de Serviços: avaliação mal sucedida
+GIVEN o SGM não possui nenhuma autoavaliação do aluno até o momento
+WHEN eu concluir a minha autoavaliação, porém, um ou mais dos termos obrigatórios para o preenchimento faltando
+THEN serão descartadas as informações, somente armazenando quando todas forem preenchidas completamente.
 
