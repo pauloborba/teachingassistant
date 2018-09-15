@@ -32,3 +32,4 @@ Feature: Auto-Avaliação
 		And os conceitos “MA”, “MPA” e “”MANA” foram configuradas pelo professor ao sistema
 		When atribuo às metas os conceitos “ ”, “MANA” e “MA”
 		Then os conceitos não serão armazenados ao sistema
+        And (Passo adicional)
