@@ -56,3 +56,4 @@ And: o aluno Andrey têm preenchido “MA”, “MA”, “MA”, “MA”, “M
 When: eu seleciono “Ir para discrepâncias”
 Then: Eu vejo uma planilha contendo o aluno Jorge. (jorge foi reprovado)
 
+linha extra 1
