@@ -59,3 +59,4 @@ Feature: Auto-Avaliação
 		And avalio o “Aluno 3” com os conceitos “MA”, “MANA”, “MPA”, “MA” e “MPA”
 		And seleciono a opção de visualizar lista de discrepantes
 		Then eu vejo a “Quantidade = 1” e “Percentual = 33,33%” e a lista com o nome do “Aluno ”
+		And (Atualização mais significativa no cenário)
