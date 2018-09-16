@@ -26,6 +26,4 @@ Scenario:  Armazenamento da autoavaliação mal sucedido.
     Given Não há autoavaliação feita para o aluno “João Pedro” cujo CPF é “656.636.569.56”
     When Eu submeto a autoavaliação de “João Pedro” para armazenamento faltando um conceito
     Then A autoavaliação não é armazenada e um erro é disparado.
-
-
-
+    And .....
