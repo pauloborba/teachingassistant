@@ -17,4 +17,5 @@ Scenario: Unsuccessful self-evaluation
 	And "Layon" has no self-evaluations yet
 	And I fill only 1 grade of 5 existing exams
 	And I submit my self-evaluation
-	Then a message is shown informing the need of filling all the exams before submitting.
+	Then a message is shown informing the need of filling all the exams before submitting
+	Then the missing fields are pointed.
