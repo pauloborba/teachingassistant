@@ -18,3 +18,10 @@ Scenario: Unsuccessful self-evaluation
 	And I fill only 1 grade of 5 existing exams
 	And I submit my self-evaluation
 	Then a message is shown informing the need of filling all the exams before submitting.
+
+
+Scenario: Submission without discrepancy
+	Given the user "João" is in the self-evaluating page
+	And "João" has a total of 5 exams rated by the teatcher as following: MA, MA, MPA, Mana, MPA
+	When "João" rates his exams as the folling: MA, MPA, MPA, Mana, MPA
+	Then system stores all the 5 ratings.
