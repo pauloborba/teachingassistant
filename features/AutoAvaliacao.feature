@@ -27,5 +27,9 @@ Scenario:  Armazenamento da autoavaliação mal sucedido.
     When Eu submeto a autoavaliação de “João Pedro” para armazenamento faltando um conceito
     Then A autoavaliação não é armazenada e um erro é disparado.
 
-
-
+Scenario:  Verificar discrepâncias de autoavaliação.
+    Given Estou na página de turma
+    And A autoavaliação foi preenchida por todos
+    When Eu faço requisição para visualizar alunos com discrepâncias
+    Then Recebo um aviso de não existência
+    And A página não se altera.
