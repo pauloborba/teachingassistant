@@ -55,5 +55,4 @@ So that eu e o professor possamos ver o que cada um pensa que foi o conceito mer
 			When: O professor "Paulo" preencheu as metas do aluno "André" com os conceitos “MPA”, “MA”, “MPA”, “MPA”, “MA”, respectivamente.
 			And: O professor "Paulo" preencheu as metas do aluno "Bernardo" com os conceitos “MA”, “MA”, “MA”, “MPA”, “MA”, respectivamente.
 			And: O professor "Paulo" preencheu as metas do aluno "Caio" com os conceitos “MA”, “MPA”, “MPA”, “MPA”, “MA”, respectivamente.
-			Then: O professor visualiza que na página dos resultados que uma discrepância foi alertada  e uma notificação de prioridade
-			
+			Then: O professor visualiza que na página dos resultados que uma discrepância foi alertada  e uma notificação de prioridade..
