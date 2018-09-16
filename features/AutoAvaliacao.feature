@@ -36,4 +36,5 @@ And: “Entender conceitos de requisitos”, “Especificar requisitos com quali
 When: Eu tento atribuir respectivamente “MA, “MPA” aos conceitos “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”.
 And: Seleciono “salvar”
 Then: Eu vejo uma mensagem de erro
+And: (passo que faltava, detectado pelos stakeholders)
 
