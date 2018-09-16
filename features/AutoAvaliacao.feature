@@ -46,3 +46,7 @@ Scenario: Student Grade List with no conflict
 // Primeira alteração Discrepantes
 
 // Segunda alteração Discrepantes
+
+// Novo cenario de auto-avaliacao
+
+// pequeno ajuste na modificacao acima
