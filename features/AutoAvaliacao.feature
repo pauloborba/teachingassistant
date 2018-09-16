@@ -32,7 +32,7 @@ Scenario:  Verificar discrepâncias de autoavaliação.
     Given Estou na página de turma
     And A autoavaliação foi preenchida por todos
     When Eu faço requisição para visualizar alunos com discrepâncias
-    And ....
+    And \\\\
     Then Recebo um aviso de não existência
     And A página não se altera.
 
@@ -40,6 +40,6 @@ Scenario:  Existem discrepâncias de autoavaliação.
     Given Estou na página de turma
     And A autoavaliação foi preenchida por todos
     When Eu faço requisição para visualizar alunos com discrepâncias
-    And ....
+    And \\\\
     Then Recebo um aviso de existência
     And A página se altera para mostrar alunos com discrepância.
