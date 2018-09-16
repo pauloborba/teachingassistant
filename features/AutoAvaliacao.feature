@@ -23,7 +23,7 @@ Scenario: Grades page with no discrepant student
   When I look for the metrics of this class
   Then I can see that 0/0% students have discrepant grades
 
-Scenario: Grades page with a single discrepant student
+Scenario: Grades page with a single discrepant student 
   Given I am at the discrepant grades page
   And There's 3 students with all the grades filled (regular and self evaluation)
   And student "José" has a 40% discrepancy(higher grades) between the regular and self evaluation grades
