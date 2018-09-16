@@ -36,9 +36,7 @@ And: “Entender conceitos de requisitos”, “Especificar requisitos com quali
 When: Eu tento atribuir respectivamente “MA, “MPA” aos conceitos “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”.
 And: Seleciono “salvar”
 Then: Eu vejo uma mensagem de erro
-
 - Discrepâncias -
-
 Cenário sem discrepâncias
 Scenario: Verificar Discrepâncias de metas
 Given: Estou na planilha de conceitos do assunto de requisitos
@@ -47,11 +45,9 @@ And: o aluno Saulo tem “MPA”, “MPA”, “MPA”, “MPA”, “MPA” res
 And: o aluno Jorge tem “MANA”, “MANA”, “MANA”, “MANA”, “MANA” para a avaliação dada de “MANA”, “MANA”, “MANA”, “MANA”, “MANA”.
 When: eu seleciono “Ir para discrepâncias”
 Then: Eu vejo uma planilha em branco.
-
 Cenário com discrepâncias
 Scenario: Verificar Discrepâncias de metas
 Given: Estou na planilha de conceitos do assunto de requisitos
 And: o aluno Andrey têm preenchido “MA”, “MA”, “MA”, “MA”, “MA” respectivamente para as metas 1 a 5, enquanto a avaliação dada foi  “MA”, “MA”, “MA”, “MA”, “MPA”. o aluno Saulo tem “MPA”, “MPA”, “MPA”, “MPA”, “MPA” respectivamente para as metas 1 a 5, enquanto a avaliação dada foi  “MA”, “MA”, “MA”, “MA”, “MA” e o aluno Jorge tem “MA”, “MA”, “MA”, “MA”, “MA” para a avaliação dada de “MANA”, “MANA”, “MANA”, “MANA”, “MANA”.
 When: eu seleciono “Ir para discrepâncias”
 Then: Eu vejo uma planilha contendo o aluno Jorge.
-
