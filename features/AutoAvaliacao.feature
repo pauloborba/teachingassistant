@@ -59,3 +59,5 @@ Scenario: With discrepant self-ratings
   And I evaluated "Maria" with the concepts "MA", "MPA", "MPA", "MA" and "MA"
   And access through the menu to the page "Lista de avaliações discrepantes"
   Then I see that only the student's name "João" is present in the list.
+
+#Modificação na branch master
