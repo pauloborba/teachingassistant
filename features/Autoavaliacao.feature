@@ -32,7 +32,7 @@ Feature: Auto-Avaliação
 		And os conceitos “MA”, “MPA” e “”MANA” foram configuradas pelo professor ao sistema
 		When atribuo às metas os conceitos “ ”, “MANA” e “MA”
 		Then os conceitos não serão armazenados ao sistema
-    And (Passo adicional)
+		And (Passo adicional)
 
 		Scenario: nenhuma discrepância no preenchimento da auto-avaliação
 		Given estou logado como “Professor” de login “Paulo” e senha “seeyouspacecowboy”
@@ -62,3 +62,4 @@ Feature: Auto-Avaliação
 		And (Atualização mais significativa no cenário)
 
 		(Para realizar o commit para o rebase na branch master)
+		(Modificação de novo cenário de percentual de discrepância)
