@@ -63,3 +63,4 @@ Feature: Auto-Avaliação
 
 		(Para realizar o commit para o rebase na branch master)
 		(Modificação de novo cenário de percentual de discrepância)
+		(Ajuste no novo cenário de percentual de discrepância)
