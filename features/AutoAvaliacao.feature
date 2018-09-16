@@ -42,3 +42,9 @@ When eu vou na aba auto-avaliações discrepantes
 Then eu vejo “1” na quantidade de alunos
 And eu vejo “33”% na porcentagem de alunos
 And eu vejo o aluno ”Carlos” na lista
+
+Cenário: visualização de percentual de discrepância
+
+Given eu estou na aba de discrepantes como professor
+When seleciono para a opção de "percentual"
+Then eu vejo "33"% como porcentagem de alunos com discrepantes
