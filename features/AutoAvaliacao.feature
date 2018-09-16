@@ -45,3 +45,16 @@ Feature Autoavaliação
         Then He sees “ number of students with discrepancies: 0” 
         And He sees “percentage of students with discrepancies: 0%”
         And He sees “list of students with discrepancies: “” ”
+
+    Scenario Visualizing dicrepanties
+        Given The professor is at the page “unidade”
+        And The Student “Carlão” was given “MPA”, “MPA”, “MPA”, “MPA”, “MPA” by the professor
+        And The Student “Carlão” was given “MA”, “MA”, “MA”, “MA”, “MA” by himself
+        And The Student “Zeus” was given “MANA”, “MA”, “MPA”, “MANA”, “MPA” by the professor
+        And The Student “Zeus” was given  “MANA”, “MA”, “MPA”, “MANA”, “MPA” by himself
+        And The Student “Genius” was given “MA”, “MA”, “MA”, “MA”, “MA” by the professor
+        And The Student “Genius” was given “MANA”, “MANA”, “MANA”, “MANA”, “MANA” by himself
+        When The professor selects the menu “discrepancies”
+        Then He sees “number of students with discrepancies: 1” 
+        And He sees “percentage of students with discrepancies: 34%”
+        And He sees “list of students with discrepancies: Carlão”
