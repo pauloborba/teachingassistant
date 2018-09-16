@@ -46,5 +46,5 @@ And eu vejo o aluno ”Carlos” na lista
 Cenário: visualização de percentual de discrepância
 
 Given eu estou na aba de discrepantes como professor
-When seleciono para a opção de "percentual"
+When eu seleciono para a opção de "percentual"
 Then eu vejo "33"% como porcentagem de alunos com discrepantes
