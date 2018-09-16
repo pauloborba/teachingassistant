@@ -10,3 +10,11 @@ Scenario: Successful self-evaluation
 	And All the teatcher's evaluations are filled
 	And I fill all the self-evaluation grades
 	Then the self-evaluation of "Layon" is registered in the system.
+
+
+Scenario: Unsuccessful self-evaluation
+	Given I'm logged in the system as the student with name "Layon" and password "1234" as credentials
+	And "Layon" has no self-evaluations yet
+	And I fill only 1 grade of 5 existing exams
+	And I submit my self-evaluation
+	Then a message is shown informing the need of filling all the exams before submitting.
