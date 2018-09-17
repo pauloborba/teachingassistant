@@ -11,7 +11,7 @@ Feature: Self-Evaluation
 			And the confirm button is selected
 			Then a confirmation pop-up is shown
 			And the “Student Grades and Goals” page is shown
-And the self-evaluated grades appear besides the ones given by the teachers
+			And the self-evaluated grades appear besides the ones given by the teachers
 		
 		Scenario: Successful self-evaluation (Service)
 			Given I am at the self-evaluation page of the student “Arthur Santos”, cpf “0000000000”
@@ -33,4 +33,24 @@ And the self-evaluated grades appear besides the ones given by the teachers
 			And the confirm button is selected
 			Then the self-evaluated grades aren’t shown in the system
 			Then lorem ipsum 
+
+		Scenario: The students grades page shows no discrepancies (GUI)
+			Given the teacher “Athos”, id “000”, has evaluated all 3 students of the class “ESS” with “MPA” for all 5 goals
+			And The student “Porthos”, id “111”, filled his self-evaluation for “ESS” with “MA” for the first goal and “MANA” or “MPA” for the other four	
+			And The student “Aramis”, id “222”, filled his self-evaluation for “ESS” with “MANA” for all the 5 goals
+			And The student “D’Artagnan”, id “333”, filled his self-evaluation for “ESS” with “MPA” for all the 5 goals
+			When the page “Students Grades and Goals” is selected from the homepage
+			And the class “ESS” is selected”
+			Then the page “Students Grades and Goals” for the class “ESS” is shown
+			And the names of the students with discrepancies are highlighted in yellow
+
+		Scenario:The students grades page shows discrepancies (GUI)
+			Given the teacher “Athos”, id “000”, has evaluated all 3 students of the class “ESS” with “MPA” for all 5 goals
+			And The student “Porthos”, id “111”, filled his self-evaluation for “ESS” with “MA”  for all the 5 goals
+			And The student “Aramis”, id “222”, filled his self-evaluation for “ESS” with “MANA” for all the 5 goals
+			And The student “D’Artagnan”, id “333”, filled his self-evaluation for “ESS” with “MPA” for all the 5 goals
+			When the page “Students Grades and Goals” is selected from the homepage
+			And the class “ESS” is selected”
+			Then the page “Students Grades and Goals” for the class “ESS” is shown
+			And a pop-up stating that there’s discrepancies with the student “Porthos”, id “111”, is shown  
 
