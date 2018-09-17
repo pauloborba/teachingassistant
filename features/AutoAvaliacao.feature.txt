@@ -1,0 +1,21 @@
+Feature: Self-Evaluation
+			As a student enrolled in one of the courses overseen by the SGM 
+			I want to be able to self-evaluate all my goals at the end of the semester
+			So that I can see them besides the evaluation given by the teachers
+		
+		Scenario: Successful self-evaluation (GUI)
+			Given I am at the self-evaluation page of the student “Arthur Santos”, cpf “0000000000”
+			And all the grades are available
+			And I am at the “Self-Evaluation” page
+			When self-evaluation is filled with “MA” for every goal
+			And the confirm button is selected
+			Then a confirmation pop-up is shown
+			And the “Student Grades and Goals” page is shown
+And the self-evaluated grades appear besides the ones given by the teachers
+		
+		Scenario: Successful self-evaluation (Service)
+			Given I am at the self-evaluation page of the student “Arthur Santos”, cpf “0000000000”
+			And all the grades are available
+			When self-evaluation is filled with “MA” for every goal
+			And the self-evaluation is confirmed
+			Then the self-evaluated grades are shown in the system
