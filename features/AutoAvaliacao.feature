@@ -18,3 +18,4 @@ Scenario: Preencher uma auto-avaliação incompleta
 	And eu clickar “Ok”
 	Then nenhuma avaliação será entrada no sistema
 	And será mostrada um aviso de “Erro: Meta não preenchida”
+	Then os stakeholders estarão felizes
