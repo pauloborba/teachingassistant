@@ -41,3 +41,5 @@ This is part of the commit test 3
 This is part of the test commit 1.
 This is part of the test commit 2.
 
+
+Scenario: Discrepancy Percentage Visualization
