@@ -53,4 +53,4 @@ Feature: Self-Evaluation
 			And the class “ESS” is selected”
 			Then the page “Students Grades and Goals” for the class “ESS” is shown
 			And a pop-up stating that there’s discrepancies with the student “Porthos”, id “111”, is shown  
-
+			And correção de erro
