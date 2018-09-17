@@ -18,3 +18,16 @@ Scenario: Preencher uma auto-avaliação incompleta
 	And eu clickar “Ok”
 	Then nenhuma avaliação será entrada no sistema
 	And será mostrada um aviso de “Erro: Meta não preenchida”
+
+Scenario: Checando uma turma com alunos sem discrepância
+	Given que estou logado no sistema
+	And na página “Lista de Alunos” de uma turma associada a mim
+	And o aluno “Jorge” cadastrou no sistema “Especificar Requisitos com Qualidade” como “MPA”
+	And eu cadastrei a meta “Especificar Requisitos com Qualidade” do aluno “Jorge” como “MANA”
+	And o aluno “Mateus” cadastrou todos os seus conceitos como “MPA” And eu cadastrei todos os conceitos do aluno “Mateus” como “MA”
+	And o aluno “Nero” cadastrou todos os seus conceitos com “MPA”
+	And eu cadastrei todos os conceitos do aluno “Nero” como “MPA”
+	When eu clico em “Listar discrepâncias”
+	Then o aluno “Jorge” irá listar “Ok” ao lado de seu nome.
+	And o aluno “Mateus” irá listar “Ok” ao lado de seu nome.
+	And o aluno “Nero” irá listar “Ok” ao lado de seu nome.
