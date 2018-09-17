@@ -19,3 +19,17 @@ And the self-evaluated grades appear besides the ones given by the teachers
 			When self-evaluation is filled with “MA” for every goal
 			And the self-evaluation is confirmed
 			Then the self-evaluated grades are shown in the system
+
+		Scenario: Unsuccessful self-evaluation (GUI)
+			Given I am at the self-evaluation page of the student “Arthur Santos”, cpf “0000000000”
+			And I am at the “Self-Evaluation” page
+			When self-evaluation is filled with “MA” for every goal filled, but one or more goals is left without grades
+			And the confirm button is selected
+			Then a pop-up is shown stating that the grades can’t be filled partially
+
+		Scenario: Unsuccessful self-evaluation (Service)
+			Given I am at the self-evaluation page of the student “Arthur Santos”, cpf “0000000000”
+			When self-evaluation is filled with “MA” for every goal filled, but one or more goals is left without grades
+			And the confirm button is selected
+			Then the self-evaluated grades aren’t shown in the system
+
