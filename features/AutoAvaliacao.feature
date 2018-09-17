@@ -36,5 +36,8 @@ Scenario: Submission with discrepancy
 	Then system stores all the 5 ratings and tag the self-evaluation as dicrepant.
 
 
+
 This is part of the commit test 3
 This is part of the test commit 1.
+This is part of the test commit 2.
+
