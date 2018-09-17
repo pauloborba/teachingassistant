@@ -31,5 +31,6 @@ Scenario: Submission without discrepancy
 Scenario: Submission with discrepancy
 	Given the user "João" is in the self-evaluating page
 	And "João" has a total of 5 exams rated by the teatcher as following: MA, Mana, MPA, Mana, MPA
+	And "João" hasn't submitted any rating yet
 	When "João" rates his exams as the folling: MA, MPA, MA, MPA, MPA
 	Then system stores all the 5 ratings and tag the self-evaluation as dicrepant.
