@@ -25,3 +25,10 @@ Scenario: Submission without discrepancy
 	And "João" has a total of 5 exams rated by the teatcher as following: MA, MA, MPA, Mana, MPA
 	When "João" rates his exams as the folling: MA, MPA, MPA, Mana, MPA
 	Then system stores all the 5 ratings.
+
+
+Scenario: Submission with discrepancy
+	Given the user "João" is in the self-evaluating page
+	And "João" has a total of 5 exams rated by the teatcher as following: MA, Mana, MPA, Mana, MPA
+	When "João" rates his exams as the folling: MA, MPA, MA, MPA, MPA
+	Then system stores all the 5 ratings and tag the self-evaluation as dicrepant.
