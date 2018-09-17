@@ -34,3 +34,6 @@ Scenario: Submission with discrepancy
 	And "João" hasn't submitted any rating yet
 	When "João" rates his exams as the folling: MA, MPA, MA, MPA, MPA
 	Then system stores all the 5 ratings and tag the self-evaluation as dicrepant.
+
+
+This is part of the commit test 3
