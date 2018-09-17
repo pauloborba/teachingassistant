@@ -32,4 +32,5 @@ And the self-evaluated grades appear besides the ones given by the teachers
 			When self-evaluation is filled with “MA” for every goal filled, but one or more goals is left without grades
 			And the confirm button is selected
 			Then the self-evaluated grades aren’t shown in the system
+			Then lorem ipsum 
 
