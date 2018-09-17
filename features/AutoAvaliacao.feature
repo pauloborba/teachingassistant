@@ -45,3 +45,4 @@ Scenario: Checando uma turma com alunos com discrepância
 	Then o aluno “Jorge” irá listar “2 de 5 avaliações discrepantes(40%)” ao lado de seu nome.
 	And o aluno “Mateus” irá listar “Ok” ao lado de seu nome.
 	And o aluno “Nero” irá listar “Ok” ao lado de seu nome.
+	And o "erro" foi corrigido e está todo mundo feliz.
