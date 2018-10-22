@@ -32,6 +32,11 @@ app.post('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
+app.delete('/aluno/:id', function(req: express.Request, res: express.Response)  {
+  cadastro.remover(req.params.id);
+  res.send({"success": "O aluno foi removido com sucesso"});
+})
+
 app.put('/aluno', function (req: express.Request, res: express.Response) {
   var aluno: Aluno = <Aluno> req.body;
   aluno = cadastro.atualizar(aluno);
@@ -42,12 +47,8 @@ app.put('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
-var server = app.listen(3000, function () {
+app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
 
-function closeServer(): void {
-   server.close();
-}
-
-export { app, server, closeServer }
+export { app }

@@ -15,22 +15,34 @@ export class AlunosComponent implements OnInit {
    aluno: Aluno = new Aluno();
    alunos: Aluno[];
    cpfduplicado: boolean = false;
+   githubduplicado: boolean = false;
 
    criarAluno(a: Aluno): void {
      this.alunoService.criar(a)
         .then(ab => {
            if (ab) {
-              this.alunos.push(ab);
-              this.aluno = new Aluno();
+              if(ab.github != "-1") {
+                console.log(ab);
+                this.alunos.push(ab);
+                this.aluno = new Aluno();
+              } else {
+                this.githubduplicado = true;
+              }
            } else {
-              this.cpfduplicado = true;
+              this.githubduplicado = true;
            }
         })
         .catch(erro => alert(erro));
    }
 
+   removerAluno(a: Aluno) : void {
+    this.alunoService.remover(a).then(as => this.alunos.splice(this.alunos.findIndex(ab => ab.cpf == a.cpf), 1))
+      .catch(err => alert(err))
+   }
+
    onMove(): void {
-      this.cpfduplicado = false;
+    this.cpfduplicado = false;
+    this.githubduplicado = false;
    }
 
    ngOnInit(): void {

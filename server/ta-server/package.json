@@ -4,19 +4,13 @@
   "description": "Servidor do teaching assistant",
   "main": "ta-server.js",
   "scripts": {
-    "test": "jasmine"
+    "start": "tsc && node ta-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paulo Borba",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.15.4",
-    "body-parser": "^1.18.2",
-    "@types/body-parser": "^1.16.5",
-    "@types/express": "^4.0.37"
+    "express": "^4.15.4"
   },
-  "devDependencies": {
-    "@types/request-promise": "^4.1.38",
-    "jasmine": "^2.8.0",
-    "request-promise": "^4.2.2"
-  }
+  "devDependencies": {}
 }
