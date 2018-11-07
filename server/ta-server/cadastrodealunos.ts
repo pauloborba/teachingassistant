@@ -23,6 +23,10 @@ export class CadastroDeAlunos {
     return result;
   }
 
+  remover(cpf: string) : void {
+    this.alunos.splice(this.alunos.findIndex(a => a.cpf == cpf), 1 );
+  }
+
   getAlunos(): Aluno[] {
     return this.alunos;
   }

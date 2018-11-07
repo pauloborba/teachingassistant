@@ -32,6 +32,12 @@ app.post('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
+app.delete('/alunos/:id', function(req: express.Request, res: express.Response)  {
+  cadastro.remover(req.params.id);
+  res.send({"success": "O aluno foi removido com sucesso"});
+})
+
+
 app.put('/aluno', function (req: express.Request, res: express.Response) {
   var aluno: Aluno = <Aluno> req.body;
   aluno = cadastro.atualizar(aluno);

@@ -29,6 +29,10 @@ export class AlunosComponent implements OnInit {
         .catch(erro => alert(erro));
    }
 
+   removerAluno(a: Aluno) : void {
+    this.alunoService.remover(a).then(as => this.alunos.splice(this.alunos.findIndex(ab => ab.cpf == a.cpf), 1))
+      .catch(err => alert(err))
+   }
    onMove(): void {
       this.cpfduplicado = false;
    }
