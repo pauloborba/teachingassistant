@@ -3,6 +3,7 @@ export class Aluno {
   cpf: string;
   email: string;
   metas: Map<string,string>;
+  autoAvaliacao: Map<string,string>;
 
   constructor() {
     this.clean();
@@ -13,11 +14,13 @@ export class Aluno {
     this.cpf = "";
     this.email = "";
     this.metas = new Map<string,string>();
+    this.autoAvaliacao = new Map<string,string>();
   }
 
   clone(): Aluno {
     var aluno: Aluno = new Aluno();
     aluno.metas = new Map<string,string>();
+    aluno.autoAvaliacao = new Map<string,string>();
     aluno.copyFrom(this);
     return aluno;
   }
