@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { MetasComponent } from './metas.component';
 import { AlunosComponent } from './alunos.component';
 import { AlunoService } from './aluno.service';
+import { autoAvaliacaoComponent} from './autoAvaliacao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MetasComponent,
-    AlunosComponent
+    AlunosComponent,
+    autoAvaliacaoComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,11 @@ import { AlunoService } from './aluno.service';
       {
         path: 'alunos',
         component: AlunosComponent
+      },
+      {
+        path: 'autoAvaliacao',
+        component: autoAvaliacaoComponent
+
       }
     ])
   ],
