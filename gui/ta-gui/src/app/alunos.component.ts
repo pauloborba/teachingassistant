@@ -39,4 +39,14 @@ export class AlunosComponent implements OnInit {
          .catch(erro => alert(erro));
    }
 
+
+   deletarAluno(a: Aluno): void{
+    this.alunoService.deletar(a).then(ab => {
+      if (ab) {
+         this.alunos = this.alunos.filter(a => ab.cpf != a.cpf);
+      } else {
+         this.cpfduplicado = true;
+      }
+    })
+   }
 }

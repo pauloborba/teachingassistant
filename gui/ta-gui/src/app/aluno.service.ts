@@ -37,6 +37,15 @@ export class AlunoService {
              .catch(this.tratarErro);
   }
 
+  deletar(aluno: Aluno): Promise<Aluno> {
+    return this.http.delete(this.taURL + "/alunos/" + aluno.cpf)
+      .toPromise()
+      .then(res => {
+        if (res.json().success) {return aluno;} else {return null;}
+     })
+     .catch(this.tratarErro);
+  }
+
   private tratarErro(erro: any): Promise<any>{
     console.error('Acesso mal sucedido ao serviço de alunos',erro);
     return Promise.reject(erro.message || erro);

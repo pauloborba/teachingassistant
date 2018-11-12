@@ -26,4 +26,9 @@ export class CadastroDeAlunos {
   getAlunos(): Aluno[] {
     return this.alunos;
   }
+
+  deletar(aluno: string): string{
+    this.alunos = this.alunos.filter(a => aluno != a.cpf);
+    return aluno;
+  }
 }
