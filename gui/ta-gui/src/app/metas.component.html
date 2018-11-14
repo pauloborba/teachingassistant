@@ -1,3 +1,20 @@
+<div>
+    <h2>Discrepâncias</h2>
+    <tr>
+        <th>Total de alunos</th>
+        <th>Avaliações discrepântes</th>
+        <th>Percentual</th>
+    </tr>
+    <tr>
+        <th>{{d.total}}</th>
+        <th>{{d.discrepantes}}</th>
+        <th>{{d.percentual}}</th>
+    </tr>
+    <tr *ngFor="let nome of d.nomes">
+        <td>{{nome}}</td>
+    </tr>
+</div>
+
 <table>
 <tr>
    <th>Nome</th>
@@ -12,7 +29,7 @@
    <td>{{a.email}}</td>
    <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
    <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
-   <td class="meta"><input [(ngModel)]="a.autoAvaliacao['requisitos']" (change)="atualizarAluno(a)" *ngIf="a.metas['requisitos'] !== null"></td>
-   <td class="meta"><input [(ngModel)]="a.autoAvaliacao['gerDeConfiguracao']" (change)="atualizarAluno(a)" *ngIf="a.metas['gerDeConfiguracao'] !== null"></td>
+   <td class="meta" *ngIf="a.metas['requisitos'] !== null"><input [(ngModel)]="a.autoAvaliacao['requisitos']" (change)="atualizarAluno(a)"></td>
+   <td class="meta" *ngIf="a.metas['gerDeConfiguracao'] !== null"><input [(ngModel)]="a.autoAvaliacao['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
 </tr>
 </table>
