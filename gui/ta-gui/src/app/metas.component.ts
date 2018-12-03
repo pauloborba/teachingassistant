@@ -14,9 +14,19 @@ export class MetasComponent implements OnInit {
 
    alunos: Aluno[];
 
-   atualizarAluno(aluno: Aluno): void {
-      this.alunoService.atualizar(aluno)
-         .catch(erro => alert(erro));
+   atualizarAluno(aluno: Aluno): boolean {
+      var noTypo = true;
+      var value;
+      Object.keys(aluno.metas).forEach(function(key) {
+          value = aluno.metas[key];
+          if (value != "MANA" && value != "MPA" && value != 'MA'){
+            noTypo = false;
+            alert("Can't compute grade '" + value + "'\nPlease type MANA, MPA or MA.");
+          }
+      }); 
+      if(noTypo) this.alunoService.atualizar(aluno)
+                    .catch(erro => alert(erro));
+      return noTypo;
    }
 
    ngOnInit(): void {

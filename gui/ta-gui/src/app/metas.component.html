@@ -3,14 +3,18 @@
    <th>Nome</th>
    <th>CPF</th>
    <th>e-mail</th>
-   <th>Requisitos</th>
-   <th>Gerência de Configuração</th>
+   <th>Requisitos<br>(nota_aluno)</th>
+   <th>Requisitos<br>(nota_prof)</th>
+   <th>Gerência de Configuração<br>(nota_aluno)</th>
+   <th>Gerência de Configuração<br>(nota_prof)</th>
 </tr>
 <tr *ngFor="let a of alunos">
    <td>{{a.nome}}</td>
    <td>{{a.cpf}}</td>
    <td>{{a.email}}</td>
-   <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
-   <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input id ='{{a.cpf}}' name='Requisitos{{a.cpf}}' [(ngModel)]="a.metas['requisitos_aluno'] " (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input name='RequisitosProf' [(ngModel)]="a.metas['requisitos_prof']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input name='Gerência de Configuração{{a.cpf}}' [(ngModel)]="a.metas['gerDeConfiguracao_aluno']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input name='Gerência de ConfiguraçãoProf' [(ngModel)]="a.metas['gerDeConfiguracao_prof']" (change)="atualizarAluno(a)"></td>
 </tr>
 </table>

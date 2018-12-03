@@ -8,6 +8,15 @@ export class Aluno {
     this.clean();
   }
 
+  define(nome: string, cpf: string, email: string): Aluno {
+    var aluno: Aluno = new Aluno();
+    aluno.nome = nome;
+    aluno.cpf = cpf;
+    aluno.email = email;
+    aluno.metas = new Map<string,string>();
+    return aluno;
+  }
+
   clean(): void {
     this.nome = "";
     this.cpf = "";

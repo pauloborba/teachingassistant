@@ -25,6 +25,7 @@ export class AppComponent {
      }
    }
 
+  
    onMove(): void {
       this.cpfduplicado = false;
    }

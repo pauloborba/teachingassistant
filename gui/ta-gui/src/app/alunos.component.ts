@@ -28,6 +28,12 @@ export class AlunosComponent implements OnInit {
         })
         .catch(erro => alert(erro));
    }
+   
+   deleteAluno(cpf:string){
+    this.alunoService.deleteAluno(cpf)
+      .then(list => this.alunos=list)
+      .catch(erro => alert(erro));      
+  }
 
    onMove(): void {
       this.cpfduplicado = false;

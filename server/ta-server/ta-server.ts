@@ -22,6 +22,12 @@ app.get('/alunos', function (req, res) {
   res.send(JSON.stringify(cadastro.getAlunos()));
 })
 
+app.get('/aluno/delete/:cpf',function (req:express.Request,res:express.Response){
+  var a:string = req.params.cpf;
+  cadastro.deleteAluno(a);
+  res.send(JSON.stringify(cadastro.getAlunos()));
+})
+
 app.post('/aluno', function (req: express.Request, res: express.Response) {
   var aluno: Aluno = <Aluno> req.body; //verificar se é mesmo Aluno!
   aluno = cadastro.criar(aluno);
@@ -42,6 +48,12 @@ app.put('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
+app.delete('/aluno/:cpf',function(req:express.Request,res:express.Response){
+  var a:string = req.params.cpf;
+  cadastro.deleteAluno(a);
+  res.send(JSON.stringify(cadastro.getAlunos()));
+})
+
 var server = app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
@@ -49,5 +61,7 @@ var server = app.listen(3000, function () {
 function closeServer(): void {
    server.close();
 }
+
+
 
 export { app, server, closeServer }

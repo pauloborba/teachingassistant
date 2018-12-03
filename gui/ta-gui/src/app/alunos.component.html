@@ -4,7 +4,7 @@
 <tr>
    <td><label>Nome </label></td>
    <td><input [(ngModel)]="aluno.nome" name="namebox"></td>
-   <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
+   <td><button name="BtnAdicionar" (click)="criarAluno(aluno)">Adicionar</button></td>
 </tr>
 <tr>
    <td><label>CPF </label></td>
@@ -29,6 +29,7 @@
    <td name="nomelist">{{a.nome}}</td>
    <td name="cpflist">{{a.cpf}}</td>
    <td>{{a.email}}</td>
+   <td><button name="{{a.cpf}}" (click)="deleteAluno(a.cpf)">x</button></td>
 </tr>
 </table>
 
