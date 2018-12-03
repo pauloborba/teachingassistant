@@ -2,6 +2,7 @@ import { defineSupportCode } from 'cucumber';
 import { browser, $, element, ElementArrayFinder, by } from 'protractor';
 import { async } from 'q';
 import {HttpClient} from "protractor-http-client"
+import { protractor } from 'protractor/built/ptor';
 
 let chai = require('chai').use(require('chai-as-promised'));
 let expect = chai.expect;
@@ -98,6 +99,11 @@ defineSupportCode(function ({ Given, When, Then }) {
         await expect(browser.getTitle()).to.eventually.equal('TaGui');
     });
 
+    When(/^I grade my student with CPF "([^\"]*)" with "([^\"]*)" at "([^\"]*)" and "([^\"]*)" at "([^\"]*)"$/, async (cpf, grade1, meta1, grade2, meta2) => {
+        await $("input[ng-reflect-name='" + meta1 + cpf + "']").sendKeys(<string> grade1);
+        await $("input[ng-reflect-name='" + meta2 + cpf + "']").sendKeys(<string> grade2);
+    });
+
     Then(/^I try to remove the student "([^\"]*)" with CPF "(\d*)"$/, async (name, cpf) => {
         var elem = "button[name='" + cpf + "']";
         await $(elem).click();
@@ -154,7 +160,7 @@ defineSupportCode(function ({ Given, When, Then }) {
         // There should be no student with the given cpf
         await expect(cpfAlunoOnly.length).equal(0);
     });
-
+    
     Then(/^I can still see "([^\"]*)" at "([^\"]*)" and "([^\"]*)" at "([^\"]*)" of the student with CPF "([^\"]*)"$/, async (grade1, meta1, grade2, meta2, cpf) => {
         await $("input[ng-reflect-name='" + meta1 + cpf + "']").getAttribute('value').then(function(res) {
             expect(res).equal(grade1);
@@ -162,6 +168,11 @@ defineSupportCode(function ({ Given, When, Then }) {
         await $("input[ng-reflect-name='" + meta2 + cpf + "']").getAttribute('value').then(function(res) {
             expect(res).equal(grade2);
         });
-
+        
+    });
+    
+    Then(/^I can see an alert, telling the grades are discrepant$/, async () => {
+        var EC = protractor.ExpectedConditions;
+        await browser.wait(EC.alertIsPresent(), 5000, "Alert is not getting present :(")
     });
 })

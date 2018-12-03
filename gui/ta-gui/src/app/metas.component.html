@@ -12,9 +12,9 @@
    <td>{{a.nome}}</td>
    <td>{{a.cpf}}</td>
    <td>{{a.email}}</td>
-   <td class="meta"><input id ='{{a.cpf}}' name='Requisitos{{a.cpf}}' [(ngModel)]="a.metas['requisitos_aluno'] " (change)="atualizarAluno(a)"></td>
-   <td class="meta"><input name='RequisitosProf' [(ngModel)]="a.metas['requisitos_prof']" (change)="atualizarAluno(a)"></td>
-   <td class="meta"><input name='Gerência de Configuração{{a.cpf}}' [(ngModel)]="a.metas['gerDeConfiguracao_aluno']" (change)="atualizarAluno(a)"></td>
-   <td class="meta"><input name='Gerência de ConfiguraçãoProf' [(ngModel)]="a.metas['gerDeConfiguracao_prof']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input name='Requisitos{{a.cpf}}' [(ngModel)]="a.metas['requisitos_aluno'] " (change)="atualizarAluno(a, 'Requisitos', 'Aluno', a.cpf)"></td>
+   <td class="meta"><input name='RequisitosProf{{a.cpf}}' [(ngModel)]="a.metas['requisitos_prof']" (change)="atualizarAluno(a, 'Requisitos', 'Prof', a.cpf)"></td>
+   <td class="meta"><input name='Gerência de Configuração{{a.cpf}}' [(ngModel)]="a.metas['gerDeConfiguracao_aluno']" (change)="atualizarAluno(a, 'Gerência de Configuração', 'Aluno', a.cpf)"></td>
+   <td class="meta"><input name='Gerência de ConfiguraçãoProf{{a.cpf}}' [(ngModel)]="a.metas['gerDeConfiguracao_prof']" (change)="atualizarAluno(a, 'Gerência de Configuração', 'Prof', a.cpf)"></td>
 </tr>
 </table>
