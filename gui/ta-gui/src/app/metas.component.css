@@ -21,3 +21,15 @@ tr:hover {
   border: none;
   width: 40px;
 }
+
+.media input:hover {
+	cursor: help;
+}
+
+.final {
+  color: purple;
+}
+
+.reprovado {
+  color: red !important;
+}
