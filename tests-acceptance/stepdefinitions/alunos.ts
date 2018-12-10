@@ -10,6 +10,12 @@ let sameName = ((elem, name) => elem.element(by.name('nomelist')).getText().then
 
 let pAND = ((p,q) => p.then(a => q.then(b => a && b)))
 
+var configure = function () {
+  this.setDefaultTimeout(60 * 1000);
+};
+
+module.exports = configure;
+
 defineSupportCode(function ({ Given, When, Then }) {
     Given(/^I am at the students page$/, async () => {
         await browser.get("http://localhost:4200/");

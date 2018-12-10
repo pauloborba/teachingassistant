@@ -8,11 +8,11 @@
    <th>Média</th>
 </tr>
 <tr *ngFor="let a of alunos">
-   <td>{{a.nome}}</td>
+   <td class="name" id="{{a.nome}}name">{{a.nome}}</td>
    <td>{{a.cpf}}</td>
    <td>{{a.email}}</td>
-   <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
-   <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
-   <td class="meta media"><input [(ngModel)]="a.media" title="{{a.mediaTitle}}" class="{{ a.media < 3 ? 'reprovado' : ''}} {{ a.media < 7 ? 'final' : ''}}" readonly></td>
+   <td class="meta"><input class="{{a.nome}}requisitos" [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input class="{{a.nome}}gerDeConfiguracao" [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+   <td class="media" id="{{a.nome}}media" class="meta media"><input [(ngModel)]="a.media" title="{{a.mediaTitle}}" class="{{a.nome}}media {{ a.media < 3 ? 'reprovado' : ''}} {{ a.media < 7 ? 'final' : ''}}" readonly></td>
 </tr>
 </table>
