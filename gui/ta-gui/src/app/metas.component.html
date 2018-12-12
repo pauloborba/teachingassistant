@@ -5,6 +5,10 @@
    <th>e-mail</th>
    <th>Requisitos</th>
    <th>Gerência de Configuração</th>
+   <th>Média</th>
+   <th>Nota Exame Final</th>
+   <th>Média Final</th>
+   <th>Situação</th>
 </tr>
 <tr *ngFor="let a of alunos">
    <td>{{a.nome}}</td>
@@ -12,5 +16,9 @@
    <td>{{a.email}}</td>
    <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
    <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+    <td class="meta media"><input [(ngModel)]="a.media" title="{{a.mediaTitle}}" class="{{ a.media < 3 ? 'reprovado' : ''}} {{ a.media < 7 ? 'final' : ''}}" readonly></td>
+     <td class="meta finalExam"><input [(ngModel)]="a.finalExam" readonly></td>
+     <td class="meta finalAverage"><input [(ngModel)]="a.finalAverage" readonly></td>
+   <td class="meta situation"><input [(ngModel)]="a.mediaTitle" title="{{a.mediaTitle}}" class="{{ a.media < 5 ? 'reprovado final' : ''}} {{ a.media >= 5 ? 'aprovado' : ''}}" readonly></td>
 </tr>
 </table>
