@@ -3,14 +3,26 @@ As a Aluno de uma turma
 I want to adicionar notas de auto-avaliacao para cada uma das metas avaliadas
 So that eu possa me autoavaliar
 
-Scenario: auto-avaliacao
+Scenario: auto-avaliacao bem sucedida
 Given I am in the “auto-avaliacao page” 
 And I see “avaliacao do professor” in the grades table
 And I see no grades in “auto-avaliacao” in the grades table
 When I add grades in “auto-avaliacao”
 Then I can see my grades in “auto-avaliacao”
 
-Scenario: auto-avaliacao
+Scenario: auto-avaliacao bem sucedida
 Given the student “João Vasconcelos” has no grades in “auto-avaliacao”
 When the student add grades in “auto-avaliacao”
 Then the “auto-avaliacao” of “João Vasconcelos” has grades
+
+Scenario: auto-avaliacao mal sucedida
+Given I am in the “auto-avaliacao page” 
+And I see “avaliacao do professor” in the grades table
+And I see no grades in “auto-avaliacao” in the grades table
+When I add grades in “auto-avaliacao” and I put only 6 grades of 10
+Then I see a error message
+
+Scenario: auto-avaliacao mal sucedida
+Given the student “João Vasconcelos” has no grades in “auto-avaliacao”
+When the student add grades in “auto-avaliacao” And 4 grades of 10 are missing
+Then the student can’t add his “auto-avaliacao” grades
