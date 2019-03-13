@@ -1,0 +1,4 @@
+Feature: auto-avaliacao
+As a Aluno de uma turma
+I want to adicionar notas de auto-avaliacao para cada uma das metas avaliadas
+So that eu possa me autoavaliar
