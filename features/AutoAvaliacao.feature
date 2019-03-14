@@ -28,3 +28,14 @@ Scenario: preenchimento mal sucedido da auto-avaliação
   When "João" fill the fields "Requisitos, Gerência de Projeto, Projeto"
         with "MA, MANA"
   Then the "João" goals aren't stored in the system
+
+Scenario: nenhuma auto-avaliação com discrepância
+  Given that the teacher "Paulo" is on the page "Notas da turma 2019.1"
+  And "João" goals are "MANA, MA, MA, MA, MA"
+  And "João" self-ratings are "MA, MA, MA, MA, MA"
+  And "Pedro" goals are "MA, MA, MA, MA, MA"
+  And "Pedro" self-ratings are "MANA, MANA, MANA, MANA, MANA"
+  And "Carol" goals are "MA, MA, MA, MA, MA"
+  And "Carol" self-ratings are "MA, MA, MA, MA, MA"
+  When "Paulo" asks for "Discrepância"
+  Then the "Discrepância" column contains "Ok, Ok, Ok"
