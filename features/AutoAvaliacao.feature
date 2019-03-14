@@ -19,3 +19,4 @@ Feature: self evaluation
 	When I ask the system to save the selected “grades”
 	Then I can see an error message for not selecting all the 
 	“grades”
+    And blablabla.
