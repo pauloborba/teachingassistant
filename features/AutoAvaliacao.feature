@@ -1,7 +1,7 @@
-Feature : Atendimento Recepção-profissional
-As a: Recepcionista
-I Want to: adicionar, remover e modificar a agenda de certo profissional
-So that: O NASE teria mais controle sobre os seus profissionais
+Feature :Self Evaluate
+As a: Student
+I want to: Add grades as good as I think I was at the end of the semester.
+So that: I can compare to the grades that my teacher gave me whenever I want, without the possibility to edit it, and check my discrepancy state.
 
 Scenario: adding self evaluation grades.
 Given: I am at the “evaluate Incomplete” page.
