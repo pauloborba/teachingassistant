@@ -19,3 +19,10 @@ Feature: self evaluation
 	When I ask the system to save the selected “grades”
 	Then I can see an error message for not selecting all the 
 	“grades”
+
+    Scenario: Check list of variance with no variance
+        Given I am logged as a “Teacher”
+        And  There are no “variance” between “student’s grades” and
+        “teacher’s grade”
+        When I try to check the “variance list”
+        Then I can see an error message
