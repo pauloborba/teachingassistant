@@ -10,7 +10,7 @@ Scenario: preenchimento bem sucedido da auto-avaliação
   Then a confirmation message is displayed
 
 Scenario: preenchimento bem sucedido da auto-avaliação
-  Given that the student "João" doesn't have "self-assessment" goals
+  Given that the student "João" doesn't have "auto-avaliação" goals
         registered in the system
   When "João" fill the fields "Requisitos, Gerência de Projetos, Projeto"
         with "MA, MANA, MANA"
@@ -23,7 +23,7 @@ Scenario: preenchimento mal sucedido da auto-avaliação
   Then a error message is displayed
 
 Scenario: preenchimento mal sucedido da auto-avaliação
-  Given that the student "João" doesn't have "self-assessment" goals
+  Given that the student "João" doesn't have "auto-avaliação" goals
         registered in the system
   When "João" fill the fields "Requisitos, Gerência de Projeto, Projeto"
         with "MA, MANA"
