@@ -11,3 +11,11 @@ Feature: self evaluation
         And all the “grades” are selected
         When I ask the system to save the “grades”
         Then I can see a confirmation message
+
+    Scenario: see the error message for saving the self-evaluation
+	Given I am logged as a “student”
+	And I am at the “self-evaluating” page
+	And not all “grades” are selected
+	When I ask the system to save the selected “grades”
+	Then I can see an error message for not selecting all the 
+	“grades”
