@@ -26,3 +26,10 @@ Feature: self evaluation
         “teacher’s grade”
         When I try to check the “variance list”
         Then I can see an error message
+
+    Scenario: Check list of variance
+	Given I am logged as a “Teacher”
+	And one-third of the “students” have “variance”
+	When I try to see the “variance list”
+	Then the “variance list” is shown with “1” quantity, “33” percent
+	and the “student’s grade” 
