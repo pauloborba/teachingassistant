@@ -24,5 +24,6 @@ Then  I can see no discrepancy messages or signs on screen
 Scenario: Grades analysing with discrepancy
 Given I am at “Grades” page
 When I look at the grades table
+And (ajuste de erro)
 Then I can see one discrepancy message or sign on screen indicating evaluation discrepancy for one student
 
