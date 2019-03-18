@@ -15,6 +15,6 @@ And é atribuída a nota “MA” para a meta “Entender conceitos de gerência
 Then o sistema registrou a nota “MA” para a meta “Entender conceitos de requisitos”.
 And a nota “MA” para a meta “Especificar requisitos com qualidade”
 And a nota “MA” para a meta “Entender conceitos de gerência de configuração”
-
+Then
 
 
