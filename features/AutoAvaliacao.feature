@@ -19,3 +19,15 @@ And i send
 And it is successfully send
     Then the grades are added to the system 
 
+Scenario:Empty goal
+    Given the student “Arthur Castro” grades page
+    When one of the grades isn’t filled in
+	And i send
+    Then i am shown a error page
+
+Scenario:Empty goal
+    Given the student “Arthur Castro” grades page
+    When one of the grades isn’t filled in
+	And i send
+    Then the grades are not added to the system  
+
