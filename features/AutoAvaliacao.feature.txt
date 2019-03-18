@@ -25,4 +25,4 @@ Then I see a error message
 Scenario: auto-avaliacao mal sucedida
 Given the student “João Vasconcelos” has no grades in “auto-avaliacao”
 When the student add grades in “auto-avaliacao” And 4 grades of 10 are missing
-Then the student can’t add his “auto-avaliacao” grades
+Then the student can’t add his “auto-avaliacao” grades while the 4 grades are not added
