@@ -1,4 +1,4 @@
-Feature: Auto-avaliação
+Feature: Auto-Avaliação
     Como um estudante
     Eu quero atribuir o conceito nas metas 
     Para que seja possível haver uma comparação entre os conceitos submetidos por mim e o professor, fazendo uma possível conciliação de interesses.
@@ -21,4 +21,21 @@ And ainda não foi inserido uma auto avaliação para o aluno “Adriano”
 When eu envio as metas “MA”, “MA” E “MA”  
 Then o sistema retorna uma mensagem de sucesso 
 And guarda os valores “MA”, “MA” e “MA” para o aluno “Adriano” 
+
+GUI:
+Scenario: Inserindo auto-avaliação.
+Given que eu estou na página  “auto-avaliação”
+And eu vejo o nome “Jimi”
+And ainda não foi feita nenhuma auto-avaliação
+When eu envio as metas “MA”, “-” , “MPA”
+Then eu recebo uma mensagem de que a avaliação não foi bem sucedida 
+And sou direcionado para a mesma página “auto-avaliação”.
+
+Service :
+Scenario: Inserindo auto-avaliação.
+Given que eu estou na página de “auto-avaliação”
+And ainda não foi inserido uma auto-avaliação para o aluno “Jimi”
+When eu envio as avaliações “MA”, “-” , “MPA”
+Then o sistema retorna uma mensagem de erro
+And não salva as metas inseridas.
 
