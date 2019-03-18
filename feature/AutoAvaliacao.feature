@@ -20,3 +20,11 @@ And você vê os “conceitos” fornecido por você está “mal preenchido”
 When preencho menos que o total de conceitos, de acordo com minha opinião pra compará-los
 And confirmo os “conceitos”
 Then recebo uma “mensagem” de comparação de conceito inválido
+
+Scenario: Lista de alunos discrepantes com discrepância inferior a 25%
+Given que você está na página de “Lista de avaliação discrepante”.
+And você vê que o “Lucas Mendonça” têm porcentagem de discrepância inferior ao permitido
+And você vê que a porcentagem corresponde a ⅕ das metas
+And você vê que a quantidade de alunos com discrepância superior ao mínimo valor é 0 estudantes
+When apenas “ignoro” e “confirmo” a lista de discrepantes
+Then recebo uma “mensagem” de lista finalizada com sucesso
