@@ -34,3 +34,4 @@ Feature: self evaluation
 	When I try to see the “variance list”
 	Then the “variance list” is shown with “1” quantity, “33” percent
 	and the “student’s grade” 
+    And I fixed this scenario in this branch
