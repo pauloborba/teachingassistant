@@ -20,3 +20,4 @@ And você vê os “conceitos” fornecido por você está “mal preenchido”
 When preencho menos que o total de conceitos, de acordo com minha opinião pra compará-los
 And confirmo os “conceitos”
 Then recebo uma “mensagem” de comparação de conceito inválido
+And ajuste feito
