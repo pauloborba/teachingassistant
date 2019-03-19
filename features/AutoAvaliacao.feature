@@ -25,3 +25,12 @@ And: I want to check Josué discrepancy state.
 And: Josué have ⅕ of evaluation higher than the teacher (of 5 metas)
 When: I check the last column of the list in Josué Line
 Then: I am able to check “the discrepancy state” of Josué, and it says that he is not in this state in blue colored letter.[1 de 5 metas]
+
+Scenario: Check “students discrepancy state”.
+Given: I am at the “Students list of a class” page which have only 3 students.
+And: I have already evaluated the students.
+And: The students have already self-evaluated.
+And: 1 of the students is in discrepancy state.
+When: I check the last column of the list and the last line.
+Then: I am able to check “the discrepancy state” of the students, which one of them is colored in red in the last column.
+And: I am able to see the percentage of discrepancy students (33%), the quantity of them (1) and the total of students in class (3)
