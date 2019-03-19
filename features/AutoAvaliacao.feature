@@ -43,7 +43,7 @@ And: there are no other students on the list
 When: I select the “Confirm grades” option
 Then: I can see an error message
 
-Scenario: Confirming grades with no discrepancy 
+Scenario: Confirming grades with discrepancy 
 Given: I am logged as “Professor” at the “self evalution” page
 And: I see a list of the students of my “ESS” class
 And: I can see student “João” evaluated himself each of the goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” with, “MA”, “MPA” “MANA”, “MPA”, “MA”
