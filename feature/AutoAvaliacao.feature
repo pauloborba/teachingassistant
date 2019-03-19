@@ -39,3 +39,4 @@ And você vê que há apenas 1 estudante de 3 com discrepância.
 When verifico os “detalhes” da discrepancia
 And analiso com mais cuidado a auto-avaliação do aluno
 Then recebo uma “mensagem” de lista finalizada com sucesso
+And Mudança significativa
