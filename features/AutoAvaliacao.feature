@@ -29,3 +29,4 @@ And: i see the the grades for the goals “Entender conceitos de requisitos”, 
 And: the teacher evaluation for the goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração” are “MANA” “MANA” “MANA”
 When: I fill my goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração” with “MA”, “MPA”, “-” respectively
 Then: I can see an error message
+Tehn: eu já coloquei o then pq tão mandand eu botar outro?
