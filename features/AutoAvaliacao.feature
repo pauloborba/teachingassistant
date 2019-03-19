@@ -16,3 +16,4 @@ And: The teacher have already “evaluated before”.
 When: I “add grade” to some goals
 Then: I am at the “evaluate Incomplete” page
 And: It asks me to fill the blanks, so that can save the progress, else, all the progress will be worthless.
+And: The stakeholder asked this step
