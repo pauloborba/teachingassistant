@@ -16,3 +16,12 @@ And: The teacher have already “evaluated before”.
 When: I “add grade” to some goals
 Then: I am at the “evaluate Incomplete” page
 And: It asks me to fill the blanks, so that can save the progress, else, all the progress will be worthless.
+
+Scenario: Check “student discrepancy state”.
+Given: I am at the “Students list of a class” page.
+And: I have already evaluated the students.
+And: The students have already self-evaluated.
+And: I want to check Josué discrepancy state.
+And: Josué have ⅕ of evaluation higher than the teacher (of 5 metas)
+When: I check the last column of the list in Josué Line
+Then: I am able to check “the discrepancy state” of Josué, and it says that he is not in this state in blue colored letter.[1 de 5 metas]
