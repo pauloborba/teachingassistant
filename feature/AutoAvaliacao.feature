@@ -28,3 +28,13 @@ And você vê que a porcentagem corresponde a ⅕ das metas
 And você vê que a quantidade de alunos com discrepância superior ao mínimo valor é 0 estudantes
 When apenas “ignoro” e “confirmo” a lista de discrepantes
 Then recebo uma “mensagem” de lista finalizada com sucesso
+
+Scenario: Lista de alunos discrepantes havendo alguma discrepância.
+Given que você está na página de “Lista de avaliação discrepante”.
+And você vê que o “Lucas Mendonça” têm porcentagem de discrepância é igual à 25%
+And você vê que a porcentagem corresponde a 1/4 das metas
+And você vê que a quantidade de alunos com discrepância superior ao mínimo valor é 1 estudantes.
+And você vê que há apenas 1 estudante de 3 com discrepância.
+When verifico os “detalhes” da discrepancia
+And analiso com mais cuidado a auto-avaliação do aluno
+Then recebo uma “mensagem” de lista finalizada com sucesso
