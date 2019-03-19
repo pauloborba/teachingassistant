@@ -9,3 +9,10 @@ And: The teacher have already “evaluated before”.
 When: I “add grade” to every single goal
 Then: I am at the “evaluate Complete” page
 And: I can’t evaluate again, but can compare the grades.
+
+Scenario: adding self evaluation grades.
+Given: I am at the “evaluate Incomplete” page.
+And: The teacher have already “evaluated before”.
+When: I “add grade” to some goals
+Then: I am at the “evaluate Incomplete” page
+And: It asks me to fill the blanks, so that can save the progress, else, all the progress will be worthless.
