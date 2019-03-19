@@ -15,3 +15,17 @@ And: i see the the grades for the goals “Entender conceitos de requisitos”, 
 And: the teacher evaluation for the goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração” are “MANA” “MANA” “MANA”
 When: I fill my goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração” with “MA”, “MPA”, “MANA” respectively
 Then: I can see both my evaluations and my teacher’s correctly placed in each goal.
+
+Scenario (serviço): Trying self evaluation with missing grades for at least on goal
+Given: I am want to evaluate my goals
+When: I fill my goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração” with “MA”, “MPA”, “” respectively
+Then: the system does not store the grades due to missing concept for 
+“Entender conceitos de gerência de configuração”
+
+Scenario (GUI) Trying self evaluation with missing grades for at least on goal
+
+Given: I am at the “self evaluation” page
+And: i see the the grades for the goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração” are “”, “”, “”
+And: the teacher evaluation for the goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração” are “MANA” “MANA” “MANA”
+When: I fill my goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração” with “MA”, “MPA”, “-” respectively
+Then: I can see an error message
