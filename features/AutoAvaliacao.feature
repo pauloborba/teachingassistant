@@ -29,6 +29,7 @@ And Avalio o campo “Student” de “Goal 2” com “MPA”
 And O campo “Student” de “Goal 3” permanece em branco.
 And Completo minha autoavaliação
 Then Aparece a mensagem de erro “Incomplete Self-Evaluation” na página “página de autoavaliação”.
+And passo adicional da questao 7
 
 
 Scenario: Auto-avaliação incompleta
@@ -37,4 +38,5 @@ And Está na “página de autoavaliação”.
 When A atividade “Goal 3” no campo reservado para “Student” não é preenchida pelo usuário.
 Then O sistema não permite não permite que a avaliação seja salva.
 And aparece a mensagem de erro “Incomplete Self-Evaluation”.
+And passo adicional da questao 7
 
