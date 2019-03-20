@@ -21,3 +21,13 @@ When eu preencher os campos de auto-avaliação
 And eu deixei pelo menos um campo em branco
 Then uma mensagem de preenchimento má sucedido aparece
 
+Cenário de GUI:
+Cenário: Nenhuma discrepância
+Given estou na página de auto-avaliações discrepantes
+And preencho o conceitos das metas de trës alunos
+And um aluno tem conceito superior ao do professor em 1 de 5 metas
+And outro tem conceito inferior ao do professor em 1 de 5 metas
+And outro tem conceitos iguais ao do professor
+When seleciono mostrar auto-avaliações discrepantes
+Then vejo uma mensagem dizendo que não existe nenhuma auto-avaliação discrepante aparece
+
