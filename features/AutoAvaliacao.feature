@@ -46,6 +46,14 @@ When eu observo os campos “tabela de discrepância” e “alunos com discrep�
 Then eu vejo o campo “alunos com discrepância” com “0%”
 And não aparece nenhum aluno na “tabela de discrepância”.
 
+Scenario: Tabela de discrepância
+Given que estou na tela “tabela de discrepância”
+And existe no total três alunos “Pedro”, “André” e “Jakob”, onde “Jakob”  tem avaliação “MA”, “MANA” e “MA” auto-avaliação “MA”, “MPA” e “MA”
+When  eu observo os campos “tabela de discrepância” e “alunos com discrepância”
+Then eu vejo o campo “alunos com discrepância” com “33%”
+And aparece um aluno na“tabela de discrepância”  com o nome “Jakob” que tem “discrepância” “33%”.
+
+
 
 
 
