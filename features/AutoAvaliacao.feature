@@ -20,7 +20,7 @@ And vejo todos os campos não preenchidos
 When eu preencher os campos de auto-avaliação
 And eu deixei pelo menos um campo em branco
 Then uma mensagem de preenchimento má sucedido aparece
-
+a
 Cenário de GUI:
 Cenário: Nenhuma discrepância
 Given estou na página de auto-avaliações discrepantes
