@@ -27,3 +27,4 @@ When I look at the grades table
 And (ajuste de erro)
 Then I can see one discrepancy message or sign on screen indicating evaluation discrepancy for one student
 
+pegueno ajuste
