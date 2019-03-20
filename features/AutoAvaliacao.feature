@@ -1,4 +1,4 @@
-Feature:adicionar auto-avaliação
+﻿Feature:adicionar auto-avaliação
 	As a student
 	I want to evaluate my goals 
 	So that i have parameters of how aware am I of the concepts studied
@@ -30,4 +30,6 @@ Scenario:Empty goal
     When one of the grades isn’t filled in
 	And i send
     Then the grades are not added to the system  
+    And an error message is shown
+    saying that it wasnt completely filed.
 
