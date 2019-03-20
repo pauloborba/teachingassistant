@@ -38,3 +38,5 @@ And: I am able to see the percentage of discrepancy students (33%), the quantity
 And: The stakeholder asked for this change, in order to do the next exercice
 
 Commit 1
+novo cenário de visualização de percentual de discrepância
+pequeno ajuste no novo cenário de visualização de percentual de discrepância
