@@ -77,4 +77,11 @@ Scenario:show discrepancy when there is no discrepancy
 	Then I see the field “Alunos Discrepantes” as 0 
 	And the field “porcentagem de discrepancia” as 0% 
 	And “Alunos” table is empty
+Scenario:show discrepancy when there is discrepancy
+	Given the grades of the 3 students in the system where the student “Arthur Castro” has discrepancy
+	When I access the discrepancy page
+Then I see the field “Alunos Discrepantes” as 1 
+And the field “porcentagem de discrepancia” as 33% 
+And “Alunos” table has “Arthur Castro”
+
 
