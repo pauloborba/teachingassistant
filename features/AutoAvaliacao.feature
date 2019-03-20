@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-﻿Feature: Auto-avaliação
-=======
 ﻿Feature: Auto-Avaliação
->>>>>>> 92f89c4e441081fed74f1b8947ae62062702d20d
+
     Como um estudante
     Eu quero atribuir o conceito nas metas 
     Para que seja possível haver uma comparação entre os conceitos submetidos por mim e o professor, fazendo uma possível conciliação de interesses.
@@ -43,22 +40,8 @@ When eu envio as avaliações “MA”, “-” , “MPA”
 Then o sistema retorna uma mensagem de erro
 And não salva as metas inseridas
 And redireciona para página "auto-avaliação".
-<<<<<<< HEAD
+a
+a
+a
 
-Scenario: Tabela de discrepância
-Given que estou na tela “tabela de discrepância”
-And existe no total um aluno de noma “Pedro” que tem avaliação “MA”, “MA” e “MA” auto-avaliação “MA”, “MPA” e “MA”
-When eu observo os campos “tabela de discrepância” e “alunos com discrepância”
-Then eu vejo o campo “alunos com discrepância” com “0%”
-And não aparece nenhum aluno na “tabela de discrepância”.
-
-Scenario: Tabela de discrepância
-Given que estou na tela “tabela de discrepância”
-And existe no total três alunos “Pedro”, “André” e “Jakob”, onde “Jakob”  tem avaliação “MA”, “MANA” e “MA” auto-avaliação “MA”, “MPA” e “MA”
-When  eu observo os campos “tabela de discrepância” e “alunos com discrepância”
-Then eu vejo o campo “alunos com discrepância” com “33%”
-And aparece um aluno na“tabela de discrepância”  com o nome “Jakob” que tem “discrepância” “33%”.
-
-=======
->>>>>>> 92f89c4e441081fed74f1b8947ae62062702d20d
 
