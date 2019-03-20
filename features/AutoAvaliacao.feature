@@ -39,3 +39,20 @@ And um de três alunos possui conceito superior em pelo menos 25% das metas aval
 When seleciono mostrar auto-avaliações discrepantes
 Then vejo esse aluno na lista
 
+Cenário de GUI:
+Cenário: Nenhuma discrepância
+Given estou na página de auto-avaliações discrepantes
+And preencho o conceitos das metas de trës alunos
+And um aluno tem conceito superior ao do professor em 1 de 5 metas
+And outro tem conceito inferior ao do professor em 1 de 5 metas
+And outro tem conceitos iguais ao do professor
+When seleciono mostrar auto-avaliações discrepantes
+Then vejo uma mensagem dizendo que não existe nenhuma auto-avaliação discrepante aparece
+
+Cenário: Discrepância em 1 de 3 alunos
+Given estou na página de auto-avaliações discrepantes
+And preencho o conceitos das metas de trës alunos
+And um de três alunos possui conceito superior em pelo menos 25% das metas avaliadas em relação aos conceitos atribuídos pelo professor
+When seleciono mostrar auto-avaliações discrepantes
+Then vejo esse aluno na lista
+
