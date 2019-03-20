@@ -36,3 +36,5 @@ When: I check the last column of the list and the last line.
 Then: I am able to check “the discrepancy state” of the students, which one of them is colored in red in the last column.
 And: I am able to see the percentage of discrepancy students (33%), the quantity of them (1) and the total of students in class (3)
 And: The stakeholder asked for this change, in order to do the next exercice
+
+Commit 1
