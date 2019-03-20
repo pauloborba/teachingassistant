@@ -1,4 +1,4 @@
-Feature: Auto-Avaliação
+﻿Feature: Auto-Avaliação
     Como um estudante
     Eu quero atribuir o conceito nas metas 
     Para que seja possível haver uma comparação entre os conceitos submetidos por mim e o professor, fazendo uma possível conciliação de interesses.
@@ -37,5 +37,6 @@ Given que eu estou na página de “auto-avaliação”
 And ainda não foi inserido uma auto-avaliação para o aluno “Jimi”
 When eu envio as avaliações “MA”, “-” , “MPA”
 Then o sistema retorna uma mensagem de erro
-And não salva as metas inseridas.
+And não salva as metas inseridas
+And redireciona para página "auto-avaliação".
 
