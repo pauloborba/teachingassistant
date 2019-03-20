@@ -1,4 +1,4 @@
-﻿Feature: Auto-Avaliação
+﻿Feature: Auto-avaliação
     Como um estudante
     Eu quero atribuir o conceito nas metas 
     Para que seja possível haver uma comparação entre os conceitos submetidos por mim e o professor, fazendo uma possível conciliação de interesses.
@@ -53,9 +53,5 @@ And existe no total três alunos “Pedro”, “André” e “Jakob”, onde �
 When  eu observo os campos “tabela de discrepância” e “alunos com discrepância”
 Then eu vejo o campo “alunos com discrepância” com “33%”
 And aparece um aluno na“tabela de discrepância”  com o nome “Jakob” que tem “discrepância” “33%”.
-
-
-
-
 
 
