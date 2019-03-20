@@ -1,4 +1,4 @@
-Feature: Auto-Avaliação
+﻿Feature: Auto-Avaliação
     Como um estudante
     Eu quero atribuir o conceito nas metas 
     Para que seja possível haver uma comparação entre os conceitos submetidos por mim e o professor, fazendo uma possível conciliação de interesses.
@@ -38,4 +38,15 @@ And ainda não foi inserido uma auto-avaliação para o aluno “Jimi”
 When eu envio as avaliações “MA”, “-” , “MPA”
 Then o sistema retorna uma mensagem de erro
 And não salva as metas inseridas.
+
+Scenario: Tabela de discrepância
+Given que estou na tela “tabela de discrepância”
+And existe no total um aluno de noma “Pedro” que tem avaliação “MA”, “MA” e “MA” auto-avaliação “MA”, “MPA” e “MA”
+When eu observo os campos “tabela de discrepância” e “alunos com discrepância”
+Then eu vejo o campo “alunos com discrepância” com “0%”
+And não aparece nenhum aluno na “tabela de discrepância”.
+
+
+
+
 
