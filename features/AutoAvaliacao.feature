@@ -40,3 +40,38 @@ Then O sistema não permite não permite que a avaliação seja salva.
 And aparece a mensagem de erro “Incomplete Self-Evaluation”.
 And passo adicional da questao 7
 
+Scenario: Não há discrepância.
+Given Estou logado como “Professor”
+And estou na página “avaliações”.
+When Na atividade “Activity 1”  do estudante “Paulo”, o campo “Teacher” está preenchido com “MPA” e o campo “Student” está preenchido com “MA”
+And Na atividade “Activity 2”  do estudante “Paulo”, o campo “Teacher” está preenchido com “MPA” e o campo “Student” está preenchido com “MA”
+And Na atividade “Activity 3”  do estudante “Paulo”, o campo “Teacher” está preenchido com “MPA” e o campo “Student” está preenchido com “MPA”
+And Na atividade “Activity 4”  do estudante “Paulo”, o campo “Teacher” está preenchido com “MPA” e o campo “Student” está preenchido com “MPA”.
+And Na atividade “Activity 5”  do estudante “Paulo”, o campo “Teacher” está preenchido com “MA” e o campo “Student” está preenchido com “MA”
+ And Na atividade “Activity 1”  do estudante “Pedro”, o campo “Teacher” está preenchido com “MPA” e o campo “Student” está preenchido com “MANA”
+And Na atividade “Activity 2”  do estudante “Pedro”, o campo “Teacher” está preenchido com “MA” e o campo “Student” está preenchido com “MPA”
+And Na atividade “Activity 3”  do estudante “Pedro”, o campo “Teacher” está preenchido com “MPA” e o campo “Student” está preenchido com “MANA”
+And Na atividade “Activity 4”  do estudante “Pedro”, o campo “Teacher” está preenchido com “MA” e o campo “Student” está preenchido com “MPA”
+And Na atividade “Activity 5”  do estudante “Pedro”, o campo “Teacher” está preenchido com “MPA” e o campo “Student” está preenchido com “MANA”
+And Na atividade “Activity 1”  do estudante “Gabi”, o campo “Teacher” está preenchido com “MA” e o campo “Student” está preenchido com “MA”
+And Na atividade “Activity 2”  do estudante “Gabi”, o campo “Teacher” está preenchido com “MPA” e o campo “Student” está preenchido com “MPA”
+And Na atividade “Activity 3”  do estudante “Gabi”, o campo “Teacher” está preenchido com “MA” e o campo “Student” está preenchido com “MA”
+And Na atividade “Activity 3”  do estudante “Gabi”, o campo “Teacher” está preenchido com “MA” e o campo “Student” está preenchido com “MA”
+And Na atividade “Activity 3”  do estudante “Gabi”, o campo “Teacher” está preenchido com “MPA” e o campo “Student” está preenchido com “MPA”
+And Eu quero ver a “variância” dos alunos “Paulo”
+And Eu quero ver a “variância” dos alunos “Pedro”
+And Eu quero ver a “variância” dos alunos “Gabi”
+Then Sou redirecionado para a página “lista”.
+”.
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
