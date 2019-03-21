@@ -37,3 +37,6 @@ blablabla
 
     adicionando coisa a mais
     adicionando de novo
+    
+    Scenario: percentual de discrepancia
+        given I am logged as a student
