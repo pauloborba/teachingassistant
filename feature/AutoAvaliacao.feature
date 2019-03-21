@@ -40,4 +40,3 @@ When verifico os “detalhes” da discrepancia
 And analiso com mais cuidado a auto-avaliação do aluno
 Then recebo uma “mensagem” de lista finalizada com sucesso
 And Mudança significativa
-
