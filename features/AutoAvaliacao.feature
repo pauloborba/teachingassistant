@@ -35,7 +35,4 @@ blablabla
 	Then the “variance list” is shown with “1” quantity, “33” percent
 	and the “student’s grade” 
 
-
-
-
-
+    adicionando coisa a mais
