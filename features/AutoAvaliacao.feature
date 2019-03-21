@@ -27,7 +27,7 @@ Feature: self evaluation
         “teacher’s grade”
         When I try to check the “variance list”
         Then I can see an error message
-
+blablabla
     Scenario: Check list of variance
 	Given I am logged as a “Teacher”
 	And one-third of the “students” have “variance”
