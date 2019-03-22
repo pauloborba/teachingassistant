@@ -50,3 +50,15 @@ Then I can see “Joao” with “20%” discrepancy
 And I can see “Daniel” with “0%” discrepancy
 And I can see “Caio” with “0%” discrepancy
 And I can see an empty list of students with discrepancy higher than “30%”
+
+Scenario checking student goals discrepancy
+Given I’m at the “Evaluation discrepancy” page
+And I can see “Joao”, “Daniel”, “Caio” discrepancy displayed 
+And I see the student “Joao” with evaluation “MPA, MPA, MPA, MA, MA” and self-evaluation “MA, MA, MA, MA, MA”
+And I see the student “Daniel” with evaluation “MA, MA, MA, MA, MA” and self-evaluation “MPA, MPA, MPA, MPA, MPA”
+And I see the student “Caio” with evaluation “MA, MA, MA, MA, MA” and self-evaluation “MA, MA, MA, MA, MA”
+When I access the discrepancy list of students
+Then I can see “Joao” with “40%” discrepancy
+And I can see “Daniel” with “0%” discrepancy
+And I can see “Caio” with “0%” discrepancy
+And I can see the discrepancy list containing “Joao”
