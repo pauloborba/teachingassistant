@@ -60,7 +60,7 @@ alteração
 maior 
 que precisou ser feita.
 sou um novo commit da questao 14.
-
+novo cenário de visualização de percentual de discrepância
 
 
 
