@@ -7,6 +7,7 @@ GUI:
 Scenario doing self-evaluation
 Given I’m at the “Student self-evaluation” page
 And I see no grades for the student “Daniel” learning goals
+And I'm connected with the user "Daniel" password "weak_password"
 When I assign “MA, MA, MA” for “Daniel” goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”
 And I submit my self-evaluation
 Then I’m at the “Student self-evaluation” page
