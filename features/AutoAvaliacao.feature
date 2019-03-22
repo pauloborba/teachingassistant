@@ -89,3 +89,10 @@ Then Sou redirecionado para a página “lista”.
 And No campo “Alunos” há o aluno “Pedro”.
 And nos campo “total” há o número “1”.
 And no campo “%” há o número “33,3%”.
+
+Scenario: Novo cenário para a questão 15
+Given Sou o aluno "Ruy Ovidio".
+And estou fazendo o exercicio de gerencia de configuração.
+And estou na questão 15.
+When é pedido para eu fazer um novo cenário.
+Then O cenário é feito por mim.
