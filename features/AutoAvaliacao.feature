@@ -87,5 +87,6 @@ Scenario:show discrepancy when there is discrepancy
 	When I access the discrepancy page
     Then I see the field “Alunos Discrepantes” as 1 
     And the field “porcentagem de discrepancia” as 33% 
+kkkkkkkkkkkkkk
 
 
