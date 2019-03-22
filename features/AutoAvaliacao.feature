@@ -89,4 +89,7 @@ Scenario:show discrepancy when there is discrepancy
     And the field “porcentagem de discrepancia” as 33% 
 kkkkkkkkkkkkkk
 segundo commit
+aletração discrepantes 1
+aletração discrepantes 2
+
 
