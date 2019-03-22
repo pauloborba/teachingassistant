@@ -91,5 +91,5 @@ kkkkkkkkkkkkkk
 segundo commit
 aletração discrepantes 1
 aletração discrepantes 2
-
-
+novo cenário de visualização de percentual de discrepância
+☻peek a boo
