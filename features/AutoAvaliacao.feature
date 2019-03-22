@@ -36,4 +36,4 @@ Given estou na página de auto-avaliações discrepantes
 And preencho o coneitos das metas de trës alunos
 And um de três alunos possui conceito superior em pelo menos 25% das metas avaliadas em relação aos conceitos atribuídos pelo professor
 When seleciono para mostrar auto-avaliações discrepantes
-Then vejo esse aluno na lista
+Then posso ver esse aluno na lista
