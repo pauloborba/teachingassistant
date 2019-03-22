@@ -90,4 +90,4 @@ And Eu quero ver a variância dos alunos “Gabi”
 Then Sou redirecionado para a página “lista”.
 And No campo “Alunos” há o aluno “Pedro”.
 And nos campo “total” há o número “1”.
-And no campo “%” há o número “33,3%”.
+
