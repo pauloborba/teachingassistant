@@ -36,7 +36,7 @@ And o professor atribuiu para a aluna “Maria Leite” as notas “MANA,MANA,MA
 And as auto-avaliações já foram cadastradas para o aluno “Enzo Filho” como “MA,MPA,MA,MA,MA” para as metas “A,B,C,D,E”
 And o professor atribuiu para o aluno “Enzo Filho” as notas “MA,MPA,MA,MA,MA” para as metas “A,B,C,D,E”
 When vejo as informações sobre discrepâncias
-Then percebo “Quantidade de discrepâncias” como “1”
+Then percebo “Quantidade de discrepâncias” como “4"
 And “Alunos” como “João Silva”
 
 
