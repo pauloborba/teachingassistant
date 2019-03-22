@@ -59,6 +59,7 @@ And aparece um aluno na“tabela de discrepância”  com o nome “Jakob” que
 alteração
 maior 
 que precisou ser feita.
+sou um novo commit da questao 14.
 
 
 
