@@ -38,3 +38,4 @@ Scenario self-evaluation
 Given there is no grades assigned to the student “Daniel” learning goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”
 When he doesn’t assign a grade for “Entender conceitos de requisitos” goal
 Then the system doesn’t accept the self-evaluation submission
+And an error message is sent to user
