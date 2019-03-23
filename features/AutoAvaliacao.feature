@@ -5,6 +5,7 @@ Scenario: Realizando Auto-avaliação com ausência de meta
 	And: coloco “MA” em todas notas, menos em uma meta
 	Then: o botão de enviar notas não é liberado
 	And: não consigo enviar as notas para o sistema
+	And: o sistem avisa que falta nota a ser preenchida
 
 
 Scenario: Nenhuma discrepância nas auto-avaliações dos alunos
