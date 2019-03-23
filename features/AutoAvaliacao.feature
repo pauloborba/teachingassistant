@@ -19,7 +19,7 @@ Scenario: Discrepância nas auto-avaliações de alunos
 			Given: professor “borba” está devidamente logado
 			And: está na página “Disciplinas”
 			When: quando clica em uma de suas disciplinas ministradas “ESS”
-			Then: aparece um balão em destaque com o percentual de “33%”, a quantidade “1”, e a lista de alunos “Henrique Andrade Mariz” que estão com auto-avaliações discrepantes
+			Then: aparece um balão em destaque com o percentual “33%”, a quantidade “1”, e a lista de alunos “Henrique Andrade Mariz” que estão com auto-avaliações discrepantes
 
 Service Scenario: Armazenamento de auto-avaliação com ausência de Meta
 	Given: aluno “Henrique” devidamente logado
