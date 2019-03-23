@@ -7,3 +7,11 @@ Scenario: Realizando Auto-avaliação com ausência de meta
 	And: não consigo enviar as notas para o sistema
 	And: o sistema avisa que está faltando uma nota
 
+
+Scenario: Nenhuma discrepância nas auto-avaliações dos alunos
+	Given: professor “borba” está devidamente logado
+	And: está na página “Disciplinas”
+	When: quando clica em uma de suas disciplinas ministradas “ESS”
+	Then: aparece um pop-up com um feedback positivo 
+	And: não houve nenhum aluno com auto-avaliação discrepante
+
