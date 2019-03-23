@@ -15,3 +15,8 @@ Scenario: Nenhuma discrepância nas auto-avaliações dos alunos
 	Then: aparece um pop-up com um feedback positivo 
 	And: não houve nenhum aluno com auto-avaliação discrepante
 
+Scenario: Discrepância nas auto-avaliações de alunos
+			Given: professor “borba” está devidamente logado
+			And: está na página “Disciplinas”
+			When: quando clica em uma de suas disciplinas ministradas “ESS”
+			Then: aparece um balão em destaque com o percentual “33%”, a quantidade “1”, e a lista de alunos “Henrique Andrade Mariz” que estão com auto-avaliações discrepantes
