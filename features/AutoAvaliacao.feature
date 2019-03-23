@@ -19,3 +19,5 @@ Scenario: Discrepância nas auto-avaliações de alunos
 			And: está na página “Disciplinas”
 			When: quando clica em uma de suas disciplinas ministradas “ESS”
 			Then: aparece um balão em destaque com o percentual “33%”, a quantidade “1”, e a lista de alunos “Henrique Andrade Mariz” que estão com auto-avaliações discrepantes
+
+	And: ve se é cabível tomar alguma medida sobre esse dado
