@@ -39,3 +39,4 @@ Scenario: há discrepância
   When I see the field "Alunos com discrepâncias"
   Then the value of the field "Alunos com discrepâncias" is "50%"
   And I see the field "Lista de alunos com discrepâncias" contains the student whose name is "Allan"
+  And I see the field "Lista de alunos com discrepâncias" does not contains the student whose name is "Alice"
