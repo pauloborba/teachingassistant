@@ -1,1 +1,2 @@
-Criação de gráficos
+Criacao dos graficos
+(cenarios de preenchimento bem sucedido)
