@@ -40,7 +40,7 @@ And vejo as notas que o âJuliano2â preencheu âMANAâ, âM
 And vejo as notas que o âJuliano3â preencheu âMAâ, âMAâ, âMAâ em âRequisitosâ, âGerÃªncia de ConfiguraÃ§Ã£oâ e  âValidaÃ§Ã£o e Testeâ da disciplina âESSâ na tela de auto-avaliaÃ§Ã£o
 
 
-Scenario: Discrepância  da Autoavaliação das metas de uma dada disciplina 
+Scenario: Discrepância  da Autoavaliação das metas de uma dada disciplina [supondo que eu corrigi o que o stakeholders pediram aqui]
 Given eu loguei com meu cpf “12312312312” e nome “Juliano”
 And que estou na tela Discrepância de auto-avaliação da disciplina “ESS”
 And os alunos ja preencheram as notas anteriormente
