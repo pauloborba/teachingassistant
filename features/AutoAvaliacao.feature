@@ -44,3 +44,4 @@ Scenario: há discrepância
 
 Ta ta ta
    É o barulho que ela faz
+    Quando começa a quicar
