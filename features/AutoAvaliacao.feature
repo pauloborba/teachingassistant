@@ -26,4 +26,14 @@ Dado que eu estou na página de Discrepâncias,
 E eu estou vendo 0 alunos em “Quantidade”,
 Quando eu mudo para “Lista”,
 Então não aparece nenhum aluno na tela.
+GUI Cenário: vendo porcentagem quando há discrepâncias.
+Dado que eu estou na página de Discrepâncias, 
+E eu estou vendo 1 aluno em “Quantidade”,
+Quando eu mudo para “Porcentagem”,
+Então eu vejo 33% na tela
+GUI Cenário: vendo a lista de alunos quando há discrepâncias.
+Dado que eu estou na página de Discrepâncias, 
+E eu estou vendo 1 aluno em “Quantidade”,
+Quando eu mudo para “Lista”,
+Então o nome desse aluno na tela.
 
