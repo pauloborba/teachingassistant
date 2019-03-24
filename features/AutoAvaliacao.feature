@@ -18,7 +18,7 @@ Scenario: avaliação mal sucedida
   And I see the goals
   And I see the professors grades
   And my goals are empty
-  When I add"MA", "MA", "MA", "MA" grades
+  When I add "MA", "MA", "MA", "MA" grades
   Then I am at the "Autoavaliação Page"
   And the goals have not changed
   And the professors grades have not changed
