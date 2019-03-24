@@ -47,4 +47,4 @@ And I add the grade “MPA” for “identificar e resolver necessidades de fato
 And one or more grades are smaller the professor assigned notes
 Then A fail message is shown 
 And the grades are not saved
-And a email is sent to the professor reporting the conflict
+And a cellphone message sent to the professor reporting the conflict
