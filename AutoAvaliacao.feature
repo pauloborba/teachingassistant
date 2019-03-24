@@ -4,3 +4,4 @@ And eu estou logado na página “avaliação do professor”.
 When eu adiciono a avaliação “MA”,”MA”,”MA”,”MA”,”MA” ao “aluno” “Alex Sandro”, cpf “70375774785”.
 new then
 
+Ajustando cenario
