@@ -13,4 +13,4 @@ Given que eu estou no menu das notas de um aluno
 And ele não adicionou uma nota para cada espaço atribuído 
 Or ele não utilizou caracteres válidos
 Or deixou espaços em branco
-Then O preenchimento foi bem sucedido
+Then O preenchimento foi mal sucedido
