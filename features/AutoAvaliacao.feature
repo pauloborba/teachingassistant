@@ -1,7 +1,7 @@
 
 Como um aluno,
 Eu quero adicionar notas de MA MPA e MANA,
-Para que eu possa me auto avaliar.
+Para que eu possa me auto avaliar.   
 
 GUI Cenário: Adicionar uma auto avaliação corretamente.
 Dado que eu estou na página de “notas do aluno”.
