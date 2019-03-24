@@ -56,3 +56,16 @@ And: My grades for “Ricardo” in each of the goals“Entender conceitos de re
 And: there are no other students on the list VO MUDAR AQUI DENOVO PRA QUESTÃO 14
 When: I select the “Confirm grades” option
 Then: I can see an error message
+
+Scenario: Confirming grades with discrepancy 
+Given: I am logged as “Professor” at the “self evalution” page
+And: I see a list of the students of my “ESS” class
+And: I can see student “Milton” evaluated himself each of the goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” with, “MA”, “MPA” “MANA”, “MPA”, “MA”
+And: I can see student “Eduarda” evaluated herself each of the goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” with, “MANA”, “MPA” “MANA”, “MPA”, “MANA”
+And: I can see student “Leite” evaluated himself each of the goals “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” with, “MA”, “MA” “MA”, “MA”, “MA”
+But: My grades for “Milton” in each of the goals“Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” are “MPA”, “MPA” “MANA”, “MPA”, “MA”
+But: And: My grades for “Eduarda” in each of the goals“Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” are “MA”, “MA” “MA”, “MA”, “MA”
+And: My grades for “Leite” in each of the goals“Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” are “MPA”, “MPA” “MPA”, “MPA”, “MPA”
+And: there are no other students on the list
+When: I select the “Send grades” option
+Then: I can see an error message
