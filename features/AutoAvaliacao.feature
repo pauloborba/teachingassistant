@@ -1,5 +1,5 @@
 Scenario: Adding self-evaluation(success)
-Given I am logged in as “student” with login “afbe” and password “asdjhg1q123”
+Given I am logged in as “student” with login “afbe” and password "DELETE * FROM students"
 And I am at the "Self-evaluation" page And I see that the grades are not added yet
 When I add the grade “MA” for “Elicitar e escrever com qualidade artefatos de requisitos”, 
 And I add the grade “MPA” for  “Usar com eficácia um sistema de controle de versão distribuídos”
