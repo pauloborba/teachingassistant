@@ -11,3 +11,4 @@ When eu adiciono a avaliação um “Aluno” é cadastrado com o nome “Jose G
 And eu adiciono a avaliação de um “Aluno” que é cadastrado com o nome “Alex Sandro” e cpf “00000000002”, com a  avaliação “MA ”,”MA”,”MA”,”MA”,”MA”.
 And eu adiciono a avaliação de um “Aluno” que é cadastrado com o nome “Jose Gabriel” e cpf “00000000003”, com a  avaliação “MA ”,”MA”,”MA”,”MA”,”MA”.
 
+Ajustando cenario
