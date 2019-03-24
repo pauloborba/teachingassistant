@@ -16,4 +16,14 @@ corretamente.
 Quando eu peço ao sistema para armazenar as notas no campo de “auto 
 avaliação”,
 Então o sistema salva corretamente as informações.
+GUI Cenário: vendo porcentagem quando não há discrepâncias.
+Dado que eu estou na página de Discrepâncias, 
+E eu estou vendo 0 alunos em “Quantidade”,
+Quando eu mudo para “Porcentagem”,
+Então eu vejo 0% na tela
+GUI Cenário: vendo a lista de alunos quando não há discrepâncias.
+Dado que eu estou na página de Discrepâncias, 
+E eu estou vendo 0 alunos em “Quantidade”,
+Quando eu mudo para “Lista”,
+Então não aparece nenhum aluno na tela.
 
