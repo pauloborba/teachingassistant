@@ -16,4 +16,4 @@ corretamente.
 Quando eu peço ao sistema para armazenar as notas no campo de “auto 
 avaliação”,
 Então o sistema salva corretamente as informações.
-
+Então...
