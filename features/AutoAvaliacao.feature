@@ -37,4 +37,4 @@ Dado que eu estou na página de Discrepâncias,
 E eu estou vendo 1 aluno em “Quantidade”,
 Quando eu mudo para “Lista”,
 Então o nome desse aluno na tela.
-
+ajuste
