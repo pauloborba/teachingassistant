@@ -38,3 +38,4 @@ E eu estou vendo 1 aluno em “Quantidade”,
 Quando eu mudo para “Lista”,
 Então o nome desse aluno na tela.
 ajuste
+outro ajuste
