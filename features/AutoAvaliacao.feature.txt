@@ -22,6 +22,7 @@ And I see no grades in “auto-avaliacao” in the grades table
 When I add grades in “auto-avaliacao” and I put only 6 grades of 10
 Then I see a error message
 
+
 Scenario: auto-avaliacao mal sucedida
 Given the student “João Vasconcelos” has no grades in “auto-avaliacao”
 When the student add grades in “auto-avaliacao” And 4 grades of 10 are missing
