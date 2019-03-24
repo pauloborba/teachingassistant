@@ -42,5 +42,5 @@ Scenario: há discrepância
   And I see the field "Lista de alunos com discrepâncias" does not contains the student whose name is "Alice"
 
 
-
+Ta ta ta
    É o barulho que ela faz
