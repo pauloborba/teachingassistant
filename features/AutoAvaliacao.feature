@@ -17,5 +17,5 @@ Given eu loguei com meu cpf "12312312312" e nome "Juliano"
 And que estou na tela de auto-avaliaçao da disciplina "ESS"
 And o professor já preencheu suas notas
 When eu preencho parcialmente minhas notas, em  "Requisitos ", com "MA",  "Gerência de Configuraçao ", com  "MA" e "Validaçao e Teste" com "" 
-Then tento finalizar minha avaliaçao 
+Then tento finalizar minha avaliaçao (Supondo que faltou esse then - Roteiro Gerencia de Configuracao)
 And recebo uma mensagem de que falta preencher uma nota
