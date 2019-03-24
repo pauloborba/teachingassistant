@@ -25,3 +25,17 @@ Scenario: avaliação mal sucedida
   And my grades are empty
   And I see an error message
   And the professor receives an email with the error message
+
+Scenario: nenhuma discrepância
+  Given I am at the "Discrepâncias Page"
+  And I there's a student named "Alice" whose grades are "MPA", "MA", "MA", "MA", "MA" and self-grades are "MA", "MA", "MA", "MA", "MA"
+  When I see the field "Alunos com discrepâncias"
+  Then the value of the field "Alunos com discrepâncias" is "0%"
+  And I see the field "Lista de alunos com discrepâncias" does not contains the student whose name is "Alice"
+
+Scenario: há discrepância
+  Given I am at the "Discrepâncias Page"
+  And there's a student named "Allan" whoce grades are "MPA", "MPA", "MPA", "MA" and self-grades are "MA", "MA", "MA", "MA", "MA"
+  Whe I see the field "Alunos com discrepâncias"
+  Then the value of the field "Alunos com discrepâncias" is "50%"
+  And I see the field "Lista de alunos com discrepâncias" contains the student whose name is "Allan"
