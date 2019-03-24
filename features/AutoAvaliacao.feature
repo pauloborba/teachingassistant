@@ -20,4 +20,5 @@ And I add the grade “MPA” for  “implementar com qualidade testes de unidad
 And I add the grade “MA” for “projetar e implementar com qualidade features e cenários” 
 Then A fail message is shown 
 And the grades are not saved
+And a email is sent to the professor
 
