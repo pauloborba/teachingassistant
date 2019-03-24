@@ -36,6 +36,6 @@ Scenario: nenhuma discrepância
 Scenario: há discrepância
   Given I am at the "Discrepâncias Page"
   And there's a student named "Allan" whoce grades are "MPA", "MPA", "MPA", "MA" and self-grades are "MA", "MA", "MA", "MA", "MA"
-  Whe I see the field "Alunos com discrepâncias"
+  When I see the field "Alunos com discrepâncias"
   Then the value of the field "Alunos com discrepâncias" is "50%"
   And I see the field "Lista de alunos com discrepâncias" contains the student whose name is "Allan"
