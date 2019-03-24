@@ -24,3 +24,9 @@ Scenario: avaliação mal sucedida
   And the professors grades have not changed
   And my grades are empty
   And I see an error message
+
+Scenario: nenhuma discrepância
+  Given I am at the "Discrepâncias Page"
+  And I there's a student named "Alice" whose grades are "MPA", "MA", "MA", "MA", "MA" and self-grades are "MA", "MA", "MA", "MA", "MA"
+  When I see the field "Alunos com discrepâncias"
+  Then the value of the field "Alunos com discrepâncias" is "0%"
