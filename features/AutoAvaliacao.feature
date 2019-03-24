@@ -24,3 +24,4 @@ Scenario: avaliação mal sucedida
   And the professors grades have not changed
   And my grades are empty
   And I see an error message
+  And the professor receives an email with the error message
