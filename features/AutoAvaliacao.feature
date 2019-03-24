@@ -53,6 +53,6 @@ And: I can see student “Ricardo” evaluated himself each of the goals “Ente
 But: My grades for “João” in each of the goals“Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” are “MPA”, “MPA” “MANA”, “MPA”, “MA”
 But: And: My grades for “Maria” in each of the goals“Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” are “MA”, “MA” “MA”, “MA”, “MA”
 And: My grades for “Ricardo” in each of the goals“Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Esboçar páginas relacionadas ao projeto”, “Realizar atividades em sala” are “MPA”, “MPA” “MPA”, “MPA”, “MPA”
-And: there are no other students on the list
+And: there are no other students on the list VO MUDAR AQUI DENOVO PRA QUESTÃO 14
 When: I select the “Confirm grades” option
 Then: I can see an error message
