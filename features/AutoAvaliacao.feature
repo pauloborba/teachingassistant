@@ -1,4 +1,4 @@
-Feature: auto-avaliaÃ§ao de metas das disciplinas do Cin
+Feature: auto-avaliaÃ§ao de metas das disciplinas do Cin [para rebase no master]
 As a Aluno
 I want to atribuir conceito (MANA, MA ou MPA) a todas as metas de uma dada disciplina
 so that dado que o professor preencheu sua avaliaÃ§ao, preencherei as minhas consequentemente e poderei fazer uma comparaÃ§ao com as notas do professor e as minhas.
