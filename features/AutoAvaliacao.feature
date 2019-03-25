@@ -29,3 +29,4 @@ And ele utilizou caracteres válidos
 And não deixou espaços em branco
 And pelo menos 1/3 das notas que ele auto-atribuiu são maiores que as que eu atribuí a ele
 Then O preenchimento foi bem sucedido com discrepancias
+Then correcao hipotetica do cenario de discrepancia
