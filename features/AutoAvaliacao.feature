@@ -14,3 +14,11 @@ And ele não adicionou uma nota para cada espaço atribuído
 Or ele não utilizou caracteres válidos
 Or deixou espaços em branco
 Then O preenchimento foi mal sucedido
+
+Cenarios sem discrepancia:
+Given que eu estou no menu das notas de um aluno
+And ele adicionou uma nota para cada espaço atribuído 
+And ele utilizou caracteres válidos
+And não deixou espaços em branco
+Then O preenchimento foi bem sucedido sem discrepancias
+Then extra simbolico para resolver a questao 7
