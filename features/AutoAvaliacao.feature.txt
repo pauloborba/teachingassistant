@@ -33,7 +33,7 @@ And I see “0%” in the “porcentagem de auto-avaliacoes discrepantes” table
 And I see “0” in the “quantidade de auto-avaliacoes discrepantes” table
 And I see no students in “alunos com auto-avaliacao discrepante” table
 When I select “voltar”
-Then I see the “grades” page
+Then I see the “grades” page.
 
 Scenario: auto-avaliacao discrepante  
 Given I am in the “auto-avaliacao dos alunos” page 
