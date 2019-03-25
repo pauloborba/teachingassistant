@@ -31,3 +31,5 @@ And pelo menos 1/3 das notas que ele auto-atribuiu são maiores que as que eu atr
 Then O preenchimento foi bem sucedido com discrepancias
 Then correcao hipotetica do cenario de discrepancia
 commit a
+commit b
+commit c
