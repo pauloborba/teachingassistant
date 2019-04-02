@@ -4,7 +4,9 @@
   "description": "Servidor do teaching assistant",
   "main": "ta-server.js",
   "scripts": {
-    "test": "jasmine --config=./spec/support/jasmine.json"
+    "test": "jasmine --config=./spec/support/jasmine.json",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "start": "npm run tsc && node typeScript/server/ta-server/ta-server.js"
   },
   "author": "Paulo Borba",
   "license": "MIT",
@@ -21,6 +23,7 @@
     "@types/request-promise": "^4.1.38",
     "jasmine": "^2.8.0",
     "jasmine-promises": "^0.4.1",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "typescript": "^3.3.3333"
   }
 }
