@@ -19,7 +19,7 @@
     "protractor-cucumber-framework": "^3.1.1"
   },
   "dependencies": {
-    "cucumber-html-reporter": "^2.0.0",
+    "cucumber-html-reporter": "^4.0.5",
     "protractor": "^5.1.2",
     "ts-node": "^3.1.0",
     "typescript": "^2.2.1"
