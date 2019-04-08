@@ -25,9 +25,9 @@ describe("O servidor", () => {
 
 
   it("não cadastra alunos com CPF duplicado", () => {
-    return request.post(base_url + "aluno", {"json":{"nome": "Mari", "cpf" : "965"}}).then(body => {
+    return request.post(base_url + "aluno", {"json":{"nome": "Mari", "cpf" : "965", "email":""}}).then(body => {
          expect(body).toEqual({success: "O aluno foi cadastrado com sucesso"});
-         return request.post(base_url + "aluno", {"json":{"nome": "Pedro", "cpf" : "965"}}).then(body => {
+         return request.post(base_url + "aluno", {"json":{"nome": "Pedro", "cpf" : "965", "email":""}}).then(body => {
              expect(body).toEqual({failure: "O aluno não pode ser cadastrado"});
              return request.get(base_url + "alunos").then(body => {
                  expect(body).toContain('{"nome":"Mari","cpf":"965","email":"","metas":{}}');
