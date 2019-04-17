@@ -5,11 +5,11 @@ export class CadastroDeAlunos {
 
   criar(aluno: Aluno): Aluno {
     var result = null;
-    if (this.cpfNaoCadastrado(aluno.cpf) && this.githubNaoCadastrado(aluno.github)) {
-      result = new Aluno();
-      result.copyFrom(aluno);
-      this.alunos.push(result);
-    }
+    if (this.githubNaoCadastrado(aluno.github)) throw new Error('github já existe')
+    if (this.cpfNaoCadastrado(aluno.cpf)) throw new Error('github já existe')
+    result = new Aluno();
+    result.copyFrom(aluno);
+    this.alunos.push(result);
     return result;
   }
 
