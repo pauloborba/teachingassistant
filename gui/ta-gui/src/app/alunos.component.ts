@@ -14,23 +14,21 @@ export class AlunosComponent implements OnInit {
 
    aluno: Aluno = new Aluno();
    alunos: Aluno[];
-   cpfduplicado: boolean = false;
+   erro: string = null;
 
    criarAluno(a: Aluno): void {
      this.alunoService.criar(a)
         .then(ab => {
-           if (ab) {
-              this.alunos.push(ab);
-              this.aluno = new Aluno();
-           } else {
-              this.cpfduplicado = true;
-           }
+          this.alunos.push(ab);
+          this.aluno = new Aluno();
         })
-        .catch(erro => alert(erro));
+        .catch(e => {
+          this.erro = e
+        });
    }
 
    onMove(): void {
-      this.cpfduplicado = false;
+      this.erro = null;
    }
 
    ngOnInit(): void {

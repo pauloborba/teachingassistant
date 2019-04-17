@@ -15,7 +15,6 @@ var allowCrossDomain = function (req, res, next) {
 app.use(allowCrossDomain);
 app.use(bodyParser.json());
 app.get('/alunos', function (req, res) {
-    console.log('GET /alunos: ' + req);
     res.send(JSON.stringify(cadastro.getAlunos()));
 });
 app.post('/aluno', function (req, res) {
