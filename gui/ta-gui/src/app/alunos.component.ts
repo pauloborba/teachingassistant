@@ -26,6 +26,16 @@ export class AlunosComponent implements OnInit {
           this.erro = e
         });
    }
+   removeAluno(a: Aluno): void {
+     this.alunoService.remover(a)
+      .then(() => {
+        const index = this.alunos.findIndex(x => x.cpf === a.cpf)
+        if (index !== -1) {
+          this.alunos.splice(index, 1)
+        }
+      })
+      .catch(e => this.erro = e)
+   }
 
    onMove(): void {
       this.erro = null;

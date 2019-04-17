@@ -19,23 +19,27 @@ app.get('/alunos', function (req, res) {
 });
 app.post('/aluno', function (req, res) {
     var aluno = req.body; //verificar se é mesmo Aluno!
-    aluno = cadastro.criar(aluno);
-    if (aluno) {
+    try {
+        aluno = cadastro.criar(aluno);
         res.send({ "success": "O aluno foi cadastrado com sucesso" });
     }
-    else {
-        res.send({ "failure": "O aluno não pode ser cadastrado" });
+    catch (e) {
+        res.send({ "failure": e.message });
     }
 });
 app.put('/aluno', function (req, res) {
     var aluno = req.body;
-    aluno = cadastro.atualizar(aluno);
     if (aluno) {
         res.send({ "success": "O aluno foi atualizado com sucesso" });
     }
     else {
         res.send({ "failure": "O aluno não pode ser atualizado" });
     }
+});
+app.delete('/aluno', (req, res) => {
+    var aluno = req.body;
+    cadastro.remover(aluno);
+    res.send({ success: 'Aluno removido com sucesso' });
 });
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');

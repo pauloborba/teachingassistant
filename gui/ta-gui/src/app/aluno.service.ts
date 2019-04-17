@@ -33,6 +33,11 @@ export class AlunoService {
          })
          .catch(this.tratarErro);
   }
+  remover(aluno: Aluno) : Promise<any> {
+    return this.http.delete(this.taURL + '/aluno', {headers: this.headers, body: JSON.stringify(aluno)})
+      .toPromise()
+      .catch(this.tratarErro);
+  }
 
   getAlunos(): Promise<Aluno[]> {
     return this.http.get(this.taURL + "/alunos")
