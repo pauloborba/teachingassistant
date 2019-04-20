@@ -14,7 +14,7 @@ export class AlunosComponent implements OnInit {
 
    aluno: Aluno = new Aluno();
    alunos: Aluno[];
-   cpfduplicado: boolean = false;
+   cpfgitduplicado: boolean = false;
 
    criarAluno(a: Aluno): void {
      this.alunoService.criar(a)
@@ -23,14 +23,24 @@ export class AlunosComponent implements OnInit {
               this.alunos.push(ab);
               this.aluno = new Aluno();
            } else {
-              this.cpfduplicado = true;
+              this.cpfgitduplicado = true;
            }
         })
         .catch(erro => alert(erro));
    }
 
+   removerAluno(a: Aluno): void{
+      this.alunoService.remover(a)
+      .then(ab =>{
+         if(ab){
+            var aux = this.alunos.findIndex(tr => tr.cpf === ab.cpf);
+            var randm = this.alunos.splice(aux,1);
+         }
+      })
+      .catch(erro => alert(erro));
+   }
    onMove(): void {
-      this.cpfduplicado = false;
+      this.cpfgitduplicado = false;
    }
 
    ngOnInit(): void {

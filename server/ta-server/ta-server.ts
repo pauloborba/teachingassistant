@@ -31,7 +31,15 @@ app.post('/aluno', function (req: express.Request, res: express.Response) {
     res.send({"failure": "O aluno não pode ser cadastrado"});
   }
 })
-
+app.delete('/aluno', function (req: express.Request, res: express.Response) {
+  var aluno: Aluno = <Aluno> req.body;
+  aluno = cadastro.remover(aluno);
+  if(aluno){
+    res.send({"success": "O aluno foi eliminado da face da terra"});
+  }else{
+    res.send({"failure":"O aluno não pode ser removido"});
+  }
+})
 app.put('/aluno', function (req: express.Request, res: express.Response) {
   var aluno: Aluno = <Aluno> req.body;
   aluno = cadastro.atualizar(aluno);
@@ -42,12 +50,8 @@ app.put('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
-var server = app.listen(3000, function () {
+app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
 
-function closeServer(): void {
-   server.close();
-}
-
-export { app, server, closeServer }
+export { app }

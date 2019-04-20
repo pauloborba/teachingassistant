@@ -5,16 +5,21 @@ export class CadastroDeAlunos {
 
   criar(aluno: Aluno): Aluno {
     var result = null;
-    if (this.cpfNaoCadastrado(aluno.cpf)) {
+    if (this.cpfEgitNaoCadastrado(aluno.cpf,aluno.git)) {
       result = new Aluno();
       result.copyFrom(aluno);
       this.alunos.push(result);
     }
     return result;
   }
-
-  cpfNaoCadastrado(cpf: string): boolean {
-     return !this.alunos.find(a => a.cpf == cpf);
+  remover(aluno: Aluno): Aluno{
+    var aux = this.alunos.findIndex(tr => tr.cpf === aluno.cpf);
+    console.log(aux);
+    var result = this.alunos.splice(aux,1);
+    return result[0];
+  }
+  cpfEgitNaoCadastrado(cpf: string,git:string): boolean {
+     return !this.alunos.find(a => a.cpf == cpf)&&!this.alunos.find(a => a.git == git);
   }
 
   atualizar(aluno: Aluno): Aluno {

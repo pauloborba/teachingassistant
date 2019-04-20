@@ -20,7 +20,14 @@ export class AlunoService {
            })
            .catch(this.tratarErro);
   }
-
+  remover(aluno: Aluno): Promise<Aluno>{
+    return this.http.delete(this.taURL + "/aluno",{headers: this.headers, body:JSON.stringify(aluno)})
+    .toPromise()
+    .then(res => {
+      if(res.json().success) {return aluno;} else {return null;}
+    })
+    .catch(this.tratarErro);
+  }
   atualizar(aluno: Aluno): Promise<Aluno> {
     return this.http.put(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})
          .toPromise()
