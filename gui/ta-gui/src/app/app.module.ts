@@ -9,6 +9,7 @@ import { MetasComponent } from './metas.component';
 import { AlunosComponent } from './alunos.component';
 import { AlunoService } from './aluno.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
