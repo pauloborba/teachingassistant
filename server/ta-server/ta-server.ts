@@ -24,12 +24,12 @@ app.get('/alunos', function (req, res) {
 
 app.post('/aluno', function (req: express.Request, res: express.Response) {
   var aluno: Aluno = <Aluno> req.body; //verificar se é mesmo Aluno!
-  try {
-    aluno = cadastro.criar(aluno);
+  aluno = cadastro.criar(aluno);
+  if (aluno) {
     res.send({"success": "O aluno foi cadastrado com sucesso"});
   }
-  catch (e) {
-    res.send({"failure": e.message});
+  else {
+    res.send({"failure": 'O aluno não pode ser cadastrado'});
   }
 })
 
@@ -56,5 +56,8 @@ var server = app.listen(3000, function () {
 function closeServer(): void {
    server.close();
 }
+function reset() {
+  cadastro = new CadastroDeAlunos();
+}
 
-export { app, server, closeServer }
+export { app, server, closeServer, reset }
