@@ -144,5 +144,28 @@ defineSupportCode(function ({ Given, When, Then }) {
         var allappointment : ElementArrayFinder = element.all(by.name('calendar'));
         allappointment.filter(elem => pAND(sameMonth(elem,month),sameDay(elem,day),sameTime(elem,time))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
     });
-    
+
+    Given(/^I am at the register students page$/, async () => {
+        await browser.get("http://localhost:4200/");
+        await expect(browser.getTitle()).to.eventually.equal('NASE');
+        await $("a[name='Registrar alunos']").click();
+    })
+
+    Given(/^the professional "([^\"]*)" have schedule appointments on "([^\"]*)" "(\d*)" at "([^\"]*)" and "([^\"]*)"$/, async (professional, month, day, time, time2) => {
+        var allschedules : ElementArrayFinder = element.all(by.name('schedulelist'));
+        allschedules.filter(elem => pAVAILABLE(availableDate(elem,month, day, time, time2),sameName(elem,name))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+    });
+
+    When(/^I select "([^\"]*)" in the month option$/, async (month) => {
+        await expect(by.tagName(dateM))   
+        .then(function(options){
+            options[month].click();
+        });
+    });
+
+    Then(/^I can see "([^\"]*)"'s schedule appointments on "([^\"]*)" "(\d*)" at "([^\"]*)" and "([^\"]*)"$/, async (professional,month,day,time, time2) => {
+        var allappointment : ElementArrayFinder = element.all(by.name('calendar'));
+        allappointment.filter(elem => pAND(sameMonth(elem,month),sameDay(elem,day),sameTime(elem,time))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+    });
+
 })

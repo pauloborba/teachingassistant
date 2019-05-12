@@ -28,3 +28,9 @@ Scenario: Schedule an appointment
 	When I ask the system to schedule
 	Then I can see the scheduled appointment on "August" "10" at "8am"
 
+Scenario: Search for an appointment
+	Given  I am at the appointments page
+	Given the professional "Estyvison" have scheduled appointments on "July" "3" at "2pm" and "4pm"
+	When I select "Estyvison" at the "professionals" list
+	When I select "July" in the "months" option
+	Then I can see "Estyvison"’s scheduled appointments on "July" "3" at "2pm" and "4pm"
