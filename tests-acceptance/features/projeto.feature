@@ -19,3 +19,12 @@ Scenario: Unsuccessfully student registration
 	When I ask the system to register 
 	Then I can see an error message
 
+Scenario: Schedule an appointment
+	Given I am at the Scheduling page
+	Given the professional "Kátia" is available on "August" "10" at "8am"
+	When I select "Teixeira" at the "students" list
+	When I select "Katia" at the "professionals" list
+	When I select date "August" "10" on "8am"
+	When I ask the system to schedule
+	Then I can see the scheduled appointment on "August" "10" at "8am"
+

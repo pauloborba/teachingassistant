@@ -87,7 +87,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
     
     When(/^I ask the system to register$/, async () => {
-        await request.post(base_url + "agendamento").then(body =>
+        await request.post(base_url + "registramento").then(body =>
         expect(body).to.include('failure')).catch(e =>
         expect(e).equal(null));
     });
@@ -96,4 +96,53 @@ defineSupportCode(function ({ Given, When, Then }) {
         var errorMessage : ElementArrayFinder = element.all(by.name('errorMessage'));
         errorMessage.filter(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
     });
+
+    Given(/^I am at the register students page$/, async () => {
+        await browser.get("http://localhost:4200/");
+        await expect(browser.getTitle()).to.eventually.equal('NASE');
+        await $("a[name='Marcar consulta']").click();
+    })
+
+    Given(/^the professional "([^\"]*)" is available on "([^\"]*)" "(\d*)" at "([^\"]*)"$/, async (professional, month, day, time) => {
+        var allprofessinals : ElementArrayFinder = element.all(by.name('professionallist'));
+        allprofessionals.filter(elem => pAVAILABLE(availableDate(elem,month, day, time),sameName(elem,name))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+    });
+
+    When(/^I select "([^\"]*)" at the "([^\"]*)" list$/, async (name, listname) => {
+        if (listname){
+            await expect(by.tagName(listname))   
+            .then(function(options){
+                options[name].click();
+            });
+        }
+    });
+
+    When(/^I select date "([^\"]*)" "(\d*)" on "([^\"]*)"$/, async (month, day, time) => {
+        await expect(by.tagName(dateM))   
+        .then(function(options){
+            options[month].click();
+        });
+        
+        await expect(by.tagName(dateD))   
+        .then(function(options){
+            options[day].click();
+        });
+
+        await expect(by.tagName(dateT))   
+        .then(function(options){
+            options[time].click();
+        });
+    });
+
+    When(/^I ask the system to schedule$/, async () => {
+        await request.post(base_url + "agendamento").then(body =>
+        expect(body).to.include('success')).catch(e =>
+        expect(e).equal(null));
+    });
+
+    Then(/^I can see the schedule appointment on "([^\"]*)" "(\d*)" at "([^\"]*)"$/, async (month, day, time) => {
+        var allappointment : ElementArrayFinder = element.all(by.name('calendar'));
+        allappointment.filter(elem => pAND(sameMonth(elem,month),sameDay(elem,day),sameTime(elem,time))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+    });
+    
 })
