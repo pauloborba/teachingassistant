@@ -77,7 +77,23 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
 
     Then(/^I can see the name "([^\"]*)", course "([^\"]*)", CPF "([^\"]*)", gender "([^\"]*)" and telephone number "([^\"]*)" at the register student page$/, async (name, course, cpf, gender, tnumber) => {
-        var allalunos : ElementArrayFinder = element.all(by.name('appointmentlist'));
-        allalunos.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name),sameTnumber(elem,tnumber),sameGender(elem,gender),sameCourse(elem,course))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+        var allappointment : ElementArrayFinder = element.all(by.name('appointmentlist'));
+        allappointment.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name),sameTnumber(elem,tnumber),sameGender(elem,gender),sameCourse(elem,course))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+    });
+
+    Given(/^No professional has been chosen$/, async () => {
+        var professional : ElementArrayFinder = element.all(by.name('professional'));
+        professional.filter(elem => sameName(elem,'Selecione o profissional')).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+    });
+    
+    When(/^I ask the system to register$/, async () => {
+        await request.post(base_url + "agendamento").then(body =>
+        expect(body).to.include('failure')).catch(e =>
+        expect(e).equal(null));
+    });
+
+    Then(/^I can see the error message$/, async () => {
+        var errorMessage : ElementArrayFinder = element.all(by.name('errorMessage'));
+        errorMessage.filter(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
     });
 })
