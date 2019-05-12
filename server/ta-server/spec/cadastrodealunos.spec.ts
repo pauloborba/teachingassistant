@@ -38,4 +38,32 @@ describe("O cadastro de alunos", () => {
     expect(cadastro.getAlunos().length).toBe(1);
   })
 
+  it('remove aluno corretamente', () => {
+    var aluno: Aluno = new Aluno();
+    aluno.nome = "Mariana";
+    aluno.cpf = "683";
+    cadastro.criar(aluno);
+
+    cadastro.remover(aluno)
+
+    expect(cadastro.getAlunos().length).toBe(0)
+  })
+
+  it('remoção não afeta outros alunos', () => {
+    var aluno: Aluno = new Aluno();
+    aluno.nome = "Mariana";
+    aluno.cpf = "683";
+    cadastro.criar(aluno);
+
+    var al: Aluno = new Aluno();
+    al.nome = "ÊÊÊÊÊÊÊÊÊÊÊÊ ÔÔÔÔÔÔÔÔÔÔ Vida de gadooo";
+    al.cpf = "02";
+    cadastro.criar(al)
+
+    cadastro.remover(aluno)
+
+    const alunos = cadastro.getAlunos()
+    expect(alunos.length).toBe(1)
+    expect(alunos[0].cpf).toEqual("02")
+  })
 })
