@@ -17,13 +17,13 @@ export class AppComponent {
    cpfduplicado: boolean = false;
 
    criarAluno(a: Aluno): void {
-     if (this.alunoService.criar(a)) {
-       this.alunos.push(a);
-       this.aluno = new Aluno();
-     } else {
-       this.cpfduplicado = true;
-     }
-   }
+    if (this.alunoService.criar(a)) {
+      this.alunos.push(a);
+      this.aluno = new Aluno();
+    } else {
+      this.cpfduplicado = true;
+    }
+  }
 
    onMove(): void {
       this.cpfduplicado = false;

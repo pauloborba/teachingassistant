@@ -17,17 +17,29 @@ export class AlunosComponent implements OnInit {
    cpfduplicado: boolean = false;
 
    criarAluno(a: Aluno): void {
-     this.alunoService.criar(a)
-        .then(ab => {
-           if (ab) {
-              this.alunos.push(ab);
-              this.aluno = new Aluno();
-           } else {
-              this.cpfduplicado = true;
-           }
-        })
-        .catch(erro => alert(erro));
-   }
+      this.alunoService.criar(a)
+         .then(ab => {
+            if (ab) {
+               this.alunos.push(ab);
+               this.aluno = new Aluno();
+            } else {
+               this.cpfduplicado = true;
+            }
+         })
+         .catch(erro => alert(erro));
+    }
+    remover(a: Aluno): void {
+      this.alunoService.remover(a)
+         .then(ab => {
+            if (ab) {
+             //  this.alunos.push(ab);
+              // this.aluno = new Aluno();
+            //} else {
+              // this.cpfduplicado = true;
+            }
+         })
+         .catch(erro => alert(erro));
+    }
 
    onMove(): void {
       this.cpfduplicado = false;
