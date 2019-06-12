@@ -2,39 +2,35 @@
 
 <table>
 <tr>
-   <td><label>Nome </label></td>
+   <td><label>Nome Profissional</label></td>
    <td><input [(ngModel)]="aluno.nome" ></td>
-   <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
+   <td><button (click)="criarAluno(aluno)">Adicionar Profissional</button></td>
 </tr>
 <tr>
    <td><label>CPF </label></td>
    <td><input [(ngModel)]="aluno.cpf" ></td>
    <td *ngIf="cpfgitduplicado">
-     Já existe um aluno com esse CPF ou GIT
+     Já existe um profissional com esse CPF.
    </td>
 </tr>
 <tr>
    <td><label>e-mail </label></td>
    <td><input [(ngModel)]="aluno.email" ></td>
 </tr>
-<tr>
-   <td><label>git </label></td>
-   <td><input [(ngModel)]="aluno.git" ></td>
-</tr>
 </table>
 
 <table>
 <tr *ngIf="alunos.length > 0">
-   <th>Nome</th>
-   <th>CPF</th>
-   <th>e-mail</th>
-   <th>git</th>
+   <th>Nome</th><br>
+   <th>CPF</th><br>
+   <th>e-mail</th><br>
 </tr>
 <tr *ngFor="let a of alunos">
-   <td>{{a.nome}}</td>
-   <td>{{a.cpf}}</td>
-   <td>{{a.email}}</td>
-   <td>{{a.git}}</td><td><button (click)="removerAluno(a)">Remover</button></td>
+   <td>{{a.nome}}</td><br>
+   <td>{{a.cpf}}</td><br>
+   <td>{{a.email}}</td><br>
+   <td><button (click)="removerAluno(a)">Demitir</button></td>
+   <td><button (click)="algo">Detalhes</button></td>
 </tr>
 </table>
 
