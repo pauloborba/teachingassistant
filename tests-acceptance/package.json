@@ -2,10 +2,10 @@
   "name": "testes-acceptance",
   "description": "Testes de aceitação do teaching assistant",
   "scripts": {
-    "tsc": "./node_modules/typescript/bin/tsc",
+    "tsc": "tsc",
     "test": "npm run tsc && protractor typeScript/config/config.js",
-    "webdriver-update": "webdriver-manager update",
-    "webdriver-start": "webdriver-manager start"
+    "webdriver-update": "webdriver-manager update --versions.standalone=3.9.1",
+    "webdriver-start": "webdriver-manager start --versions.standalone=3.9.1"
   },
   "author": "Paulo Borba",
   "devDependencies": {
