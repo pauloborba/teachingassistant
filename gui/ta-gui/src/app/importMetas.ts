@@ -61,7 +61,6 @@ export class ImportMetas implements OnInit{
      
       console.log("Importing...");
       var conceitos = this.getConceitosFromCSV(this.csvRecords);
-      console.log(conceitos);
 
       for(var i=1;i<this.csvRecords.length;i++){
         var alunoNome = this.csvRecords[i][0];
@@ -111,21 +110,16 @@ export class ImportMetas implements OnInit{
     checkOverridingMetas(aluno:Aluno, conceitos:string[]):void{
       
       var metas = aluno.metas;
-      console.log("debug overridind")
-      console.log(metas);
-      console.log(conceitos);
       var metasAmount = [];
       for(var i=0;i<conceitos.length;i++){
-        console.log(conceitos[i]);
-        console.log(metas[conceitos[i]]);
+        if(metas[conceitos[i]] != undefined){
           metasAmount.push(metas[conceitos[i]]);
-            
-        }
+        }  
+      }
 
       if(metasAmount.length > 0){
         this.override = true;
       }
-      console.log(metasAmount);
 
     }
     
