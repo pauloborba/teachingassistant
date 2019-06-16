@@ -1,19 +1,53 @@
 .body{
     background-color: darkblue;
+    height: 95vh;
+    width: 95vw;
 }
 
 .whiteColor{
     color: white;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 15%;
 }
 
-.tittleDiv{
-    bottom: 80%;
-    height: 20%;
-    width: 100%;
-    align-content: center;
+.box{
+    position: absolute;
+    top: 25%;
+    bottom: 5%;
+    left: 15%;
+    right: 15%;
+    border-radius: 10px;
+    align-self: center;
     background-color: aqua;
 }
 
-.bodyDiv{
-    background-color: blueviolet;
+.conceitoInput{
+    display: inline-block;
+    padding-left: 5%;
+    background-color: white;
+    direction: rtl;
+}
+
+.conceitoOption{
+    display: inline-block;
+    padding-left: 5%;
+    background-color: white;
+}
+
+.conceitoText{
+    display: inline-block;
+    background-color: brown;
+    padding-left: 15%;
+}
+
+.conceito{
+    background-color: purple;
+    height: 10vh;
+    margin-top:10%;
+}
+
+.arquivo{
+    background-color:greenyellow;
+    height: 10vh;
 }
