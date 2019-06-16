@@ -27,6 +27,12 @@ export class ExportMetas implements OnInit{
         .catch(erro => alert(erro));
     }
 
+    setNewMP(mp:string):void{
+       // var opt = document.getElementById('selected');
+        this.option = mp;
+        console.log(this.option);
+    }
+
     columns(option:string):string{
         var column_names="";
         column_names = "nome;";
@@ -58,17 +64,16 @@ export class ExportMetas implements OnInit{
 
     exportToCSV(){
         console.log("exporting to csv")
-        console.log(this.prova)
-        console.log(this.prova.get("MP1"))
+        if(this.option == undefined){
+            return alert("Você precisa selecionar alguma MP");
+        }
 
         this.alunoService.getAlunos()
         .then(as => this.alunos = as)
         .catch(erro => alert(erro));
 
-        console.log(this.alunos)
-
         //TODO: get option and update tittle
-        this.option = "MP1";
+        console.log(this.option);
         this.tittle = this.option;
 
         var csvContent = "";
@@ -77,7 +82,6 @@ export class ExportMetas implements OnInit{
         var dataRows = this.rows(this.option);
        
         csvContent = column_names + dataRows;
-        console.log(csvContent);
 
         var filename = this.tittle.replace(/ /g,'')+'.csv'; //gen a filename using the title but getting rid of spaces
         var blob = new Blob([csvContent], { "type": 'text/csv;charset=utf-8;' });
