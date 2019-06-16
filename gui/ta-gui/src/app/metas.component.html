@@ -1,16 +1,37 @@
-<table>
-<tr>
-   <th>Nome</th>
-   <th>CPF</th>
-   <th>e-mail</th>
-   <th>Requisitos</th>
-   <th>Gerência de Configuração</th>
-</tr>
-<tr *ngFor="let a of alunos">
-   <td>{{a.nome}}</td>
-   <td>{{a.cpf}}</td>
-   <td>{{a.email}}</td>
-   <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
-   <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
-</tr>
-</table>
+<table >
+    <tr>
+       <th>Nome</th>
+       <th>CPF</th>
+       <th>E-mail</th>
+       <th>Login GitHub</th>
+       <th>Requisitos</th>
+       <th>Gerência de Configuração</th>
+       <th>Gerência de Projetos</th>
+       <th>Testes</th>
+    </tr>
+    <tr *ngFor="let a of alunos">
+       <td [ngClass]= "{
+         'necessitado' : verificar(a)
+       
+         }"  >{{a.nome}}</td>
+       <td>{{a.cpf}}</td>
+       <td>{{a.email}}</td>
+       <td>{{a.logingithub}}</td>
+       <td  class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)" (change)="calcularMedia()"></td>
+       <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)" (change)="calcularMedia()"></td>
+       <td class="meta"><input [(ngModel)]="a.metas['gerDeProjetos']" (change)="atualizarAluno(a)" (change)="calcularMedia()"></td>
+       <td class="meta"><input [(ngModel)]="a.metas['testes']" (change)="atualizarAluno(a)" (change)="calcularMedia()"></td>
+       </tr>
+    </table>
+    <button (click)="gerarAnaliseFinal()"> Gerar Análise Final</button>
+    <button (click)="printarNecessitados()"> Gerar Necessitados</button>
+    <button (click)="calcularMedia()"> Gerar Média</button>
+   
+
+
+   
+
+
+
+  
+    
