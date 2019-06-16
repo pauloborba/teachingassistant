@@ -29,15 +29,15 @@ export class ExportMetas implements OnInit{
 
     columns(option:string):string{
         var column_names="";
-        column_names = "nome,";
+        column_names = "nome;";
 
-        var conceitos = this.prova[option];
+        var conceitos = this.prova.get(option);
         for(var conceito in conceitos){
-            column_names = column_names + conceito + ","
+            column_names = column_names + conceitos[conceito] + ";"
         }
 
         column_names = column_names.slice(0,-1);
-        column_names += "/n";
+        column_names += "\n";
       
         return column_names;
     }
@@ -45,10 +45,10 @@ export class ExportMetas implements OnInit{
     rows(option:string):string{
         var dataRows = ""
         for(var i=0;i<this.alunos.length; i++){
-            dataRows = dataRows+ this.alunos[i].nome+",";
-            var conceitos = this.prova[option];
+            dataRows = dataRows+ this.alunos[i].nome+";";
+            var conceitos = this.prova.get(option);
             for(var _ in conceitos){
-                dataRows = dataRows + ",";
+                dataRows = dataRows + ";";
             }
             dataRows = dataRows.slice(0,-1);
             dataRows += "\n";
@@ -58,6 +58,8 @@ export class ExportMetas implements OnInit{
 
     exportToCSV(){
         console.log("exporting to csv")
+        console.log(this.prova)
+        console.log(this.prova.get("MP1"))
 
         this.alunoService.getAlunos()
         .then(as => this.alunos = as)
@@ -75,6 +77,8 @@ export class ExportMetas implements OnInit{
         var dataRows = this.rows(this.option);
        
         csvContent = column_names + dataRows;
+        console.log(csvContent);
+
         var filename = this.tittle.replace(/ /g,'')+'.csv'; //gen a filename using the title but getting rid of spaces
         var blob = new Blob([csvContent], { "type": 'text/csv;charset=utf-8;' });
         if (navigator.msSaveBlob) 
