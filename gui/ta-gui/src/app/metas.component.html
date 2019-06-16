@@ -14,3 +14,8 @@
    <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
 </tr>
 </table>
+<nav>
+   <a name="import" routerLink="/import">Import</a>
+   <a routerLink="/export" >Export</a>
+</nav>
+<router-outlet></router-outlet>

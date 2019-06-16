@@ -1,0 +1,19 @@
+.body{
+    background-color: darkblue;
+}
+
+.whiteColor{
+    color: white;
+}
+
+.tittleDiv{
+    bottom: 80%;
+    height: 20%;
+    width: 100%;
+    align-content: center;
+    background-color: aqua;
+}
+
+.bodyDiv{
+    background-color: blueviolet;
+}

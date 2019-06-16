@@ -1,4 +1,10 @@
 {
+  "selenium-webdriver": [
+		"node_modules/protractor/built/selenium-webdriver"
+		],
+	"selenium-webdriver/*": [
+		"node_modules/protractor/built/selenium-webdriver/*"
+	],
   "compileOnSave": false,
   "compilerOptions": {
     "importHelpers": true,
