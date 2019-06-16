@@ -13,7 +13,6 @@ export class ImportarAlunoComponent implements OnInit {
   
   public csvRecordsArray: any[] = [];
   public result: any[] = [];
-  public headers: any[] = [];
   public alunos: any[]=[];
   public aluno: Aluno = new Aluno();
 
@@ -31,38 +30,51 @@ export class ImportarAlunoComponent implements OnInit {
 
         let csvData = reader.result;
         this.csvRecordsArray = (csvData as string).split(/\r\n|\n/);
+        
         if(this.csvRecordsArray.length <2){
           alert('arquivo vazio');
           this.fileImportInput.nativeElement.value = "";
         }
 
-        this.headers = this.csvRecordsArray[0].split(",");
-
-        for (let index = 1; index < this.csvRecordsArray.length; index++) {
-          const currentline = this.csvRecordsArray[index].split(",");
-          var obj = {};
-          for (var j = 0; j < currentline.length; j++) {
-            obj[this.headers[j]] = currentline[j];
-          }
-          this.result.push(obj);
-        }
-        console.log(this.result);
-        for (let i = 0; i < this.result.length; i++) {
-          this.aluno.nome = this.result[i].nome;
-          this.aluno.email = this.result[i].email;
-          this.aluno.cpf = this.result[i].cpf;
-          this.criarAluno(this.aluno);
-        } 
+        this.readAlunos();
+        this.cadastraAlunos(); 
         this.result = [];
+        this.fileImportInput.nativeElement.value = "";
+
       };
+
       reader.onerror = function() {
         alert('Unable to read ' + input.files[0]);
       };
-    } else {
+
+    }else {
       alert('Please import valid .csv file.');
       this.fileImportInput.nativeElement.value = "";
       this.csvRecordsArray = [];
     }
+  }
+
+
+  readAlunos(){
+    let headers = this.csvRecordsArray[0].split(",");
+    for (let index = 1; index < this.csvRecordsArray.length; index++) {
+      const currentline = this.csvRecordsArray[index].split(",");
+      var obj = {};
+      for (var j = 0; j < currentline.length; j++) {
+        obj[headers[j]] = currentline[j];
+       }
+       this.result.push(obj);
+    }
+
+  }
+
+  cadastraAlunos(){
+    for (let i = 0; i < this.result.length; i++) {
+        this.aluno.nome = this.result[i].nome;
+        this.aluno.email = this.result[i].email;
+        this.aluno.cpf = this.result[i].cpf;
+        this.criarAluno(this.aluno);
+        }
   }
 
   criarAluno(a: Aluno): void {
@@ -72,7 +84,7 @@ export class ImportarAlunoComponent implements OnInit {
             this.alunos.push(ab);
             this.aluno = new Aluno();
           } else {
-            alert('Existem cpfs já cadastrados');
+            alert('O arquivo contém cpfs já cadastrados, apenas os novos foram cadastrados');
           }
        })
        .catch(erro => alert(erro));
