@@ -5,7 +5,7 @@ Feature: importar alunos
 
 Scenario: importar alunos
 Given estou na pagina de alunos
-When eu escolho o arquivo "data.csv"
+When eu escolho o arquivo "Alunos.csv"
 Then eu vejo o aluno "Eduardo" com seu CPF "123" na lista de alunos
 Then eu vejo o aluno "Luiz" com seu CPF "321" na lista de alunos
 
