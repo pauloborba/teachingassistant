@@ -2,9 +2,9 @@
     <div class="body">
         <div class="box">
             <div>
-                <h1 class="whiteColor">Exportar Metas </h1>
+                <h1 class="textColor">Exportar Metas </h1>
             </div>
-            <div>
+            <div style="text-align: center;">
                 <div class="conceito">
                     <div class="conceitoText">
                         <h1>Conceito: </h1>
@@ -15,7 +15,9 @@
                         </select>
                     </div>
                 </div>
-                <button (click)="exportToCSV()" >Gerar Planilha!</button>
+                <div >
+                    <button  class="centerButton" (click)="exportToCSV()" >Gerar Planilha!</button>
+                </div>
             </div>        
         </div>
     </div>

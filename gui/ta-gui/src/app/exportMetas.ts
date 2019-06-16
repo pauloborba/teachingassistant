@@ -65,7 +65,7 @@ export class ExportMetas implements OnInit{
     exportToCSV(){
         console.log("exporting to csv")
         if(this.option == undefined){
-            return alert("Você precisa selecionar alguma MP");
+            return alert("Você precisa selecionar algum conceito");
         }
 
         this.alunoService.getAlunos()
@@ -104,6 +104,7 @@ export class ExportMetas implements OnInit{
             document.body.removeChild(link);
             }
         }
+        alert("Csv downloaded: "+this.tittle);
     }
 
 }
