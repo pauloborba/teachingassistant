@@ -51,3 +51,11 @@
     background-color:greenyellow;
     height: 10vh;
 }
+.centerButton{
+    background-color: #3399FF;
+    color: white;
+    border-radius: 10px;
+    padding: 2%;
+    margin:auto;
+    border:none;
+}

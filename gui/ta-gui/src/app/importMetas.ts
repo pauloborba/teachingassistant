@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Aluno } from './aluno';
+import { AlunoService } from './aluno.service';
 
 
 @Component({
@@ -9,65 +10,150 @@ import { Aluno } from './aluno';
 })
 
 export class ImportMetas implements OnInit{
-
-    ngOnInit(){
-    }
+  constructor(private alunoService: AlunoService) {}
 
     public csvRecordsArray: any[] = [];
-    public result: any[] = [];
-    public headers: any[] = [];
     public fileSelected: boolean = false;
     public alunos: any[]=[];
     public aluno: Aluno = new Aluno();
+    public csvRecords: any[] = [];
+    public option:string="MP1"; //apagar
+    public override = false;
+    public alunosImportados:Aluno[] = [];
 
-    @ViewChild('fileImportInput') fileImportInput: any;
+    @ViewChild("fileImportInput") fileImportInput: any;
+      fileChangeListener($event: any): void {
+        var files = $event.srcElement.files;
+        if (files[0].name.endsWith(".csv")) {
+          var input = $event.target;
+          var reader = new FileReader();
 
-        fileChangeListener($event: any):void{
-
-            var files = $event.srcElement.files;
-            if(files[0].name.endsWith('.csv')){
-                var input = $event.target;
-                var reader = new FileReader();
-
-                reader.readAsText(input.files[0]);
-                reader.onload = (data) => {
-                    let csvData = reader.result;
-                    this.csvRecordsArray = (csvData as string).split(/\r\n|\n/);
-                    let tamanho = this.csvRecordsArray.length;
-                    this.fileSelected = true;
-
-                    this.headers = this.csvRecordsArray[0].split(",");
-                    let obj = this.getObjetos();
-                    console.log(obj);
-                    //todo metas e tal
-                    //dados aluno
-
-                };
-                reader.onerror = function(){
-                    alert('unable to read '+ input.files[0]);
-                };
-
-                }else{
-                    alert("Please import valid .csv file.");
-                    this.fileImportInput.nativeElement.value = "";
-                    this.csvRecordsArray = [];
-                }
-            }
-
-        getObjetos(): any{
-            //TODO: criar for para pegar todos os alunos
-            //      resolver casos para cpf já cadastrado
-            //      resolver casos para arquivo em branco
-            //
-            for (let index = 1; index < this.csvRecordsArray.length; index++) {
-              const currentline = this.csvRecordsArray[index].split(",");
-              var obj = {};
-              for (var j = 0; j < currentline.length; j++) {
-                obj[this.headers[j]] = currentline[j];
+          reader.readAsText(input.files[0]);
+          reader.onload = (data) => {
+            let csvData = reader.result;
+            let csvRecordsArray = (csvData as string).split(/\r\n|\n/);
+              for(let i=0;i<csvRecordsArray.length;i++){
+              let rowdata = csvRecordsArray[i].match(/("[^"]*")|[^,]+/g);
+              this.csvRecords.push(rowdata);
               }
-              this.result.push(obj);
-            }
-            //var currentline = this.csvRecordsArray[i].split(",");
-            return this.result;
           }
+          this.fileSelected = true;
+          console.log(this.csvRecords);
+        reader.onerror = function() {
+            alert("Unable to read " + input.files[0]);
+          };
+        } else {
+          alert("Selecione um arquivo .csv, por favor");
+          this.fileImportInput.nativeElement.value = "";
+          this.csvRecords = [];
+          this.fileSelected = false;
+        }
+    }
+
+    importarPlanilha(){
+
+      if(!this.fileSelected){
+        return alert("Selecione um arquivo CSV")
+      }
+      if(this.csvRecords.length < 1){
+        return alert("Verifique os dados da planilha importada! Ou atualize o arquivo enviado!");
+      }
+     
+      console.log("Importing...");
+      var conceitos = this.getConceitosFromCSV(this.csvRecords);
+      console.log(conceitos);
+
+      for(var i=1;i<this.csvRecords.length;i++){
+        var alunoNome = this.csvRecords[i][0];
+        var aluno:Aluno = this.getAlunoFromName(alunoNome);
+
+        this.checkOverridingMetas(aluno,conceitos);
+        for(var j=0;j<conceitos.length;j++){
+          aluno.metas[conceitos[j]] = this.csvRecords[i][j+1];
+        }
+        this.alunosImportados.push(aluno);
+      }
+
+      console.log(this.alunosImportados);
+      if(!this.override){
+        this.atualizaAlunosImportadosServidor(this.alunosImportados);
+        alert("Alunos atualizados! cheque a tabela de Metas!");
+      }else{
+        if(confirm("Você tem certeza que quer sobrescrever?")){
+          this.atualizaAlunosImportadosServidor(this.alunosImportados);
+          alert("Alunos atualizados! cheque a tabela de Metas!");
+        }else{
+          this.alunoService.getAlunos()
+          .then(as => this.alunos = as)
+          .catch(erro => alert(erro));
+        }
+      }
+      this.resetImport();
+    }
+
+    resetImport(){
+      this.alunosImportados = [];
+      this.csvRecords = [];
+      this.override = false;
+    }
+
+    atualizaAlunosImportadosServidor(alunosImportados:Aluno[]){
+      for(var i=0;i<alunosImportados.length;i++){
+        this.atualizarAluno(alunosImportados[i]);
+      }
+    }
+
+    atualizarAluno(aluno: Aluno): void {
+      this.alunoService.atualizar(aluno)
+         .catch(erro => alert(erro));
+    }
+
+    checkOverridingMetas(aluno:Aluno, conceitos:string[]):void{
+      
+      var metas = aluno.metas;
+      console.log("debug overridind")
+      console.log(metas);
+      console.log(conceitos);
+      var metasAmount = [];
+      for(var i=0;i<conceitos.length;i++){
+        console.log(conceitos[i]);
+        console.log(metas[conceitos[i]]);
+          metasAmount.push(metas[conceitos[i]]);
+            
+        }
+
+      if(metasAmount.length > 0){
+        this.override = true;
+      }
+      console.log(metasAmount);
+
+    }
+    
+
+    getAlunoFromName(nome:string):Aluno{
+      var alunoProcurado:Aluno;
+      for(var i=0;i<this.alunos.length;i++){
+        if(this.alunos[i].nome == nome){
+          alunoProcurado = this.alunos[i];
+          return alunoProcurado
+        }
+      }
+        return null
+    }
+
+    getConceitosFromCSV(data:any):string[]{
+      var conceitos:string[] = [];
+      var tamanhoConceitos = data[0].length;
+      for(var i=1;i<tamanhoConceitos;i++){
+        conceitos.push(data[0][i]);
+      }
+
+      return conceitos;
+    }
+    
+    ngOnInit(){
+      this.alunoService.getAlunos()
+      .then(as => this.alunos = as)
+      .catch(erro => alert(erro));
+    }
 }

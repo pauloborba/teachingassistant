@@ -35,11 +35,11 @@ export class ExportMetas implements OnInit{
 
     columns(option:string):string{
         var column_names="";
-        column_names = "nome;";
+        column_names = "nome,";
 
         var conceitos = this.prova.get(option);
         for(var conceito in conceitos){
-            column_names = column_names + conceitos[conceito] + ";"
+            column_names = column_names + conceitos[conceito] + ","
         }
 
         column_names = column_names.slice(0,-1);
@@ -51,10 +51,10 @@ export class ExportMetas implements OnInit{
     rows(option:string):string{
         var dataRows = ""
         for(var i=0;i<this.alunos.length; i++){
-            dataRows = dataRows+ this.alunos[i].nome+";";
+            dataRows = dataRows+ this.alunos[i].nome+",";
             var conceitos = this.prova.get(option);
             for(var _ in conceitos){
-                dataRows = dataRows + ";";
+                dataRows = dataRows + ",";
             }
             dataRows = dataRows.slice(0,-1);
             dataRows += "\n";
