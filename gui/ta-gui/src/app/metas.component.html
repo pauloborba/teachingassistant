@@ -5,6 +5,11 @@
    <th>e-mail</th>
    <th>Requisitos</th>
    <th>Gerência de Configuração</th>
+   <th>Gerência de Projetos</th>
+   <th>SaaS</th>
+   <th>Testes</th>
+   <th>Projeto</th>
+   <th>Refatoração</th>
 </tr>
 <tr *ngFor="let a of alunos">
    <td>{{a.nome}}</td>
@@ -12,6 +17,11 @@
    <td>{{a.email}}</td>
    <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
    <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.metas['gerDeProjetos']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.metas['SaaS']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.metas['testes']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.metas['projeto']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.metas['refatoracao']" (change)="atualizarAluno(a)"></td>
 </tr>
 </table>
 <nav>
