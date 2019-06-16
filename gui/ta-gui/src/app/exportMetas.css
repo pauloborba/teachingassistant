@@ -51,3 +51,8 @@
     margin:auto;
     border:none;
 }
+
+.centerButton:hover{
+    color: #e6e6e6;
+     background-color: #1a8cff;
+}
