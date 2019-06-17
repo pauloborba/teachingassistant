@@ -5,7 +5,7 @@ export class Metas {
 
     criar(meta: Meta): Meta {
         var result = null;
-        if (!this.metas.find(m => m.nome == meta.nome)) {
+        if (!this.metas.find(m => m.nome == meta.nome) && meta.nome != "") {
             result = new Meta();
             result.nome = meta.nome;
             this.metas.push(result);
@@ -20,7 +20,7 @@ export class Metas {
     }
 
     remover(meta: Meta) : Meta {
-        const index: number = this.metas.indexOf(meta);
+        const index: number = this.metas.findIndex(m => m.nome == meta.nome);
         if (index !== -1) {
             this.metas.splice(index, 1);
         }
