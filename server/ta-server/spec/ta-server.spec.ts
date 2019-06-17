@@ -1,5 +1,6 @@
 import request = require("request-promise");
 import { closeServer } from '../ta-server';
+import { Meta } from "../../../gui/ta-gui/src/app/meta";
 
 var base_url = "http://localhost:3000/";
 
@@ -35,6 +36,50 @@ describe("O servidor", () => {
              });
          });
      });
+  })
+
+  it("não cadastra metas com nome duplicado", () => {
+    return request.post(base_url + "metas", { "json": { "nome": "Compreender métodos de refatoração" } }).then(body => {
+      expect(body).toEqual({ success: "A meta foi adicionada com sucesso" });
+      return request.post(base_url + "metas", { "json": { "nome": "Compreender métodos de refatoração" } }).then(body => {
+        expect(body).toEqual({ failure: "A meta não pode ser adicionada" });
+        return request.get(base_url + "metas").then(body => {
+          var result : Meta[] = <Meta[]>JSON.parse(body);
+          expect(body).toContain('{"nome":"Compreender métodos de refatoração"}');
+          expect(result.length).toBe(1);
+        });
+      });
+    });
+  })
+
+  it("atualiza metas cadastradas", () => {
+    return request.post(base_url + "metas", { "json": { "nome": "Compreender métodos de gerência de projeto" } }).then(body => {
+      expect(body).toEqual({ success: "A meta foi adicionada com sucesso" });
+      return request.put(base_url + "metas", { "json": { "meta": { "nome": "Compreender métodos de gerência de projeto"}, "nome": "Compreender técnicas de gerência de projeto" } }).then(body => {
+        expect(body).toEqual({ success: "A meta foi atualizada com sucesso" });
+        return request.get(base_url + "metas").then(body => {
+          var result: Meta[] = <Meta[]>JSON.parse(body);
+          expect(body).not.toContain('{"nome":"Compreender métodos de gerência de projeto"}');
+          expect(body).toContain('{"nome":"Compreender técnicas de gerência de projeto"}');
+          
+        });
+      });
+    });
+  })
+
+  it("remove metas cadastradas", () => {
+    return request.post(base_url + "metas", { "json": { "nome": "Compreender métodos de documentação" } }).then(body => {
+      expect(body).toEqual({ success: "A meta foi adicionada com sucesso" });
+      return request.get(base_url + "metas").then(body => {
+        expect(body).toContain('{"nome":"Compreender métodos de documentação"}');
+        return request.delete(base_url + "metas", { "json": { "nome": "Compreender métodos de documentação" } }).then(body => {
+          expect(body).toEqual({ success: "A meta foi removida com sucesso" });
+          return request.get(base_url + "metas").then(body => {
+            expect(body).not.toContain('{"nome":"Compreender métodos de documentação"}');
+          });
+        });
+      });
+    });
   })
 
 })
