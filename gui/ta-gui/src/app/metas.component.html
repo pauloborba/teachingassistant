@@ -1,16 +1,17 @@
+<div>
+   <label for=""> Nome da nova meta <input  name="nomeDaMeta" [(ngModel)]="novaMeta.nome" type="text" placeholder="Digite aqui o nome da meta"></label> <input type="button" value="Criar" (click) = "criarMeta()">
+</div>
 <table>
 <tr>
    <th>Nome</th>
    <th>CPF</th>
    <th>e-mail</th>
-   <th>Requisitos</th>
-   <th>Gerência de Configuração</th>
+   <th *ngFor="let m of metas" class="meta" name="metas">{{m.nome}}<br><input type="button" value="Editar"><br><input type="button" value="Remover" (click)="removerMeta(m)"></th>
 </tr>
 <tr *ngFor="let a of alunos">
    <td>{{a.nome}}</td>
    <td>{{a.cpf}}</td>
    <td>{{a.email}}</td>
-   <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
-   <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+   <td *ngFor="let m of metas" class="meta" id=""><input [(ngModel)]="a.metas[m.nome]" (change)="atualizarAluno(a)"></td>
 </tr>
 </table>
