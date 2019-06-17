@@ -21,6 +21,7 @@ export class ImportMetas implements OnInit{
     public override = false;
     public notaVazia = false;
     public alunosImportados:Aluno[] = [];
+    public wrongMeta = false;
 
     @ViewChild("fileImportInput") fileImportInput: any;
       fileChangeListener($event: any): void {
@@ -56,7 +57,7 @@ export class ImportMetas implements OnInit{
       if(!this.fileSelected){
         return alert("Selecione um arquivo CSV")
       }
-      if(this.csvRecords.length < 1){
+      if(this.csvRecords.length < 2){
         return alert("Verifique os dados da planilha importada! Ou atualize o arquivo enviado!");
       }
      
@@ -66,6 +67,11 @@ export class ImportMetas implements OnInit{
       for(var i=1;i<this.csvRecords.length;i++){
         var alunoNome = this.csvRecords[i][0];
         var aluno:Aluno = this.getAlunoFromName(alunoNome);
+        
+        if(aluno == null){
+          this.resetImport();
+          return alert("Você está tentando importar com algum aluno não cadastrado! Cheque sua planilha.")
+        }
 
         this.checkOverridingMetas(aluno,conceitos);
         for(var j=0;j<conceitos.length;j++){
@@ -75,38 +81,58 @@ export class ImportMetas implements OnInit{
         this.alunosImportados.push(aluno);
       }
 
-      console.log(this.alunosImportados);
-      if(!this.override){
-        if(!this.notaVazia){
+    console.log(this.alunosImportados);
+
+    this.confirmMessageAndUpdateServer()
+
+    this.resetImport();
+  }
+
+  confirmMessageAndUpdateServer(){
+    if(!this.override){
+      if(!this.notaVazia){
+        if(!this.wrongMeta){
           this.atualizaAlunosImportadosServidor(this.alunosImportados);
-          alert("Alunos atualizados! cheque a tabela de Metas!");
         }else{
-          if(confirm("Existe uma ou mais notas vazias, você quer importar mesmo assim?")){
+          if(confirm("Alguma meta está diferente de MA, MPA ou MANA, você deseja enviar assim mesmo?")){
             this.atualizaAlunosImportadosServidor(this.alunosImportados);
-            alert("Alunos atualizados! cheque a tabela de Metas!");
           }else{
             this.getServidorAlunos();
           }
         }
       }else{
-        if(!this.notaVazia){
-          if(confirm("Você tem certeza que quer sobrescrever?")){
-            this.atualizaAlunosImportadosServidor(this.alunosImportados);
-            alert("Alunos atualizados! cheque a tabela de Metas!");
-          }else{
-            this.getServidorAlunos();
-          }
+        if(confirm("Existe uma ou mais notas vazias, você quer importar mesmo assim?")){
+          this.atualizaAlunosImportadosServidor(this.alunosImportados);
         }else{
-          if(confirm("Existe uma ou mais notas vazias, você quer importar mesmo assim?")){
-            this.atualizaAlunosImportadosServidor(this.alunosImportados);
-            alert("Alunos atualizados! cheque a tabela de Metas!");
-          }else{
-            this.getServidorAlunos();
-          }
+          this.getServidorAlunos();
         }
       }
-    this.resetImport();
+    }else{
+      if(!this.notaVazia){
+        if(!this.wrongMeta){
+          if(confirm("Você tem certeza que quer sobrescrever?")){
+            this.atualizaAlunosImportadosServidor(this.alunosImportados);
+          }else{
+          this.getServidorAlunos();
+          }
+        }else{
+         if(confirm("Alguma meta está diferente de MA, MPA ou MANA, você deseja enviar assim mesmo?")){
+            this.atualizaAlunosImportadosServidor(this.alunosImportados);
+         }else{
+           this.getServidorAlunos();
+          } 
+        }
+      }else{
+        if(confirm("Existe uma ou mais notas vazias, você quer importar mesmo assim?")){
+          this.atualizaAlunosImportadosServidor(this.alunosImportados);
+        }else{
+          this.getServidorAlunos();
+        }
+      }
+    }
   }
+
+
 
     getServidorAlunos(){
       this.alunoService.getAlunos()
@@ -115,10 +141,21 @@ export class ImportMetas implements OnInit{
     }
 
     checkNotaVazia(nota:string):void{
-      nota = nota.toUpperCase();
-        if( (nota == "") || ((!(nota =="MPA")) && (!(nota == "MA")) && (!(nota=="MANA"))) ){
+      if(nota != undefined){
+        nota = nota.toUpperCase();
+      }else{
+        nota = "";
+      }
+      if (nota == "") { 
           this.notaVazia = true;
-        }
+      }
+      this.checkWrongMeta(nota);
+    }
+
+    checkWrongMeta(nota:string):void{
+      if( (!(nota =="MPA")) && (!(nota == "MA")) && (!(nota=="MANA")) ) {
+        this.wrongMeta = true;
+      }
     }
 
     resetImport(){
@@ -126,12 +163,14 @@ export class ImportMetas implements OnInit{
       this.csvRecords = [];
       this.override = false;
       this.notaVazia = false;
+      this.wrongMeta = false;
     }
 
     atualizaAlunosImportadosServidor(alunosImportados:Aluno[]){
       for(var i=0;i<alunosImportados.length;i++){
         this.atualizarAluno(alunosImportados[i]);
       }
+      alert("Alunos atualizados! cheque a tabela de Metas!");
     }
 
     atualizarAluno(aluno: Aluno): void {
