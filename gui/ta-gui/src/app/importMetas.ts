@@ -19,6 +19,7 @@ export class ImportMetas implements OnInit{
     public csvRecords: any[] = [];
     public option:string="MP1"; //apagar
     public override = false;
+    public notaVazia = false;
     public alunosImportados:Aluno[] = [];
 
     @ViewChild("fileImportInput") fileImportInput: any;
@@ -69,31 +70,62 @@ export class ImportMetas implements OnInit{
         this.checkOverridingMetas(aluno,conceitos);
         for(var j=0;j<conceitos.length;j++){
           aluno.metas[conceitos[j]] = this.csvRecords[i][j+1];
+          this.checkNotaVazia(this.csvRecords[i][j+1]);
         }
         this.alunosImportados.push(aluno);
       }
 
       console.log(this.alunosImportados);
       if(!this.override){
-        this.atualizaAlunosImportadosServidor(this.alunosImportados);
-        alert("Alunos atualizados! cheque a tabela de Metas!");
-      }else{
-        if(confirm("Você tem certeza que quer sobrescrever?")){
+        if(!this.notaVazia){
           this.atualizaAlunosImportadosServidor(this.alunosImportados);
           alert("Alunos atualizados! cheque a tabela de Metas!");
         }else{
-          this.alunoService.getAlunos()
-          .then(as => this.alunos = as)
-          .catch(erro => alert(erro));
+          if(confirm("Existe uma ou mais notas vazias, você quer importar mesmo assim?")){
+            this.atualizaAlunosImportadosServidor(this.alunosImportados);
+            alert("Alunos atualizados! cheque a tabela de Metas!");
+          }else{
+            this.getServidorAlunos();
+          }
+        }
+      }else{
+        if(!this.notaVazia){
+          if(confirm("Você tem certeza que quer sobrescrever?")){
+            this.atualizaAlunosImportadosServidor(this.alunosImportados);
+            alert("Alunos atualizados! cheque a tabela de Metas!");
+          }else{
+            this.getServidorAlunos();
+          }
+        }else{
+          if(confirm("Existe uma ou mais notas vazias, você quer importar mesmo assim?")){
+            this.atualizaAlunosImportadosServidor(this.alunosImportados);
+            alert("Alunos atualizados! cheque a tabela de Metas!");
+          }else{
+            this.getServidorAlunos();
+          }
         }
       }
-      this.resetImport();
+    this.resetImport();
+  }
+
+    getServidorAlunos(){
+      this.alunoService.getAlunos()
+      .then(as => this.alunos = as)
+      .catch(erro => alert(erro));
+    }
+
+    checkNotaVazia(nota:string):void{
+      nota = nota.toUpperCase();
+        if( (nota == "") || ((!(nota =="MPA")) && (!(nota == "MA")) && (!(nota=="MANA"))) ){
+          this.notaVazia = true;
+        }
     }
 
     resetImport(){
       this.alunosImportados = [];
       this.csvRecords = [];
       this.override = false;
+      this.notaVazia = false;
     }
 
     atualizaAlunosImportadosServidor(alunosImportados:Aluno[]){
