@@ -17,7 +17,6 @@ export class ImportMetas implements OnInit{
     public alunos: any[]=[];
     public aluno: Aluno = new Aluno();
     public csvRecords: any[] = [];
-    public option:string="MP1"; //apagar
     public override = false;
     public notaVazia = false;
     public alunosImportados:Aluno[] = [];
@@ -183,7 +182,7 @@ export class ImportMetas implements OnInit{
       var metas = aluno.metas;
       var metasAmount = [];
       for(var i=0;i<conceitos.length;i++){
-        if(metas[conceitos[i]] != undefined){
+        if( (metas[conceitos[i]] != undefined) && (metas[conceitos[i]] != "") ){
           metasAmount.push(metas[conceitos[i]]);
         }  
       }

@@ -28,7 +28,6 @@ export class ExportMetas implements OnInit{
     }
 
     setNewMP(mp:string):void{
-       // var opt = document.getElementById('selected');
         this.option = mp;
         console.log(this.option);
     }
@@ -72,7 +71,6 @@ export class ExportMetas implements OnInit{
         .then(as => this.alunos = as)
         .catch(erro => alert(erro));
 
-        //TODO: get option and update tittle
         console.log(this.option);
         this.tittle = this.option;
 
@@ -83,18 +81,17 @@ export class ExportMetas implements OnInit{
        
         csvContent = column_names + dataRows;
 
-        var filename = this.tittle.replace(/ /g,'')+'.csv'; //gen a filename using the title but getting rid of spaces
+        var filename = this.tittle.replace(/ /g,'')+'.csv'; 
         var blob = new Blob([csvContent], { "type": 'text/csv;charset=utf-8;' });
         if (navigator.msSaveBlob) 
-        { // IE 10+
+        {
             navigator.msSaveBlob(blob, filename);
         } 
-        else //create a link and click it
+        else 
         {
             var link = document.createElement("a");
-            if (link.download !== undefined) // feature detection
+            if (link.download !== undefined)
             { 
-            // Browsers that support HTML5 download attribute
             var url = URL.createObjectURL(blob); 
             link.setAttribute("href", url);
             link.setAttribute("download", filename);
