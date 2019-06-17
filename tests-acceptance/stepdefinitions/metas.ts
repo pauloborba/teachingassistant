@@ -6,54 +6,53 @@ let expect = chai.expect;
 
 defineSupportCode(function ({ Given, When, Then }) {
     Given('estou na página de metas', async() => {
-        // Write code here that turns the phrase above into concrete actions
+        await browser.get("http://localhost:4200/");
+        await expect(browser.getTitle()).to.eventually.equal('TaGui');
+        await $("a[name='metas']").click();
     });
 
-    Given('não vejo uma meta de nome {nomeDaMeta}', async (nomeDaMeta) => {
-        // Write code here that turns the phrase above into concrete actions
+    Given('não posso ver a meta de nome {stringInDoubleQuotes}', async (nomeDaMeta) => {
+        var metas: ElementArrayFinder = element.all(by.name('metas'));
+        await metas;
+        var metasEncontradas = metas.filter(elem => elem.getText().then(text => text === nomeDaMeta));
+        await metasEncontradas;
+        await metasEncontradas.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(0));
     });
 
-    When('preencho o campo {nomeDoCampo} com {nomeDaMeta}', async (nomeDoCampo, nomeDaMeta) => {
-        // Write code here that turns the phrase above into concrete actions
+    Given('não posso ver a meta de nome ""', async () => {
+        var metas: ElementArrayFinder = element.all(by.name('metas'));
+        await metas;
+        var metasEncontradas = metas.filter(elem => elem.getText().then(text => text === ""));
+        await metasEncontradas;
+        await metasEncontradas.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(0));
+    });
+
+    When('preencho o nome da meta com ""', async () => {
+        await $("input[name='nomeDaMeta']").sendKeys(<string>"");
+    });
+
+    When('preencho o nome da meta com {stringInDoubleQuotes}', async (nomeDaMeta) => {
+        await $("input[name='nomeDaMeta']").sendKeys(<string>nomeDaMeta);
+    });
+
+    Then('posso ver a meta de nome {stringInDoubleQuotes} listada apenas {int} vez', async (nomeDaMeta, qtdMeta) => {
+        var metas: ElementArrayFinder = element.all(by.name('metas'));
+        var qtdStr = <string>qtdMeta;
+        await metas;
+        var metasEncontradas = metas.filter(elem => elem.getText().then(text => text === nomeDaMeta));
+        await metasEncontradas;
+        await metasEncontradas.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(+qtdStr));
     });
 
     When('confirmo a criação', async () => {
-        // Write code here that turns the phrase above into concrete actions
+        await element(by.buttonText('Criar')).click();
     });
 
-    Then('posso ver a meta de nome {nomeDaMeta} listada', async (nomeDaMeta) => {
-        // Write code here that turns the phrase above into concrete actions
+    When('seleciono a opção {stringInDoubleQuotes} da meta de nome {stringInDoubleQuotes}', async (acao, nomeDaMeta) => {
+        var el = element(by.cssContainingText('.meta', <string>nomeDaMeta));
+        await el;
+        await el.element(by.buttonText(<string>acao)).click();
+        // await element(by.buttonText(<string>acao)).click();
     });
 
-    Then('posso ver a meta de nome {nomeDaMeta} listada apenas {qtdMeta} vez', async (nomeDaMeta, qtdMeta) => {
-        // Write code here that turns the phrase above into concrete actions
-    });
-
-    When('preencho o campo {nomeDoCampo} com nome ""', async (nomeDoCampo) => {
-        // Write code here that turns the phrase above into concrete actions
-    });
-
-    Then('não posso ver a meta de nome ""', async () => {
-        // Write code here that turns the phrase above into concrete actions
-    });
-
-    Given('seleciono a meta com nome {nomeDaMeta}', async (nomeDaMeta) => {
-        // Write code here that turns the phrase above into concrete actions
-    });
-
-    When('confirmo a edição', async () => {
-        // Write code here that turns the phrase above into concrete actions
-    });
-
-    Then('não posso ver a meta de nome {stringInDoubleQuotes}', async (stringInDoubleQuotes) => {
-        // Write code here that turns the phrase above into concrete actions
-    });
-
-    When('seleciono a opção {stringInDoubleQuotes}', async (stringInDoubleQuotes) => {
-        // Write code here that turns the phrase above into concrete actions
-    });
-
-    When('confirmo a remoção', async () => {
-        // Write code here that turns the phrase above into concrete actions
-    });
 });
