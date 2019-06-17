@@ -15,6 +15,7 @@ export class AppComponent {
    aluno: Aluno = new Aluno();
    alunos: Aluno[] = [];
    cpfduplicado: boolean = false;
+   githubduplicado: boolean = false
 
    criarAluno(a: Aluno): void {
      if (this.alunoService.criar(a)) {
@@ -22,11 +23,13 @@ export class AppComponent {
        this.aluno = new Aluno();
      } else {
        this.cpfduplicado = true;
+       this.githubduplicado = true;
      }
    }
 
    onMove(): void {
       this.cpfduplicado = false;
+      this.githubduplicado = false;
    }
 
 }

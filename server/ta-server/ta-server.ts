@@ -19,6 +19,7 @@ app.use(allowCrossDomain);
 app.use(bodyParser.json());
 
 app.get('/alunos', function (req, res) {
+  
   res.send(JSON.stringify(cadastro.getAlunos()));
 })
 
@@ -29,6 +30,15 @@ app.post('/aluno', function (req: express.Request, res: express.Response) {
     res.send({"success": "O aluno foi cadastrado com sucesso"});
   } else {
     res.send({"failure": "O aluno não pode ser cadastrado"});
+  }
+})
+app.delete('/aluno/:id', function (req: express.Request, res: express.Response) {
+  var aluno: Aluno = <Aluno> req.body;
+  aluno = cadastro.remover(aluno.cpf);
+  if (aluno) {
+    res.send({"success": "O aluno foi removido com sucesso"});
+  } else {
+    res.send({"failure": "O aluno não pode ser removido"});
   }
 })
 
@@ -42,12 +52,8 @@ app.put('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
-var server = app.listen(3000, function () {
+app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
 
-function closeServer(): void {
-   server.close();
-}
-
-export { app, server, closeServer }
+export { app }

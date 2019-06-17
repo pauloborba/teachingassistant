@@ -1,6 +1,6 @@
 import { Injectable }    from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+
 
 import { Aluno } from './aluno';
 
@@ -29,12 +29,29 @@ export class AlunoService {
          })
          .catch(this.tratarErro);
   }
+  remover(aluno : Aluno): Promise<Aluno>{
+    return this.http.delete(this.taURL  + "/aluno" + "/" + aluno.cpf,JSON.stringify(aluno.cpf))    
+    .toPromise()
+    .then(res => {
+      
+      if(res.json().success) { return aluno;} else {return null;}
+    })
+    .catch(this.tratarErro);
+
+
+  }
+  
 
   getAlunos(): Promise<Aluno[]> {
     return this.http.get(this.taURL + "/alunos")
              .toPromise()
              .then(res => res.json() as Aluno[])
              .catch(this.tratarErro);
+  }
+
+  getMedia(): void{
+   
+
   }
 
   private tratarErro(erro: any): Promise<any>{

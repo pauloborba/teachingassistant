@@ -4,7 +4,10 @@
 <tr>
    <td><label>Nome </label></td>
    <td><input [(ngModel)]="aluno.nome" name="namebox"></td>
-   <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
+   <td><button class="criar" (click)="criarAluno(aluno)">Adicionar</button></td>
+   <td><button class="remover" (click) = "removerAluno(aluno)">Remover</button></td>
+   
+   
 </tr>
 <tr>
    <td><label>CPF </label></td>
@@ -12,10 +15,20 @@
    <td *ngIf="cpfduplicado">
      Já existe um aluno com esse CPF
    </td>
+   
 </tr>
 <tr>
-   <td><label>e-mail </label></td>
+   <td><label>E-mail </label></td>
    <td><input [(ngModel)]="aluno.email"></td>
+   
+</tr>
+<tr>
+   <td><label>Login GitHub</label></td>
+   <td><input [(ngModel)]="aluno.logingithub"></td>
+   <td *ngIf="githubduplicado">
+      Já existe um aluno com esse Login GitHub
+    </td>
+
 </tr>
 </table>
 
@@ -23,12 +36,15 @@
 <tr *ngIf="alunos.length > 0">
    <th>Nome</th>
    <th>CPF</th>
-   <th>e-mail</th>
+   <th>E-mail</th>
+   <th>Login GitHub</th>
 </tr>
 <tr *ngFor="let a of alunos" name="alunolist">
    <td name="nomelist">{{a.nome}}</td>
    <td name="cpflist">{{a.cpf}}</td>
    <td>{{a.email}}</td>
+   <td>{{a.logingithub}}</td>
+  
 </tr>
 </table>
 

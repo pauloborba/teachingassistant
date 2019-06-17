@@ -39,8 +39,10 @@ alunos: Aluno[];
       this.necessitados=[];
       this.allnecessitados="";
     for(let i in this.alunos){
+       if(!this.reprovacaoFalta(this.alunos[i])){
        this.medias.push(this.mediaIndividual(this.alunos[i]));
     }
+   }
     this.gerarNecessitados();
 
    }
@@ -48,7 +50,7 @@ alunos: Aluno[];
       this.medias.sort();
       var mediana=0;
       if(this.medias.length%2==0){
-         
+
          mediana = (this.medias[(this.medias.length/2)-1] + this.medias[(this.medias.length/2)])/2;
       }
       else{
@@ -56,14 +58,16 @@ alunos: Aluno[];
       }
       return mediana;
    }
-
+      
    
    mediaIndividual(aluno: Aluno){
       var ma = 0;
       var mpa = 0;
       var mana = 0;
       
+      
       for(let j in aluno.metas){
+         
       if(aluno.metas[j]=="MANA"){
          mana++;
         }
@@ -79,24 +83,24 @@ alunos: Aluno[];
          var pmpa = mpa/(total);
          var pmana = mana/(total);
          var media = 0;
-         if(pmana==0 && pmpa==0){
-            if(pma>=0.9){
+         if(pmana==0){
+            if(pma>=0.9 || pmpa>=0.9){
                media=10;
             }
-            else if(pma>=0.8){
+            else if(pma>=0.8 || pmpa>=0.8){
                media=9.5;
             }
-            else if(pma>=0.7){
+            else if(pma>=0.7|| pmpa>=0.7){
                media=9;
             }
-            else if(pma>=0.5){
+            else if(pma>=0.6 || pmpa>=0.6){
             media=8.5;
             
             }
-            else if(pma=>0.4){
+            else if(pma>=0.5 || pmpa>=0.5){
                media=8;
             }
-            else if(pma=>0.2){
+            else if(pma>=0.4 || pmpa>=0.4){
                media=7.5;
             }
             else{
@@ -125,6 +129,7 @@ alunos: Aluno[];
          
               return media;
          }
+      
 
         
    gerarNecessitados() : void{
@@ -142,8 +147,9 @@ alunos: Aluno[];
        
       }
       else{
-         this.allnecessitados= this.necessitados.length + " alunos estão abaixo da média da turma :" +"\n" +   this.allnecessitados;
-      
+         this.allnecessitados= this.necessitados.length + " alunos estão abaixo da média da turma " + "(" + this.mediana()  + 
+         "): "+"\n" +   this.allnecessitados;
+         
       
      
    }
@@ -153,7 +159,7 @@ alunos: Aluno[];
       var nec=this.allnecessitados;
       var nece=this.necessitados;
       if(nec==""){
-
+        alert("Nenhum aluno está abaixo da média");
       }
       else{
 
@@ -173,14 +179,25 @@ alunos: Aluno[];
    }
   
 
+      reprovacaoFalta(aluno: Aluno){
+         if(aluno.metas['requisitos']=="F"  ||
+         aluno.metas['gerDeConfiguracao']== "F" || 
+         aluno.metas['gerDeProjetos']=="F" ||
+         aluno.metas['testes']=="F" ){
+           return true;
+        }
+        return false;
 
+      }
    
 
       gerarAnaliseFinal() : void{
       var pormedia = 0;
       var final = 0;
-      var repfalta = 0;
+      
       let necessitados : String[] = [];
+      
+      let repfaltav=0;
       var falta = 0;
       
       for( let i in this.alunos){
@@ -190,27 +207,39 @@ alunos: Aluno[];
           this.alunos[i].metas['testes']=="" ){
             falta++;
          }
+         else if(this.reprovacaoFalta(this.alunos[i])){
+              
+            repfaltav++;
+         }
          else if(this.alunos[i].metas['requisitos']=="MANA" ||
           this.alunos[i].metas['gerDeConfiguracao']=="MANA" || 
           this.alunos[i].metas['gerDeProjetos']=="MANA" ||
           this.alunos[i].metas['testes']=="MANA"){
              final++;
-             this.necessitados.push(this.alunos[i]);
+             
             }
          else{
             pormedia++;
          }
          var pfinal = 0;
          var pmedia = 0;
-         pfinal = final/(pormedia+final)*100;
-         pmedia = pormedia/(pormedia+final)*100;
-}
+         var pfalta =0;
+         pfinal = final/(pormedia+final+repfaltav)*100;
+         pmedia = pormedia/(pormedia+final+ repfaltav)*100;
+         pfalta = repfaltav/(pormedia+final+ repfaltav)*100
+}          
+       
+
     if(falta>0){
        alert(falta + " alunos ainda estão com metas não preenchidas");
     }
     else{
-      alert(pfinal+"% dos alunos foram para final"+ "("+ final + ")" + "\n" + pmedia + "% dos alunos passaram por média" +"("+ pormedia + ")" );   
-      this.necessitados=[];
+       
+      
+      alert(pfinal.toFixed(2)+"% dos alunos foram para final"+ "("+ final + ")" + "\n" + 
+      pmedia.toFixed(2) + "% dos alunos passaram por média" +"("+ pormedia + ")" + "\n"+   
+       pfalta.toFixed(2)+ "% dos alunos foram reprovados por falta" +"("+ repfaltav + ")" );   
+      
    }
 }
    
