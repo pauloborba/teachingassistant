@@ -1,0 +1,6 @@
+Cenário de auto avaliação bem sucedida
+Given que eu estou logado como "aluno"
+And o "professor" preencheu todas as minhas metas
+When eu preencher o a auto avaliação
+Then aparecerá um ok
+And um e-mail de sucesso
