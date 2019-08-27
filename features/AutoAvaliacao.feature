@@ -22,3 +22,18 @@ Scenario:​ Auto-avaliação do aluno
     When ​ eu envio para o sistema as informações “MA,MA,MPA” para conceitos de auto-avaliação do aluno
     Then o sistema retorna um codigo de confirmacao “1”
     And o aluno “Paulo A.” está armazenado no sistema com conceitos “MA,MPA,MA” para as metas e “MA,MA,MPA” para a auto-avaliação das metas
+    
+/* Cenarios de preenchimento mal sucedido da feauture auto-avaliacao*/
+
+Scenario: ​ Auto-avaliação do aluno com uma meta ausente
+    Given ​ eu estou na página “auto-avaliação do aluno”
+    And​ eu estou conectado com perfil “Aluno”And​ nas 6 metas os conceitos “MPA,MA,MA,MA,MA,MA” foi atribuído pelo professor ao aluno “Paulo A.”
+    When ​ eu informo “MPA, ,MPA,MPA,MPA,MPA” para as metas, deixando a meta “Especificar requisitos com qualidade” em branco
+    Then ​ eu estou na página “auto-avaliação do aluno”
+    And ​ eu vejo uma mensagem de erro “informando que há metas que não possuem conceitos atribuídos.”
+
+Scenario: Auto-avaliação do aluno com uma meta ausente
+    Given​ o aluno “Paulo A.” está armazenado no sistema com conceitos “MA,MPA,MA” para as metas "Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração"
+    When ​ eu envio para o sistema as informações “MA,MA, ” para conceitos de auto-avaliação do aluno
+    Then o sistema retorna um codigo de erro “2”
+    And o aluno “Paulo A.” está armazenado no sistema com conceitos “MA,MPA,MA” para as metas e “ , , ” para a auto-avaliação das metas
