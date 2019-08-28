@@ -12,6 +12,13 @@ And o "professor" preencheu todas as minhas metas
 When eu preencher metade da auto avaliação e submeter
 Then aparecerá um erro
 
+Cenário de auto avaliação sem discrepância:
+Given que eu estou logado como "aluno"
+And recebi "MA" do professor
+And me auto avaliei com "MA"
+When o relatório for gerado
+Then aparecerá um ok no status 
+
 Cenário de auto avaliação com discrepância:
 Given que eu estou logado como "aluno"
 And recebi "MPA" do professor
