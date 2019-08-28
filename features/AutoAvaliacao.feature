@@ -57,4 +57,5 @@ Scenario: Auto-avaliação do aluno com discrepância de 1 entre 3
 	Then eu estou na página “Avaliação”
 	And eu vejo uma tabela com C1 “quantidade, percentual, *Inicio lista*, Pedro,*Fim lista*” e C2 “1, 33.3%”
 	And **
+	And ***
 
