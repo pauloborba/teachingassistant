@@ -11,3 +11,10 @@ Given que eu estou logado como "aluno"
 And o "professor" preencheu todas as minhas metas
 When eu preencher metade da auto avaliação e submeter
 Then aparecerá um erro
+
+Cenário de auto avaliação com discrepância:
+Given que eu estou logado como "aluno"
+And recebi "MPA" do professor
+And me auto avaliei com "MA"
+When o relatório for gerado
+Then aparecerá um aviso de aluno discrepante ao lado do meu nome
