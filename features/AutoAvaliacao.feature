@@ -32,3 +32,12 @@ Scenario: Failed self-assessment
     When I ask the system to compute my grades
     Then the system returns “Mensagem de erro”
     And the grades are not stored in the system
+
+Scenario: No discrepant grade
+    Given I am logged as “Professor”
+    And I am at “Grades” page
+    And I see “Ana”, “João” e “Pedro” in a table with their grades “MANA”, “MPA” ou “MA” for each learning goal.
+    When I ask the system to “See discrepant grades”
+    Then I am at “Discrepant grades” page
+    And I see a empty list
+    And I see “0%” and “0 students” below the list
