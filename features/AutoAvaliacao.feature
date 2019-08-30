@@ -29,3 +29,10 @@ Dado que o professor já preencheu os conceitos de todas as metas
 Quando eu preencho “MA” em “Elicitar Requisitos” e não preencho o conceito na meta “Realizar testes”
 Então o sistema exibe um alerta sinalizando que a meta “Realizar testes” não teve seu conceito preenchido
 E sinaliza em vermelho a lacuna da meta “Realizar testes”, pois ela não foi preenchida.
+
+Cenário: Nenhuma discrepância nas auto-avaliações dos alunos
+Dado que eu quero checar se há discrepâncias nas auto-avaliações dos alunos
+E não há nenhuma discrepância
+Quando eu abro a tela com a tabela 
+Então eu vejo que na meta “Elicitar Requisitos”, “Marquito” se avaliou com “MA” e o professor deu “MPA”, “Jorge” se avaliou com “MPA” e o professor deu “MPA” e “Billy” se avaliou com “MANA” e o professor deu “MPA”, que na meta “Realizar testes”, “Marquito” se avaliou com “MA” e o professor deu “MA”, “Jorge” se availou com “MA” e o professor deu “MA” e “Billy” se availou com “MPA” e o professor deu “MA”.  
+E a tabela exibe na meta que houve apenas uma discrepância na meta “Elicitar Requisitos”, que a porcentagem é 33% e exibe o nome de “Marquito”.
