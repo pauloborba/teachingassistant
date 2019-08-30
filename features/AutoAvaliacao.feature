@@ -29,3 +29,4 @@ Dado que o professor já preencheu os conceitos de todas as metas
 Quando eu preencho “MA” em “Elicitar Requisitos” e não preencho o conceito na meta “Realizar testes”
 Então o sistema exibe um alerta sinalizando que a meta “Realizar testes” não teve seu conceito preenchido
 E sinaliza em vermelho a lacuna da meta “Realizar testes”, pois ela não foi preenchida.
+E retorna para a página de preencher os conceitos das metas.
