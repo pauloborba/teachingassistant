@@ -23,8 +23,9 @@ Scenario: Failed self-assessment
     And I see the names of ten learning goals with the teacher’s evaluations
     And I evaluate each learning goal with “MANA”, “MPA” ou “MA” unless “Entender motivação e conceitos de requisitos”
     When I ask the system to compute my self-evaluations 
-    Then I am at “Discrepant Grades” page
+    Then I am at “Grades” page
     And I see a error message “Evaluate all the learning goas” 
+    And I see “Try to evaluate again”
 
 Scenario: Failed self-assessment 
     Given the system has no evaluation done stored by me
@@ -32,3 +33,4 @@ Scenario: Failed self-assessment
     When I ask the system to compute my grades
     Then the system returns “Mensagem de erro”
     And the grades are not stored in the system
+    And the system asks me to try again
