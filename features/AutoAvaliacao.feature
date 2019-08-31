@@ -13,3 +13,12 @@ Scenario: Preenchimento da autoavaliação (mal sucedido).
 Given Estou na página de autoavaliação daquela disciplina
 When Eu não preencho todos os campos com meu conceito e tento concluir a autoavaliação
 Then A caixa da meta que não foi avaliada ficará vermelha
+
+Scenario: Consulta ao sistema quando não há discrepância
+Given Eu estou na página de notas e autoavaliação da disciplina
+And Vejo que “Avaliações consistentes” está com 100% dos alunos
+And As “Avaliações inconsistentes” não possuem alunos
+When Clico para ver mais sobre cada grupo
+Then Vejo uma mensagem indicando a ausência de avaliações discrepantes
+And Para as avaliações consistentes, vejo os nomes, grau de consistência (< 25%) e as metas com inconsistência (no caso, apenas para o primeiro aluno terá o campo de detalhes expansível)
+And Será visualizável o conceito dado por mim e a avaliação do aluno.
