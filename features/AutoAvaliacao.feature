@@ -35,5 +35,7 @@ And: Eu vejo minha “Avaliação” como sendo “MPA”, “MPA”, “MPA”,
 When: Eu preencho minha “Auto-avaliação” com os conceitos “MA”, “MA”, “MA”, “-” e “MA” para as “metas” avaliadas.
 And: Eu submeto ao sistema minha “Auto-avaliação” 
 Then: eu vejo uma mensagem de erro indicando que todas as “metas” não foram avaliadas
+And: Eu continuo na página de “Auto-avaliação” da disciplina “ESS”
 And: Eu vejo minha “Avaliação” como sendo “MPA”, “MPA”, “MPA”, “MPA” e “MPA” para as “metas” avaliadas.
 And: Eu vejo minha “Auto-avaliação” como sendo “MA”, “MA”, “MA”, “-” e “MA” para as “metas” avaliadas.
+
