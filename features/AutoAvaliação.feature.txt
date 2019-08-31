@@ -2,3 +2,23 @@ Feature: Auto-avaliação de metas.
 As a: Aluno membro de uma instituição de ensino.
 i want to: me avaliar e visualizar as notas que recebi pelo professor em cada meta.
 so that: Analisar se a nota que eu esperava receber condiz com a nota que recebi.
+
+GUI based scenario
+
+Scenario: Auto-avaliando todos os conceitos.
+Given eu estou na página “Home” logado como “Samuel Miranda” na turma ESS-2019.2
+And eu vejo que ainda não me auto-avaliei
+When eu seleciono a opção “Avalie-se”
+And eu adiciono as notas “MA,MPA ou MANA” em todos os campos de “Nota de auto-avaliação”
+And eu finalizo o cadastro de notas
+Then eu visualizo uma mensagem de confirmação do procedimento
+And as notas auto-avaliadas são salvas
+
+	Service based scenario
+
+Scenario: Auto-avaliando todos os conceitos.
+Given o estudante “Samuel Oliveira” está cadastrado na turma ESS-2019.2
+And o estudante não auto-avaliou-se no sistema de notas
+When Ele insere no sistema as notas “MA,MPA ou MANA” de todas as metas propostas para ele avaliar
+And ele tenta salvar as notas no sistema
+Then todas as notas auto-avaliadas por “Samuel Oliveira” são salvas no sistema
