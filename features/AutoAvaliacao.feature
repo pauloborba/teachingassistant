@@ -42,3 +42,27 @@ Scenario: Preenchimento mal sucedido
     And: As notas de auto-avaliação do aluno “Johnny” de cpf “123” não foram cadastradas no sistema 
     And: As notas de auto-avaliação do aluno “Samuel” de cpf “456” ainda estão cadastradas no sistema
     And: As notas não são cadastradas
+
+GUI based scenario:
+Scenario: Alunos sem discrepância na nota
+	Given: O professor “Paulo” de cpf “987” está na “Página de Notas”
+    And: A turma tem as metas “Meta 1”, “Meta 2”, “Meta 3”, “Meta 4”, “Meta 5”
+    And: O aluno “Johnny” de cpf “123” tem notas “MA”, “MPA”, “MA”, “MPA”, “MPA” respectivamente com notas de auto-avaliação “MA”, “MA”, “MA”, “MPA”, “MPA”  respectivamente nas metas da turma.
+    And: O aluno “Samuel” de cpf “456” tem notas “MA”, “MA”, “MA”, “MA”, “MA” respectivamente com notas de auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” respectivamente nas metas da turma.
+    And: O aluno “José” de cpf “789” tem notas “MA”, “MPA”, “MA”, “MA”, “MPA” respectivamente com notas de auto-avaliação “MPA”, “MANA”, “MANA”, “MA”, “MANA”  respectivamente nas metas da turma.
+	When: Seleciono a opção de “Visualizar discrepâncias”
+	Then: Eu sou redirecionado para a “Página de discrepâncias”
+    And: Vejo uma mensagem avisando que não há discrepância de notas em nenhum aluno
+
+GUI based scenario:
+Scenario: Aluno com discrepância na nota
+	Given: O professor “Paulo” de cpf “987” está na “Página de Notas”
+	And: A turma tem as metas “Meta 1”, “Meta 2”, “Meta 3”, “Meta 4”, “Meta 5”
+    And: O aluno “Johnny” de cpf “123” tem notas “MA”, “MPA”, “MA”, “MPA”, “MPA” respectivamente com notas de auto-avaliação “MA”, “MA”, “MA”, “MPA”, “MPA” respectivamente nas metas da turma
+    And: O aluno “Samuel” de cpf “456” tem notas “MA”, “MA”, “MA”, “MA”, “MA” respectivamente com notas de auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” respectivamente nas metas da turma
+    And: O aluno “José” de cpf “789” tem notas “MANA”, “MPA”, “MA”, “MA”, “MPA” respectivamente com notas de auto-avaliação “MPA”, “MANA”, “MPA”, “MA”, “MA”  respectivamente nas metas da turma
+	When: Seleciono a opção de “Visualizar discrepâncias”
+	Then: Eu sou redirecionado para a “Página de discrepância”
+    And: Vejo apenas  o aluno “José” de cpf “789” na listagem de alunos com discrepância
+    And: Vejo que a quantidade de alunos com discrepância é “1”
+    And: Vejo que a porcentagem de alunos com discrepância na nota é “33,33%”
