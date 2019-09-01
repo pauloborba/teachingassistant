@@ -1,4 +1,18 @@
-Feature: auto-avaliação
+Feature: "auto-avaliação"
 As a Student
 I want to be able to set my grade in each goal alongside with the teacher’s goal
 So that I can compare each grade with the expected
+
+Scenario: concept assignment
+Given I am on “Grades” page
+And I didn’t have added any grades for “Victor”
+When I add my grades (all “MA”)
+Then I receive a confirmation
+And I am on “Grades” page
+And I can see my grades on the list
+
+Scenario: concept assignment
+Given no grades have been put for student “Victor”
+When all grades have been added for student “Victor” (all “MA”)
+Then all grades are properly stored for student “Victor”
+
