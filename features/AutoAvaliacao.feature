@@ -30,3 +30,9 @@ When all the grades (“MA”) have been added for student “Victor” except t
 Then a error is sent warning that the grades weren’t well filled
 And the grades are not stored
 
+Scenario: visualização de nenhuma discrepância
+Given I am on “Grades” page
+When I select the option “Notas Discrepantes”
+Then I receive a message saying no Discrepancies
+And I am on “Grades” page
+
