@@ -41,3 +41,4 @@ Scenario: Preenchimento mal sucedido
     Then: O sistema retorna uma mensagem de invalidação da operação
     And: As notas de auto-avaliação do aluno “Johnny” de cpf “123” não foram cadastradas no sistema 
     And: As notas de auto-avaliação do aluno “Samuel” de cpf “456” ainda estão cadastradas no sistema
+    And: As notas não são cadastradas
