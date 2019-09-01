@@ -36,3 +36,9 @@ When I select the option “Notas Discrepantes”
 Then I receive a message saying no Discrepancies
 And I am on “Grades” page
 
+Scenario: visualização de discrepâncias
+Given I am on “Grades” page
+When I select the option “Notas Discrepantes”
+Then I am on “Discrepâncias”
+And I can see one student on the list
+
