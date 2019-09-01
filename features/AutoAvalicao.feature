@@ -18,3 +18,13 @@ Scenario: Auto-avaliação mal sucedida
     And eu seleciono a opção “Enviar”
     Then eu posso ver uma mensagem de erro
     And eu posso ver as notas atribuídas para cada meta
+
+Scenario: Auto-avaliação sem discrepância 
+	Given estou na página de Auto-avaliação
+    And eu vejo a auto-avaliação do aluno “Fernando” com os conceitos “MA”, “MPA”, “MPA”, “MA” e “MPA”
+    And eu vejo a auto-avaliação do aluno “Guilherme” com os conceitos “MPA”, “MPA”, “MPA”, “MPA” e “MPA”
+    And eu vejo a auto-avaliação do aluno “Matheus” com os conceitos “MPA”, “MPA”, “MANA”, “MPA” e “MPA”
+    When eu seleciono a opção “Ver avaliações discrepantes”
+    Then eu vejo que a “Quantidade de auto-avaliações discrepantes” é “zero”
+    And eu vejo que o “Percentual de auto-avaliações discrepantes” é “zero”
+    And eu vejo que a “Lista de alunos com auto-avaliações discrepantes” é “vazia”
