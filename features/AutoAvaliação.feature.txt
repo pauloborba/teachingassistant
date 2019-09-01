@@ -50,3 +50,28 @@ Then as notas auto-avaliadas por “Johnny Herbert” não são salvas no sistema
 And as notas de auto-avaliação de "Cristina Rocha" continuam salvas no sistema como "MA"
 And o estudante "Johnny Herbert" continua cadastrado no sistema
 And a estudante "Cristina Rocha" continua cadastrada no sistema
+
+
+-----------------------------------Discrepância-------------------------------------
+
+Scenario: Não há discrepância de notas em nenhum aluno
+Given eu estou na página “Notas gerais” logado como “Prof. Samuel Miranda”
+And a turma possui as metas “Requisitos”, “Gerência de configuração”, “Gerência de Projetos”, “Arquitetura e linguagem” e “Testes”
+And a turma possui 3 alunos
+And o aluno “Anderson Cesar Bahiano” possui em “Requisitos” nota auto-avaliada “MA” com nota recebida “MPA”, nas demais notas recebidas ele possui “MA” com nota auto-avaliada “MPA”.
+And a aluna “Cristina da Silva dos Santos” possui em todas as metas a nota auto-avaliada “MA”, nota recebida “MA”
+And o aluno “Johnny Herbert Muniz Nunes” possui em todas as metas a nota auto-avaliada “MNA” , nota recebida “MA”
+When eu seleciono a opção “Listar discrepantes”
+Then eu visualizo uma mensagem informando que não há nenhuma discrepância nos alunos da turma.
+
+Scenario: Há discrepância de notas em nenhum aluno
+Given eu estou na página “Notas gerais” logado como “Prof. Samuel Miranda”
+And a turma possui 3 alunos
+And a turma possui 5 metas para serem atingidas.
+And o aluno “Anderson Cesar Bahiano” possui em “Requisitos” e “Gerência de Configuração” as notas auto-avaliadas “MA” com nota recebida “MPA”, nas demais notas recebidas ele possui “MA” com nota auto-avaliada “MPA”.
+And a aluna “Cristina da Silva dos Santos” possui em todas as metas a nota auto-avaliada “MA”, nota recebida “MA”
+And o aluno “Johnny Herbert Muniz Nunes” possui em todas as metas a nota auto-avaliada “MNA” , nota recebida “MA”
+When eu seleciono a opção “Listar discrepantes”
+Then eu visualizo que apenas o aluno “Anderson Cesar Bahiano” está na lista de alunos com discrepância nas notas.
+And a porcentagem de alunos com notas discrepantes é de 33,3%.
+
