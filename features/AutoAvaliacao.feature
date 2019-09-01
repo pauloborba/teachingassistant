@@ -25,3 +25,14 @@ Scenario: Adding concepts but not to all learning goals
 				Then I can see an error message telling me to fill all the 
 					learning goals before submitting the self evaluation
 				And None of the concepts i put on my self evaluation are stored
+
+
+
+
+
+Scenario: Listing discrepant self evaluations (none found)
+				Given I am at the “ESS class” page
+				And I am logged as teacher
+				And No student did a discrepant self evaluation
+				When Select the “list discrepant evaluations” option
+				Then I can see a message stating that no discrepant evaluations were done
