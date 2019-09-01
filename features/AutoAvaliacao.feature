@@ -30,5 +30,3 @@ When all the grades (“MA”) have been added for student “Victor” except t
 Then a error is sent warning that the grades weren’t well filled
 And the grades are not stored
 And no grades are stored for "Victor"
-
-
