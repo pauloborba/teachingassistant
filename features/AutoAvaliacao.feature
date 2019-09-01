@@ -39,6 +39,8 @@ And I am on “Grades” page
 
 Scenario: visualização de discrepâncias
 Given I am on “Grades” page
+And there is one student with discrepant grades
 When I select the option “Notas Discrepantes”
 Then I am on “Discrepâncias”
 And I can see one student on the list
+And I see a option to go back to "Grades" page
