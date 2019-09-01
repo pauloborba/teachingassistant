@@ -25,3 +25,4 @@ Scenario: Adding concepts but not to all learning goals
 				Then I can see an error message telling me to fill all the 
 					learning goals before submitting the self evaluation
 				And None of the concepts i put on my self evaluation are stored
+				And .......
