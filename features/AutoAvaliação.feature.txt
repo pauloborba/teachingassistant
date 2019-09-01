@@ -48,3 +48,5 @@ And ele insere no sistema a nota “MPA” na meta de “Gerência de Configuração”
 And ele tenta salvar as notas no sistema
 Then as notas auto-avaliadas por “Johnny Herbert” não são salvas no sistema
 And as notas de auto-avaliação de "Cristina Rocha" continuam salvas no sistema como "MA"
+And o estudante "Johnny Herbert" continua cadastrado no sistema
+And a estudante "Cristina Rocha" continua cadastrada no sistema
