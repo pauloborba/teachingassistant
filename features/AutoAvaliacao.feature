@@ -13,3 +13,4 @@ Scenario: Preenchimento da autoavaliação (mal sucedido).
 Given Estou na página de autoavaliação daquela disciplina
 When Eu não preencho todos os campos com meu conceito e tento concluir a autoavaliação
 Then A caixa da meta que não foi avaliada ficará vermelha
+And Lançará uma notificação indicando o erro
