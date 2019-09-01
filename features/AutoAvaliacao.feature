@@ -16,3 +16,10 @@ Given no grades have been put for student “Victor”
 When all grades have been added for student “Victor” (all “MA”)
 Then all grades are properly stored for student “Victor”
 
+Scenario: atribuição dos conceitos mal sucedido por ausência de algum conceito
+Given I am on “Grades” page
+And I don’t have any grades for “Victor”
+When I add my grades (all are “MA”), but forget to add the last one
+Then I receive a error message
+And I am on “Grades” page
+And I don’t have any grades on the list
