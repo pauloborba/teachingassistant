@@ -28,7 +28,8 @@ Scenario: Consulta ao sistema quando há discrepância
 Given Eu estou na página de notas e autoavaliação da disciplina
 And Vejo que “Avaliações consistentes” está com 66% dos alunos (2)
 And As “Avaliações inconsistentes” está com 33% possuem alunos (1)
-When: Clico para ver mais detalhes de cada cenário
-Then Vejo que o campo de “avaliações inconsistentes” terá um aluno, indicando seu nome, grau de inconsistência  e um campo de detalhes, para acesso, onde dirá explicitamente onde houve inconsistência e os conceitos atribuídos por cada um
+When Clico para ver mais detalhes de cada cenário
+Then Vejo que o campo de “avaliações inconsistentes” terá um aluno, indicando seu nome, grau de inconsistência  e um campo de detalhes
+And O campo de detalhes, o qual dirá explicitamente onde houve discrepância e os conceitos atribuídos por cada um
 And No campo de “avaliações consistentes” terá dois alunos, com nome, grau de inconsistência 0% e nenhum botão para detalhes a mais.
 
