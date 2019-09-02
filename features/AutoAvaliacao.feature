@@ -29,3 +29,12 @@ Quando eu submeter a auto-avaliação sem um conceito atribuído à meta “Elic
 Então nenhum conceito é atribuído às minhas metas
 E eu vejo um alerta de erro na tela,
 E eu vejo uma mensagem de que o conceito para a meta de “Elicitar requisitos” não foi preenchido
+
+SERVIÇO
+Scenario: realizando auto-avaliação incompleta
+Dado que o aluno “Carlos Chagas” está cadastrado no sistema
+E sua auto-avaliação não foi realizada ainda,
+E as metas de “Elicitar Requisitos”, “Gerência de Configurações” e “Elaborar Testes” foram atribuídas ao aluno “Carlos Chagas”
+Quando eu solicitar ao sistema que atribua o conceito “MPA, -, MA” para as metas de “Elicitar Requisitos”, “Gerência de Configurações” e “Elaborar Testes”, respectivamente
+Então, o sistema retorna uma mensagem de erro,
+E o aluno “Carlos Chagas” não terá nenhum conceito atribuído em sua auto-avaliação.
