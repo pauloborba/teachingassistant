@@ -75,8 +75,8 @@ And: A “Avaliação” de “Gabriel” está armazenada no sistema com  “MA
 And: A “Auto-avaliação” de “Gabriel” está armazenada no sistema com “MANA”, “MANA”, “MANA”, “MA”, e “MA”
 When: O sistema computa as discrepâncias entre “Auto-avaliações” e “Avaliações” dos “Alunos”
 Then: O sistema retorna “1” para “Quantidade”
-And: O sistema retorna “33,33%” para “Percentual”
-And: O sistema retorna uma “Lista” de “Alunos” contendo “Pedro”
+And: O sistema retorna “33%” para “Percentual”
+And: O sistema retorna uma “Lista” de “Alunos” contendo “Pedro” e sua "Auto-avaliação"
 
 Scenario: Visualizar discrepâncias com uma discrepância GUI
 Given: Eu loguei no sistema como “Professor”
@@ -90,5 +90,5 @@ And: A “Auto-avaliação” de “Gabriel” é “MANA”, “MANA”, “MAN
 When: Eu seleciono a opção “ver discrepâncias”
 Then: Eu vou para a página de “Discrepância”
 And: Eu vejo “1” em “Quantidade”
-And: Eu vejo “33,33%” em “Percentual”
-And: Eu vejo “Pedro” na “Lista” de auto-avaliações discrepantes
+And: Eu vejo “33%” em “Percentual”
+And: Eu vejo “Pedro” e sua "Auto-avaliação" na “Lista” de auto-avaliações discrepantes
