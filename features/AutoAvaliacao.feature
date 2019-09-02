@@ -19,3 +19,13 @@ E que a sua auto-avaliação não foi realizada ainda,
 E as metas de “Elicitar requisitos” e “Gerenciar projetos” foram atribuídas a ele
 Quando eu solicitar ao sistema que atribuia “MA” para a meta de “Elicitar requisitos” e “MPA” para a meta de “Gerenciar projetos”,
 Então, estarão atribuídos os conceitos “MA” para a meta de “Elicitar requisitos” e “MPA” para a meta de “Gerenciar projetos”, para o aluno “Carlos Chagas”.
+
+GUI
+Scenario: realizando auto-avaliação incompleta
+Dado que estou na “tela de preenchimento dos conceitos”
+E minha auto-avaliação não foi realizada ainda,
+E as metas de “Elicitar Requisitos” e de “Gerência de Configurações” foram atribuídas a mim,
+Quando eu submeter a auto-avaliação sem um conceito atribuído à meta “Elicitar requisitos”,
+Então nenhum conceito é atribuído às minhas metas
+E eu vejo um alerta de erro na tela,
+E eu vejo uma mensagem de que o conceito para a meta de “Elicitar requisitos” não foi preenchido
