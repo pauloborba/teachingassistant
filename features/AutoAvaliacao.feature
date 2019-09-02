@@ -7,3 +7,6 @@ Feature: auto-avaliação
 As a teacher from class
 I want to see how many and whom students have discrepant grades
 So that I can re-evaluate my method or judgement
+
+Feature: feature ficticia para teste do git
+
