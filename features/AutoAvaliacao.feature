@@ -13,7 +13,7 @@ And I can see my grades on the list
 
 Scenario: concept assignment
 Given no grades have been put for student “Victor”
-When all grades have been added for student “Victor” (all “MA”)
+When all grades have been added for student “Victor” (all grades “MA”)
 Then all grades are properly stored for student “Victor”
 
 Scenario: atribuição dos conceitos mal sucedido por ausência de algum conceito
