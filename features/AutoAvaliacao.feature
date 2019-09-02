@@ -16,7 +16,7 @@ Given no grades have been put for student “Victor”
 When all grades have been added for student “Victor” (all grades “MA”)
 Then all grades are properly stored for student “Victor”
 
-Scenario: atribuição dos conceitos mal sucedido por ausência de algum conceito
+Scenario: unsuccessful concept assignment because of absence of some concept
 Given I am on “Grades” page
 And I don’t have any grades for “Victor”
 When I add my grades (all are “MA”), but forget to add the last one
@@ -24,20 +24,20 @@ Then I receive a error message
 And I am on “Grades” page
 And I don’t have any grades on the list
 
-Scenario: atribuição dos conceitos mal sucedido por ausência de algum conceito
+Scenario: unsuccessful concept assignment because of absence of some concept
 Given no grades have been added for student “Victor”
 When all the grades (“MA”) have been added for student “Victor” except the last one
 Then a error is sent warning that the grades weren’t well filled
 And the grades are not stored
 And no grades are stored for "Victor"
 
-Scenario: visualização de nenhuma discrepância
+Scenario: view of no discrepancy
 Given I am on “Grades” page
 When I select the option “Notas Discrepantes”
 Then I receive a message saying no Discrepancies
 And I am on “Grades” page
 
-Scenario: visualização de discrepâncias
+Scenario: discrepancy view
 Given I am on “Grades” page
 And there is one student with discrepant grades
 When I select the option “Notas Discrepantes”
