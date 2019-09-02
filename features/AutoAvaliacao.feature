@@ -8,5 +8,19 @@ As a teacher from class
 I want to see how many and whom students have discrepant grades
 So that I can re-evaluate my method or judgement
 
-Feature: feature ficticia para teste do git
+Scenario: Unsuccessfully adding new grades (GUI)
+Given: I am at the “Grades” page logged as “Vitor Sousa” at “SI” class
+And I see my name with no self-evaluated grade for all goals
+When I fulfill “IA” with “MA”, and “Machine Learning” with “MPA” but I do not fill “Neural Networks” grade
+Then I am at “Grades” page with a error "warning: one or more missing self-evaluated grades"
+And I can see my name with no self-evaluated grades for all goals
+
+Scenario: Unsuccessfully adding new grades
+Given: Student “Ricardo” are registered on “SI” class
+And “Ricardo” has no grades fulfilled
+When “Ricardo” fills “IA” grade with “MA”, after that he fills “Machine Learning” with “MA”
+And “Ricardo” “Neural Networks” grade is empty
+And “Ricardo” tries to submit his grades to the system
+Then No one “Ricardo” grades are filled 
+And “Ricardo” grades “IA”, “Machine Learning”, “Neural Networks” are empty
 
