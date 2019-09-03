@@ -14,5 +14,14 @@ System Scenario: preenchimento bem-sucedido auto-avaliação
 	When é pedido as notas de “Gabriel” ao sistema
 	Then o sistema retorna as todas as notas “MA” para cada meta que existe
 
-Modify
+Gui Scenario: preenchimento mal-sucedido da auto-avaliação
+	Given eu estou na “página de atribuição de notas”
+	And eu avalio apenas a meta “Entender conceitos de requisitos” como “MA”
+	When eu seleciono a opção “Cadastrar”
+	Then eu posso ver um aviso de cadastro mal-sucedido pela falta de informação
+
+System Scenario: preenchimento mal-sucedido auto-avaliação
+	Given que o sistema recebeu as notas de auto-avaliação de um aluno
+	When o sistema percebe a ausência de pelo menos 1 campo
+	Then ele retorna uma mensagem de erro
 
