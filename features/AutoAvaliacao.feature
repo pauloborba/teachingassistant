@@ -32,3 +32,4 @@ Scenario: preenchimento mal sucedido da auto-avaliação
 	When eu adiciono a auto-avaliação “MA” na “META 1”
 	Then o sistema lança uma mensagem de erro com relação ao preenchimento das auto-avaliações
 	And “Gabriela” não possui as notas de auto-avaliação
+	And [MUDANCAS FEITAS AQUI]
