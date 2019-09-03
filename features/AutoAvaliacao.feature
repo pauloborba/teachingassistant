@@ -25,3 +25,9 @@ System Scenario: preenchimento mal-sucedido auto-avaliação
 	When o sistema percebe a ausência de pelo menos 1 campo
 	Then ele retorna uma mensagem de erro
 
+Scenario: 1 aluno tem conceito superior ao do professor em 1 de 5 metas
+	Given que estou na “página de discrepâncias”
+	And eu vejo “Gabriel”, “Paulo” e “João” com notas atribuídas
+	When eu abro a lista de alunos
+	Then o nome dele não aparece na lista, uma vez que a discrepância é menor que 25%.
+
