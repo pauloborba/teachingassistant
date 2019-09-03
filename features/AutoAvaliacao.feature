@@ -39,4 +39,20 @@ Scenario: preenchimento das notas sem discrepância
 And o aluno “Hugo” tem a auto-avaliação “MPA” na “META 1”, “MANA” na “META 2”, “MPA” na “META 3”, “MPA” na “META 4” e “MPA” na “META 5”
 And o aluno “Victor” tem a auto-avaliação “MPA” na “META 1”, “MA” na “META 2”, “MPA” na “META 3”, “MPA” na “META 4” e “MA” na “META 5”
 When eu adiciono as notas “MPA” na “META 1”, “MA” na “META 2”, “MA” na “META 3”, “MA” na “META 4” e “MA” na “META 5” de “Luana”
+And eu adiciono as notas “MA” na “META 1”, “MA” na “META 2”, “MA” na “META 3”, “MA” na “META 4” e “MA” na “META 5” de “Hugo”
+And eu adiciono as notas “MPA” na “META 1”, “MA” na “META 2”, “MPA” na “META 3”, “MPA” na “META 4” e “MA” na “META 5” de “Victor”
+Then “Luana”, “Hugo” e “Victor” não são adicionados à lista da página de “alunos com notas discrepantes”
+
+Scenario: preenchimento das notas com discrepância
+	Given que eu estou na página de “notas”
+	And a aluna “Luana” tem a auto-avaliação “MA” na “META 1”, “MA” na “META 2”, “MA” na “META 3”, “MA” na “META 4” e “MA” na “META 5”
+And o aluno “Hugo” tem a auto-avaliação “MPA” na “META 1”, “MANA” na “META 2”, “MPA” na “META 3”, “MPA” na “META 4” e “MPA” na “META 5”
+And o aluno “Victor” tem a auto-avaliação “MA” na “META 1”, “MA” na “META 2”, “MA” na “META 3”, “MA” na “META 4” e “MA” na “META 5”
+When eu adiciono as notas “MPA” na “META 1”, “MA” na “META 2”, “MA” na “META 3”, “MA” na “META 4” e “MA” na “META 5” de “Luana”
+And eu adiciono as notas “MA” na “META 1”, “MA” na “META 2”, “MA” na “META 3”, “MA” na “META 4” e “MA” na “META 5” de “Hugo”
+And eu adiciono as notas “MPA” na “META 1”, “MANA” na “META 2”, “MPA” na “META 3”, “MPA” na “META 4” e “MANA” na “META 5” de “Victor”
+Then “Luana” e “Hugo” não são adicionados à lista da página de “alunos com notas discrepantes”
+	And “Victor” é adicionado à lista da página de “alunos com notas discrepantes”
+	And a porcentagem de discrepância de “Victor” é “100%”
+
 
