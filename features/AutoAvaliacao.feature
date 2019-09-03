@@ -19,9 +19,9 @@ Gui Scenario: preenchimento mal-sucedido da auto-avaliação
 	And eu avalio apenas a meta “Entender conceitos de requisitos” como “MA”
 	When eu seleciono a opção “Cadastrar”
 	Then eu posso ver um aviso de cadastro mal-sucedido pela falta de informação
+	And as notas não são enviadas
 
 System Scenario: preenchimento mal-sucedido auto-avaliação
 	Given que o sistema recebeu as notas de auto-avaliação de um aluno
 	When o sistema percebe a ausência de pelo menos 1 campo
 	Then ele retorna uma mensagem de erro
-
