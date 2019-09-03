@@ -32,3 +32,11 @@ Scenario: preenchimento mal sucedido da auto-avaliação
 	When eu adiciono a auto-avaliação “MA” na “META 1”
 	Then o sistema lança uma mensagem de erro com relação ao preenchimento das auto-avaliações
 	And “Gabriela” não possui as notas de auto-avaliação
+	
+Scenario: preenchimento das notas sem discrepância
+	Given que eu estou na página de “notas”
+	And a aluna “Luana” tem a auto-avaliação “MA” na “META 1”, “MA” na “META 2”, “MA” na “META 3”, “MA” na “META 4” e “MA” na “META 5”
+And o aluno “Hugo” tem a auto-avaliação “MPA” na “META 1”, “MANA” na “META 2”, “MPA” na “META 3”, “MPA” na “META 4” e “MPA” na “META 5”
+And o aluno “Victor” tem a auto-avaliação “MPA” na “META 1”, “MA” na “META 2”, “MPA” na “META 3”, “MPA” na “META 4” e “MA” na “META 5”
+When eu adiciono as notas “MPA” na “META 1”, “MA” na “META 2”, “MA” na “META 3”, “MA” na “META 4” e “MA” na “META 5” de “Luana”
+
