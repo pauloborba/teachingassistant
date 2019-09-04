@@ -26,6 +26,8 @@ System Scenario: preenchimento mal-sucedido auto-avaliação
 	Given que o sistema recebeu as notas de auto-avaliação de um aluno
 	When o sistema percebe a ausência de pelo menos 1 campo
 	Then ele retorna uma mensagem de erro
+	And Alteração 1
+	And A2
 
 Scenario: 1 aluno tem conceito superior ao do professor em 1 de 5 metas
 	Given que estou na “página de discrepâncias”
@@ -39,5 +41,5 @@ Scenario: Discrepância total
 	And “Gabriel”, “Paulo” e “João” atribuíram notas abaixo das dadas pelo professor em todas as metas
 	When eu abro a lista de alunos
 	Then os nomes “Gabriel”, “Paulo” e “João” aparecem na lista com 100% de discrepância e as outras informações relativas.
-	And Fixing discrepancia
 	And alteração 1
+	And alteração 2
