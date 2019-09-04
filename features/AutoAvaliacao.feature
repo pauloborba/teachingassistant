@@ -52,3 +52,4 @@ Scenario: Discrepant Grades
     Then I am at “Discrepant grades” page
     And I see “Ana” in a list with her grades
     And I see “33,3%” and “1 student” below the list
+    And I see “Generate discrepant grades report”
