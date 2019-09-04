@@ -38,4 +38,5 @@ Scenario: Discrepância total
 	When eu abro a lista de alunos
 	Then os nomes “Gabriel”, “Paulo” e “João” aparecem na lista com 100% de discrepância e as outras informações relativas.
 	And alteração 1
+	And alteração 2
 
