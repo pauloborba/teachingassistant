@@ -38,4 +38,5 @@ Scenario: Discrepância total
 	And “Gabriel”, “Paulo” e “João” atribuíram notas abaixo das dadas pelo professor em todas as metas
 	When eu abro a lista de alunos
 	Then os nomes “Gabriel”, “Paulo” e “João” aparecem na lista com 100% de discrepância e as outras informações relativas.
-	Fixing discrepancia
+	And Fixing discrepancia
+	And alteração 1
