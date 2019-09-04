@@ -24,4 +24,3 @@ And “Ricardo” tries to submit his grades to the system
 Then No one “Ricardo” grades are filled
 And “Ricardo” grades “IA”, “Machine Learning”, “Neural Networks” are empty
 Then “Ricardo” starts to fill “IA”, “Machine Learning”, “Neural Networks” grades again
-
