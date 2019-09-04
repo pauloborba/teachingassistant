@@ -8,6 +8,7 @@ Gui Scenario: preenchimento bem-sucedido da auto-avaliação
 	And eu preencho os campos de notas com “MA” para cada meta existente
 	When seleciono a opção “Cadastrar”
 	Then eu posso ver as notas de auto-avaliação na plataforma
+	And A1
 
 System Scenario: preenchimento bem-sucedido auto-avaliação
 	Given que o sistema recebeu “MA” para todas as notas de auto-avaliação do aluno “Gabriel”
