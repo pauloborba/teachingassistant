@@ -43,3 +43,10 @@ Scenario: Discrepância total
 	Then os nomes “Gabriel”, “Paulo” e “João” aparecem na lista com 100% de discrepância e as outras informações relativas.
 	And alteração 1
 	And alteração 2
+	
+Scenario:1 aluno tem conceito superior ao do professor em 1 de 5 metas
+	Given que estou na “página de discrepâncias”
+	And eu vejo “Gabriel”, “Paulo” e “João” com notas atribuídas
+	When eu abro a lista de alunos
+	Then o nome dele não aparece na lista, uma vez que a discrepância é menor que 25%.
+
