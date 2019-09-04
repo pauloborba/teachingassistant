@@ -21,7 +21,7 @@ And “Ricardo” has no grades fulfilled
 When “Ricardo” fills “IA” grade with “MA”, after that he fills “Machine Learning” with “MA”
 And “Ricardo” “Neural Networks” grade is empty
 And “Ricardo” tries to submit his grades to the system
-Then No one “Ricardo” grades are filled 
+Then No one “Ricardo” grades are filled
 And “Ricardo” grades “IA”, “Machine Learning”, “Neural Networks” are empty
 Then “Ricardo” starts to fill “IA”, “Machine Learning”, “Neural Networks” grades again
 
