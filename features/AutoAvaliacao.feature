@@ -33,3 +33,4 @@ Then Vejo que o campo de “avaliações inconsistentes” terá um aluno, indic
 And O campo de detalhes, o qual dirá explicitamente onde houve discrepância e os conceitos atribuídos por cada um
 And No campo de “avaliações consistentes” terá dois alunos, com nome, grau de inconsistência 0% e nenhum botão para detalhes a mais.
 
+commit 1 master
