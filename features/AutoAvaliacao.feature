@@ -24,6 +24,7 @@ System Scenario: preenchimento mal-sucedido auto-avaliação
 	Given que o sistema recebeu as notas de auto-avaliação de um aluno
 	When o sistema percebe a ausência de pelo menos 1 campo
 	Then ele retorna uma mensagem de erro
+	And Alteração 1
 
 Scenario: 1 aluno tem conceito superior ao do professor em 1 de 5 metas
 	Given que estou na “página de discrepâncias”
