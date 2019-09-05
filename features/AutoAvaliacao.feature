@@ -57,3 +57,7 @@ And eu adiciono as notas “MPA” na “META 1”, “MANA” na “META 2”, 
 Then “Luana” e “Hugo” não são adicionados à lista da página de “alunos com notas discrepantes”
 	And “Victor” é adicionado à lista da página de “alunos com notas discrepantes”
 	And a porcentagem de discrepância de “Victor” é “100%”
+
+[MUDANCA 1 DISCREPANTES]
+
+[MUDANCA 2 DISCREPANTES]
