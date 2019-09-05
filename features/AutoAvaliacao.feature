@@ -30,6 +30,7 @@
 	When eu adiciono “MPA” para “Entender Conceitos de Requisitos” e “MPA” para “Entender Conceitos de Gerência”
 	And envio
 	Then as metas  “Entender Conceitos de Requisitos”, “Especificar Requisitos com qualidade” e “Entender Conceitos de Gerência” da disciplina “Engenharia de Software” não têm conceitos de autoavaliação
+	And eu vejo uma mensagem de erro
 
 
 
