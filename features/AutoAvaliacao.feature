@@ -38,4 +38,11 @@
 	When eu filtro para visualizar apenas os alunos com discrepância
 	Then eu vejo uma mensagem que indica lista vazia
 
+#GUI based# Scenario: Visualização de quando há discrepância
+	Given eu estou na página de “Listagem de Alunos” da disciplina “Engenharia de Software”
+	And eu vejo os alunos “Aline Gouveia”e “Íris Soares” com conceitos atribuídos MPA, MPA e MA, respectivamente, além desses mesmos conceitos para autoavaliação
+	And “Lucas Mendonça” com conceitos atribuídos MA, MPA, MPA, e respectivamente a cada meta, MA, MA, MPA para autoavaliação
+	When eu filtro para visualizar apenas os alunos com discrepância
+	Then eu vejo apenas o aluno “Lucas Mendonça”
+
 
