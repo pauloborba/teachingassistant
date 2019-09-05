@@ -45,4 +45,15 @@ Given o sistema ainda não possui nenhuma nota nas metas preenchidas pelo aluno
 When o aluno preenche as notas de algumas metas com “MA”, “MPA” ou “MANA” mas não preenche todas
 Then o servidor retorna uma mensagem de erro
 
- 
+------------------------------------------------------
+
+Cenário de GUI
+Scenario: Não há auto-avaliações discrepantes
+
+Given eu estou na página “Disciplinas”
+And escolho a “Engenharia de Software e Sistemas” de código “IF682”
+And vejo que a aluna “Alice” tem “MPA” “MPA” “MPA” “MANA” e “MANA” em auto-avaliação e “MANA” “MPA” “MPA” “MPA” e “MANA” em avaliação do professor respectivamente
+And vejo que a aluna “Roberta” tem “MPA” “MPA” “MPA” “MPA” e “MPA” em auto-avaliação e “MA” “MA” “MA” “MA” e “MA” em avaliação do professor respectivamente
+And vejo que a aluna “Camila” tem “MPA” “MPA” “MPA” “MANA” e “MANA” em auto-avaliação e “MPA” “MPA” “MPA” “MANA” e “MANA” em avaliação do professor respectivamente
+When eu coloco para listar as auto-avaliações discrepantes
+Then uma mensagem aparece dizendo que não há avaliações discrepantes
