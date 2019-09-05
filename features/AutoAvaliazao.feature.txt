@@ -1,4 +1,27 @@
+Feature: Auto-avaliação
+
 As a aluno
-I want to atribuir os conceitos MA, MPA ou MANA para cada uma das minhas metas avaliadas
+I want to atribuir os conceitos MA, MPA ou MANA para cada uma das minhas metas
+avaliadas
 So that posso comparar os conceitos que o professor colocou com as que eu
 coloquei e as notas finais podem ser calculadas
+
+-----------------------------------------------------
+
+Cenário de GUI
+Scenario: Preenchimento de auto-avaliação bem sucedida
+
+Given eu estou na página “Notas”
+And nenhuma nota foi colocada nas metas
+When eu adiciono “MA” ou “MPA” ou “MANA” em todas as metas
+Then aparece uma mensagem de confirmação do procedimento
+And todas as metas estão com suas respectivas notas
+
+------------------------------------------------------
+
+Cenário de Serviço
+Scenario: Preenchimento de auto-avaliação bem sucedida
+
+Given o sistema ainda não possui nenhuma nota nas metas preenchidas pelo aluno
+When o aluno preenche as notas de todas as metas com “MA”, “MPA” ou “MANA”
+Then as notas atribuídas a cada meta por esse aluno ficam guardadas no sistema de gerenciamento de metas 
