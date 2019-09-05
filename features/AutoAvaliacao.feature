@@ -16,6 +16,7 @@ Scenario:​ Auto-avaliação do aluno
     And​ eu confirmo que as metas estão corretas
     Then​ eu vejo uma mensagem de confirmação
     And​ eu estou na página “auto-avaliação do aluno”
+    And ****
 
 Scenario:​ Auto-avaliação do aluno
     Given​ o aluno “Paulo A.” está armazenado no sistema com conceitos “MA,MPA,MA” para as metas
