@@ -61,3 +61,5 @@ Then “Luana” e “Hugo” não são adicionados à lista da página de “al
 [MUDANCA 1 DISCREPANTES]
 
 [MUDANCA 2 DISCREPANTES]
+
+pequeno ajuste no novo cenário de visualização de percentual de discrepância
