@@ -38,7 +38,7 @@ Scenario: Failed self-assessment
 Scenario: No discrepant grade
     Given I am logged as “Professor”
     And I am at “Grades” page
-    And I see “Ana”, “João” e “Pedro” in a table with their grades “MANA”, “MPA” ou “MA” for each learning goal.
+    And I see “Roberta”, “João” e “Pedro” in a table with their grades “MANA”, “MPA” ou “MA” for each learning goal.
     When I ask the system to “See discrepant grades”
     Then I am at “Discrepant grades” page
     And I see a empty list
