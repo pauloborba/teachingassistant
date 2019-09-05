@@ -1,8 +1,7 @@
 Feature: Auto-avaliação
 
 As a aluno
-I want to atribuir os conceitos MA, MPA ou MANA para cada uma das minhas metas
-avaliadas
+I want to atribuir os conceitos MA, MPA ou MANA para cada uma das minhas metas avaliadas
 So that posso comparar os conceitos que o professor colocou com as que eu
 coloquei e as notas finais podem ser calculadas
 
@@ -24,4 +23,26 @@ Scenario: Preenchimento de auto-avaliação bem sucedida
 
 Given o sistema ainda não possui nenhuma nota nas metas preenchidas pelo aluno
 When o aluno preenche as notas de todas as metas com “MA”, “MPA” ou “MANA”
-Then as notas atribuídas a cada meta por esse aluno ficam guardadas no sistema de gerenciamento de metas 
+Then as notas atribuídas a cada meta por esse aluno ficam guardadas no sistema de gerenciamento de metas
+
+------------------------------------------------------
+
+Cenário de GUI
+Scenario: Falha no preenchimento de auto-avaliação
+
+Given eu estou na página “Notas”
+And nenhuma nota foi colocada nas metas
+When eu adiciono “MA” ou “MPA” ou “MANA” em algumas metas e não em todas
+Then uma mensagem de erro é mostrada dizendo que não foi possível registrar as notas pois todas as metas precisam ser avaliadas
+
+
+------------------------------------------------------
+
+Cenário de Serviço
+Scenario: Falha no preenchimento de auto-avaliação
+
+Given o sistema ainda não possui nenhuma nota nas metas preenchidas pelo aluno
+When o aluno preenche as notas de algumas metas com “MA”, “MPA” ou “MANA” mas não preenche todas
+Then o servidor retorna uma mensagem de erro
+
+ 
