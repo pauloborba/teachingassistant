@@ -44,6 +44,8 @@ And eu adiciono as notas “MA” na “META 1”, “MA” na “META 2”, “
 And eu adiciono as notas “MPA” na “META 1”, “MA” na “META 2”, “MPA” na “META 3”, “MPA” na “META 4” e “MA” na “META 5” de “Victor”
 Then “Luana”, “Hugo” e “Victor” não são adicionados à lista da página de “alunos com notas discrepantes”
 
+[MUDANCA MASTER 1]
+
 Scenario: preenchimento das notas com discrepância
 	Given que eu estou na página de “notas”
 	And a aluna “Luana” tem a auto-avaliação “MA” na “META 1”, “MA” na “META 2”, “MA” na “META 3”, “MA” na “META 4” e “MA” na “META 5”
