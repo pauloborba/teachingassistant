@@ -45,11 +45,11 @@ Scenario: No discrepant grade
     And I see “0%” and “0 students” below the list
 
 Scenario: Discrepant Grades
-    Given I am logged as “Professor”
+    Given I am logged as “Main Professor”
     And I am at “Grades” page
     And I see “Marcela”, “Ewerton” e “Pedro” in a table with their grades “MANA”, “MPA” ou “MA” for each learning goal.
     When  I ask the system to “See discrepant grades”
     Then I am at “Discrepant grades” page
     And I see “Ana” in a list with her grades
     And I see “33,3%” and “1 student” below the list
-    And I see “Generate discrepant grades report”
+    And I see “Generate discrepant grades report” to see a graphic percentual
