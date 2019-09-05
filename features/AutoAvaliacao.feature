@@ -39,6 +39,7 @@ Scenario: Auto-avaliação do aluno com uma meta ausente
     Then o sistema retorna um codigo de erro “2”
     And o aluno “Paulo A.” está armazenado no sistema com conceitos “MA,MPA,MA” para as metas e “ , , ” para a auto-avaliação das metas
     And ***
+    And ****
 
 /* Cenarios de discrepancia*/
 
