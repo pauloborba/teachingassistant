@@ -29,8 +29,8 @@
 	Given o sistema não tem conceitos de autoavaliação atribuídos às metas  “Entender Conceitos de Requisitos”, “Especificar Requisitos com qualidade” e “Entender Conceitos de Gerência” da disciplina “Engenharia de Software”
 	When eu adiciono “MPA” para “Entender Conceitos de Requisitos” e “MPA” para “Entender Conceitos de Gerência”
 	And envio
-	Then as metas  “Entender Conceitos de Requisitos”, “Especificar Requisitos com qualidade” e “Entender Conceitos de Gerência” da disciplina “Engenharia de Software” não têm conceitos de autoavaliação
-	And eu vejo uma mensagem de erro
+	Then eu vejo uma mensagem de erro
+	And as metas  “Entender Conceitos de Requisitos”, “Especificar Requisitos com qualidade” e “Entender Conceitos de Gerência” da disciplina “Engenharia de Software” não têm conceitos de autoavaliação
 
 #GUI based# Scenario: Visualização de quando não há discrepância
 	Given eu estou na página de “Listagem de Alunos” da disciplina “Engenharia de Software”
