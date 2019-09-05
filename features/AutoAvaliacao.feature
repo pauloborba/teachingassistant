@@ -4,8 +4,11 @@ Feature: Self-evaluation
 	So that my grade expectation can be compared to the teacher's assessment.
 
 
-Feature: Self-evaluation
-	As a Teacher
-	I want to see the student’s self assess that presenting discrepancy with my assessment
-	So that I can analyze my way of evaluating the goals achieved.
-
+Scenario: Evaluating yourself
+	Given I’m logged as a student at the “Auto-Avaliação” page
+	And I see the goals “Entender conceitos de Requisitos”, “Especificar Requisitos com qualidade” to be self-rated
+	When I add grade “MA” for goal “Entender conceitos de Requisitos” 
+    And “MPA” for goal “Especificar Requisitos com qualidade”
+    Then I’m at the “Auto-Avaliação” page
+    And I can see a confirmation message
+    And I see my assess with the teacher’s assessment
