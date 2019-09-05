@@ -44,3 +44,4 @@ When I select the option “Notas Discrepantes”
 Then I am on “Discrepâncias”
 And I can see one student on the list
 And I see a option to go back to "Grades" page
+And I can see all student grades
