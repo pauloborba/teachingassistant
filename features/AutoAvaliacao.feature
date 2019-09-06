@@ -21,4 +21,5 @@ Requisitos com qualidade” to be self-rated
     Then I’m at the “Auto-Avaliação” page
     And I can see the error message “Todas as metas têm que ser avaliadas”
     And I only see the teacher’s assessment on each goal.
+    And I can start the self evaluation again.
 
