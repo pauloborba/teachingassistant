@@ -31,3 +31,20 @@ Given o aluno “Evaldo Junior” está armazenado no sistema sem nenhum conceit
 When o sistema não é capaz de armazenar os conceitos pois está faltando informações e emite uma mensagem de erro
 Then o aluno “Evaldo Junior” está armazenado no sistema sem nenhum conceito em metas de aprendizagem 
 And o sistema não armazenou as notas //adicionando o passo que pedia na questão
+
+Scenario: nenhum aluno com discrepância acima de 25%
+Given eu estou na página de “Auto Avaliações Discrepantes”
+And eu vejo que não tem nenhum aluno com discrepância acima de 25%
+When eu volto para a página “Auto Avaliações dos Alunos”
+Then eu vejo uma lista de alunos e suas discrepâncias
+And eu vejo o aluno “Ekko Ferraz” com “Discrepância” de “20%”
+And eu vejo a aluna “Lissandra Cartago” com “Discrepância” de “0%”
+And eu vejo o aluno “Yasuo Sorie Guedon” com “Discrepância” de “0%”
+
+Scenario: um aluno com discrepância acima de 25%
+Given eu estou na página de “Auto Avaliações Discrepantes”
+And eu vejo que apenas a aluna “Luxanna Stemmaguarda” está na lista de alunos com discrepância acima de 25%
+When eu volto para a página “Auto Avaliações dos Alunos”
+Then eu vejo uma lista de alunos e suas discrepâncias
+And eu vejo o aluno “Aatrox Paiva” com “Discrepância” de “20%”
+And eu vejo a aluna “Nami Lisboa” com “Discrepância” de “0%”
