@@ -49,5 +49,3 @@ goals
     And I see “Fernando Filipine” in the list
     And on what concept the assessments are discrepant
     And I can reevaluating his goals.
-
-
