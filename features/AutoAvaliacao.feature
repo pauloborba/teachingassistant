@@ -12,6 +12,32 @@ So that eu posso gerenciar as discrepâncias entre conceitos atribuídos aos alu
 
 
 Cenario de GUI
+
+Scenario: Nova auto-avaliação mal sucedida 
+Given eu estou na página de preenchimento de conceitos
+And preencho a meta “Entender conceitos de requisitos” com MA
+And preencho a meta “Especificar requisitos com qualidade” com MPA
+And não preencho a meta “Entender conceitos de gerência de configuração”
+    When eu tento confirmar o preenchimento dos conceitos
+    Then recebo uma mensagem de preenchimento mal sucedido
+    And volto para página de preenchimento de conceitos
+Cenário de serviço
+
+Scenario: Nova auto-avaliação mal sucedida
+Given estou logado como “Pedro”
+And a meta “Entender conceitos de requisitos” está preenchida
+And a meta “Especificar requisitos com qualidade” está preenchida
+And a meta “Entender conceitos de gerência de configuração” não está preenchida
+
+    When confirmo a auto-avaliação
+Then o sistema retorna uma mensagem de preenchimento mal sucedido
+And auto-avaliação não é armazenada no sistema
+
+
+
+
+
+Cenario de GUI
 Scenario: Nova auto-avaliação mal sucedida 
     Given eu estou na página de preenchimento de conceitos
     And preencho a meta “Entender conceitos de requisitos” com MA
@@ -22,7 +48,7 @@ And não preencho a meta “Entender conceitos de gerência de configuração”
     And volto para página de preenchimento de conceitos
 Cenário de serviço
 Scenario: Nova auto-avaliação mal sucedida
-Given estou logado como “Pedro”
+    Given estou logado como “Pedro”
 And a meta “Entender conceitos de requisitos” está preenchida
 And a meta “Especificar requisitos com qualidade” está preenchida
 And a meta “Entender conceitos de gerência de configuração” não está preenchida
