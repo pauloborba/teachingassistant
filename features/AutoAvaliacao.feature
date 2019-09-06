@@ -32,7 +32,7 @@ Scenario: Analysing discrepant assessments
 	When I look to the discrepancy rate
 	And it is zero percent
     Then I’m at the “Auto-Avaliação do Aluno” page
-    And the assessment is appropriate.
+    And the assessment in "Requisitos" is appropriate.
 
 
 Scenario: Analysing discrepant assessments
@@ -45,5 +45,5 @@ Scenario: Analysing discrepant assessments
 	And I see the list of students with discrepant assessments
     Then I’m at the “Auto-Avaliação do Aluno” page
     And I see “Fernando Filipine” in the list
-    And on what concept the assessments are discrepant
+    And the assessments are discrepant in "Requisitos" goal
     And I can reevaluating his goals.
