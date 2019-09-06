@@ -71,10 +71,6 @@ Given eu estou na página “Notas gerais” logado como “Prof. Samuel Miranda”
 And a turma possui "3" alunos
 And a turma possui "5" metas para serem atingidas.
 And o aluno “Anderson Cesar da Silva” possui em “Requisitos” e “Gerência de Configuração” as notas auto-avaliadas “MA” com nota recebida “MPA”, nas demais notas recebidas ele possui “MA” com nota auto-avaliada “MPA”.
-Given eu estou na página “Notas gerais” logado como “Prof. Paulo Borba”
-And a turma possui 3 alunos
-And a turma possui 5 metas para serem atingidas.
-And o aluno “Anderson Cesar Silva” possui em “Requisitos” e “Gerência de Configuração” as notas auto-avaliadas “MA” com nota recebida “MPA”, nas demais notas recebidas ele possui “MA” com nota auto-avaliada “MPA”.
 And a aluna “Cristina da Silva de Oliveira” possui em todas as metas a nota auto-avaliada “MPA”, nota recebida “MPA”
 And o aluno “Johnny Herbert Muniz Nunes” possui em todas as metas a nota auto-avaliada “MANA” , nota recebida “MA”
 When eu seleciono a opção “Listar discrepantes”
