@@ -30,3 +30,4 @@ Scenario: preenchimento mal sucedido da auto avaliação(serviço)
 Given o aluno “Evaldo Junior” está armazenado no sistema sem nenhum conceito em metas de aprendizagem
 When o sistema não é capaz de armazenar os conceitos pois está faltando informações e emite uma mensagem de erro
 Then o aluno “Evaldo Junior” está armazenado no sistema sem nenhum conceito em metas de aprendizagem 
+And o sistema não armazenou as notas //adicionando o passo que pedia na questão
