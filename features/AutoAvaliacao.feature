@@ -8,7 +8,15 @@ Given eu estou na página de “Auto Avaliação”
 And eu vejo que não tenho nenhum conceito aplicado relacionado às “Metas” em “Auto Avaliação”
 When eu adiciono “MA” na metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
 And eu salvo os conceitos
-//linha adicionada para realização da atividade
 Then Eu vejo uma mensagem de preenchimento bem sucedido
 And eu estou na página de “Auto Avaliação”
 And eu vejo o conceito “MA” relacionado às “Metas” em “Auto Avaliação”
+
+Scenario: preenchimento mal sucedido da auto avaliação(GUI)
+Given eu estou na página de “Auto Avaliação”
+And eu vejo que não tenho nenhum conceito aplicado relacionado às “Metas” em “Auto Avaliação”
+When eu adiciono “MA” na meta “Entender conceitos de requisitos”
+And eu tento salvar o conceito
+Then Eu vejo uma mensagem de preenchimento mal sucedido 
+And eu estou na página de “Auto Avaliação”
+And eu vejo que falta preencher as metas “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração”
