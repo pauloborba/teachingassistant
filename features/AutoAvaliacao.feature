@@ -30,8 +30,10 @@ Scenario: ​ Auto-avaliação do aluno com uma meta ausente
     Given ​ eu estou na página “auto-avaliação do aluno”
     And​ eu estou conectado com perfil “Aluno”And​ nas 6 metas os conceitos “MPA,MA,MA,MA,MA,MA” foi atribuído pelo professor ao aluno “Paulo A.”
     When ​ eu informo “MPA, ,MPA,MPA,MPA,MPA” para as metas, deixando a meta “Especificar requisitos com qualidade” em branco
+    And *****
     Then ​ eu estou na página “auto-avaliação do aluno”
     And ​ eu vejo uma mensagem de erro “informando que há metas que não possuem conceitos atribuídos.”
+    And	*****
 
 Scenario: Auto-avaliação do aluno com uma meta ausente
     Given​ o aluno “Paulo A.” está armazenado no sistema com conceitos “MA,MPA,MA” para as metas "Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração"
