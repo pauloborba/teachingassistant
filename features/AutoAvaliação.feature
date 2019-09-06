@@ -8,7 +8,7 @@ GUI based scenario
 Scenario: Auto-avaliando todos os conceitos.
 Given eu estou na página “Home” logado como “Samuel Miranda” na turma "ESS-2019.2"
 And eu vejo que ainda não me auto-avaliei
-When eu seleciono a opção “Avalie-se”
+When seleciono a opção “Avalie-se”
 And eu adiciono as notas “MA,MPA ou MANA” em todos os campos de “Nota de auto-avaliação”
 And eu finalizo o cadastro de notas
 Then eu visualizo uma mensagem de confirmação do procedimento
