@@ -13,6 +13,7 @@ Scenario: Evaluating yourself
     And I can see a confirmation message
     And I see my assess with the teacher’s assessment.
 
+
  Scenario: Evaluating yourself
 	Given I’m logged as a student at the “Auto-Avaliação” page
 	And I see the goals “Entender conceitos de Requisitos”, “Especificar 
@@ -21,4 +22,16 @@ Requisitos com qualidade” to be self-rated
     Then I’m at the “Auto-Avaliação” page
     And I can see the error message “Todas as metas têm que ser avaliadas”
     And I only see the teacher’s assessment on each goal.
+
+
+Scenario: Analysing discrepant assessments
+	Given I’m logged as a teacher at the “Auto-Avaliação do Aluno” page
+	And I see the class with  “Caio Marcus” with 1 concept discrepant in 5 
+goals
+	And “Fabio Queiroz” with none discrepant concepts
+	And “Isabela Araújo” with none discrepant concepts
+	When I look to the discrepancy rate
+	And it is zero percent
+Then I’m at the “Auto-Avaliação do Aluno” page
+And the assessment is appropriate.
 
