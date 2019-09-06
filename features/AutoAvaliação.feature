@@ -77,3 +77,9 @@ When eu seleciono a opção “Listar discrepantes”
 Then eu visualizo que apenas o aluno “Anderson Cesar da Silva” está na lista de alunos com discrepância nas notas.
 And a porcentagem de alunos com notas discrepantes é de "33,3%".
 
+-----------------------------VISUALIZAÇÃO DE DISCREPÂNCIA------------------------------
+
+Scenario cenário fictício para questão 15a
+Given 
+When
+Then
