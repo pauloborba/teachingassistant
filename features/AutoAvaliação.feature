@@ -66,7 +66,7 @@ When eu seleciono a opção “Listar discrepantes”
 Then eu visualizo uma mensagem informando que não há nenhuma discrepância nos alunos da turma.
 
 Scenario: Um aluno possui discrepância em pelo menos 25% das metas
-Given eu estou na página “Notas gerais” logado como “Prof. Paulo Borba”
+Given eu estou na página “Notas gerais” logado como “Prof. Samuel Miranda”
 And a turma possui "3" alunos
 And a turma possui "5" metas para serem atingidas.
 And o aluno “Anderson Cesar da Silva” possui em “Requisitos” e “Gerência de Configuração” as notas auto-avaliadas “MA” com nota recebida “MPA”, nas demais notas recebidas ele possui “MA” com nota auto-avaliada “MPA”.
