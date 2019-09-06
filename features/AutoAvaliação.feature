@@ -1,6 +1,6 @@
 Feature: Auto-avaliação de metas.
 As a: Aluno membro de uma instituição de ensino.
-i want to: me avaliar e visualizar as notas que recebi pelo professor em cada meta.
+i want to: me auto-avaliar e visualizar as notas que recebi pelo professor em cada meta.
 so that: Analisar se a nota que eu esperava receber condiz com a nota que recebi.
 
 GUI based scenario
