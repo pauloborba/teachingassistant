@@ -38,7 +38,7 @@ And as notas não são salvas no sistema
 
 Service based scenario
 
-Scenario: Não auto-avaliando todos os conceitos
+Scenario: Não auto-avaliando todos os conceitos da turma.
 Given o estudante “Johnny Herbert” está cadastrado na turma "ESS-2019.2"
 And a estudante “Cristina Rocha” está cadastrada na turma "ESS-2019.2"
 And a estudante "Cristina Rocha" possui a nota "MA" em todas as notas de auto-avaliação da turma
