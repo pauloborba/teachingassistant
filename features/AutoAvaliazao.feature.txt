@@ -74,3 +74,4 @@ When eu coloco para listar as auto-avaliações discrepantes
 Then eu vejo na tela “Camila” na lista de alunos com auto-avaliação discrepante
 And vejo a quantidade “1” aluno
 And vejo a porcentagem “33,3%” pois foi 1 aluna de 3
+And vejo a opção "alterar nota" ao lado do nome "Camila"
