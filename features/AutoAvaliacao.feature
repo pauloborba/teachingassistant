@@ -72,7 +72,7 @@ Scenario: Nova auto-avaliação mal sucedida
 
 
 // Quando nao ha Discrepancia
-
+// necessario parametrizar tambem
 Scenario: Visualizando discrepâncias
 	Given eu estou na página de visualização de auto-avaliações
     And “Pedro” tem “0%” de discrepância
