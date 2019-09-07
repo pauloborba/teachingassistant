@@ -11,7 +11,6 @@ I want to ver a quantidade, o percentual e a lista de alunos com auto-avaliaçõ
 So that eu posso gerenciar as discrepâncias entre conceitos atribuídos aos alunos e suas respectivas auto-avaliações.
 
 
-
 //cenario de preenchimento bem sucedido
 
 Cenário de GUI
@@ -33,6 +32,16 @@ Scenario: Nova auto-avaliação
     Then o sistema retorna uma mensagem de preenchimento bem sucedido
     And vejo a auto-avaliação armazenada no sistema adequadamente
 
+
+Cenário de serviço
+Scenario: Nova auto-avaliação
+	Given estou logado como “Pedro”
+	And todas as metas estão preenchidas
+	When confirmo a auto-avaliação
+    Then o sistema retorna uma mensagem de preenchimento bem sucedido
+    And vejo a auto-avaliação armazenada no sistema adequadamente
+
+
 //cenario de preenchimento mal sucedido
 
 Cenario de GUI
@@ -53,8 +62,27 @@ Scenario: Nova auto-avaliação mal sucedida
     And a meta “Entender conceitos de requisitos” está preenchida
     And a meta “Especificar requisitos com qualidade” está preenchida
     And a meta “Entender conceitos de gerência de configuração” não está preenchida
-
     When confirmo a auto-avaliação
     Then o sistema retorna uma mensagem de preenchimento mal sucedido
     And auto-avaliação não é armazenada no sistema
     And passo adicional
+
+// Quando nao ha Discrepancia
+
+Scenario: Visualizando discrepâncias
+	Given eu estou na página de visualização de auto-avaliações
+    And “Pedro” tem “0%” de discrepância
+	And “Paulo” tem “0%” de discrepância
+	And “Sophia” tem “20%” de discrepância
+	When seleciono a lista de alunos com discrepância
+	Then vejo uma lista vazia de alunos
+
+// Quando ha discrepancia
+
+Scenario: Visualizando discrepâncias
+	Given eu estou na página de visualização de auto-avaliações
+	And “Pedro” tem “0%” de discrepância
+	And “Paulo” tem “40%” de discrepância
+	And “Sophia” tem “20%” de discrepância
+	When seleciono a lista de alunos com discrepância
+	Then vejo a lista com “Paulo”
