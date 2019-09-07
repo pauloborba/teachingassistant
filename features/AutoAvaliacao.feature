@@ -20,7 +20,7 @@ Scenario: Evaluating yourself
 	When I add grade “MA” for goal “Entender conceitos de Requisitos” 
     Then I’m at the “Auto-Avaliação” page
     And I can see the error message “Todas as metas têm que ser avaliadas”
-    And I only see the teacher’s assessment on each goal.
+    And I only see the teacher’s assessment “MPA” on “Entender conceitos de Requisitos” goal and “MPA” on “Especificar Requisitos com qualidade” goal.
     And I can start the self evaluation again.
 
 
