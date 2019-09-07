@@ -35,4 +35,4 @@ Dado que eu acesso o sistema como “aluno”
 E eu tenho metas em que ainda não me auto-avaliei
 Quando eu tento enviar as auto-avaliações sem um dos conceitos
 Então o servidor retorna uma mensagem de erro devido à ausência do conceito 
-
+E 'passo adicional'
