@@ -48,5 +48,3 @@ When eu volto para a página “Auto Avaliações dos Alunos”
 Then eu vejo uma lista de alunos e suas discrepâncias
 And eu vejo o aluno “Malzahar Vilar” com “Discrepância” de “0%”
 And eu vejo a aluna “Riven Carola” com “Discrepância” de “20%”
-
-//linha criada para fazer o commit 3 para a questão 14
