@@ -45,6 +45,8 @@ Scenario: Listing discrepant self evaluations (one found)
 				Given I am at the “ESS class” page
 				And I am logged as teacher
 				And One student submitted a discrepant self evaluation
+				[FIX]
 				When Select the “list discrepant evaluations” option
+				And .........
 				Then I can see the student “Pedro” that did a discrepant self evaluation listed on the screen 
 				And I can see the learning goals he submitted higher than me highlighted
