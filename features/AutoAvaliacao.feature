@@ -55,7 +55,7 @@ Scenario: Alunos sem discrepância na nota
     And: Vejo uma mensagem avisando que não há discrepância de notas em nenhum aluno
 
 GUI based scenario:
-Scenario: Aluno com discrepância na nota
+Scenario: Aluno com discrepância na nota das metas
 	Given: O professor “Paulo” de cpf “987” está na “Página de Notas”
 	And: A turma tem as metas “Meta 1”, “Meta 2”, “Meta 3”, “Meta 4”, “Meta 5”
     And: O aluno “Samuel” de cpf “456” tem notas “MA”, “MA”, “MA”, “MA”, “MA” respectivamente com notas de auto-avaliação “MA”, “MA”, “MA”, “MA”, “MA” respectivamente nas metas da turma
