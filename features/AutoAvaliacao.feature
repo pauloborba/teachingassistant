@@ -44,6 +44,7 @@ Scenario: Nova auto-avaliação mal sucedida
     When eu tento confirmar o preenchimento dos conceitos
     Then recebo uma mensagem de preenchimento mal sucedido
     And volto para página de preenchimento de conceitos
+    And passo adicional
 
 
 Cenário de serviço
@@ -56,3 +57,4 @@ Scenario: Nova auto-avaliação mal sucedida
     When confirmo a auto-avaliação
     Then o sistema retorna uma mensagem de preenchimento mal sucedido
     And auto-avaliação não é armazenada no sistema
+    And passo adicional
