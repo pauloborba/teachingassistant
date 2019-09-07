@@ -11,7 +11,8 @@ Scenario: Evaluating yourself
     And “MPA” for goal “Especificar Requisitos com qualidade”
     Then I’m at the “Auto-Avaliação” page
     And I can see a confirmation message
-    And I see my assess with the teacher’s assessment.
+    And I see my assess “MA” with the teacher’s assessment “MPA” for goal “Entender conceitos de Requisitos”
+    And my assess “MPA” with the teacher’s assessment “MPA” for goal “Especificar Requisitos com qualidade”
 
 
 Scenario: Evaluating yourself
