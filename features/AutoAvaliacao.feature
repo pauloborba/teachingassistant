@@ -80,9 +80,27 @@ Scenario: Visualizando discrepâncias
 // Quando ha discrepancia
 
 Scenario: Visualizando discrepâncias
-	Given eu estou na página de visualização de auto-avaliações
-	And “Pedro” tem “0%” de discrepância
-	And “Paulo” tem “40%” de discrepância
-	And “Sophia” tem “20%” de discrepância
-	When seleciono a lista de alunos com discrepância
-	Then vejo a lista com “Paulo”
+	Given estou logado como "Thiago"
+    And estou na página "Alunos"
+    And "Thiago" avaliou "Pedro" com "MPA" em  "Entender conceitos de requisitos"
+    And "Thiago" avaliou "Pedro" com "MA" em  "Especificar requisitos com qualidade"
+    And "Thiago" avaliou "Pedro" com "MPA" em  "Entender conceitos de gerência de configuração"
+    And "Thiago" avaliou "Paulo" com "MA" em  "Entender conceitos de requisitos"
+    And "Thiago" avaliou "Paulo" com "MANA" em  "Especificar requisitos com qualidade"
+    And "Thiago" avaliou "Paulo" com "MPA" em  "Entender conceitos de gerência de configuração"
+    And "Thiago" avaliou "Sophia" com "MA" em  "Entender conceitos de requisitos"
+    And "Thiago" avaliou "Sophia" com "MA" em  "Especificar requisitos com qualidade"
+    And "Thiago" avaliou "Sophia" com "MA" em  "Entender conceitos de gerência de configuração"	
+    And o aluno "Pedro" auto avaliou "MPA" para "Entender conceitos de requisitos"
+    And o aluno "Pedro" auto avaliou "MA" para "Especificar requisitos com qualidade"
+    And o aluno "Pedro" auto avaliou "MPA" para "Entender conceitos de gerência de configuração"
+    And o aluno "Paulo" auto avaliou "MA" para "Entender conceitos de requisitos"
+    And o aluno "Paulo" auto avaliou "MPA" para "Especificar requisitos com qualidade"
+    And o aluno "Paulo" auto avaliou "MPA" para "Entender conceitos de gerência de configuração"
+    And o aluno "Sophia" auto avaliou "MA" para "Entender conceitos de requisitos"
+    And o aluno "Sophia" auto avaliou "MA" para "Especificar requisitos com qualidade"
+    And o aluno "Sophia" auto avaliou "MA" para "Entender conceitos de gerência de configuração"
+	When "Thiago" seleciona "visualizar discrepancias"
+	Then "Thiago" vê uma lista com o Aluno "Paulo"
+    And sua porcentagem de "33.3%" de discrepancia
+    And quantidade de discrepancias igual a "1"
