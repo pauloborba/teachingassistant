@@ -74,7 +74,7 @@ Scenario: Nova auto-avaliação mal sucedida
 // Quando nao ha Discrepancia
 // necessario parametrizar tambem
 Scenario: Visualizando discrepâncias
-	Given eu estou na página de visualização de auto-avaliações
+	Given estou logado como "Thiago" na página "Alunos"
     And “Pedro” tem “0%” de discrepância
 	And “Paulo” tem “0%” de discrepância
 	And “Sophia” tem “20%” de discrepância
@@ -112,3 +112,4 @@ Scenario: Visualizando discrepâncias
 // percentual de discrepancia
 
 //descrever cenario em breve
+
