@@ -18,7 +18,6 @@ Scenario: Auto-avaliação mal sucedida
     And eu seleciono a opção “Enviar”
     Then eu posso ver uma mensagem de erro
     And eu posso ver as notas atribuídas para cada meta
-    *Passo adicional*
 
 Scenario: Auto-avaliação sem discrepância 
 	Given estou na página de Auto-avaliação
@@ -39,4 +38,3 @@ Scenario: Auto-avaliação com discrepância
     Then eu vejo que a “Quantidade de auto-avaliações discrepantes” é “1”
     And eu vejo que o “Percentual de auto-avaliações discrepantes” é “33%”
     And eu vejo que a “Lista de alunos com auto-avaliações discrepantes” contém um aluno “Guilherme”
-    *Correção no cenário*
