@@ -37,17 +37,3 @@ Scenario: Erro de Preenchimento em Auto-Avaliação.
 		THEN: Eu recebo uma mensagem de erro avisando que na 
 		          Auto-Avaliação todas as metas devem ser preenchidas.
 		THEN: A Auto-Avaliação do aluno "Pedro César" não foi cadastrada no sistema.
-				  
-Scenario: Turma sem alunos Discrepantes.
-		Given: O professor “Fábio” realizou o cadastro da turma “A”.
-		AND: Estou logado como professor “Fábio”.
-		AND: Os alunos “Pedro César” e “César Silva” estão cadastrados como
-			Alunos da turma “A”.
-		AND: Estão cadastradas na turma “A” as metas “Entender Conceitos de
-		         Requisitos” e “Especificar Requisitos com Qualidade”.
-		AND: Estou na página “Turma A”.
-		AND: O aluno “Pedro César” possui Auto-Avaliações “MANA” e “MPA”
-			e notas “MPA” e “MPA” para as metas “Entender Conceitos de
-			Requisitos” e “Especificar Requisitos com Qualidade”
-			Respectivamente.
-		AND: O aluno “César Silva” possui Auto-Avaliações “MPA” e “MPA”
