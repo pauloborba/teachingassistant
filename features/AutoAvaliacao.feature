@@ -48,3 +48,5 @@ When eu volto para a página “Auto Avaliações dos Alunos”
 Then eu vejo uma lista de alunos e suas discrepâncias
 And eu vejo o aluno “Malzahar Vilar” com “Discrepância” de “0%”
 And eu vejo a aluna “Riven Carola” com “Discrepância” de “20%”
+
+//adicionando essa linha para a questao14 3
