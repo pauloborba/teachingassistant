@@ -69,3 +69,14 @@ Scenario: Visualizando discrepâncias
 	And “Sophia” tem “20%” de discrepância
 	When seleciono a lista de alunos com discrepância
 	Then vejo uma lista vazia de alunos
+
+// Quando ha discrepancia
+
+Scenario: Visualizando discrepâncias
+	Given eu estou na página de visualização de auto-avaliações
+	And “Pedro” tem “0%” de discrepância
+	And “Paulo” tem “40%” de discrepância
+	And “Sophia” tem “20%” de discrepância
+	When seleciono a lista de alunos com discrepância
+	Then vejo a lista com “Paulo”
+
