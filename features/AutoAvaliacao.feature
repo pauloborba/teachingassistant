@@ -60,5 +60,12 @@ Scenario: Nova auto-avaliação mal sucedida
     Then o sistema retorna uma mensagem de preenchimento mal sucedido
     And auto-avaliação não é armazenada no sistema
 
+// Quando nao ha Discrepancia
 
-
+Scenario: Visualizando discrepâncias
+	Given eu estou na página de visualização de auto-avaliações
+    And “Pedro” tem “0%” de discrepância
+	And “Paulo” tem “0%” de discrepância
+	And “Sophia” tem “20%” de discrepância
+	When seleciono a lista de alunos com discrepância
+	Then vejo uma lista vazia de alunos
