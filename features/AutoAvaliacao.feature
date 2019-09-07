@@ -44,7 +44,7 @@ Scenario: Preenchimento mal sucedido
     And: As notas não são cadastradas
 
 GUI based scenario:
-Scenario: Alunos sem discrepância na nota
+Scenario: Alunos sem discrepância na nota das metas
 	Given: O professor “Paulo” de cpf “987” está na “Página de Notas”
     And: A turma tem as metas “Meta 1”, “Meta 2”, “Meta 3”, “Meta 4”, “Meta 5”
     And: O aluno “Johnny” de cpf “123” tem notas “MA”, “MPA”, “MA”, “MPA”, “MPA” respectivamente com notas de auto-avaliação “MA”, “MA”, “MA”, “MPA”, “MPA”  respectivamente nas metas da turma.
