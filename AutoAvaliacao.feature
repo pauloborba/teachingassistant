@@ -35,4 +35,9 @@ Dado que eu acesso o sistema como “aluno”
 E eu tenho metas em que ainda não me auto-avaliei
 Quando eu tento enviar as auto-avaliações sem um dos conceitos
 Então o servidor retorna uma mensagem de erro devido à ausência do conceito 
-
+Cenário sem discrepancia:
+Dado que estou na “página de notas”
+E não há nenhuma discrepância
+Quando eu seleciono a opção “Estatísticas de auto-avaliação”
+Então eu posso a lista vazia de alunos discrepantes
+E posso ver uma mensagem informando o percentual de avaliações discrepantes
