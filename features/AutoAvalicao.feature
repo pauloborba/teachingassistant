@@ -18,3 +18,4 @@ Scenario: Auto-avaliação mal sucedida
     And eu seleciono a opção “Enviar”
     Then eu posso ver uma mensagem de erro
     And eu posso ver as notas atribuídas para cada meta
+    *Passo adicional*
