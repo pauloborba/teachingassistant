@@ -37,3 +37,4 @@ Scenario: Erro de Preenchimento em Auto-Avaliação.
 		THEN: Eu recebo uma mensagem de erro avisando que na 
 		          Auto-Avaliação todas as metas devem ser preenchidas.
 		THEN: A Auto-Avaliação do aluno "Pedro César" não foi cadastrada no sistema.
+		THEN: O aluno "Pedro César" não possui Auto-Avaliacao no sistema.
