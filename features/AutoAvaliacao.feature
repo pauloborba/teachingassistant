@@ -48,3 +48,6 @@ Scenario: Analysing discrepant assessments
     And I see “Fernando Filipine” in the list
     And the assessments are discrepant in "Requisitos" goal
     And I can reevaluating his goals.
+
+
+pro commit de novo cenário de visualização de percentual de discrepância, agora fazemos o pequeno ajuste no novo cenário de visualização de percentual de discrepância
