@@ -1,3 +1,5 @@
+//Descricao da feature
+
 Feature: Auto-avaliação
 As a Aluno
 I want to adicionar conceitos referentes a cada uma das metas avaliadas pelo professor.
@@ -10,33 +12,28 @@ So that eu posso gerenciar as discrepâncias entre conceitos atribuídos aos alu
 
 
 
+//cenario de preenchimento bem sucedido
 
-Cenario de GUI
-
-Scenario: Nova auto-avaliação mal sucedida 
-    Given eu estou na página de preenchimento de conceitos
-    And preencho a meta “Entender conceitos de requisitos” com MA
+Cenário de GUI
+Scenario: Adicionando os conceitos para auto-avaliação com sucesso
+	Given Eu estou na página de preenchimento dos conceitos
+	And preencho a meta “Entender conceitos de requisitos” com MA
     And preencho a meta “Especificar requisitos com qualidade” com MPA
-    And não preencho a meta “Entender conceitos de gerência de configuração”
-    When eu tento confirmar o preenchimento dos conceitos
-    Then recebo uma mensagem de preenchimento mal sucedido
-    And volto para página de preenchimento de conceitos
+    And preencho a meta “Entender conceitos de gerência de configuração” com MANA
+	When confirmo o preenchimento de todos os conceitos
+    Then recebo uma mensagem de preenchimento bem sucedido 
+    And Vejo todos os conceitos preenchidos
+
 
 Cenário de serviço
+Scenario: Nova auto-avaliação
+	Given estou logado como “Pedro”
+	And todas as metas estão preenchidas
+	When confirmo a auto-avaliação
+    Then o sistema retorna uma mensagem de preenchimento bem sucedido
+    And vejo a auto-avaliação armazenada no sistema adequadamente
 
-Scenario: Nova auto-avaliação mal sucedida
-    Given estou logado como “Pedro”
-    And a meta “Entender conceitos de requisitos” está preenchida
-    And a meta “Especificar requisitos com qualidade” está preenchida
-    And a meta “Entender conceitos de gerência de configuração” não está preenchida
-
-    When confirmo a auto-avaliação
-    Then o sistema retorna uma mensagem de preenchimento mal sucedido
-    And auto-avaliação não é armazenada no sistema
-
-
-
-
+//cenario de preenchimento mal sucedido
 
 Cenario de GUI
 Scenario: Nova auto-avaliação mal sucedida 
