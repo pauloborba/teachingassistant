@@ -108,3 +108,7 @@ Scenario: Visualizando discrepâncias
 	Then "Thiago" vê uma lista com o Aluno "Paulo"
     And sua porcentagem de "33.3%" de discrepancia
     And quantidade de discrepancias igual a "1"
+
+// percentual de discrepancia
+
+//descrever cenario em breve
