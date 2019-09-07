@@ -67,6 +67,10 @@ Scenario: Nova auto-avaliação mal sucedida
     And auto-avaliação não é armazenada no sistema
     And passo adicional
 
+
+//Discrepancia
+
+
 // Quando nao ha Discrepancia
 
 Scenario: Visualizando discrepâncias
