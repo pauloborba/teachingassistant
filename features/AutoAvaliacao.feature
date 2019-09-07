@@ -46,14 +46,9 @@ Given eu estou na página de “Auto Avaliações Discrepantes”
 And eu vejo que apenas a aluna “Luxanna Stemmaguarda” está na lista de alunos com discrepância acima de 25%
 When eu volto para a página “Auto Avaliações dos Alunos”
 Then eu vejo uma lista de alunos e suas discrepâncias
-<<<<<<< HEAD
 And eu vejo o aluno “Malzahar Vilar” com “Discrepância” de “0%”
 And eu vejo a aluna “Riven Carola” com “Discrepância” de “20%”
 
 //adicionando essa linha para a questao14 3
-=======
-And eu vejo o aluno “Aatrox Paiva” com “Discrepância” de “20%”
-And eu vejo a aluna “Nami Lisboa” com “Discrepância” de “0%”
 
-//linha criada para fazer o commit 1 para a questão 14
->>>>>>> Commit 1 criado para a resolução da questão 14.
+//criando essa linha para a questão 15, o commit vai com um comentario diferente do conteudo. adicionando algo mais pra ao commit 2 da questão.
