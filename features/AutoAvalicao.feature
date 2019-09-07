@@ -28,3 +28,13 @@ Scenario: Auto-avaliação sem discrepância
     Then eu vejo que a “Quantidade de auto-avaliações discrepantes” é “zero”
     And eu vejo que o “Percentual de auto-avaliações discrepantes” é “zero”
     And eu vejo que a “Lista de alunos com auto-avaliações discrepantes” é “vazia”
+
+Scenario: Auto-avaliação com discrepância 
+	Given estou na página de Auto-avaliação
+    And eu vejo a auto-avaliação do aluno “Fernando” com os conceitos “MA”, “MPA”, “MPA”, “MA” e “MPA”
+    And eu vejo a auto-avaliação do aluno “Guilherme” com os conceitos “MA”, “MA”, “MA”, “MA” e “MA”
+    And eu vejo a auto-avaliação do aluno “Matheus” com os conceitos “MPA”, “MPA”, “MANA”, “MPA” e “MPA”
+    When eu seleciono a opção “Ver avaliações discrepantes”
+    Then eu vejo que a “Quantidade de auto-avaliações discrepantes” é “1”
+    And eu vejo que o “Percentual de auto-avaliações discrepantes” é “33%”
+    And eu vejo que a “Lista de alunos com auto-avaliações discrepantes” contém um aluno “Guilherme”
