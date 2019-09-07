@@ -66,3 +66,8 @@ Scenario: Aluno com discrepância na nota das metas
     And: Vejo apenas  o aluno “José” de cpf “789” na listagem de alunos com discrepância
     And: Vejo que a quantidade de alunos com discrepância é “1”
     And: Vejo que a porcentagem de alunos com discrepância na nota é “33,33%”
+
+Scenário: cenário para questao 15
+Given
+When
+Then
