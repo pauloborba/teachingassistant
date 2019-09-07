@@ -39,3 +39,4 @@ Scenario: Auto-avaliação com discrepância
     Then eu vejo que a “Quantidade de auto-avaliações discrepantes” é “1”
     And eu vejo que o “Percentual de auto-avaliações discrepantes” é “33%”
     And eu vejo que a “Lista de alunos com auto-avaliações discrepantes” contém um aluno “Guilherme”
+    *Correção no cenário*
