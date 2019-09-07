@@ -22,5 +22,5 @@ And I see “Paulo” has fill “MA” he received “MANA” in “OOP”
 And I see “Henrique” has fill “MPA” he received “MPA” in “OOP”
 And I see “Borba” has fill “MA” he received “MA” in “OOP”
 When I filter for discrepant students
-And I can confirm “Paulo” has a discrepant grade
-Then I can confirm “Henrique” and “Borba” have not discrepant grades
+And I can see “Paulo” has a discrepant grade
+Then I can see “Henrique” and “Borba” have not discrepant grades
