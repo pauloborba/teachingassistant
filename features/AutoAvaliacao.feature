@@ -13,6 +13,9 @@ Cenario: turma sem discrepancia
 Given: eu estou logado na página de notas dos alunos
 When eu seleciono a opcao “alunos discrepantes”
 Then aparece a mensagem “sem alunos com notas discrepantes”
+abc
+
+
 
 Cenario: turma com discrepancia
 Given: eu estou logado na página de notas dos alunos
