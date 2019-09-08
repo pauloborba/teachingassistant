@@ -1,2 +1,3 @@
 CENARIOS com discrepancia (CORRIGIDA VISUALIZAÇÃO)
 CENARIOS SEM DISCREPANCIA
+Quesito 14 commit master
