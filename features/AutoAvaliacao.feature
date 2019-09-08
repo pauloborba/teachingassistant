@@ -7,6 +7,8 @@
 
 - - - - - - Scenarios - - - - - -
 
+  - - - AutoAvaliacao - - - 
+ 
 #GUI based# Scenario: Preenchimento da autoAvaliação
 	Given eu estou na página de “autoavaliação” da disciplina “Engenharia de Software”
 	And eu vejo as metas “Entender Conceitos de Requisitos”, “Especificar Requisitos com qualidade” e “Entender Conceitos de Gerência” com conceito de autoavaliação em branco
