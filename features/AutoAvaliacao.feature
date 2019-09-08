@@ -10,3 +10,7 @@ When seleciono a opcao “ autoavaliação”
 Then recebo uma mensagem de confirmação no preenchimento da  autoavaliação
 And eu tenho acesso a página de minhas notas com as notas atualizadas
 
+Cenario: turma com discrepancia
+Given: eu estou logado na página de notas dos alunos
+When eu seleciono a opcao “alunos discrepantes”
+Then eu estou na pagina “alunos com notas discrepantes”
