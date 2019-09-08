@@ -63,6 +63,7 @@ Then uma mensagem aparece dizendo que não há avaliações discrepantes
 
 x
 x
+
 ------------------------------------------------------
 
 Cenário de GUI
