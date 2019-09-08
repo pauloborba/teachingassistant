@@ -61,12 +61,12 @@ Scenario: Turma sem alunos Discrepantes.
 Scenario: Turma com alunos Discrepantes.
 		Given: O professor “Fábio” realizou o cadastro da turma “A”.
 		AND: Estou logado como professor “Fábio”.
-		AND: Os alunos “Pedro César” e “César Silva” estão cadastrados como
+		AND: Os alunos “João Pedro” e “César Silva” estão cadastrados como
 			Alunos da turma “A”.
 		AND: Estão cadastradas na turma “A” as metas “Entender Conceitos de
 		         Requisitos” e “Especificar Requisitos com Qualidade”.
 		AND: Estou na página “Turma A”.
-		AND: O aluno “Pedro César” possui Auto-Avaliações “MA” e “MPA”
+		AND: O aluno “João Pedro” possui Auto-Avaliações “MA” e “MPA”
 			e notas “MPA” e “MPA” para as metas “Entender Conceitos de
 			Requisitos” e “Especificar Requisitos com Qualidade”
 			Respectivamente.
@@ -75,4 +75,4 @@ Scenario: Turma com alunos Discrepantes.
 			Requisitos” e “Especificar Requisitos com Qualidade”
 			Respectivamente.
 		WHEN: Eu solicito verificar os alunos com discrepância.
-		THEN: Eu visualizo o aluno “Pedro César” e suas notas Discrepantes.
+		THEN: Eu visualizo o aluno “João Pedro” e suas notas Discrepantes.
