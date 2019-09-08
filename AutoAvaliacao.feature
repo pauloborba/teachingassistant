@@ -3,6 +3,8 @@ Como um estudante
 Eu quero ser capaz atribuir conceitos a mim mesmo
 De forma a poder registrar as discrepancias entre a minha avaliação e a do professor
 
+[COMMIT PARA A QUESTAO 23A(MASTER)]
+
 GUI: 
 Dado que eu estou logado como “aluno”
 E eu estou em “página de notas” 
