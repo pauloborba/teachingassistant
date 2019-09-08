@@ -51,3 +51,16 @@ E a aluna “Paula” recebeu “MA, MPA, MA, MPA, MA” para as metas estabelec
 Então, eu vejo uma listagem vazia, alertando que não há alunos com avaliações discrepantes,
 E eu vejo que um total de 0 aluno têm avaliações discrepantes.
 E eu vejo que 0% dos alunos têm avaliações discrepantes.
+
+Senario: há discrepâncias na auto-avaliação
+Dado que eu estou na tela de “avaliação dos alunos”
+E que apenas os alunos “Marcos”, “André” e “Paula” estão cadastrados no sistema
+E o aluno “Marcos” atribuiu “MA, MA, MA, MPA, MANA” para as metas de “Entender requisitos”, “Especificar requisitos”, Gerência de configuração”, “Gerência de Projetos” e “Testes”, respectivamente, em sua auto-avaliação.
+E o aluno “Marcos” recebeu “MPA, MANA, MA, MANA, MANA” para as metas de “Entender requisitos”, “Especificar requisitos”, Gerência de configuração”, “Gerência de Projetos” e “Testes”, respectivamente, na avaliação do professor.
+E o aluno “André” atribuiu “MA, MA, MA, MPA, MANA” para as metas de “Entender requisitos”, “Especificar requisitos”, Gerência de configuração”, “Gerência de Projetos” e “Testes”, respectivamente, em sua auto-avaliação.
+E o aluno “André” recebeu “MA, MA, MA, MA, MPA” para as metas de “Entender requisitos”, “Especificar requisitos”, Gerência de configuração”, “Gerência de Projetos” e “Testes”, respectivamente, na avaliação do professor.
+E a aluna “Paula” atribuiu “MPA, MANA, MA, MPA, MANA” para as metas de “Entender requisitos”, “Especificar requisitos”, Gerência de configuração”, “Gerência de Projetos” e “Testes”, respectivamente, em sua auto-avaliação.
+E a aluna “Paula” recebeu “MPA, MPA, MA, MPA, MA” para as metas de “Entender requisitos”, “Especificar requisitos”, Gerência de configuração”, “Gerência de Projetos” e “Testes”, respectivamente, na avaliação do professor.
+Então, eu vejo uma listagem que mostra os alunos com avaliações discrepantes, contendo o aluno “Marcos”,
+E eu vejo que um total de 1 aluno têm avaliações discrepantes.
+E eu vejo que 33,3% dos alunos têm avaliações discrepantes.
