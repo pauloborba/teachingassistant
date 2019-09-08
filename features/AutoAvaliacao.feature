@@ -38,3 +38,4 @@ E as metas de “Elicitar Requisitos”, “Gerência de Configurações” e �
 Quando eu solicitar ao sistema que atribua o conceito “MPA, -, MA” para as metas de “Elicitar Requisitos”, “Gerência de Configurações” e “Elaborar Testes”, respectivamente
 Então, o sistema retorna uma mensagem de erro,
 E o aluno “Carlos Chagas” não terá nenhum conceito atribuído em sua auto-avaliação.
+E (passo adicional...)
