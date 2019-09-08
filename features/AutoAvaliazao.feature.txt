@@ -62,7 +62,9 @@ When eu coloco para listar as auto-avaliações discrepantes
 Then uma mensagem aparece dizendo que não há avaliações discrepantes
 
 x
+
 x
+
 
 ------------------------------------------------------
 
@@ -79,3 +81,15 @@ Then eu vejo na tela “Camila” na lista de alunos com auto-avaliação discre
 And vejo a quantidade “1” aluno
 And vejo a porcentagem “33,3%” pois foi 1 aluna de 3
 And vejo a opção "alterar nota" ao lado do nome "Camila"
+
+-------------------------------------------------------
+
+Cenário de GUI
+Scenario: Visualização do percentual de discrepância
+
+Given eu estou na página "Disciplinas"
+And escolho a “Engenharia de Software e Sistemas” de código “IF682”
+When coloco para listar as auto-avalições discrepantes
+Then eu vejo no canto superior direito da lista de alunos com notas discrepantes o percentual de discrepância de "Engenharia de Sofware e Sistemas"
+
+x
