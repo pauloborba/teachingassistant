@@ -1,4 +1,4 @@
-**Feature**: Auto-avaliação
+Feature: Auto-avaliação
 Como um aluno,
 Eu desejo poder realizar uma auto-avaliação, atribuindo conceitos para cada uma das metas atribuídas a mim,
 A fim de que o professor possa ter noção da consciência dos alunos quanto a seu desempenho.
@@ -40,7 +40,7 @@ Então, o sistema retorna uma mensagem de erro,
 E o aluno “Carlos Chagas” não terá nenhum conceito atribuído em sua auto-avaliação.
 E (passo adicional...)
 
-**Feature:** Auto-avaliações discrepantes
+Feature: Auto-avaliações discrepantes
 Como Professor,
 Desejo ver a quantidade, o percentual e uma listagem de alunos com auto-avaliações em que 25% das metas têm conceitos superiores aos atribuídos pelo professor.
 A fim de identificar alunos com auto-avaliações discrepantes.
