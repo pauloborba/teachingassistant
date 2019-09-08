@@ -71,3 +71,6 @@ E a aluna “Paula” recebeu “MPA, MPA, MA, MPA, MA” para as metas de “En
 Então, eu vejo uma listagem que mostra os alunos com avaliações discrepantes, contendo o aluno “Marcos”,
 E eu vejo que um total de 1 aluno têm avaliações discrepantes.
 E eu vejo que 33,3% dos alunos têm avaliações discrepantes.
+
+Scenario: visualização percentuala de disciplina
+Aqui vai o novo cenário... (ajuste realizado)
