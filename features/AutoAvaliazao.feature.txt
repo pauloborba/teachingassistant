@@ -5,6 +5,8 @@ I want to atribuir os conceitos MA, MPA ou MANA para cada uma das minhas metas a
 So that posso comparar os conceitos que o professor colocou com as que eu
 coloquei e as notas finais podem ser calculadas
 
+x
+
 -----------------------------------------------------
 
 Cenário de GUI
@@ -59,7 +61,8 @@ And vejo que a aluna “Camila” tem “MPA” “MPA” “MPA” “MANA” e
 When eu coloco para listar as auto-avaliações discrepantes
 Then uma mensagem aparece dizendo que não há avaliações discrepantes
 
-
+x
+x
 ------------------------------------------------------
 
 Cenário de GUI
