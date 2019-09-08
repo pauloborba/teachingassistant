@@ -39,11 +39,11 @@ Scenario: Erro de Preenchimento em Auto-Avaliação.
 		THEN: O aluno "Pedro César" não possui Auto-Avaliacao no sistema.
 				  
 Scenario: Turma sem alunos Discrepantes.
-		Given: O professor “Fábio” realizou o cadastro da turma “A”.
-		AND: Estou logado como professor “Fábio”.
+		Given: O professor “Marcelo” realizou o cadastro da turma "B”.
+		AND: Estou logado como professor “Marcelo”.
 		AND: Os alunos “Pedro César” e “César Silva” estão cadastrados como
-			 Alunos da turma “A”.
-		AND: Estão cadastradas na turma “A” as metas “Entender Conceitos de
+			 Alunos da turma “B”.
+		AND: Estão cadastradas na turma “B” as metas “Entender Conceitos de
 		     Requisitos” e “Especificar Requisitos com Qualidade”.
 		AND: Estou na página “Turma A”.
 		AND: O aluno “Pedro César” possui Auto-Avaliações “MANA” e “MPA”
