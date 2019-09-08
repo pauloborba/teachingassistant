@@ -14,6 +14,7 @@ Given: eu estou logado na página de notas dos alunos
 When eu seleciono a opcao “alunos discrepantes”
 Then aparece a mensagem “sem alunos com notas discrepantes”
 abc
+def
 
 
 
