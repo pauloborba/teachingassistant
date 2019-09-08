@@ -59,9 +59,9 @@ Scenario: Turma sem alunos Discrepantes.
 			  alunos discrepantes.
 
 Scenario: Turma com alunos Discrepantes.
-		Given: O professor “Fábio” realizou o cadastro da turma “A”.
-		AND: Estou logado como professor “Fábio”.
-		AND: Os alunos “João Pedro” e “César Silva” estão cadastrados como
+		Given: O professor “Marcelo” realizou o cadastro da turma “A”.
+		AND: Estou logado como professor “Marcelo”.
+		AND: Os alunos “Pedro César” e “César Silva” estão cadastrados como
 			 Alunos da turma “A”.
 		AND: Estão cadastradas na turma “A” as metas “Entender Conceitos de
 		     Requisitos” e “Especificar Requisitos com Qualidade”.
