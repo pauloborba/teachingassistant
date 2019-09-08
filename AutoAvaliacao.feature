@@ -17,6 +17,8 @@ Então os conceitos ficam registrados no sistema
 E eu posso ver que me conceituei com “MPA” em requisitos, “MANA” em “testes” e “MA” em “refatoração”
 E eu posso ver uma mensagem informando que a entrega foi feita com sucesso
 
+[COMMIT PARA QUESTAO 23 A (DISCREPANTES)1]
+
 Serviço:
 Dado que eu acesso o sistema como “aluno”
 Quando eu envio a auto-avaliação 
