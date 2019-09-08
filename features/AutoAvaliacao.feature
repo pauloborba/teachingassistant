@@ -21,4 +21,13 @@ Então eu vejo uma mensagem de erro no procedimento
 E sou reencaminhado para a página de "notas"
 E a tabela de autoavaliação não foi atualizada
 
+Scenario:Não há discrepância
+Dado Que eu loguei como "Professor" com o login "Psgd" e a senha "1234"
+E O estudante "João Pedro Jordão" se autoavaliou com "MPA, MPA, MPA"
+E as notas atribuídas pelo "Professor" foi "MPA, MPA, MPA"
+E estou na página de "notas"
+Quando Peço ao sistema para checar se há discrepância
+Então eu estou na página de "notas"
+E o sistema relata que não há discrepâncias
+
 
