@@ -31,3 +31,14 @@ E estou na página de "notas"
 Quando peço ao sistema para checar se há discrepância
 Então eu estou na página de "notas"
 E o sistema relata que não há discrepâncias
+
+Scenario: Não há discrepância
+
+Dado que loguei como "Professor" como o login "Psgd" e a senha "1234"
+E O estudante "João Pedro Jordão" se autoavaliou com "MPA, MA, MPA"
+E as notas atribuídas pelo "Professor" oi "MPA, MPA, MPA"
+E estou na página de "notas"
+Quando peço ao sistema para checar se há discrepância
+Então eu estou na página de "notas"
+E o sistema relata que há discrepâncias
+
