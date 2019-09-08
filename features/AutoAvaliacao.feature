@@ -8,7 +8,13 @@ Given que eu estou logado como aluno
 And  estou na página de autoavaliação
 When seleciono a opcao “ autoavaliação”
 Then recebo uma mensagem de confirmação no preenchimento da  autoavaliação
-And eu tenho acesso a página de minhas notas com as notas atualizadas
+
+Cenario: turma sem discrepancia
+Given: eu estou logado na página de notas dos alunos
+When eu seleciono a opcao “alunos discrepantes”
+Then aparece a mensagem “sem alunos com notas discrepantes”
+
+
 
 Cenario: turma com discrepancia
 Given: eu estou logado na página de notas dos alunos
