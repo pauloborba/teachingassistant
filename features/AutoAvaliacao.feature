@@ -1,6 +1,5 @@
 Scenario: Cadastrar notas da AutoAvaliação
 Dado Que eu loguei como "Aluno" com o login "jpgj" e a senha "1234"
-Oi :)
 E Eu estou na página "Notas"
 Quando eu seleciono "Editar AutoAvaliação"
 E preencho a nota para a meta "Requerimento" com "MPA"
