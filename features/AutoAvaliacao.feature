@@ -36,6 +36,8 @@
 	Then eu vejo uma mensagem de erro
 	And as metas  “Entender Conceitos de Requisitos”, “Especificar Requisitos com qualidade” e “Entender Conceitos de Gerência” da disciplina “Engenharia de Software” não têm conceitos de autoavaliação
 
+  - - - Discrepancia - - - 
+
 #GUI based# Scenario: Visualização de quando não há discrepância
 	Given eu estou na página de “Listagem de Alunos” da disciplina “Engenharia de Software”
 	And eu vejo os alunos “Aline Gouveia”, “Íris Soares”, “Magnon Paulinho”, “Rebeca Oliveira” com conceitos atribuídos MPA, MPA e MA, respectivamente, além desses mesmos conceitos para autoavaliação
