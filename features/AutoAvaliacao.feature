@@ -24,3 +24,5 @@ When eu seleciono a opcao “alunos discrepantes”
 Then eu estou na pagina “alunos com notas discrepantes”
 
 123
+
+pequeno ajuste no novo cenário de visualização de percentual de discrepância
