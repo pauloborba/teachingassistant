@@ -25,6 +25,8 @@ Quando eu envio a auto-avaliação
 Então o sistema retorna uma mensagem de confirmação de preenchimento com sucesso
 E insere os conceitos na base de dados
 
+[COMMIT PARA QUESTAO 23 A (DISCREPANTES)2]
+
 Cenário GUI:
 Dado que eu estou logado como “aluno”
 E eu estou na “página de notas”
