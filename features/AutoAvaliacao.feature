@@ -4,6 +4,7 @@ Feature: Auto-avaliação
 					learning goal of the class
 				So that my concepts will be stored and used on my 						   
 					evaluation
+//novo commit master
 
 
 
