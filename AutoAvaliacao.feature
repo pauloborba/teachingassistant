@@ -58,3 +58,6 @@ Quando eu seleciono a opção “Estatísticas de auto-avaliação”
 Então eu posso ver uma lista de alunos com auto-avaliações discrepantes composta somente por “Mário”
 E uma mensagem informando que houve 33% de discrepâncias	
 [CORRECAO FIXDISCREPANCIA]
+
+novo cenário de visualização de percentual de discrepância
+pequeno ajuste no novo cenário de visualização de percentual de discrepância
