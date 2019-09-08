@@ -38,3 +38,16 @@ E as metas de “Elicitar Requisitos”, “Gerência de Configurações” e �
 Quando eu solicitar ao sistema que atribua o conceito “MPA, -, MA” para as metas de “Elicitar Requisitos”, “Gerência de Configurações” e “Elaborar Testes”, respectivamente
 Então, o sistema retorna uma mensagem de erro,
 E o aluno “Carlos Chagas” não terá nenhum conceito atribuído em sua auto-avaliação.
+
+Scenario: não há discrepâncias na auto-avaliação
+Dado que eu estou na tela de “auto-avaliações discrepantes”
+E que apenas os alunos “Marcos”, “André” e “Paula” estão cadastrados no sistema
+E o aluno “Marcos” atribuiu “MA, MA, MA, MPA, MA” para as metas estabelecidas, em sua auto-avaliação.
+E o aluno “Marcos” recebeu “MA, MA, MA, MPA, MANA” para as metas estabelecidas, na avaliação do professor.
+E o aluno “André” atribuiu “MANA, MANA, MPA, MANA, MPA” para as metas estabelecidas, em sua auto-avaliação.
+E o aluno “André” recebeu “MPA, MPA, MA, MPA, MA” para as metas estabelecidas, na avaliação do professor.
+E a aluna “Paula” atribuiu “MA, MPA, MA, MPA, MA” para as metas estabelecidas, em sua auto-avaliação.
+E a aluna “Paula” recebeu “MA, MPA, MA, MPA, MA” para as metas estabelecidas, na avaliação do professor.
+Então, eu vejo uma listagem vazia, alertando que não há alunos com avaliações discrepantes,
+E eu vejo que um total de 0 aluno têm avaliações discrepantes.
+E eu vejo que 0% dos alunos têm avaliações discrepantes.
