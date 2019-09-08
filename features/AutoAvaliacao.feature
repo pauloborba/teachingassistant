@@ -52,4 +52,6 @@
 	When eu filtro para visualizar apenas os alunos com discrepância
 	Then eu vejo apenas o aluno “Lucas Mendonça”
 
+#xxx based# Visualização de percentual de discrepância
+~~
 
