@@ -1,3 +1,2 @@
-TESTE
-teste de linha
-Novo teste
+CENARIOS com discrepancia
+
