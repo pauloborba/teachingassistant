@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Aluno } from './aluno';
+import { Aluno } from '../../../common/aluno';
 
 @Injectable()
 export class AlunoService {
