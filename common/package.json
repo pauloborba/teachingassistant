@@ -1,0 +1,14 @@
+{
+  "name": "ta-common",
+  "version": "0.0.1",
+  "description": "common files to both client and server",
+  "scripts": {},
+  "author": "Paulo Borba",
+  "license": "MIT",
+  "dependencies": {
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "typescript": "~3.5.3"
+  }
+}
