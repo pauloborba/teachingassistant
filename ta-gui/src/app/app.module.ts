@@ -13,7 +13,6 @@ import { AlunoService } from './aluno.service';
   declarations: [
     AppComponent,
     MetasComponent,
-    MetasComponent,
     AlunosComponent
   ],
   imports: [
