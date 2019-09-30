@@ -9,7 +9,7 @@
   cursor: pointer;
   position: relative;
   left: 0;
-  background-color: rgb(112, 231, 158);
+  background-color: rgb(96, 255, 131);
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
@@ -18,7 +18,7 @@
 
 button {
   font-family: Arial;
-  background-color: rgb(112, 231, 158);
+  background-color: rgb(96, 255, 131);
   border: none;
   padding: 5px 10px;
   border-radius: 4px;

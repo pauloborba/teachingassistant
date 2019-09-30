@@ -4,59 +4,11 @@
   Teaching Assistant
 </h1>
 
-<<<<<<< HEAD
-<h2>
-  Alunos
-</h2>
-
-<table>
-<tr>
-   <td><label>Nome </label></td>
-   <td><input [(ngModel)]="aluno.nome" ></td>
-   <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
-</tr>
-<tr>
-   <td><label>CPF </label></td>
-   <td><input [(ngModel)]="aluno.cpf" ></td>
-   <td *ngIf="cpfduplicado">
-     Já existe um aluno com esse CPF
-   </td>
-</tr>
-<tr>
-   <td><label>e-mail </label></td>
-   <td><input [(ngModel)]="aluno.email" ></td>
-</tr>
-<tr>
-   <td><label>Github</label></td>
-   <td><input [(ngModel)]="aluno.github" ></td>
-</tr>
-</table>
-
-<table class="alunos">
-<tr *ngIf="alunos.length > 0">
-   <th>Nome</th>
-   <th>CPF</th>
-   <th>e-mail</th>
-   <th>Github</th>
-   <th>Requisitos</th>
-   <th>Gerência de Configuração</th>
-</tr>
-<tr *ngFor="let a of alunos">
-   <td>{{a.nome}}</td>
-   <td>{{a.cpf}}</td>
-   <td>{{a.email}}</td>
-   <td>{{a.github}}</td>
-   <td><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
-   <td><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
-</tr>
-</table>
-=======
 <nav>
-    <a routerLink="/alunos">Alunos</a>
-    <a routerLink="/metas">Metas</a>
+    <a routerLink="/alunos">Alunos </a>
+    <a routerLink="/metas"> Metas</a>
 </nav>
 
 <router-outlet></router-outlet>
 
->>>>>>> 3d64e16... modularizando o componente principal
 </html>
