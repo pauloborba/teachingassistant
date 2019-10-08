@@ -6,12 +6,12 @@
   <table>
     <tr>
       <td><label>Nome </label></td>
-      <td><input [(ngModel)]="aluno.nome" ></td>
-      <td><button (click)="criarAluno(aluno)" >Adicionar</button></td>
+      <td><input [(ngModel)]="aluno.nome" name="namebox"></td>
+      <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
     </tr>
     <tr>
       <td><label>CPF </label></td>
-      <td><input [(ngModel)]="aluno.cpf" ></td>
+      <td><input [(ngModel)]="aluno.cpf" name="cpfbox"></td>
       <td *ngIf="cpfduplicado">
         Já existe um aluno com esse CPF
       </td>
@@ -36,7 +36,7 @@
        <th>e-mail</th>
        <th>Github</th>
     </tr>
-    <tr *ngFor="let a of alunos">
+    <tr *ngFor="let a of alunos" name="alunolist">
        <td>{{a.nome}}</td>
        <td>{{a.cpf}}</td>
        <td>{{a.email}}</td>
