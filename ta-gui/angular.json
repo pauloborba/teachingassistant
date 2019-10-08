@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ta-gui"
+    }
+  },
+  "defaultProject": "ta-gui",
+  "cli": {
+    "analytics": false
+  }
 }

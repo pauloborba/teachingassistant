@@ -35,10 +35,11 @@ export class AlunoService {
                );
   }
 
-  deletar(aluno: Aluno): Observable<Aluno[]> {
-    return this.http.delete<any>(this.taURL + "/alunos" + `/${aluno.cpf}`, {headers: this.headers})
+  deletar(aluno: Aluno): Observable<Aluno> {
+    return this.http.delete<any>(this.taURL + "/alunos" + `/${aluno.cpf}`)
              .pipe( 
-                retry(2)
+                retry(2),
+                map( res => {if (res.failure) {return null;} else {return aluno;}} )
               ); 
   }
 
