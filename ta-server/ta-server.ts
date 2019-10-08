@@ -23,7 +23,7 @@ taserver.get('/alunos', function (req: express.Request, res: express.Response) {
 })
 
 taserver.post('/aluno', function (req: express.Request, res: express.Response) {
-  var aluno: Aluno = <Aluno> req.body; //verificar se � mesmo Aluno!
+  var aluno: Aluno = <Aluno> req.body; //verificar se é mesmo Aluno!
   aluno = cadastro.cadastrar(aluno);
   if (aluno) {
     res.send({"success": "O aluno foi cadastrado com sucesso"});
@@ -48,6 +48,12 @@ taserver.delete('/aluno/:cpf', function (req: express.Request, res: express.Resp
   res.send();
 })
 
-taserver.listen(3000, function () {
+var server = taserver.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
+
+function closeServer(): void {
+  server.close();
+}
+
+export { server, closeServer }
