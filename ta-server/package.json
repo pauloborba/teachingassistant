@@ -17,6 +17,8 @@
     "@types/body-parser": "^1.16.5"
   },
   "devDependencies": {
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "jasmine": "^2.8.0",
+    "@types/jasmine": "^2.8.9"
   }
 }
