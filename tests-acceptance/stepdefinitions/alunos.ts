@@ -3,8 +3,6 @@ import { browser, $, element, ElementArrayFinder, by } from 'protractor';
 let chai = require('chai').use(require('chai-as-promised'));
 let expect = chai.expect;
 
-let sleep = (ms => new Promise(resolve => setTimeout(resolve, ms)));
-
 let sameCPF = ((elem, cpf) => elem.element(by.name('cpflist')).getText().then(text => text === cpf));
 let sameName = ((elem, name) => elem.element(by.name('nomelist')).getText().then(text => text === name));
 
@@ -19,10 +17,8 @@ defineSupportCode(function ({ Given, When, Then }) {
 
     Given(/^I cannot see a student with CPF "(\d*)" in the students list$/, async (cpf) => {
         var allcpfs : ElementArrayFinder = element.all(by.name('cpflist'));
-        await allcpfs;
         var samecpfs = allcpfs.filter(elem =>
                                       elem.getText().then(text => text === cpf));
-        await samecpfs;
         await samecpfs.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(0));
     });
 
@@ -34,6 +30,8 @@ defineSupportCode(function ({ Given, When, Then }) {
 
     Then(/^I can see "([^\"]*)" with CPF "(\d*)" in the students list$/, async (name, cpf) => {
         var allalunos : ElementArrayFinder = element.all(by.name('alunolist'));
-        allalunos.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+        await allalunos.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name))).then
+                   (elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
     });
+
 })
