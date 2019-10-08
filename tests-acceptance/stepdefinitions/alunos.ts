@@ -34,4 +34,23 @@ defineSupportCode(function ({ Given, When, Then }) {
                    (elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
     });
 
+    Given(/^I can see a student with CPF "(\d*)" in the students list$/, async (cpf) => {
+        await $("input[name='namebox']").sendKeys(<string> "Clarissa");
+        await $("input[name='cpfbox']").sendKeys(<string> cpf);
+        await element(by.buttonText('Adicionar')).click();
+        var allalunos : ElementArrayFinder = element.all(by.name('alunolist'));
+        await allalunos.filter(elem => sameCPF(elem,cpf)).then
+                   (elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+    });
+
+    Then(/^I cannot see "([^\"]*)" with CPF "(\d*)" in the students list$/, async (name, cpf) => {
+        var allcpfs : ElementArrayFinder = element.all(by.name('alunolist'));
+        var samecpfs = allcpfs.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name)));
+        await samecpfs.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(0));
+    });
+
+    Then(/^I can see an error message$/, async () => {
+        var allalunos : ElementArrayFinder = element.all(by.name('msgcpfexistente'));
+        await allalunos.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+    });
 })
