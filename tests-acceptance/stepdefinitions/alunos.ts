@@ -69,7 +69,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     Given(/^the system has no student with CPF "(\d*)"$/, async (cpf) => {
        await request.get(base_url + "alunos")
                 .then(body => 
-                    expect(body.includes('"cpf":"685"')).to.equal(false));
+                   expect(body.includes(`"cpf":"${cpf}"`)).to.equal(false));
     });
 
     When(/^I register the student "([^\"]*)" with CPF "(\d*)"$/, async (name, cpf) => {
