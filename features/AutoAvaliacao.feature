@@ -1,3 +1,4 @@
+Esta feature descreve como um aluno pode fazer sua auto-avaliação usando o Teaching assistant e sua tabela de conceito de meta.
 Cenário 1: Fazendo auto-avaliação com sucesso
 	Dado que eu estou logado como aluno de login "mgrf" e senha "123456" no sistema
 	E estou na tela de "auto-avaliação"
