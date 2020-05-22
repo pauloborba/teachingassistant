@@ -26,3 +26,9 @@ When eu tento finalizar a auto-avaliação com nota “MA” para a meta “META
 And não defino nota para a meta “META 2”
 Then uma mensagem de erro é exibida na tela sobre a falta de nota para alguma meta
 And continuo na página de “Auto-Avaliação”
+
+Service Scenario: Preenchimento mal sucedido da auto-avaliação
+Given eu estou logado no sistema como “Igor Simões”
+And não há notas de auto-avaliação armazenadas no sistema para metas desse usuário
+When eu cancelo a auto-avaliação com nota “MA” para todas as metas sem finalizar
+Then ainda não há notas de auto-avaliação armazenadas no sistema para metas desse usuário
