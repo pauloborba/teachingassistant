@@ -14,5 +14,15 @@ And posso ver as notas “MA” na coluna de auto-avaliação em todas as metas
 Service Scenario: Preenchimento bem sucedido da auto-avaliação
 Given não há notas de auto-avaliação para o usuário “Igor Simões” no sistema
 And existem apenas as metas “META 1” e “META 2” no sistema para esse usuário
-When o usuário “Igor Simões” realiza sua auto-avaliação com notas “MANA” para a “META 1” e “MA” para a “META 2”
-Then o sistema armazenou apropriadamente as notas “MANA” e “MA” para as metas “META 1” e “META 2”, respectivamente, do usuário “Igor Simões” na categoria de auto-avaliação
+When o usuário “Igor Simões” realiza sua auto-avaliação com notas “MA” para a “META 1” e “MANA” para a “META 2”
+Then o sistema armazenou apropriadamente as notas “MA” e “MANA” para as metas “META 1” e “META 2”, respectivamente, do usuário “Igor Simões” na categoria de auto-avaliação
+
+GUI Scenario: Preenchimento mal sucedido da auto-avaliação
+Given eu estou logado no sistema como “Igor Simões”
+And estou na página “Auto-Avaliação”
+And vejo duas metas “META 1” e “META 2”
+And não há nota na coluna de auto-avaliação para nenhuma das metas existentes
+When eu tento finalizar a auto-avaliação com nota “MA” para a meta “META 1”
+And não defino nota para a meta “META 2”
+Then uma mensagem de erro é exibida na tela sobre a falta de nota para alguma meta
+And continuo na página de “Auto-Avaliação”
