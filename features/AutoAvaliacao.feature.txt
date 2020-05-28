@@ -1,0 +1,4 @@
+Feature: Listagem de Carona
+As usuário cadastrado
+I want to acessar, selecionar e filtrar as caronas disponíveis 
+So that eu possa ver quais caronas estão sendo ofertadas
