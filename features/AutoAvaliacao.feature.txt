@@ -1,4 +1,4 @@
-Feature: Listagem de Carona
-As usuário cadastrado
-I want to acessar, selecionar e filtrar as caronas disponíveis 
-So that eu possa ver quais caronas estão sendo ofertadas
+Feature: auto-avaliação
+As um aluno
+I want to me auto avaliar em cada uma das metas
+So that eu consiga concluir a disciplina.
