@@ -2,3 +2,20 @@ Feature: auto-avaliação
 As um aluno
 I want to me auto avaliar em cada uma das metas
 So that eu consiga concluir a disciplina.
+
+Cenário de GUI:
+Cenário: adicionando auto-avaliação
+Given que eu esteja logado como “aluno” na página de “autoavaliação”
+And eu veja cada uma das metas com o conceito atribuído pelo professor à mim
+When eu adiciono em todas as metas o conceito da minha auto-avaliação
+Then eu consigo submeter os resultados da minha autoavaliação
+And eu vejo uma mensagem informando que a autoavaliação foi registrada com sucesso
+And eu consigo ver o resultado da minha autoavaliação ao lado da avaliação do professor.
+
+Cenário de serviço:
+Cenário: recebendo auto-avaliação do aluno
+Given que o aluno “Bruno Mesquita” está logado no sistema 
+And está na página de “auto-avaliação”
+When ele insere os conceitos de todas as metas
+Then o sistema armazena no banco de dados os conceitos da autoavaliação do aluno “Bruno Mesquita”
+And retorna uma mensagem de que a autoavaliação foi concluída com sucesso.
