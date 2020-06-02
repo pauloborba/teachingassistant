@@ -35,3 +35,12 @@ And ele está na página de “auto-avaliação”
 When ele insere os conceitos das metas mas deixa de preencher o conceito de pelo menos uma das metas
 Then o sistema não armazena os conceitos já preenchidos
 And o sistema retorna a mensagem informando que é obrigatório o preenchimento dos conceitos de todas as metas.
+
+Cenário: acessando auto-avaliações sem discrepância 
+Given eu esteja logado como “professor”
+And esteja na página a “lista de alunos, suas avaliações e autoavaliações”
+When eu tento clicar em “alunos com auto-avaliações discrepantes” 
+Then eu recebo uma mensagem “Não há alunos nesta condição!”
+And eu continuo na página onde estava
+And posso visualizar 1 aluno tem conceito superior ao do professor em 1 de 5 metas, outro só tem conceitos inferiores ao do professor, e outro só tem conceitos iguais.
+
