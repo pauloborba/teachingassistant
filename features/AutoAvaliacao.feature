@@ -15,4 +15,4 @@ And agora aparecem as notas das metas  da linha “Avaliação Professor”.
 Given o estudante “Robson Oliveira” está cadastrado no sistema, com as notas “MA,MNA,MPA”, atribuídas como avaliações do professor.
 When o aluno realiza a sua própria auto-avaliação, atribuindo todas as notas “MA,MA,MPA” e confirma.
 Then o sistema analisa se as todas as metas foram preenchidas, afirma um sucesso e confirma a operação.
-And a auto-avaliação de “Robson Oliveira” é salva no sistema com as notas que foi atribuídas.
+And a auto-avaliação de “Robson Oliveira” é salva no sistema com as notas que foi atribuídas. Tudo certinho.
