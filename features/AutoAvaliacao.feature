@@ -34,3 +34,4 @@ When o aluno “Robson” envia ao sistema por um botão “Confirmar” para o 
 Then o sistema faz uma análise do preenchimento, verifica que contêm falha no preenchimento da meta “Entender conceitos de gerência de configuração”
 And indica na tela para preencher corretamente o campo “Entender conceitos de gerência de configuração”
 And só posso prosseguir depois que corrigir as falhas.
+Then alteracao nova
