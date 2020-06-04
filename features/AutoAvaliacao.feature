@@ -34,3 +34,17 @@ When o aluno “Robson” envia ao sistema por um botão “Confirmar” para o 
 Then o sistema faz uma análise do preenchimento, verifica que contêm falha no preenchimento da meta “Entender conceitos de gerência de configuração”
 And indica na tela para preencher corretamente o campo “Entender conceitos de gerência de configuração”
 And só posso prosseguir depois que corrigir as falhas.
+
+                  Não ha discrepância
+Cenário de GUI:
+Scenario: Verificação de discrepância
+Given eu sou professor do centro
+And estou na página das “avaliações” visualizando a lista de alunos que contem “Robson” e “Pedro”
+And contém também a lista das seguintes metas auto-avaliadas por “Robson” da seguinte maneira:  “Entender conceitos de requisitos” como “MPA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MPA” e  “Construir cenários ideais” com “MANA”. Mostrando logo ao lado as notas atribuídas por mim a “Robson” da seguinte maneira: “Entender conceitos de requisitos” como “MA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MA” e  “Construir cenários ideais” com “MPA”
+And contém também a lista das seguintes metas auto-avaliadas por “Pedro” da seguinte maneira:  “Entender conceitos de requisitos” como “MANA”,  “Especificar requisitos com qualidade” como “MPA”, “Entender conceitos de gerência de configuração” como “MPA”, “Entender o conceito de cenários” com “MA” e  “Construir cenários ideais” com “MA”. Mostrando logo ao lado as notas atribuídas por mim a “Pedro” da seguinte maneira: “Entender conceitos de requisitos” como “MANA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MANA” e  “Construir cenários ideais” com “MA”
+And Quero fazer uma verificação da discrepância entre os alunos
+When eu seleciono a aba das “discrepâncias”
+Then a pagina abre com um aviso indicando que não há alunos com “discrepância” significativa pois nenhum chegou ao nível de 25% ou mais.
+And eu continuo na página que notifica que não houveram discrepâncias e não há alunos na lista 
+And tenho a opção de voltar para o início ou página anterior por um botão “Voltar”
+
