@@ -1,4 +1,4 @@
-Feature: auto-avaliação
+﻿Feature: auto-avaliação
 As a aluno do centro educacional
 I want to preencher completamente e modificar meu preenchimento antes de fazer a confirmação do que coloquei
 So that eu possa visualizar corretamente minhas expectativas com as notas recebidas pelo professor sem erros meus.
@@ -35,3 +35,30 @@ Then o sistema faz uma análise do preenchimento, verifica que contêm falha no 
 And indica na tela para preencher corretamente o campo “Entender conceitos de gerência de configuração”
 And só posso prosseguir depois que corrigir as falhas.
 Then alteracao nova
+
+Não ha discrepância
+Cenário de GUI:
+Scenario: Verificação de discrepância
+Given eu sou professor do centro
+And estou na página das “avaliações” visualizando a lista de alunos que contem “Robson” e “Pedro”
+And contém também a lista das seguintes metas auto-avaliadas por “Robson” da seguinte maneira:  “Entender conceitos de requisitos” como “MPA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MPA” e  “Construir cenários ideais” com “MANA”. Mostrando logo ao lado as notas atribuídas por mim a “Robson” da seguinte maneira: “Entender conceitos de requisitos” como “MA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MA” e  “Construir cenários ideais” com “MPA”
+And contém também a lista das seguintes metas auto-avaliadas por “Pedro” da seguinte maneira:  “Entender conceitos de requisitos” como “MANA”,  “Especificar requisitos com qualidade” como “MPA”, “Entender conceitos de gerência de configuração” como “MPA”, “Entender o conceito de cenários” com “MA” e  “Construir cenários ideais” com “MA”. Mostrando logo ao lado as notas atribuídas por mim a “Pedro” da seguinte maneira: “Entender conceitos de requisitos” como “MANA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MANA” e  “Construir cenários ideais” com “MA”
+And Quero fazer uma verificação da discrepância entre os alunos
+When eu seleciono a aba das “discrepâncias”
+Then a pagina abre com um aviso indicando que não há alunos com “discrepância” significativa pois nenhum chegou ao nível de 25% ou mais.
+And eu continuo na página que notifica que não houveram discrepâncias e não há alunos na lista 
+And tenho a opção de voltar para o início ou página anterior por um botão “Voltar”
+
+ha discrepância
+Cenário de GUI:
+Scenario: Verificação de discrepância
+Given eu sou professor do centro
+And estou na página das “Avaliações” visualizando a lista de alunos que contem “Robson”, “Pedro” e “Laura”
+And contém na guia a lista das seguintes metas auto-avaliadas por “Robson” da seguinte maneira:  “Entender conceitos de requisitos” como “MPA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MPA” e  “Construir cenários ideais” com “MANA”. Mostrando logo ao lado as notas atribuídas por mim a “Robson” da seguinte maneira: “Entender conceitos de requisitos” como “MA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MA” e  “Construir cenários ideais” com “MPA”
+And contém também a lista das seguintes metas auto-avaliadas por “Pedro” da seguinte maneira:  “Entender conceitos de requisitos” como “MANA”,  “Especificar requisitos com qualidade” como “MPA”, “Entender conceitos de gerência de configuração” como “MPA”, “Entender o conceito de cenários” com “MA” e  “Construir cenários ideais” com “MA”. Mostrando logo ao lado as notas atribuídas por mim a “Pedro” da seguinte maneira: “Entender conceitos de requisitos” como “MANA”,  “Especificar requisitos com qualidade” como “MANA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MANA” e  “Construir cenários ideais” com “MA”
+And contém também na guia a lista das seguintes metas auto-avaliadas por “Laura” da seguinte maneira:  “Entender conceitos de requisitos” como “MPA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MPA”, “Entender o conceito de cenários” com “MA” e  “Construir cenários ideais” com “MA”. Mostrando logo ao lado as notas atribuídas por mim a “Laura” da seguinte maneira: “Entender conceitos de requisitos” como “MA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Entender o conceito de cenários” com “MA” e  “Construir cenários ideais” com “MA”
+And Quero fazer uma verificação da discrepância entre os alunos
+When eu seleciono a aba das “discrepâncias”
+Then a página abre com o indicativo gráfico de que 33,3% da sala apresentaram discrepância mostrando abaixo uma lista que contem somente o nome “Pedro” que foi o único aluno discrepante  e a porcentagem de 40% de discrepância
+And eu continuo na página que mostra a lista com um único aluno e o gráfico
+And tenho a opção de voltar por uma opção “Voltar”
