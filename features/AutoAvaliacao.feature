@@ -27,6 +27,7 @@ Scenario: there’s a total of 1 students with discrepancies
 GUI:
 Given I am at the "Discrepâncias" page
 When I check the “Total: X alunos”
+And mudanca mais significativa
 Then the X displays 1
 And there is one student displaying at the list
 
