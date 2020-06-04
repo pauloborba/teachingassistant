@@ -32,3 +32,16 @@ Then o sistema analisa se as todas as metas foram preenchidas, afirma uma falha
 And nega a operação
 And a auto-avaliação de “Xavier Simões” não salva no sistema com as notas que foi atribuídas.
 
+Scenario: Verificação da discrepância quando não há nenhuma discrepância.
+Given eu estou na página de “Visão geral da disciplina”.
+And eu visualizo a lista de alunos que contém “Fernanda, Carlos e Daniela”
+And vejo relacionado a aluna “Fernanda”, a seguinte autoavaliação “Entender conceitos de requisitos”: “MPA”, “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração”: “MA”, “Construir cenários ideais”: “MPA”, “Elicitar com qualidade”: “MPA”. 
+And mostrando logo ao lado as notas atribuídas por mim a “Fernanda” da seguinte maneira: “Entender conceitos de requisitos” como “MA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Construir cenários ideais” com “MA”, “Elicitar com qualidade” com “MPA”.
+And vejo relacionado ao aluno “Carlos”, a seguinte autoavaliação “Entender conceitos de requisitos”: “MPA”, “Especificar requisitos com qualidade” como “MPA”, “Entender conceitos de gerência de configuração”: “MPA”, “Construir cenários ideais”: “MPA”, “Elicitar com qualidade”: “MANA”. 
+And mostrando logo ao lado as notas atribuídas por mim a “Carlos” da seguinte maneira: “Entender conceitos de requisitos” como “MA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Construir cenários ideais” com “MA”, “Elicitar com qualidade” com “MPA”.
+And vejo relacionado a aluna “Daniela”, a seguinte autoavaliação “Entender conceitos de requisitos”: “MPA”, “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração”: “MA”, “Construir cenários ideais”: “MANA”, “Elicitar com qualidade”: “MPA”. 
+And mostrando logo ao lado as notas atribuídas por mim a “Daniela” da seguinte maneira: “Entender conceitos de requisitos” como “MPA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Construir cenários ideais” com “MANA”, “Elicitar com qualidade” com “MPA”.
+When eu peço ao sistema fazer a análise de discrepância.
+Then sou redirecionado a página “Análise de Discrepância”.
+And aparece um aviso indicando error.
+
