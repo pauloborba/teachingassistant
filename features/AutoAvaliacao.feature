@@ -14,3 +14,4 @@ When aquilo acontecde
 Then eu obtenho isso
 And aquilo
 And mais aquilo
+And adicionando mais um passo adicional
