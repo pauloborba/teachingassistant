@@ -17,3 +17,4 @@ Given que  as metas foram preenchidas da seguinte forma: “Entender conceitos d
 When o aluno “Robson” envia ao sistema por uma opção “Confirmar” para o salvamento da auto-avaliação
 Then o sistema faz o armazenamento no banco de dados e atualiza a página com os dados salvos
 And agora a página ficará com minha auto-avaliação armazenada assim que abrir.
+teste
