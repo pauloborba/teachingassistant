@@ -31,4 +31,5 @@ When o aluno realiza a sua própria auto-avaliação, atribuindo algumas notas d
 Then o sistema analisa se as todas as metas foram preenchidas, afirma uma falha
 And nega a operação
 And a auto-avaliação de “Xavier Simões” não salva no sistema com as notas que foi atribuídas.
+Then passo adicional
 
