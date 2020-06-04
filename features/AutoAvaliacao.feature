@@ -45,3 +45,21 @@ When eu peço ao sistema fazer a análise de discrepância.
 Then sou redirecionado a página “Análise de Discrepância”.
 And aparece um aviso indicando error.
 
+Scenario: Verificação da discrepância quando há discrepância de 1 em 3 alunos.
+Given eu estou na página de “Visão geral da disciplina”.
+And eu visualizo a lista de alunos que contém “Marcos, Daniel e Kiko”
+And vejo relacionado ao aluno “Marcos”, a seguinte autoavaliação “Entender conceitos de requisitos”: “MPA”, “Especificar requisitos com qualidade” como “MPA”, “Entender conceitos de gerência de configuração”: “MA”, “Construir cenários ideais”: “MPA”, “Elicitar com qualidade”: “MPA”. 
+And mostrando logo ao lado as notas atribuídas por mim a “Marcos” da seguinte maneira: “Entender conceitos de requisitos” como “MANA”,  “Especificar requisitos com qualidade” como “MANA”, “Entender conceitos de gerência de configuração” como “MA”, “Construir cenários ideais” com “MA”, “Elicitar com qualidade” com “MPA”.
+And vejo relacionado ao aluno “Daniel”, a seguinte autoavaliação “Entender conceitos de requisitos”: “MPA”, “Especificar requisitos com qualidade” como “MPA”, “Entender conceitos de gerência de configuração”: “MPA”, “Construir cenários ideais”: “MPA”, “Elicitar com qualidade”: “MANA”. 
+And mostrando logo ao lado as notas atribuídas por mim a “Daniel” da seguinte maneira: “Entender conceitos de requisitos” como “MA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Construir cenários ideais” com “MA”, “Elicitar com qualidade” com “MANA”.
+And vejo relacionado ao aluno “Kiko”, a seguinte autoavaliação “Entender conceitos de requisitos”: “MPA”, “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração”: “MA”, “Construir cenários ideais”: “MANA”, “Elicitar com qualidade”: “MPA”. 
+And mostrando logo ao lado as notas atribuídas por mim a “Kiko” da seguinte maneira: “Entender conceitos de requisitos” como “MPA”,  “Especificar requisitos com qualidade” como “MA”, “Entender conceitos de gerência de configuração” como “MA”, “Construir cenários ideais” com “MANA”, “Elicitar com qualidade” com “MPA”.
+When eu peço ao sistema fazer a análise de discrepância.
+Then sou redirecionado a página “Análise de Discrepância”.
+And visualizo uma tabela contendo apenas o aluno de nome “Marcos”, associado com 40% de discrepância.
+And Vejo como informação a quantidade total de alunos da disciplina “3”.
+And o número de alunos discrepantes “1”.
+And a porcentagem aproximada de “33,3%” de alunos discrepantes totais da disciplina.
+And vejo um botão para voltar a página de “visão geral da disciplina”.
+
+
