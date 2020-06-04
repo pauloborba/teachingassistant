@@ -16,3 +16,4 @@ Given Estou logado como “aluno”
 And Estou na sessão de “Notas”
 When Eu insiro as notas auto-avaliadas em apenas metade das disponíveis
 Then Eu recebo um erro informando que não é possível deixar campos para auto-avaliações de metas vazios
+Then Eu sou lançado para a página inicial
