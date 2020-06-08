@@ -45,3 +45,33 @@ Cenário 3: Fazendo auto-avaliação sem discrepância
         Então um diálogo será exibido com uma mensagem de sucessoa
         E as alterações foram salvas no sistema.
         E o botão de confirmação não estará mais disponível.
+
+Cenário 3: Fazendo auto-avaliação sem discrepância
+        Dado que eu estou logado como aluno de login "mgrf" e senha "123456$
+        E estou na tela de "auto-avaliação"
+        E há uma tabela apresentando os conceitos de cada meta
+        E as metas "Meta 1", "Meta 2" e "Meta 3" não estão preenchidas
+        E as metas "Meta 1", "Meta 2" e "Meta 3" estão disponíveis para serem preenchidas
+        Quando eu atribuir
+                o conceito "MA" para "Meta 1"
+                E o conceito "MANA" para "Meta 2"
+                E o conceito "MA" para "Meta 3"
+        E confirmar as alterações
+        Então um diálogo será exibido com uma mensagem de sucessoa
+        E as alterações foram salvas no sistema.
+        E o botão de confirmação não estará mais disponível.
+
+Cenário 4: Fazendo auto-avaliação com discrepância
+        Dado que eu estou logado como aluno de login "mgrf" e senha "123456$
+        E estou na tela de "auto-avaliação"
+        E há uma tabela apresentando os conceitos de cada meta
+        E as metas "Meta 1", "Meta 2" e "Meta 3" não estão preenchidas
+        E as metas "Meta 1", "Meta 2" e "Meta 3" estão disponíveis para serem preenchidas
+        Quando eu atribuir
+                o conceito "MA" para "Meta 1"
+                E o conceito "MA" para "Meta 2"
+                E o conceito "MA" para "Meta 3"
+        E confirmar as alterações
+        Então um diálogo será exibido com uma mensagem de erro "Há discrepância entre a auto-avaliação e a avaliação fornecida pelo professsor".
+        E as alterações não foram salvas no sistema.
+        E o botão de confirmação estará disponível.
