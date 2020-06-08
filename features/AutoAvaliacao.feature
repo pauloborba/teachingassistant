@@ -62,3 +62,4 @@ Cenário 4: Fazendo auto-avaliação com discrepância
         Então um diálogo será exibido com uma mensagem de erro "Há discrepância entre a auto-avaliação e a avaliação fornecida pelo professsor".
         E as alterações não foram salvas no sistema.
         E o botão de confirmação estará disponível.
+
