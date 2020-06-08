@@ -27,6 +27,8 @@ Cenário 2: Fazendo auto-avaliação sem sucesso
                 E o concetito nenhum para "Meta 3"
         E confirmar as alterações
         Então um diálogo será exibido com uma mensagem de falha
+	E a meta "Meta 1" estará preenchida com "MPA".
+	E a meta "Meta 2" estará preenchida com "MA".
         E a meta "Meta 3" não estará preenchida.
 	E as alterações não foram salvas no sistema.
         E o botão de confirmação não estará mais disponível.
