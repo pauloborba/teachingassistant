@@ -16,3 +16,18 @@ And Esse aluno ainda não possui uma auto-avaliação
 When O sistema recebe a auto-avaliação de “Victor”
 And O sistema verifica como válida
 Then O aluno “Victor” fica com uma auto-avaliação relacionada a ele salva no sistema
+
+Scenario GUI: Envio falho de auto-avaliação
+Given Eu estou logado como “vefg”
+And Eu estou na página “auto-avaliação”
+And A meta “gerência de configuração” está sem avaliação
+And Todas as outras metas estão avaliadas com “MA”
+When Eu clico no botão “avaliar”
+Then Eu estou na página “auto-avaliação” com um alerta dizendo “Todas as metas devem ser preenchidas antes do envio”
+
+Scenario Service: Auto-avaliação inválida para armazenar no sistema
+Given O aluno “Victor” está cadastrado no sistema
+And Esse ainda não possui uma auto-avaliação
+When O sistema recebe a auto-avaliação de “Victor”
+And O sistema verifica como inválida
+Then O aluno “Victor” continua sem uma auto-avaliação relacionada a ele salva no sistema
