@@ -31,3 +31,4 @@ And Esse ainda não possui uma auto-avaliação
 When O sistema recebe a auto-avaliação de “Victor”
 And O sistema verifica como inválida
 Then O aluno “Victor” continua sem uma auto-avaliação relacionada a ele salva no sistema
+And O aluno "Victor" continua cadastrado no sistema
