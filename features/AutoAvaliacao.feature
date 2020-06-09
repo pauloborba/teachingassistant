@@ -40,3 +40,10 @@ Scenario: Não há alunos discrepantes
     Then Eu vejo uma lista vazia
     And acima da lista aparece 0 aluno(s)(0%)
     
+Scenario: Há alunos discrepantes
+    Given Eu estou logado como “professor”
+    And Eu estou na página “discrepâncias”
+    And Há 1 aluno discrepante
+    When Eu aperto na barra
+    Then Uma lista aparece com o nome de “victor”
+    And acima da lista aparece escrito 1 aluno(s)(33%)
