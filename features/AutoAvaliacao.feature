@@ -36,6 +36,21 @@ Scenario: Realizando auto-avaliação de conceitos
 	Given: O professor está na  página “auto-avaliacao”.
 	When: Eu enxergo que na “Meta 1 ”, “Meta 2”, “Meta 3”, “Meta 4” e “Meta 5” a avaliação do aluno foi “MANA” ,”MANA”,”MANA”,”MANA”,”MANA”
 	And: O professor, avalia a “Meta 1”,”Meta 2”,”Meta 3”,”Meta 4” e ”Meta 5” com a seguinte avaliação “MPA” ,”MPA”,”MPA”,”MPA”,”MPA”
-	Then: Avaliacao contém discrepancia.		
+	Then: Avaliacao contém discrepancia.
 
-		
+
+Scenario: Realizando auto-avaliação de conceitos  
+	Given: O professor está na  página “auto-avaliacao”.
+	When: Eu enxergo que na “Meta 1 ”, “Meta 2”, “Meta 3”, “Meta 4” e “Meta 5” a avaliação do aluno foi “MANA” ,”MANA”,”MANA”,”MANA”,”MANA”
+	And: O professor, avalia a “Meta 1”,”Meta 2”,”Meta 3”,”Meta 4” e ”Meta 5” com a seguinte avaliação “MPA” ,”MPA”,”MPA”,”MPA”,”MPA”
+	Then: Avaliacao contém discrepancia.				
+	And: O professor, avalia a “Meta 1”,”Meta 2”,”Meta 3”,”Meta 4” e ”Meta 5” com a seguinte avaliação “MANA” ,”MANA”,”MANA”,”MANA”,”MANA”
+	Then: A avaliação foi concluída com sucesso.
+
+Scenario: Observando a lista de alunos que possuem discrepância nas suas avaliações  
+	Given: Eu estou na página de “Dashboard do Professor”.
+	When:  Eu  consigo observar a quantidade de alunos, porcentagem e lista destes alunos que possuem discrepâncias
+	And:  O sistema irá mostrar na tela uma lista com todos os alunos que tem alguma discrepância de avaliações
+	Then: Mostra na tela o aluno que tem discrepância nas avaliações.		
+
+
