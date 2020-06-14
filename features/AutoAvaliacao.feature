@@ -47,3 +47,4 @@ Then the system stores that grade in the server
 When I input the “Gerência de configuração” grade, which is “MA”
 Then the system tries to store this grade in the server, but it doesn’t recognize it
 And the server sends back an error message saying it will not store de grade, because it’s not a valid grade
+And it ends
