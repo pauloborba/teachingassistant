@@ -69,13 +69,12 @@ GUI
 Scenario: checking self-evaluations
 Given I am at the "Grades" page
 And I can see the discrepancies in all gradings of all students
-And I see three students, “Student1”, “Student2”, “Student3”
-And “Student1” have discrepancies, so he’s in a red font
-And “Student2” and “Student3” don’t have discrepancies, so they’re in a black font
-When I click on the “Alunos” tab
+And I see three students, "André Valença", “Mateus Nascimento", “Vinícius Padilha”
+And “André Valença” have discrepancies, so he’s in a red font
+And “Mateus Nascimento” and “Vinícius Padilha” don’t have discrepancies, so they’re in a black font
+When I click the “Alunos” tab
 And I change the type of listing
 Then I’m at the “Alunos com notas discrepantes” page
-And I now see only “Student1”
+And I now see only “André Valença”
 And he has 33,33% higher self-grading then the professor
-And he’s in a red font because of it
 And that means he went over the threshold of 25% higher-grading
