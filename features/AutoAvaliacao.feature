@@ -62,4 +62,28 @@ When  I look at the "A.A." for each student for each goal I see "Luís" has self
 And I see "Claudia" has self-evaluated "MA, MA, MPA, MA, MANA"
 And I see "Rubem" has self-evaluated "MPA, MPA, MPA, MPA, MPA"
 And I see "Claudia" has self-evaluation boxes with darker colors
+Then I’m still at the "Grades
+
+GUI
+Scenario: see grades for students when there is one discrepancy
+Given I logged in as "Professor" with the login "mfarn" and the password "1234"
+And I am at the "Grades" page
+And The student "Luís" has achieved "MA, MA, MPA, MA, MPA" for the evaluated learning goals
+And The student "Luísa" has achieved "MPA, MPA, MPA, MA, MANA" for the evaluated learning goals
+And The student "Rubem" has achieved "MA, MA, MA, MA, MA" for the evaluated learning goals
+When  I look at the "A.A." for each student for each goal I see "Luís" has self-evaluated "MA, MA, MPA, MA, MPA"
+And I see "Luísa" has self-evaluated "MA, MA, MA, MA, MPA"
+And I see "Rubem" has self-evaluated "MPA, MPA, MPA, MPA, MPA"
 Then I’m still at the "Grades" page
+And I see "Luísa" has self-evaluation boxes with darker colors
+And I see the "Discrepantes" button in a darker color
+When I ask the system to see the students with discrepancy
+Then I'm on the "Discrepancies" page
+
+Scenario: see percentage of discrepancies for students when there are 25% or above discrepancies
+Given I am at the "Discrepancies" page
+And the student "Luísa" has self-evaluated with a higher grade than the teacher in 4 of her 5 goals
+When  I look the last column I see that she has 80% of discrepancies
+And I'm still on the "Discrepancies" page
+When I ask the system to go back
+Then I'm on the "Grades" page
