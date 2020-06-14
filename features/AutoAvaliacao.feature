@@ -44,3 +44,4 @@ Scenario: student input own grade
 Given The student "Mateus Felipe" is stored in a system with ”MA, MPA, MPA” for the evaluated learning goals
 When "Mateus Felipe" sends ”MA, MA, -” for his self-evaluated grades for each goal
 Then the system doesn't stores  ”MA, MA, -” for his self-evaluated grades in the server
+Then something else happens as asked by the stakeholders
