@@ -48,3 +48,34 @@ When I input the “Gerência de configuração” grade, which is “MA”
 Then the system tries to store this grade in the server, but it doesn’t recognize it
 And the server sends back an error message saying it will not store de grade, because it’s not a valid grade
 And it ends
+
+GUI
+Scenario: checking self-evaluations
+Given I am at the "Grades" page
+And I can see the discrepancies in all gradings of all students
+And I see three students, “Student1”, “Student2”, “Student3”
+And “Student1” have discrepancies, so he’s in a red font
+And “Student2” and “Student3” don’t have discrepancies, so they’re in a black font
+When I click on the “Alunos” tab
+And I change the type of listing
+Then I’m at the “Alunos com notas discrepantes” page
+And I now see only “Student2” and “Student3”
+And “Student2” has a 16,6% discrepancy percentage when self-grading higher in comparison to the professor
+And “Student3” has 33,33% discrepancy percentage, with lower self-grading in comparison to the professor
+And the font color of the percentage of “Student2” is black, because he didn’t go over the threshold of 25%
+And the font color of the percentage of “Student2” is also black, because he only graded lower then the professor
+
+GUI
+Scenario: checking self-evaluations
+Given I am at the "Grades" page
+And I can see the discrepancies in all gradings of all students
+And I see three students, “Student1”, “Student2”, “Student3”
+And “Student1” have discrepancies, so he’s in a red font
+And “Student2” and “Student3” don’t have discrepancies, so they’re in a black font
+When I click on the “Alunos” tab
+And I change the type of listing
+Then I’m at the “Alunos com notas discrepantes” page
+And I now see only “Student1”
+And he has 33,33% higher self-grading then the professor
+And he’s in a red font because of it
+And that means he went over the threshold of 25% higher-grading
