@@ -76,15 +76,15 @@ When  I look at the "A.A." for each student for each goal I see "Luís" has self
 And I see "Luísa" has self-evaluated "MA, MA, MA, MA, MPA"
 And I see "Rubem" has self-evaluated "MPA, MPA, MPA, MPA, MPA"
 Then I’m still at the "Grades" page
-And I see "Luísa" has self-evaluation boxes with darker colors
-And I see the "Discrepantes" button in a darker color
+And I see "Luísa" has self-evaluation boxes with red color
+And I see the "Discrepantes" button in a darker shade of gray
 When I ask the system to see the students with discrepancy
 Then I'm on the "Discrepancies" page
 
 Scenario: see percentage of discrepancies for students when there are 25% or above discrepancies
 Given I am at the "Discrepancies" page
 And the student "Luísa" has self-evaluated with a higher grade than the teacher in 4 of her 5 goals
-When  I look the last column I see that she has 80% of discrepancies
+When  I look the last column I see that "Luísa" has 80% of discrepancies
 And I'm still on the "Discrepancies" page
 When I ask the system to go back
 Then I'm on the "Grades" page
