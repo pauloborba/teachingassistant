@@ -49,7 +49,7 @@ And posso visualizar 1 aluno tem conceito superior ao do professor em 1 de 5 met
 Cenário: acessando auto-avaliações com discrepância
 Given que eu esteja logado como professor
 And esteja na página com a “lista de alunos, suas avaliações e autoavaliações”
-When eu tento clicar em “alunos com auto-avaliações discrepantes” 
+When solicito a lista de “alunos com auto-avaliações discrepantes” 
 Then continua na página onde estava mas agora com o nome e avaliações do(s) aluno(s) que teve/tiveram autoavaliação discrepante destacados
 And eu consigo ver um aluno destacado entre os 3. 
 
