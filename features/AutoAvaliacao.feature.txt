@@ -26,7 +26,8 @@ Given que eu esteja logado como aluno “Bruno Mesquita”
 And eu esteja na página de “auto-avaliação” 
 And eu veja cada uma das metas com o conceito atribuído pelo professor à mim
 When realizo a auto-avaliação adicionando os conceitos das meta mas não adiciono o conceito de pelo menos uma das metas 
-Then eu recebo uma mensagem de erro informando que é obrigatório o preenchimento dos conceitos de todas as metas.
+Then eu recebo uma mensagem de erro informando que é obrigatório o preenchimento dos conceitos de todas as metas
+And passo adicional.
 
 Cenário de serviço:
 Cenário: recebendo auto-avaliação incompleta do aluno
@@ -34,4 +35,5 @@ Given que o aluno “Bruno Mesquita” está logado no sistema
 And ele está na página de “auto-avaliação”
 When ele insere os conceitos das metas mas deixa de preencher o conceito de pelo menos uma das metas
 Then o sistema não armazena os conceitos já preenchidos
-And o sistema retorna a mensagem informando que é obrigatório o preenchimento dos conceitos de todas as metas.
+And o sistema retorna a mensagem informando que é obrigatório o preenchimento dos conceitos de todas as metas
+And passo adicional.
