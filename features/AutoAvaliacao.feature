@@ -59,7 +59,7 @@ Cenário 4: Fazendo auto-avaliação com discrepância
                 E o conceito "MA" para "Meta 2"
                 E o conceito "MA" para "Meta 3"
         E confirmar as alterações
-        Então um diálogo será exibido com uma mensagem de erro "Há discrepância entre a auto-avaliação e a avaliação fornecida pelo professsor".
+        Então um diálogo será exibido com uma mensagem de erro "Há discrepância de 70% entre a avaliação e a avaliação fornecida pelo professsor".
         E as alterações não foram salvas no sistema.
         E o botão de confirmação estará disponível.
 
