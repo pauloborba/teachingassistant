@@ -95,3 +95,9 @@ Then I'm on the "Grades" page
 
 Modifications made only on master...
 And hoping the ones on discrepantes will merge above correctly
+
+Scenario: see percentage of discrepancies by all students for for each score
+Given I am at the "Discrepancies" page
+And I hove the cursor over a goal column name
+When  I look over the cursor I see the percentage of discrepancies of all students for that goal
+And I'm still on the "Discrepancies" page
