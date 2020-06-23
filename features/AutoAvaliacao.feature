@@ -88,3 +88,6 @@ When  I look the last column I see that "Luísa" has 80% of discrepancies
 And I'm still on the "Discrepancies" page
 When I ask the system to go back
 Then I'm on the "Grades" page
+
+Modifications made only on master...
+And hoping the ones on discrepantes will merge above correctly
