@@ -60,6 +60,6 @@ Then sou redirecionado a página “Análise de Discrepância”.
 And visualizo uma tabela contendo apenas o aluno de nome “Marcos”, associado com 40% de discrepância.
 And Vejo como informação a quantidade total de alunos da disciplina “3”.
 And o número de alunos discrepantes “1”.
-And a porcentagem aproximada de “33,3%” de alunos discrepantes totais da disciplina.
+And a porcentagem aproximada de “33,3%” de alunos discrepantes totais da disciplina Alguma coisa.
 
 
