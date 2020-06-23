@@ -60,6 +60,6 @@ And visualizo uma tabela contendo apenas o aluno de nome “Marcos”, associado
 And Vejo como informação a quantidade total de alunos da disciplina “3”.
 And o número de alunos discrepantes “1”.
 And a porcentagem aproximada de “33,3%” de alunos discrepantes totais da disciplina.
-And vejo um botão para voltar a página de “visão geral da disciplina” Alguma coisa.
+And vejo um botão para voltar a página de “visão geral da disciplina” Alguma coisa Alguma coisa 2.
 
 
