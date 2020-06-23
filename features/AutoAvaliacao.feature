@@ -1,3 +1,5 @@
+A this point there will be only scenarios about teacher inputing grades
+
 Feature: self-evaluation
 
 In order to complete my process of evaluation
