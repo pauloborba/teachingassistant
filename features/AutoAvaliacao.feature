@@ -46,6 +46,8 @@ When "Mateus Felipe" sends ”MA, MA, -” for his self-evaluated grades for eac
 Then the system doesn't stores  ”MA, MA, -” for his self-evaluated grades in the server
 Then something else happens as asked by the stakeholders
 
+A this point there will be only scenarios about discrepancies
+
 Feature: self-evaluation
 
 In order to check for eventual discrepancies in the self-evaluation process
