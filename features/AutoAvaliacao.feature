@@ -62,4 +62,4 @@ When eu seleciono a aba das “discrepâncias”
 Then a página abre com o indicativo gráfico de que 33,3% da sala apresentaram discrepância mostrando abaixo uma lista que contem somente o nome “Pedro” que foi o único aluno discrepante  e a porcentagem de 40% de discrepância
 And eu continuo na página que mostra a lista com um único aluno e o gráfico
 And tenho a opção de voltar por uma opção “Voltar”
-And ALTERACAO IMPORTANTE FEITA
+And ALTERACAO IMPORTANTE FEITA mudanca3
