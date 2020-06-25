@@ -1,4 +1,4 @@
-﻿Feature: auto-avaliação mudanca1
+﻿﻿Feature: auto-avaliação mudanca1
 >>>>>>> 484a0f1... primeiro commit discrepantes
 As a aluno do centro educacional
 I want to preencher completamente e modificar meu preenchimento antes de fazer a confirmação do que coloquei
