@@ -63,3 +63,5 @@ Then a página abre com o indicativo gráfico de que 33,3% da sala apresentaram 
 And eu continuo na página que mostra a lista com um único aluno e o gráfico
 And tenho a opção de voltar por uma opção “Voltar”
 And ALTERACAO IMPORTANTE FEITA mudanca3
+
+alteracao novo cenario de visualização de percentual de discrepância ajuste
