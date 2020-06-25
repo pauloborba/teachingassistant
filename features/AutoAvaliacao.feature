@@ -1,10 +1,9 @@
-﻿﻿Feature: auto-avaliação mudanca1
->>>>>>> 484a0f1... primeiro commit discrepantes
+﻿﻿Feature: auto-avaliação 
 As a aluno do centro educacional
 I want to preencher completamente e modificar meu preenchimento antes de fazer a confirmação do que coloquei
 So that eu possa visualizar corretamente minhas expectativas com as notas recebidas pelo professor sem erros meus.
 
-Cenário de GUI: mudanca2
+Cenário de GUI: 
 Scenario: Preenchendo a auto-avaliação
 Given eu estou na página das “avaliações” visualizando a lista de metas “Entender conceitos de requisitos”,  “Especificar requisitos com qualidade” e “Entender conceitos de gerência de configuração” em que posso colocar minha auto-avaliação usando “MA”, “MPA” ou “MANA”
 And as notas não estão preenchidas
