@@ -25,6 +25,16 @@ Given Estou logado como “professor”
 And Estou na sessão de “Alunos”
 When Eu clico em “Discrepância”
 Then Eu recebo uma janela que mostra as seguintes mensagens:
+“Existem 0 avaliações discrepantes.”
+“0% dos alunos têm auto-avaliações discrepantes.”
+“A lista dos alunos com auto-avaliação discrepantes é vazia.”
+
+Scenario: Verificar discrepância
+
+Given Estou logado como “professor”
+And Estou na sessão de “Alunos”
+When Eu clico em “Discrepância”
+Then Eu recebo uma janela que mostra as seguintes mensagens:
 “Existe 1 avaliação discrepante.”
 “33,3% dos alunos têm auto-avaliações discrepantes.”
 “Lista dos alunos com auto-avaliações discrepantes:
