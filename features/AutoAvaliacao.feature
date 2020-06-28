@@ -30,3 +30,4 @@ Then Eu recebo uma janela que mostra as seguintes mensagens:
 “A lista dos alunos com auto-avaliação discrepantes é vazia.”
 
 Adicionando modificação 1
+Adicionando modificação 2
