@@ -21,6 +21,7 @@ And A meta “gerência de configuração” está sem avaliação
 And Todas as outras metas estão avaliadas com “MA”
 When Eu clico no botão “avaliar”
 Then Eu estou na página “auto-avaliação” com um alerta dizendo “Todas as metas devem ser preenchidas antes do envio”
+And A meta "gerência de configuração” continua sem avaliação
 
 Scenario Service: Auto-avaliação inválida para armazenar no sistema
 Given O aluno “Victor” está cadastrado no sistema
