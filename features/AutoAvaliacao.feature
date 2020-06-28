@@ -31,3 +31,4 @@ Then Eu recebo uma janela que mostra as seguintes mensagens:
 
 Adicionando modificação 1
 Adicionando modificação 2
+Ajustando modificação 3
