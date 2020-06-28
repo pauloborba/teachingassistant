@@ -17,3 +17,11 @@ And Estou na sessão de “Notas”
 When Eu insiro as notas auto-avaliadas em apenas metade das disponíveis
 Then Eu recebo um erro informando que não é possível deixar campos para auto-avaliações de metas vazios
 Then Eu sou lançado para a página inicial
+
+Given Estou logado como “professor”
+And Estou na sessão de “Alunos”
+When Eu clico em “Discrepância”
+Then Eu recebo uma janela que mostra as seguintes mensagens:
+“Existem 0 avaliações discrepantes.”
+“0% dos alunos têm auto-avaliações discrepantes.”
+“A lista dos alunos com auto-avaliação discrepantes é vazia.”
