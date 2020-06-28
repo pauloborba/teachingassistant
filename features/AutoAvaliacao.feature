@@ -21,9 +21,9 @@ Then Eu recebo um alert perguntando se eu quero inserir as notas novamente
 
 Scenario: Verificar discrepância
 
-Given Estou logado como “professor”
+Given Estou logado como “professor administrador”
 And Estou na sessão de “Alunos”
-When Eu clico em “Discrepância”
+When Eu seleciono em “Discrepância”
 Then Eu recebo uma janela que mostra as seguintes mensagens:
 “Existem 0 avaliações discrepantes.”
 “0% dos alunos têm auto-avaliações discrepantes.”
@@ -31,9 +31,9 @@ Then Eu recebo uma janela que mostra as seguintes mensagens:
 
 Scenario: Verificar discrepância
 
-Given Estou logado como “professor”
+Given Estou logado como “professor administrador”
 And Estou na sessão de “Alunos”
-When Eu clico em “Discrepância”
+When Eu seleciono em “Discrepância”
 Then Eu recebo uma janela que mostra as seguintes mensagens:
 “Existe 1 avaliação discrepante.”
 “33,3% dos alunos têm auto-avaliações discrepantes.”
