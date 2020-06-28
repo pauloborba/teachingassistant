@@ -28,3 +28,11 @@ And Esse ainda não possui uma auto-avaliação
 When O sistema recebe a auto-avaliação de “Victor”
 And O sistema verifica como inválida
 Then O aluno “Victor” continua sem uma auto-avaliação relacionada a ele salva no sistema
+
+Scenario: Não há alunos discrepantes
+    Given Eu estou logado como “professor”
+    And Eu estou na página “discrepâncias”
+    And Não há alunos discrepantes
+    When Eu aperto na barra
+    Then Eu vejo uma lista vazia
+    And acima da lista aparece 0 aluno(s)(0%)
