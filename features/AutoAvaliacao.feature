@@ -29,15 +29,4 @@ Then Eu recebo uma janela que mostra as seguintes mensagens:
 “0% dos alunos têm auto-avaliações discrepantes.”
 “A lista dos alunos com auto-avaliação discrepantes é vazia.”
 
-Scenario: Verificar discrepância
-
-Given Estou logado como “professor administrador”
-And Estou na sessão de “Alunos”
-When Eu seleciono em “Discrepância”
-Then Eu recebo uma janela que mostra as seguintes mensagens:
-“Existe 1 avaliação discrepante.”
-“33,3% dos alunos têm auto-avaliações discrepantes.”
-“Lista dos alunos com auto-avaliações discrepantes:
-Luiz André Ferreira da Silva”
-
-Modificação na master
+Adicionando modificação 1
