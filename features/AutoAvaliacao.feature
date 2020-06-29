@@ -46,10 +46,10 @@ And vejo “0%” na porcentagem de alunos discrepantes
 
 GUI Scenario: Checagem de discrepância quando há apenas um aluno discrepante
 Given eu estou logado no sistema com um usuário de professor
-And estou na página “Gerenciamento de Metas” da turma “Turma ESS”
+And >ajuste no cenário<
 And vejo 3 alunos na lista de alunos na turma
-And há apenas o aluno “Igor Simões” como discrepante
 When ativo a função de mostrar apenas alunos com discrepância está ativa
+And >ajuste no cenário<
 Then vejo apenas o mesmo aluno “Igor Simões” como discrepante
-And vejo “1” na quantidade de alunos discrepantes
+And >ajuste no cenário<
 And vejo “33%” na porcentagem de alunos discrepantes
