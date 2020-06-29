@@ -32,3 +32,4 @@ Given eu estou logado no sistema como “Igor Simões”
 And não há notas de auto-avaliação armazenadas no sistema para metas desse usuário
 When eu cancelo a auto-avaliação com nota “MA” para todas as metas sem finalizar
 Then ainda não há notas de auto-avaliação armazenadas no sistema para metas desse usuário
+And >passo adicional do exercício<
