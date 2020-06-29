@@ -53,3 +53,5 @@ And >ajuste no cenário<
 Then vejo apenas o mesmo aluno “Igor Simões” como discrepante
 And >ajuste no cenário<
 And vejo “33%” na porcentagem de alunos discrepantes
+
+modif. questão 14) a.
