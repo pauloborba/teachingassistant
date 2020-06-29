@@ -11,10 +11,3 @@ Scenario: preenchimento bem sucedido da auto-avaliação
     Then “Lucas” ainda está na página de “auto-avaliação”
     And recebe uma mensagem de confirmação 
     And consegue ver todas as metas preenchidas com sucesso
-
-Scenario: preenchimento mal sucedido da auto-avaliação
-    Given o aluno “Gabriel” está na página de “auto-avaliação”
-    And existem as metas “Gerência de configuração”, “Projeto e implementação” e “Testes” a serem preenchidas
-    When ele preenche “Projeto e implementação” e “Testes” com “MA” e “MA”, mas deixa de preencher a outra meta e confirma
-    Then “Gabriel” ainda está na página de “auto-avaliação”
-    And recebe uma mensagem de erro mostrando que ele não preencheu todas as metas corretamente 
