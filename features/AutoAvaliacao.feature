@@ -32,3 +32,13 @@ Given eu estou logado no sistema como “Igor Simões”
 And não há notas de auto-avaliação armazenadas no sistema para metas desse usuário
 When eu cancelo a auto-avaliação com nota “MA” para todas as metas sem finalizar
 Then ainda não há notas de auto-avaliação armazenadas no sistema para metas desse usuário
+
+GUI Scenario: Checagem de discrepância quando não há nenhum aluno discrepante
+Given eu estou logado no sistema com um usuário de professor
+And estou na página “Gerenciamento de Metas” da turma “Turma ESS”
+And vejo 3 alunos na lista de alunos na turma
+And não há aluno discrepante
+When ativo a função de mostrar apenas alunos com discrepância está ativa
+Then vejo que não há alunos com discrepância na lista
+And vejo “0” na quantidade de alunos discrepantes
+And vejo “0%” na porcentagem de alunos discrepantes
