@@ -49,6 +49,8 @@ Then the system tries to store this grade in the server, but it doesn’t recogn
 And the server sends back an error message saying it will not store de grade, because it’s not a valid grade
 And it ends
 
+j#1
+
 GUI
 Scenario: checking self-evaluations
 Given I am at the "Grades" page
