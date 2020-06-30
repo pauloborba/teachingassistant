@@ -65,6 +65,8 @@ And “Student3” has 33,33% discrepancy percentage, with lower self-grading in
 And the font color of the percentage of “Student2” is black, because he didn’t go over the threshold of 25%
 And the font color of the percentage of “Student2” is also black, because he only graded lower then the professor
 
+c#1
+
 GUI
 Scenario: checking self-evaluations
 Given I am at the "Grades" page
