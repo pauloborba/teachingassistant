@@ -41,6 +41,7 @@ Scenario: Há alunos discrepantes
     Given Eu estou logado como “professor”
     And Eu estou na página “discrepâncias”
     And Há 1 aluno discrepante
+    And há um total de 3 alunos
     When Eu aperto na barra
     Then Uma lista aparece com o nome de “victor”
     And acima da lista aparece escrito 1 aluno(s)(33%)
