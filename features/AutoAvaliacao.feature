@@ -1,0 +1,1 @@
+Feature: auto-avaliação
