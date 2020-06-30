@@ -45,4 +45,6 @@ Scenario: Há alunos discrepantes
     When Eu aperto na barra
     Then Uma lista aparece com o nome de “victor”
     And acima da lista aparece escrito 1 aluno(s)(33%)
+
+mudança 1
     
