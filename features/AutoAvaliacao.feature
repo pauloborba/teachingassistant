@@ -66,6 +66,7 @@ And the font color of the percentage of “Student2” is black, because he didn
 And the font color of the percentage of “Student2” is also black, because he only graded lower then the professor
 
 c#1
+c#2
 
 GUI
 Scenario: checking self-evaluations
