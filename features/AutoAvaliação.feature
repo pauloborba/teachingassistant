@@ -21,3 +21,10 @@ Feature: Autoavaliação
              Then Vejo a mensagem de erro “Autoavaliação não pode ser concluída”
               And Estou na página de “Notas”
               And Eu vejo que o espaço disponível para “Autoavaliação” continua preenchido com “NI”
+        
+        Scenario: checagem de discrepâncias quando não há discrepâncias
+            Given Eu estou logado como “teacher”
+              And Estou na página “Notas” com a opção “Mostrar Autoavaliações” selecionada
+             When Peço para “ver as discrepâncias”
+             Then Estou na página “Discrepâncias”
+              And Vejo a mensagem “Não há discrepâncias”
