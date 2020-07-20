@@ -30,3 +30,4 @@ Scenario: preenchimento mal-sucedido da autoavaliação (serviço)
     When é enviado ao sistema os conceitos “MA” para “Gerência de Requisitos”
     Then o sistema retorna num código de confirmação “0”
     And o sistema não armazena o conceito “MA” para “Gerência de Requisitos” atribuído pelo aluno “Paulo”
+    And o aluno “Paulo” está armazenado no sistema com o conceito “MPA” para a meta “Gerência de Requisitos” e o conceito “MPA” para a meta “Gerência de Configuração” atribuídos pelo professor
