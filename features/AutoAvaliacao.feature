@@ -30,3 +30,13 @@ Scenario: preenchimento mal-sucedido da autoavaliação (serviço)
     When é enviado ao sistema os conceitos “MA” para “Gerência de Requisitos”
     Then o sistema retorna num código de confirmação “0”
     And o sistema não armazena o conceito “MA” para “Gerência de Requisitos” atribuído pelo aluno “Paulo”
+
+Scenario: avaliações sem discrepâncias
+    Given eu estou na página “Avaliação” logado como professor “Paulo Borba”
+    And eu vejo o aluno “Paulo” com os conceitos “MA, MPA, MA, MA, MPA” e autoavaliação “MPA, MPA, MA, MA, MPA”
+    And eu vejo o aluno “Victor” com os conceitos “MA, MA, MPA, MA, MPA” e autoavaliação “MPA, MPA, MANA, MPA, MANA”
+    And eu vejo o aluno “Pedro” com os conceitos “MPA, MA, MA, MPA, MANA” e autoavaliação “MPA, MA, MA, MPA, MANA”
+    When eu seleciono a opção para exibir as discrepâncias
+    Then eu vejo uma coluna “Quantidade” com o valor “0”
+    And eu vejo uma coluna “Percentual” com o valor “0.00%”
+    And eu vejo uma lista “Discrepantes” vazia
