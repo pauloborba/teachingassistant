@@ -1,7 +1,7 @@
 Feature: autoavaliação
     As a aluno matriculado na disciplina
     I want to realizar minha autoavaliação adicionando conceitos às metas
-    So that eu possa avaliar meu desempenho e dedicação à disciplina
+    So that o professor possa observar se houveram discrepâncias
 
 Scenario: preenchimento bem-sucedido da autoavaliação
     Given eu estou na página “Autoavaliação” logado como o aluno “Paulo”
