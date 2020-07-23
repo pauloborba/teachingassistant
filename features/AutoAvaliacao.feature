@@ -1,0 +1,6 @@
+- Alterar dados
+- Remover veículos 
+- Atribuir pneus
+- Desatribuir pneus
+- Selecionar pneu
+- Log do veículo
