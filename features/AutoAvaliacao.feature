@@ -18,3 +18,10 @@ Scenario: preenchimento mal sucedido da auto-avaliação
     When ele preenche “Projeto e implementação” e “Testes” com “MA” e “MA”, mas deixa de preencher a outra meta e confirma
     Then “Gabriel” ainda está na página de “auto-avaliação”
     And recebe uma mensagem de erro mostrando que ele não preencheu todas as metas corretamente 
+
+Scenario: ausência de discrepâncias
+    Given eu estou na página de “notas”
+    And eu vejo o aluno “Alberto” com somente o conceito de auto-avaliação “Requisitos” superior ao da avaliação feita por mim
+    And eu vejo o aluno “Caleb” com todos os conceitos de auto-avaliação inferiores ao da avaliação feita por mim
+    When eu calculo o nível de discrepância dos alunos
+    Then eu vejo uma mensagem que diz que não houveram discrepâncias entre os alunos
