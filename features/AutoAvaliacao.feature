@@ -32,4 +32,7 @@ Scenario: presença de discrepâncias
     And eu vejo os alunos “Pedro” e “Ana” com todos os conceitos de auto-avaliação inferiores ao da avaliação feita por mim
     And eu vejo o aluno “Alan” com 2 de 5 conceitos de auto-avaliação melhores do que os da minha avaliação
     When eu calculo o nível de discrepância dos alunos
+    And Lorem ipsum Lorem ipsum Lorem ipsum
     Then eu vejo uma mensagem que diz que o aluno “Alan” teve uma auto-avaliação discrepante
+    And Lorem ipsum Lorem ipsum Lorem ipsum
+    And Lorem ipsum Lorem ipsum Lorem ipsum
