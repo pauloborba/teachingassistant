@@ -44,6 +44,7 @@ Scenario: Nenhum aluno discrepante
 	And Eu vejo na lista de alunos “André Ferreira” com as notas “MA, MA, MA, MA, MA”, “Antonio Netto” com as notas “MPA, MANA, MPA, MANA, MANA” e “Francisco Marcos” com as notas “MA, MPA, MA, MA, MPA”.
 	When Eu peço ao sistema para analisar a discrepância entre estes alunos.
 	Then Vejo uma nova tela mostrando que não há nenhum aluno com nota discrepante.
+	And tela pede ajuda
 Scenario: Apenas um aluno com nota discrepante.
 	Given Estou na página “Visão Geral” logado como “Professor João”
 	And Eu vejo, na lista de alunos, “André Ferreira” com as notas “MA, MA, MA, MA, MA”,  “Antonio Netto” com as notas “MPA, MANA, MPA, MANA, MANA” e “Francisco Marcos” com as notas “MA, MPA, MA, MA, MPA”.
