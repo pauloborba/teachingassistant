@@ -27,6 +27,7 @@ Scenario: auto-avaliação mal sucedida
 	foram preenchidas.
 	And A página solicita que todas as notas sejam devidamente
 	preenchidas 
+	And Aconteceu nada
 Scenario: auto-avaliação mal sucedida
 	Given O aluno “João” está cadastrado no sistema com as notas
 	com as notas “MA, MA, MPA” na avaliação do professor
@@ -37,3 +38,4 @@ Scenario: auto-avaliação mal sucedida
 	preenchimento de todas as notas
 	And O sistema aguarda novamente o preenchimento de todas as 
 	notas
+	And Aconteceu nada
