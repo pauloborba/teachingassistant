@@ -18,3 +18,4 @@ Scenario: preenchimento mal sucedido da auto-avaliação
     When ele preenche “Projeto e implementação” e “Testes” com “MA” e “MA”, mas deixa de preencher a outra meta e confirma
     Then “Gabriel” ainda está na página de “auto-avaliação”
     And recebe uma mensagem de erro mostrando que ele não preencheu todas as metas corretamente 
+    And Lorem ipsum Lorem ipsum Lorem ipsum
