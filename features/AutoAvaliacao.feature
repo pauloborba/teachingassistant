@@ -49,4 +49,14 @@ Then Eu ainda estou na página “Análise de Discrepância”
 And É revelado a “porcentagem de discrepância” do estudante “André” na meta “Entender conceitos de Gerência” porém nada ocorre por não ser maior que 25%
 And É revelada a “porcentagem de discrepância” do estudante “Marcos” sem aplicar viés prejudicial por não ser maior que 25%
 And É revelada a “porcentagem de discrepância” da estudante “Eliza” sem aplicar viés prejudicial por não ser maior que 25%
-Then passo adicional
+
+Scenario: discrepância em 1 de 3 alunos
+Given Eu estou na página “Análise de Discrepância”
+And O estudante “André” possui auto-avaliação “MA” em “Entender conceitos de gerência”, “Entender conceitos de requisitos” com “MA”, “Especificar requisitos com qualidade” com  “MPA”, “Desenvolver cenários” com “MPA” e “Técnicas de entrevista” com “MANA”, enquanto o professor atribuiu “MPA”, “MPA”, “MA”, “MPA”, “MANA” respectivamente 
+And O estudante Marcos possui auto-avaliação em “Entender conceitos de requisitos” com “MPA”, “Entender conceitos de gerência” com “MANA” e “Especificar requisitos com qualidade” com  “MPA”, “Desenvolver cenários” com “MPA” e “Técnicas de entrevista” com “MANA”, enquanto o professor atribuiu “MA”, “MPA”, “MA”, “MA” e “MPA” respectivamente às metas 	
+And A estudante “Eliza” e o professor atribuíram em “Entender conceitos de requisitos” com “MPA”, “Entender conceitos de gerência” com “MANA” e “Especificar requisitos com qualidade” com  “MPA”, “Desenvolver cenários” com “MPA” e “Técnicas de entrevista” com “MANA”
+When Eu aperto o botão “Check” ao lado do nome de “André”, “Marcos” e “Eliza”
+Then Eu ainda estou na página “Análise de Discrepância”
+And É revelado a “porcentagem de discrepância” do estudante “André” de “40%” informando a necessidade de viés prejudicial.
+And É revelada a “porcentagem de discrepância” do estudante “Marcos” sem aplicar viés prejudicial por não ser maior que “25%”
+And É revelada a “porcentagem de discrepância” da estudante “Eliza” sem aplicar viés prejudicial por não ser maior que “25%”
