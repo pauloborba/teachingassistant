@@ -60,4 +60,4 @@ Then Eu ainda estou na página “Análise de Discrepância”
 And É revelado a “porcentagem de discrepância” do estudante “André” de “40%” informando a necessidade de viés prejudicial.
 And É revelada a “porcentagem de discrepância” do estudante “Marcos” sem aplicar viés prejudicial por não ser maior que “25%”
 And É revelada a “porcentagem de discrepância” da estudante “Eliza” sem aplicar viés prejudicial por não ser maior que “25%”
-And adição mudança teste
+And adição mudança teste 2
