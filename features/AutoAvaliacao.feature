@@ -3,9 +3,6 @@ As a estudante da turma
 I want to Poder adicionar minha auto-avaliação para todas as metas
 so that Eu possa comparar a minha auto-avaliação com a do professor
 
-Primeiro commit discrepantes
-Segundo commit discrepantes
-
 GUI:
 Scenario: auto-avaliação bem sucedida
 Given Eu estou na página de “Auto-avaliação”
@@ -65,3 +62,4 @@ And É revelado a “porcentagem de discrepância” do estudante “André” d
 And É revelada a “porcentagem de discrepância” do estudante “Marcos” sem aplicar viés prejudicial por não ser maior que “25%”
 And É revelada a “porcentagem de discrepância” da estudante “Eliza” sem aplicar viés prejudicial por não ser maior que “25%”
 And ADIÇÃO COMMIT MASTER
+And ADIÇÃO PERCENTUAL DISCREPANCIA ajuste
