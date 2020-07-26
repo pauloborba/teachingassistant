@@ -3,6 +3,9 @@ As a estudante da turma
 I want to Poder adicionar minha auto-avaliação para todas as metas
 so that Eu possa comparar a minha auto-avaliação com a do professor
 
+Primeiro commit discrepantes
+Segundo commit discrepantes
+
 GUI:
 Scenario: auto-avaliação bem sucedida
 Given Eu estou na página de “Auto-avaliação”
@@ -12,7 +15,7 @@ And Eu aperto o botão “Enviar”
 Then Eu ainda estou na página de “Auto-avaliação”
 And Surge uma mensagem sinalizando que o procedimento foi bem sucedido
 And Agora é possível visualizar a coluna “Professor” com as notas das metas “Entender conceitos de requisitos”, “Entender conceitos de gerência” e “Especificar requisitos com qualidade” 
-		
+	
 Service: 
 Scenario auto-avaliação bem sucedida
 Given o estudante “André Vasconcelos” não realizou a auto-avaliação ainda 
@@ -49,6 +52,7 @@ Then Eu ainda estou na página “Análise de Discrepância”
 And É revelado a “porcentagem de discrepância” do estudante “André” na meta “Entender conceitos de Gerência” porém nada ocorre por não ser maior que 25%
 And É revelada a “porcentagem de discrepância” do estudante “Marcos” sem aplicar viés prejudicial por não ser maior que 25%
 And É revelada a “porcentagem de discrepância” da estudante “Eliza” sem aplicar viés prejudicial por não ser maior que 25%
+Then passo adicional
 
 Scenario: discrepância em 1 de 3 alunos
 Given Eu estou na página “Análise de Discrepância”
@@ -56,8 +60,8 @@ And O estudante “André” possui auto-avaliação “MA” em “Entender con
 And O estudante Marcos possui auto-avaliação em “Entender conceitos de requisitos” com “MPA”, “Entender conceitos de gerência” com “MANA” e “Especificar requisitos com qualidade” com  “MPA”, “Desenvolver cenários” com “MPA” e “Técnicas de entrevista” com “MANA”, enquanto o professor atribuiu “MA”, “MPA”, “MA”, “MA” e “MPA” respectivamente às metas 	
 And A estudante “Eliza” e o professor atribuíram em “Entender conceitos de requisitos” com “MPA”, “Entender conceitos de gerência” com “MANA” e “Especificar requisitos com qualidade” com  “MPA”, “Desenvolver cenários” com “MPA” e “Técnicas de entrevista” com “MANA”
 When Eu aperto o botão “Check” ao lado do nome de “André”, “Marcos” e “Eliza”
-Then Eu ainda estou na página “Análise de Discrepância”
+Then	Eu ainda estou na página “Análise de Discrepância”
 And É revelado a “porcentagem de discrepância” do estudante “André” de “40%” informando a necessidade de viés prejudicial.
 And É revelada a “porcentagem de discrepância” do estudante “Marcos” sem aplicar viés prejudicial por não ser maior que “25%”
 And É revelada a “porcentagem de discrepância” da estudante “Eliza” sem aplicar viés prejudicial por não ser maior que “25%”
-And adição mudança teste 2
+And ADIÇÃO COMMIT MASTER
