@@ -8,11 +8,12 @@ import { NgModule } from '@angular/core';
 })
 export class AppComponent {
   title = 'ta-gui-modificação';
-  aluno: Aluno = {nome: "", cpf: "", email: ""};
+  aluno: Aluno = {nome: "victor", cpf: "123", email: "vefg@cin.ufpe.br", github: "Gaudiot"};
 }
 
 export class Aluno {
   nome: string;
   cpf: string;
   email: string;
+  github: string;
 }
