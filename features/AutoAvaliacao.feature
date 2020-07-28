@@ -24,4 +24,30 @@
 	And: eu não tenho permissão para fazer auto-avaliação
         When: eu clico no botão “Fazer Auto Avaliação”
      	Then: aparece a mensagem "Você não tem permissão para fazer a auto-avaliação"
+<<<<<<< HEAD
       	And: passo adicional pedido pelo stakeholder
+=======
+
+
+-> Cenário de auto-avaliação que não possui discrepância:
+	Scenario: olhando a discrepância dos alunos
+		Given: estou na página de “avaliação”
+	     	And: vejo o botão do visualizar discrepância dos alunos
+                When: eu clico no botão de visualizar discrepância
+		Then: eu sou direcionado para a  página de discrepância
+		And: surge uma lista de alunos com discrepância
+		And: todos os alunos estão marcados com um X vermelho na seção de discrepância
+		And: Suas porcentagens de discrepância estão exibidas do lado
+      	
+
+-> Cenário de auto-avaliação que possui discrepância:
+	Scenario: olhando a discrepância dos alunos
+		Given: estou na página de avaliação
+		And: vejo o botão do visualizar discrepância dos alunos
+                When: eu clico no botão de visualizar discrepância
+		Then: eu sou direcionado para a  página de discrepância
+		And: surge uma lista de alunos com discrepância
+		And: 1 de 3 alunos está marcado com um V verde na seção de discrepância
+		And: Suas porcentagens de discrepância estão exibidas do lado
+		And: Aparece a porcentagem total de alunos que possuem discrepância, que no caso é 33%
+
