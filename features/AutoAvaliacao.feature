@@ -50,3 +50,5 @@ Scenario: Apenas um aluno com nota discrepante.
 	And Eu vejo, na lista de alunos, “André Ferreira” com as notas “MA, MA, MA, MA, MA”,  “Antonio Netto” com as notas “MPA, MANA, MPA, MANA, MANA” e “Francisco Marcos” com as notas “MA, MPA, MA, MA, MPA”.
 	When Eu peço ao sistema para analisar a discrepância
 	Then Vejo uma nova tela mostrando que há um aluno com nota discrepante, representando 33% da turma, seu nome é “André Ferreira” e possui uma discrepância de 40%.
+novo cenário de visualização de percentual de discrepância
+changes
