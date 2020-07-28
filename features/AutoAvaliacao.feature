@@ -24,4 +24,4 @@
 	And: eu não tenho permissão para fazer auto-avaliação
         When: eu clico no botão “Fazer Auto Avaliação”
      	Then: aparece a mensagem "Você não tem permissão para fazer a auto-avaliação"
-      	
+      	And: passo adicional pedido pelo stakeholder
