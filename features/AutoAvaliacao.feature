@@ -51,4 +51,4 @@ And adiciono “MPA” à “segunda meta”
 And adiciono “MANA” à “terceira meta”
 And adiciono “MA” à “quarta meta”
 And tento submeto as auto-avaliações
-Then o sistema retorna uma mensagem de erro informando que nota da meta cinco não foi adicionada 
+Then o sistema retorna uma mensagem de erro informando que nota da meta cinco não foi adicionada com sucesso
