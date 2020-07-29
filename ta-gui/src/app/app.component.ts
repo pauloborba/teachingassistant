@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
 
+import {Aluno} from './aluno';
+import { AlunoService } from './aluno.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,12 +11,14 @@ import { NgModule } from '@angular/core';
 })
 export class AppComponent {
   title = 'ta-gui-modificação';
-  aluno: Aluno = {nome: "victor", cpf: "123", email: "vefg@cin.ufpe.br", github: "Gaudiot"};
-}
+  aluno: Aluno = {nome: "", cpf: "", email: "", github: ""};
+  alunoService = new AlunoService();
+  alunos: Aluno[] = [];
 
-export class Aluno {
-  nome: string;
-  cpf: string;
-  email: string;
-  github: string;
+  gravar(a: Aluno){
+    this.alunoService.gravar(a);
+    this.alunos.push(a);
+    this.aluno = {nome: "", cpf: "", email: "", github: ""}
+  }
+
 }
