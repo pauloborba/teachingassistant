@@ -60,3 +60,12 @@ When eu tento ver a “lista de alunos com discrepâncias”
 Then me é mostrado uma mensagem indicando que a lista está vazia
 And é mostrado que o percentual de alunos com “discrepâncias” é “0%”
 And é mostrado que o número de alunos com “discrepâncias” é “0”
+
+Scenario: Lista de discrepância não vazia
+Given que estou na “página de discrepâncias”
+When eu tento ver a “lista de alunos com discrepâncias”
+Then me é mostrado que apenas o aluno “Raul Seixas” tem “discrepância” em sua auto-avaliação
+And é mostrado a taxa de discrepância de “Raul seixas”
+And é mostrado que o percentual de alunos com “
+discrepâncias” é “33%”
+And é exibido que o número de alunos com “discrepâncias” é “1”
