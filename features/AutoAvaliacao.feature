@@ -55,3 +55,5 @@
 
 -> Criando primeiro commit questão 14
 -> Criando segundo commit questão 14
+
+-> Novo cenário de visualização de percentual de discrepância - edit para questao 15.a
