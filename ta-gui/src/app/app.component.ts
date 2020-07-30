@@ -10,9 +10,11 @@ import { AlunoService } from './aluno.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private alunoService: AlunoService){}
+
   title = 'ta-gui-modificação';
   aluno: Aluno = {nome: "", cpf: "", email: "", github: ""};
-  alunoService = new AlunoService();
+
   alunos: Aluno[] = [];
   cpfDuplicado: Boolean = false;
 
@@ -21,6 +23,7 @@ export class AppComponent {
       this.alunos.push(a);
       this.aluno = {nome: "", cpf: "", email: "", github: ""}
     }else{
+      this.aluno.cpf = "";
       this.cpfDuplicado = true;
     }
   }
