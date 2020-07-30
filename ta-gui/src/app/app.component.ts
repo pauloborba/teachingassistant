@@ -14,15 +14,19 @@ export class AppComponent {
   aluno: Aluno = {nome: "", cpf: "", email: "", github: ""};
   alunoService = new AlunoService();
   alunos: Aluno[] = [];
+  cpfDuplicado: Boolean = false;
 
   gravar(a: Aluno){
     if(this.alunoService.gravar(a)){
       this.alunos.push(a);
       this.aluno = {nome: "", cpf: "", email: "", github: ""}
     }else{
-      this.aluno.cpf = "";
-      alert("Já existe um aluno com esse CPF");
+      this.cpfDuplicado = true;
     }
+  }
+
+  onMove(): void {
+    this.cpfDuplicado = false;
   }
 
 }

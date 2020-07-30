@@ -1,36 +1,41 @@
-<h1>
-  Teaching Assistant
-</h1>
+<html (mousemove)="onMove()">
+  <h1>
+    Teaching Assistant
+  </h1>
 
-<h2>
-  Alunos
-</h2>
+  <h2>
+    Alunos
+  </h2>
 
-<table>
-<tr>
-   <td><label>Nome </label></td>
-   <td><input [(ngModel)]="aluno.nome" ></td>
-   <td><button (click)="gravar(aluno)" >Adicionar</button></td>
-</tr>
-<tr>
-   <td><label>CPF </label></td>
-   <td><input [(ngModel)]="aluno.cpf" ></td>
-</tr>
-<tr>
-   <td><label>e-mail </label></td>
-   <td><input [(ngModel)]="aluno.email" ></td>
-</tr>
-<tr>
-  <td><label>Github</label></td>
-  <td><input [(ngModel)]="aluno.github" ></td>
-</tr>
-</table>
+  <table>
+  <tr>
+    <td><label>Nome </label></td>
+    <td><input [(ngModel)]="aluno.nome" ></td>
+    <td><button (click)="gravar(aluno)" >Adicionar</button></td>
+  </tr>
+  <tr>
+    <td><label>CPF </label></td>
+    <td><input [(ngModel)]="aluno.cpf" ></td>
+    <td *ngIf="cpfDuplicado">
+      Já existe um aluno com esse CPF
+    </td>
+  </tr>
+  <tr>
+    <td><label>e-mail </label></td>
+    <td><input [(ngModel)]="aluno.email" ></td>
+  </tr>
+  <tr>
+    <td><label>Github</label></td>
+    <td><input [(ngModel)]="aluno.github" ></td>
+  </tr>
+  </table>
 
-<ul class="listaAlunos">
-  <li *ngFor="let a of alunos">
-    <span>{{a.nome}}</span>,
-    <span>{{a.cpf}}</span>,
-    <span>{{a.email}}</span>,
-    <span>{{a.github}}</span>
-  </li>
-</ul>
+  <ul class="listaAlunos">
+    <li *ngFor="let a of alunos">
+      <span>{{a.nome}}</span>,
+      <span>{{a.cpf}}</span>,
+      <span>{{a.email}}</span>,
+      <span>{{a.github}}</span>
+    </li>
+  </ul>
+</html>
