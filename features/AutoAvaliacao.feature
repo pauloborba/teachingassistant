@@ -53,3 +53,4 @@
 		And: Suas porcentagens de discrepância estão exibidas do lado
 		And: Aparece a porcentagem total de alunos que possuem discrepância, que no caso é 33%
 
+-> Criando primeiro commit questão 14
