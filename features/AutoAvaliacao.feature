@@ -54,3 +54,4 @@
 		And: Aparece a porcentagem total de alunos que possuem discrepância, que no caso é 33%
 
 -> Criando primeiro commit questão 14
+-> Criando segundo commit questão 14
