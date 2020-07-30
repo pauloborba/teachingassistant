@@ -40,6 +40,8 @@
 		And: Suas porcentagens de discrepância estão exibidas do lado
       	
 
+-> Criando o commit da aula 14 - branch master
+
 -> Cenário de auto-avaliação que possui discrepância:
 	Scenario: olhando a discrepância dos alunos
 		Given: estou na página de avaliação
