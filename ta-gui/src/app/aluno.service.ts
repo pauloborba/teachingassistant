@@ -6,7 +6,8 @@ import {Aluno} from './aluno';
 export class AlunoService{
   alunos: Aluno[] = [];
 
-  gravar(aluno: Aluno): Aluno{
+  criar(aluno: Aluno): Aluno{
+    aluno = aluno.clone();
     if(this.cpfNaoCadastrado(aluno.cpf)){
       this.alunos.push(aluno);
       return aluno;
@@ -17,5 +18,14 @@ export class AlunoService{
 
   cpfNaoCadastrado(cpf: string): boolean{
     return !this.alunos.find(aluno => cpf === aluno.cpf);
+  }
+
+  atualizarMetas(aluno: Aluno): void{
+    aluno = aluno.clone();
+    this.alunos.forEach(a => {
+      if(a.cpf === aluno.cpf){
+        a.metas = aluno.metas;
+      }
+    });
   }
 }

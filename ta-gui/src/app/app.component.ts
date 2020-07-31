@@ -13,23 +13,26 @@ export class AppComponent {
   constructor(private alunoService: AlunoService){}
 
   title = 'ta-gui-modificação';
-  aluno: Aluno = {nome: "", cpf: "", email: "", github: ""};
+  aluno: Aluno = new Aluno();
 
   alunos: Aluno[] = [];
   cpfDuplicado: Boolean = false;
 
-  gravar(a: Aluno){
-    if(this.alunoService.gravar(a)){
+  criarAluno(a: Aluno){
+    if(this.alunoService.criar(a)){
       this.alunos.push(a);
-      this.aluno = {nome: "", cpf: "", email: "", github: ""}
+      this.aluno = new Aluno();
     }else{
-      this.aluno.cpf = "";
       this.cpfDuplicado = true;
     }
   }
 
   onMove(): void {
     this.cpfDuplicado = false;
+  }
+
+  atualizarAluno(aluno: Aluno): void{
+    this.alunoService.atualizarMetas(aluno);
   }
 
 }
