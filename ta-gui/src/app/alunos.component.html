@@ -1,8 +1,4 @@
 <html (mousemove)="onMove()">
-  <h1>
-    Teaching Assistant
-  </h1>
-
   <h2>
     Alunos
   </h2>
@@ -27,6 +23,9 @@
     <tr>
       <td><label>Github</label></td>
       <td><input [(ngModel)]="aluno.github" ></td>
+      <td *ngIf="githubduplicado">
+        Já existe um aluno com esse github
+      </td>
     </tr>
   </table>
 

@@ -5,6 +5,8 @@ import { retry, map } from 'rxjs/operators';
 
 import { Aluno } from '../../../common/aluno';
 
+import AlunoDuplicado from '../../../common/alunoDuplicado';
+
 @Injectable()
 export class AlunoService {
 
@@ -13,19 +15,26 @@ export class AlunoService {
 
   constructor(private http: HttpClient) {}
 
-  criar(aluno: Aluno): Observable<Aluno> {
+  criar(aluno: Aluno): Observable<Aluno | AlunoDuplicado> {
     return this.http.post<any>(this.taURL + "/aluno", aluno, {headers: this.headers})
       .pipe(
         retry(2),
-        map( res => {if (res.success) {return aluno;} else {return null;}} )
+        map( res => {
+          if (res.success) {
+            return aluno;
+          } else {
+            return {cpf: res.failure.cpf, github: res.failure.github} as AlunoDuplicado;
+          }
+        } )
       );
   }
 
   atualizar(aluno: Aluno): Observable<Aluno> {
-    return this.http.put<any>(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})          .pipe(
-      retry(2),
-      map( res => {if (res.success) {return aluno;} else {return null;}} )
-    );
+    return this.http.put<any>(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})
+      .pipe(
+        retry(2),
+        map( res => {if (res.success) {return aluno;} else {return null;}} )
+      );
   }
 
   getAlunos(): Observable<Aluno[]> {
