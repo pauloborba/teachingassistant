@@ -45,6 +45,12 @@ taserver.put('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
+taserver.delete('/aluno/:cpf', function (req: express.Request, res: express.Response){
+  const { cpf } = req.params;
+  cadastro.remover(cpf);
+  res.send();
+})
+
 taserver.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })

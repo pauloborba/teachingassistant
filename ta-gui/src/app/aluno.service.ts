@@ -29,6 +29,13 @@ export class AlunoService {
       );
   }
 
+  deletar(cpf: string): Observable<void>{
+    return this.http.delete<any>(this.taURL + `/aluno/:${cpf}`)
+    .pipe(
+      retry(2)
+    );
+  }
+
   atualizar(aluno: Aluno): Observable<Aluno> {
     return this.http.put<any>(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})
       .pipe(

@@ -33,6 +33,18 @@ export class AlunosComponent implements OnInit {
       alert('Já executei o criar e o subscribe!');
     }
 
+    deletarAluno(cpf: string): void {
+      this.alunoService.deletar(cpf)
+      .subscribe(
+        () => {
+          const alunoIndex = this.alunos.findIndex(aluno => aluno.cpf === cpf);
+
+          this.alunos.splice(alunoIndex, 1);
+        },
+        msg => {alert(msg.message);}
+      )
+    }
+
     onMove(): void {
        this.cpfduplicado = false;
        this.githubduplicado = false;

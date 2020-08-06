@@ -37,6 +37,11 @@ export class CadastroDeAlunos {
     return result;
   }
 
+  remover(cpf: String): void {
+    const alunoIndex = this.alunos.findIndex(aluno => aluno.cpf === cpf);
+    this.alunos.splice(alunoIndex, 1);
+  }
+
   getAlunos(): Aluno[] {
     return this.alunos;
   }
