@@ -6,6 +6,8 @@
      <th>Github</th>
      <th>Requisitos</th>
      <th>Gerência de Configuração</th>
+     <th>Gerência de Projetos</th>
+     <th>Testes</th>
   </tr>
   <tr *ngFor="let a of alunos">
      <td>{{a.nome}}</td>
@@ -14,5 +16,7 @@
      <td>{{a.github}}</td>
      <td class="meta"><input [(ngModel)]="a.metas['requisitos']" (change)="atualizarAluno(a)"></td>
      <td class="meta"><input [(ngModel)]="a.metas['gerDeConfiguracao']" (change)="atualizarAluno(a)"></td>
+     <td class="meta"><input [(ngModel)]="a.metas['gerDeProjetos']" (change)="atualizarAluno(a)"></td>
+     <td class="meta"><input [(ngModel)]="a.metas['testes']" (change)="atualizarAluno(a)"></td>
   </tr>
 </table>
