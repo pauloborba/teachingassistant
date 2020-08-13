@@ -1,34 +1,20 @@
 import { Aluno } from '../common/aluno';
-import AlunoDuplicado from '../common/alunoDuplicado';
 
 export class CadastroDeAlunos {
   alunos: Aluno[] = [];
 
-  cadastrar(aluno: Aluno): Aluno | AlunoDuplicado {
-    var alunoDuplicado: AlunoDuplicado = {cpf: false, github: false};
-    if (!this.cpfNaoCadastrado(aluno.cpf)){
-      alunoDuplicado.cpf = true;
+  cadastrar(aluno: Aluno): Aluno {
+    var result = null;
+    if (this.cpfNaoCadastrado(aluno.cpf)){
+      result = new Aluno();
+      result.copyFrom(aluno);
+      this.alunos.push(aluno);
     }
-    if(!this.githubNaoCadastrado(aluno.github)){
-      alunoDuplicado.github = true;
-    }
-
-    if(alunoDuplicado.cpf || alunoDuplicado.github){
-      return alunoDuplicado;
-    }else{
-      let newAluno = new Aluno();
-      newAluno.copyFrom(aluno);
-      this.alunos.push(newAluno);
-      return newAluno;
-    }
+    return result;
   }
 
   cpfNaoCadastrado(cpf: string): boolean {
     return !this.alunos.find(a => a.cpf == cpf);
-  }
-
-  githubNaoCadastrado(github: string): boolean {
-    return !this.alunos.find(a => a.github === github);
   }
 
   atualizar(aluno: Aluno): Aluno {
