@@ -23,15 +23,12 @@ taserver.get('/alunos', function (req: express.Request, res: express.Response) {
 })
 
 taserver.post('/aluno', function (req: express.Request, res: express.Response) {
-  const aluno: Aluno = <Aluno> req.body; //verificar se � mesmo Aluno!
-  let newAluno = cadastro.cadastrar(aluno);
-  if (newAluno instanceof Aluno) {
+  var aluno: Aluno = <Aluno> req.body; //verificar se � mesmo Aluno!
+  aluno = cadastro.cadastrar(aluno);
+  if (aluno) {
     res.send({"success": "O aluno foi cadastrado com sucesso"});
   } else {
-    res.send({"failure": {
-      "cpf": newAluno.cpf,
-      "github": newAluno.github,
-    }});
+    res.send({"failure": "O aluno não pode ser cadastrado"});
   }
 })
 

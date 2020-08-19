@@ -20,13 +20,6 @@
       <td><label>e-mail </label></td>
       <td><input [(ngModel)]="aluno.email" ></td>
     </tr>
-    <tr>
-      <td><label>Github</label></td>
-      <td><input [(ngModel)]="aluno.github" ></td>
-      <td *ngIf="githubduplicado">
-        Já existe um aluno com esse github
-      </td>
-    </tr>
   </table>
 
   <table>
@@ -34,13 +27,11 @@
        <th>Nome</th>
        <th>CPF</th>
        <th>e-mail</th>
-       <th>Github</th>
     </tr>
     <tr *ngFor="let a of alunos" name="alunolist">
-       <td>{{a.nome}}</td>
-       <td>{{a.cpf}}</td>
+       <td name="nomelist">{{a.nome}}</td>
+       <td name="cpflist">{{a.cpf}}</td>
        <td>{{a.email}}</td>
-       <td>{{a.github}}</td>
        <td><button (click)="deletarAluno(a.cpf)" >Deletar</button></td>
     </tr>
   </table>
