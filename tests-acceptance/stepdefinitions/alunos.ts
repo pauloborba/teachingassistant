@@ -8,30 +8,70 @@ let sameName = ((elem, name) => elem.element(by.name('nomelist')).getText().then
 
 let pAND = ((p,q) => p.then(a => q.then(b => a && b)))
 
+interface IStudent {
+    name?: string;
+    cpf: string;
+    email?: string;
+}
+
+async function goToPage(page: string): Promise<void>{
+    await browser.get("http://localhost:4200/");
+    await expect(browser.getTitle()).to.eventually.equal('TaGui');
+    switch(page){
+        case 'Students':{
+            await $("a[name='alunos']").click();
+            break;
+        }
+        case 'Metas':{
+            await $("a[name='metas']").click();
+            break;
+        }
+        default:{
+            break;
+        }
+    }
+}
+
+async function registerStudent({name = "Victor", cpf, email = "victor@email.com"}: IStudent): Promise<void>{
+    await $("input[name='namebox']").sendKeys(name);
+    await $("input[name='cpfbox']").sendKeys(cpf);
+    await $("input[name='emailbox']").sendKeys(email);
+    await $("button[name='addStudentButton']").click();
+}
+
+async function assertTamanhoEqual(set,qtt) {
+    await set.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(qtt));
+}
+
+async function assertElementsWithSameCPFAndName(qtt,cpf,name) { 
+    var allalunos : ElementArrayFinder = element.all(by.name('alunolist'));
+    var samecpfsandname = allalunos.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name)));
+    await assertTamanhoEqual(samecpfsandname,qtt);
+}
+
+async function assertElementsWithSameCPF(qtt,cpf) {
+    var allalunos : ElementArrayFinder = element.all(by.name('alunolist'));
+    var samecpfs = allalunos.filter(elem => sameCPF(elem,cpf));
+    await assertTamanhoEqual(samecpfs,qtt); 
+}
+
 defineSupportCode(function ({ Given, When, Then }) {
-    Given(/^I am at the students page$/, async () => {
-        await browser.get("http://localhost:4200/");
-        await expect(browser.getTitle()).to.eventually.equal('TaGui');
-        await $("a[name='alunos']").click();
+    Given(/^I am at the "([^\"]*)" page$/, async (page) => {
+        page = page.toString();
+        await goToPage(page);
     })
 
     Given(/^I cannot see a student with CPF "(\d*)" in the students list$/, async (cpf) => {
-        var allcpfs : ElementArrayFinder = element.all(by.name('cpflist'));
-        var samecpfs = allcpfs.filter(elem =>
-                                      elem.getText().then(text => text === cpf));
-        await samecpfs.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(0));
-    });
+        await assertElementsWithSameCPF(0, cpf);    
+    }); 
 
     When(/^I try to register the student "([^\"]*)" with CPF "(\d*)"$/, async (name, cpf) => {
-        await $("input[name='namebox']").sendKeys(<string> name);
-        await $("input[name='cpfbox']").sendKeys(<string> cpf);
-        await element(by.buttonText('Adicionar')).click();
+        name = name.toString();
+        cpf = cpf.toString();
+        await registerStudent({name,cpf});
     });
-
+    
     Then(/^I can see "([^\"]*)" with CPF "(\d*)" in the students list$/, async (name, cpf) => {
-        var allalunos : ElementArrayFinder = element.all(by.name('alunolist'));
-        await allalunos.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name))).then
-                   (elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+        await assertElementsWithSameCPFAndName(1, cpf, name);
     });
-
 })
