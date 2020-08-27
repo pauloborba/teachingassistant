@@ -50,4 +50,4 @@ Scenario: avaliações com discrepâncias
     When eu seleciono a opção para exibir as discrepâncias
     Then eu vejo uma coluna “Quantidade” com o valor “1”
     And eu vejo uma coluna “Percentual” com o valor “33.33%”
-    And eu vejo uma lista “Discrepantes” com o aluno “Pedro”
+    And eu vejo uma lista “Discrepantes” com o aluno “Pedro” e uma coluna "Detalhamento" com a mensagem "Discrepância em 2 ceonceitos/metas"
