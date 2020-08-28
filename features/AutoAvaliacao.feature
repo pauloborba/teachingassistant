@@ -38,9 +38,9 @@ Scenario: alunos com autoavaliações sem discrepâncias
     And eu vejo o aluno “Victor” com os conceitos “MA, MA, MPA, MA, MPA” e autoavaliação “MPA, MPA, MANA, MPA, MANA”
     And eu vejo o aluno “Pedro” com os conceitos “MPA, MA, MA, MPA, MANA” e autoavaliação “MPA, MA, MA, MPA, MANA”
     When eu seleciono a opção para exibir as discrepâncias
-    Then eu vejo uma coluna “Quantidade” com o valor “0”
+    Then eu vejo uma coluna “Quantidade” com o valor “0 de 3”
     And eu vejo uma coluna “Percentual” com o valor “0.00%”
-    And eu vejo uma lista “Discrepantes” vazia
+    And eu vejo uma lista “Discrepantes” sem nenhum aluno listado
 
 Scenario: alunos com autoavaliações discrepantes
     Given eu estou na página “Avaliação” logado como professor “Paulo Borba”
@@ -48,7 +48,7 @@ Scenario: alunos com autoavaliações discrepantes
     And eu vejo o aluno “Victor” com os conceitos “MA, MA, MPA, MA, MPA” e autoavaliação “MPA, MPA, MANA, MPA, MANA”
     And eu vejo o aluno “Pedro” com os conceitos “MPA, MA, MA, MPA, MANA” e autoavaliação “MA, MA, MA, MPA, MPA”
     When eu seleciono a opção para exibir as discrepâncias
-    Then eu vejo uma coluna “Quantidade” com o valor “1”
+    Then eu vejo uma coluna “Quantidade” com o valor “1 de 3”
     And eu vejo uma coluna “Percentual” com o valor “33.33%”
     And eu vejo uma lista “Discrepantes” com o aluno “Pedro”
     And eu vejo uma coluna "Detalhamento" para o aluno "Pedro" com a mensagem "Discrepância em 2 conceitos/metas"
