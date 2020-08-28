@@ -11,7 +11,7 @@ Scenario: preenchimento bem-sucedido da autoavaliação
     Then eu vejo o conceito “MA” para “Gerência de Requisitos” e o conceito “MPA” para “Gerência de Configuração” atribuídos por “Paulo”
     And eu vejo o conceito “MPA” para “Gerência de Requisitos” e o conceito “MPA” para “Gerência de Configuração” atribuídos pelo professor
 
-Scenario: preenchimento bem-sucedido da autoavaliação (serviços)
+Scenario: preenchimento bem-sucedido da autoavaliação (serviço)
     Given o aluno “Paulo” está armazenado no sistema com o conceito “MPA” para a meta “Gerência de Requisitos” e o conceito “MPA” para a meta “Gerência de Configuração” atribuídos pelo professor
     When é enviado ao sistema os conceitos “MA” para “Gerência de Requisitos” e “MPA” para “Gerência de Configuração”
     Then o sistema retorna num código de confirmação “1”
