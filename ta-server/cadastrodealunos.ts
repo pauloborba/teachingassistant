@@ -25,6 +25,9 @@ export class CadastroDeAlunos {
 
   remover(cpf: String): void {
     const alunoIndex = this.alunos.findIndex(aluno => aluno.cpf === cpf);
+    if (alunoIndex === -1) {
+      throw new Error("Aluno inexistente");
+    }
     this.alunos.splice(alunoIndex, 1);
   }
 

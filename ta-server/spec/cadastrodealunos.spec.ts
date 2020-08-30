@@ -56,5 +56,19 @@ describe("O cadastro de alunos", () => {
     aluno = expectSoUmAluno();
     expect(aluno).toEqual(updatedAluno);
   })
-  
+
+  it("remover aluno cadastrado", () => {
+    cadastrarAluno("Mariana", "683");
+
+    const aluno = expectSoUmAluno();
+    expect(aluno.cpf).toBe("683");
+
+    cadastro.remover(aluno.cpf);
+
+    expect(cadastro.getAlunos().length).toBe(0);
+  })
+
+  it("falha ao remover aluno não cadastrado", () => {
+    expect(cadastro.remover("123")).toThrow();
+  })
 })
