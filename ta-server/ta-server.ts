@@ -44,8 +44,12 @@ taserver.put('/aluno', function (req: express.Request, res: express.Response) {
 
 taserver.delete('/aluno/:cpf', function (req: express.Request, res: express.Response){
   const { cpf } = req.params;
-  cadastro.remover(cpf);
-  res.send();
+  try {
+    cadastro.remover(cpf);
+    res.send({"success": "O aluno foi removido com sucesso"});
+  } catch (error) {
+    res.send({"failure": "O aluno nao pode ser removido"});
+  }
 })
 
 var server = taserver.listen(3000, function () {

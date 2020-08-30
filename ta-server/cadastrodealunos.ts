@@ -8,7 +8,7 @@ export class CadastroDeAlunos {
     if (this.cpfNaoCadastrado(aluno.cpf)){
       result = new Aluno();
       result.copyFrom(aluno);
-      this.alunos.push(aluno);
+      this.alunos.push(result);
     }
     return result;
   }
