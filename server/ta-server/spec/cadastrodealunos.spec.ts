@@ -1,8 +1,21 @@
 import { CadastroDeAlunos } from '../cadastrodealunos';
-import { Aluno } from '../../../gui/ta-gui/src/app/aluno';
+import { Aluno } from '../../../common/aluno';
 
 describe("O cadastro de alunos", () => {
   var cadastro: CadastroDeAlunos;
+
+  function cadastrarAluno(nome:string, cpf:string) {
+    var aluno: Aluno = new Aluno();
+    aluno.nome = nome;
+    aluno.cpf = cpf;
+    cadastro.cadastrar(aluno);
+  }
+
+  function expectSoUmAluno() {
+    expect(cadastro.getAlunos().length).toBe(1);
+    var aluno = cadastro.getAlunos()[0];
+    return aluno;
+  }
 
   beforeEach(() => cadastro = new CadastroDeAlunos())
 
@@ -11,13 +24,9 @@ describe("O cadastro de alunos", () => {
   })
 
   it("cadastra alunos corretamente", () => {
-    var aluno: Aluno = new Aluno();
-    aluno.nome = "Mariana";
-    aluno.cpf = "683";
-    cadastro.criar(aluno);
+    cadastrarAluno("Mariana","683");
 
-    expect(cadastro.getAlunos().length).toBe(1);
-    aluno = cadastro.getAlunos()[0];
+    var aluno = expectSoUmAluno();
     expect(aluno.nome).toBe("Mariana");
     expect(aluno.cpf).toBe("683");
     expect(aluno.email).toBe("");
@@ -25,17 +34,22 @@ describe("O cadastro de alunos", () => {
   })
 
   it("não aceita alunos com CPF duplicado", () => {
-    var aluno: Aluno = new Aluno();
-    aluno.nome = "Mariana";
-    aluno.cpf = "683";
-    cadastro.criar(aluno);
+    cadastrarAluno("Mariana","683");
+    cadastrarAluno("Pedro","683");
 
-    aluno = new Aluno();
-    aluno.nome = "Pedro";
-    aluno.cpf = "683";
-    cadastro.criar(aluno);
-
-    expect(cadastro.getAlunos().length).toBe(1);
+    var aluno = expectSoUmAluno();
+    expect(aluno.nome).toBe("Mariana");
   })
 
-})
+  it("deleta um aluno colocado no teste anterior", () => {
+    cadastro.remover("683");
+    expect(cadastro.getAlunos().length).toBe(0);
+  })
+
+  it("deleta um novo aluno", () => {
+    cadastrarAluno("Robson","091");
+    cadastro.remover("091");
+    expect(cadastro.getAlunos().length).toBe(0);
+  })
+
+}) 
