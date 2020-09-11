@@ -18,3 +18,4 @@ And i haven’t filled my “Requisitos" goal
 When I try to finish my auto-evaluation
 Then i’m still the “Auto-Avaliacao” page
 And i see an error message
+And i can try again
