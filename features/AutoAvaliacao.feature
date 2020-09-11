@@ -12,10 +12,12 @@ And: O conceito “MANA” for atribuído na meta “Entender conceitos de gerê
 	Then: O sistema deve aceitar as atribuições.
 
 		GUI-
-Scenario: conciliar conceitos a metas.
+Scenario: cPOLIKJonciliar conceitos a metas.
 		Given: O aluno “Thiago” está na página de auto-avaliações.
 		And: O aluno “Thiago” está preenchendo a sua auto-avaliação.
 When: O aluno “Thiago” atribuiu o conceito “MA” na meta “Entender conceitos de requisitos”. 
 		Then: Um sinal de “feito” deve ser exibido.
 And: A meta “Entender conceitos de requisitos” tem que ser vista na tela com a nota “MA”.
+
+
 
