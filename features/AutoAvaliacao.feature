@@ -28,3 +28,16 @@ When I check the discrepancy I get
 Then i post the grades
 And im at the “Main” page
 And I see a successful message
+
+Scenario: Grades discrepancy
+Given im logged as “admin”
+And im at the “Professor Grades” page
+And i see students “Pedro”, “Maria” and “”Manuel”	
+When I check the discrepancy I get 
+“20%”,”40%”,”0%” (considerei discrepância apenas notas postas maiores que a do professor)
+Then i ask the system for “Maria”’s goals
+And i correct if necessary
+And i post the grades
+And im at the “Main” page
+And I see a successful message
+
