@@ -1,7 +1,7 @@
 Feature: Auto-avaliação.
-		As a: aluno.
-		I want to: atribuir conceitos a todas as metas dadas em sala de aula.
-		So that: avaliar o desempenho do aluno pelo próprio aluno.
+As a: aluno.
+I want to: atribuir conceitos a todas as metas dadas em sala de aula.
+So that: avaliar o desempenho do aluno pelo próprio aluno.
 
 CONTROLADOR-
 Scenario: Dar conceitos as metas.
@@ -9,15 +9,30 @@ Given: As metas “Entender conceitos de requisitos”, “Especificar requisito
 When: O conceito “MA”  for atribuído à meta “Entender conceitos de requisitos”.
 And: O conceito “MPA”  for atribuído à meta “Especificar requisitos com qualidade”.
 And: O conceito “MANA” for atribuído na meta “Entender conceitos de gerência de configuração”.		
-	Then: O sistema deve aceitar as atribuições.
+Then: O sistema deve aceitar as atribuições.
 
-		GUI-
-Scenario: cPOLIKJonciliar conceitos a metas.
-		Given: O aluno “Thiago” está na página de auto-avaliações.
-		And: O aluno “Thiago” está preenchendo a sua auto-avaliação.
+GUI-
+Scenario: conciliar conceitos a metas.
+Given: O aluno “Thiago” está na página de auto-avaliações.
+And: O aluno “Thiago” está preenchendo a sua auto-avaliação.
 When: O aluno “Thiago” atribuiu o conceito “MA” na meta “Entender conceitos de requisitos”. 
-		Then: Um sinal de “feito” deve ser exibido.
+Then: Um sinal de “feito” deve ser exibido.
 And: A meta “Entender conceitos de requisitos” tem que ser vista na tela com a nota “MA”.
 
-
+CONTROLADOR-
+Scenario: Usuário faz preenchimento incompleto.
+Given: O aluno “Matheus” fez sua auto-avaliação.
+And: O aluno “Matheus” atrubuiu as notas “MPA” e “MA” às metas “Entender conceitos de requisitos” e “Entender conceitos de gerência de configuração”, respectivamente.
+And: O aluno “Matheus” deixou de preencher a nota na meta “Especificar requisitos com qualidade”.
+When: O aluno “Matheus” submeteu sua auto-avaliação para o sistema.
+Then: O sistema não armazena a submissão. 
+And: O sistema notifica ao aluno “Matheus” porque não armazenou sua auto-avaliação
+		
+GUI-	
+Scenario: Submissão da auto-avaliação vazia.
+Given: O aluno “Matheus” fez sua auto-avaliação sem nenhum conceito em nenhuma das metas.
+And: A auto-avaliação do aluno “Matheus” não está na lista de auto-avaliações.
+When: O aluno “Matheus” enviar sua auto-avaliação.
+Then: Uma mensagem de erro deve ser exibida.	
+And: A auto-avaliação do aluno “Matheus” não é exibida na lista de auto-avaliações.
 
