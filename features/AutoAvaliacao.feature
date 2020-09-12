@@ -1,0 +1,3 @@
+[Feature: auto-avaliação]
+[Crítico] Cada aluno usuário do sistema deve ser capaz de atribuir apenas um dos conceitos (MA, MPA, MANA) que ele acha que merece em cada uma das diferentes metas estabelecidas pelo professor de uma dada disciplina.
+[Desejável] Seria interessante cada professor usuário do sistema ter a possibilidade de visualizar a quantidade, o percentual e uma lista de alunos com auto-avaliações discrepantes (com viés prejudicial ao aluno) em relação às avaliações feitas pelo professor. Uma auto-avaliação é discrepante quando em, no mínimo, 25% das metas avaliadas o aluno atribuiu um conceito a si mesmo maior que aquele atribuído pelo professor em questão (MA > MPA > MANA).
