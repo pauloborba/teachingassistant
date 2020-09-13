@@ -18,9 +18,7 @@ And i haven’t filled my “Requisitos" goal
 When I try to finish my auto-evaluation
 Then i’m still the “Auto-Avaliacao” page
 And i see an error message
-<<<<<<< HEAD
 And i can try again
-=======
 
 Scenario: No grades discrepancy
 Given im logged as “admin”
@@ -35,7 +33,9 @@ And I see a successful message
 Scenario: Grades discrepancy
 Given im logged as “admin”
 And im at the “Professor Grades” page
-And i see students “Pedro”, “Maria” and “”Manuel”	
+And i see student “Pedro” with goals "MA", "MA", "MA", "MA", "MA"
+And i see student “Maria” with goals "MA", "MPA", "“MANA”", "MA", "MA"
+And i see student "Manuel”	with goals "MA", "MPA", "MA", "MA", "MA"
 When I check the discrepancy I get 
 “20%”,”40%”,”0%” (considerei discrepância apenas notas postas maiores que a do professor)
 Then i ask the system for “Maria”’s goals
@@ -44,4 +44,3 @@ And i post the grades
 And im at the “Main” page
 And I see a successful message
 
->>>>>>> discrepantes
