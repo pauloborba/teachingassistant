@@ -24,3 +24,4 @@ And O "professor" vê que não tem "aluno" na lista
 And A tela informa que não tem "aluno" prejudicado por discrepância
 Then O professor sabe que não tem "aluno" prejudicado
 
+
