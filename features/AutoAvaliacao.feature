@@ -13,4 +13,5 @@ And O "aluno" avalia entre os conceitos "MA", "MPA", e "MANA" e as metas "entend
 When O "aluno"  preenche os campos com os conceitos
 Then Aparece uma mensagem de de aviso que diz que falta preencher um conceito
 And Ainda estou na tela de "auto-avaliação"
+Then Algo acontence
 
