@@ -24,3 +24,11 @@ Feature: Auto-avaliacao
 	    Then Eu vejo que “0%” dos alunos fizeram auto-avaliacoes discrepantes
 		And Vejo que um total de “0” alunos fizeram auto-avaliacoes discrepantes
 		And Vejo que a lista de alunos que fizeram auto-avaliacoes discrepantes contem “0 alunos”
+
+	GUI Scenario: Visualizacao de dados sobre auto-avaliacoes dos alunos de uma disciplina quando ha uma auto-avaliacao discrepante
+	    Given Eu estou na pagina “avaliacoes e auto-avaliacoes da disciplina ESS”
+	    And A disciplina “ESS” tem “3” alunos: o aluno “1” tem conceito superior ao do professor em “2” de “5” metas, o aluno “2” so tem conceitos “inferiores” ao do professor, e o aluno “3” so tem conceitos “iguais” aos do professor
+	    When Eu solicito os dados sobre as auto-avaliacoes da turma da disciplina “ESS”
+	    Then Eu vejo que “33%” dos alunos fizeram auto-avaliacoes discrepantes
+		And Vejo que um total de “1” alunos fizeram auto-avaliacoes discrepantes
+		And Vejo que a lista de alunos que fizeram auto-avaliacoes discrepantes contem “o aluno “1””
