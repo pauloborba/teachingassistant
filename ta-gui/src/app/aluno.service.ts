@@ -1,7 +1,7 @@
 import { Injectable }    from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { retry, map } from 'rxjs/operators';
+import { retry, map, catchError } from 'rxjs/operators';
 
 import { Aluno } from '../../../common/aluno';
 
@@ -24,7 +24,7 @@ export class AlunoService {
   atualizar(aluno: Aluno): Observable<Aluno> {
     return this.http.put<any>(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})          .pipe( 
                 retry(2),
-                map( res => {if (res.success) {return aluno;} else {return null;}} )
+                map( res => {if (res.success) {return aluno; } else {return null;}} )
               ); 
   }
 
@@ -33,6 +33,15 @@ export class AlunoService {
               .pipe(
                  retry(2)
                );
+  }
+
+  remover(aluno: Aluno): Observable<Aluno> {
+    let id = "/aluno/" + aluno.cpf;
+    return this.http.delete<any>(this.taURL + id, {headers: this.headers}).pipe(
+        //catchError(this.handleError('deleteAluno'));
+        map( res => {if (res.success) {return aluno;} else {return null;}} )
+
+      );
   }
 
 }
