@@ -18,7 +18,7 @@ Feature: Auto-avaliacao
 	    And Eu ainda estou na pagina “auto-avaliacao da disciplina ESS”
 	    And Eu vejo uma mensagem de erro
 
-	GUI Scenario: Visualizacao de dados sobre auto-avaliacoes dos alunos de uma disciplina quando não ha auto-avaliacoes discrepantes
+	Scenario: Visualizacao de dados sobre auto-avaliacoes dos alunos de uma disciplina quando não ha auto-avaliacoes discrepantes
 	    Given Eu estou na pagina “avaliacoes e auto-avaliacoes da disciplina ESS”
 	    And A disciplina “ESS” tem “3” alunos: o aluno “1” tem conceito superior ao do professor em “1” de “5” metas, o aluno “2” so tem conceitos “inferiores” ao do professor, e o aluno “3” so tem conceitos “iguais” aos do professor
 	    When Eu solicito os dados sobre as auto-avaliacoes da turma da disciplina “ESS”
@@ -26,7 +26,7 @@ Feature: Auto-avaliacao
 		And Vejo que um total de “0” alunos fizeram auto-avaliacoes discrepantes
 		And Vejo que a lista de alunos que fizeram auto-avaliacoes discrepantes contem “0 alunos”
 
-	GUI Scenario: Visualizacao de dados sobre auto-avaliacoes dos alunos de uma disciplina quando ha uma auto-avaliacao discrepante
+	Scenario: Visualizacao de dados sobre auto-avaliacoes dos alunos de uma disciplina quando ha uma auto-avaliacao discrepante
 	    Given Eu estou na pagina “avaliacoes e auto-avaliacoes da disciplina ESS”
 	    And A disciplina “ESS” tem “3” alunos: o aluno “1” tem conceito superior ao do professor em “2” de “5” metas, o aluno “2” so tem conceitos “inferiores” ao do professor, e o aluno “3” so tem conceitos “iguais” aos do professor
 	    When Eu solicito os dados sobre as auto-avaliacoes da turma da disciplina “ESS”
