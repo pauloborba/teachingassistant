@@ -17,3 +17,25 @@ Then Algo acontencee
 
 
 
+Scenario: O professor checa se tem alunos com discrepância
+Given O professor está na tela de "discrepância"
+And Tem um "aluno" cadastrado com conceito superior ao do professor em 1 de 5 "metas"
+And O "aluno" tem conceitos inferiores aos conceitos do "professor"
+And O "aluno" tem conceitos iguais aos conceitos do "professor"
+And O "aluno" tem discrepância menor que 25%
+And O "professor" vê que não tem "aluno" na lista
+And A tela informa que não tem "aluno" prejudicado por discrepância
+Then O professor sabe que não tem "aluno" prejudicado
+
+
+Scenario: O professor checa se tem alunos com discrepância
+Given O professor está na tela de "discrepância"
+And A discrepância máxima é de 30%
+And Tem um "aluno" cadastrado com conceito superior ao do professor em 4 de 5 "metas"
+And O "aluno" tem conceitos superior aos conceitos do "professor"
+And O "aluno" tem discrepância maior que 30%
+And O "professor" vê que  tem "aluno" na lista
+And A tela informa que tem "aluno" prejudicado por discrepância
+Then O professor sabe que tem "aluno" prejudicado
+
+
