@@ -28,6 +28,8 @@ When: O aluno “Matheus” submeteu sua auto-avaliação para o sistema.
 Then: O sistema não armazena a submissão. 
 And: O sistema notifica ao aluno “Matheus” porque não armazenou sua auto-avaliação
 		
+
+        
 GUI-	
 Scenario: Submissão da auto-avaliação vazia.
 Given: O aluno “Matheus” fez sua auto-avaliação sem nenhum conceito em nenhuma das metas.
@@ -35,4 +37,4 @@ And: A auto-avaliação do aluno “Matheus” não está na lista de auto-avali
 When: O aluno “Matheus” enviar sua auto-avaliação.
 Then: Uma mensagem de erro deve ser exibida.	
 And: A auto-avaliação do aluno “Matheus” não é exibida na lista de auto-avaliações.
-
+And: O aluno "Matheus" será redirecionado para a página de preenchimento da auto-avaliação.
