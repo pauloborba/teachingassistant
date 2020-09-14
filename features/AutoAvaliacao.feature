@@ -16,3 +16,4 @@ Feature: Auto-avaliacao
 	    When Eu adiciono os conceitos “MPA” e “MA” para as metas “Entender conceitos de requisitos” e “Entender conceitos de gerencia de configuracao” (respectivamente) e tento registrar as adicoes
 	    Then Os conceitos não sao registrados pelo sistema
 	    And Eu ainda estou na pagina “auto-avaliacao da disciplina ESS”
+	    And Eu vejo uma mensagem de erro
