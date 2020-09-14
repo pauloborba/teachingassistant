@@ -15,3 +15,4 @@ When Eu adiciono “MA, MPA, -” para as metas “Entender conceitos de requisi
 Then Eu ainda estou na página “Meu perfil”
 And Eu vejo uma mensagem de erro
 And as metas “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração” preenchidas com “-, -, -” para autoavaliações e com “MANA, MPA, MA” para avaliações do professor.
+And Eu ainda estou na página "Meu perfil"
