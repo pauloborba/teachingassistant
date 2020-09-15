@@ -31,4 +31,5 @@ When: usuário “Lebron” preenche “algumas” das suas metas com “MP”
 And: usuário “Lebron” não preenche as “metas restantes”
 And: usuário “Lebron” submete suas respostas
 Then: o sistema não tem os dados de preenchimento do “aluno” “Tales” armazenados
+And: passo adicional requisitado pelos stakeholders
 
