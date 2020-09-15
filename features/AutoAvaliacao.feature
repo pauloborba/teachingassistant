@@ -32,5 +32,5 @@ And “Scala” tem autoavaliações “MPA, MPA, MANA, MPA, MPA” e eu o avali
 And “Alexandra” tem autoavaliações “MA, MPA, MANA, MA, MPA” e eu o avaliei com “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração, Especificar gerência de configuração com qualidade, Entender conceitos de projeto e implementação”
 When mudo para página “avaliações discrepantes”
 Then eu vejo que existem “1” alunos com discrepância
-And vejo “33.3%” na porcentagem de discrepantes
+And vejo “33%” na porcentagem de discrepantes
 And é mostrado uma lista com seguintes alunos “Toni”
