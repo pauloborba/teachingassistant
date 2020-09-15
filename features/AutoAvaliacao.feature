@@ -18,3 +18,4 @@ Então ainda estou na página de “notas”
 E posso ver que “nota,nota,nota,-” não foi inserido
 E o sistema mostra que não foi inserido devido a ausência de conceitos
 
+then sugestão do stake holder
