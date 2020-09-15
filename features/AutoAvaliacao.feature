@@ -27,10 +27,10 @@ And vejo “0%” na porcentagem de discrepantes
 And é mostrado uma lista vazia
 Scenario: Há aluno com conceitos discrepantes
 Given estou na página “SGM” como “Professor”
-And “José” tem autoavaliações “MA, MA, MANA, MA, MPA” e eu o avaliei com “MPA, MPA, MANA, MA, MPA” nas metas “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração, Especificar gerência de configuração com qualidade, Entender conceitos de projeto e implementação”
+And “Toni” tem autoavaliações “MA, MA, MANA, MA, MPA” e eu o avaliei com “MPA, MPA, MANA, MA, MPA” nas metas “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração, Especificar gerência de configuração com qualidade, Entender conceitos de projeto e implementação”
 And “Vinicius” tem autoavaliações “MPA, MPA, MANA, MPA, MPA” e eu o avaliei com “MA, MA, MPA, MA, MA” nas metas “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração, Especificar gerência de configuração com qualidade, Entender conceitos de projeto e implementação”
 And “Alexandra” tem autoavaliações “MA, MPA, MANA, MA, MPA” e eu o avaliei com “Entender conceitos de requisitos, Especificar requisitos com qualidade, Entender conceitos de gerência de configuração, Especificar gerência de configuração com qualidade, Entender conceitos de projeto e implementação”
 When mudo para página “avaliações discrepantes”
 Then eu vejo que existem “1” alunos com discrepância
 And vejo “33.3%” na porcentagem de discrepantes
-And é mostrado uma lista com seguintes alunos “José”
+And é mostrado uma lista com seguintes alunos “Toni”
