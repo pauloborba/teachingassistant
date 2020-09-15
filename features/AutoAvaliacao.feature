@@ -1,0 +1,31 @@
+Scenario: o usuário consegue adicionar um lembrete com sucesso
+Given a usuária “Carla”  deseja criar um lembrete de uma mensagem de “João”
+And ele selecionou a opção para criar lembrete
+When “Carla” seleciona a data (ou o tempo) escolhido
+And “Carla” confirma a criação do lembrete
+Then o sistema notifica que foi criado um lembrete para a mensagem de “João”
+And mostra a data e hora de quando a notificação vai acontecer
+
+
+Scenario: o usuário tenta selecionar uma data do passado
+Given o sistema de datas é um calendário
+And o sistema de horas é uma lista de horas
+And “Mariana” tenta selecionar uma data ou hora passados
+When “Mariana” tenta enviar
+Then o sistema não permite o envio e pede para selecionar uma data futura
+
+
+Scenario: chegou a hora do lembrete
+Given “Matheus” criou um lembrete anteriormente para a mensagem de “Larissa”
+When chega a hora do lembrete de “Matheus”
+Then a mensagem de “Larissa” é marcada como “não lida”
+And aparece como uma nova mensagem para “Matheus”
+
+
+Scenario: Há um lembrete já existente para a mensagem
+Given “Lucas” criou um lembrete anteriormente para a mensagem de “Felipe”
+And “Lucas” tenta criar um lembrete novamente
+When “Lucas” seleciona a opção de criar novo lembrete
+Then o sistema notifica que já existe um lembrete “X”
+And mostra qual a data do lembrete “X”
+And pergunta se “Lucas” deseja sobrescrever o lembrete “X” com um novo
