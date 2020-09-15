@@ -7,4 +7,3 @@ Quando seleciono a seção de “auto-avaliação”
 E insiro “nota,nota,nota,nota”
 Então ainda estou na página de “notas”
 E posso ver que “nota,nota,nota,nota” foi inserido com sucesso
-sga
