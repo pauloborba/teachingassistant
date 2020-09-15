@@ -31,4 +31,11 @@ When: usuário “Lebron” preenche “algumas” das suas metas com “MP”
 And: usuário “Lebron” não preenche as “metas restantes”
 And: usuário “Lebron” submete suas respostas
 Then: o sistema não tem os dados de preenchimento do “aluno” “Tales” armazenados
-
+Cenário 2: professor observando auto-avaliações não discrepantes
+Given eu estou logado como “professor” com login “phmb” e senha “1968”
+And eu estou na página “auto-avaliação dos alunos”
+When eu seleciono a opção “Visualizar auto-avaliações discrepantes”
+Then eu estou na página “auto-avaliação discrepantes”
+And eu vejo “0” no campo “quantidade”
+And eu vejo “0%” no campo “percentual”
+And eu vejo “lista vazia” no campo “lista de alunos com auto-avaliações discrepantes”
