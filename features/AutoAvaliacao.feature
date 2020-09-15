@@ -26,7 +26,7 @@ When: Vejo a coluna de “Auto-avaliação” e em baixo tem os campos “Insira
 Then: preencho no primeiro conceito “MA”
 And: preencho no terceiro conceito “MPA”
 And: Clico no botão 
-And: a nota não foi calculada automaticamente.
+And: nota não foi calculada automaticamente.
 
 GUI:
 Scenario: quando não há nenhuma discrepância
