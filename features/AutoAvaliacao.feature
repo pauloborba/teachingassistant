@@ -43,8 +43,11 @@ And eu vejo “lista vazia” no campo “lista de alunos com auto-avaliações 
 Cenário 3: professor observando auto-avaliações discrepantes
 Given eu estou logado como “professor” com login “phmb” e senha “1968”
 And eu estou na página “auto-avaliação dos alunos”
+And eu vejo o aluno "Joao" com auto-avaliação "MA" e avaliação do professor "MPA"
+And eu vejo o aluno "Kleber" com auto-avaliação "MPA" e avaliação do professor "MPA"
+And eu vejo o aluno "Silva" com auto-avaliação "MA" e avaliação do professor "MA"
 When eu seleciono a opção “Visualizar auto-avaliações discrepantes”
-Then eu estou na página “auto-avaliação discrepantes”
+Then eu estou na página “auto-avaliações discrepantes”
 And eu vejo “1” no campo “quantidade”
 And eu vejo “33.3%” no campo “percentual”
-And eu vejo o “aluno” “Bob” no campo “lista de alunos com auto-avaliações discrepantes”
+And eu vejo o “aluno” “Joao” no campo “lista de alunos com auto-avaliações discrepantes”
