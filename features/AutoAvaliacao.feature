@@ -57,3 +57,13 @@ Given eu estou na página “verificar alunos discrepantes”
 And não há alunos com notas discrepantes
 When eu tento verificar quais alunos estão em tal situação
 Then o sistema mostra uma lista vazia
+
+
+Scenario: Há aluno com nota discrepante
+Given eu estou na página “verificar alunos discrepantes”
+And Há 3 alunos na disciplina
+And Apenas o aluno “João” tem discrepância
+When eu tento verificar quais alunos estão em tal situação
+Then o sistema dá um alerta avisando que há 1 aluno discrepante
+And mostra o percentual de 33% de alunos discrepantes
+And mostra uma lista com o aluno “João” apenas
