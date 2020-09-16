@@ -29,3 +29,13 @@ When “Lucas” seleciona a opção de criar novo lembrete
 Then o sistema notifica que já existe um lembrete “X”
 And mostra qual a data do lembrete “X”
 And pergunta se “Lucas” deseja sobrescrever o lembrete “X” com um novo
+
+
+
+
+Scenario: preencher e enviar as respostas e, receber aviso de sucesso
+Given eu estou na página de auto-avaliação
+And eu preencho as notas “MA”, “MPA” e “MANA”, respectivamente
+And todas as notas foram preenchidas
+When eu tento enviar as respostas
+Then posso ver que as notas registradas foram “MA”, “MPA” e “MANA”
