@@ -20,3 +20,25 @@ And seleciona a opção “enviar”
 Then eu recebo uma mensagem de erro
 And eu tenho a opção de voltar para a página de “SGM”
 And as auto-avaliações do Aluno "Humberto" ainda não estão armazenadas no sistema
+
+
+Scenario: análise de discrepantes quando não há discrepância
+Given Estou logado na página ”SGM” como “Professor”
+And as auto-avaliações dos alunos estão armazenadas no sistema
+And “3” “alunos” estão armazenados no sistema
+And os “3” alunos não possuem discrepâncias
+When seleciono a opção “Análise de discrepância”
+Then é mostrado uma lista “ ” de alunos com discrepância
+And é mostrado o total de aluno/s “0” com discrepância
+And é mostrado a porcentagem “0%” de alunos discrepantes
+
+
+Scenario: analise de discrepantes quando 3 entre 6 são discrepantes
+Given Estou logado no sistema como “Professor”
+And estou na página ”SGM”
+And as auto-avaliações dos alunos estão armazenadas no sistema
+And “6” “alunos” estão armazenados no sistema
+When seleciono a opção “Análise de discrepância”
+Then é mostrado uma lista “Joao, Roberto, Marcelo ” de alunos com discrepância
+And é mostrado o total de aluno/s “3” com discrepância
+And é mostrado a porcentagem “50%” de alunos discrepantes
