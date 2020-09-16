@@ -39,3 +39,11 @@ And eu preencho as notas “MA”, “MPA” e “MANA”, respectivamente
 And todas as notas foram preenchidas
 When eu tento enviar as respostas
 Then posso ver que as notas registradas foram “MA”, “MPA” e “MANA”
+
+
+Scenario: preencher e enviar as respostas e, receber aviso de erro
+Given eu estou na página de auto-avaliação
+And eu preencho as notas “MA” e “MANA”, respectivamente
+And nem todas as notas foram preenchidas
+When eu tento enviar as respostas
+Then o sistema dá um alerta de erro, pois nem tudo foi preenchido
