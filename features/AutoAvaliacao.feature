@@ -47,9 +47,7 @@ And eu preencho as notas “MA” e “MANA”, respectivamente
 And nem todas as notas foram preenchidas
 When eu tento enviar as respostas
 Then o sistema dá um alerta de erro, pois nem tudo foi preenchido
-<<<<<<< HEAD
 And volta para a tela de preenchimento
-=======
 
 
 
@@ -69,5 +67,4 @@ And Apenas o aluno “João” tem discrepância
 When eu tento verificar quais alunos estão em tal situação
 Then o sistema dá um alerta avisando que há 1 aluno discrepante
 And mostra o percentual de 33% de alunos discrepantes
-And mostra uma lista com o aluno “João” apenas
->>>>>>> discrepantes
+And mostra uma lista com o aluno “João”
