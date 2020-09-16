@@ -15,6 +15,14 @@ And Seleciono para enviar
 Then Uma mensagem é exibida mostrando que o preenchimento foi concluído
 And os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade” e “MA” em   “Entender conceitos de gerência de configuração” aparecem na coluna correspondente a Auto-Avaliação
 
+Scenário: Preenchimento de Auto-avaliação mal sucedido
+Given Eu estou na página  “Auto-Avaliação”
+And Eu vejo os conceitos das metas  “Entender conceitos de requisitos”, “Especificar Requisitos com Qualidade” e “Entender conceitos de gerência de configuração” em branco
+And Seleciono para alterar o conceito de cada uma das as metas
+And Preencho os conceitos com “MA” para “Entender conceitos de requisitos” e “MPA” para Especificar Requisitos com Qualidade
+And Deixo a meta  “Entender conceitos de gerência de configuração” com seu conceito de auto-avaliação em branco
+And Seleciono para enviar
+Then Uma mensagem é exibida alertando que todos campos devem ser preenchidos
 
 
 
@@ -23,3 +31,10 @@ Scenario: Auto-avaliação bem sucedida
 Given o estudante “João Santos” está com as metas “Entender conceitos de requisitos”, “Especificar Requisitos com Qualidade” e “Entender conceitos de gerência de configuração” sem conceito de Auto-Avaliação armazenados no sistema
 When os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade” e “MA” em  “Entender conceitos de gerência de configuração”  na relacionados a Auto-Avaliação são enviados
 Then os conceitos  “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade” e “MA” em “Entender conceitos de gerência de configuração”  relacionados a Auto-Avaliação do aluno “João Santos” são armazenados no sistema
+
+Scenario: Auto-avaliação mal sucedida
+Given o estudante “João Santos” está com as metas “Entender conceitos de requisitos”, “Especificar Requisitos com Qualidade” e “Entender conceitos de gerência de configuração” sem conceito de Auto-Avaliação armazenados no sistema
+When preenchidos os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”  na coluna de Auto-Avaliação
+And a meta “Entender conceitos de gerência de configuração” está sem conceito
+And os conceitos são enviados
+Then uma mensagem de preenchimento mal sucedido é enviada pelo sistema
