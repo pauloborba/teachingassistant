@@ -42,3 +42,4 @@ When seleciono a opção “Análise de discrepância”
 Then é mostrado uma lista “Joao, Roberto, Marcelo ” de alunos com discrepância
 And é mostrado o total de aluno/s “3” com discrepância
 And é mostrado a porcentagem “50%” de alunos discrepantes
+And eu vejo a opção de voltar para a página anterior
