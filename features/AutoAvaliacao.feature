@@ -67,4 +67,4 @@ And Apenas o aluno “João” tem discrepância
 When eu tento verificar quais alunos estão em tal situação
 Then o sistema dá um alerta avisando que há 1 aluno discrepante
 And mostra o percentual de 33% de alunos discrepantes
-And mostra uma lista com o aluno “João”
+And mostra uma lista com o aluno “João” apenas
