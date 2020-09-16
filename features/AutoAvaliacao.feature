@@ -47,3 +47,13 @@ And eu preencho as notas “MA” e “MANA”, respectivamente
 And nem todas as notas foram preenchidas
 When eu tento enviar as respostas
 Then o sistema dá um alerta de erro, pois nem tudo foi preenchido
+
+
+
+
+
+Scenario: não há alunos com notas discrepantes
+Given eu estou na página “verificar alunos discrepantes”
+And não há alunos com notas discrepantes
+When eu tento verificar quais alunos estão em tal situação
+Then o sistema mostra uma lista vazia
