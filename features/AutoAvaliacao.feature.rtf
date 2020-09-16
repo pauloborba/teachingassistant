@@ -90,4 +90,30 @@ And o sistema possui a avalia\'e7\'e3o do professor da disciplina para as metas 
 When a aluna concluir a auto-avalia\'e7\'e3o com "MA", "MPA" e - para as tr\'eas metas, respectivamente \
 \
 Then o sistema n\'e3o ter\'e1 armazenada a auto-avalia\'e7\'e3o da aluna "J\'e9ssica Amaral" para a disciplina "Engenharia de Software e Sistemas"\
+\
+\pard\pardeftab720\qc\partightenfactor0
+\cf4 \
+Cen\'e1rio de GUI: Avaliar Discrep\'e2ncias em auto-avalia\'e7\'f5es (N\'e3o h\'e1)\
+\
+\pard\pardeftab720\qj\partightenfactor0
+\cf4 Given eu estou na sess\'e3o "Avalia\'e7\'f5es Discrepantes" da p\'e1gina da disciplina "Engenharia de Software e Sistemas"\
+\
+And o "Total de Alunos" \'e9 "3"\
+\
+And a minha avalia\'e7\'e3o das metas de aprendizado para os alunos "Jo\'e3o", "Maria" e "Jos\'e9" \'e9 "MA", "MPA", "MPA", "MPA" e  "MA"\
+\
+And a auto-avalia\'e7\'e3o de Maria \'e9 "MPA", \'94MNA", "MNA", "MNA", "MPA\'94\
+\
+And a auto-avalia\'e7\'e3o de Jos\'e9 \'e9 "MA", "MPA", "MPA", "MPA" e  "MA"\
+\
+And a auto-avalia\'e7\'e3o de Jo\'e3o \'e9 "MA", \'94MA", MNA","MPA", "MPA\'94\
+\
+And a "Quantidade de Avalia\'e7\'f5es Discrepantes" \'e9 "0"\
+\
+And a "Porcentagem de discrep\'e2ncia" \'e9 "0"\
+\
+When eu pedir ao sistema a lista de alunos com auto-avalia\'e7\'f5es discrepantes\
+\
+Then aparecer\'e1 uma mensagem na tela avisando que n\'e3o h\'e1 auto-avalia\'e7\'f5es discrepantes\
+\
 }
