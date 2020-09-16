@@ -26,3 +26,11 @@ And eu vejo que por enquanto tou sem nota
 When eu adiciono a nota “MA”
 Then eu continuo na página de nota
 And eu vejo que sistema atualizou a página com a minha nota “MA” cadastrada com sucesso
+
+GUI
+Scenario: Erro ao adicionar a nota na auto-avaliação
+Given eu estou na página de adicionar a nota
+And eu não adicionei nenhuma nota
+When eu boto pra salvar a nota
+Then o sistema retorna mensagem de erro
+And pede para eu adicionar uma nota
