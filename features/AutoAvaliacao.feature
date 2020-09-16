@@ -19,3 +19,4 @@ When eu avalio com “MA”, “MPA” respectivamente 2 das 3 metas conceituadas pelo p
 And seleciona a opção “enviar”
 Then eu recebo uma mensagem de erro
 And eu tenho a opção de voltar para a página de “SGM”
+And as auto-avaliações do Aluno "Humberto" ainda não estão armazenadas no sistema
