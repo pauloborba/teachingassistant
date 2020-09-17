@@ -47,3 +47,23 @@ Scenario: armazenar conceito de auto-avaliação parcial
     And eu vejo que o sistema continua sem os conceitos de auto-avaliação das metas
     And eu vejo uma notificação de erro de auto-avaliação parcial
 
+#GUI Senario - Discrepancia
+Scenario: visualizar dados sobre discrepância das avaliações dos conceitos
+    Given eu estou logado como professor "Sérgio" no sistema SGM
+    And eu estou na página "notas dos alunos"
+    And eu vejo que a aluna "Maria" tem conceito superior aos atribuídos por mim em 1 de 5 metas
+    And eu vejo que o aluno "João" tem apenas conceitos inferiores aos atribuídos por mim
+    And eu vejo que o aluno "José" tem apenas conceitos iguais aos atribuídos por mim
+    When eu clico para ver a lista de alunos com conceitos discrepantes 
+    Then eu vejo que não há alunos com conceitos discrepantes
+    And eu vejo uma lista vazia
+
+Scenario: visualizar dados sobre discrepância das avaliações dos conceitos
+    Given eu estou logado como professor "Sérgio" no sistema SGM
+    And eu estou na página "notas dos alunos"
+    And eu vejo que a lista de alunos tem "3" alunos
+    When eu clico para ver a quantidade e lista de alunos com conceitos discrepantes 
+    Then eu vejo que a quantidade de alunos com conceito discrepante é 1 de 3
+    And eu vejo a lista com apenas o aluno "Miguel"
+
+
