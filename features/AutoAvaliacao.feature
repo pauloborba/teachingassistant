@@ -48,7 +48,7 @@ Scenario: armazenar conceito de auto-avaliação parcial
     And eu vejo uma notificação de erro de auto-avaliação parcial
 
 #GUI Senario - Discrepancia
-Scenario: visualizar dados sobre discrepância das avaliações dos conceitos
+Scenario: dados sobre discrepância das avaliações dos conceitos quando não há discrepancia
     Given eu estou logado como professor "Sérgio" no sistema SGM
     And eu estou na página "notas dos alunos"
     And eu vejo que a aluna "Maria" tem conceito superior aos atribuídos por mim em 1 de 5 metas
@@ -58,7 +58,7 @@ Scenario: visualizar dados sobre discrepância das avaliações dos conceitos
     Then eu vejo que não há alunos com conceitos discrepantes
     And eu vejo uma lista vazia
 
-Scenario: visualizar dados sobre discrepância das avaliações dos conceitos
+Scenario: dados sobre discrepância das avaliações dos conceitos quando há discrepancia
     Given eu estou logado como professor "Sérgio" no sistema SGM
     And eu estou na página "notas dos alunos"
     And eu vejo que a lista de alunos tem "3" alunos
