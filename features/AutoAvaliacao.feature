@@ -14,6 +14,7 @@ Scenario preenchendo auto-avaliação parcialmente
 Given eu vejo os conceitos de “MA, MA, MANA” respectivamente atribuídos pelo professor na mesma página
 And estou logado como “Humberto” na página ”SGM”
 And as auto-avaliações do Aluno “Humberto” não estão armazenadas no sistema
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 When eu avalio com “MA”, “MPA” respectivamente 2 das 3 metas conceituadas pelo professor
 And seleciona a opção “enviar”
 Then eu recebo uma mensagem de erro
