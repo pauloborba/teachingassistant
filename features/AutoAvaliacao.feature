@@ -30,6 +30,7 @@ When seleciono a opção “Análise de discrepância”
 Then é mostrado uma lista “ ” de alunos com discrepância
 And é mostrado o total de aluno/s “0” com discrepância
 And é mostrado a porcentagem “0%” de alunos discrepantes
+testeteste
 
 
 Scenario: analise de discrepantes quando 3 entre 6 são discrepantes
