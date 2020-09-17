@@ -60,3 +60,4 @@ Feature: Auto-avaliação
 		Then Eu continuo na seção "Notas" de todos os alunos do sistema
 		And Eu vejo que a avaliação de discrepância foi concluída sem erros.
 		And O aluno “José” é indicado que as notas de sua auto-avaliação estão discrepantes.
+
