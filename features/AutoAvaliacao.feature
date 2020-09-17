@@ -22,6 +22,7 @@ And: O sistema indica que a operação foi bem sucedida
 
 Fazendo mudança
 
+
 Mais uma mudança
 
 Scenario: Auto-avaliação sem discrepância
