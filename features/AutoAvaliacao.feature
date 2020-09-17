@@ -59,4 +59,4 @@ Feature: Auto-avaliação
 		When Eu solicito ao sistema de notas que me mostre as discrepâncias de notas
 		Then Eu continuo na seção "Notas" de todos os alunos do sistema
 		And Eu vejo que a avaliação de discrepância foi concluída sem erros.
-		And O aluno "José" é indicado que as notas de sua auto-avaliação estão discrepantes.
+		And O aluno “José” é indicado que as notas de sua auto-avaliação estão discrepantes.
