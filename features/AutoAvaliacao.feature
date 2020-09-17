@@ -33,7 +33,7 @@ Feature: Auto-avaliação
 		Then o sistema retorna uma mensagem de erro.
 		And o estudante “José Bezerra” continua com os respectivos conceitos “MPA”, “MPA”, “MPA”  avaliados pelo docente
 
-	Scenario: checando discrepâncias
+	Scenario: checando discrepâncias sem erro
 		Given Eu estou na seção “Notas” de todos os alunos do sistema
 		And Eu vejo os conceitos “MA, MPA, MPA, MPA, MPA” respectivamente para cada meta auto-avaliada pelo Aluno “José”.
 		And Eu vejo os conceitos apenas conceitos “MANA” respectivamente para cada meta auto-avaliada pelo Aluno “João”.
@@ -46,7 +46,7 @@ Feature: Auto-avaliação
 		And Eu vejo que a avaliação de discrepância foi concluída sem erros.
 		And Não vejo nenhuma discrepância na listagem.
 
-	Scenario: checando discrepâncias
+	Scenario: checando discrepâncias com erro
 		Given Eu estou na seção “Notas” de todos os alunos do sistema
 		And Eu vejo os conceitos “MA, MA, MA, MPA, MPA” respectivamente para cada meta auto-avaliada pelo Aluno “José”.
 		And Eu vejo os conceitos apenas conceitos “MANA” respectivamente para cada meta auto-avaliada pelo Aluno “João”.
