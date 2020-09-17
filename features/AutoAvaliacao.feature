@@ -32,3 +32,4 @@ Feature: Auto-avaliação
 		When Eu peço ao sistema para adicionar ao estudante “José Bezerra” os respectivos conceitos “MA”, “-”, “MA” auto-avaliados pelo aluno para cada meta
 		Then o sistema retorna uma mensagem de erro.
 		And o estudante “José Bezerra” continua com os respectivos conceitos “MPA”, “MPA”, “MPA”  avaliados pelo docente
+		Then eu permaneço na mesma página.
