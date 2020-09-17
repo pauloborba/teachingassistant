@@ -27,6 +27,7 @@ Fazendo mudança
 
 Mais uma mudança
 
+Tentar realizar merge novamente
 Scenario: Auto-avaliação sem discrepância
 Given Que estou logado como professor
 And Estou na página de auto-avaliação
