@@ -19,5 +19,5 @@ And: Solicito ao sistema a conclusão da operação de auto-avaliação
 Then: O sistema verifica que todos os conceitos foram auto-avaliados 
 And: O sistema salva "MA", "MA" , "MANA", "MPA" e "MA"  na auto-avaliação do aluno João Bento
 And: O sistema indica que a operação foi bem sucedida
-
+And: Adicionando passo solicitado por stakeholder
 Fazendo mudança
