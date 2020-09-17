@@ -45,4 +45,5 @@ Scenario: armazenar conceito de auto-avaliação parcial
     And peço para o sistema armazenar esse conceito
     Then o sistema retorna uma mensagem de erro
     And eu vejo que o sistema continua sem os conceitos de auto-avaliação das metas
+    And eu vejo uma notificação de erro de auto-avaliação parcial
 
