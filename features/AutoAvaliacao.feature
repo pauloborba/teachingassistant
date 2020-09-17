@@ -33,3 +33,29 @@ Feature: Auto-avaliação
 		Then o sistema retorna uma mensagem de erro.
 		And o estudante “José Bezerra” continua com os respectivos conceitos “MPA”, “MPA”, “MPA”  avaliados pelo docente
 		Then eu permaneço na mesma página.
+
+	Scenario: checando discrepâncias sem erro
+		Given Eu estou na seção “Notas” de todos os alunos do sistema
+		And Eu vejo os conceitos “MA, MPA, MPA, MPA, MPA” respectivamente para cada meta auto-avaliada pelo Aluno “José”.
+		And Eu vejo os conceitos apenas conceitos “MANA” respectivamente para cada meta auto-avaliada pelo Aluno “João”.
+		And Eu vejo os conceitos “MPA, MPA, MPA, MPA, MPA” respectivamente para cada meta auto-avaliada pelo Aluno “Fernando”.
+		And Eu vejo os conceitos “MPA, MPA, MPA, MPA, MPA” respectivamente para cada meta avaliada por mim ao Aluno “José”.
+		And Eu vejo os conceitos “MPA, MPA, MPA, MPA, MPA” respectivamente para cada meta avaliada por mim ao Aluno “João”.
+		And Eu vejo os conceitos “MPA, MPA, MPA, MPA, MPA” respectivamente para cada meta avaliada por mim ao Aluno “Fernando”.
+		When Eu solicito ao sistema de notas que me mostre as discrepâncias de notas
+		Then Eu continuo na seção “Notas” de todos os alunos do sistema
+		And Eu vejo que a avaliação de discrepância foi concluída sem erros.
+		And Não vejo nenhuma discrepância na listagem.
+
+	Scenario: checando discrepâncias com erro
+		Given Eu estou na seção “Notas” de todos os alunos do sistema
+		And Eu vejo os conceitos “MA, MA, MA, MPA, MPA” respectivamente para cada meta auto-avaliada pelo Aluno “José”.
+		And Eu vejo os conceitos apenas conceitos “MANA” respectivamente para cada meta auto-avaliada pelo Aluno “João”.
+		And Eu vejo os conceitos “MPA, MPA, MPA, MPA, MPA” respectivamente para cada meta auto-avaliada pelo Aluno “Fernando”.
+		And Eu vejo os conceitos “MPA, MPA, MPA, MPA, MPA” respectivamente para cada meta avaliada por mim ao Aluno “José”.
+		And Eu vejo os conceitos “MPA, MPA, MPA, MPA, MPA” respectivamente para cada meta avaliada por mim ao Aluno “João”.
+		And Eu vejo os conceitos “MPA, MPA, MPA, MPA, MPA” respectivamente para cada meta avaliada por mim ao Aluno “Fernando”.
+		When Eu solicito ao sistema de notas que me mostre as discrepâncias de notas
+		Then Eu continuo na seção “Notas” de todos os alunos do sistema
+		And Eu vejo que a avaliação de discrepância foi concluída sem erros.
+		And O aluno “José” é indicado que as notas de sua auto-avaliação estão discrepantes.
