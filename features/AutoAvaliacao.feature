@@ -37,3 +37,5 @@ Cenário: Solicitação de avaliação de discrepância pelo professor.
  E vejo que o valor “quantidade de alunos discrepantes”, “percentual de alunos discrepantes” e “lista de alunos discrepantes” são “1”, “33%” e “aluno”.
 
 solicitação de mudança mais significativa no cenário de visualização em que há discrepância
+novo cenário de visualização de percentual de discrepância
+pequeno ajuste no novo cenário de visualização de percentual de discrepância
