@@ -10,7 +10,6 @@ Then eu recebo uma mensagem de sucesso de auto-avaliação
 And eu tenho a opção de voltar para a página de “SGM”
 
 
-
 Scenario preenchendo auto-avaliação parcialmente
 Given eu vejo os conceitos de “MA, MA, MANA” respectivamente atribuídos pelo professor na mesma página
 And estou logado como “Humberto” na página ”SGM”
