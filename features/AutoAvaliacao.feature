@@ -57,3 +57,12 @@ Scenario: visualizar dados sobre discrepância das avaliações dos conceitos
     Then eu vejo que não há alunos com conceitos discrepantes
     And eu vejo uma lista vazia
 
+Scenario: visualizar dados sobre discrepância das avaliações dos conceitos
+    Given eu estou logado como professor "Sérgio" no sistema SGM
+    And eu estou na página "notas dos alunos"
+    And eu vejo que a lista de alunos tem "3" alunos
+    When eu clico para ver a quantidade e lista de alunos com conceitos discrepantes 
+    Then eu vejo que a quantidade de alunos com conceito discrepante é 1 de 3
+    And eu vejo a lista com apenas o aluno "Miguel"
+
+
