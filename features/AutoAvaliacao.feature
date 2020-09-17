@@ -49,3 +49,4 @@ And Eu vejo que a avaliação de Larissa Sales indica que foi "inferior", "infer
 When Eu seleciono a opção de visualizar as auto-avaliações discrepantes
 Then Eu sou levado para a página "auto-avaliações discrepantes"
 And Eu vejo a indicação de que 1 aluno possui notas discrepantes, de que 33,33% dos alunos possuem notas discrepantes e uma lista de alunos com apenas Melissa da Silva mostrando sua auto-avaliação foi "Superior", "igual", "Superior", "igual" e "igual" nas metas respectivamente
+And fix da discrepância
