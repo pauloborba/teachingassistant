@@ -21,3 +21,29 @@ And: O sistema salva "MA", "MA" , "MANA", "MPA" e "MA"  na auto-avaliação do a
 And: O sistema indica que a operação foi bem sucedida
 And: Adicionando passo solicitado por stakeholder
 Fazendo mudança
+
+Fazendo mudança
+
+Mais uma mudança
+
+Scenario: Auto-avaliação sem discrepância
+Given Que estou logado como professor
+And Estou na página de auto-avaliação
+And Eu vejo a auto-avaliação dos alunos nos conceitos “Entender conceitos de requisitos”, "Especificar requisitos com qualidade", "Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos” e "Testes"
+And Eu vejo que a avaliação de Melissa da Silva indica que foi "Superior", "igual", "igual", "igual" e "igual" nas metas respectivamente
+And Eu vejo que a avaliação de Glória da Cunha indica que foi "igual", "igual", "igual", "igual" e "igual" nas metas respectivamente
+And Eu vejo que a avaliação de Larissa Sales indica que foi "inferior", "inferior", "inferior", "inferior" e "inferior" nas metas respectivamente
+When Eu solicito a opção de visualizar as auto-avaliações discrepantes
+Then Eu sou levado para a página "auto-avaliações discrepantes"
+And Eu vejo a indicação de que 0 alunos possuem notas discrepantes, de que 0% dos alunos possuem notas discrepantes e uma lista de alunos vazia
+
+Scenario: Auto-avaliação com discrepância em 1 de 3 alunos
+Given Que estou logado como professor
+And Estou na página de auto-avaliação
+And Eu vejo a auto-avaliação dos alunos nos conceitos “Entender conceitos de requisitos”, "Especificar requisitos com qualidade", "Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos” e "Testes"
+And Eu vejo que a avaliação de Melissa da Silva indica que foi "Superior", "igual", "Superior", "igual" e "igual" nas metas respectivamente
+And Eu vejo que a avaliação de Glória da Cunha indica que foi "igual", "igual", "igual", "igual" e "igual" nas metas respectivamente
+And Eu vejo que a avaliação de Larissa Sales indica que foi "inferior", "inferior", "inferior", "inferior" e "inferior" nas metas respectivamente
+When Eu seleciono a opção de visualizar as auto-avaliações discrepantes
+Then Eu sou levado para a página "auto-avaliações discrepantes"
+And Eu vejo a indicação de que 1 aluno possui notas discrepantes, de que 33,33% dos alunos possuem notas discrepantes e uma lista de alunos com apenas Melissa da Silva mostrando sua auto-avaliação foi "Superior", "igual", "Superior", "igual" e "igual" nas metas respectivamente
