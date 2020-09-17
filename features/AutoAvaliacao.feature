@@ -24,6 +24,7 @@ Fazendo mudança
 
 Fazendo mudança
 
+
 Mais uma mudança
 
 Scenario: Auto-avaliação sem discrepância
