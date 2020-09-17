@@ -47,6 +47,7 @@ Feature: Auto-avaliação
 		And Eu vejo que a avaliação de discrepância foi concluída sem erros.
 		And Não vejo nenhuma discrepância na listagem.
 
+
 	Scenario: checando discrepâncias com erro
 		Given Eu estou na seção "Notas" de todos os alunos do sistema
 		And Eu vejo os conceitos "MA, MA, MA, MPA, MPA" respectivamente para cada meta auto-avaliada pelo Aluno "José".
