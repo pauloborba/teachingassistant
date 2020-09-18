@@ -48,5 +48,5 @@ Scenario: existe discrepância nas notas de 1 dos 3 alunos em relação as notas
     And o aluno “Vitor” possui conceitos “MPA”,  “MPA”, “MANA”, “MPA”, “MPA”,  “de auto-avaliação” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência” e “realizar testes sólidos”,, respectivamente
     When eu seleciono para verificar discrepâncias
     Then eu vou para a tela de “Visualizar discrepâncias”
-    And eu posso visualizar na lista de alunos com discrepância “Igor”, o percentual de alunos com discrepância “20%” e a quantidade de alunos com discrepância “1”
+    And eu posso visualizar na lista de alunos com discrepância “Igor”, o percentual de alunos com discrepância “33%” e a quantidade de alunos com discrepância “1”
 
