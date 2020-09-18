@@ -24,3 +24,4 @@ Scenario: adicionar conceitos de auto-avaliação incompletas
     And eu seleciono para salvar os conceitos
     Then eu vejo uma mensagem de erro relacionada ao não preenchimento de uma das metas
 	And eu continuo na página de “auto-avaliação”
+    And eu percebo que terei que preencher minhas notas auto-avaliação novamente
