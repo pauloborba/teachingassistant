@@ -13,5 +13,4 @@ Feature: Auto avaliação
 		Given Eu entro no sistema logado como professor
 		When Eu verifico as estatísticas relacionadas às Auto-avaliações
 		Then O sistema retorna os valores com os campos (quantidade = 1, percentual = 33,33%, lista = Mikael Vidal da Silva)
-
-	Mikael Vidal
+		And Um aluno é salvo no sistema como tendo uma nota discrepante
