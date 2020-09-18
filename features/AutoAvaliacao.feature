@@ -25,3 +25,28 @@ Scenario: adicionar conceitos de auto-avaliação incompletas
     Then eu vejo uma mensagem de erro relacionada ao não preenchimento de uma das metas
 	And eu continuo na página de “auto-avaliação”
     And eu percebo que terei que preencher minhas notas auto-avaliação novamente
+Scenario: não existe discrepância entre as notas dos alunos e do professor
+    Given estou logado como professor
+    And eu estou na página de “notas”
+    And o aluno “Pedro” possui conceitos “MA”, “MPA”, “MA”, “MPA”, “MPA”, “atribuídos pelo professor” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência” e “realizar testes sólidos”, respectivamente 
+    And o aluno “Pedro” possui conceitos “MPA”,  “MANA”,  “MPA”, “MANA” e “MANA”, “de auto-avaliação” para as metas de “entender requisitos”, “especificar requisitos”, “entender conceitos de gerência” e “realizar testes sólidos”, respectivamente
+    And o aluno “Lucas”  possui conceitos “MA”, “MA”, “MANA”, “MPA”, “MPA”, “atribuídos pelo professor” para as metas de “entender requisitos”, “elicitar requisitos”,  “especificar requisitos”, “entender conceitos de gerência”e “realizar testes sólidos”, respectivamente 
+    And o aluno “Lucas” possui conceitos “MA”,  “MPA”, “MPA”, “MPA” e “MPA”, “de auto-avaliação” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência”e “realizar testes sólidos”, respectivamente
+    And o aluno “Eduardo” possui conceitos “MA”, “MPA”, “MANA”, “MPA”e “MPA” “atribuídos pelo professor” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência”, “realizar testes sólidos”, respectivamente
+    And o aluno “Eduardo” e possui conceitos “MPA”,  “MPA”, “MANA”, “MPA”e “MPA”,  “de auto-avaliação” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência”e “realizar testes sólidos”, respectivamente
+    When eu seleciono para verificar discrepâncias
+    Then eu vou para a tela de “Visualizar discrepâncias”
+    And eu posso visualizar a lista de alunos com discrepância “vazia”, o percentual de alunos com discrepância “0%” e a quantidade de alunos com discrepância “0”
+Scenario: existe discrepância nas notas de 1 dos 3 alunos em relação as notas do professor
+    Given estou logado como professor
+    And eu estou na página de “notas”
+    And o aluno “Igor” possui conceitos “MA”, “MPA” e “MA”, “MANA”,“MANA” “atribuídos pelo professor” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência”e “realizar testes sólidos”, respectivamente 
+    And o aluno “Igor” possui conceitos “MPA”,  “MANA”, “MPA”, “MPA”, “MPA”, “de auto-avaliação” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência”e “realizar testes sólidos”, respectivamente
+    And o aluno “Gabriel”  possui conceitos “MA”, “MA”, “MANA”, “MPA”, “MPA”, “atribuídos pelo professor” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência” e “realizar testes sólidos”, respectivamente 
+    And o aluno “Gabriel” possui conceitos “MA”,  “MPA”, “MPA”, “MPA”, “MPA”, “de auto-avaliação” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência” e “realizar testes sólidos”, respectivamente
+    And o aluno “Vitor” possui conceitos “MA”, “MPA”, “MANA”, “MPA”, “MPA”, “atribuídos pelo professor” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência” e “realizar testes sólidos”, respectivamente 
+    And o aluno “Vitor” possui conceitos “MPA”,  “MPA”, “MANA”, “MPA”, “MPA”,  “de auto-avaliação” para as metas de “entender requisitos”, “elicitar requisitos”, “especificar requisitos”, “entender conceitos de gerência” e “realizar testes sólidos”,, respectivamente
+    When eu seleciono para verificar discrepâncias
+    Then eu vou para a tela de “Visualizar discrepâncias”
+    And eu posso visualizar na lista de alunos com discrepância “Igor”, o percentual de alunos com discrepância “20%” e a quantidade de alunos com discrepância “1”
+
