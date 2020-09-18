@@ -17,14 +17,14 @@ Scenario: preencher os conceitos de auto-avaliação de todas as metas
 
 # Service Scenario:
 Scenario: armazenar os conceitos de auto-avaliação de todas as metas 
-Given eu vejo que o sistema não tem os conceitos de auto-avaliação das metas
-And eu vejo os conceitos atribuídos pelos meus professores
-When eu preencho todas as metas com "MA"
-And peço para o sistema armazenar esses conceitos
-Then o sistema retorna uma mensagem de confirmação de armazenamento
-And eu consigo ver todos os conceitos de auto-avaliação das metas
-preenchidos com "MA"
-And eu ainda consigo ver os conceitos atribuídos pelos meus professores
+    Given eu vejo que o sistema não tem os conceitos de auto-avaliação das metas
+    And eu vejo os conceitos atribuídos pelos meus professores
+    When eu preencho todas as metas com "MA"
+    And peço para o sistema armazenar esses conceitos
+    Then o sistema retorna uma mensagem de confirmação de armazenamento
+    And eu consigo ver todos os conceitos de auto-avaliação das metas
+    preenchidos com "MA"
+    And eu ainda consigo ver os conceitos atribuídos pelos meus professores
 
 # GUI Scenario:
 Scenario:  inserir o conceito de auto-avaliação parcial
