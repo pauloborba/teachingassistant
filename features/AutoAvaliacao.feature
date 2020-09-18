@@ -24,7 +24,16 @@ And Deixo a meta  “Entender conceitos de gerência de configuração” com se
 And Seleciono para enviar
 Then Uma mensagem é exibida alertando que todos campos devem ser preenchidos
 
-
+Cenário: Nenhuma discrepância
+Given estou na página de auto-avaliações 
+And o aluno “João Oliveira” está com os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MPA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
+And  o aluno “João Oliveira” está com os conceitos “MPA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MA” em  “Entender conceitos de gerência de configuração”, “MA” em “Entender conceitos de gerência de projetos” e “MPA” em “Entender conceitos de testes” preenchidos por mim
+And a aluna “Ana Souza”  está com os conceitos “MPA” em “Entender conceitos de requisitos” , “MANA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MANA” em “Entender conceitos de gerência de projetos” e “MPA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
+And a aluna “Ana Souza” está com os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos por mim
+And a aluna “Maria Almeida” está com os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
+And a aluna “Maria Almeida” está com os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos por mim
+When seleciono mostrar auto-avaliações discrepantes
+Then uma mensagem dizendo que não existe nenhuma auto-avaliação discrepante aparece
 
 Service Scenario
 Scenario: Auto-avaliação bem sucedida
