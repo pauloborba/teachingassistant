@@ -23,7 +23,7 @@ And Preencho os conceitos com “MA” para “Entender conceitos de requisitos�
 And Deixo a meta  “Entender conceitos de gerência de configuração” com seu conceito de auto-avaliação em branco
 And Seleciono para enviar
 Then Uma mensagem é exibida alertando que todos campos devem ser preenchidos
-
+And
 
 
 Service Scenario
