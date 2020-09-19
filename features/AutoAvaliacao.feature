@@ -56,6 +56,7 @@ When: O professor deu os conceitos "MPA, MA, MA ,MPA, MPA" respectivamente nas m
 And: O professor deu os conceitos "MANA, MPA, MPA ,MA, MPA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração” para o aluno “Thiago”.
 And: O professor deu os conceitos "MPA, MPA, MA, MPA, MPA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração” para o aluno “Lucas”.
 Then: Uma notificação apareceu para o "professor" indicando que houve discrepância no aluno “Thiago”.
+And: O "professor" é direcionado para a página inicial.
 
 SEM DISCREPANCIA-
 Scenario: Nenhuma discrepância entre os conceitos das metas atribuídos pelos alunos e pelo professor.
