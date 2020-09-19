@@ -47,6 +47,16 @@ And: O professor deu os conceitos "MANA, MPA, MPA ,MA, MPA" respectivamente nas 
 And: O professor deu os conceitos "MPA, MPA, MA, MPA, MPA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração” para o aluno “Lucas”.
 Then: Uma notificação apareceu para o "professor" indicando que houve discrepância no aluno “Thiago”.
 
+COM DISCREPANCIA-
+Scenario: Há discrepância entre os conceitos das metas atribuídos pelos alunos e pelo professor.
+Given: O aluno “Matheus” atribuiu os conceitos "MPA, MPA, MA, MPA, MA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração”.
+And: O aluno “Thiago” atribuiu os conceitos "MA, MA, MA, MA, MA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração”.
+And: O aluno “Lucas” atribuiu os conceitos "MPA, MPA, MA, MPA, MPA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração”.
+When: O professor deu os conceitos "MPA, MA, MA ,MPA, MPA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração” para o aluno “Matheus”.
+And: O professor deu os conceitos "MANA, MPA, MPA ,MA, MPA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração” para o aluno “Thiago”.
+And: O professor deu os conceitos "MPA, MPA, MA, MPA, MPA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração” para o aluno “Lucas”.
+Then: Uma notificação apareceu para o "professor" indicando que houve discrepância no aluno “Thiago”.
+
 SEM DISCREPANCIA-
 Scenario: Nenhuma discrepância entre os conceitos das metas atribuídos pelos alunos e pelo professor.
 Given: O aluno “Matheus” atribuiu os conceitos "MPA, MPA, MA, MPA, MA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos” E “Entender conceitos de refatoração”.
