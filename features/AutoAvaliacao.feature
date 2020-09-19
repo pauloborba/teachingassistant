@@ -35,3 +35,4 @@ Feature: auto-avaliação
         Then o sistema retorna um erro sobre a auto-avaliação não ter sido completada
         And eu estou armazenado no sistema com os conceitos "MA" e "MA", atribuídos pelo professor, para as metas "Entender conceitos de requisitos" e "Especificar requisitos com qualidade"
         And não há conceitos atribuídos por mim para as metas "Entender conceitos de requisitos" e "Especificar requisitos com qualidade" armazenados no sistema
+        And mais alguma coisa
