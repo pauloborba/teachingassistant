@@ -14,6 +14,7 @@ And Uma mensagem de conclusão bem sucedida aparece
 
 Scenario: Auto-avaliação bem sucedida
 Given Eu tenho acesso ao sistema como “aluno” com o nome de usuário “João Bento” e senha
+And Está cadastrado no sistema os conceitos “Entender conceitos de requisitos”, "Especificar requisitos com qualidade", "Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos” e "Testes"
 When Eu me avalio com com  "MA", "MA" , "MANA", "MPA" e "MA" 
 And: Solicito ao sistema a conclusão da operação de auto-avaliação 
 Then: O sistema verifica que todos os conceitos foram auto-avaliados 
