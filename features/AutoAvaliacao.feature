@@ -61,3 +61,5 @@ Feature: auto-avaliação
         And eu vejo "33,33%" para percentual de alunos com auto-avaliações discrepantes
         And eu vejo uma lista com a aluna "Raquel do Santos"
         And mais outra coisa significativa
+
+Adicionando linha no final do arquivo só pra não dar conflito
