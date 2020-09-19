@@ -42,7 +42,8 @@ And: Eu ainda vejo as avaliações que os professores deram para mim nas determi
 	Then: O sistema não é atualizado e o valor das auto-avaliações continuam em branco.
 	And: O sistema ainda deve poder receber novas informações 
 	And: O sistema deve permanecer logado com o aluno
-
+	
+   Cenário de GUI
 	Scenario Outline: Um aluno realiza a auto-avaliação completa sem notas discrepantes:
 	Given: Estou logado como aluno com username <studentusername>
 	And: Estou na tela de preenchimento de avaliação
@@ -54,6 +55,7 @@ And: Eu ainda vejo as avaliações que os professores deram para mim nas determi
         Then: Eu vejo uma mensagem da página sobre o sucesso da operação
         And: Eu vejo os resultados da a auto-avaliação e da avaliação dos professores nas determinadas metas na tela
 
+    Cenário de Serviço
 	Scenario Outline: Um aluno realiza a auto-avaliação completa com notas discrepantes:
         Given: Estou logado como professor com username <teacherusername>
         When: Eu entro na tela de alunos com auto avaliações discrepantes 
