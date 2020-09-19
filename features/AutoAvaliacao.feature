@@ -50,3 +50,11 @@ Scenario: No discrepancies found
 	And I can see the grades “MA, MPA, MPA, MANA, MPA” in the row “Bruno”, the grades “MANA, MA, MANA, MPA,	MPA” in the row “Carlos” and the grades “MPA, MPA, MA, MPA, MANA” in the row “Maria” on the self evaluation sub	row
 	When I select the option to see the discrepant self evaluations
 	Then I can see a screen that shows me there are “0” discrepant self evaluations, “0%” of the students made a discrepant self evaluation and no students are listed in the list of discrepant self evaluations
+
+Scenario: One discrepancy found
+	Given I am logged as the teacher “Marcelo”
+	And I am at the “students grades” page
+	And I can see the grades “MA, MPA, MA, MANA, MPA” in the row “Bruno”, the grades “MPA, MA, MANA, MPA, MA” in the row “Carlos” and the grades “MPA, MA, MA, MPA,	MANA” in the row “Maria” on grades sub row
+	And I can see the grades “MA, MPA, MPA, MANA, MPA” in the row “Bruno”, the grades “MA, MA, MPA, MPA, MPA” in the row “Carlos” and the grades “MPA, MPA, MA,	MPA, MANA” in the row “Maria” on the self evaluation sub row
+	When I select the option to see the discrepant self	evaluations
+	Then I can see a screen that shows me there is “1” discrepant self evaluation, “33%” of the students made a	discrepant self evaluation and “Carlos” is listed in the list of discrepant self evaluation
