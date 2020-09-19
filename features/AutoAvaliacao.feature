@@ -34,4 +34,3 @@ When mudo para página “avaliações discrepantes”
 Then eu vejo que existem “1” alunos com discrepância
 And vejo “33%” na porcentagem de discrepantes
 And é mostrado uma lista com seguintes alunos “Toni”
-Modificação 3
