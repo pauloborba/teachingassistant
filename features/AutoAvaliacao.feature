@@ -14,9 +14,6 @@ Given Estou na página 'Auto-avaliação'.
 When Eu envio as notas 'MA', e 'MPA' para as metas 'Conceitos de requisitos', e 'Especificar requisitos' mas deixo 'Gerência de configuração' em branco.
 Then Ainda estou na página 'Auto-avaliação'.
 And Posso ver uma mensagem de erro que diz 'Todos os campos devem ser preenchidos'.
-<<<<<<< HEAD
-And Stakeholder go brrr
-=======
 
 Scenario: Sem discrepâncias
 Given Estou logado como 'professor'.
@@ -33,4 +30,3 @@ When Confiro a discrepância.
 Then Ainda estou na página 'Discrepâncias'.
 And Vejo que o percentual de discrepância é '33%'.
 And Vejo que o aluno 'João' tem conceito superior em 3 de 5 metas, a aluna 'Maria' só tem conceitos inferiores ao do professor, e a aluna 'Júlia' só tem conceitos iguais.
->>>>>>> discrepantes
