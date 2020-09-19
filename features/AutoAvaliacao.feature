@@ -38,9 +38,7 @@ And: Estou na tela de preenchimento de avaliação
 And:Eu estou no modo de realizar minha auto-avaliação
 When: Eu deixo algumas colunas relacionadas a metas em branco
 And: Eu tento concluir minha auto-avaliação
-Then: O sistema não é atualizado e o valor das auto-avaliações continuam em branco.
-
-	Scenario Outline: Um aluno realiza a auto-avaliação completa sem notas discrepantes:
+Then: O sistema não é atualizado e o valor das auto-avaliações continuam em branco.	Scenario Outline: Um aluno realiza a auto-avaliação completa sem notas discrepantes:
 Given: Estou logado como aluno com username <studentusername>
     And: Estou na tela de preenchimento de avaliação
 And:Eu estou no modo de realizar minha auto-avaliação
@@ -50,7 +48,6 @@ And:Eu vejo as avaliações que os professores deram para mim nas determinadas m
         And: Eu tento concluir minha auto-avaliação
         Then: Eu vejo uma mensagem da página sobre o sucesso da operação
         And: Eu vejo os resultados da a auto-avaliação e da avaliação dos professores nas determinadas metas na tela
-
 	Scenario Outline: Um aluno realiza a auto-avaliação completa com notas discrepantes:
         Given: Estou logado como professor com username <teacherusername>
         When: Eu entro na tela de alunos com auto avaliações discrepantes 
