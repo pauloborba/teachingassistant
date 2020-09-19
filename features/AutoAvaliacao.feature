@@ -14,3 +14,4 @@ Given Estou na página 'Auto-avaliação'.
 When Eu envio as notas 'MA', e 'MPA' para as metas 'Conceitos de requisitos', e 'Especificar requisitos' mas deixo 'Gerência de configuração' em branco.
 Then Ainda estou na página 'Auto-avaliação'.
 And Posso ver uma mensagem de erro que diz 'Todos os campos devem ser preenchidos'.
+And Stakeholder go brrr
