@@ -27,7 +27,7 @@ And: O aluno “Matheus” deixou de preencher a nota na meta “Especificar req
 When: O aluno “Matheus” submeteu sua auto-avaliação para o sistema.
 Then: O sistema não armazena a submissão. 
 And: O sistema notifica ao aluno “Matheus” porque não armazenou sua auto-avaliação
-        
+		
 GUI-	
 Scenario: Submissão da auto-avaliação vazia.
 Given: O aluno “Matheus” fez sua auto-avaliação sem nenhum conceito em nenhuma das metas.
