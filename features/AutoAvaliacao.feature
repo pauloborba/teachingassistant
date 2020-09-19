@@ -37,6 +37,7 @@ Then: Uma mensagem de erro deve ser exibida.
 And: A auto-avaliação do aluno “Matheus” não é exibida na lista de auto-avaliações.
 And: O aluno "Matheus" será redirecionado para a página de preenchimento da auto-avaliação.
 
+COM DISCREPANCIA-
 Scenario: Há discrepância entre os conceitos das metas atribuídos pelos alunos e pelo professor.
 Given: O aluno “Matheus” atribuiu os conceitos "MPA, MPA, MA, MPA, MA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração”.
 And: O aluno “Thiago” atribuiu os conceitos "MA, MA, MA, MA, MA" respectivamente nas metas “Entender conceitos de requisitos”, “Especificar requisitos com qualidade”, “Entender conceitos de gerência de configuração”, “Entender conceitos de gerência de projetos”, “Entender conceitos de refatoração”.
