@@ -41,3 +41,4 @@ Scenario: Not adding grades to all learning goals (Service)
 	And The student “Pedro” has the grades “MA, MPA, MPA” assigned by the teacher
 	When the user logged as “Pedro” submits the grades “MA, -, MPA” as self evaluation
 	Then No grades will be registered as the self evaluation of the student “Pedro”
+	And *suggested change*
