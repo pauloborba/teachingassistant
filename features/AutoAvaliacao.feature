@@ -53,8 +53,11 @@ Feature: auto-avaliação
         And eu vejo o aluno "João das Neves" com auto-avaliação "MPA", "MA", "MPA", "MPA" e "MANA" e avaliação "MANA", "MA", "MPA", "MPA" e "MANA" para as metas estabelecidas
         And eu vejo a aluna "Raquel dos Santos" com auto-avaliação "MPA", "MA", "MANA", "MPA" e "MANA" e avaliação "MANA", "MPA", "MA", "MA" e "MPA" para as metas estabelecidas
         And eu vejo a aluna "Rosa Maria" com auto-avaliação "MA", "MA", "MA", "MPA", "MPA" e avaliação "MA", "MA", "MA", "MPA" e "MPA" para as metas estabelecidas
+        And alguma coisa significativa
         When eu solicito informação sobre quantidade, percentual e lista de alunos com auto-avaliações discrepantes
+        And outra coisa significativa
         Then eu estou na página de discrepâncias
         And eu vejo "1" para quantidade de alunos com auto-avaliações discrepantes
         And eu vejo "33,33%" para percentual de alunos com auto-avaliações discrepantes
         And eu vejo uma lista com a aluna "Raquel do Santos"
+        And mais outra coisa significativa
