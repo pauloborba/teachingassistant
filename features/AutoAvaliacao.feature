@@ -51,4 +51,13 @@ And:Eu vejo as avaliações que os professores deram para mim nas determinadas m
         Then: Eu vejo uma mensagem da página sobre o sucesso da operação
         And: Eu vejo os resultados da a auto-avaliação e da avaliação dos professores nas determinadas metas na tela
 
+	Scenario Outline: Um aluno realiza a auto-avaliação completa com notas discrepantes:
+        Given: Estou logado como professor com username <teacherusername>
+        When: Eu entro na tela de alunos com auto avaliações discrepantes 
+        Then: Eu vejo a quantidade de alunos com auto-avaliações discrepantes
+        And: Eu vejo a porcentagem de alunos com auto-avaliações discrepantes
+        And: Eu tenho a opção de ver a lista de alunos que estão com auto-avaliações discrepantes
+
+
+
 
