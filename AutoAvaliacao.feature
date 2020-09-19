@@ -19,3 +19,9 @@ Scenario: Adicionar auto-avaliação
 	When Eu preencho ALGUNS dos campos com tipos errados e confirmo
 	Then Eu vejo uma feedback de erro
 	And as auto-avaliações não foram salvos no sistema.
+
+Scenario: Visualizar auto-avaliações sem discrepância.
+    Given: Usuário na página de auto-avaliações.
+    And: Quando um aluno tem conceito superior ao do professor em 1 de 5 metas, outro só tem conceitos inferiores ao do professor, e outro só tem conceitos iguais
+    When: Usuário escolhe a opção de retirar alunos com discrepâncias .
+    Then: Feedback do sistema alertando que não há alunos com discrepâncias.
