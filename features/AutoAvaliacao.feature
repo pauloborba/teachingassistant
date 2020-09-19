@@ -34,3 +34,10 @@ And eu não adicionei nenhuma nota
 When eu boto pra salvar a nota
 Then o sistema retorna mensagem de erro
 And pede para eu adicionar uma nota
+
+GUI
+Scenario: Quando não há discrepância na nota dos alunos
+Given eu estou na aba de “lista de alunos com discrepâncias”
+And não tem nenhum aluno nesse requesito
+When eu procuro se tem algum aluno com discrepância na lista
+Then a lista não mostra nenhum aluno
