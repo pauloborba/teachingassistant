@@ -22,3 +22,11 @@ When Confiro a discrepância.
 Then Ainda estou na página 'Discrepâncias'.
 And Vejo que o percentual de discrepância é '0%'.
 And Vejo que o aluno 'João' tem conceito superior em 1 de 5 metas, a aluna 'Maria' só tem conceitos inferiores ao do professor, e a aluna 'Júlia' só tem conceitos iguais.
+
+Scenario: Com discrepâncias
+Given Estou logado como 'professor'.
+And Estou na página 'Discrepâncias'.
+When Confiro a discrepância.
+Then Ainda estou na página 'Discrepâncias'.
+And Vejo que o percentual de discrepância é '33%'.
+And Vejo que o aluno 'João' tem conceito superior em 3 de 5 metas, a aluna 'Maria' só tem conceitos inferiores ao do professor, e a aluna 'Júlia' só tem conceitos iguais.
