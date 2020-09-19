@@ -39,4 +39,6 @@ And:Eu estou no modo de realizar minha auto-avaliação
 When: Eu deixo algumas colunas relacionadas a metas em branco
 And: Eu tento concluir minha auto-avaliação
 Then: O sistema não é atualizado e o valor das auto-avaliações continuam em branco.
+And: O sistema ainda deve poder receber novas informações 
+And: O sistema deve permanecer logado com o aluno
 
