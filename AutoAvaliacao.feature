@@ -1,6 +1,6 @@
-Scenario: Cadastro e atualização de alunos 
-	Given Estou na pagina de cadastro de alunos
-	And Eu vejo os campos para inserir os dados do aluno
+Scenario: Adicionar auto-avaliação
+	Given Estou na pagina de auto-avaliação
+	And Eu vejo os campos para inserir as informações
 	When Eu preencho todos os campos e confirmo
 	Then Eu vejo uma feedback positivo
-	And Os dados do aluno foram salvos no sistema.
+	And as auto-avaliações foram salvos no sistema.
