@@ -33,3 +33,5 @@ Feature: Auto-avaliacao
 	    Then Eu vejo que “33%” dos alunos fizeram auto-avaliacoes discrepantes
 		And Vejo que um total de “1” alunos fizeram auto-avaliacoes discrepantes
 		And Vejo que a lista de alunos que fizeram auto-avaliacoes discrepantes contem “o aluno “1””
+
+	//initializing commented lines
