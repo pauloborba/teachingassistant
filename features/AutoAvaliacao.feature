@@ -38,4 +38,6 @@ And O "professor" vê que  tem "aluno" na lista
 And A tela informa que tem "aluno" prejudicado por discrepância
 Then O professor sabe que tem "aluno" prejudicado demaiss
 
+Scenario: Visualização de percentual de discrepânciaaa
+
 
