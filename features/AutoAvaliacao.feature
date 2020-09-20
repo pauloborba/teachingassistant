@@ -36,6 +36,6 @@ And O "aluno" tem conceitos superior aos conceitos do "professor"
 And O "aluno" tem discrepância maior que 30%
 And O "professor" vê que  tem "aluno" na lista
 And A tela informa que tem "aluno" prejudicado por discrepância
-Then O professor sabe que tem "aluno" prejudicado demais
+Then O professor sabe que tem "aluno" prejudicado demaiss
 
 
