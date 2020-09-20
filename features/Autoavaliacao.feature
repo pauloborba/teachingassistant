@@ -40,3 +40,10 @@ Given That I am logged as a teacher with username “teacher_1” and password �
 And I am at the “Class_1” page
 When I select the “Avaliações discrepantes” option
 Then I see a message stating that there are no self-evaluation discrepancies.
+
+Scenario: Discrepancies found between self-evaluation and teacher evaluation
+Given That I am logged as a teacher with username “teacher_1” and password “123” in the system
+And I am at the “Class_1” page
+When I select the “Avaliações discrepantes” option
+Then the “Avaliações discrepantes” page opens up
+And I see “Total = 1”, “Percentage of class = 33%”, and a list with the name “João Silva”. 
