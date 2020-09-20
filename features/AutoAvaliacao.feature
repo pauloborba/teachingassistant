@@ -65,5 +65,7 @@ And: Eu ainda vejo as avaliações que os professores deram para mim nas determi
         And: Eu vejo a porcentagem de alunos com auto-avaliações discrepantes
         And: Eu tenho a opção de ver a lista de alunos que estão com auto-avaliações discrepantes
 
+	Linha extra final.
+
 
 
