@@ -34,3 +34,14 @@ And: o aluno ‘Maria’ registrou ‘MPA’, ‘MPA’, ‘MPA’, ‘MPA’ e 
 And: o aluno ‘João’ registrou ‘MPA’, ‘MPA’, ‘MPA’, ‘MPA’ e ‘MPA’ para as metas, respectivamente e o professor registrou ‘MPA’, ‘MPA’, ‘MPA’, ‘MPA’ e ‘MPA’.
 When: quando o professor solicitar a análise.
 Then: aparecer na tela que não há alunos com discrepâncias.
+
+Scenario: há discrepâncias na auto-avaliação.
+Given: o professor da disciplina ‘ESS’ está na página de análise das auto-avaliações dos alunos nessa disciplina
+And: a disciplina possui apenas duas metas de aprendizado ‘Conceitos de Requisitos’ e ‘Especificação de Requisitos’.
+And: os alunos ‘Ana’, ‘Maria’ e ‘João’ já realizaram suas auto-avaliações com sucesso em todas as metas.
+And: o aluno ‘Ana’ registrou ‘MPA’ e ‘MPA’ para as metas, respectivamente e o professor registrou ‘MA’ e ‘MA’.
+And: o aluno ‘Maria’ registrou ‘MPA’ e ‘MPA’ para as metas, respectivamente e o professor registrou ‘MPA’ e ‘MPA’.
+And: o aluno ‘João’ registrou ‘MA’ e ‘MA’ para as metas, respectivamente e o professor registrou ‘MANA’ e ‘MANA’.
+When: quando o professor solicitar a análise.
+Then: aparecer na tela que apenas um de 3 alunos, ‘João’, possui discrepâncias.
+And: que a porcentagem de discrepâncias é de 33,3%.
