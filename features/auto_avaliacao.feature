@@ -13,3 +13,5 @@ Given: o professor está na página inicial das auto-avaliações dos alunos.
 And: dado que um aluno tem conceito superior ao professor em 1 de 5 metas, outro só tem conceitos inferiores ao do professor e outro aluno só tem conceitos iguais. 
 When: quando o professor solicitar “resolver”.
 Then: aparecer na tela que não há alunos com discrepâncias. 
+And adição de cláusula
+
