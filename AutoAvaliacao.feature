@@ -25,3 +25,8 @@ Scenario: Visualizar auto-avaliações sem discrepância.
     And: Quando um aluno tem conceito superior ao do professor em 1 de 5 metas, outro só tem conceitos inferiores ao do professor, e outro só tem conceitos iguais
     When: Usuário escolhe a opção de retirar alunos com discrepâncias .
     Then: Feedback do sistema alertando que não há alunos com discrepâncias.
+
+Scenario: Auto-avaliações com discrepância.
+    Given: Usuário na página de auto-avaliações.
+    And: Quando há discrepância em 1 de 3 alunos.
+    Then: Sistema retorna informações do aluno que possui discrepância.
