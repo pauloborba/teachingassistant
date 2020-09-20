@@ -49,6 +49,9 @@ When eu tento enviar as respostas
 Then o sistema dá um alerta de erro, pois nem tudo foi preenchido
 And volta para a tela de preenchimento
 
+# *Nota: Alteração pedida na questão 15 do roteiro
+# *Nota: Agora o segundo ajuste pedido
+
 
 
 
