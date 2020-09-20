@@ -20,10 +20,10 @@ When: quando o aluno preenche apenas a nota ‘MPA’ para a meta ‘Conceitos d
 Then: apareça uma mensagem de erro na tela avisando que as auto-avaliações não foram concluídas.
 
 Scenario: preenchimento mal sucedido de auto-avaliação.
-Given: que o aluno ‘Maria Júlia’ de CPF ‘1234’ esteja cadastrado na memória do sistema.
+Given: que o aluno ‘Maria Júlia’ de CPF ‘1234’ esteja cadastrado na memoria do sistema.
 And: esteja na página de auto-avaliação da disciplina ‘ESS’ onde existem as metas ‘Conceitos de Requisitos’ e ‘Especificação de Requisitos’, para as quais não existem notas de auto-avaliação registradas na memória do sistema.
 When: quando o aluno preenche apenas a nota ‘MPA’ para a meta ‘Conceitos de Requisitos’.
-Then: o aluno ‘Maria Júlia’ de CPF ‘1234’ continue sem nenhuma meta de auto-avaliação registrada na memória do sistema.
+Then: o aluno ‘Maria Júlia’ de CPF ‘1234’ continue sem nenhuma meta de auto-avaliação registrada na memoria do sistema.
 And: o professor eh informado.
 
 Scenario: não há discrepâncias nas auto-avaliações dos alunos.
