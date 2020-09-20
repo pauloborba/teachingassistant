@@ -24,3 +24,4 @@ Given: que o aluno ‘Maria Júlia’ de CPF ‘1234’ esteja cadastrado na mem
 And: esteja na página de auto-avaliação da disciplina ‘ESS’ onde existem as metas ‘Conceitos de Requisitos’ e ‘Especificação de Requisitos’, para as quais não existem notas de auto-avaliação registradas na memória do sistema.
 When: quando o aluno preenche apenas a nota ‘MPA’ para a meta ‘Conceitos de Requisitos’.
 Then: o aluno ‘Maria Júlia’ de CPF ‘1234’ continue sem nenhuma meta de auto-avaliação registrada na memória do sistema.
+Then: o professor eh informado.
