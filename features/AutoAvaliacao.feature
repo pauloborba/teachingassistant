@@ -28,3 +28,4 @@ Given The student 'Joao Vasconcelos' is stored with 'Entender requisitos', 'Ente
 When The user 'Joao Vasconcelos' asks the system to store "MPA, MA" as the self-assessment
 Then the system returns 'error'
 And The student 'Joao Vasconcelos' is stored with 'Entender requisitos', 'Entender gerência, and 'Especificar requisitos' as goals
+Then The system returns 'error storing incomplete self-assessment'
