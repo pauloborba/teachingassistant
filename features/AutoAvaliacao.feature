@@ -46,7 +46,7 @@ Then os conceitos  “MA” em “Entender conceitos de requisitos” , “MPA�
 
 Scenario: Auto-avaliação mal sucedida
 Given o estudante “João Santos” está com as metas “Entender conceitos de requisitos”, “Especificar Requisitos com Qualidade” e “Entender conceitos de gerência de configuração” sem conceito de Auto-Avaliação armazenados no sistema
-When preenchidos os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”  na coluna de Auto-Avaliação
+When preenchidos os conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar Requisitos com Qualidade”  na coluna de Auto-Avaliação
 And a meta “Entender conceitos de gerência de configuração” está sem conceito
 And os conceitos são enviados
 Then uma mensagem de preenchimento mal sucedido é enviada pelo sistema
