@@ -34,3 +34,4 @@ Given that the system has no grades stored on the self-evaluation section of my 
 When I select “MA, MANA or MPA” in some learning goals, while leaving one or more of them in blank and confirm
 Then the system does not store any grades whatsoever
 And now the system has no grades stored on the self-evaluation section of my profile
+Then *****placeholder step******
