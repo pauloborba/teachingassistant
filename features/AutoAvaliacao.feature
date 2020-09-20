@@ -49,3 +49,6 @@ And tem um aluno que se encaixa nesse requesito
 When eu procuro se tem algum aluno com discrepância na lista
 Then a lista mostra um aluno que se enquadra nesse requesito
 And me mostra o nome do aluno
+
+Branch Discrepantes
+Commit 1
