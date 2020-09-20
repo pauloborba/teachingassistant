@@ -32,6 +32,8 @@ And: Eu vejo que ainda é possível fazer a auto-avaliação
 And: Eu vejo que minhas respostas nas metas não foram salvas
 And: Eu ainda vejo as avaliações que os professores deram para mim nas determinadas metas
 
+	Linha extra no meio do arquivo
+
     Cenário de serviço:
 	Scenario Outline: Um aluno tenta fazer uma auto-avaliação parcial
 	Given: Estou logado como aluno com username <studentusername>
