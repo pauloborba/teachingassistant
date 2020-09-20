@@ -37,3 +37,4 @@ Feature: Auto-avaliacao
 	//initializing commented lines
 	//first commented line
 	//second commented line
+	//third commented line
