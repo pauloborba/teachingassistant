@@ -15,3 +15,11 @@ When: quando o professor solicitar “resolver”.
 Then: aparecer na tela que não há alunos com discrepâncias. 
 And adição de cláusula
 
+Scenario: há discrepâncias nas auto-avaliações dos alunos.
+
+Given: o professor está na página inicial das auto-avaliações dos alunos.
+When: quando o professor solicitar a análise.
+And: dada que há discrepância em 1 de 3 alunos cadastrados. 
+When: quando o professor solicitar “resolver”.
+Then: aparecer na tela as informações (nome, CPF, % de discrepância) do aluno que possui discrepância. 
+
