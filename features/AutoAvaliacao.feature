@@ -13,3 +13,4 @@ Scenario: Estudante cadastrando sua própria nota sem sucesso
 Given I am at the “Self-Grades” menu
 When I set the grade “-1” for the “Requirements” topic
 Then I can see an error message
+Then grade is not set
