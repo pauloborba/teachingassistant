@@ -18,3 +18,4 @@ When: quando o professor solicitar a análise.
 And: dada que há discrepância em 1 de 3 alunos cadastrados. 
 When: quando o professor solicitar “resolver”.
 Then: aparecer na tela as informações (nome, CPF, % de discrepância) do aluno que possui discrepância. 
+Add: adição de cláusula solicitada pelos stakeholders na questão 8
