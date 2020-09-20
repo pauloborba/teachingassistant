@@ -62,4 +62,4 @@ And a aluna “Ana Souza” está com os conceitos “MA” em “Entender conce
 And a aluna “Maria Almeida” está com os conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
 And a aluna “Maria Almeida” está com os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos por mim
 When seleciono para mostrar auto-avaliações discrepantes
-Then uma mensagem mostrando 1 aluno está com auto-avaliação discrepante, mostrando a porcentagem de 33% e uma lista contendo “João Oliveira”
+Then uma mensagem mostrando 1 aluno está com auto-avaliação discrepante, mostrando a porcentagem de 33% e uma lista contendo “João Oliveira”q
