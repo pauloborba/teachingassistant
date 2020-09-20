@@ -10,7 +10,7 @@ Scenario: Adicionar auto-avaliação
 	Given Estou na pagina de auto-avaliação
 	And Eu vejo os campos para inserir as informações
 	When Eu preencho ALGUNS dos campos e confirmo
-	Then Eu vejo uma feedback de erro
+	Then Eu vejo um alerta do sistema com o campo errado
 	And as auto-avaliações não foram salvos no sistema.
 
 Scenario: Adicionar auto-avaliação
