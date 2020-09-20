@@ -34,3 +34,9 @@ Given that the system has no grades stored on the self-evaluation section of my 
 When I select “MA, MANA or MPA” in some learning goals, while leaving one or more of them in blank and confirm
 Then the system does not store any grades whatsoever
 And now the system has no grades stored on the self-evaluation section of my profile
+
+Scenario: No discrepancies between self-evaluation and teacher evaluation
+Given That I am logged as a teacher with username “teacher_1” and password “123” in the system
+And I am at the “Class_1” page
+When I select the “Avaliações discrepantes” option
+Then I see a message stating that there are no self-evaluation discrepancies.
