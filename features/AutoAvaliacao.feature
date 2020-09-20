@@ -41,3 +41,11 @@ Given eu estou na aba de “lista de alunos com discrepâncias”
 And não tem nenhum aluno nesse requesito
 When eu procuro se tem algum aluno com discrepância na lista
 Then a lista não mostra nenhum aluno
+
+GUI
+Scenario: Quando há discrepância na nota dos alunos
+Given eu estou na aba de “lista de alunos com discrepâncias”
+And tem um aluno que se encaixa nesse requesito
+When eu procuro se tem algum aluno com discrepância na lista
+Then a lista mostra um aluno que se enquadra nesse requesito
+And me mostra o nome do aluno
