@@ -52,8 +52,3 @@ When eu procuro se tem algum aluno com discrepância na lista
 Then a lista mostra um aluno que se enquadra nesse requesito
 And me mostra o nome do aluno
 
-GUI
-Scenario: Solucionando o problema da discrepância
-Given eu estou com discrepancia
-When eu faço milagre
-Then adeus discrepância
