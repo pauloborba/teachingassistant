@@ -7,3 +7,14 @@ Given: O aluno x está na página de auto-avaliação
 And: O aluno termina de realizar sua auto-avaliação (modificação de uma linha)
 When: O aluno clica em “enviar auto-avaliação”
 Then: Uma mensagem dizendo “auto-avaliação concluída” é mostrada na tela
+
+
+
+Scenario : Aluno fazendo sua auto-avaliação
+Given: O aluno x está na página de auto-avaliação
+And: O aluno quer enviar sua auto-avaliação
+And: O aluno não avaliou todas as metas
+When: O aluno clica em “enviar auto-avaliação”
+Then: Uma mensagem dizendo “alguns espaços estão em branco, preencha-os e tente novamente.” é mostrada na tela.
+
+
