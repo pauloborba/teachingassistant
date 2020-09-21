@@ -1,0 +1,4 @@
+Feature: Auto-avaliação do aluno
+As a Teacher
+I want to be able to see the evaluation that my students made for themselves
+So that I’m able to see their opinion about how well they are in the goals
