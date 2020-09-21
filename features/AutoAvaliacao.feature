@@ -38,7 +38,7 @@ Then: aparecer na tela que não há alunos com discrepâncias.
 
 Scenario: há discrepâncias na auto-avaliação.
 Given: o professor da disciplina ‘ESS’ está na página de análise das auto-avaliações dos alunos nessa disciplina
-And: a disciplina possui apenas duas metas de aprendizado ‘Conceitos de Requisitos’ e ‘Especificação de Requisitos’.
+And: a disciplina possui apenas duas metas de aprendizado ‘Conceitos de Requisitos’ e ‘Especificacao de Requisitos’.
 And: os alunos ‘Ana’, ‘Maria’ e ‘João’ já realizaram suas auto-avaliações com sucesso em todas as metas.
 And: o aluno ‘Ana’ registrou ‘MPA’ e ‘MPA’ para as metas, respectivamente e o professor registrou ‘MA’ e ‘MA’.
 And: o aluno ‘Maria’ registrou ‘MPA’ e ‘MPA’ para as metas, respectivamente e o professor registrou ‘MPA’ e ‘MPA’.
