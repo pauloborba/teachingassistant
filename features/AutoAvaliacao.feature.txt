@@ -16,5 +16,6 @@ And: O aluno quer enviar sua auto-avaliação
 And: O aluno não avaliou todas as metas
 When: O aluno clica em “enviar auto-avaliação”
 Then: Uma mensagem dizendo “alguns espaços estão em branco, preencha-os e tente novamente.” é mostrada na tela.
+And: O aluno é redirecionado para a parte que está em branco
 
 
