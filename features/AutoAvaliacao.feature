@@ -21,3 +21,4 @@ Then Eu posso ver uma mensagem de falha
 And Eu estou na página de “autoavaliação”
 And Eu posso ver o conceito “MA” aplicado à “META1”, “MA” aplicado à “META2”
 And Eu vejo que o conceito para a “META3” está em branco
+And *teste*
