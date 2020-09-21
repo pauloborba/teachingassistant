@@ -27,6 +27,7 @@ Then: preencho no primeiro conceito “MA”
 And: preencho no terceiro conceito “MPA”
 And: Clico no botão 
 And: nota não foi calculada automaticamente.
+And: Passo adicional da questão 7
 
 GUI:
 Scenario: quando não há nenhuma discrepância
