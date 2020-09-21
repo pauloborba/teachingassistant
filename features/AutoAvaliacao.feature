@@ -46,3 +46,10 @@ Cenário: professor visualizando tela de relatório de auto-avaliação sem disc
     Quando o professor “João” solicitar a “tela de relatório de auto-avaliações”
     Então no campo “Total de alunos com auto-avaliações discrepantes” terá o número 0, o campo “Porcentagem de alunos com auto-avaliações discrepantes” terá 0%, e a “lista de alunos” estará vazia.
 
+Cenário: professor visualizando tela de relatório de auto-avaliação com discrepâncias
+    Dado que  o professor “João” está na “tela inicial” do sistema
+    E 1 a aluna Gabriela tem conceito superior ao do professor em 2 de 5 metas, “Elicitação de requisitos com qualidade”, com o campo da aluna “MA” e do professor “João” sendo “MANA”. “Entender conceitos de requisitos” com o campo da aluna “MA” e do professor “João” sendo “MP”.
+    E o aluno “Pedro” só tem conceitos inferiores ao do professor
+    E a aluna “Joana” só tem conceitos iguais.
+    Quando o professor “João” solicitar a “tela de relatório de auto-avaliações”
+    Então no campo “Total de alunos com auto-avaliações discrepantes” terá o número 1, o campo “Porcentagem de alunos com auto-avaliações discrepantes” terá 33,33%, e a “lista de alunos” terá um nome sendo “1. Gabriela”.
