@@ -2,3 +2,11 @@ Feature: Auto-avaliação do aluno
 As a Teacher
 I want to be able to see the evaluation that my students made for themselves
 So that I’m able to see their opinion about how well they are in the goals
+
+
+Scenario: Auto-avaliação bem-sucedida
+Given I’m at the “Main” page
+And I see the row for “Auto-avaliação” with no grades from the subject that has “Paulo Borba” as a teacher
+When I add the “MPA” as a grade for “Yuri Valença” in “Conceitos de requisitos”, “MA” for “Especificar requisitos” and “MPA” for “Gerência de configuração”
+Then A message with “Auto-avaliação bem-sucedida, obrigado!” pops up
+And I can no longer add or edit any grade in none of the “metas”
