@@ -26,7 +26,7 @@ When: quando o aluno preenche apenas a nota ‘MPA’ para a meta ‘Conceitos d
 Then: o aluno ‘Maria Júlia’ de CPF ‘1234’ continue sem nenhuma meta de auto-avaliação registrada na memoria do sistema.
 And: o professor eh informado.
 
-Scenario: não há discrepâncias nas auto-avaliações dos alunos.
+Scenario: não há discrepancias nas auto-avaliações dos alunos.
 Given: o professor da disciplina ESS está na página de análise das auto-avaliações dos alunos 
 And: a disciplina possui cinco metas de aprendizado ‘Conceitos de Requisitos’ , ‘Especificação de Requisitos’, ‘Gerência de Projeto’, ‘Identificação de Erros’ e ‘Gerência de Versões’.
 And: os alunos ‘Ana’, ‘Maria’ e 'Joao' já realizaram suas auto-avaliações com sucesso em todas as metas.
