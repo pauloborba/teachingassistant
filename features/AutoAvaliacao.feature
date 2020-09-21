@@ -29,7 +29,7 @@ And: o professor eh informado.
 Scenario: não há discrepâncias nas auto-avaliações dos alunos.
 Given: o professor da disciplina ESS está na página de análise das auto-avaliações dos alunos 
 And: a disciplina possui cinco metas de aprendizado ‘Conceitos de Requisitos’ , ‘Especificação de Requisitos’, ‘Gerência de Projeto’, ‘Identificação de Erros’ e ‘Gerência de Versões’.
-And: os alunos ‘Ana’, ‘Maria’ e ‘João’ já realizaram suas auto-avaliações com sucesso em todas as metas.
+And: os alunos ‘Ana’, ‘Maria’ e 'Joao' já realizaram suas auto-avaliações com sucesso em todas as metas.
 And: dado que o aluno ‘Ana’ registrou ‘MA’, ‘MPA’, ‘MPA’, ‘MPA’ e ‘MPA’ para as metas, respectivamente e o professor registrou ‘MPA’, ‘MPA’, ‘MPA’, ‘MPA’ e ‘MPA’.
 And: o aluno ‘Maria’ registrou ‘MPA’, ‘MPA’, ‘MPA’, ‘MPA’ e ‘MPA’ para as metas, respectivamente e o professor registrou ‘MA’, ‘MA’, ‘MA’, ‘MA’ e ‘MA’.
 And: o aluno ‘João’ registrou ‘MPA’, ‘MPA’, ‘MPA’, ‘MPA’ e ‘MPA’ para as metas, respectivamente e o professor registrou ‘MPA’, ‘MPA’, ‘MPA’, ‘MPA’ e ‘MPA’.
