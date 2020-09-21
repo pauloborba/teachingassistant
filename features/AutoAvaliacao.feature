@@ -24,5 +24,6 @@ Feature: Auto avaliação
 		Given Eu entro no sistema logado como professor
 		When Eu verifico as estatísticas relacionadas às Auto-avaliações
 		Then O sistema retorna os valores com os campos (quantidade = 2, percentual = 66,66%, lista = Mikael Vidal da Silva, Joãozinho de Recife)
+		And No sistema fica salvo dois alunos com uma nota discrepante a nota dado do professor
 
 	Questao 14
