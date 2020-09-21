@@ -36,4 +36,5 @@ Cenário: submissão mal sucedida de formulário de auto-avaliação
     Quando “Gabriel da Paz” preencher com “MA”o quesito “Elicitação de requisitos com qualidade”
     E  o quesito “Entender conceitos de requisitos” não for preenchido
     E “Gabriel da Paz” submeter formulário
-    Então o sistema retorna uma mensagem de erro alegando que é necessário preencher o campo “Entender conceitos de requisitos”.
+    Então o sistema retorna uma mensagem de erro alegando que é necessário preencher o campo “Entender conceitos de requisitos”
+    E atualiza a página
