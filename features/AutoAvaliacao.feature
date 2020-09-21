@@ -17,7 +17,7 @@ And os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” 
 
 Scenário: Preenchimento de Auto-avaliação mal sucedido
 Given Eu estou na página  “Auto-Avaliação”
-And Eu vejo os conceitos das metas  “Entender conceitos de requisitos”, “Especificar Requisitos com Qualidade” e “Entender conceitos de gerência de configuração” em branco
+And Eu vejo os conceitos das metas “Entender conceitos de requisitos”, “Especificar Requisitos com Qualidade” e “Entender conceitos de gerência de configuração” em branco
 And Seleciono para alterar o conceito de cada uma das as metas
 And Preencho os conceitos com “MA” para “Entender conceitos de requisitos” e “MPA” para Especificar Requisitos com Qualidade
 And Deixo a meta  “Entender conceitos de gerência de configuração” com seu conceito de auto-avaliação em branco
@@ -27,12 +27,12 @@ And
 
 Scenario: Discrepância em 1 de 3 alunos
 Given estou na página de auto-avaliações 
-And o aluno “João Oliveira” está com os conceitos “MA” em “Entender conceitos de requisitos” , “MA” em “Especificar Requisitos com Qualidade”, “MA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MPA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
-And o aluno “João Oliveira” está com os conceitos “MPA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MA” em  “Entender conceitos de gerência de configuração”, “MA” em “Entender conceitos de gerência de projetos” e “MPA” em “Entender conceitos de testes” preenchidos por mim
-And a aluna “Ana Souza”  está com os conceitos “MPA” em “Entender conceitos de requisitos” , “MANA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MANA” em “Entender conceitos de gerência de projetos” e “MPA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
-And a aluna “Ana Souza” está com os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos por mim
-And a aluna “Maria Almeida” está com os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
-And a aluna “Maria Almeida” está com os conceitos “MA” em “Entender conceitos de requisitos” , “MPA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos por mim
+And o aluno “João Oliveira” está com os conceitos “MA” em “Entender conceitos de requisitos”, “MA” em “Especificar Requisitos com Qualidade”, “MA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MPA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
+And o aluno “João Oliveira” está com os conceitos “MPA” em “Entender conceitos de requisitos”, “MPA” em “Especificar Requisitos com Qualidade”, “MA” em  “Entender conceitos de gerência de configuração”, “MA” em “Entender conceitos de gerência de projetos” e “MPA” em “Entender conceitos de testes” preenchidos por mim
+And a aluna “Ana Souza”  está com os conceitos “MPA” em “Entender conceitos de requisitos”, “MANA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MANA” em “Entender conceitos de gerência de projetos” e “MPA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
+And a aluna “Ana Souza” está com os conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar Requisitos com Qualidade”, “MA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos por mim
+And a aluna “Maria Almeida” está com os conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos em sua Auto-Avaliação
+And a aluna “Maria Almeida” está com os conceitos “MA” em “Entender conceitos de requisitos”, “MPA” em “Especificar Requisitos com Qualidade”, “MPA” em  “Entender conceitos de gerência de configuração”, “MPA” em “Entender conceitos de gerência de projetos” e “MA” em “Entender conceitos de testes” preenchidos por mim
 When seleciono mostrar auto-avaliações discrepantes
 Then uma mensagem mostrando 1 aluno está com auto-avaliação discrepante, mostrando a porcentagem de 33% e uma lista contendo “João Oliveira”
 
