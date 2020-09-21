@@ -29,7 +29,7 @@ And: Clico no botão
 And: nota não foi calculada automaticamente.
 
 GUI:
-Scenario: quando não há nenhuma discrepância
+Scenario: quando não há nenhuma discrepância de notas
 Given: Um professor loga no sistema e acessa no menu lateral a opção “Auto avaliação”.
 When: Vejo a coluna de “Nome do aluno” e ao lado a coluna “Discrepância”.
 And: Verifica que a coluna de “Nome do Aluno” não tem mais nada em baixo.
