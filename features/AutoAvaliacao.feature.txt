@@ -1,0 +1,32 @@
+Feature: Auto-avaliação do aluno
+As a Teacher
+I want to be able to see the evaluation that my students made for themselves
+So that I’m able to see their opinion about how well they are in the goals
+
+
+Scenario: Auto-avaliação bem-sucedida
+Given I’m at the “Main” page
+And I see the row for “Auto-avaliação” with no grades from the subject that has “Paulo Borba” as a teacher
+When I add the “MPA” as a grade for “Yuri Valença” in “Conceitos de requisitos”, “MA” for “Especificar requisitos” and “MPA” for “Gerência de configuração”
+Then A message with “Auto-avaliação bem-sucedida, obrigado!” pops up
+And I can no longer add or edit any grade in none of the “metas”
+
+
+Scenario: Auto-avaliação mal sucedida
+Given I’m at the “Main” page
+And I see the row for “Auto-avaliação” with no grades from the subject that has “Paulo Borba” as a teacher
+When I only add the “MPA” as a grade for “Yuri Valença” in “Conceitos de requisitos”
+Then A message with “Auto-avaliação bem-sucedida, obrigado!” pops up
+And I can’t add or edit other grades in any of the “metas”
+And I'm back at the "Main" page
+
+
+Cenário sem discrepância:
+Scenario: Auto-avaliação sem discrepâncias
+Given I’m logged as the teacher “Paulo Borba”
+And I’m at the “Main” page
+And I can see the grades “MA, MA, MPA, MA, MA” for “Conceitos de requisitos”, “Especificar requisitos”, “Gerência de configuração”, “Gerência de projetos” and “Testes”, respectively, at the row “Auto-avaliação”, and the grades “MA, MA, MPA, MA, MPA” at the row “Notas do professor” for the student “Yuri Valença”
+And I can see the grades “MANA, MPA, MPA, MANA, MANA” for “Conceitos de requisitos”, “Especificar requisitos”, “Gerência de configuração”, “Gerência de projetos” and “Testes”, respectively, at the row “Auto-avaliação”, and the grades “MPA, MA, MA, MPA, MPA” at the row “Notas do professor” for the student “João Silva”
+And I can see the grades “MA, MPA, MPA, MA, MANA” for “Conceitos de requisitos”, “Especificar requisitos”, “Gerência de configuração”, “Gerência de projetos” and “Testes”, respectively, at the row “Auto-avaliação”, and the grades “MA, MPA, MPA, MA, MANA”at the row “Notas do professor” for the student “Maria Santos”
+When I select the option to check any discrepant self evaluations
+Then I can see a pop-up screen that shows there are no discrepant self evaluations, 0% of the class had a discrepant self evaluation and the list showing the students with discrepant self evaluations is empty
