@@ -48,4 +48,4 @@ And I am at the “Class_1” page
 When I select the “Avaliações discrepantes” option
 Then the “Avaliações discrepantes” page opens up
 And I see “Total = 1”, “Percentage of class = 33%”, and a list with the name “João Silva”. 
-And ******placeholder_step******
+And ******placeholder_step*******
