@@ -27,4 +27,4 @@ And I’m at the “Main” page
 And I can see the grades “MA, MA, MPA, MA, MA” for “Conceitos de requisitos”, “Especificar requisitos”, “Gerência de configuração”, “Gerência de projetos” and “Testes”, respectively, at the row “Auto-avaliação”, and the grades “MA, MA, MPA, MA, MPA” at the row “Notas do professor” for the student “Yuri Valença”
 And I can see the grades “MANA, MPA, MPA, MANA, MANA” for “Conceitos de requisitos”, “Especificar requisitos”, “Gerência de configuração”, “Gerência de projetos” and “Testes”, respectively, at the row “Auto-avaliação”, and the grades “MPA, MA, MA, MPA, MPA” at the row “Notas do professor” for the student “João Silva”
 And I can see the grades “MA, MPA, MPA, MA, MANA” for “Conceitos de requisitos”, “Especificar requisitos”, “Gerência de configuração”, “Gerência de projetos” and “Testes”, respectively, at the row “Auto-avaliação”, and the grades “MA, MPA, MPA, MA, MANA”at the row “Notas do professor” for the student “Maria Santos”
-When I select the option to check any discrepant self evaluations
+When I select the option to check any discrepant self evaluations.
