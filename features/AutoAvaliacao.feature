@@ -37,3 +37,12 @@ Cenário: submissão mal sucedida de formulário de auto-avaliação
     E  o quesito “Entender conceitos de requisitos” não for preenchido
     E “Gabriel da Paz” submeter formulário
     Então o sistema retorna uma mensagem de erro alegando que é necessário preencher o campo “Entender conceitos de requisitos”.
+
+Cenário: professor visualizando tela de relatório de auto-avaliação sem discrepâncias
+    Dado que  o professor “João” está na “tela inicial” do sistema
+    E 1 a aluna Gabriela tem conceito superior ao do professor em 1 de 5 metas (“Elicitação de requisitos com qualidade”)
+    E o aluno “Pedro” só tem conceitos inferiores ao do professor
+    E “Joana” só tem conceitos iguais.
+    Quando o professor “João” solicitar a “tela de relatório de auto-avaliações”
+    Então no campo “Total de alunos com auto-avaliações discrepantes” terá o número 0, o campo “Porcentagem de alunos com auto-avaliações discrepantes” terá 0%, e a “lista de alunos” estará vazia.
+
