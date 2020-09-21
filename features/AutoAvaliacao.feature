@@ -28,7 +28,7 @@ Scenario: adicionar conceitos de auto-avaliação incompletas
 Scenario: não existe discrepância entre as notas dos alunos e do professor
     Given estou logado como "professor"
     And eu estou na página de "notas"
-    And o aluno "Pedro" possui conceitos "MA", "MPA", "MA", "MPA", "MPA", "atribuídos pelo professor"para as metas de "entender requisitos", "elicitar requisitos","especificar requisitos", "entender conceitos de gerência" e "realizar testes sólidos", respectivamente 
+    And o aluno "Pedro" possui conceito "MA", "MPA", "MA", "MPA", "MPA", "atribuídos pelo professor"para as metas de "entender requisitos", "elicitar requisitos","especificar requisitos", "entender conceitos de gerência" e "realizar testes sólidos", respectivamente 
     And o aluno "Pedro" possui conceitos "MPA",  "MANA",  "MPA", "MANA" e "MANA", "de auto-avaliação" para as metas de "entender requisitos", "especificar requisitos", "entender conceitos de gerência" e "realizar testes sólidos", respectivamente
     And o aluno "Lucas"  possui conceitos "MA", "MA", "MANA", "MPA", "MPA", "atribuídos pelo professor" para as metas de "entender requisitos", "elicitar requisitos",  "especificar requisitos", "entender conceitos de gerência" e "realizar testes sólidos", respectivamente 
     And o aluno "Lucas" possui conceitos "MA",  "MPA", "MPA", "MPA" e "MPA", "de auto-avaliação" para as metas de "entender requisitos", "elicitar requisitos", "especificar requisitos", "entender conceitos de gerência" e "realizar testes sólidos", respectivamente
