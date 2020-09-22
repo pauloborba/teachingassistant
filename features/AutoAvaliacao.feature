@@ -27,7 +27,7 @@ Given Estou na página de “alunos com autoavaliações discrepantes”
 And Eu vejo que não há alunos com “discrepância” maior ou igual a “25%”
 When Eu seleciono a opção de voltar à lista de alunos
 Then Eu posso ver que o aluno “Marcos Fernandes” tem “discrepância” de “20%”
-And Eu posso ver que o aluno “Ricardo Barros” tem “discrepância” de “0%”
+And Eu posso ver que o aluno “Joyce Santana” tem “discrepância” de “0%”
 And Eu posso ver que o aluno “Laura Souza” tem “discrepância” de “0%”
 
 Scenario: visualizar o percentual de alunos com discrepância
