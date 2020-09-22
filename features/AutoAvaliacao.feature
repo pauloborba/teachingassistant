@@ -46,3 +46,4 @@ And: Verifica que a coluna de “Nome do Aluno” tem o nome do aluno “Anderso
 Then: Quando clico em cima do Aluno “Anderson” sou redirecionado para à página onde tem as notas dele da auto-avaliação
 And: Quando volto para a página, vejo que ainda tem o nome do aluno “Anderson” e sua discrepância “25%”.
 #primeiro commit da questão 14) a) na bransh discrepante
+#segundo commit da questão 14) a) na bransh discrepante
