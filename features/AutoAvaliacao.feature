@@ -20,3 +20,4 @@ Scenario: verificar auto-avaliação
 	And retorno a página inicial
 
 Primeira alteração na branch discrepantes
+Segunda alteração na branch discrepantes
