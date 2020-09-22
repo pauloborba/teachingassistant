@@ -34,6 +34,6 @@ Scenario: visualizar o percentual de alunos com discrepância
 Given Estou na página de “autoavaliação de alunos”
 And Eu vejo que o aluno “Melissa Beltrão” tem “discrepância” de “33,33%”
 And Eu vejo que o aluno “Pedro Sampaio” tem “discrepância” de “0%”
-And Eu vejo que o aluno “Maria Santos” tem “discrepância” de “0%”
+And Eu vejo que o aluno “Lady Gaga” tem “discrepância” de “0%”
 When Eu seleciono a opção de visualizar o percentual de alunos com “discrepância”
 Then Eu posso ver o percentual de alunos com “discrepância”
