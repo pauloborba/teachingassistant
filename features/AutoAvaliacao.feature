@@ -6,6 +6,8 @@ Scenario: Adicionar auto-avaliação
 	Then Passo adicional, não especificado
 	And Meus conceitos não foram salvos no sistema.
 
+Alteração master pra o primeiro commit
+
 Scenario: verificar auto-avaliação
 	Given Estou na pagina de auto-avaliação
 	And Eu vejo os campos já preenchidos com os conceitos definidos
@@ -19,4 +21,3 @@ Scenario: verificar auto-avaliação
 	When Eu vejo os dados e há discrepância
 	Then Eu seleciono o botão retornar
 	And retorno a página inicial
-
