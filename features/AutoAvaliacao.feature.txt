@@ -22,7 +22,6 @@ Then: É aparecido na tela que não há nenhuma discrepância
 Scenario: checar possível discrepância
 Given: Estou na aba de auto-avaliação do aluno
 And: checo as notas que os alunos atribuiram para si mesmo
-When: comparo e vejo que 25% ou mais das notas atribuidas por 1 aluno são maiores que as atribuida pelo professor para aquele mesmo aluno
-Then: É aparecido na tela que há discrepância entre a avaliação daquele aluno e do professor.
-
+When: comparo e vejo que 25% ou mais das notas atribuidas por 1 aluno não são maiores que as atribuida pelo professor para aquele mesmo aluno
+Then: É aparecido na tela que não há nenhuma discrepância
 discrepantes
