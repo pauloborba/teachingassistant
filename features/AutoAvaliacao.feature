@@ -1,4 +1,5 @@
 Feature: Autoavaliação
+
 As a estudante
 I want to adicionar minha autoavaliação para minhas metas
 So that eu possa acompanhar minha evolução nas metas e informar ao professor minha autoavaliação
@@ -39,6 +40,14 @@ Then Vejo uma lista vazia com uma mensagem "Não há alunos com autoavaliações
 
 GUI scenario: ver lista de alunos com autoavaliação discrepante 
 Given Estou logado como professor 'Paulo Borba'
+And O aluno 'João Vasconcelos' tem avaliações 'MA, MA, MPA, MPA e MANA' e autoavaliações 'MA, MA, MA, MPA, MANA', a aluna 'Mariana Gomes' tem avaliações 'MA, MA, MA, MPA, MPA' e autoavaliações 'MPA, MPA, MPA, MANA, MANA', o aluno 'Pedro Silva' tem avaliações 'MANA, MPA, MPA' e autoavaliações 'MA, MA, MA'
+And Estou na página de avaliações
+Then Vejo uma os campos 'quantidade' com o valor '1' e 'porcentagem' com o valor '33%'
+When Seleciono o botão para ver a lista de alunos discrepantes
+Then Vejo uma lista com o nome 'Pedro Silva'
+
+GUI scenario: ver lista de alunos com autoavaliação discrepante 
+Given Estou logado como o professor 'Paulo Borba'
 And O aluno 'João Vasconcelos' tem avaliações 'MA, MA, MPA, MPA e MANA' e autoavaliações 'MA, MA, MA, MPA, MANA', a aluna 'Mariana Gomes' tem avaliações 'MA, MA, MA, MPA, MPA' e autoavaliações 'MPA, MPA, MPA, MANA, MANA', o aluno 'Pedro Silva' tem avaliações 'MANA, MPA, MPA' e autoavaliações 'MA, MA, MA'
 And Estou na página de avaliações
 Then Vejo uma os campos 'quantidade' com o valor '1' e 'porcentagem' com o valor '33%'
