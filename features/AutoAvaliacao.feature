@@ -21,3 +21,9 @@ Scenario: verificar auto-avaliação
 	When Eu vejo os dados e há discrepância
 	Then Eu seleciono o botão retornar
 	And retorno a página inicial
+<<<<<<< HEAD
+=======
+
+Primeira alteração na branch discrepantes
+Segunda alteração na branch discrepantes
+>>>>>>> discrepantes
