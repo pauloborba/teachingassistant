@@ -47,3 +47,5 @@ Then: Quando clico em cima do Aluno “Anderson” sou redirecionado para à pá
 And: Quando volto para a página, vejo que ainda tem o nome do aluno “Anderson” e sua discrepância “25%”.
 #primeiro commit da questão 14) a) na bransh discrepante
 #segundo commit da questão 14) a) na bransh discrepante
+#novo cenário de visualização de percentual de discrepância
+#pequeno ajuste no novo cenário de visualização de percentual de discrepância
