@@ -13,3 +13,5 @@ So that: As notas de auto-avaliação não ficam salvas
 Then: O usuário sai da aplicação
 
 Também não entendi qual cenário colocar aqui.
+Não entendi o cenário que deveria estar aqui
+
