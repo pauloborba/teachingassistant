@@ -37,6 +37,7 @@ And: Verifica que a coluna de “Nome do Aluno” não tem mais nada em baixo.
 And: Verifica que a coluna de “Auto avaliação” não tem mais nada em baixo.
 Then: Como os campos estão vazios, o professor pode concluir que não tem nem um aluno com discrepância de nota
 And: pode apertar no botão “Verificar todos os alunos” e será redirecionado para a página com a nota de todos os alunos, vendo que realmente nem uma nota está discrepante.
+#commit para questão 14) a) na bransh master
 
 Scenario: quando há discrepância entre a nota do aluno e o do professor
 Given: Um professor loga no sistema e acessa no menu lateral a opção “Auto avaliação”.
