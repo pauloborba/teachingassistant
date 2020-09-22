@@ -10,3 +10,4 @@ As as: Aluno
 I want to: Adicionar as notas de auto-avaliação em minha grade de avaliação
 And: não adicionei nenhuma nota
 So that: As notas de auto-avaliação não ficam salvas
+Then: O usuário sai da aplicação
