@@ -10,4 +10,19 @@ And: O aluno quer enviar sua auto-avaliação
 And: O aluno não avaliou todas as metas
 When: O aluno clica em “enviar auto-avaliação”
 Then: Uma mensagem dizendo “alguns espaços estão em branco, preencha-os e tente novamente.” é mostrada na tela.
+<<<<<<< HEAD
 And: O aluno é redirecionado para o local em que ainda não foi preenchido
+=======
+
+Scenario: checar possível discrepância
+Given: Estou na aba de auto-avaliação do aluno
+And: checo as notas que o aluno atribuiu para ele mesmo
+When: comparo e vejo que 25% ou menos das notas atribuidas pelo aluno são maiores que as atribuida pelo professor
+Then: É aparecido na tela que não há nenhuma discrepância
+Scenario: checar possível discrepância
+Given: Estou na aba de auto-avaliação do aluno
+And: checo as notas que os alunos atribuiram para si mesmo
+When: comparo e vejo que 25% ou mais das notas atribuidas por 1 aluno são maiores que as atribuida pelo professor para aquele mesmo aluno
+Then: É aparecido na tela que há discrepância entre a avaliação daquele aluno e do professor.
+
+>>>>>>> discrepantes
