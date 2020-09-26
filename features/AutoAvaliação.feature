@@ -37,5 +37,5 @@ Feature: Autoavaliação
               And Posso ver “1 de 3 alunos (33%)”
               And Posso ver na área “Alunos Discrepantes” uma lista com o nome do aluno discrepante.
               *ajuste*
-testes a partir do
-  rebase
+
+        Scenario: visualização de percentual de discrepância
