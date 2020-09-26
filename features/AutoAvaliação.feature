@@ -28,3 +28,11 @@ Feature: Autoavaliação
              When Peço para “ver as discrepâncias”
              Then Estou na página “Discrepâncias”
               And Vejo a mensagem “Não há discrepâncias”
+
+        Scenario: checagem de discrepâncias quando há 1 caso de discrepância entre 3 alunos
+            Given Eu estou logado como “teacher”
+              And Estou na página “Notas” com a opção “Mostrar Autoavaliações” selecionada
+             When Peço para “Ver Discrepâncias”
+             Then Estou na página “Discrepâncias”
+              And Posso ver “1 de 3 alunos (33%)”
+              And Posso ver na área “Alunos Discrepantes” uma lista com o nome do aluno discrepante.
