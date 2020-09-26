@@ -39,3 +39,6 @@ Feature: Autoavaliação
               *ajuste*
 
         Scenario: visualização de percentual de discrepância
+            Given
+             When
+             Then
