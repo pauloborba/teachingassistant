@@ -36,4 +36,8 @@ Feature: Autoavaliação
              Then Estou na página “Discrepâncias”
               And Posso ver “1 de 3 alunos (33%)”
               And Posso ver na área “Alunos Discrepantes” uma lista com o nome do aluno discrepante.
-  *a
+
+        Scenario: visualização de percentual de discrepância
+            Given
+             When
+             Then
