@@ -18,7 +18,7 @@
 
 button {
   font-family: Arial;
-  background-color: green;
+  background-color: #cfd8dc;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
@@ -26,5 +26,5 @@ button {
   cursor: hand;
 }
 button:hover {
-  background-color: #cfd8dc;
+  background-color: green;
 }

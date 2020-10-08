@@ -18,7 +18,7 @@ export class AppComponent {
    gravar(a: Aluno): void {
      if (this.alunoService.gravar(a)) {
        this.alunos.push(a);
-       this.aluno = {nome: "", cpf: "", email: ""};
+       this.aluno = {nome: "", cpf: "", email: "", github: ""};
      } else {
        this.aluno.cpf = "";
      }
