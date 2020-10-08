@@ -11,8 +11,8 @@
   left: 0;
   background-color: cyan;
   margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
+  padding: .3em .3em;
+  height: 100%;
   border-radius: 4px;
 }
 
