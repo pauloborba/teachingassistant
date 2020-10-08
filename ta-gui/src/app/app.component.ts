@@ -16,19 +16,11 @@ export class AppComponent {
    alunos: Aluno[] = [];
 
    gravar(a: Aluno): void {
-<<<<<<< HEAD
-     this.alunoService.gravar(a);
-
-     this.alunos.push(a);
-     this.aluno = {nome: "", cpf: "", email: "", github: ""};
-
-=======
      if (this.alunoService.gravar(a)) {
        this.alunos.push(a);
        this.aluno = {nome: "", cpf: "", email: ""};
      } else {
        this.aluno.cpf = "";
      }
->>>>>>> 573dd47... evitar cadastro de mais de um aluno com o mesmo cpf
   }
 }
