@@ -9,8 +9,8 @@
  <tr>
     <td><label>CPF </label></td>
     <td><input [(ngModel)]="aluno.cpf" ></td>
-    <td *ngIf="cpfduplicado">
-      Já existe um aluno com esse CPF
+    <td *ngIf="duplicado">
+      Já existe um aluno com esse CPF ou GitHub
     </td>
  </tr>
  <tr>
@@ -23,19 +23,20 @@
  </tr>
  </table>
 
-  <table>
- <tr *ngIf="alunos.length > 0">
-    <th>Nome</th>
-    <th>CPF</th>
-    <th>e-mail</th>
-    <th>github</th>
- </tr>
- <tr *ngFor="let a of alunos">
-    <td>{{a.nome}}</td>
-    <td>{{a.cpf}}</td>
-    <td>{{a.email}}</td>
-    <td>{{a.github}}</td>
- </tr>
- </table>
+   <table>
+      <tr *ngIf="alunos.length > 0">
+         <th>Nome</th>
+         <th>CPF</th>
+         <th>e-mail</th>
+         <th>github</th>
+      </tr>
+      <tr *ngFor="let a of alunos">
+         <td>{{a.nome}}</td>
+         <td>{{a.cpf}}</td>
+         <td>{{a.email}}</td>
+         <td>{{a.github}}</td>
+         <td><button (click)="deletarAluno(a)">Deletar</button></td>
+      </tr>
+   </table>
 
   </html>
