@@ -5,7 +5,7 @@
   "main": "ta-server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "./node_modules/typescript/bin/tsc",
+    "tsc": "./node_modules/.bin/tsc",
     "start": "npm run tsc && node compiledCode/ta-server.js"
   },
   "author": "Paulo Borba",
