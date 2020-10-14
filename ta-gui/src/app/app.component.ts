@@ -7,27 +7,5 @@ import { NgModule } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-<<<<<<< HEAD
-  [x: string]: any;
-   constructor(private alunoService: AlunoService) {}
-
-   aluno: Aluno = new Aluno();
-   alunos: Aluno[] = [];
-   cpfduplicado: boolean = false;
-
-   criarAluno(a: Aluno): void {
-     if (this.alunoService.criar(a)) {
-       this.alunos.push(a);
-       this.aluno = new Aluno();
-     } else {
-       this.cpfduplicado = true;
-     }
-   }
-
-   onMove(): void {
-      this.cpfduplicado = false;
-   }
-=======
->>>>>>> 55c891b... servidor integrado ao cliente
 
 }
