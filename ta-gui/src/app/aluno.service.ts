@@ -17,7 +17,7 @@ export class AlunoService {
     return this.http.post<any>(this.taURL + "/aluno", aluno, {headers: this.headers})
              .pipe( 
                 retry(2),
-                map( res => {if (res.success) {return aluno;} else {return null;}} )
+                map( res => { if (res.success) {return aluno;} else {return null;}} )
               ); 
   }
 
@@ -33,6 +33,14 @@ export class AlunoService {
               .pipe(
                  retry(2)
                );
+  }
+
+  deletar(cpf: string): Observable<string> {
+    return this.http.delete<any>(this.taURL + `/aluno/${cpf}`, {headers: this.headers})
+      .pipe(
+        retry(2),
+        map( res => { if (res.success) {return cpf;} else {return null;}} )
+      )
   }
 
 }
