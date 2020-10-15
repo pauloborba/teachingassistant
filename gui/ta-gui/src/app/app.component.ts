@@ -10,7 +10,6 @@ import { AlunoService } from './aluno.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-<<<<<<< HEAD
    constructor(private alunoService: AlunoService) {}
 
    aluno: Aluno = new Aluno();
@@ -30,13 +29,12 @@ export class AppComponent {
       this.cpfduplicado = false;
    }
 
-=======
-   aluno: Aluno = {nome: "", cpf: "", email: ""};
-   alunoService = new AlunoService();
-
    gravar(a: Aluno): void {
-     this.alunoService.gravar(a);
-     this.aluno = {nome: "", cpf: "", email: ""};
+     if (!this.alunoService.gravar(a)) {
+       this.alunos.push(a);
+       this.aluno = {nome: "", cpf: "", email: ""};
+     } else {
+       this.aluno.cpf = "";
+     }
   }
->>>>>>> 20bb097... botao e funcionalidade do formulario para cadastro de alunos
 }
