@@ -2,7 +2,7 @@ export class Aluno {
   nome: string;
   cpf: string;
   email: string;
-  gitLogin: String;
+  gitLogin: string;
   metas: Map<string,string>;
 
   constructor() {

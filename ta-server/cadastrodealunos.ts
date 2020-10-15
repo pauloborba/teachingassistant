@@ -5,7 +5,7 @@ export class CadastroDeAlunos {
 
     cadastrar(aluno: Aluno): Aluno {
      var result = null;
-     if (this.cpfNaoCadastrado(aluno.cpf)) {
+     if (this.cpfNaoCadastrado(aluno.cpf) && this.gitNaoCadastrado(aluno.gitLogin)) {
        result = new Aluno();
        result.copyFrom(aluno);
        this.alunos.push(result);
@@ -15,6 +15,10 @@ export class CadastroDeAlunos {
 
     cpfNaoCadastrado(cpf: string): boolean {
       return !this.alunos.find(a => a.cpf == cpf);
+   }
+
+    gitNaoCadastrado(gitLogin: string): boolean {
+    return !this.alunos.find(a => a.gitLogin == gitLogin);
    }
 
     atualizar(aluno: Aluno): Aluno {
