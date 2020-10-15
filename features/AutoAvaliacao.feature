@@ -1,65 +1,33 @@
-Feature: Snooze de menagem
+Feature: Auto-avaliacao
+As a Aluno
+I want to Atribuir um conceito (MA, MPA, e MANA) a cada uma de minhas metas.
+So that Minha auto-avaliação seja adicionada ao meu perfil em cada uma de minhas metas.
 
-GUI
-Scenario: Ativando o snooze de mensagem
-Given eu estou na página de “chat”
-And quero ativar o snooze de mensagem
-When eu aperto na engrenagem 
-And clico na “configuração de snooze”
-And eu configuro a data e a hora que eu quero que chat seja reativado
-Then o snooze foi ativado
-And eu não recebo mais notificações até a data definida
+Scenario: Auto-avaliacao bem sucedida
+Given Estou na página 'Auto-avaliação'.
+When Eu envio as notas 'MA', 'MPA', e 'MA' para as metas 'Conceitos de requisitos', 'Especificar requisitos', e 'Gerência de configuração'.
+Then Estou na página 'Detalhamento do aluno'.
+And Posso ver que tenho as notas 'MA', 'MPA', e 'MA' para as metas 'Conceitos de requisitos', 'Especificar requisitos', e 'Gerência de configuração' respectivamente na coluna 'Auto-avaliação'.
 
-GUI
-Scenario: Quando já existe o snooze
-Given eu já tinha criado um snooze
-And quero ativar o snooze de novo
-When eu aperto na engrenagem
-And clico na “configuração de snooze”
-Then aparece mensagem que já tinha criado
-And o sistema mostra mensagem se quero criar outro snooze
+Scenario: Auto-avaliação mal sucedida
+Given Estou na página 'Auto-avaliação'.
+When Eu envio as notas 'MA', e 'MPA' para as metas 'Conceitos de requisitos', e 'Especificar requisitos' mas deixo 'Gerência de configuração' em branco.
+Then Ainda estou na página 'Auto-avaliação'.
+And Posso ver uma mensagem de erro que diz 'Todos os campos devem ser preenchidos'.
 
-GUI
-Scenario: Adicionando a nota na auto-avaliação
-Given eu estou na página de adicionar a nota
-And eu vejo que por enquanto tou sem nota
-When eu adiciono a nota “MA”
-Then eu continuo na página de nota
-And eu vejo que sistema atualizou a página com a minha nota “MA” cadastrada com sucesso
+Scenario: Sem discrepâncias
+Given Estou logado como 'professor'.
+And Estou na página 'Discrepâncias'.
+When Confiro a discrepância.
+Then Ainda estou na página 'Discrepâncias'.
+And Vejo que o percentual de discrepância é '0%'.
+And Vejo que o aluno 'João' tem conceito superior em 1 de 5 metas, a aluna 'Maria' só tem conceitos inferiores ao do professor, e a aluna 'Júlia' só tem conceitos iguais.
 
-GUI
-Scenario: Erro ao adicionar a nota na auto-avaliação
-Given eu estou na página de adicionar a nota
-And eu não adicionei nenhuma nota
-When eu boto pra salvar a nota
-Then o sistema retorna mensagem de erro
-And pede para eu adicionar uma nota
-And a nota foi adicionada nesse caso
-
-
-GUI
-Scenario: Quando não há discrepância na nota dos alunos
-Given eu estou na aba de “lista de alunos com discrepâncias”
-And não tem nenhum aluno nesse requesito
-When eu procuro se tem algum aluno com discrepância na lista
-Then a lista não mostra nenhum aluno
-
-GUI
-Scenario: Quando há discrepância na nota dos alunos
-Given eu estou na aba de “lista de alunos com discrepâncias”
-And tem um aluno que se encaixa nesse requesito
-When eu procuro se tem algum aluno com discrepância na lista
-Then a lista mostra um aluno que se enquadra nesse requesito
-And me mostra o nome do aluno
-
-GUI
-Scenario: Solucionando o problema da discrepância
-Given eu estou com discrepancia
-When eu faço milagre
-Then adeus discrepância
-
-Branch master
-Commit 1
-Branch Discrepantes
-Commit 1
-Commit 2
+Scenario: Com discrepâncias
+Given Estou logado como 'professor'.
+And Estou na página 'Discrepâncias'.
+When Confiro a discrepância.
+Then Ainda estou na página 'Discrepâncias'.
+And Vejo que o percentual de discrepância é '33%'.
+And Vejo que o aluno 'João' tem conceito superior em 3 de 5 metas, a aluna 'Maria' só tem conceitos inferiores ao do professor, e a aluna 'Júlia' só tem conceitos iguais.
+And Vejo a mensagem 'existe discrepância'
