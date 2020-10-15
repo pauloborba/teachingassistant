@@ -27,6 +27,23 @@ export class CadastroDeAlunos {
      return result;
    }
 
+    excluir(cpf: string) {
+      var i;
+      var flag = true;
+      for(i=0; i<this.alunos.length; i++){
+        if(this.alunos[i].cpf == cpf){
+          flag = false;
+          break;
+        }
+      }
+      if(flag){
+        return null;
+      }
+      console.log(i);
+      this.alunos.splice(i,1);
+      return true;
+    }
+
     getAlunos(): Aluno[] {
      return this.alunos;
    }
