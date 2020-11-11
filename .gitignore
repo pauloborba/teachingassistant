@@ -36,6 +36,7 @@ build/Release
 
 # Dependency directories
 ta-server/compiledCode
+test-acceptance/compiledCode
 **/node_modules
 jspm_packages/
 
@@ -59,4 +60,9 @@ typings/
 
 # dotenv environment variables file
 .env
+
+#Common
+/dist 
+/tmp
+/out-tsc
 
