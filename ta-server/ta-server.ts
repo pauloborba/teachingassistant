@@ -1,9 +1,14 @@
-
 import express = require('express');
-
 import bodyParser = require("body-parser");
 
+import {Aluno} from '/aluno';
+import {CadastroDeAlunos} from './cadastrodealunos'; 
+import {Turmas} from './turmas'
+import {Matriculas} from './matriculas'
+
 var taserver = express();
+
+var cadastro: CadastroDeAlunos = new CadastroDeAlunos();
 
 var allowCrossDomain = function(req: any, res: any, next: any) {
     res.header('Access-Control-Allow-Origin', "*");
@@ -11,15 +16,20 @@ var allowCrossDomain = function(req: any, res: any, next: any) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 }
-
 taserver.use(allowCrossDomain);
+
 taserver.use(bodyParser.json());
 
-taserver.get('/', function(req,res) {
-  res.send("Oi, essa é uma resposta padrão do servidor do Teaching Assistant 2020-3")
+taserver.get('/alunos', function (req: express.Request, res: express.Response) {
+
 })
 
+//recebe um identificador de turma e retorna a mesma
+taserver.get('/turmas', function (req: express.Request, res: express.Response){
 
-taserver.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+})
+
+//recebe um identificador de turma e de aluno e retorna uma matricula
+taserver.get('/matriculas', function (req: express.Request, res: express.Response){
+
 })
