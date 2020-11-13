@@ -1,13 +1,13 @@
 export class Matricula{
     aluno: Aluno
-    avaliacoesList: Avaliacoes[] = []
-    autoAvaliacoesList: AutoAvaliacoes[] = []
-    monitorResponsavel: Monitor
-    roteiros: Roteiros[] = []
+    avaliacao: Avaliacao[] = []
+    autoAvaliacao: AutoAvaliacao[] = []
+    monitor: Monitor
+    respostadeRoteiro: respostaDeRoteiro[] = []
     
     getAluno(): Aluno;
-    getAvaliacoes(): Avaliacoes;
-    getAutoAvaliacoes(): AutoAvaliacoes;
-    getMonitorResponsavel(): Monitor;
+    getAvaliacao(): Avaliacao;
+    getAutoAvaliacoes(): AutoAvaliacao;
+    getMonitor(): Monitor;
     getRoteiros(): Roteiros;
 }
