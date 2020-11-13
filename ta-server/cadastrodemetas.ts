@@ -3,7 +3,7 @@ export class CadastroDeMetas {
     
      cadastrar(meta: String): void {}
 
-     atualizar(meta: String): void {}
+     remover(meta: String): void {}
 
      getMetas(): String[] {
       return this.metas;

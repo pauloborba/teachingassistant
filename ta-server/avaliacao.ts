@@ -2,7 +2,7 @@ export class Avaliacao {
     meta: String = "";
     nota: String = "";
     
-     cadastrar(meta: String, nota: String):void {}
+     setMeta(meta: String):void {}
 
-     atualizar(meta: String, nota: String):void{}
+     setNota(nota: String):void {}
  }
