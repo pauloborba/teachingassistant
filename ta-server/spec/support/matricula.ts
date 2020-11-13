@@ -3,7 +3,7 @@ export class Matricula{
     avaliacao: Avaliacao[] = []
     autoAvaliacao: AutoAvaliacao[] = []
     monitor: Monitor
-    respostadeRoteiro: respostaDeRoteiro[] = []
+    respostaDeRoteiro: respostaDeRoteiro[] = []
     
     getAluno(): Aluno;
     getAvaliacao(): Avaliacao;
