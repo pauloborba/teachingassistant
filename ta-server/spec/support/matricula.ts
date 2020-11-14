@@ -3,11 +3,11 @@ export class Matricula{
     avaliacoes: Avaliacao[] = []
     autoAvaliacoes: Avaliacao[] = []
     monitor: Monitor 
-    respostaDeRoteiro: RespostaDeRoteiro 
+    respostasDeRoteiros: RespostaDeRoteiro[] = []
     
     getAluno(): Aluno;
     getAvaliacoes(): Avaliacao;
     getAutoAvaliacoes(): Avaliacao;
     getMonitor(): Monitor;
-    getRespostaDeRoteiro(): RespostaDeRoteiro;
+    getRespostasDeRoteiros(): RespostaDeRoteiro;
 }
