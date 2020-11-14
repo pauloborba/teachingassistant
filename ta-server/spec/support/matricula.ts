@@ -6,8 +6,8 @@ export class Matricula{
     respostaDeRoteiro: respostaDeRoteiro 
     
     getAluno(): Aluno;
-    getAvaliacoes(): Avaliacao;
-    getAutoAvaliacoes(): AutoAvaliacao;
+    getAvaliacoes(): Avaliacoes;
+    getAutoAvaliacoes(): AutoAvaliacoes;
     getMonitor(): Monitor;
     getRespostaDeRoteiro(): RespostaDeRoteiro;
 }
