@@ -6,8 +6,8 @@ export class Matricula{
     respostasDeRoteiros: RespostaDeRoteiro[] = []
     
     getAluno(): Aluno;
-    getAvaliacoes(): Avaliacao;
-    getAutoAvaliacoes(): Avaliacao;
+    getAvaliacoes(): Avaliacao[];
+    getAutoAvaliacoes(): Avaliacao[];
     getMonitor(): Monitor;
-    getRespostasDeRoteiros(): RespostaDeRoteiro;
+    getRespostasDeRoteiros(): RespostaDeRoteiro[];
 }
