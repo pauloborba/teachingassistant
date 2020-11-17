@@ -1,4 +1,4 @@
-import { BlocoDeQuestoes } from './bloco-de-questoes';
+import { BlocoDeQuestoes } from './blocodequestoes';
 
 export class Roteiro {
     descricao: string = "";
