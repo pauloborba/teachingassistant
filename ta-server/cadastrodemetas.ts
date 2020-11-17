@@ -2,9 +2,7 @@ export class CadastroDeMetas {
     metas: String[] = [];
     
     cadastrar(meta: String): void {
-      this.metas.forEach(element => {
-        
-      });
+      
       return null;
     }
 

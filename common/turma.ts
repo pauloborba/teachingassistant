@@ -1,5 +1,5 @@
 import { Matricula } from './matricula';
-import { Roteiro } from './roteiro';
+import { Roteiro } from '../ta-server/roteiro';
 import { Aluno } from './aluno';
 
 export class Turma {
