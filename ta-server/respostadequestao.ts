@@ -4,12 +4,12 @@ export class RespostaDeQuestao{
     questao: Questao;
     resposta: String;
     nota: String;
-    correlacao: String;
+    correcao: String;
     duracao: number;
 
     getQuestao(): Questao{}
     getResposta(): String{}
     getNota(): String{}
-    getCorrelacao(): String{}
+    getCorrecao(): String{}
     getDuracao(): number{}
 }
