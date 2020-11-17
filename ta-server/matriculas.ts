@@ -1,4 +1,4 @@
-export class Matricula{
+export class Matriculas{
     aluno: Aluno
     avaliacoes: Avaliacao[] = []
     autoAvaliacoes: Avaliacao[] = []

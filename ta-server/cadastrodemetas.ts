@@ -1,11 +1,27 @@
 export class CadastroDeMetas {
     metas: String[] = [];
     
-     cadastrar(meta: String): void {}
+    cadastrar(meta: String): void {
+      this.metas.forEach(element => {
+        
+      });
+      return null;
+    }
 
-     remover(meta: String): void {}
+    remover(meta: String): void {
+      return null;
+    }
 
-     getMetas(): String[] {
+    atualizar(metaAntiga: String, metaNova: String): void {
+      this.metas.forEach(element => {
+        if (element === metaAntiga) {
+          element = metaNova
+        }
+      });
+      return null;
+    }
+
+    getMetas(): String[] {
       return this.metas;
     }
 } 
