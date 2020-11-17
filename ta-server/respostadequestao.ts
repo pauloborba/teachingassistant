@@ -5,11 +5,11 @@ export class RespostaDeQuestao{
     resposta: String;
     nota: String;
     correlacao: String;
-    duracao: Int16Array;
+    duracao: number;
 
     getQuestao(): Questao{}
     getResposta(): String{}
     getNota(): String{}
     getCorrelacao(): String{}
-    getDuracao(): Int16Array{}
+    getDuracao(): number{}
 }
