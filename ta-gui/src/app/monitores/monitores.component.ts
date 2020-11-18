@@ -10,7 +10,7 @@ import { Turma } from '../../../../common/turma';
 })
 export class MonitoresComponent implements OnInit {
   alunos: Aluno[] = [];
-  
+  turma: Turma;  
   constructor() { }
   
   ngOnInit() {

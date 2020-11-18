@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Roteiro } from '../../../../ta-server/roteiro';
+import { BlocoDeQuestoes } from '../../../../ta-server/blocodequestoes';
 
 @Component({
   selector: 'app-roteiros',
@@ -10,7 +11,7 @@ import { Roteiro } from '../../../../ta-server/roteiro';
 export class RoteirosComponent implements OnInit {
   roteiro: Roteiro;
   roteiros: Roteiro[] = [];
-  
+  questoes: BlocoDeQuestoes;
   constructor() { }
   
   ngOnInit() {

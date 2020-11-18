@@ -27,7 +27,7 @@ export class Turma {
     }
 
     getMatricula(cpf: string): Matricula {
-
+        return null;
     }
 
     getRoteiros(): Roteiro[] {

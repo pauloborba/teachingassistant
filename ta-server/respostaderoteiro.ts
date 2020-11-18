@@ -10,6 +10,10 @@ export class RespostaDeRoteiro {
         return this.nota
     }
 
-    getRoteiro(): Roteiro{}
-    getRespostasDeQuestoes(): RespostaDeQuestao[]{}
+    getRoteiro(): Roteiro{
+        return null;
+    }
+    getRespostasDeQuestoes(): RespostaDeQuestao[]{
+        return null;
+    }
 }
