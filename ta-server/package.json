@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run tsc && jasmine --config=./spec/support/jasmine.json",
     "tsc": "./node_modules/typescript/bin/tsc",
-    "start": "npm run tsc && node compiledCode/ta-server.js"
+    "start": "npm run tsc && node compiledCode/ta-server/ta-server.js"
   },
   "author": "Paulo Borba",
   "license": "MIT",

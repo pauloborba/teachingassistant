@@ -33,3 +33,13 @@ taserver.get('/turmas', function (req: express.Request, res: express.Response){
 taserver.get('/matriculas', function (req: express.Request, res: express.Response){
 
 })
+
+var server = taserver.listen(3000, function () {
+    console.log('Example app listening on port 3000!')
+})
+  
+function closeServer(): void {
+    server.close();
+}
+  
+export { server, closeServer }
