@@ -1,4 +1,4 @@
-import { Aluno } from "aluno"
+import { Aluno } from "./aluno"
 import { Avaliacao } from "../ta-server/avaliacao"
 import { RespostaDeRoteiro } from "../ta-server/respostaderoteiro"
 

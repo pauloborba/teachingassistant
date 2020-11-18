@@ -11,7 +11,8 @@ import { Avaliacao } from '../../../../ta-server/avaliacao';
 })
 export class AutoavaliacaoComponent implements OnInit {
   alunos: Aluno[] = [];
-
+  avaliacoes: Avaliacao[] = [];
+  matricula: Matricula;
   constructor() { }
 
   ngOnInit() {
