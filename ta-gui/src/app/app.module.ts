@@ -12,6 +12,8 @@ import { AlunosComponent } from './alunos/alunos.component';
 import { AutoavaliacaoComponent } from './autoavaliacao/autoavaliacao.component';
 import { MonitoresComponent } from './monitores/monitores.component';
 import { RoteirosComponent } from './roteiros/roteiros.component';
+import { AdicionarTurmaComponent } from './turmas/adicionar-turma/adicionar-turma.component';
+import { EditarTurmaComponent } from './turmas/editar-turma/editar-turma.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RoteirosComponent } from './roteiros/roteiros.component';
     AlunosComponent,
     AutoavaliacaoComponent,
     MonitoresComponent,
-    RoteirosComponent
+    RoteirosComponent,
+    AdicionarTurmaComponent,
+    EditarTurmaComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,14 @@ import { RoteirosComponent } from './roteiros/roteiros.component';
     {
       path: 'roteiros',
       component: RoteirosComponent
+    },
+    {
+      path: 'adicionar-turma',
+      component: AdicionarTurmaComponent
+    },
+    {
+      path: 'editar-turma',
+      component: EditarTurmaComponent
     },
     
   ])

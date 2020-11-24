@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Turma } from '../../../../common/turma';
+import {Router} from '@angular/router'
+
 
 @Component({
   selector: 'app-turmas',
@@ -9,9 +11,13 @@ import { Turma } from '../../../../common/turma';
 export class TurmasComponent implements OnInit {
   turmas: Turma[] = [];
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
 
+  }
+
+  onAdicionar(){
+    
   }
 }

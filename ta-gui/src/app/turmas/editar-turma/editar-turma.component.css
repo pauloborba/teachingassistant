@@ -45,10 +45,11 @@ body{
     margin-bottom: 0.5rem;
 }
 
-.adc:hover{
-    background-color: #265a27;
-}
-
 .mg-left{
     margin-left: 0.5rem;
+}
+
+
+.adc:hover{
+    background-color: #265a27;
 }

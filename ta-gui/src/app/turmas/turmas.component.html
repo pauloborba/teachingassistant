@@ -1,17 +1,28 @@
 <!-- Botões para cadastrar, remover, atualizar e comparar turmas -->
 <div id="botoes">
-
+    <button routerLink="/adicionar-turma" class="adc" >+ Adicionar Turma</button>
+    
 </div>
 
 <!-- Lista de turmas e suas médias -->
-<table>
-    <thead>
+<table id="turmas">
         <tr>
-            <th>Turma</th>
-            <th>Média</th>
+            <th>Ações</th>
+            <th>Descrição</th>
+            <th>Metas</th>
+            <th>Matriculas</th>
+            <th>Roteiro</th>
+            <th>Monitores</th>
+            <th>Quantidade Matriculas</th>
         </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
+        <tr>
+            <td><button routerLink="/editar-turma" class="adc">Editar</button> <button class="adc mg-left">Excluir</button></td>
+            <td>Disciplina sobre Engenharia de Software</td>
+            <td>Requisitos, Teste, Segurança</td>
+            <td>Nao sei</td>
+            <td>Nao sei</td>
+            <td>Rodrigo, Emmanuel, Vinicius</td>
+            <td>15</td>
+        </tr>
+    
 </table>
