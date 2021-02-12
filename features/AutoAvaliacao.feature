@@ -17,3 +17,18 @@ Feature: student auto-evaluation
         When I send the auto-evaluation grades “MA, MA, MA” to the system
         Then the system returns a successful response
         And the student “João Castro” is stored in the system with “MA, MPA, MPA” for the evaluated learning goals and “MA, MA, MA” for the auto-evaluation grades
+
+    Scenario: student unsuccessful auto-evaluation
+        Given I am at the “Auto-evaluation” page
+        And I have not filled the grades before
+        And the professor has graded me “MPA, MPA, MA”
+        When I add the grades “MA, MPA, -”
+        And I save the grades
+        Then I can see an error message
+        And I am still at the “Auto-evaluation page”
+
+    Scenario: receive student unsuccessful auto-evaluation
+        Given the student “João Castro” is stored in the system with “MA, MPA, MPA” for the evaluated learning goals and no auto-evaluation grades
+        When I send the auto-evaluation grades “MA, MA, -” to the system
+        Then the system returns an unsuccessful response
+        And the student “João Castro” is stored in the system with “MA, MPA, MPA” for the evaluated learning goals and no auto-evaluation grades
