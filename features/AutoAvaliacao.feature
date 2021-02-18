@@ -32,3 +32,8 @@ Feature: student auto-evaluation
         When I send the auto-evaluation grades “MA, MA, -” to the system
         Then the system returns an unsuccessful response
         And the student “João Castro” is stored in the system with “MA, MPA, MPA” for the evaluated learning goals and no auto-evaluation grades
+
+    Scenario: no discrepant student auto-evaluation
+        Given I am at the “Discrepant auto-evaluations” page
+        And none of the students have auto-evaluated with grade greater than that of the professor in at least 25% of the goals
+        Then I can see a message that there is no discrepant student auto-evaluation
