@@ -24,9 +24,11 @@ And stores the self evaluation
 scenarioscnascosanvoansvnoanvonavnxansvoansovnaonojfoajo
 And tal coisa que os stakeholders pediram
 
+
 Scenario: has outliers on self evaluation
 Given that I am logged in as a teacher
 And that I am on the grades page for a class
 And enrolled on that class are the students “Pedro”, “Mariana”, “João"
 Then i can see the grades and self evaluation of each student
 And i can see a report on the outliers, showing the quantity of outlier students “1”, the percentage of the class that they represent “33%”, and a list of each outlier student “Pedro”
+
