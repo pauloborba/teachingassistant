@@ -32,3 +32,4 @@ Feature: student auto-evaluation
         When I send the auto-evaluation grades “MA, MA, -” to the system
         Then the system returns an unsuccessful response
         And the student “João Castro” is stored in the system with “MA, MPA, MPA” for the evaluated learning goals and no auto-evaluation grades
+        And the system state has not changed
