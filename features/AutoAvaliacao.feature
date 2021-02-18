@@ -35,11 +35,11 @@ Feature: student auto-evaluation
         And the system state has not changed
 
     Scenario: no discrepant student auto-evaluation
-        Given I am at the “Discrepant auto-evaluations” page
-        And none of the students have auto-evaluated with grade greater than that of the professor in at least 25% of the goals
+        Given that none of the students have auto-evaluated with grade greater than that of the professor in at least 25% of the goals
+        When I go to the “Discrepant auto-evaluations” page
         Then I can see a message that there is no discrepant student auto-evaluation
 
     Scenario: discrepant student auto-evaluation
-        Given I am at the “Discrepant auto-evaluations” page
-        And one of the 3 students have auto-evaluated with grade greater than that of the professor in at least 25% of the goals
+        Given that one of the 3 students have auto-evaluated with grade greater than that of the professor in at least 25% of the goals
+        When I go to the “Discrepant auto-evaluations” page
         Then I can see a list with name of the student, the total count of students shows “1” and the percentage of the class with discrepancies shows “33,3%”
