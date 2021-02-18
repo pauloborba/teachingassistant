@@ -33,3 +33,13 @@ Feature: student auto-evaluation
         Then the system returns an unsuccessful response
         And the student “João Castro” is stored in the system with “MA, MPA, MPA” for the evaluated learning goals and no auto-evaluation grades
         And the system state has not changed
+
+    Scenario: no discrepant student auto-evaluation
+        Given I am at the “Discrepant auto-evaluations” page
+        And none of the students have auto-evaluated with grade greater than that of the professor in at least 25% of the goals
+        Then I can see a message that there is no discrepant student auto-evaluation
+
+    Scenario: discrepant student auto-evaluation
+        Given I am at the “Discrepant auto-evaluations” page
+        And one of the 3 students have auto-evaluated with grade greater than that of the professor in at least 25% of the goals
+        Then I can see a list with name of the student, the total count of students shows “1” and the percentage of the class with discrepancies shows “33,3%”
