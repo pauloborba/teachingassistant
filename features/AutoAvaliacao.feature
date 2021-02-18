@@ -20,3 +20,11 @@ Scenario: A teacher dashboard with no discrepancy cases
 	When no student has discrepancy in the chosen class
 	Then the list with students with discrepant self ratings will be empty
 	And the list with students with no discrepant self ratings will be fulfilled with the 3 students
+
+Scenario: A teacher dashboard with one discrepancy case	
+			Given I am a teacher logged in the system
+	And I selected the “Students self rating” page
+	And I selected a class that has 3 students
+	When one student has discrepancy in the chosen class
+	Then the list with students with discrepant self ratings will contain this student
+	And the list with students with no discrepant self ratings will be fulfilled with the 2 other students
