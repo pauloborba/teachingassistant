@@ -23,3 +23,18 @@ Scenario: Unsuccessfully do a self rating
     Then an error message will be shown in the page, telling me that I need to rate every goal
     And the “Send ratings” button will still be available because I need to solve the problem by rating every goal
 
+Scenario: A teacher dashboard with no discrepancy cases
+	Given I am a teacher logged in the system
+	And I selected the “Students self rating” page
+	And I selected a class that has 3 students
+	When no student has discrepancy in the chosen class
+	Then the list with students with discrepant self ratings will be empty
+	And the list with students with no discrepant self ratings will be fulfilled with the 3 students
+
+Scenario: A teacher dashboard with one discrepancy case	
+	Given I am a teacher logged in the system
+	And I selected the “Students self rating” page
+	And I selected a class that has 3 students
+	When one student has discrepancy in the chosen class
+	Then the list with students with discrepant self ratings will contain this student
+	And the list with students with no discrepant self ratings will be fulfilled with the 2 other students
