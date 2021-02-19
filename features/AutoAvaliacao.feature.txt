@@ -1,4 +1,5 @@
 Feature : Auto-avaliação
 Eu como aluno
 Quero poder colocar o quanto eu mereço em cada uma das metas
-Para que seja possível uma auto-avaliação.
+Para que seja possível uma auto-avaliação
+teste
