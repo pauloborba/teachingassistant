@@ -31,11 +31,11 @@ And houver discrepância entre mais de uma meta avaliada pelo aluno “Joaquim�
 When eu clico em gerar um relatório da turma “ESS”
 Then o sistema apresentará um relatório contendo o aluno “Joaquim” na lista de avaliações discrepantes
 
-Cenário: Fazendo relatório de auto-avaliação sem discrepância
+Cenário: Fazendo relatório de auto-avaliação com discrepância
 
-Given que eu sou um professor logado no sistema	com o login “alexandre” e a senha “4321”
-And eu selecionei a opção “Relatórios”
+Given que eu sou um professor logado no sistema	
+And eu selecionei a opção “avaliações discrepantes”
 And eu selecionei a turma “ESS”
-And não houver discrepância entre mais de uma meta avaliada por nenhum aluno comparadas com a do professor
+And houver discrepância entre mais de uma meta avaliada pelo aluno “Joaquim” comparadas com a do professor
 When eu clico em gerar um relatório da turma “ESS”
-Then nenhum aluno será mostrado na lista de avaliações discrepantes
+Then o sistema apresentará um relatório contendo o aluno “Joaquim” na lista de avaliações discrepantes
