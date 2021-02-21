@@ -40,3 +40,6 @@ And eu selecionei a turma “ESS”
 And houver discrepância entre mais de uma meta avaliada pelo aluno “Joaquim” comparadas com a do professor
 When eu clico em gerar um relatório da turma “ESS”
 Then o sistema apresentará um relatório contendo o aluno “Joaquim” na lista de avaliações discrepantes
+
+Duas linhas
+quaisquer
