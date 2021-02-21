@@ -20,5 +20,5 @@ And há uma tabela a ser preenchida com os conceitos de cada meta estabelecida p
 When eu selecionar apenas “MA” e “MPA”, dos três conceitos a serem preenchidos, e apertar o botão de enviar
 Then aparecerá uma mensagem na tela sinalizando a falha na operação
 And eu estarei na tela de “autoavaliação” com a possibilidade de preencher cada meta novamente
-And não houve mudanças na lista de discrepâncias  de metas avaliadas
-
+And não houve mudanças na lista de discrepâncias de metas já avaliadas
+And as avaliações já realizadas não mudaram
