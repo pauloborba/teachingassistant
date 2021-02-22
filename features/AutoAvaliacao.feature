@@ -23,6 +23,7 @@ And I have not done my self-evaluation
 When I fill the first two goals with “MA”, leaving the last one empty
 Then I am still at the “Auto-avaliação” page
 And I can see an error message
+And placeholder
 
 Scenario: Performing self-evaluation unsuccessfully (Not all fields were filled)
 Given there is no self-evaluation stored for student “John Smith”
