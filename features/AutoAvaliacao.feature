@@ -29,3 +29,9 @@ Given there is no self-evaluation stored for student “John Smith”
 When I enter the grades “MA, MA” for student “John Smith”
 Then the system returns an error message
 And the grades “MA, MA” are not stored for student “John Smith”
+
+Scenario: No discrepant self-evaluations
+Given there are three students enrolled, with the following grades and self-evaluations (in this order): “John Smith - MPA, MA, MA, MA, MA / MA, MA, MA, MA, MA; Foo Bar - MA, MA, MA, MA, MA / MA, MA, MA, MA, MA; Bobby Tables - MA, MA, MA, MA, MA / MPA, MPA, MPA, MPA, MPA
+And I am logged in as a teacher
+When I look at the discrepant self-evaluation page
+Then I am told there are no discrepant self-evaluations
