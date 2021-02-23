@@ -45,3 +45,4 @@ Then I can see that one student (33% of the class) has a discrepant self-evaluat
 And I can see a list containing “Bobby Tables - MA, MA, MA, MANA, MANA / MPA, MPA, MPA, MPA, MPA”
 And Houshou Marine
 And Sekai de ichiban kawaii yo
+And Mikocchi
