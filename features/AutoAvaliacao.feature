@@ -28,3 +28,13 @@ metas
 	And eu confirmo que entendi que ocorreu um erro
 	Then eu estarei da página “Autoavaliação” no mesmo estado
 que deixei a mesma
+
+Scenario: Fazendo relatório de auto-avaliação sem discrepância
+Given que eu sou um professor logado no sistema com o login
+“alexandre” e a senha “4321”
+And eu selecionei a opção “Relatórios”
+And eu selecionei a turma “ESS”
+When  não houver discrepância entre mais de uma meta
+avaliada pelos alunos comparadas com a do professor
+Then nenhum aluno será mostrado na lista de avaliações
+discrepantes
