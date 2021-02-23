@@ -29,3 +29,23 @@ metas
 	Then eu estarei da página “Autoavaliação” no mesmo estado
 que deixei a mesma
     Then Adicional
+
+Scenario: Fazendo relatório de auto-avaliação sem discrepância
+Given que eu sou um professor logado no sistema com o login
+“alexandre” e a senha “4321”
+And eu selecionei a opção “Relatórios”
+And eu selecionei a turma “ESS”
+When  não houver discrepância entre mais de uma meta
+avaliada pelos alunos comparadas com a do professor
+Then nenhum aluno será mostrado na lista de avaliações
+discrepantes
+
+Scenario: Fazendo relatório de auto-avaliação com discrepância
+Given que eu sou um professor logado no sistema com o login
+“alexandre” e a senha “4321”
+And eu selecionei a opção “Relatórios”
+And eu selecionei a turma “ESS”
+When houver discrepância entre mais de uma meta
+avaliada pelos alunos comparadas com a do professor
+Then uma lista de alunos será mostrado na lista de avaliações
+discrepantes
