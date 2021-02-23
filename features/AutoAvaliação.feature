@@ -34,4 +34,5 @@ And i can see a report on the outliers, showing the quantity of outlier students
 fix1
 fix2
 
+commit questão 14 - 1
 commit questão 14 - 3
