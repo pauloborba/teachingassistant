@@ -34,3 +34,10 @@ Given The student 'Joao Vasconcelos' is stored with 'Entender requisitos', 'Ente
 When The user 'Joao Vasconcelos' asks the system to store "MPA, MA" as the self-assessment
 Then the system returns 'error'
 And The student 'Joao Vasconcelos' is stored with 'Entender requisitos', 'Entender gerência, and 'Especificar requisitos' as goals
+
+GUI scenario: ver lista de alunos com autoavaliação discrepante 
+Given Estou logado como o professor 'Paulo Borba'
+And Estou na página de avaliações
+And O aluno 'João Vasconcelos' tem avaliações 'MA, MA, MPA, MPA e MANA' e autoavaliacoes 'MA, MA, MA, MPA, MANA' e a aluna 'Mariana Gomes' tem avaliações 'MA, MA, MA, MPA, MPA' e autoavaliações 'MPA, MPA, MPA, MANA, MANA'
+When Seleciono o botão para ver a lista de alunos discrepantes
+Then Vejo uma lista vazia com uma mensagem "Não há alunos com autoavaliações discrepantes"
