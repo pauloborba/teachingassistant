@@ -44,6 +44,5 @@ Scenario: A teacher dashboard with one discrepancy case
 Commit 1 Questão 14
 Commit 2 Questão 14
 testeee
-COMMIT 1 Q14 DNV
-COMMIT 2 Q14 DNV
-Alteração para questao 14
+COMMIT 1 Q14 DNVvvAlteracao q12
+COMMIT 2 Q14 DNVvv Alteracao q14
