@@ -40,6 +40,8 @@ Then: Eu estou na tela de autoavaliação
 And: Eu vejo que quantidade de alunos discrepantes é um
 And: Eu vejo que o percentual de alunos discrepantes é 33%
 And: Eu vejo que a lista de alunos discrepantes possui o nome do aluno discrepante em questão.
+linhaqualquer1
+linhaqualquer2
 
 
 
