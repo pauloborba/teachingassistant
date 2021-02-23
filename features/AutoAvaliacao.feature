@@ -28,3 +28,4 @@ metas
 	And eu confirmo que entendi que ocorreu um erro
 	Then eu estarei da página “Autoavaliação” no mesmo estado
 que deixei a mesma
+    Then Adicional
