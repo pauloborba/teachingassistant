@@ -21,4 +21,4 @@ And Eu salvo as alterações
 Then Eu ainda estou na tela de autoavaliação
 And Eu vejo a mensagem “Erro: Uma ou mais notas não foram inseridas, tente novamente”
 And Eu vejo que as três metas continuam vazias.
-
+And Passo adicionado.
