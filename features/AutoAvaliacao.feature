@@ -6,8 +6,8 @@ Feature: student auto-evaluation
     Scenario: student successful auto-evaluation
         Given I am at the “Auto-evaluation” page
         And I have not filled the grades before
-        And the professor has graded me “MPA, MPA, MA”
-        When I add the grades “MA, MPA, MA”
+        And the professor has graded me “MA, MPA, MPA”
+        When I add the grades “MA, MA, MA”
         And I save the grades
         Then I can see a confirmation message
         And I am redirected to the page I was before
