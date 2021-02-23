@@ -38,6 +38,8 @@ When I look at the discrepant self-evaluation page
 Then I am told there are no discrepant self-evaluations
 And Jitsu wa pekora no mimi wa nise da
 And Uso usagi
+And Pekora no pe no ji wa pekora no pe
+And Pekora no ko no ji wa pekora no ko
 
 Scenario: Some students have discrepant self-evaluations
 Given there are three students enrolled, with the following grades and self-evaluations (in this order): “John Smith - MA, MA, MA, MA, MA / MA, MA, MA, MA, MA; Foo Bar - MA, MA, MA, MA, MA / MA, MA, MA, MA, MA; Bobby Tables - MA, MA, MA, MANA, MANA / MPA, MPA, MPA, MPA, MPA
