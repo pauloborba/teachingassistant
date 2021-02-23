@@ -38,7 +38,7 @@ Scenario: A teacher dashboard with one discrepancy case
 	When one student has discrepancy in the chosen class
 	Then the list with students with discrepant self ratings will contain this student
 	And the list with students with no discrepant self ratings will be fulfilled with the 2 other students
-	availableaaa
+	availableaaa nvoa alt 2
 	aaa ye aqui nova alt 1
 
 Commit 1 Questão 14
