@@ -43,3 +43,8 @@ Feature: student auto-evaluation
         Given that 2 of the 6 students have auto-evaluated with grade greater than that of the professor in at least 25% of the goals
         When I go to the “Discrepant auto-evaluations” page
         Then I can see a list with name of the student, the total count of students shows “1” and the percentage of the class with discrepancies shows “33,3%”
+
+    Scenario: discrepant student auto-evaluation
+        Given that 3 of the 6 students have auto-evaluated with grade greater than that of the professor in at least 25% of the goals
+        When I go to the “Discrepant auto-evaluations” page
+        Then I can see a list with name of the student, the total count of students shows “1” and the percentage of the class with discrepancies shows “50%”
