@@ -1,0 +1,11 @@
+Feature : Auto-avaliação
+Eu como aluno
+Quero poder colocar o quanto eu mereço em cada uma das metas
+Para que seja possível uma auto-avaliação
+teste
+
+Cenário sem discrepância
+Given eu sou professor etc etc
+When eu clicar etc etc
+and etc etc 
+then B B B 
