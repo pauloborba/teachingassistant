@@ -34,7 +34,7 @@ Then o sistema apresentará um relatório contendo o aluno “Joaquim” na list
 
 Cenário: Fazendo relatório de auto-avaliação com discrepância
 
-Given que eu sou um professor logado no sistema	
+Given que eu sou um "professor" logado no sistema	
 And eu selecionei a opção “avaliações discrepantes”
 And eu selecionei a turma “ESS”
 And houver discrepância entre mais de uma meta avaliada pelo aluno “Joaquim” comparadas com a do professor
