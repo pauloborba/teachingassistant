@@ -37,6 +37,7 @@ And I am logged in as a teacher
 When I look at the discrepant self-evaluation page
 Then I am told there are no discrepant self-evaluations
 And Jitsu wa pekora no mimi wa nise da
+And Uso usagi
 
 Scenario: Some students have discrepant self-evaluations
 Given there are three students enrolled, with the following grades and self-evaluations (in this order): “John Smith - MA, MA, MA, MA, MA / MA, MA, MA, MA, MA; Foo Bar - MA, MA, MA, MA, MA / MA, MA, MA, MA, MA; Bobby Tables - MA, MA, MA, MANA, MANA / MPA, MPA, MPA, MPA, MPA
