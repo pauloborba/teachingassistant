@@ -40,3 +40,5 @@ Scenario: A teacher dashboard with one discrepancy case
 	And the list with students with no discrepant self ratings will be fulfilled with the 2 other students
 	availableaaa
 	aaa
+
+Commit 1 Questão 14
