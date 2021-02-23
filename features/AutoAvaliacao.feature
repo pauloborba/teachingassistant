@@ -17,4 +17,14 @@ Scenario: Fazendo a autoavaliação com sucesso
 	And eu confirmo que ocorreu tudo bem
 	Then eu estarei na página “Detalhamento do Aluno”
 
-Mudança teste
+Scenario: Fazendo a autoavaliação sem sucesso
+	Given que eu estou na página “Autoavaliação”
+	And eu sou um aluno que ainda não fez a autoavaliação
+	When eu não seleciono um conceito para cada uma das
+metas
+	And envio minha autoavaliação
+	Then surge um popup informando que eu devo selecionar um
+	conceito para cada uma das metas
+	And eu confirmo que entendi que ocorreu um erro
+	Then eu estarei da página “Autoavaliação” no mesmo estado
+que deixei a mesma
