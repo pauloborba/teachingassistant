@@ -33,7 +33,6 @@ Service scenario: add self-assessment for learning goals with error
 Given The student 'Joao Vasconcelos' is stored with 'Entender requisitos', 'Entender gerência, and 'Especificar requisitos' as goals
 When The user 'Joao Vasconcelos' asks the system to store "MPA, MA" as the self-assessment
 Then the system returns 'error'
-Then the self-assessment isn't stored
 And The student 'Joao Vasconcelos' is stored with 'Entender requisitos', 'Entender gerência, and 'Especificar requisitos' as goals
 
 GUI scenario: ver lista de alunos com autoavaliação discrepante 
