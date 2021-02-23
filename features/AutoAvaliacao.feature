@@ -22,3 +22,12 @@ Then Eu ainda estou na tela de autoavaliação
 And Eu vejo a mensagem “Erro: Uma ou mais notas não foram inseridas, tente novamente”
 And Eu vejo que as três metas continuam vazias.
 
+R 4 -
+Given: Estou na tela de autoavaliação
+And: Existem 5 alunos com autoavaliações, 1 com 20% de discrepância, e outros 4 sem discrepâncias
+When: Eu solicito a visualização da autoavaliação dos alunos
+Then: Eu estou na tela de autoavaliação
+And: Eu vejo que quantidade de alunos discrepantes é zero
+And: Eu vejo que o percentual de alunos discrepantes é zero
+And: Eu vejo que a lista de alunos discrepantes está vazia.
+
