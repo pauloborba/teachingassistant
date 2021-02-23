@@ -21,8 +21,8 @@ Feature: student auto-evaluation
     Scenario: student unsuccessful auto-evaluation
         Given I am at the “Auto-evaluation” page
         And I have not filled the grades before
-        And the professor has graded me “MPA, MPA, MA”
-        When I add the grades “MA, MPA, -”
+        And the professor has graded me “MA, MPA, MPA”
+        When I add the grades “MA, MA, -”
         And I save the grades
         Then I can see an error message
         And I am still at the “Auto-evaluation page”
