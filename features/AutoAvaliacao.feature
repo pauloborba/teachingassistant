@@ -43,3 +43,5 @@ And I am logged in as a teacher
 When I look at the discrepant self-evaluation page
 Then I can see that one student (33% of the class) has a discrepant self-evaluation
 And I can see a list containing “Bobby Tables - MA, MA, MA, MANA, MANA / MPA, MPA, MPA, MPA, MPA”
+And Houshou Marine
+And Sekai de ichiban kawaii yo
