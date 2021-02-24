@@ -36,4 +36,10 @@ Scenario: adicionar um número na autoavaliação das metas
 Scenario: não existe discrepância entre as autoavaliações e as avaliações do professor
 	Given Eu estou logado como professor
     When Eu vou para a página de discrepâncias 
-    Then Eu vejo a tabela vazia na listagem de alunos de acordo com a porcentagem de discrepância
+    Then Eu vejo a tabela vazia na listagem de alunos de acordo com a porcentagem de discrepância]
+
+Scenario: existe discrepância entre as autoavaliações e as avaliações do professor
+	Given Eu estou logado como professor
+    When Eu vou para a página de discrepâncias 
+    Then Eu vejo um aluno na tabela de listagem de alunos de acordo com a porcentagem de discrepância
+    And Eu posso visualizar e comparar as notas e autoavaliações, identificar quais são as discrepâncias e ver a porcentagem total de metas discrepantes.
