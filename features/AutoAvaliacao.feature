@@ -61,3 +61,5 @@ When  i look at the “% of discrepancy” space for each student i see “Maria
 And I see “Jose” with 40% of discrepancy
 And I see “João” with 0% of discrepancy
 Then I am at the "Página do Professor"
+And I see “Jose” with 40% of discrepancy
+And I see “João” with 0% of discrepancy
