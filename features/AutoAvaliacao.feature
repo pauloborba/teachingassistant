@@ -47,3 +47,6 @@ Scenario: existe discrepância entre as autoavaliações e as avaliações do pr
     And Adição 1
     And Adição 2
     And Adição 3
+
+Modificação 1
+Modificação 2
