@@ -35,9 +35,8 @@ Given The student “Cicrano” has "MPA, MA, MANA" for the average
 learning goals stored in system
 When “Cicrano” sends “MPA, ‘NULL’, ‘NULL’ ” for his three self-evaluation grades
 Then the system doesn’t store “MPA, ‘NULL’, ‘NULL’ ” for his self-evaluation grades in the system.
-<<<<<<< HEAD
 And The student “Cicrano” has "MPA, MA, MANA" for the average
-=======
+
 
 GUI
 Scenario: students grades and self-evaluation are the same
