@@ -26,7 +26,7 @@ And I can see a list containing the missing grades
 
 Scenario: AutoAvaliacao sem notas discrepantes 
 Given I’m logged in as “AAluno”
-And I am at the “Auto-Avaliação” page
+And I am at the “AAuto-Avaliação” page
 And I see no self-evaluation grades added
 And I see the teacher's grades “MA” for “Elicitar e escrever requisitos”
 And I see the teacher's grades “MA” for “Usar sistema de controle de versão”
