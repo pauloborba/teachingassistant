@@ -44,3 +44,5 @@ Scenario: existe discrepância entre as autoavaliações e as avaliações do pr
     When Eu vou para a página de discrepâncias 
     Then Eu vejo um aluno na tabela de listagem de alunos de acordo com a porcentagem de discrepância
     And Eu posso visualizar e comparar as notas e autoavaliações, identificar quais são as discrepâncias e ver a porcentagem total de metas discrepantes.
+    And Adição 1
+    And Adição 2
