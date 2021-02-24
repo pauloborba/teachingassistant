@@ -27,7 +27,7 @@ And I see grades from my teacher and no grade for self-evaluation
 When  fill one of three empty space for self-evaluation
 Then i see an unreachable red button “enviar”  
 And i am still at the “Auto Avaliação”  page
-And I see grades from my teacher and one grade for self-evaluation 
+And I see grades from my teacher and one grade for self-evaluation
 
 SERVICO
 Scenario: student doing his self-assessment incompletely
@@ -35,3 +35,4 @@ Given The student “Cicrano” has "MPA, MA, MANA" for the average
 learning goals stored in system
 When “Cicrano” sends “MPA, ‘NULL’, ‘NULL’ ” for his three self-evaluation grades
 Then the system doesn’t store “MPA, ‘NULL’, ‘NULL’ ” for his self-evaluation grades in the system.
+And The student “Cicrano” has "MPA, MA, MANA" for the average
