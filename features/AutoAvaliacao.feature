@@ -22,3 +22,4 @@ And I add the grades “” for “Usar sistema de controle de versão”
 And I add the grades “MA” for “Projetar e implementar features e cenários”
 Then I’m at the “Auto-Avaliação” page
 And I can see an error message about missing grade
+And I can see a list containing the missing grades
