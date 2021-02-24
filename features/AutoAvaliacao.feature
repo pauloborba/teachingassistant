@@ -36,3 +36,28 @@ learning goals stored in system
 When “Cicrano” sends “MPA, ‘NULL’, ‘NULL’ ” for his three self-evaluation grades
 Then the system doesn’t store “MPA, ‘NULL’, ‘NULL’ ” for his self-evaluation grades in the system.
 And The student “Cicrano” has "MPA, MA, MANA" for the average
+
+
+GUI
+Scenario: students grades and self-evaluation are the same
+Given I am logged as “Professor” with the login “professor” and password “abc123”
+And I am at the "Página do Professor"
+And I see “Maria” grades, “MA, MA, MA, MA, MA”, and her self-evaluation grades, “MA, MA, MA, MA, MA”
+And I see “Jose” grades, “MA, MANA, MPA, MA, MA”, and her self-evaluation grades, “MA, MANA, MA, MA, MA”
+And I see “João” grades, “MA, MA, MPA, MA, MA”, and her self-evaluation grades, “MPA, MPA, MANA, MPA, MPA”
+When  i look at the “% of discrepancy” space for each student i see “Maria” with 0%
+And I see “Jose” with 20%
+And I see “João” with 0%
+Then I am at the "Página do Professor"
+
+GUI
+Scenario: students grades and self-evaluation are the same
+Given I am logged as “Professor” with the login “professor” and password “abc123”
+And I am at the "Página do Professor"
+And I see “Maria” grades, “MA, MA, MA, MA, MA”, and her self-evaluation grades, “MA, MA, MA, MA, MA”
+And I see “Jose” grades, “MA, MANA, MPA, MA, MA”, and her self-evaluation grades, “MA, MA, MA, MA, MA”
+And I see “João” grades, “MA, MA, MPA, MA, MA”, and her self-evaluation grades, “MPA, MPA, MANA, MPA, MPA”
+When  i look at the “% of discrepancy” space for each student i see “Maria” with 0%
+And I see “Jose” with 40% of discrepancy
+And I see “João” with 0% of discrepancy
+Then I am at the "Página do Professor"
