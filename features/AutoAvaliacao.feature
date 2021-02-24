@@ -42,7 +42,7 @@ And I can see a message about "Nenhuma discrepância detectada"
 
 Scenario: AutoAvaliacao com notas discrepantes 
 Given I’m logged in as “Aluno”
-And I am at the “Auto-Avaliação” page
+And I am at the “Auto Avaliação” page
 And I see no self-evaluation grades added
 And I see the teacher's grades “MA” for “Elicitar e escrever requisitos”
 And I see the teacher's grades “MPA” for “Usar sistema de controle de versão”
