@@ -3,7 +3,7 @@ Importação de alunos a partir de uma planilha como a de Nomes e Login
 
 Cenário: Fazendo a autoavaliação com sucesso
 
-Given eu estou logado como um aluno com o login “tiago” e a senha “1234”
+Given eu estou logado como um "aluno" com o login “tiago” e a senha “1234”
 And eu estou na tela de “autoavaliação”
 And há uma tabela a ser preenchida com os conceitos de cada meta estabelecida pelo professor da disciplina
 When eu selecionar os conceitos (“MANA, MPA OU MA”) de todas as metas
