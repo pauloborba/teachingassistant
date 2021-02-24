@@ -32,3 +32,4 @@ Scenario: adicionar um número na autoavaliação das metas
     When Vitória adiciona o número 8 como autoavaliação para a meta “Requisitos 1”
     Then o conceito 8 para a meta “Requisitos 1” não é salvo no sistema
     And Vitória não possui conceitos de autoavaliação registrados
+    And Vitória não consegue observar as discrepâncias da autoavaliação
