@@ -63,3 +63,5 @@ And I see “João” with 0% of discrepancy
 Then I am at the "Página do Professor"
 And I see “Jose” with 40% of discrepancy
 And I see “João” with 0% of discrepancy
+
+Teste da primeira alteração do master
