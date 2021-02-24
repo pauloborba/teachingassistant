@@ -46,3 +46,4 @@ Scenario: existe discrepância entre as autoavaliações e as avaliações do pr
     And Eu posso visualizar e comparar as notas e autoavaliações, identificar quais são as discrepâncias e ver a porcentagem total de metas discrepantes.
     And Adição 1
     And Adição 2
+    And Adição 3
