@@ -69,3 +69,5 @@ And I see “Jose” with 40% of discrepancy
 And I see “João” with 0% of discrepancy
 
 Teste da primeira alteração do master
+
+pequeno ajuste no novo cenário de visualização de percentual de discrepância
