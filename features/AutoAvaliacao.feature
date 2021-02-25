@@ -50,6 +50,8 @@ And I see “Jose” with 20%
 And I see “João” with 0%
 Then I am at the "Página do Professor"
 
+primeiro commit de alteração no branch discrepants
+
 GUI
 Scenario: students grades and self-evaluation are the same
 Given I am logged as “Professor” with the login “professor” and password “abc123”
