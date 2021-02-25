@@ -38,6 +38,8 @@ Then the system doesn’t store “MPA, ‘NULL’, ‘NULL’ ” for his self-
 And The student “Cicrano” has "MPA, MA, MANA" for the average
 
 
+segundo commit de alteração no branch discrepants
+
 GUI
 Scenario: students grades and self-evaluation are the same
 Given I am logged as “Professor” with the login “professor” and password “abc123”
