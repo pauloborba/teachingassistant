@@ -60,3 +60,5 @@ typeScript/
 # dotenv environment variables file
 .env
 
+#ta-gui
+ta_gui/node_modules/
