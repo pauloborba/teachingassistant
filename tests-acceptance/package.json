@@ -2,7 +2,7 @@
   "name": "testes-acceptance",
   "description": "Testes de aceitação do teaching assistant",
   "scripts": {
-    "tsc": "./node_modules/typescript/bin/tsc",
+    "tsc": "D:/Faculdade/2021.1/ESS/teachingassistant/ta-server/node_modules/.bin/tsc",
     "test": "npm run tsc && protractor compiledCode/config/config.js",
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start"
@@ -17,9 +17,9 @@
     "cucumber": "^2.3.0",
     "cucumber-html-reporter": "^4.0.5",
     "mkdirp": "^0.5.1",
-    "protractor": "^5.1.2",
+    "protractor": "^7.0.0",
     "protractor-cucumber-framework": "^3.1.1",
-    "typescript": "^2.9.2",
-    "ts-node": "^3.1.0"
+    "ts-node": "^3.1.0",
+    "typescript": "^2.9.2"
   }
 }
