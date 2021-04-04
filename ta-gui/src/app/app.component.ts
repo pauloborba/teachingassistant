@@ -11,7 +11,7 @@ export class AppComponent {
 }
 
 export class Aluno {
-  nome: string;
-  cpf: string;
-  email: string;
+  nome!: string;
+  cpf!: string;
+  email!: string;
 }
