@@ -9,10 +9,13 @@ import { AlunoService } from './aluno.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+
    constructor(private alunoService: AlunoService) {}
 
    aluno: Aluno = new Aluno();
+
    alunos: Aluno[] = [];
    cpfduplicado: boolean = false;
 
@@ -27,6 +30,10 @@ export class AppComponent {
 
    onMove(): void {
       this.cpfduplicado = false;
+   }
+
+   atualizarAluno(aluno: Aluno): void {
+      this.alunoService.atualizar(aluno);
    }
 
 }
