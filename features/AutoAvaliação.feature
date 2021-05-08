@@ -1,0 +1,85 @@
+Feature: Auto-avaliação de metas.
+As a: Aluno membro de uma instituição de ensino.
+i want to: me auto-avaliar e visualizar as notas que recebi pelo professor em cada meta.
+so that: Analisar se a nota que eu esperava receber condiz com a nota que recebi.
+
+GUI based scenario
+
+Scenario: Auto-avaliando todos os conceitos.
+Given eu estou na página “Home” logado como “Samuel Miranda” na turma "ESS-2019.2"
+And eu vejo que ainda não me auto-avaliei
+When seleciono a opção “Avalie-se”
+And eu adiciono as notas “MA,MPA ou MANA” em todos os campos de “Nota de auto-avaliação”
+And eu finalizo o cadastro de notas
+Then eu visualizo uma mensagem de confirmação do procedimento
+And as notas auto-avaliadas são salvas
+
+Service based scenario
+
+Scenario: Auto-avaliando todos os conceitos.
+Given o estudante “Samuel Oliveira” está cadastrado na turma "ESS-2019.2"
+And o estudante não auto-avaliou-se no sistema de notas
+When Ele insere no sistema as notas “MA,MPA ou MANA” de todas as metas propostas para ele avaliar
+And ele tenta salvar as notas no sistema
+Then todas as notas auto-avaliadas por “Samuel Oliveira” são salvas no sistema
+
+-------------------------PREENCHIMENTO MAL SUCEDIDO-----------------------------
+GUI based scenario
+
+Scenario: Não auto-avaliando todos os conceitos.
+Given eu estou na página “Home” logado como “Johnny Herbert” na turma "ESS-2019.2"	
+And eu vejo que ainda não me auto-avaliei
+When eu seleciono a opção “Avalie-se”
+And eu adiciono a nota “MA” no campo de “Auto-Avaliação” na meta de “Requisitos”.
+And eu adiciono a nota “MA” no campo de “Nota de auto-avaliação” na meta de “Gerência de Projetos”.
+And eu finalizo o cadastro de notas
+Then eu visualizo uma mensagem de erro no procedimento
+And as notas não são salvas no sistema
+
+Service based scenario
+
+Scenario: Não auto-avaliando todos os conceitos da turma.
+Given o estudante “Johnny Herbert” está cadastrado na turma "ESS-2019.2"
+And a estudante “Cristina Rocha” está cadastrada na turma "ESS-2019.2"
+And a estudante "Cristina Rocha" possui a nota "MA" em todas as notas de auto-avaliação da turma
+And o estudante "Johnny Herbert" não auto-avaliou-se no sistema de notas
+When Ele insere no sistema a nota “MANA” na meta de “Requisitos”
+And ele insere no sistema a nota “MPA” na meta de “Gerência de Configuração”
+And ele tenta salvar as notas no sistema
+Then as notas auto-avaliadas por “Johnny Herbert” não são salvas no sistema
+And as notas de auto-avaliação de "Cristina Rocha" continuam salvas no sistema como "MA"
+And o estudante "Johnny Herbert" continua cadastrado no sistema
+And a estudante "Cristina Rocha" continua cadastrada no sistema
+
+
+-----------------------------------Discrepância-------------------------------------
+
+
+Scenario: Nenhum aluno possui discrepância em mais de 25% das metas.
+Given eu estou na página “Notas gerais” logado como “Prof. Samuel Miranda”
+And a turma possui as metas “Requisitos”, “Gerência de configuração”, “Gerência de Projetos”, “Arquitetura e linguagem” e “Testes”
+And a turma possui "3" alunos
+And a turma possui "5" metas para serem atingidas.
+And o aluno “Anderson Cesar Bahiano” possui em “Requisitos” nota auto-avaliada “MA” com nota recebida “MPA”, nas demais notas recebidas ele possui “MA” com nota auto-avaliada “MPA”.
+And a aluna “Cristina da Silva dos Santos” possui em todas as metas a nota auto-avaliada “MA”, nota recebida “MA”
+And o aluno “Johnny Herbert Muniz Nunes” possui em todas as metas a nota auto-avaliada “MNA” , nota recebida “MA”
+When eu seleciono a opção “Listar discrepantes”
+Then eu visualizo uma mensagem informando que não há nenhuma discrepância nos alunos da turma.
+
+Scenario: Um aluno possui discrepância em pelo menos 25% das metas
+Given eu estou na página “Notas gerais” logado como “Prof. Samuel Miranda”
+And a turma possui "3" alunos
+And a turma possui "5" metas para serem atingidas.
+And o aluno “Anderson Cesar da Silva” possui em “Requisitos” e “Gerência de Configuração” as notas auto-avaliadas “MA” com nota recebida “MPA”, nas demais notas recebidas ele possui “MA” com nota auto-avaliada “MPA”.
+And a aluna “Cristina da Silva de Oliveira” possui em todas as metas a nota auto-avaliada “MPA”, nota recebida “MPA”
+And o aluno “Johnny Herbert Muniz Nunes” possui em todas as metas a nota auto-avaliada “MANA” , nota recebida “MA”
+When eu seleciono a opção “Listar discrepantes”
+Then eu visualizo que apenas o aluno “Anderson Cesar da Silva” está na lista de alunos com discrepância nas notas.
+And a porcentagem de alunos com notas discrepantes é de "33,3%".
+
+-----------------------------VISUALIZAÇÃO DE DISCREPÂNCIA------------------------------
+
+Scenario cenário fictício para questão 15a
+Given 
+When
+Then
