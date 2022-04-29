@@ -5,7 +5,6 @@
   "main": "ta-server.js",
   "scripts": {
     "test": "jasmine --config=./spec/support/jasmine.json",
-    "tsc": "./node_modules/typescript/bin/tsc",
     "start": "npm run tsc && node typeScript/server/ta-server/ta-server.js"
   },
   "author": "Paulo Borba",
