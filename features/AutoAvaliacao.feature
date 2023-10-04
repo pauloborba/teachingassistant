@@ -26,7 +26,7 @@ Feature: Student's self-assessment in Teaching Assistant
 
 
   As a teacher
-  I want to review and compare students' self-assessments with my assessments
+  I want to review and compare students self-assessments with my assessments
   So I can track their progress and provide feedback
 
   Scenario: Student's self-assessment with no discrepancies with teacher's assessment
