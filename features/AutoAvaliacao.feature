@@ -22,3 +22,4 @@ Feature: Student's self-assessment in Teaching Assistant
       And I submit my self-assessment
       Then I should see an error message indicating that the submission is invalid
       And there should be no changes to my previous self-assessment
+      And there should be no changes to my task score
