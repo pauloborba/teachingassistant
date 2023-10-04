@@ -38,7 +38,7 @@ Feature: Student's self-assessment in Teaching Assistant
       Then I should see that the student's self-assessment matches my assessment
       And I can provide additional feedback or comments if necessary
 
-  Scenario: Student's self-assessment has discrepancies
+  Scenario: Student's self-assessment has discrepancies with teacher's assessment
       Given I am logged into the system as a teacher
       And a student has completed a task
       And I have provided an assessment for the student's task
