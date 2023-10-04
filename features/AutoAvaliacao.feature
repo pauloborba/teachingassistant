@@ -46,3 +46,5 @@ Feature: Student's self-assessment in Teaching Assistant
       And review their self-assessment
       Then I should see that the student's self-assessment has discrepancies compared to my assessment
       And I can provide feedback to the student regarding the discrepancies
+      And I should be able to update the student's assessment score if necessary
+      And the system should record that I have reviewed the student's self-assessment
