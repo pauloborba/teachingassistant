@@ -48,3 +48,14 @@ Feature: Student's self-assessment in Teaching Assistant
       And I can provide feedback or comments to the student regarding the discrepancies
       And I should be able to update the student's assessment score if necessary
       And the system should record that I have reviewed the student's self-assessment
+
+  Scenario: Viewing the percentage of discrepancy
+      Given I am logged into the system as a teacher
+      And a student has completed a task
+      And I have provided an assessment for the student's task
+      And the student has submitted a self-assessment for the same task
+      When I access the student's task
+      And review both the student's self-assessment and my assessment
+      Then I should see a visual representation of the percentage of discrepancy
+      And I can easily identify the areas where the assessments differ
+      And I can use this information to provide constructive feedback to the student
