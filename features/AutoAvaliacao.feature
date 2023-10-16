@@ -10,3 +10,6 @@ No cenário de agora há discrepância
 >>>>>>> discrepantes
 Isabela é muito inteligente e dedicada
 Mudança no final do cenário.
+
+Nova alteração:
+ajustando a discrepancia 
