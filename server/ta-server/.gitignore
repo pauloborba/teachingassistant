@@ -1,0 +1,9 @@
+compiledCode/
+
+*.js
+*.js.map
+
+# compiled output
+/dist
+/tmp
+/out-tsc
