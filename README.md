@@ -1,2 +1,2 @@
-# teachingassistant
-projeto exemplo da disciplina de ESS da graduação em Ciência da Computação do CIn-UFPE
+# Teaching Assistant
+Example project to the ESS discipline from the Computer Science Bachelor @ CIn-UFPE

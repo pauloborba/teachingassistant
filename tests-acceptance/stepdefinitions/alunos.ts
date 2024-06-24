@@ -2,38 +2,125 @@ import { defineSupportCode } from 'cucumber';
 import { browser, $, element, ElementArrayFinder, by } from 'protractor';
 let chai = require('chai').use(require('chai-as-promised'));
 let expect = chai.expect;
+import request = require('request-promise');
 
-let sleep = (ms => new Promise(resolve => setTimeout(resolve, ms)));
+let base_url = "http://localhost:3000/"
 
 let sameCPF = ((elem, cpf) => elem.element(by.name('cpflist')).getText().then(text => text === cpf));
 let sameName = ((elem, name) => elem.element(by.name('nomelist')).getText().then(text => text === name));
+let sameEmail = ((elem, email) => elem.element(by.name('emaillist')).getText().then(text => text === email));
 
 let pAND = ((p,q) => p.then(a => q.then(b => a && b)))
 
+interface IStudent {
+    name?: string;
+    cpf: string;
+    email?: string;
+}
+
+async function goToPage(page: string): Promise<void>{
+    await browser.get("http://localhost:4200/");
+    await expect(browser.getTitle()).to.eventually.equal('TaGui');
+    switch(page){
+        case 'Students':{
+            await $("a[name='alunos']").click();
+            break;
+        }
+        case 'Metas':{
+            await $("a[name='metas']").click();
+            break;
+        }
+        default:{
+            break;
+        }
+    }
+}
+
+async function registerStudent({name = "Victor", cpf, email = "victor@email.com"}: IStudent): Promise<void>{
+    await $("input[name='namebox']").sendKeys(name);
+    await $("input[name='cpfbox']").sendKeys(cpf);
+    await $("input[name='emailbox']").sendKeys(email);
+    await $("button[name='addStudentButton']").click();
+}
+
+async function removeStudent({name = "Victor", cpf, email = "victor@email.com"}: IStudent): Promise<void>{
+    const allStudents = element.all(by.name("alunolist"));
+    const student = allStudents.filter(elem => pAND(sameCPF(elem, cpf), sameName(elem, name)));
+    const webElements = await student.getWebElements();
+    const removeButton = await webElements[0].findElement(by.tagName('button'));
+    await removeButton.click();
+}
+
+async function assertTamanhoEqual(set,qtt) {
+    await set.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(qtt));
+}
+
+async function assertElementsWithSameCPFAndName(qtt,cpf,name) { 
+    var allalunos : ElementArrayFinder = element.all(by.name('alunolist'));
+    var samecpfsandname = allalunos.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name)));
+    await assertTamanhoEqual(samecpfsandname,qtt);
+}
+
+async function assertElementsWithSameCPF(qtt,cpf) {
+    var allalunos : ElementArrayFinder = element.all(by.name('alunolist'));
+    var samecpfs = allalunos.filter(elem => sameCPF(elem,cpf));
+    await assertTamanhoEqual(samecpfs,qtt); 
+}
+
 defineSupportCode(function ({ Given, When, Then }) {
-    Given(/^I am at the students page$/, async () => {
-        await browser.get("http://localhost:4200/");
-        await expect(browser.getTitle()).to.eventually.equal('TaGui');
-        await $("a[name='alunos']").click();
+    Given(/^I am at the "([^\"]*)" page$/, async (page) => {
+        page = page.toString();
+        await goToPage(page);
     })
 
     Given(/^I cannot see a student with CPF "(\d*)" in the students list$/, async (cpf) => {
-        var allcpfs : ElementArrayFinder = element.all(by.name('cpflist'));
-        await allcpfs;
-        var samecpfs = allcpfs.filter(elem =>
-                                      elem.getText().then(text => text === cpf));
-        await samecpfs;
-        await samecpfs.then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(0));
+        await assertElementsWithSameCPF(0, cpf);    
+    }); 
+
+    Given(/^I can see the student "([^\"]*)" with CPF "(\d*)" in the students list$/, async (name, cpf) => {
+        await registerStudent({name: name.toString(), cpf: cpf.toString()});
+        await assertElementsWithSameCPFAndName(1, cpf, name);
     });
 
     When(/^I try to register the student "([^\"]*)" with CPF "(\d*)"$/, async (name, cpf) => {
-        await $("input[name='namebox']").sendKeys(<string> name);
-        await $("input[name='cpfbox']").sendKeys(<string> cpf);
-        await element(by.buttonText('Adicionar')).click();
+        name = name.toString();
+        cpf = cpf.toString();
+        await registerStudent({name,cpf});
     });
 
+    When(/^I try to remove the student "([^\"]*)" with CPF "(\d*)"$/, async (name, cpf) => {
+        name = name.toString();
+        cpf = cpf.toString();
+        await removeStudent({name, cpf});
+    });
+    
     Then(/^I can see "([^\"]*)" with CPF "(\d*)" in the students list$/, async (name, cpf) => {
-        var allalunos : ElementArrayFinder = element.all(by.name('alunolist'));
-        allalunos.filter(elem => pAND(sameCPF(elem,cpf),sameName(elem,name))).then(elems => expect(Promise.resolve(elems.length)).to.eventually.equal(1));
+        await assertElementsWithSameCPFAndName(1, cpf, name);
+        await removeStudent({name: name.toString(), cpf: cpf.toString()});
+    });
+
+    Then(/^I cannot see a student with CPF "(\d*)" registered$/, async (cpf) => {
+        await assertElementsWithSameCPF(0, cpf);
+    });
+
+    Given(/^the system has the student "([^\"]*)" with CPF "(\d*)"$/, async (name, cpf) => {
+        const aluno = {"nome": name, "cpf": cpf, "email": "victor@email.com"};
+        const options = {method: 'POST', uri: (base_url + "aluno"), body: aluno, json: true};
+        await request(options).then(body => {
+            expect(JSON.stringify(body)).to.equal(
+                '{"success":"O aluno foi cadastrado com sucesso"}'
+            );
+        });
+    });
+
+    When(/^I remove the student "([^\"]*)" with CPF "(\d*)"$/, async (name, cpf) => {
+        const options = {method: 'DELETE', uri: (base_url + `aluno/${cpf.toString()}`)};
+        await request(options);
+    });
+
+    Then(/^the system now doesn't stores any student with CPF "(\d*)"$/, async (cpf) => {
+        await request.get(base_url + "alunos").then(body => {
+            expect(body.includes(`"cpf":"${cpf}"`)).to.equal(false);
+        });
     });
 })

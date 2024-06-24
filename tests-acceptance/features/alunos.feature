@@ -3,7 +3,18 @@ Feature: As a professor
          So that I can manage their learning goals
 
 Scenario: Registering student with non registered CPF
-Given I am at the students page
+Given I am at the "Students" page
 Given I cannot see a student with CPF "683" in the students list
-When I try to register the student "Paulo" with CPF "683"
-Then I can see "Paulo" with CPF "683" in the students list
+When I try to register the student "Mari" with CPF "683"
+Then I can see "Mari" with CPF "683" in the students list
+
+Scenario: Removing student with registered CPF
+Given I am at the "Students" page
+Given I can see the student "Mari" with CPF "123" in the students list
+When I try to remove the student "Mari" with CPF "123"
+Then I cannot see a student with CPF "123" registered
+
+Scenario: Remove student with registered CPF, service
+Given the system has the student "Victor" with CPF "321"
+When I remove the student "Victor" with CPF "321"
+Then the system now doesn't stores any student with CPF "321"
