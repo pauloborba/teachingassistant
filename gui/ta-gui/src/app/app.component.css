@@ -1,12 +1,60 @@
-nav a {
-  padding: 4px 10px;
-  text-decoration: none;
-  display: inline-block;
-  background-color: #3399ff;
-  color: #ffffff;
-  border-radius: 5px;
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
-nav a:hover {
-  color: #e6e6e6;
-  background-color: #1a8cff;
+
+.login {
+  text-align: center;
+}
+
+.login .card {
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background-color: #006cbe;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.erro {
+  color: #a8071a;
+}
+
+.dica {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.painel-logado header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.aviso {
+  padding: 16px;
+  background: #fff3cd;
+  border-radius: 8px;
+  color: #6a4b00;
 }

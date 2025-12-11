@@ -1,0 +1,201 @@
+.painel {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 16px;
+}
+
+.painel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.painel-header select {
+  min-width: 240px;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.acoes button,
+.manual-actions button,
+.popup-actions button,
+.header-actions button {
+  background-color: #006cbe;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #ddd;
+  color: #333;
+}
+
+.lista-alunos header {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.lista-alunos table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.lista-alunos th,
+.lista-alunos td {
+  border-bottom: 1px solid #ececec;
+  padding: 8px;
+}
+
+.feedback {
+  margin-bottom: 8px;
+}
+
+.alert {
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.alert-success {
+  background: #e0f7e9;
+  color: #1e7b34;
+}
+
+.alert-error {
+  background: #fdecea;
+  color: #a8071a;
+}
+
+.painel-extra {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.logs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.logs li {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.popup {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: min(480px, 90%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.manual-view {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 16px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.manual-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.monitor-col {
+  background: #f7f9fc;
+  border-radius: 10px;
+  padding: 12px;
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.monitor-col.unassigned {
+  border: 2px dashed #ff9800;
+}
+
+.aluno-card {
+  background: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+  cursor: grab;
+}
+
+.manual-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.revalidacao .erro {
+  color: #a8071a;
+}
+
+.revalidacao .sucesso {
+  color: #1e7b34;
+}
+/* 🔹 Define limite de tamanho apenas para o pop-up de notificações */
+.popup.notificacoes-popup {
+  max-height: 80vh;
+  width: 650px;         /* 👉 Aumentei a largura (antes era ~450px) */
+  max-width: 90vw;      /* Não ultrapassa a tela em telas menores */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🔹 Área interna com rolagem (ul ou div que envolve os itens) */
+.popup.notificacoes-popup .popup-content {
+  max-height: 70vh;         /* Parte rolável — mantém botões sempre visíveis */
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* 🔹 Mantém os botões fixados na parte inferior */
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: auto;
+}

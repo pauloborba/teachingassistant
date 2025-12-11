@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
-
-import { Aluno } from './aluno';
-import { AlunoService } from './aluno.service';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -10,23 +7,30 @@ import { AlunoService } from './aluno.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   constructor(private alunoService: AlunoService) {}
+  titulo = 'Painel de Monitores';
+  loginForm = {
+    tipo: 'professor',
+    identificador: '',
+    senha: ''
+  };
+  erroLogin = '';
+  usuarioAutenticado: { tipo: string; usuario: any } | null = null;
 
-   aluno: Aluno = new Aluno();
-   alunos: Aluno[] = [];
-   cpfduplicado: boolean = false;
+  constructor(private api: ApiService) {}
 
-   criarAluno(a: Aluno): void {
-     if (this.alunoService.criar(a)) {
-       this.alunos.push(a);
-       this.aluno = new Aluno();
-     } else {
-       this.cpfduplicado = true;
-     }
-   }
+  realizarLogin(): void {
+    this.erroLogin = '';
+    this.api
+      .login(this.loginForm.tipo, this.loginForm.identificador, this.loginForm.senha)
+      .then(resposta => {
+        this.usuarioAutenticado = resposta;
+      })
+      .catch(erro => (this.erroLogin = erro));
+  }
 
-   onMove(): void {
-      this.cpfduplicado = false;
-   }
-
+  sair(): void {
+    this.usuarioAutenticado = null;
+    this.loginForm.identificador = '';
+    this.loginForm.senha = '';
+  }
 }

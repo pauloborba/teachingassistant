@@ -1,14 +1,35 @@
-<html>
+<main>
+  <section class="login" *ngIf="!usuarioAutenticado">
+    <h1>{{ titulo }}</h1>
+    <div class="card">
+      <label>Tipo de usuário</label>
+      <select [(ngModel)]="loginForm.tipo">
+        <option value="professor">Professor</option>
+        <option value="monitor">Monitor</option>
+        <option value="aluno">Aluno</option>
+      </select>
+      <label>{{ loginForm.tipo === 'professor' ? 'E-mail' : 'Matrícula' }}</label>
+      <input [(ngModel)]="loginForm.identificador" />
+      <label>Senha</label>
+      <input type="password" [(ngModel)]="loginForm.senha" />
+      <button (click)="realizarLogin()">Entrar</button>
+      <p class="erro" *ngIf="erroLogin">{{ erroLogin }}</p>
+    
+    </div>
+  </section>
 
-<h1>
-  Teaching Assistant
-</h1>
-
-<nav>
-    <a name ="alunos" routerLink="/alunos">Alunos</a>
-    <a routerLink="/metas">Metas</a>
-</nav>
-
-<router-outlet></router-outlet>
-
-</html>
+  <section *ngIf="usuarioAutenticado" class="painel-logado">
+    <header>
+      <div>
+        <h1>Bem-vindo, {{ usuarioAutenticado.usuario.nome }}</h1>
+      </div>
+      <button (click)="sair()">Sair</button>
+    </header>
+    <div *ngIf="usuarioAutenticado.tipo === 'professor'; else acessoRestrito">
+      <app-professor-dashboard [professor]="usuarioAutenticado.usuario"></app-professor-dashboard>
+    </div>
+    <ng-template #acessoRestrito>
+      <p class="aviso">Somente professores possuem acesso ao painel de alocação.</p>
+    </ng-template>
+  </section>
+</main>

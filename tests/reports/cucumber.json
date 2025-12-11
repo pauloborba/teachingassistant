@@ -1,0 +1,2358 @@
+[
+  {
+    "description": "  Como um desenvolvedor\n  Quero testar as APIs de gerenciamento de turmas, monitores e alocações\n  Para garantir que os endpoints funcionam corretamente",
+    "elements": [
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);listar-turmas-via-api",
+        "keyword": "Cenário",
+        "line": 25,
+        "name": "Listar turmas via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3237100
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2611000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 26,
+            "name": "faço uma requisição GET para \"/api/turmas\" (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:154"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 91055300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 27,
+            "name": "o status HTTP deve ser 200",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6101100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 28,
+            "name": "a resposta deve conter uma lista de turmas",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:257"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3021500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 515499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 402699
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);buscar-turma-específica-via-api",
+        "keyword": "Cenário",
+        "line": 36,
+        "name": "Buscar turma específica via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 698799
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1128100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 37,
+            "name": "que existe uma turma com ID \"turma-1\" (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3542499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 38,
+            "name": "faço uma requisição GET para \"/api/turmas/turma-1\" (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:154"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13158799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 39,
+            "name": "o status HTTP deve ser 200",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1199299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 40,
+            "name": "a resposta deve conter os dados da turma",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:266"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6742400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 364499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 579900
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);listar-alunos-de-uma-turma-via-api",
+        "keyword": "Cenário",
+        "line": 48,
+        "name": "Listar alunos de uma turma via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 282600
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 789099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 49,
+            "name": "que existe uma turma com ID \"turma-1\" (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1267500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 50,
+            "name": "faço uma requisição GET para \"/api/turmas/turma-1/alunos\" (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:154"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10728800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 51,
+            "name": "o status HTTP deve ser 200",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 481600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 52,
+            "name": "a resposta deve conter lista de alunos",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:276"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1672500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 860799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 189199
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);cadastrar-novo-monitor-via-api",
+        "keyword": "Cenário",
+        "line": 60,
+        "name": "Cadastrar novo monitor via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 132299
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 258200
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "nome",
+                      "Monitor A"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "matricula",
+                      "M100"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 61,
+            "name": "faço uma requisição POST para \"/api/monitores\" com dados: (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19149100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 64,
+            "name": "o status HTTP deve ser 201",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1195599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 65,
+            "name": "a resposta deve conter um ID do monitor",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:285"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4205300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 258399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 159100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);validar-campos-obrigatórios-na-criação-de-monitor",
+        "keyword": "Cenário",
+        "line": 73,
+        "name": "Validar campos obrigatórios na criação de monitor",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 185999
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 256500
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "matricula",
+                      "M100"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 74,
+            "name": "faço uma requisição POST para \"/api/monitores\" com dados: (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10259499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 76,
+            "name": "o status HTTP deve ser 400",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 488899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 77,
+            "name": "a resposta deve conter erro de validação",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:295"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2849200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 304900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 138199
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);executar-alocação-aleatória-via-api",
+        "keyword": "Cenário",
+        "line": 85,
+        "name": "Executar alocação aleatória via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 195899
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 259399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 86,
+            "name": "que existem monitores e alunos cadastrados (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:99"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45428500
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "turmaId",
+                      "turma-1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 87,
+            "name": "faço uma requisição POST para \"/api/alocacao/aleatoria\" com dados: (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8572999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 89,
+            "name": "o status HTTP deve ser 200",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 814500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 90,
+            "name": "a resposta deve conter resultado da alocação",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:305"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2122499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 288200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 132100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);validar-alocação-manual-via-api",
+        "keyword": "Cenário",
+        "line": 98,
+        "name": "Validar alocação manual via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 210699
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 390300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 99,
+            "name": "que existe uma alocação manual completa (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:110"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16599699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 100,
+            "name": "faço uma requisição POST para \"/api/alocacao/validar\" (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:215"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9534499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 101,
+            "name": "o status HTTP deve ser 200",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 340700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 102,
+            "name": "a resposta deve indicar alocação válida",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:315"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1990699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 226599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 109500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);rejeitar-alocação-incompleta-via-api",
+        "keyword": "Cenário",
+        "line": 110,
+        "name": "Rejeitar alocação incompleta via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4928599
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2438199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 111,
+            "name": "que existem alunos não alocados (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:120"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 139723599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 112,
+            "name": "faço uma requisição POST para \"/api/alocacao/validar\" (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:215"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27604100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 113,
+            "name": "o status HTTP deve ser 422",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3429000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 114,
+            "name": "a resposta deve conter lista de alunos não alocados",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:324"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2537900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2138700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 472400
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);executar-realocação-com-limite-máximo-via-api",
+        "keyword": "Cenário",
+        "line": 122,
+        "name": "Executar realocação com limite máximo via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 139899
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 260899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 123,
+            "name": "que existe uma alocação anterior (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:130"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17255400
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "turmaId",
+                      "turma-1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "maxAlunos",
+                      "5"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 124,
+            "name": "faço uma requisição POST para \"/api/alocacao/realocacao\" com dados: (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7441600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 127,
+            "name": "o status HTTP deve ser 200",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 328600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 128,
+            "name": "a resposta deve conter nova distribuição",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:334"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1520500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 335900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 129500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-serviço-(api);enviar-notificações-via-api",
+        "keyword": "Cenário",
+        "line": 136,
+        "name": "Enviar notificações via API",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 171899
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 235000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 137,
+            "name": "que existem alocações realizadas (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:140"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20646500
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "turmaId",
+                      "turma-1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Quando ",
+            "line": 138,
+            "name": "faço uma requisição POST para \"/api/notificacoes/enviar\" com dados: (API)",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:183"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6970100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 140,
+            "name": "o status HTTP deve ser 200",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:248"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 663200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 141,
+            "name": "a resposta deve conter resumo de notificações",
+            "match": {
+              "location": "steps\\professor-dashboard-api.steps.ts:344"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1589500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 220600
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 159499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "dashboard-do-professor---testes-de-serviço-(api)",
+    "line": 14,
+    "keyword": "Funcionalidade",
+    "name": "Dashboard do Professor - Testes de Serviço (API)",
+    "tags": [],
+    "uri": "features\\professor-dashboard-api.feature"
+  },
+  {
+    "description": "  Como um professor\n  Quero gerenciar turmas, monitores e alocações\n  Para coordenar o ensino de forma eficiente",
+    "elements": [
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;carregar-turmas-ao-inicializar",
+        "keyword": "Cenário",
+        "line": 24,
+        "name": "Carregar turmas ao inicializar",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 195199
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 582799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 25,
+            "name": "o componente é inicializado com um professor válido",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:184"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2246299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 26,
+            "name": "as turmas devem ser carregadas",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:370"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1503799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 27,
+            "name": "a primeira turma deve ser selecionada automaticamente",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:379"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1980599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 271399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 162200
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;selecionar-uma-turma",
+        "keyword": "Cenário",
+        "line": 35,
+        "name": "Selecionar uma turma",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 162100
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 236199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 36,
+            "name": "que o dashboard está inicializado",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1610400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 37,
+            "name": "seleciono a turma \"turma-2\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:194"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5435700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 38,
+            "name": "os alunos da turma devem ser carregados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:388"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3537599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 39,
+            "name": "os monitores da turma devem ser carregados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:397"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1662100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 236100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 111999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;filtrar-alunos-por-nome",
+        "keyword": "Cenário",
+        "line": 47,
+        "name": "Filtrar alunos por nome",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 156999
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 240800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 48,
+            "name": "que alunos estão carregados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1937299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 49,
+            "name": "aplico o filtro de nome \"João\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:204"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9915000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 50,
+            "name": "apenas alunos com \"João\" no nome devem ser exibidos",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:406"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4342799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 305500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 152800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;filtrar-alunos-por-status-de-alocação",
+        "keyword": "Cenário",
+        "line": 58,
+        "name": "Filtrar alunos por status de alocação",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 142699
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 434600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 59,
+            "name": "que alunos estão carregados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:78"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2530399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 60,
+            "name": "aplico o filtro de status \"alocado\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:214"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5862099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 61,
+            "name": "apenas alunos com monitor devem ser exibidos",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:415"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2155599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 286899
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 138399
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;cadastrar-novo-monitor",
+        "keyword": "Cenário",
+        "line": 69,
+        "name": "Cadastrar novo monitor",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 225199
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 592200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 70,
+            "name": "que uma turma está selecionada",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:103"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2434899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 71,
+            "name": "abro o popup de cadastro",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:224"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1842699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 72,
+            "name": "preencho nome \"Monitor A\" e matricula \"M100\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:234"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4394500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 73,
+            "name": "confirmo o cadastro",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:245"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1248099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 74,
+            "name": "uma mensagem de sucesso deve ser exibida",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:424"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1688599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 75,
+            "name": "o monitor deve ser adicionado à lista",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:433"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1430199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 272999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 417300
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;validar-campos-obrigatórios-do-monitor",
+        "keyword": "Cenário",
+        "line": 83,
+        "name": "Validar campos obrigatórios do monitor",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 115900
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 148399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 84,
+            "name": "que o popup de cadastro está aberto",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:112"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1098100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 85,
+            "name": "deixo o campo nome vazio",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:255"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 922000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 86,
+            "name": "confirmo o cadastro",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:245"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 289099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 87,
+            "name": "uma mensagem de erro deve ser exibida",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:442"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1004599
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 253100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 86499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;executar-alocação-aleatória",
+        "keyword": "Cenário",
+        "line": 95,
+        "name": "Executar alocação aleatória",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 931799
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 790000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 96,
+            "name": "que monitores estão cadastrados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:121"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3159300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 97,
+            "name": "abro o popup de alocação",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:264"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2820599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 98,
+            "name": "seleciono \"alocação aleatória\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:274"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18224900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 99,
+            "name": "confirmo a alocação",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:283"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2022500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 100,
+            "name": "uma mensagem de sucesso deve ser exibida",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:424"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3994900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 101,
+            "name": "o dashboard deve ser atualizado",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:451"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2557999
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 558799
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 188700
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;executar-alocação-manual",
+        "keyword": "Cenário",
+        "line": 109,
+        "name": "Executar alocação manual",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 202199
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 257500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 110,
+            "name": "que monitores estão cadastrados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:121"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1608900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 111,
+            "name": "alunos estão carregados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:89"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1456599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 112,
+            "name": "abro o popup de alocação",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:264"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1493099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 113,
+            "name": "seleciono \"alocação manual\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:274"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2248699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 114,
+            "name": "a tela de alocação manual deve abrir",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:460"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1587499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 115,
+            "name": "os alunos devem estar na lista de não alocados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:469"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1950199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 298700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 146599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;mover-aluno-para-monitor-por-drag-drop",
+        "keyword": "Cenário",
+        "line": 123,
+        "name": "Mover aluno para monitor por drag-drop",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 544899
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 247399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 124,
+            "name": "que a tela de alocação manual está aberta",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:133"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1685099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 125,
+            "name": "arrasto o aluno \"aluno-1\" para o monitor \"monitor-1\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:293"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3911099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 126,
+            "name": "o aluno deve aparecer na lista do monitor",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:478"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1529199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 127,
+            "name": "desaparecer da lista de não alocados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:487"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5431499
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2247399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 128900
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;validar-alocação-manual-completa",
+        "keyword": "Cenário",
+        "line": 135,
+        "name": "Validar alocação manual completa",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 250000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 370400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 136,
+            "name": "que alunos foram movidos para monitores",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:142"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3909699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 137,
+            "name": "salvo a distribuição manual",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:308"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4330000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 138,
+            "name": "uma mensagem de sucesso deve ser exibida",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:424"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 914999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 139,
+            "name": "a tela manual deve fechar",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:496"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6171700
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 315100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 192000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;bloquear-alocação-manual-com-alunos-sem-monitor",
+        "keyword": "Cenário",
+        "line": 147,
+        "name": "Bloquear alocação manual com alunos sem monitor",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 185400
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 249599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 148,
+            "name": "que existem alunos não alocados",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:155"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1576300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 149,
+            "name": "tento salvar a distribuição",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:318"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1340000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 150,
+            "name": "uma mensagem de erro \"Há alunos sem monitor\" deve ser exibida",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:505"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2750299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 195300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 116500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;executar-realocação",
+        "keyword": "Cenário",
+        "line": 158,
+        "name": "Executar realocação",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 511699
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 214699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 159,
+            "name": "que uma turma está selecionada",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:103"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2848400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 160,
+            "name": "abro o popup de realocação",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:327"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2047999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 161,
+            "name": "preencho limite máximo \"5\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:336"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 8093400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 162,
+            "name": "confirmo a realocação",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:344"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1772500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 163,
+            "name": "uma mensagem de sucesso deve ser exibida",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:424"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 299300
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 218000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 140899
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;enviar-notificações",
+        "keyword": "Cenário",
+        "line": 171,
+        "name": "Enviar notificações",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 138499
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 208499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 172,
+            "name": "que uma turma está selecionada",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:103"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 275999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 173,
+            "name": "clico em \"Enviar Notificações\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:353"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2139599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 174,
+            "name": "as notificações devem ser enviadas",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:514"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1467299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 175,
+            "name": "um resumo deve ser exibido",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:523"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1282200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 181900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 110399
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "dashboard-do-professor---testes-de-aceitação-gui;revalidar-alocações",
+        "keyword": "Cenário",
+        "line": 183,
+        "name": "Revalidar alocações",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 147099
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 211600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 184,
+            "name": "que alocações foram realizadas",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:168"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2423399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 185,
+            "name": "clico em \"Revalidar\"",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:353"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 900700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 186,
+            "name": "o resultado da validação deve ser exibido",
+            "match": {
+              "location": "steps\\professor-dashboard.steps.ts:532"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1657399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 226299
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 123499
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "dashboard-do-professor---testes-de-aceitação-gui",
+    "line": 13,
+    "keyword": "Funcionalidade",
+    "name": "Dashboard do Professor - Testes de Aceitação GUI",
+    "tags": [],
+    "uri": "features\\professor-dashboard.feature"
+  }
+]

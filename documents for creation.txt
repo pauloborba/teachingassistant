@@ -1,0 +1,423 @@
+----------------------------------------------------------------------------------
+Paramentros usados na criação do sistemas e suas telas
+----------------------------------------------------------------------------------
+
+->Todos alunos e monitores devem está obrigatoriamente alocadas
+->Apenas o professor pode alocar
+->...
+1-> definir/cadastrar monitores(painel para o professor selecionar os monitores).(ok)
+	Professor é obrigado a selecionar a turma a qual vai cadastrar o monitor!!!!
+Erro ao cadastrar monitor(ok)
+monitor ja cadastrado(evitar duplicação)(ok)
+cadastro realizado com sucesso(ok, cadastrar novo monitor, exibir monitores cadastrados)
+
+2-> forma de alocação (monitores random e alunos ordem alfabética)(ok)possíveis avisos
+sucesso caso tenho monitores cadastrados -> ok
+erro caso não haja monitores cadastrados-> botão: ok, cadastre monitores e fechar
+botão de alocar só funciona se o professor selecionar o botão de random ou manual
+
+3-> correção de alocação de monitores manualmente(ok)
+listar todos os monitores
+erro ao alocar -> monitor alocado 2x -> voltar
+erro ao alocar -> há alunos sem monitor -> voltar
+sucesso ao alocar-> ok, notificar alunos e monitores
+
+4-> opção de alocar o aluno para outros monitores(obedecendo a regra: monitor com menos alunos em cima dos que tem mais ou  ordem alfabética quanto os monitores tiverem o mesmo número de alunos)(caso sobre tempo)deve ser como na imagem(ok)
+erro monitor com muitos alunos(definir limite de aluno por monitor)
+erro há monitor sem aluno alocado(voltar)
+sucesso ao alocar(ok exibir alocação, notificar alunos e monitores)
+
+5-> notificação de monitores e alunos 1.(ao monitor notificar quais alunos e ao aluno notificar qual  o monitores)(APENAS UM BOTÃO)(ok)
+
+----------------------------------------------------------------------------------
+REGRAS
+----------------------------------------------------------------------------------
+
+1. Cadastro de Monitores
+1.1 O professor deve selecionar previamente a turma na qual deseja cadastrar o monitor.
+ 1.2 Erro: Tentativa de cadastro sem turma selecionada → “Selecione uma turma antes de cadastrar.”
+ 1.3 Erro: Monitor já cadastrado nessa turma → “Monitor já existe na turma selecionada.”
+ 1.4 Sucesso: “Monitor cadastrado com sucesso!” → Exibir lista de monitores e opção Cadastrar novo monitor.
+ 1.5 Validação obrigatória de campos (nome, matrícula, turma).
+
+⚙️ 2. Forma de Alocação
+2.1 Opções disponíveis:
+Aleatória: Monitores escolhidos aleatoriamente, alunos em ordem alfabética.
+Manual: Professor define manualmente cada alocação.
+2.2 Regras de funcionamento:
+Botão “Alocar” só é habilitado após selecionar o modo (aleatório ou manual).
+O sistema deve verificar se há monitores cadastrados antes da alocação.
+2.3 Mensagens:
+Sucesso: “Alocação realizada com sucesso.”
+Erro: Nenhum monitor cadastrado → “Cadastre monitores antes de realizar a alocação.”
+
+
+🧩 3. Correção Manual de Alocação
+3.1 Exibir lista completa de monitores e seus alunos atuais.
+ 3.2 Erro: Mesmo monitor alocado duas vezes → “Monitor já possui alunos alocados.”
+ 3.3 Erro: Existem alunos sem monitor → “Há alunos não alocados. Corrija antes de confirmar.”
+ 3.4 Sucesso: “Alocação corrigida com sucesso.”
+Após confirmar, notificar automaticamente alunos e monitores.
+
+
+🔁 4. Realocação de Alunos
+4.1 Critérios de realocação:
+Priorizar monitor com menos alunos.
+Caso haja empate, usar ordem alfabética dos monitores.
+4.2 Erros e Regras:
+Erro: Monitor atingiu limite máximo de alunos → “Limite de alunos por monitor atingido.”
+Erro: Monitor sem nenhum aluno → “Todos os monitores devem possuir ao menos um aluno.”
+Sucesso: “Realocação concluída com sucesso.”
+Exibir nova distribuição e notificar monitores/alunos envolvidos.
+
+
+🔔 5. Notificações
+5.1 Após qualquer alocação ou correção:
+Ao monitor: lista dos alunos sob sua responsabilidade.
+Ao aluno: nome e contato do monitor responsável.
+Notificação realizada com um único botão de envio geral (“Enviar notificações”)
+
+ Regras Adicionais
+Limite configurável de alunos por monitor (definido por turma).
+Sistema deve impedir o salvamento parcial (nenhum aluno pode ficar sem vínculo).
+Deve existir um botão de revalidação geral, que verifica automaticamente:
+se todos os alunos estão alocados;
+se todos os monitores possuem alunos;
+se não há duplicidades.
+
+----------------------------------------------------------------------------------
+ESTRUTURA
+----------------------------------------------------------------------------------
+
+Estrutura de Telas e Pop-ups
+Tela 1 — Login / Acesso
+Usuários: Professor, Monitor, Aluno.
+Função:
+Autenticação e redirecionamento conforme o tipo de usuário.
+Elementos principais:
+Campos de login e senha
+Botão “Entrar”
+Redirecionamento automático (Professor → Painel Principal)
+
+
+Tela 2 — Painel Principal do Professor
+Função: Centraliza todas as ações.
+Seções:
+Selecionar Turma (obrigatório antes de qualquer ação)
+Acessar Cadastro de Monitores
+Executar Alocação (automática ou manual)
+Corrigir Alocação
+Realocar Alunos (balanceamento)
+Enviar Notificações
+Botões:
+“Cadastrar Monitores” → abre Pop-up 1
+“Alocar” → abre Pop-up 2
+“Correção Manual” → abre Tela 3
+“Realocar Alunos” → abre Pop-up 3
+“Notificar” → abre Pop-up 4
+
+
+Pop-up 1 — Cadastro de Monitores
+Ações:
+Inserir dados (nome, matrícula, turma)
+Validar duplicidade
+Exibir lista de monitores cadastrados
+Botões: Salvar, Cancelar
+Mensagens:
+Erro: monitor já cadastrado
+Sucesso: cadastro realizado
+
+
+Pop-up 2 — Alocação de Monitores e Alunos
+Ações:
+Escolher tipo de alocação (aleatória ou manual)
+Executar alocação
+Exibir prévia da distribuição
+Botões: Confirmar, Cancelar
+Mensagens:
+Sem monitores cadastrados
+Sucesso / erro de execução
+
+
+Tela 3 — Correção Manual de Alocação
+Ações:
+Exibir todos os monitores e seus alunos
+Permitir arrastar/soltar alunos entre monitores
+Validar erros (duplicidade, aluno sem monitor, etc.)
+Botões:
+Salvar alterações
+Voltar ao painel
+
+
+Pop-up 3 — Realocação Automática
+Ações:
+Exibir critérios aplicados (menos alunos / ordem alfabética)
+Executar realocação
+Exibir resultado da nova distribuição
+Mensagens:
+Monitor com limite atingido
+Monitor sem aluno
+Sucesso na realocação
+
+
+Pop-up 4 — Envio de Notificações
+Ações:
+Exibir resumo da alocação
+Botão único: Enviar notificações
+Confirmação visual após envio
+Mensagens:
+“Notificações enviadas com sucesso.”
+
+----------------------------------------------------------------------------------
+PROMPT GERADO
+----------------------------------------------------------------------------------
+
+PROMPT PARA IMPLEMENTAÇÃO DO SISTEMA DE ALOCAÇÃO
+Objetivo: Criar um sistema modular para gerenciamento de monitores e alunos, com regras de alocação controladas exclusivamente por professores.
+
+------------------------------------------------------------
+ESTRUTURA DO PROJETO
+
+Separar o código em módulos e entidades, conforme abaixo:
+
+Entidades (models/)
+1. Professor
+   - id, nome, email, senha
+   - turmas: relação 1:N com Turma
+
+2. Monitor
+   - id, nome, matrícula, turma_id (FK)
+   - alunos_alocados: relação N:M com Aluno
+
+3. Aluno
+   - id, nome, matrícula, turma_id (FK)
+   - monitor_id (FK)
+
+4. Turma
+   - id, nome, professor_id (FK)
+   - monitores, alunos
+
+5. Notificação
+   - id, tipo (“monitor” | “aluno”), mensagem, destinatário_id, status (“pendente”, “enviado”)
+
+------------------------------------------------------------
+Módulos (separar em pastas)
+
+1. auth/
+   - Login e autenticação (Professor, Aluno, Monitor)
+   - Redirecionamento automático de tipo de usuário
+
+2. cadastro_monitores/
+   - Função: cadastrar e listar monitores
+   - Regras: evitar duplicidade, turma obrigatória
+
+3. alocacao/
+   - Submódulos:
+     - random_allocation: alunos em ordem alfabética, monitores aleatórios
+     - manual_allocation: alocação via interface visual
+   - Regras:
+     - Todos alunos e monitores devem estar alocados
+     - Apenas o professor pode executar
+
+4. correcao_manual/
+   - Interface drag-and-drop para correção
+   - Verificações: duplicidade, alunos sem monitor
+   - Notificação automática ao salvar
+
+5. realocacao/
+   - Função: redistribuir alunos automaticamente
+   - Critérios:
+     - Menos alunos → prioridade
+     - Empate → ordem alfabética
+   - Regras:
+     - Limite máximo de alunos por monitor
+     - Nenhum monitor pode ficar sem aluno
+
+6. notificacoes/
+   - Um botão único “Enviar notificações”
+   - Envia para todos (alunos e monitores) as informações da alocação final
+
+------------------------------------------------------------
+TELAS E POP-UPS
+
+Tela 1 — Login / Acesso
+- Campos: email, senha
+- Redireciona para o painel conforme o tipo de usuário.
+
+Tela 2 — Painel Principal do Professor (ATUALIZADA)
+
+Seções:
+ -Selecionar turma (obrigatório)
+ -Lista de Alunos da Turma
+ -Exibe todos os alunos vinculados à turma selecionada
+ -Campos exibidos:
+ -Nome
+ -Matrícula
+ -Monitor atual (ou “Não alocado”)
+ -Filtros opcionais:
+   -Por nome
+   -Por status de alocação
+
+Atualização automática quando:
+ -A turma muda
+ -O professor realiza alocação, correção ou realocação
+Botões:
+ -Cadastrar Monitores → Pop-up 1
+ -Alocar → Pop-up 2
+ -Correção Manual → Tela 3
+ -Realocar Alunos → Pop-up 3
+ -Enviar Notificações → Pop-up 4
+
+-Revalidar Alocações
+
+
+Pop-up 1 — Cadastro de Monitores
+- Campos: nome, matrícula, turma
+- Mensagens:
+  - Erro: Selecione uma turma antes de cadastrar.
+  - Erro: Monitor já cadastrado.
+  - Sucesso: Monitor cadastrado com sucesso.
+- Exibe lista de monitores cadastrados
+
+Pop-up 2 — Alocação
+- Escolher tipo: aleatória ou manual
+- Regras:
+  - Botão “Alocar” só habilita após escolha do tipo
+  - Erro: Cadastre monitores antes de alocar.
+  - Sucesso: Alocação realizada com sucesso.
+
+Tela 3 — Correção Manual
+- Exibe todos os monitores e alunos
+- Permite arrastar alunos entre monitores
+- Valida:
+  - Erro: duplicidade
+  - Erro: aluno sem monitor
+  - Sucesso: Alocação corrigida com sucesso.
+
+Pop-up 3 — Realocação Automática
+- Mostra regras aplicadas
+- Erros:
+  - Limite de alunos atingido.
+  - Há monitores sem alunos.
+- Sucesso: Realocação concluída com sucesso.
+
+Pop-up 4 — Envio de Notificações
+- Exibe resumo da alocação
+- Botão único: Enviar notificações
+- Confirmação: Notificações enviadas com sucesso.
+
+------------------------------------------------------------
+RESUMO DE INTERFACES
+Total: 3 telas + 4 pop-ups = 7 interfaces principais
+
+------------------------------------------------------------
+ REGRAS GERAIS DO SISTEMA
+1. Todos os alunos e monitores devem estar obrigatoriamente alocados.
+2. Apenas o professor pode realizar, corrigir ou realocar.
+3. Cada ação deve ter feedback (mensagem visual).
+4. Logs obrigatórios de data, hora e responsável.
+5. Nenhuma operação pode deixar estado inconsistente (aluno sem monitor).
+6. Deve haver um botão de “Revalidar Alocações”:
+   - Confere se todos os alunos e monitores estão devidamente vinculados.
+   - Detecta duplicidades ou falhas.
+
+------------------------------------------------------------
+FUNCIONALIDADES EXTRA (opcionais)
+- Configuração de limite de alunos por monitor (por turma).
+- Logs de ações exportáveis (JSON ou CSV).
+- Interface responsiva (mobile/desktop).
+
+------------------------------------------------------------
+SAÍDA ESPERADA
+- Código separado por módulos e entidades conforme especificado.
+- Um README.md explicando:
+  1. Como executar o projeto.
+  2. Estrutura de pastas e módulos.
+  3. Dependências e instalação.
+  4. Fluxo de uso (login → cadastro → alocação → correção → notificações)
+
+
+----------------------------------------------------------------------------------
+PROMPT PARA TESTE
+----------------------------------------------------------------------------------
+
+Você é um agente especialista em Testes de Software, BDD, Cucumber, testes de aceitação GUI e Service Tests.
+
+Seu objetivo é:
+
+1. Criar uma suíte completa de testes automatizados baseada nos princípios do PDF:
+   - Estrutura Given / When / Then
+   - Testes de aceitação GUI
+   - Testes de serviço via API
+   - Testes independentes, sem dependência entre cenários
+   - Limpeza de estado ao final dos testes
+   - Evitar duplicação de código
+   - Separação clara entre setup, ações e verificação
+   - Testes devem ser reprodutíveis
+
+2. O sistema está rodando em:
+   http://localhost:4250/
+
+3. O comando de execução dos testes deve ser:
+   npm run teste
+
+4. Você deve:
+   - Criar os testes automatizados usando JavaScript ou TypeScript
+   - Usar Cucumber + WebDriver / Cypress / Playwright (escolha a melhor opção automaticamente)
+   - Criar os arquivos:
+     - features/*.feature
+     - steps/*.steps.ts ou .js
+     - configuração de runner
+   - Garantir que os testes:
+     - Acessem a aplicação
+     - Simulem ações reais do usuário (clique, formulário, navegação)
+     - Validem resultados visuais e de dados
+   - Criar também testes de serviço para os endpoints REST
+   - Criar hooks:
+     - beforeAll → subir servidor se necessário
+     - afterAll → encerrar servidor
+     - beforeEach → resetar estado do sistema
+   - Exibir no terminal:
+     - Total de cenários
+     - Quantos passaram
+     - Quantos falharam
+     - Tempo total de execução
+
+5. Estrutura mínima esperada no projeto:
+
+   /tests
+     /features
+     /steps
+     /support
+   package.json com script:
+     "teste": "cucumber-js || playwright test || cypress run"
+
+6. Exemplo obrigatório de cenário a ser implementado:
+
+   Feature: Cadastro de Aluno
+
+   Scenario: Cadastrar aluno com CPF inexistente
+     Given que estou na página de alunos
+     And não existe aluno com CPF "683"
+     When eu cadastro o aluno "Paulo" com CPF "683"
+     Then o aluno "Paulo" deve aparecer na lista
+     And o sistema deve retornar sucesso
+
+7. Testes de serviço obrigatórios:
+   - GET /alunos
+   - POST /alunos
+   - DELETE /alunos/{cpf}
+
+8. Todos os testes devem:
+   - Executar automaticamente com `npm run teste`
+   - Abrir o navegador quando for GUI Test
+   - Mostrar logs claros no terminal
+   - Finalizar o processo com:
+     - exit 0 se tudo passar
+     - exit 1 se algum teste falhar
+
+9. Ao finalizar:
+   - Gere todos os arquivos
+   - Atualize o package.json
+   - Mostre exatamente quais comandos o usuário deve executar
+   - Não explique conceitos teóricos, apenas gere código funcional

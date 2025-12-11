@@ -1,41 +1,22 @@
-import { CadastroDeAlunos } from '../cadastrodealunos';
-import { Aluno } from '../../../gui/ta-gui/src/app/aluno';
+import { CadastroMonitoresModule } from '../modules/cadastro_monitores';
+import { resetStore, store } from '../data/store';
 
-describe("O cadastro de alunos", () => {
-  var cadastro: CadastroDeAlunos;
+describe('Cadastro de monitores', () => {
+  let modulo: CadastroMonitoresModule;
 
-  beforeEach(() => cadastro = new CadastroDeAlunos())
+  beforeEach(() => {
+    resetStore();
+    modulo = new CadastroMonitoresModule();
+  });
 
-  it("é inicialmente vazio", () => {
-    expect(cadastro.getAlunos().length).toBe(0);
-  })
+  it('exige que uma turma seja informada', () => {
+    expect(() => modulo.cadastrar('', 'prof-1', { nome: 'Ana', matricula: 'M001' })).toThrow();
+  });
 
-  it("cadastra alunos corretamente", () => {
-    var aluno: Aluno = new Aluno();
-    aluno.nome = "Mariana";
-    aluno.cpf = "683";
-    cadastro.criar(aluno);
-
-    expect(cadastro.getAlunos().length).toBe(1);
-    aluno = cadastro.getAlunos()[0];
-    expect(aluno.nome).toBe("Mariana");
-    expect(aluno.cpf).toBe("683");
-    expect(aluno.email).toBe("");
-    expect(aluno.metas.size).toBe(0);
-  })
-
-  it("não aceita alunos com CPF duplicado", () => {
-    var aluno: Aluno = new Aluno();
-    aluno.nome = "Mariana";
-    aluno.cpf = "683";
-    cadastro.criar(aluno);
-
-    aluno = new Aluno();
-    aluno.nome = "Pedro";
-    aluno.cpf = "683";
-    cadastro.criar(aluno);
-
-    expect(cadastro.getAlunos().length).toBe(1);
-  })
-
-})
+  it('cadastra monitores e evita duplicidade', () => {
+    const monitor = modulo.cadastrar('turma-1', 'prof-1', { nome: 'Ana', matricula: 'M001' });
+    expect(monitor.nome).toBe('Ana');
+    expect(() => modulo.cadastrar('turma-1', 'prof-1', { nome: 'Ana', matricula: 'M001' })).toThrow();
+    expect(store.monitores.length).toBe(1);
+  });
+});

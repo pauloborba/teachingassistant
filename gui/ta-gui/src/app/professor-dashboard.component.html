@@ -1,0 +1,195 @@
+<div class="feedback" *ngFor="let mensagem of mensagens">
+  <div [ngClass]="['alert', mensagem.tipo === 'success' ? 'alert-success' : 'alert-error']">
+    {{ mensagem.texto }}
+  </div>
+</div>
+
+<section *ngIf="manualView" class="manual-view">
+  <header>
+    <h2>
+      {{ manualView === 'allocation' ? 'Alocação Manual' : 'Correção Manual' }} - {{ turmaSelecionada?.nome }}
+    </h2>
+    <p>Arraste e solte os alunos entre os monitores para corrigir a distribuição.</p>
+  </header>
+  <div class="manual-container">
+    <div
+      class="monitor-col"
+      *ngFor="let monitor of monitores"
+      (dragover)="permitirSoltar($event)"
+      (drop)="soltarAluno($event, monitor.id)"
+    >
+      <h3>{{ monitor.nome }}</h3>
+      <div
+        class="aluno-card"
+        *ngFor="let aluno of manualAssignments[monitor.id]"
+        draggable="true"
+        (dragstart)="arrastarAluno($event, aluno.id)"
+      >
+        {{ aluno.nome }} ({{ aluno.matricula }})
+      </div>
+    </div>
+    <div
+      class="monitor-col unassigned"
+      (dragover)="permitirSoltar($event)"
+      (drop)="soltarAluno($event, 'sem-monitor')"
+    >
+      <h3>Sem Monitor</h3>
+      <div
+        class="aluno-card"
+        *ngFor="let aluno of manualSemMonitor"
+        draggable="true"
+        (dragstart)="arrastarAluno($event, aluno.id)"
+      >
+        {{ aluno.nome }} ({{ aluno.matricula }})
+      </div>
+    </div>
+  </div>
+  <div class="manual-actions">
+    <button (click)="salvarDistribuicaoManual()">Salvar Distribuição</button>
+    <button class="secondary" (click)="cancelarManual()">Cancelar</button>
+  </div>
+</section>
+
+<section class="painel" *ngIf="!manualView">
+  <header class="painel-header">
+    <div>
+      <label>Selecionar Turma</label>
+      <select [(ngModel)]="selectedTurmaId" (change)="selecionarTurma(selectedTurmaId)">
+        <option value="" disabled>Selecione</option>
+        <option *ngFor="let turma of turmas" [value]="turma.id">{{ turma.nome }}</option>
+      </select>
+    </div>
+    <div class="header-actions">
+      <button (click)="revalidar()">Revalidar Alocações</button>
+    </div>
+  </header>
+
+  <div class="acoes">
+    <button (click)="abrirPopup('cadastro')">Cadastrar Monitores</button>
+    <button (click)="abrirPopup('alocacao')">Alocar</button>
+    <button (click)="abrirTelaManual('correction')">Correção Manual</button>
+    <button (click)="abrirPopup('realocacao')">Realocar Alunos</button>
+    <button (click)="abrirPopup('notificacoes')">Enviar Notificações</button>
+  </div>
+
+  <section class="lista-alunos">
+    <header>
+      <div>
+        <label>Filtro por nome</label>
+        <input [(ngModel)]="filtroNome" (input)="aplicarFiltros()" placeholder="Digite o nome" />
+      </div>
+      <div>
+        <label>Status</label>
+        <select [(ngModel)]="filtroStatus" (change)="aplicarFiltros()">
+          <option value="todos">Todos</option>
+          <option value="alocado">Alocados</option>
+          <option value="nao_alocado">Não alocados</option>
+        </select>
+      </div>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Matrícula</th>
+          <th>Monitor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let aluno of alunosFiltrados">
+          <td>{{ aluno.nome }}</td>
+          <td>{{ aluno.matricula }}</td>
+          <td>{{ nomeDoMonitor(aluno.monitorId) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="painel-extra">
+    <div class="revalidacao" *ngIf="revalidacao">
+      <h4>Resultado da revalidação</h4>
+      <p>Total de alunos: {{ revalidacao.resumo.totalAlunos }}</p>
+      <p>Total de monitores: {{ revalidacao.resumo.totalMonitores }}</p>
+      <p *ngIf="!revalidacao.valido" class="erro">{{ revalidacao.erros.join(' ') }}</p>
+      <p *ngIf="revalidacao.valido" class="sucesso">Tudo alocado corretamente!</p>
+    </div>
+    <div class="logs">
+      <h4>Logs recentes</h4>
+      <ul>
+        <li *ngFor="let log of logs">
+          <strong>{{ log.timestamp | date: 'short' }}</strong>
+          <span>{{ log.descricao }}</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
+
+<!-- Pop-up 1 -->
+<div class="popup-overlay" *ngIf="popupAtivo === 'cadastro'">
+  <div class="popup">
+    <h3>Cadastro de Monitores</h3>
+    <label>Nome</label>
+    <input [(ngModel)]="cadastroMonitor.nome" />
+    <label>Matrícula</label>
+    <input [(ngModel)]="cadastroMonitor.matricula" />
+    <div class="popup-actions">
+      <button (click)="registrarNovoMonitor()">Salvar</button>
+      <button class="secondary" (click)="fecharPopup()">Fechar</button>
+    </div>
+    <h4>Monitores cadastrados</h4>
+    <ul>
+      <li *ngFor="let monitor of monitores">{{ monitor.nome }} - {{ monitor.matricula }}</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Pop-up 2 -->
+<div class="popup-overlay" *ngIf="popupAtivo === 'alocacao'">
+  <div class="popup">
+    <h3>Alocação</h3>
+    <label>
+      <input type="radio" name="tipoAlocacao" value="aleatoria" [(ngModel)]="tipoAlocacao" /> Aleatória
+    </label>
+    <label>
+      <input type="radio" name="tipoAlocacao" value="manual" [(ngModel)]="tipoAlocacao" /> Manual
+    </label>
+    <div class="popup-actions">
+      <button [disabled]="!tipoAlocacao" (click)="executarAlocacao()">Alocar</button>
+      <button class="secondary" (click)="fecharPopup()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pop-up 3 -->
+<div class="popup-overlay" *ngIf="popupAtivo === 'realocacao'">
+  <div class="popup">
+    <h3>Realocação Automática</h3>
+    <p>Critérios aplicados: prioridade para quem possui menos alunos e desempate em ordem alfabética.</p>
+    <label>Limite máximo de alunos por monitor</label>
+    <input type="number" [(ngModel)]="realocacaoForm.limiteMaximo" />
+    <div class="popup-actions">
+      <button (click)="executarRealocacao()">Realocar Alunos</button>
+      <button class="secondary" (click)="fecharPopup()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Pop-up 4 -->
+<div class="popup-overlay" *ngIf="popupAtivo === 'notificacoes'">
+  <div class="popup notificacoes-popup">
+    <h3>Envio de Notificações</h3>
+    
+    <div class="popup-content">
+      <p>Resumo da alocação:</p>
+      <ul>
+        <li *ngFor="let item of notificacaoResumo">{{ item }}</li>
+      </ul>
+    </div>
+
+    <div class="popup-actions">
+      <button (click)="enviarNotificacoes()">Enviar notificações</button>
+      <button class="secondary" (click)="fecharPopup()">Fechar</button>
+    </div>
+  </div>
+</div>

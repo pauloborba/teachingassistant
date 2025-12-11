@@ -9,7 +9,9 @@
     "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
     "outDir": "typeScript",
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./typings", "./node_modules/@types"]
   },
   "compileOnSave": true,
 }
