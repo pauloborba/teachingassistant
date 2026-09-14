@@ -33,3 +33,13 @@ Scenario: Envio de e-mail de resultado com mensagem complementar personalizada
   Then Eu vejo na tela o resumo com "1" e-mail enviado com sucesso e "1" falha
   And Eu vejo na lista de falhas a aluna "Ana Lima" com o motivo "Formato de e-mail inválido"
   And Eu vejo o status "Pendente" exibido para a aluna "Ana Lima"
+
+
+Scenario: Bloqueio de envio em turma com resultados incompletos na GUI
+  Given Eu estou logado como o professor "Paulo Borba"
+  And Eu estou na página "Resultados Finais" da disciplina "ESS"
+  And O aluno "Pedro Silva" está cadastrado com o resultado "Aprovado"
+  And O aluno "Carlos Eduardo" está cadastrado sem resultado definido
+  When Eu solicito o envio dos resultados para toda a turma
+  Then Eu vejo a mensagem de erro "Não é possível enviar e-mails: existem alunos com resultado pendente"
+  And Eu vejo o aluno "Carlos Eduardo" destacado com o status "Sem resultado"
