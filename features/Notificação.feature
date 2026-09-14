@@ -22,8 +22,6 @@ Scenario: Envio de e-mail de resultado com mensagem complementar personalizada
   Then Eu vejo a mensagem de sucesso "E-mail enviado com sucesso"
   And Eu vejo no histórico da disciplina o envio para "Pedro Silva" contendo a mensagem "Parabéns pela dedicação durante o semestre!"
 
-  modificação 
-
   Scenario: Exibição de falha na interface ao tentar enviar resultados para aluno com e-mail inválido
   Given Eu estou logado como o professor "Paulo Borba"
   And Eu estou na página "Resultados Finais" da disciplina "ESS"
@@ -35,11 +33,20 @@ Scenario: Envio de e-mail de resultado com mensagem complementar personalizada
   And Eu vejo o status "Pendente" exibido para a aluna "Ana Lima"
 
 
-Scenario: Bloqueio de envio em turma com resultados incompletos na GUI
+Scenario: Bloqueio de reenvio individual de e-mail já disparado na GUI
   Given Eu estou logado como o professor "Paulo Borba"
   And Eu estou na página "Resultados Finais" da disciplina "ESS"
-  And O aluno "Pedro Silva" está cadastrado com o resultado "Aprovado"
-  And O aluno "Carlos Eduardo" está cadastrado sem resultado definido
+  And O aluno "Pedro Silva" possui o resultado "Aprovado" e status de envio "Enviado"
+  When Eu tento abrir a prévia de e-mail do aluno "Pedro Silva"
+  Then Eu vejo a mensagem de alerta "O e-mail com o resultado final deste aluno já foi enviado"
+  And Eu permaneço na página "Resultados Finais" da disciplina "ESS"
+  And O botão de envio individual do aluno "Pedro Silva" permanece indisponível
+
+Scenario: Envio de e-mails com resultados finais para a turma com sucesso
+  Given Eu estou logado como o professor "Paulo Borba"
+  And Eu estou na página "Resultados Finais" da disciplina "ESS"
+  And A aluna "Maria Silva" possui o resultado "Aprovada"
+  And O aluno "João Souza" possui o resultado "Final"
   When Eu solicito o envio dos resultados para toda a turma
-  Then Eu vejo a mensagem de erro "Não é possível enviar e-mails: existem alunos com resultado pendente"
-  And Eu vejo o aluno "Carlos Eduardo" destacado com o status "Sem resultado"
+  Then Eu vejo a mensagem "E-mails enviados com sucesso"
+  And Eu vejo o resumo informando "2" e-mails enviados com sucesso e "0" falhas
