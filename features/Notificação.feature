@@ -50,3 +50,11 @@ Scenario: Envio de e-mails com resultados finais para a turma com sucesso
   When Eu solicito o envio dos resultados para toda a turma
   Then Eu vejo a mensagem "E-mails enviados com sucesso"
   And Eu vejo o resumo informando "2" e-mails enviados com sucesso e "0" falhas
+
+Scenario: Envio automático de novo e-mail após atualização de resultado
+  Given Eu estou logado como o professor "Paulo Borba"
+  And Eu estou na página "Resultados Finais" da disciplina "ESS"
+  And A aluna "Maria Silva" possui o resultado "Aprovada" já enviado por e-mail
+  When Eu altero o resultado da aluna "Maria Silva" para "Final"
+  Then Eu vejo a mensagem "Resultado atualizado e novo e-mail enviado com sucesso para Maria Silva"
+  And Eu vejo o resultado "Final" exibido para a aluna "Maria Silva"
