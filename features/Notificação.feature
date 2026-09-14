@@ -22,16 +22,17 @@ Scenario: Envio de e-mail de resultado com mensagem complementar personalizada
   Then Eu vejo a mensagem de sucesso "E-mail enviado com sucesso"
   And Eu vejo no histórico da disciplina o envio para "Pedro Silva" contendo a mensagem "Parabéns pela dedicação durante o semestre!"
 
-  Scenario: Exibição de falha na interface ao tentar enviar resultados para aluno com e-mail inválido
+ Scenario: Exibição de resumo com falha parcial no envio de e-mails
   Given Eu estou logado como o professor "Paulo Borba"
   And Eu estou na página "Resultados Finais" da disciplina "ESS"
-  And O aluno "João Souza" possui o resultado "Aprovado" e o e-mail "joao@cin.ufpe.br"
-  And A aluna "Ana Lima" possui o resultado "Final" e o e-mail inválido "ana.invalido@"
+  And O aluno "João Souza" possui o e-mail válido "joao@cin.ufpe.br" e resultado "Aprovado"
+  And A aluna "Maria Silva" possui o e-mail válido "maria@cin.ufpe.br" e resultado "Aprovada"
+  And A aluna "Ana Lima" possui o e-mail inválido "ana.invalido@" e resultado "Final"
   When Eu solicito o envio dos resultados para toda a turma
-  Then Eu vejo na tela o resumo com "1" e-mail enviado com sucesso e "1" falha
-  And Eu vejo na lista de falhas a aluna "Ana Lima" com o motivo "Formato de e-mail inválido"
-  And Eu vejo o status "Pendente" exibido para a aluna "Ana Lima"
-
+  Then Eu vejo na tela o resumo informando "2" e-mails enviados com sucesso e "1" falha
+  And Eu vejo na lista de falhas o nome "Ana Lima" com o e-mail "ana.invalido@"
+  And Eu vejo no histórico da disciplina o envio registrado com sucesso para "João Souza" e "Maria Silva"
+  And Eu vejo a opção de corrigir o e-mail de "Ana Lima" e reenviar a notificação individualmente
 
 Scenario: Bloqueio de reenvio individual de e-mail já disparado na GUI
   Given Eu estou logado como o professor "Paulo Borba"
