@@ -373,6 +373,39 @@ Feature: Notificações de pendências no lançamento de notas
 
 
 
+   @service
+   Scenario: Prevenção de envio duplicado por reprocessamento de lembrete já enviado
+      Given o professor "Paulo Borba" é responsável pela turma "2026.2 de ESS" e possui o e-mail "paulo.borba@example.com"
+      And a turma possui o aluno "João da Silva", sem nota cadastrada em "Prova de SOLID e Padrões de Projeto", realizada em "20/08/2026 às 14:00"
+      And existe apenas um lembrete para a turma "2026.2 de ESS", programado para "25/08/2026 às 09:00"
+      And o lembrete foi processado em "25/08/2026 às 09:00" e possui status "Enviado"
+      And o histórico registra exatamente uma tentativa desse lembrete com status "Enviado"
+      And o serviço de e-mail do "Gmail" aceitou exatamente um envio desse lembrete
+      And o prazo acadêmico da turma é "31/08/2026 às 23:59"
+      When o agendador solicita novamente o processamento do mesmo lembrete em "25/08/2026 às 09:01"
+      Then nenhuma nova solicitação de envio é realizada ao serviço de e-mail do "Gmail"
+      And o lembrete permanece com status "Enviado"
+      And o histórico permanece com exatamente uma tentativa desse lembrete
+      And o lembrete continua contabilizado como um único envio
+
+
+
+   @service
+   Scenario: Bloqueio de novo reenvio após sucesso de tentativa anterior
+      Given o professor "Paulo Borba" é responsável pela turma "2026.2 de ESS" e possui o e-mail cadastrado "paulo.borba@example.com"
+      And a turma possui apenas o aluno "João da Silva", sem nota cadastrada em "Prova de SOLID e Padrões de Projeto", realizada em "20/08/2026 às 14:00"
+      And a turma possui um lembrete programado para "25/08/2026 às 09:00"
+      And o histórico de "Paulo Borba" registra uma tentativa inicial desse lembrete com status "Falha"
+      And o histórico registra um reenvio imediato do mesmo lembrete com status "Enviado"
+      And exatamente um e-mail desse lembrete foi aceito pelo serviço de e-mail do "Gmail"
+      And o lembrete possui status "Enviado" e não possui novos reenvios programados
+      And o prazo acadêmico da turma é "31/08/2026 às 23:59"
+      When o serviço recebe uma solicitação atrasada de reenvio desse lembrete em "25/08/2026 às 09:01"
+      Then nenhuma nova solicitação de envio é realizada ao serviço de e-mail do "Gmail"
+      And o histórico permanece com exatamente duas tentativas desse lembrete, uma com status "Falha" e outra com status "Enviado"
+      And o lembrete permanece com status "Enviado"
+      And nenhum novo reenvio é programado
+      And o lembrete continua contabilizado como um único envio
 
    @service
    Scenario: Reenvio progressivo após falhas persistentes
@@ -393,6 +426,19 @@ Feature: Notificações de pendências no lançamento de notas
       And o prazo acadêmico permanece "31/08/2026 às 23:59"
 
 
+   @service
+   Scenario: Prevenção de envio duplicado por processamento concorrente
+      Given o professor "Paulo Borba" é responsável pela turma "2026.2 de ESS" e possui o e-mail cadastrado "paulo.borba@example.com"
+      And a turma possui apenas o aluno "João da Silva", sem nota cadastrada em "Prova de SOLID e Padrões de Projeto", realizada em "20/08/2026 às 14:00"
+      And a turma possui apenas um lembrete, programado para "25/08/2026 às 09:00", com status "Agendado"
+      And não existem tentativas de envio registradas para esse lembrete
+      And o prazo acadêmico da turma é "31/08/2026 às 23:59"
+      And o serviço de e-mail do "Gmail" está disponível e aceita envios
+      When duas execuções concorrentes do serviço processam o mesmo lembrete em "25/08/2026 às 09:00"
+      Then exatamente um e-mail desse lembrete é aceito para envio ao endereço "paulo.borba@example.com"
+      And o histórico de "Paulo Borba" registra exatamente uma tentativa desse lembrete, com status "Enviado"
+      And o lembrete recebe o status "Enviado"
+      And o lembrete é contabilizado como um único envio
 
 
    @service
