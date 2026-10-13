@@ -3,8 +3,6 @@ Feature: self-assessment request
   I want to request the self-assessment of the students of my class and remind those who have not submitted it yet
   So that all students submit their self-assessment before the deadline
 
-  # GUI scenarios
-
   Scenario: request self-assessment for a class
     Given I am logged in as the professor of the class "ESS 2026.2"
     And the students "Ian Monteiro", "Henrique Xavier" and "Matheus Menezes" are enrolled in the class "ESS 2026.2"
@@ -48,8 +46,6 @@ Feature: self-assessment request
     When I try to send a reminder to the students with pending self-assessment
     Then I see a message stating that there are no students with pending self-assessment
     And I see the students "Ian Monteiro", "Henrique Xavier" and "Matheus Menezes" with status "Completed" and no reminder
-
-  # Service scenarios
 
   Scenario: reminder is sent only to students with pending self-assessment
     Given the class "ESS 2026.2" has a self-assessment request with deadline "20/10/2026"
