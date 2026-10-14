@@ -24,6 +24,33 @@ describe("O servidor", () => {
   });
 
 
+  it("registra e remove o conceito de uma meta da auto-avaliação", () => {
+    var meta = "Write quality tests";
+    return request.put(base_url + "autoavaliacao/683", {"json":{"meta": meta, "conceito": "MPA"}}).then(body => {
+        expect(body).toEqual({success: "A auto-avaliação foi atualizada com sucesso"});
+        return request.get(base_url + "autoavaliacao/683", {"json": true}).then(body => {
+            expect(body.conceitos[meta]).toBe("MPA");
+            return request.delete(base_url + "autoavaliacao/683/" + encodeURIComponent(meta), {"json": true}).then(body => {
+                expect(body).toEqual({success: "A auto-avaliação foi atualizada com sucesso"});
+                return request.get(base_url + "autoavaliacao/683", {"json": true}).then(body =>
+                    expect(body.conceitos[meta]).toBe(null)
+                );
+            });
+        });
+    });
+  })
+
+  it("não registra conceito inválido na auto-avaliação", () => {
+    var options:any = {method: 'PUT', uri: (base_url + "autoavaliacao/683"),
+                       body:{meta: "Write quality tests", conceito: "XYZ"}, json: true};
+    return request(options).then(body =>
+        fail("o servidor deveria ter recusado o conceito XYZ, mas respondeu " + JSON.stringify(body))
+    ).catch(e => {
+        expect(e.statusCode).toBe(400);
+        expect(e.error.failure).toContain("XYZ");
+    })
+  })
+
   it("não cadastra alunos com CPF duplicado", () => {
     return request.post(base_url + "aluno", {"json":{"nome": "Mari", "cpf" : "965", "email":""}}).then(body => {
          expect(body).toEqual({success: "O aluno foi cadastrado com sucesso"});
